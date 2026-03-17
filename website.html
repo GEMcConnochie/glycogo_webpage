@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Glycogo — Fuel Your Performance</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --green: #2e7d32;
+    --green-light: #43a047;
+    --green-pale: #e8f5e9;
+    --orange: #e65c00;
+    --orange-light: #ff7043;
+    --navy: #1a1a3e;
+    --navy-mid: #2d2d7a;
+    --bg: #f0f7f4;
+    --white: #ffffff;
+    --text: #1a1a3e;
+    --muted: #5a6a5a;
+    --border: #c8d8c8;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1rem 2.5rem;
+    background: rgba(240,247,244,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo {
+    font-family: 'Space Mono', monospace;
+    font-size: 1.4rem; font-weight: 700;
+    color: var(--green);
+    letter-spacing: -0.02em;
+  }
+  .nav-logo span { color: var(--orange); }
+  .nav-links { display: flex; gap: 2rem; align-items: center; }
+  .nav-links a {
+    text-decoration: none; color: var(--muted);
+    font-size: 0.9rem; font-weight: 500;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--green); }
+  .nav-cta {
+    background: var(--green) !important;
+    color: white !important;
+    padding: 0.5rem 1.2rem !important;
+    border-radius: 6px !important;
+    font-weight: 600 !important;
+    transition: background 0.2s, transform 0.1s !important;
+  }
+  .nav-cta:hover { background: var(--green-light) !important; transform: translateY(-1px) !important; }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: center;
+    text-align: center;
+    padding: 8rem 2rem 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute; inset: 0; z-index: 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 20% 40%, rgba(46,125,50,0.08) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 60% at 80% 60%, rgba(230,92,0,0.07) 0%, transparent 60%),
+      radial-gradient(ellipse 40% 40% at 50% 90%, rgba(45,45,122,0.06) 0%, transparent 60%);
+  }
+  .hero-grid {
+    position: absolute; inset: 0; z-index: 0;
+    background-image:
+      linear-gradient(rgba(46,125,50,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(46,125,50,0.04) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  .hero-content { position: relative; z-index: 1; max-width: 780px; }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    background: white; border: 1px solid var(--border);
+    border-radius: 999px; padding: 0.3rem 1rem;
+    font-size: 0.8rem; font-weight: 600; color: var(--green);
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 8px rgba(46,125,50,0.1);
+    animation: fadeUp 0.6s ease both;
+  }
+  .hero-badge::before {
+    content: '';
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--green);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.3); }
+  }
+  h1 {
+    font-size: clamp(2.8rem, 6vw, 5rem);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    color: var(--navy);
+    margin-bottom: 1.2rem;
+    animation: fadeUp 0.6s 0.1s ease both;
+  }
+  h1 em {
+    font-style: normal;
+    color: var(--green);
+    position: relative;
+  }
+  h1 em::after {
+    content: '';
+    position: absolute; left: 0; bottom: 2px; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--green), var(--orange));
+    border-radius: 2px;
+  }
+  .hero-sub {
+    font-size: 1.15rem; color: var(--muted); line-height: 1.7;
+    max-width: 560px; margin: 0 auto 2.5rem;
+    animation: fadeUp 0.6s 0.2s ease both;
+  }
+  .hero-actions {
+    display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
+    animation: fadeUp 0.6s 0.3s ease both;
+  }
+  .btn-primary {
+    background: var(--green);
+    color: white;
+    padding: 0.85rem 2rem;
+    border-radius: 8px;
+    font-size: 1rem; font-weight: 600;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
+    box-shadow: 0 4px 14px rgba(46,125,50,0.3);
+  }
+  .btn-primary:hover {
+    background: var(--green-light);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(46,125,50,0.4);
+  }
+  .btn-secondary {
+    background: white;
+    color: var(--navy);
+    padding: 0.85rem 2rem;
+    border-radius: 8px;
+    font-size: 1rem; font-weight: 600;
+    text-decoration: none;
+    border: 1px solid var(--border);
+    transition: border-color 0.2s, transform 0.1s;
+  }
+  .btn-secondary:hover {
+    border-color: var(--green);
+    transform: translateY(-2px);
+  }
+  .hero-note {
+    margin-top: 1rem; font-size: 0.82rem; color: var(--muted);
+    animation: fadeUp 0.6s 0.4s ease both;
+  }
+
+  /* ── INTERVALS BADGE ── */
+  .integrations {
+    display: flex; align-items: center; justify-content: center;
+    gap: 0.6rem; margin-top: 3rem;
+    font-size: 0.82rem; color: var(--muted);
+    animation: fadeUp 0.6s 0.5s ease both;
+  }
+  .integrations span { font-weight: 600; color: var(--navy); }
+
+  /* ── STATS BAR ── */
+  .stats {
+    background: var(--navy);
+    padding: 2rem 2.5rem;
+    display: flex; justify-content: center; gap: 4rem; flex-wrap: wrap;
+  }
+  .stat { text-align: center; }
+  .stat-num {
+    font-family: 'Space Mono', monospace;
+    font-size: 1.8rem; font-weight: 700;
+    color: var(--orange);
+  }
+  .stat-label { font-size: 0.82rem; color: rgba(255,255,255,0.6); margin-top: 0.2rem; }
+
+  /* ── FEATURES ── */
+  section { padding: 5rem 2rem; }
+  .section-label {
+    font-size: 0.75rem; font-weight: 700; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--green);
+    margin-bottom: 0.5rem;
+  }
+  .section-title {
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    font-weight: 800; line-height: 1.15;
+    letter-spacing: -0.02em; color: var(--navy);
+    margin-bottom: 1rem;
+  }
+  .section-sub {
+    font-size: 1.05rem; color: var(--muted); line-height: 1.7;
+    max-width: 540px;
+  }
+
+  .features { max-width: 1100px; margin: 0 auto; }
+  .features-header { text-align: center; margin-bottom: 3.5rem; }
+  .features-header .section-sub { margin: 0 auto; }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+  .feature-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.8rem;
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+    position: relative; overflow: hidden;
+  }
+  .feature-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--green), var(--orange));
+    opacity: 0; transition: opacity 0.2s;
+  }
+  .feature-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(46,125,50,0.12);
+    border-color: var(--green);
+  }
+  .feature-card:hover::before { opacity: 1; }
+  .feature-icon {
+    width: 44px; height: 44px; border-radius: 10px;
+    background: var(--green-pale);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.3rem; margin-bottom: 1rem;
+  }
+  .feature-title {
+    font-size: 1.05rem; font-weight: 700; color: var(--navy);
+    margin-bottom: 0.5rem;
+  }
+  .feature-desc {
+    font-size: 0.9rem; color: var(--muted); line-height: 1.65;
+  }
+
+  /* ── HOW IT WORKS ── */
+  .how { background: white; }
+  .how-inner { max-width: 900px; margin: 0 auto; }
+  .how-header { text-align: center; margin-bottom: 3.5rem; }
+  .steps { display: flex; flex-direction: column; gap: 0; position: relative; }
+  .steps::before {
+    content: '';
+    position: absolute; left: 22px; top: 24px; bottom: 24px; width: 2px;
+    background: linear-gradient(to bottom, var(--green), var(--orange));
+  }
+  .step {
+    display: flex; gap: 1.5rem; align-items: flex-start;
+    padding: 1.5rem 1.5rem 1.5rem 0;
+  }
+  .step-num {
+    width: 46px; height: 46px; border-radius: 50%;
+    background: var(--green); color: white;
+    font-family: 'Space Mono', monospace;
+    font-weight: 700; font-size: 0.9rem;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; position: relative; z-index: 1;
+    box-shadow: 0 0 0 4px var(--green-pale);
+  }
+  .step:nth-child(2) .step-num { background: var(--orange); box-shadow: 0 0 0 4px rgba(230,92,0,0.1); }
+  .step:nth-child(3) .step-num { background: var(--navy-mid); box-shadow: 0 0 0 4px rgba(45,45,122,0.1); }
+  .step:nth-child(4) .step-num { background: var(--green-light); box-shadow: 0 0 0 4px var(--green-pale); }
+  .step-body { padding-top: 0.5rem; }
+  .step-title { font-size: 1.05rem; font-weight: 700; color: var(--navy); margin-bottom: 0.3rem; }
+  .step-desc { font-size: 0.9rem; color: var(--muted); line-height: 1.65; }
+
+  /* ── SCIENCE ── */
+  .science { background: var(--navy); color: white; }
+  .science-inner { max-width: 900px; margin: 0 auto; text-align: center; }
+  .science .section-label { color: var(--orange); }
+  .science .section-title { color: white; }
+  .science .section-sub { color: rgba(255,255,255,0.65); margin: 0 auto 2.5rem; }
+  .citations {
+    display: flex; flex-direction: column; gap: 1rem;
+    text-align: left;
+  }
+  .citation {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-left: 3px solid var(--orange);
+    border-radius: 8px;
+    padding: 1rem 1.2rem;
+    font-size: 0.88rem; color: rgba(255,255,255,0.75); line-height: 1.6;
+  }
+  .citation strong { color: white; }
+  .citation a { color: var(--orange-light); }
+
+  /* ── PRICING ── */
+  .pricing { max-width: 700px; margin: 0 auto; text-align: center; }
+  .pricing-header { margin-bottom: 3rem; }
+  .pricing-cards {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;
+  }
+  .pricing-card {
+    background: white; border: 1px solid var(--border);
+    border-radius: 14px; padding: 2rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .pricing-card.featured {
+    border-color: var(--green);
+    box-shadow: 0 8px 24px rgba(46,125,50,0.15);
+    position: relative;
+  }
+  .pricing-card.featured::before {
+    content: 'MOST POPULAR';
+    position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+    background: var(--green); color: white;
+    font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em;
+    padding: 0.2rem 0.8rem; border-radius: 999px;
+  }
+  .pricing-card:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(46,125,50,0.12); }
+  .pricing-tier { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.5rem; }
+  .pricing-price {
+    font-family: 'Space Mono', monospace;
+    font-size: 2.2rem; font-weight: 700; color: var(--navy);
+    line-height: 1;
+  }
+  .pricing-price span { font-size: 1rem; font-weight: 400; color: var(--muted); }
+  .pricing-desc { font-size: 0.85rem; color: var(--muted); margin: 0.5rem 0 1.2rem; }
+  .pricing-features { list-style: none; text-align: left; margin-bottom: 1.5rem; }
+  .pricing-features li {
+    font-size: 0.88rem; color: var(--muted);
+    padding: 0.3rem 0;
+    display: flex; align-items: center; gap: 0.5rem;
+  }
+  .pricing-features li::before { content: '✓'; color: var(--green); font-weight: 700; }
+  .btn-outline {
+    display: block; width: 100%;
+    padding: 0.75rem;
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 600; font-size: 0.9rem;
+    color: var(--navy); text-decoration: none;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .btn-outline:hover { border-color: var(--green); background: var(--green-pale); }
+  .btn-green {
+    display: block; width: 100%;
+    padding: 0.75rem;
+    background: var(--green);
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 600; font-size: 0.9rem;
+    color: white; text-decoration: none;
+    transition: background 0.2s;
+    box-shadow: 0 3px 10px rgba(46,125,50,0.25);
+  }
+  .btn-green:hover { background: var(--green-light); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--navy); color: rgba(255,255,255,0.5);
+    padding: 2.5rem 2.5rem;
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 1rem;
+    font-size: 0.82rem;
+  }
+  footer strong { color: white; }
+  footer a { color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s; }
+  footer a:hover { color: var(--orange-light); }
+  .footer-logo {
+    font-family: 'Space Mono', monospace;
+    font-size: 1.1rem; font-weight: 700;
+    color: var(--green-light);
+  }
+  .footer-logo span { color: var(--orange-light); }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .fade-up {
+    opacity: 0; transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 640px) {
+    .nav-links { display: none; }
+    .pricing-cards { grid-template-columns: 1fr; }
+    .stats { gap: 2rem; }
+    footer { flex-direction: column; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">glyco<span>go</span></div>
+  <div class="nav-links">
+    <a href="#features">Features</a>
+    <a href="#how">How it works</a>
+    <a href="#science">Science</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#" class="nav-cta">Try free →</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-badge">Built for endurance athletes</div>
+    <h1>Fuel that scales with<br><em>your training</em></h1>
+    <p class="hero-sub">Periodised nutrition planning that adjusts carb and calorie targets to your actual training load — not a fixed daily number that ignores how hard you trained.</p>
+    <div class="hero-actions">
+      <a href="#" class="btn-primary">Start free trial →</a>
+      <a href="#features" class="btn-secondary">See how it works</a>
+    </div>
+    <p class="hero-note">3-day free trial · No credit card required</p>
+    <div class="integrations">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2e7d32" stroke-width="1.5"/><path d="M5 8l2 2 4-4" stroke="#2e7d32" stroke-width="1.5" stroke-linecap="round"/></svg>
+      Syncs with <span>Intervals.icu</span> · Based on peer-reviewed sports science
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat">
+    <div class="stat-num">100+</div>
+    <div class="stat-label">Foods in database</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">3-day</div>
+    <div class="stat-label">Free trial</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">RPE 1–100</div>
+    <div class="stat-label">Intensity scale</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">2025</div>
+    <div class="stat-label">Research-backed</div>
+  </div>
+</div>
+
+<!-- FEATURES -->
+<section id="features">
+  <div class="features">
+    <div class="features-header fade-up">
+      <div class="section-label">Features</div>
+      <h2 class="section-title">Everything a nutrition app<br>for athletes should have</h2>
+      <p class="section-sub">Built by an exercise scientist who got frustrated with generic calorie trackers that ignore training load.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card fade-up">
+        <div class="feature-icon">📈</div>
+        <div class="feature-title">Periodised targets</div>
+        <p class="feature-desc">Carb and calorie targets scale with session RPE and duration. Set your own upper/lower limits per hour and control exactly how targets ramp up with intensity.</p>
+      </div>
+      <div class="feature-card fade-up">
+        <div class="feature-icon">🔄</div>
+        <div class="feature-title">Intervals.icu sync</div>
+        <p class="feature-desc">Pulls in your planned and completed sessions automatically. Sets pre/post and during-session fuel targets separately for each workout. Exports nutrition data back as wellness fields.</p>
+      </div>
+      <div class="feature-card fade-up">
+        <div class="feature-icon">🍽️</div>
+        <div class="feature-title">Saved meal templates</div>
+        <p class="feature-desc">Save food combinations as named templates and reload them with one click. No re-entering the same breakfast every morning when you eat similar things on similar training days.</p>
+      </div>
+      <div class="feature-card fade-up">
+        <div class="feature-icon">🧮</div>
+        <div class="feature-title">Suggest quantities</div>
+        <p class="feature-desc">Select your foods for a meal and it calculates how much of each to eat to best hit your remaining carb and calorie targets. Useful when you're wrecked after a long session.</p>
+      </div>
+      <div class="feature-card fade-up">
+        <div class="feature-icon">📊</div>
+        <div class="feature-title">Trend tracking</div>
+        <p class="feature-desc">See how your actual intake compares to targets over time. Daily totals sync back to Intervals.icu wellness fields so nutrition data sits alongside your training load.</p>
+      </div>
+      <div class="feature-card fade-up">
+        <div class="feature-icon">🥗</div>
+        <div class="feature-title">USDA food database</div>
+        <p class="feature-desc">Search thousands of foods from the USDA FoodData Central database, or add your own custom foods with full macro and serving size control.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how" class="how">
+  <div class="how-inner">
+    <div class="how-header fade-up">
+      <div class="section-label">How it works</div>
+      <h2 class="section-title">Set up in minutes</h2>
+      <p class="section-sub">Connect your training data, set your targets, and start fuelling with precision.</p>
+    </div>
+    <div class="steps">
+      <div class="step fade-up">
+        <div class="step-num">01</div>
+        <div class="step-body">
+          <div class="step-title">Set your baseline targets</div>
+          <p class="step-desc">Enter your bodyweight and baseline macro targets (carbs/kg, protein/kg, fat/kg). These form the foundation of your daily nutrition on rest days.</p>
+        </div>
+      </div>
+      <div class="step fade-up">
+        <div class="step-num">02</div>
+        <div class="step-body">
+          <div class="step-title">Configure your intensity scaling</div>
+          <p class="step-desc">Set the upper and lower carb and calorie limits per hour, the RPE point where targets start ramping up, and how steeply they increase. Fully customisable to your training style.</p>
+        </div>
+      </div>
+      <div class="step fade-up">
+        <div class="step-num">03</div>
+        <div class="step-body">
+          <div class="step-title">Sync your sessions</div>
+          <p class="step-desc">Connect Intervals.icu to automatically pull in your training sessions. Each session gets its own pre/post and during-session fuel targets based on duration and intensity.</p>
+        </div>
+      </div>
+      <div class="step fade-up">
+        <div class="step-num">04</div>
+        <div class="step-body">
+          <div class="step-title">Log food and track trends</div>
+          <p class="step-desc">Log meals using saved templates or the USDA database. Use Suggest quantities to hit your targets. Save daily totals and watch trends build over weeks and months.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCIENCE -->
+<section id="science" class="science">
+  <div class="science-inner fade-up">
+    <div class="section-label">Evidence-based</div>
+    <h2 class="section-title">Built on sports science,<br>not guesswork</h2>
+    <p class="section-sub">The carbohydrate periodisation approach and intensity-based scaling are grounded in peer-reviewed research from leading sports science journals.</p>
+    <div class="citations">
+      <div class="citation">
+        <strong>Carbohydrate & energy prediction from training load</strong> — Rothschild et al. (2025). A Novel Method to Predict Carbohydrate and Energy Expenditure During Endurance Exercise Using Measures of Training Load. <em>Sports Medicine</em>, 55(3):753–774. <a href="https://doi.org/10.1007/s40279-024-02131-z">doi:10.1007/s40279-024-02131-z</a>
+      </div>
+      <div class="citation">
+        <strong>Carbohydrate periodisation</strong> — Impey et al. (2018). Fuel for the Work Required: A Theoretical Framework for CHO Periodization. <em>Frontiers in Physiology</em>. <a href="https://doi.org/10.3389/fphys.2018.01405">doi:10.3389/fphys.2018.01405</a>
+      </div>
+      <div class="citation">
+        <strong>Carbohydrate intake during exercise</strong> — Burke et al. (2011). Carbohydrates for training and competition. <em>Journal of Sports Sciences</em>. <a href="https://doi.org/10.1080/02640414.2011.585473">doi:10.1080/02640414.2011.585473</a>
+      </div>
+      <div class="citation">
+        <strong>Protein requirements for athletes</strong> — Morton et al. (2018). A systematic review, meta-analysis and meta-regression of the effect of protein supplementation on resistance training-induced gains in muscle mass. <em>British Journal of Sports Medicine</em>. <a href="https://doi.org/10.1136/bjsports-2017-097608">doi:10.1136/bjsports-2017-097608</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing">
+  <div class="pricing">
+    <div class="pricing-header fade-up">
+      <div class="section-label">Pricing</div>
+      <h2 class="section-title">Simple, honest pricing</h2>
+      <p class="section-sub">Built by one person. Your subscription helps keep this running and supports continued development.</p>
+    </div>
+    <div class="pricing-cards fade-up">
+      <div class="pricing-card">
+        <div class="pricing-tier">Free trial</div>
+        <div class="pricing-price">$0 <span>/ 3 days</span></div>
+        <p class="pricing-desc">Full access, no card needed</p>
+        <ul class="pricing-features">
+          <li>All features included</li>
+          <li>Intervals.icu sync</li>
+          <li>USDA food database</li>
+          <li>No credit card required</li>
+        </ul>
+        <a href="#" class="btn-outline">Start free trial</a>
+      </div>
+      <div class="pricing-card featured">
+        <div class="pricing-tier">Monthly</div>
+        <div class="pricing-price">$5 <span>/ month</span></div>
+        <p class="pricing-desc">Everything, ongoing</p>
+        <ul class="pricing-features">
+          <li>Save daily logs & history</li>
+          <li>Intervals.icu sync</li>
+          <li>Trend tracking</li>
+          <li>Meal templates</li>
+          <li>Custom foods</li>
+        </ul>
+        <a href="#" class="btn-green">Get started →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">glyco<span>go</span></div>
+  <div>© 2026 <strong>GEM Performance</strong> · <strong>G</strong>oal-Driven, <strong>E</strong>vidence-Based, <strong>M</strong>onitoring tools for athletes</div>
+  <div>
+    <a href="mailto:contactgemperformance@gmail.com">contactgemperformance@gmail.com</a>
+  </div>
+</footer>
+
+<script>
+  // Scroll-triggered fade-up animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(el => {
+      if (el.isIntersecting) {
+        el.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.fade-up').forEach((el, i) => {
+    el.style.transitionDelay = `${(i % 4) * 0.08}s`;
+    observer.observe(el);
+  });
+</script>
+</body>
+</html>
