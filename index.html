@@ -82,7 +82,7 @@
   .integrations { display: flex; align-items: center; justify-content: center; gap: 0.6rem; margin-top: 3rem; font-size: 0.82rem; color: var(--muted); animation: fadeUp 0.6s 0.5s ease both; }
   .integrations span { font-weight: 600; color: var(--navy); }
 
-  /* BANNER — 4 equal columns */
+  /* BANNER */
   .stats {
     background: var(--navy);
     display: grid;
@@ -139,20 +139,16 @@
   .how { background: white; }
   .how-inner { max-width: 900px; margin: 0 auto; }
   .how-header { text-align: center; margin-bottom: 3.5rem; }
-  .steps { display: flex; flex-direction: column; gap: 0; position: relative; }
-  .steps {
-  max-width: 600px;
-  margin: 0 auto;
+  .steps { display: flex; flex-direction: column; gap: 0; position: relative; max-width: 600px; margin: 0 auto; }
+  .steps::before {
+    content: '';
+    position: absolute;
+    left: 22px;
+    top: 24px;
+    bottom: 24px;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--green), var(--orange));
   }
-  .steps::before { 
-  content: ''; 
-  position: absolute; 
-  left: 22px; /* <-- this keeps the timeline visually left-aligned */
-  top: 24px; 
-  bottom: 24px; 
-  width: 2px; 
-  background: linear-gradient(to bottom, var(--green), var(--orange)); 
-}
   .step { display: flex; gap: 1.5rem; align-items: flex-start; padding: 1.5rem 1.5rem 1.5rem 0; }
   .step-num { width:46px; height:46px; border-radius:50%; background:var(--green); color:white; font-family:'Space Mono',monospace; font-weight:700; font-size:0.9rem; display:flex; align-items:center; justify-content:center; flex-shrink:0; position:relative; z-index:1; box-shadow:0 0 0 4px var(--green-pale); }
   .step:nth-child(2) .step-num { background:var(--orange); box-shadow:0 0 0 4px rgba(230,92,0,0.1); }
@@ -187,8 +183,6 @@
   footer strong { color: white; }
   footer a { color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s; }
   footer a:hover { color: var(--orange-light); }
-  .footer-logo { font-family: 'Space Mono', monospace; font-size: 1.1rem; font-weight: 700; color: var(--green-light); }
-  .footer-logo span { color: var(--orange-light); }
 
   @keyframes fadeUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
   .fade-up { opacity:0; transform:translateY(24px); transition:opacity 0.6s ease,transform 0.6s ease; }
@@ -325,8 +319,7 @@
         <p class="feature-desc" style="color:rgba(255,255,255,0.45);font-size:0.82rem;">Reads your sessions, calorie and carb targets, and current log — then gives practical, personalised suggestions rather than generic advice.</p>
       </div>
       <div class="chat-demo">
- 
-        <!-- Turn 1: image upload -->
+
         <div style="display:flex;flex-direction:column;align-items:flex-end;gap:0.25rem;">
           <div class="chat-label" style="align-self:flex-end;">You</div>
           <div class="chat-img-attach">
@@ -335,8 +328,7 @@
           </div>
           <div class="chat-msg user">Log my plate of food</div>
         </div>
- 
-        <!-- Turn 1: AI response -->
+
         <div>
           <div class="chat-label">Assistant</div>
           <div class="chat-msg bot">
@@ -350,14 +342,12 @@
           </div>
           <button class="chat-action">+ Log this meal to Lunch</button>
         </div>
- 
-        <!-- Turn 2: snack request -->
+
         <div style="display:flex;flex-direction:column;align-items:flex-end;gap:0.25rem;">
           <div class="chat-label" style="align-self:flex-end;">You</div>
           <div class="chat-msg user">Suggest a good post-run snack</div>
         </div>
- 
-        <!-- Turn 2: AI response -->
+
         <div>
           <div class="chat-label">Assistant</div>
           <div class="chat-msg bot">
@@ -373,10 +363,10 @@
           </div>
           <button class="chat-action">+ Log this snack</button>
         </div>
- 
+
       </div>
     </div>
- 
+
   </div>
 </section>
 
@@ -386,7 +376,7 @@
     <div class="how-header fade-up">
       <div class="section-label">How it works</div>
       <h2 class="section-title">Set up in minutes</h2>
-      <p class="section-sub">Connect your training data, set your targets, and start fuelling with precision.</p>
+      <p class="section-sub" style="text-align:center;margin:0 auto;">Connect your training data, set your targets, and start fuelling with precision.</p>
     </div>
     <div class="steps">
       <div class="step fade-up">
