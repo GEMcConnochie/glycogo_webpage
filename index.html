@@ -140,7 +140,19 @@
   .how-inner { max-width: 900px; margin: 0 auto; }
   .how-header { text-align: center; margin-bottom: 3.5rem; }
   .steps { display: flex; flex-direction: column; gap: 0; position: relative; }
-  .steps::before { content: ''; position: absolute; left:22px; top:24px; bottom:24px; width:2px; background: linear-gradient(to bottom,var(--green),var(--orange)); }
+  .steps {
+  max-width: 600px;
+  margin: 0 auto;
+  }
+  .steps::before { 
+  content: ''; 
+  position: absolute; 
+  left: 22px; /* <-- this keeps the timeline visually left-aligned */
+  top: 24px; 
+  bottom: 24px; 
+  width: 2px; 
+  background: linear-gradient(to bottom, var(--green), var(--orange)); 
+}
   .step { display: flex; gap: 1.5rem; align-items: flex-start; padding: 1.5rem 1.5rem 1.5rem 0; }
   .step-num { width:46px; height:46px; border-radius:50%; background:var(--green); color:white; font-family:'Space Mono',monospace; font-weight:700; font-size:0.9rem; display:flex; align-items:center; justify-content:center; flex-shrink:0; position:relative; z-index:1; box-shadow:0 0 0 4px var(--green-pale); }
   .step:nth-child(2) .step-num { background:var(--orange); box-shadow:0 0 0 4px rgba(230,92,0,0.1); }
@@ -219,7 +231,7 @@
     <div class="hero-badge">Built for endurance athletes</div>
     <h1>Fuel that scales with<br><em>your training</em></h1>
     <p class="hero-sub">
-      Optimized Glycogen = Maximized Performance.<br>
+      Optimized glycogen = maximized performance.<br>
       Periodised nutrition planning that adjusts carb and calorie targets to your training load.
     </p>
     <div class="hero-actions">
@@ -259,7 +271,9 @@
     <div class="features-header fade-up">
       <div class="section-label">Features</div>
       <h2 class="section-title">Nutrition That Moves With Your Training</h2>
-      <p class="section-sub">Track and plan your nutrition with ease using the latest research and technology.</p>
+      <p class="section-sub">
+      Track and plan your nutrition with ease using a data- and detail-driven, customizable approach, powered by the latest research and technology.
+      </p>
     </div>
     <div class="features-grid">
 
