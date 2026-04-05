@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — Glycogo</title>
+<meta name="description" content="Privacy Policy for Glycogo — periodised nutrition planning for endurance athletes.">
+<link rel="canonical" href="https://glycogo.fit/privacy">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --green: #2e7d32; --green-light: #43a047; --green-pale: #e8f5e9;
+    --orange: #e65c00; --orange-light: #ff7043;
+    --navy: #1a1a3e; --navy-mid: #2d2d7a;
+    --bg: #f0f7f4; --white: #ffffff; --text: #1a1a3e;
+    --muted: #5a6a5a; --border: #c8d8c8;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; }
+
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1rem 2.5rem; background: rgba(240,247,244,0.9);
+    backdrop-filter: blur(12px); border-bottom: 1px solid var(--border);
+  }
+  .nav-links { display: flex; gap: 2rem; align-items: center; }
+  .nav-links a { text-decoration: none; color: var(--muted); font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--green); }
+  .nav-cta { background: var(--green) !important; color: white !important; padding: 0.5rem 1.2rem !important; border-radius: 6px !important; font-weight: 600 !important; }
+
+  .page-hero {
+    background: var(--navy);
+    padding: 8rem 2rem 4rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .page-hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image: linear-gradient(rgba(46,125,50,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(46,125,50,0.06) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  .page-hero-content { position: relative; z-index: 1; }
+  .page-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--orange-light); margin-bottom: 0.75rem; }
+  .page-hero h1 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; color: white; letter-spacing: -0.02em; margin-bottom: 0.75rem; }
+  .page-hero p { color: rgba(255,255,255,0.55); font-size: 0.9rem; }
+
+  .tos-wrap { max-width: 780px; margin: 0 auto; padding: 4rem 2rem 6rem; }
+
+  .tos-section { margin-bottom: 2.5rem; }
+  .tos-section h2 {
+    font-size: 1.1rem; font-weight: 700; color: var(--navy);
+    margin-bottom: 0.75rem; padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--green-pale);
+    display: flex; align-items: center; gap: 0.5rem;
+  }
+  .tos-section h2 .num {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.75rem; font-weight: 700;
+    background: var(--green); color: white;
+    width: 24px; height: 24px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .tos-section p { font-size: 0.95rem; color: var(--muted); line-height: 1.75; margin-bottom: 0.75rem; }
+  .tos-section ul { list-style: none; padding: 0; margin: 0.5rem 0 0.75rem; display: flex; flex-direction: column; gap: 0.4rem; }
+  .tos-section ul li { font-size: 0.95rem; color: var(--muted); line-height: 1.65; padding-left: 1.4rem; position: relative; }
+  .tos-section ul li::before { content: ''; position: absolute; left: 0; top: 0.6em; width: 6px; height: 6px; border-radius: 50%; background: var(--green); }
+
+  .highlight-box {
+    background: white; border: 1px solid var(--border);
+    border-left: 4px solid var(--green);
+    border-radius: 10px; padding: 1.2rem 1.4rem;
+    margin-bottom: 2.5rem;
+  }
+  .highlight-box p { font-size: 0.9rem; color: var(--muted); line-height: 1.7; margin: 0; }
+  .highlight-box strong { color: var(--navy); }
+
+  .data-table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.88rem; }
+  .data-table th { background: var(--navy); color: white; padding: 0.7rem 1rem; text-align: left; font-weight: 600; }
+  .data-table th:first-child { border-radius: 8px 0 0 0; }
+  .data-table th:last-child { border-radius: 0 8px 0 0; }
+  .data-table td { padding: 0.7rem 1rem; border-bottom: 1px solid var(--border); color: var(--muted); line-height: 1.55; vertical-align: top; }
+  .data-table tr:last-child td { border-bottom: none; }
+  .data-table tr:nth-child(even) td { background: white; }
+
+  .contact-card {
+    background: var(--navy); border-radius: 12px; padding: 2rem;
+    text-align: center; margin-top: 3rem;
+  }
+  .contact-card p { color: rgba(255,255,255,0.65); font-size: 0.9rem; margin-bottom: 0.75rem; }
+  .contact-card a { color: var(--orange-light); font-weight: 600; text-decoration: none; }
+  .contact-card a:hover { text-decoration: underline; }
+
+  footer { background: var(--navy); color: rgba(255,255,255,0.5); padding: 2.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; font-size: 0.82rem; }
+  footer strong { color: white; }
+  footer a { color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s; }
+  footer a:hover { color: var(--orange-light); }
+
+  @media (max-width: 800px) {
+    .nav-links { display: none; }
+    footer { flex-direction: column; text-align: center; }
+    .data-table { font-size: 0.8rem; }
+    .data-table th, .data-table td { padding: 0.5rem 0.7rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="https://glycogo.fit">
+    <img src="/3dglycogo.svg" alt="Glycogo" style="height:60px;">
+  </a>
+  <div class="nav-links">
+    <a href="https://glycogo.fit#features">Features</a>
+    <a href="https://glycogo.fit#how">How it works</a>
+    <a href="https://glycogo.fit#science">Science</a>
+    <a href="/terms">Terms</a>
+    <a href="https://app.glycogo.fit/" class="nav-cta">Try for free</a>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-content">
+    <div class="page-label">Legal</div>
+    <h1>Privacy Policy</h1>
+    <p>Last updated: April 2026 &nbsp;·&nbsp; Effective immediately</p>
+  </div>
+</div>
+
+<div class="tos-wrap">
+
+  <div class="highlight-box">
+    <p><strong>The short version:</strong> Glycogo collects only what is necessary to provide the service. We do not sell your data. Your nutrition and training data is yours. You can request deletion at any time. This policy explains exactly what we collect, why, and how it is used.</p>
+  </div>
+
+  <div class="tos-section">
+    <h2><span class="num">1</span> Who We Are</h2>
+    <p>Glycogo is operated by GEM Performance, owned by G.E. McConnochie PhD, based in New Zealand. When this policy refers to "we", "us", or "our", it means GEM Performance.</p>
+    <p>Contact: <a href="mailto:contactgemperformance@gmail.com" style="color:var(--green);">contactgemperformance@gmail.com</a></p>
+  </div>
+
+  <div class="tos-section">
+    <h2><span class="num">2</span> What Data We Collect</h2>
+    <p>We collect the minimum data necessary to provide Glycogo's features:</p>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Data</th>
+          <th>Why we collect it</th>
+          <th>Stored where</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Email address</td>
+          <td>Account creation, login, and transactional emails</td>
+          <td>Supabase</td>
+        </tr>
+        <tr>
+          <td>Password (hashed)</td>
+          <td>Authentication — never stored in plain text</td>
+          <td>Supabase</td>
+        </tr>
+        <tr>
+          <td>Display name</td>
+          <td>Personalisation within the app</td>
+          <td>Supabase</td>
+        </tr>
+        <tr>
+          <td>Nutrition logs</td>
+          <td>Food tracking, targets, and trend analysis</td>
+          <td>Supabase</td>
+        </tr>
+        <tr>
+          <td>Body weight & macro targets</td>
+          <td>Calculating personalised nutrition targets</td>
+          <td>Supabase</td>
+        </tr>
+        <tr>
+          <td>Training sessions (via Intervals.icu)</td>
+          <td>Scaling nutrition targets to training load</td>
+          <td>Supabase</td>
+        </tr>
+        <tr>
+          <td>Intervals.icu API key</td>
+          <td>Syncing training data on your behalf</td>
+          <td>Supabase (encrypted)</td>
+        </tr>
+        <tr>
+          <td>Payment information</td>
+          <td>Subscription billing</td>
+          <td>Stripe only — never on our servers</td>
+        </tr>
+        <tr>
+          <td>AI chat messages</td>
+          <td>Generating personalised nutrition responses</td>
+          <td>Sent to Groq, not stored by us</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="tos-section">
+    <h2><span class="num">3</span> How We Use Your Data</h2>
+    <p>Your data is used only to provide and improve Glycogo. Specifically:</p>
+    <ul>
+      <li>To authenticate your account and maintain your session.</li>
+      <li>To calculate and display personalised nutrition and carbohydrate targets.</li>
+      <li>To sync training sessions from Intervals.icu and generate fuel targets.</li>
+      <li>To power the AI nutrition assistant with context about your training and food log.</li>
+      <li>To send transactional emails (account verification, password reset) via Resend.</li>
+      <li>To process subscription payments via Stripe.</li>
+      <li>To analyse anonymised, aggregated usage patterns to improve the app.</li>
+    </ul>
+    <p>We do not use your data for advertising. We do not sell your data to any third party.</p>
+  </div>
+
+  <div class="tos-section">
+    <h2><span class="num">4</span> Third-Party Services</h2>
+    <p>Glycogo uses the following third-party services to operate. Each has its own privacy policy:</p>
+    <ul>
+      <li><strong>Supabase</strong> — database and authentication. Data stored on Supabase servers. <a href="https://supabase.com/privacy" style="color:var(--green);">Privacy policy</a></li>
+      <li><strong>Stripe</strong> — payment processing. Payment data is handled entirely by Stripe and never touches our servers. <a href="https://stripe.com/privacy" style="color:var(--green);">Privacy policy</a></li>
+      <li><strong>Groq</strong> — powers the AI nutrition assistant. Your chat messages and relevant context (training sessions, food log) are sent to Groq to generate responses. Groq does not use API data to train models. <a href="https://groq.com/privacy-policy/" style="color:var(--green);">Privacy policy</a></li>
+      <li><strong>Intervals.icu</strong> — training data sync. Only accessed when you connect your account and only reads session data you authorise. <a href="https://intervals.icu/privacy" style="color:var(--green);">Privacy policy</a></li>
+      <li><strong>Resend</strong> — transactional email delivery (verification, password reset). <a href="https://resend.com/legal/privacy-policy" style="color:var(--green);">Privacy policy</a></li>
+    </ul>
+  </div>
+
+  <div class="tos-section">
+    <h2><span class="num">5</span> Cookies and Sessions</h2>
+    <p>Glycogo uses a single session cookie to keep you logged in across visits. This cookie stores your Supabase refresh token and expires after 30 days or when you log out.</p>
+    <p>We do not use advertising cookies, tracking pixels, or analytics cookies. No third-party tracking scripts are loaded on the app.</p>
+  </div>
+
+  <div class="tos-section">
+    <h2><span class="num">6</span> Data Retention</h2>
+    <p>Your data is retained for as long as your account is active. If you delete your account:</p>
+    <ul>
+      <li>Your personal data and nutrition logs are deleted within 30 days.</li>
+      <li>Anonymised aggregate data (e.g. total number of logs) may be retained.</li>
+      <li>Stripe retains payment records as required by financial regulations.</li>
+    </ul>
+  </div>
+
+  <div class="tos-section">
+    <h2><span class="num">7</span> Your Rights</h2>
+    <p>Under the New Zealand Privacy Act 2020, you have the right to:</p>
+    <ul>
+      <li>Access the personal information we hold about you.</li>
+      <li>Request correction of inaccurate information.</li>
+      <li>Request deletion of your account and associated data.</li>
+      <li>Withdraw consent for data processing (this will require account deletion).</li>
+    </ul>
+    <p>To exercise any of these rights, email us at <a href="mailto:contactgemperformance@gmail.com" style="color:var(--green);">contactgemperformance@gmail.com</a>. We will respond within 20 working days as required by law.</p>
+  </div>
+
+  <div class="tos-section">
+    <h2><span class="num">8</span> Data Security</h2>
+    <p>We take reasonable steps to protect your data:</p>
+    <ul>
+      <li>All data is transmitted over HTTPS.</li>
+      <li>Passwords are hashed by Supabase and never stored in plain text.</li>
+      <li>Your Intervals.icu API key is stored encrypted.</li>
+      <li>Payment data never passes through our servers — handled entirely by Stripe.</li>
+      <li>Access to the database is restricted and authenticated.</li>
+    </ul>
+    <p>No system is completely secure. If you believe your account has been compromised, contact us immediately.</p>
+  </div>
+
+  <div class="tos-section">
+    <h2><span class="num">9</span> Children's Privacy</h2>
+    <p>Glycogo is not intended for use by anyone under the age of 16. We do not knowingly collect personal data from children. If you believe a child has provided us with personal information, please contact us and we will delete it promptly.</p>
+  </div>
+
+  <div class="tos-section">
+    <h2><span class="num">10</span> Changes to This Policy</h2>
+    <p>We may update this Privacy Policy from time to time. When we do, we will update the date at the top of this page. For significant changes, we will notify you by email. Continued use of Glycogo after changes constitutes acceptance of the updated policy.</p>
+  </div>
+
+  <div class="tos-section">
+    <h2><span class="num">11</span> Governing Law</h2>
+    <p>This Privacy Policy is governed by the laws of New Zealand, including the Privacy Act 2020. Any disputes will be subject to the jurisdiction of the New Zealand courts and the Office of the Privacy Commissioner.</p>
+  </div>
+
+  <div class="contact-card">
+    <p>Questions or requests regarding your privacy?</p>
+    <a href="mailto:contactgemperformance@gmail.com">contactgemperformance@gmail.com</a>
+    <p style="margin-top:0.75rem;">GEM Performance · G.E. McConnochie PhD · New Zealand</p>
+  </div>
+
+</div>
+
+<footer>
+  <div>
+    2026 <strong>GEM Performance</strong> · <strong>G</strong>oal-Driven, <strong>E</strong>vidence-Based, <strong>M</strong>onitoring tools for athletes<br>
+    <span style="font-size:0.74rem;">G.E.McConnochie PhD &nbsp;·&nbsp; <a href="mailto:contactgemperformance@gmail.com">contactgemperformance@gmail.com</a></span>
+  </div>
+  <div style="display:flex;gap:1rem;align-items:center;flex-wrap:wrap;">
+    <a href="/terms" style="color:rgba(255,255,255,0.6);font-size:0.82rem;text-decoration:underline;">Terms of Service</a>
+    <a href="/privacy" style="color:rgba(255,255,255,0.6);font-size:0.82rem;text-decoration:underline;">Privacy Policy</a>
+    <a href="https://app.glycogo.fit/" style="background:var(--green);color:white;padding:0.5rem 1.2rem;border-radius:6px;font-weight:600;font-size:0.85rem;text-decoration:none;">Try for free</a>
+  </div>
+</footer>
+
+</body>
+</html>
