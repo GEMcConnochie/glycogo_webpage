@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms of Service — Glycogo</title>
+<meta name="description" content="Terms of Service for Glycogo — periodised nutrition planning for endurance athletes.">
+<link rel="canonical" href="https://glycogo.fit/terms">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --green: #2e7d32; --green-light: #43a047; --green-pale: #e8f5e9;
+    --orange: #e65c00; --orange-light: #ff7043;
+    --navy: #1a1a3e; --navy-mid: #2d2d7a;
+    --bg: #f0f7f4; --white: #ffffff; --text: #1a1a3e;
+    --muted: #5a6a5a; --border: #c8d8c8;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; }
+
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1rem 2.5rem; background: rgba(240,247,244,0.9);
+    backdrop-filter: blur(12px); border-bottom: 1px solid var(--border);
+  }
+  .nav-logo { font-family: 'Space Mono', monospace; font-size: 1.4rem; font-weight: 700; color: var(--green); letter-spacing: -0.02em; text-decoration: none; }
+  .nav-logo span { color: var(--orange); }
+  .nav-links { display: flex; gap: 2rem; align-items: center; }
+  .nav-links a { text-decoration: none; color: var(--muted); font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--green); }
+  .nav-cta { background: var(--green) !important; color: white !important; padding: 0.5rem 1.2rem !important; border-radius: 6px !important; font-weight: 600 !important; }
+
+  /* PAGE HERO */
+  .page-hero {
+    background: var(--navy);
+    padding: 8rem 2rem 4rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .page-hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image: linear-gradient(rgba(46,125,50,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(46,125,50,0.06) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  .page-hero-content { position: relative; z-index: 1; }
+  .page-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--orange-light); margin-bottom: 0.75rem; }
+  .page-hero h1 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; color: white; letter-spacing: -0.02em; margin-bottom: 0.75rem; }
+  .page-hero p { color: rgba(255,255,255,0.55); font-size: 0.9rem; }
+
+  /* CONTENT */
+  .tos-wrap { max-width: 780px; margin: 0 auto; padding: 4rem 2rem 6rem; }
+
+  .tos-section { margin-bottom: 2.5rem; }
+  .tos-section h2 {
+    font-size: 1.1rem; font-weight: 700; color: var(--navy);
+    margin-bottom: 0.75rem; padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--green-pale);
+    display: flex; align-items: center; gap: 0.5rem;
+  }
+  .tos-section h2 .num {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.75rem; font-weight: 700;
+    background: var(--green); color: white;
+    width: 24px; height: 24px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .tos-section p { font-size: 0.95rem; color: var(--muted); line-height: 1.75; margin-bottom: 0.75rem; }
+  .tos-section ul { list-style: none; padding: 0; margin: 0.5rem 0 0.75rem; display: flex; flex-direction: column; gap: 0.4rem; }
+  .tos-section ul li { font-size: 0.95rem; color: var(--muted); line-height: 1.65; padding-left: 1.4rem; position: relative; }
+  .tos-section ul li::before { content: ''; position: absolute; left: 0; top: 0.6em; width: 6px; height: 6px; border-radius: 50%; background: var(--green); }
+
+  .highlight-box {
+    background: white; border: 1px solid var(--border);
+    border-left: 4px solid var(--orange);
+    border-radius: 10px; padding: 1.2rem 1.4rem;
+    margin-bottom: 2.5rem;
+  }
+  .highlight-box p { font-size: 0.9rem; color: var(--muted); line-height: 1.7; margin: 0; }
+  .highlight-box strong { color: var(--navy); }
+
+  .contact-card {
+    background: var(--navy); border-radius: 12px; padding: 2rem;
+    text-align: center; margin-top: 3rem;
+  }
+  .contact-card p { color: rgba(255,255,255,0.65); font-size: 0.9rem; margin-bottom: 0.75rem; }
+  .contact-card a { color: var(--orange-light); font-weight: 600; text-decoration: none; }
+  .contact-card a:hover { text-decoration: underline; }
+
+  footer { background: var(--navy); color: rgba(255,255,255,0.5); padding: 2.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; font-size: 0.82rem; }
+  footer strong { color: white; }
+  footer a { color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s; }
+  footer a:hover { color: var(--orange-light); }
+
+  @media (max-width: 800px) {
+    .nav-links { display: none; }
+    footer { flex-direction: column; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="https://glycogo.fit">
+  <img src="/3dglycogo.svg" alt="Glycogo" style="height:60px;">
+</a>
+  <div class="nav-links">
+    <a href="https://glycogo.fit#features">Features</a>
+    <a href="https://glycogo.fit#how">How it works</a>
+    <a href="https://glycogo.fit#science">Science</a>
+    <a href="https://app.glycogo.fit/" class="nav-cta">Try for free</a>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-content">
+    <div class="page-label">Legal</div>
+    <h1>Terms of Service</h1>
+    <p>Last updated: April 2026 &nbsp;·&nbsp; Effective immediately</p>
+  </div>
+</div>
+
+<div class="tos-wrap">
+
+  <div class="highlight-box">
+    <p><strong>Please read these terms carefully.</strong> By creating an account or using Glycogo, you agree to be bound by these Terms of Service. If you do not agree, please do not use the service. These terms constitute a legally binding agreement between you and GEM Performance (G.E. McConnochie PhD).</p>
+  </div>
+
+  <div class="tos-section">
+    <h2><span class="num">1</span> About Glycogo</h2>
+    <p>Glycogo is a periodised nutrition planning tool designed for endurance athletes. It provides carbohydrate and calorie targets scaled to training load, food logging, training sync via Intervals.icu, and an AI nutrition assistant.</p>
+    <p>Glycogo is operated by GEM Performance, owned by G.E. McConnochie PhD, based in New Zealand.</p>
+  </div>
+
+  <div class="tos-section">
+    <h2><span class="num">2</span> Not Medical Advice</h2>
+    <p>Glycogo is a nutrition planning and tracking tool. It is <strong>not</strong> a medical service and does not provide medical advice, diagnosis, or treatment. All content, targets, and suggestions are for informational and performance planning purposes only.</p>
+    <ul>
+      <li>Consult a qualified healthcare professional or registered dietitian before making significant changes to your diet.</li>
+      <li>If you have a medical condition, eating disorder, or specific dietary requirement, seek professional guidance before using this app.</li>
+      <li>GEM Performance accepts no liability for health outcomes arising from use of Glycogo.</li>
+    </ul>
+  </div>
+
+  <div class="tos-section">
+    <h2><span class="num">3</span> Free Trial</h2>
+    <p>Glycogo offers a 3-day free trial to new users. The trial begins at the time of account creation.</p>
+    <ul>
+      <li>No credit card is required to start the trial.</li>
+      <li>After the trial period, access to paid features requires an active subscription.</li>
+      <li>Trial periods are non-transferable and available once per person.</li>
+      <li>Creating multiple accounts to extend trial access is prohibited and may result in permanent account termination.</li>
+    </ul>
+  </div>
+
+  <div class="tos-section">
+    <h2><span class="num">4</span> Subscriptions and Payment</h2>
+    <p>Paid subscriptions are processed securely via Stripe. By subscribing, you agree to Stripe's terms of service in addition to these terms.</p>
+    <ul>
+      <li>Subscriptions are billed on a recurring basis (monthly or annually, as selected).</li>
+      <li>You may cancel your subscription at any time. Access continues until the end of the current billing period.</li>
+      <li>Refunds are not provided for partial billing periods.</li>
+      <li>Pricing is listed in NZD unless otherwise stated and may be subject to change with reasonable notice.</li>
+      <li>GEM Performance reserves the right to modify pricing with at least 14 days notice to existing subscribers.</li>
+    </ul>
+  </div>
+
+  <div class="tos-section">
+    <h2><span class="num">5</span> Account Responsibilities</h2>
+    <p>You are responsible for maintaining the security of your account and for all activity that occurs under it.</p>
+    <ul>
+      <li>You must be at least 16 years of age to create an account.</li>
+      <li>You must provide accurate information during registration.</li>
+      <li>You must use a permanent email address — disposable or temporary email addresses are not permitted.</li>
+      <li>One account per person. Creating multiple accounts to circumvent trial limits or restrictions is prohibited.</li>
+      <li>You must not share your account credentials with others.</li>
+      <li>Notify us immediately at <a href="mailto:contactgemperformance@gmail.com">contactgemperformance@gmail.com</a> if you suspect unauthorised access.</li>
+    </ul>
+  </div>
+
+  <div class="tos-section">
+    <h2><span class="num">6</span> Acceptable Use</h2>
+    <p>You agree not to misuse Glycogo. Prohibited conduct includes:</p>
+    <ul>
+      <li>Attempting to reverse-engineer, scrape, or copy any part of the application.</li>
+      <li>Using the service in any way that could damage, disable, or impair it.</li>
+      <li>Attempting to gain unauthorised access to any part of the system.</li>
+      <li>Using automated tools or bots to interact with the service.</li>
+      <li>Providing false information or impersonating others.</li>
+    </ul>
+  </div>
+
+  <div class="tos-section">
+    <h2><span class="num">7</span> Data and Privacy</h2>
+    <p>Your data is stored securely using Supabase. We collect only what is necessary to provide the service — including your email address, nutrition logs, and training data synced from Intervals.icu.</p>
+    <ul>
+      <li>We do not sell your personal data to third parties.</li>
+      <li>Nutrition and training data you enter remains yours.</li>
+      <li>We may use anonymised, aggregated data to improve the service.</li>
+      <li>You may request deletion of your account and associated data at any time by emailing us.</li>
+      <li>Payment information is handled entirely by Stripe and is never stored on our servers.</li>
+    </ul>
+    <p>By using Glycogo you consent to data being stored and processed in accordance with these terms and applicable New Zealand privacy law (Privacy Act 2020).</p>
+  </div>
+
+  <div class="tos-section">
+    <h2><span class="num">8</span> Third-Party Integrations</h2>
+    <p>Glycogo integrates with third-party services including Intervals.icu, Supabase, Stripe, and OpenAI. Use of these services is subject to their respective terms and privacy policies. GEM Performance is not responsible for the availability or conduct of third-party services.</p>
+  </div>
+
+  <div class="tos-section">
+    <h2><span class="num">9</span> Availability and Changes</h2>
+    <p>We aim to keep Glycogo available at all times but do not guarantee uninterrupted access. We reserve the right to:</p>
+    <ul>
+      <li>Modify, suspend, or discontinue any part of the service at any time.</li>
+      <li>Update these Terms of Service with reasonable notice to users.</li>
+      <li>Change features included in free or paid tiers.</li>
+    </ul>
+    <p>Continued use of Glycogo after changes to these terms constitutes acceptance of the updated terms.</p>
+  </div>
+
+  <div class="tos-section">
+    <h2><span class="num">10</span> Termination</h2>
+    <p>GEM Performance reserves the right to suspend or terminate accounts that violate these terms, including but not limited to: creating multiple accounts, abuse of the trial system, or misuse of the platform. No refund will be issued for termination due to violations of these terms.</p>
+    <p>You may terminate your account at any time by contacting us.</p>
+  </div>
+
+  <div class="tos-section">
+    <h2><span class="num">11</span> Limitation of Liability</h2>
+    <p>To the maximum extent permitted by law, GEM Performance shall not be liable for any indirect, incidental, or consequential damages arising from your use of Glycogo, including but not limited to loss of data, injury, or health outcomes.</p>
+    <p>Our total liability to you for any claim shall not exceed the amount you paid for the service in the 3 months preceding the claim.</p>
+  </div>
+
+  <div class="tos-section">
+    <h2><span class="num">12</span> Governing Law</h2>
+    <p>These Terms of Service are governed by the laws of New Zealand. Any disputes shall be subject to the exclusive jurisdiction of the New Zealand courts.</p>
+  </div>
+
+  <div class="contact-card">
+    <p>Questions about these terms? We're happy to help.</p>
+    <a href="mailto:contactgemperformance@gmail.com">contactgemperformance@gmail.com</a>
+    <p style="margin-top:0.75rem;">GEM Performance · G.E. McConnochie PhD </p>
+  </div>
+
+</div>
+
+<footer>
+  <div>
+    2026 <strong>GEM Performance</strong> · <strong>G</strong>oal-Driven, <strong>E</strong>vidence-Based, <strong>M</strong>onitoring tools for athletes<br>
+    <span style="font-size:0.74rem;">G.E.McConnochie PhD &nbsp;·&nbsp; <a href="mailto:contactgemperformance@gmail.com">contactgemperformance@gmail.com</a></span>
+  </div>
+  <a href="https://app.glycogo.fit/" style="background:var(--green);color:white;padding:0.5rem 1.2rem;border-radius:6px;font-weight:600;font-size:0.85rem;text-decoration:none;">Try for free</a>
+</footer>
+
+</body>
+</html>
