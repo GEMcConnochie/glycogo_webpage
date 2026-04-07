@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Instructions — Glycogo</title>
+<meta name="description" content="How to use Glycogo — periodised nutrition planning for athletes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --green: #2e7d32; --green-light: #43a047; --green-pale: #e8f5e9;
+    --orange: #e65c00; --orange-light: #ff7043;
+    --navy: #1a1a3e; --navy-mid: #2d2d7a;
+    --bg: #f0f7f4; --white: #ffffff; --text: #1a1a3e;
+    --muted: #5a6a5a; --border: #c8d8c8;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1rem 2.5rem; background: rgba(240,247,244,0.9);
+    backdrop-filter: blur(12px); border-bottom: 1px solid var(--border);
+  }
+  .nav-logo { font-family: 'Space Mono', monospace; font-size: 1.4rem; font-weight: 700; color: var(--green); letter-spacing: -0.02em; }
+  .nav-logo span { color: var(--orange); }
+  .nav-links { display: flex; gap: 2rem; align-items: center; }
+  .nav-links a { text-decoration: none; color: var(--muted); font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--green); }
+  .nav-cta { background: var(--green) !important; color: white !important; padding: 0.5rem 1.2rem !important; border-radius: 6px !important; font-weight: 600 !important; }
+  .nav-cta:hover { background: var(--green-light) !important; }
+
+  /* PAGE HERO */
+  .page-hero {
+    padding: 8rem 2rem 4rem;
+    background: var(--navy);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .page-hero-bg {
+    position: absolute; inset: 0; z-index: 0;
+    background: radial-gradient(ellipse 60% 70% at 30% 50%, rgba(46,125,50,0.12) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 60% at 75% 60%, rgba(230,92,0,0.08) 0%, transparent 60%);
+  }
+  .page-hero-grid {
+    position: absolute; inset: 0; z-index: 0;
+    background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  .page-hero-content { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
+  .page-hero-badge {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 999px;
+    padding: 0.3rem 1rem; font-size: 0.8rem; font-weight: 600; color: var(--green-light);
+    margin-bottom: 1.2rem;
+  }
+  .page-hero h1 { font-size: clamp(2.2rem,5vw,3.8rem); font-weight: 800; line-height: 1.08; letter-spacing: -0.03em; color: white; margin-bottom: 1rem; }
+  .page-hero h1 em { font-style: normal; color: var(--orange-light); }
+  .page-hero p { font-size: 1.1rem; color: rgba(255,255,255,0.65); line-height: 1.7; max-width: 520px; margin: 0 auto; }
+
+  /* LAYOUT */
+  .docs-layout {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    max-width: 1100px;
+    margin: 0 auto;
+    gap: 0;
+    padding: 3rem 2rem;
+    align-items: start;
+  }
+
+  /* SIDEBAR */
+  .sidebar {
+    position: sticky;
+    top: 90px;
+    padding-right: 2rem;
+  }
+  .sidebar-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.75rem; padding-left: 0.5rem; }
+  .sidebar-nav { display: flex; flex-direction: column; gap: 0.15rem; }
+  .sidebar-nav a {
+    display: flex; align-items: center; gap: 0.5rem;
+    text-decoration: none; color: var(--muted); font-size: 0.88rem; font-weight: 500;
+    padding: 0.45rem 0.75rem; border-radius: 7px; transition: all 0.15s;
+    border-left: 2px solid transparent;
+  }
+  .sidebar-nav a:hover { color: var(--green); background: var(--green-pale); }
+  .sidebar-nav a.active { color: var(--green); background: var(--green-pale); border-left-color: var(--green); font-weight: 600; }
+  .sidebar-nav a svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+  .sidebar-divider { height: 1px; background: var(--border); margin: 0.6rem 0.5rem; }
+
+  /* CONTENT */
+  .docs-content { min-width: 0; }
+
+  /* STEP SECTIONS */
+  .step-section {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+    transition: box-shadow 0.2s;
+  }
+  .step-section:hover { box-shadow: 0 8px 32px rgba(46,125,50,0.08); }
+
+  .step-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem 1.8rem;
+    border-bottom: 1px solid var(--border);
+    background: linear-gradient(to right, var(--green-pale), transparent);
+  }
+  .step-header.orange { background: linear-gradient(to right, rgba(230,92,0,0.06), transparent); }
+  .step-header.navy { background: linear-gradient(to right, rgba(26,26,62,0.05), transparent); }
+
+  .step-num-badge {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: white;
+    background: var(--green);
+    width: 32px; height: 32px;
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .step-num-badge.orange { background: var(--orange); }
+  .step-num-badge.navy { background: var(--navy-mid); }
+  .step-num-badge.teal { background: var(--green-light); }
+  .step-num-badge.ai { background: linear-gradient(135deg, var(--navy-mid), var(--orange)); }
+
+  .step-header-text h2 { font-size: 1.1rem; font-weight: 700; color: var(--navy); }
+  .step-header-text p { font-size: 0.85rem; color: var(--muted); margin-top: 0.15rem; }
+
+  .step-body { padding: 1.8rem; }
+
+  /* CONTENT ELEMENTS */
+  .step-body p { font-size: 0.93rem; color: var(--muted); line-height: 1.75; margin-bottom: 1rem; }
+  .step-body p:last-child { margin-bottom: 0; }
+  .step-body strong { color: var(--navy); font-weight: 600; }
+
+  /* SETTINGS TABLE */
+  .settings-table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.88rem; }
+  .settings-table th { text-align: left; padding: 0.6rem 0.9rem; background: var(--green-pale); color: var(--green); font-weight: 700; font-size: 0.75rem; letter-spacing: 0.05em; text-transform: uppercase; }
+  .settings-table th:first-child { border-radius: 8px 0 0 0; }
+  .settings-table th:last-child { border-radius: 0 8px 0 0; }
+  .settings-table td { padding: 0.75rem 0.9rem; border-bottom: 1px solid var(--border); vertical-align: top; color: var(--muted); line-height: 1.6; }
+  .settings-table td:first-child { color: var(--navy); font-weight: 600; white-space: nowrap; }
+  .settings-table tr:last-child td { border-bottom: none; }
+  .settings-table tr:hover td { background: rgba(46,125,50,0.02); }
+
+  /* RANGE BADGE */
+  .range-badge {
+    display: inline-block;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.75rem;
+    background: var(--green-pale);
+    color: var(--green);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    padding: 0.15rem 0.5rem;
+    font-weight: 700;
+    margin-left: 0.4rem;
+  }
+
+  /* CHECKLIST */
+  .checklist { display: flex; flex-direction: column; gap: 0.6rem; margin: 1rem 0; }
+  .checklist-item {
+    display: flex; align-items: flex-start; gap: 0.75rem;
+    font-size: 0.9rem; color: var(--muted); line-height: 1.6;
+  }
+  .checklist-item svg { width: 18px; height: 18px; flex-shrink: 0; margin-top: 2px; }
+  .check-circle { stroke: var(--green); fill: var(--green-pale); }
+  .check-check { stroke: var(--green); fill: none; }
+
+  /* AI FEATURES GRID */
+  .ai-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; margin: 1rem 0; }
+  .ai-feature {
+    background: rgba(26,26,62,0.04);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1rem 1.1rem;
+    display: flex; gap: 0.7rem; align-items: flex-start;
+  }
+  .ai-feature-icon { width: 32px; height: 32px; border-radius: 8px; background: var(--navy); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .ai-feature-icon svg { width: 15px; height: 15px; stroke: white; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  .ai-feature h4 { font-size: 0.88rem; font-weight: 700; color: var(--navy); margin-bottom: 0.2rem; }
+  .ai-feature p { font-size: 0.8rem; color: var(--muted); line-height: 1.5; margin: 0; }
+
+  /* TIP BOX */
+  .tip {
+    display: flex; gap: 0.75rem; align-items: flex-start;
+    background: rgba(46,125,50,0.06); border: 1px solid rgba(46,125,50,0.2);
+    border-left: 3px solid var(--green);
+    border-radius: 8px; padding: 0.9rem 1.1rem;
+    margin: 1rem 0; font-size: 0.87rem; color: var(--muted); line-height: 1.65;
+  }
+  .tip svg { width: 16px; height: 16px; stroke: var(--green); fill: none; stroke-width: 2; flex-shrink: 0; margin-top: 2px; }
+
+  /* REFERENCES */
+  .refs { background: var(--navy); color: rgba(255,255,255,0.6); }
+  .refs-inner { max-width: 1100px; margin: 0 auto; padding: 3rem 2rem; }
+  .refs h3 { font-size: 0.85rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 1.25rem; }
+  .refs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 0.75rem; }
+  .ref-item { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-left: 3px solid var(--orange); border-radius: 8px; padding: 0.9rem 1.1rem; font-size: 0.82rem; line-height: 1.6; }
+  .ref-item strong { color: rgba(255,255,255,0.85); display: block; margin-bottom: 0.25rem; }
+  .ref-item a { color: var(--orange-light); text-decoration: none; }
+  .ref-item a:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer { background: var(--navy); color: rgba(255,255,255,0.5); padding: 2.5rem 2.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; font-size: 0.82rem; border-top: 1px solid rgba(255,255,255,0.06); }
+  footer strong { color: white; }
+  footer a { color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s; }
+  footer a:hover { color: var(--orange-light); }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+  .fade-up { opacity:0; transform:translateY(20px); transition:opacity 0.55s ease,transform 0.55s ease; }
+  .fade-up.visible { opacity:1; transform:translateY(0); }
+
+  /* RESPONSIVE */
+  @media (max-width: 860px) {
+    .docs-layout { grid-template-columns: 1fr; padding: 2rem 1.2rem; }
+    .sidebar { display: none; }
+    .ai-grid { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+    footer { flex-direction: column; text-align: center; }
+  }
+  @media (max-width: 540px) {
+    .page-hero { padding: 6rem 1.5rem 3rem; }
+    .step-header { padding: 1.2rem 1.3rem; }
+    .step-body { padding: 1.3rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/" style="display:flex;align-items:center;text-decoration:none;">
+    <img src="3dglycogo.svg" alt="Glycogo" style="height:60px;">
+  </a>
+  <div class="nav-links">
+    <a href="/#features">Features</a>
+    <a href="/#how">How it works</a>
+    <a href="/#science">Science</a>
+    <a href="/#support">Support</a>
+    <a href="https://app.glycogo.fit/" class="nav-cta">Try for free</a>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-grid"></div>
+  <div class="page-hero-content">
+    <div class="page-hero-badge">Documentation</div>
+    <h1>Getting started with <em>Glycogo</em></h1>
+    <p>Everything you need to set up periodised nutrition, sync your training, and start fuelling with precision.</p>
+  </div>
+</div>
+
+<!-- MAIN LAYOUT -->
+<div class="docs-layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-label">On this page</div>
+    <nav class="sidebar-nav">
+      <a href="#login" class="active">
+        <svg viewBox="0 0 24 24"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
+        Log In
+      </a>
+      <a href="#settings">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+        Configure Settings
+      </a>
+      <a href="#database">
+        <svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+        Food Database
+      </a>
+      <a href="#sessions">
+        <svg viewBox="0 0 24 24"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+        Sync Sessions
+      </a>
+      <a href="#logging">
+        <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        Log Nutrition
+      </a>
+      <a href="#ai">
+        <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        AI Assistant
+      </a>
+      <a href="#save">
+        <svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+        Save &amp; Track Trends
+      </a>
+      <div class="sidebar-divider"></div>
+      <div class="sidebar-label">Reference</div>
+      <a href="#settings-ref">
+        <svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        Settings Reference
+      </a>
+      <a href="#refs">
+        <svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+        References
+      </a>
+    </nav>
+  </aside>
+
+  <!-- CONTENT -->
+  <main class="docs-content">
+
+    <!-- Overview -->
+    <div class="step-section fade-up" style="background:linear-gradient(135deg,var(--navy) 0%,var(--navy-mid) 100%);border-color:rgba(255,255,255,0.1);margin-bottom:1.5rem;">
+      <div style="padding:1.8rem 2rem;">
+        <div style="font-size:0.75rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--orange-light);margin-bottom:0.5rem;">Overview</div>
+        <p style="font-size:1.05rem;font-weight:600;color:white;margin-bottom:0.6rem;">Glycogo aligns your food intake with your training demands.</p>
+        <p style="color:rgba(255,255,255,0.65);font-size:0.93rem;line-height:1.75;margin:0;">Set personalised macronutrient targets, log meals, plan sessions, and monitor trends — all in one place. Follow the steps below to get up and running in minutes.</p>
+      </div>
+    </div>
+
+    <!-- STEP 1: Log In -->
+    <div id="login" class="step-section fade-up">
+      <div class="step-header">
+        <div class="step-num-badge">01</div>
+        <div class="step-header-text">
+          <h2>Log In</h2>
+          <p>Create an account to save your data and enable syncing</p>
+        </div>
+      </div>
+      <div class="step-body">
+        <p>Create an account to save food logs, custom foods, and settings, and to enable Intervals.icu sync. Your data is linked to your account and persists across sessions.</p>
+        <div class="checklist">
+          <div class="checklist-item">
+            <svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" class="check-circle" stroke-width="1.5"/><path d="M6.5 10l2.5 2.5 4.5-4.5" class="check-check" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Food logs and custom foods saved to your account
+          </div>
+          <div class="checklist-item">
+            <svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" class="check-circle" stroke-width="1.5"/><path d="M6.5 10l2.5 2.5 4.5-4.5" class="check-check" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Settings and targets remembered between visits
+          </div>
+          <div class="checklist-item">
+            <svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" class="check-circle" stroke-width="1.5"/><path d="M6.5 10l2.5 2.5 4.5-4.5" class="check-check" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Required for Intervals.icu training sync
+          </div>
+          <div class="checklist-item">
+            <svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" class="check-circle" stroke-width="1.5"/><path d="M6.5 10l2.5 2.5 4.5-4.5" class="check-check" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Trend history stored and available over time
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 2: Configure Settings -->
+    <div id="settings" class="step-section fade-up">
+      <div class="step-header orange">
+        <div class="step-num-badge orange">02</div>
+        <div class="step-header-text">
+          <h2>Configure Settings</h2>
+          <p>Set your bodyweight-based targets and training intensity scaling</p>
+        </div>
+      </div>
+      <div class="step-body">
+        <p>Set your bodyweight and baseline macronutrient targets — carbohydrates, protein, and fat per kilogram of bodyweight. These form the foundation of your daily nutrition on rest days.</p>
+        <p>Then configure how your carbohydrate and calorie targets scale with session intensity. This is where Glycogo's periodisation logic lives — targets increase with RPE and duration, so you eat more on hard days and less on easy ones.</p>
+        <div class="tip">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          Start with the default scaling settings and adjust over time as you learn how your body responds to different fuelling levels.
+        </div>
+        <p>See the <a href="#settings-ref" style="color:var(--green);font-weight:600;">Settings Reference</a> below for a full description of every parameter and recommended starting ranges.</p>
+      </div>
+    </div>
+
+    <!-- STEP 3: Food Database -->
+    <div id="database" class="step-section fade-up">
+      <div class="step-header navy">
+        <div class="step-num-badge navy">03</div>
+        <div class="step-header-text">
+          <h2>Build Your Food Database</h2>
+          <p>Search USDA foods or add your own custom entries</p>
+        </div>
+      </div>
+      <div class="step-body">
+        <p>Search thousands of foods from the USDA FoodData Central database, or add custom foods with full macro and serving-size control. Head to the <strong>Food Database</strong> tab to manage your library.</p>
+        <div class="checklist">
+          <div class="checklist-item">
+            <svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" class="check-circle" stroke-width="1.5"/><path d="M6.5 10l2.5 2.5 4.5-4.5" class="check-check" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Search the <strong>USDA FoodData Central</strong> database for verified nutritional data</span>
+          </div>
+          <div class="checklist-item">
+            <svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" class="check-circle" stroke-width="1.5"/><path d="M6.5 10l2.5 2.5 4.5-4.5" class="check-check" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Add custom foods with your own macros and serving sizes
+          </div>
+          <div class="checklist-item">
+            <svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" class="check-circle" stroke-width="1.5"/><path d="M6.5 10l2.5 2.5 4.5-4.5" class="check-check" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Edit macros and serving sizes at any time
+          </div>
+          <div class="checklist-item">
+            <svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" class="check-circle" stroke-width="1.5"/><path d="M6.5 10l2.5 2.5 4.5-4.5" class="check-check" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Your custom foods are saved to your account for reuse
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 4: Sync Sessions -->
+    <div id="sessions" class="step-section fade-up">
+      <div class="step-header">
+        <div class="step-num-badge teal">04</div>
+        <div class="step-header-text">
+          <h2>Add or Sync Training Sessions</h2>
+          <p>Manual entry or automatic import via Intervals.icu</p>
+        </div>
+      </div>
+      <div class="step-body">
+        <p>Enter session duration and RPE manually to calculate fuel targets, or sync planned and completed sessions via <strong>Intervals.icu</strong> — a free training hub that connects with Garmin, Wahoo, Polar, Suunto, Apple Watch, and more.</p>
+        <p>Each session generates its own pre-, during-, and post-session fuelling targets based on duration and RPE. These sit alongside your baseline daily targets so you always know how much to eat and when.</p>
+        <div class="tip">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          Intervals.icu is free to use and acts as a central hub that syncs data from most major fitness platforms. Connect it once and your sessions import automatically.
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 5: Log Nutrition -->
+    <div id="logging" class="step-section fade-up">
+      <div class="step-header orange">
+        <div class="step-num-badge orange">05</div>
+        <div class="step-header-text">
+          <h2>Plan and Log Nutrition</h2>
+          <p>Templates, smart suggestions, and flexible entry</p>
+        </div>
+      </div>
+      <div class="step-body">
+        <p>Select multiple foods and specify weight or serving-based amounts per meal. Glycogo shows your remaining calorie and carbohydrate targets in real time as you build your log.</p>
+        <div class="checklist">
+          <div class="checklist-item">
+            <svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" class="check-circle" stroke-width="1.5"/><path d="M6.5 10l2.5 2.5 4.5-4.5" class="check-check" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Save food combinations as <strong>Meal Templates</strong> and reload them with one click</span>
+          </div>
+          <div class="checklist-item">
+            <svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" class="check-circle" stroke-width="1.5"/><path d="M6.5 10l2.5 2.5 4.5-4.5" class="check-check" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Turn yesterday's log into today's or start fresh — no re-entering the same foods
+          </div>
+          <div class="checklist-item">
+            <svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" class="check-circle" stroke-width="1.5"/><path d="M6.5 10l2.5 2.5 4.5-4.5" class="check-check" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Use <strong>Suggest Quantities</strong> to automatically calculate amounts that best match your remaining targets</span>
+          </div>
+          <div class="checklist-item">
+            <svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" class="check-circle" stroke-width="1.5"/><path d="M6.5 10l2.5 2.5 4.5-4.5" class="check-check" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Log pre-, during-, and post-workout nutrition separately for each session
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 6: AI Assistant -->
+    <div id="ai" class="step-section fade-up" style="border-color:rgba(26,26,62,0.15);">
+      <div style="display:flex;align-items:center;gap:1rem;padding:1.5rem 1.8rem;border-bottom:1px solid var(--border);background:linear-gradient(to right,rgba(45,45,122,0.07),transparent);">
+        <div class="step-num-badge ai">AI</div>
+        <div class="step-header-text">
+          <h2>AI Nutrition Assistant</h2>
+          <p>Context-aware coaching, photo logging, and meal suggestions</p>
+        </div>
+        <div style="margin-left:auto;font-size:0.73rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--orange);background:rgba(230,92,0,0.08);border:1px solid rgba(230,92,0,0.2);border-radius:5px;padding:0.2rem 0.6rem;">New</div>
+      </div>
+      <div class="step-body">
+        <p>Open the <strong>AI Assistant</strong> tab to log food faster and get intelligent nutrition support tailored to your goals, training load, and daily targets. The assistant has full context about your sessions, remaining macros, and what you've already logged.</p>
+        <div class="ai-grid">
+          <div class="ai-feature">
+            <div class="ai-feature-icon">
+              <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            </div>
+            <div>
+              <h4>Fast-log food</h4>
+              <p>Describe a meal in plain text and have it added to your log instantly — no manual searching required.</p>
+            </div>
+          </div>
+          <div class="ai-feature">
+            <div class="ai-feature-icon">
+              <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            </div>
+            <div>
+              <h4>Estimate from photo</h4>
+              <p>Snap or upload a photo of your meal and let the assistant identify foods and estimate macros automatically.</p>
+            </div>
+          </div>
+          <div class="ai-feature">
+            <div class="ai-feature-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <div>
+              <h4>Meal suggestions</h4>
+              <p>Receive meal ideas based on your current log and remaining targets, and add them directly to your day.</p>
+            </div>
+          </div>
+          <div class="ai-feature">
+            <div class="ai-feature-icon">
+              <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </div>
+            <div>
+              <h4>Fuelling advice</h4>
+              <p>Ask for session-specific guidance on what and when to eat around your training, informed by sports nutrition best practices.</p>
+            </div>
+          </div>
+        </div>
+        <div class="tip">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          Suggested meals can be added to your log directly from the chat — no need to search for foods manually.
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 7: Save & Track -->
+    <div id="save" class="step-section fade-up">
+      <div class="step-header">
+        <div class="step-num-badge">07</div>
+        <div class="step-header-text">
+          <h2>Save Your Day &amp; Track Trends</h2>
+          <p>Build a history and watch your fuelling patterns over time</p>
+        </div>
+      </div>
+      <div class="step-body">
+        <p>Save daily totals to populate trend charts and optionally upload to Intervals.icu so your nutrition data sits alongside your training data in one place. Use <strong>Reset Day</strong> to clear the log and begin a new entry.</p>
+        <div class="checklist">
+          <div class="checklist-item">
+            <svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" class="check-circle" stroke-width="1.5"/><path d="M6.5 10l2.5 2.5 4.5-4.5" class="check-check" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Daily totals saved and displayed in trend charts over time
+          </div>
+          <div class="checklist-item">
+            <svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" class="check-circle" stroke-width="1.5"/><path d="M6.5 10l2.5 2.5 4.5-4.5" class="check-check" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            See how actual intake compares to targets across training load fluctuations
+          </div>
+          <div class="checklist-item">
+            <svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" class="check-circle" stroke-width="1.5"/><path d="M6.5 10l2.5 2.5 4.5-4.5" class="check-check" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Sync daily totals to <strong>Intervals.icu wellness fields</strong> alongside your training metrics</span>
+          </div>
+          <div class="checklist-item">
+            <svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" class="check-circle" stroke-width="1.5"/><path d="M6.5 10l2.5 2.5 4.5-4.5" class="check-check" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Use Reset Day to start a fresh log for a new date
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SETTINGS REFERENCE -->
+    <div id="settings-ref" class="step-section fade-up">
+      <div class="step-header navy">
+        <div class="step-num-badge navy" style="font-size:0.65rem;letter-spacing:-0.03em;">REF</div>
+        <div class="step-header-text">
+          <h2>Nutrition Settings Reference</h2>
+          <p>Full parameter descriptions and recommended starting ranges</p>
+        </div>
+      </div>
+      <div class="step-body">
+
+        <p style="font-weight:600;color:var(--navy);margin-bottom:0.5rem;">Weight-Based Targets</p>
+        <p>These determine your baseline energy and macronutrient requirements without considering training expenditure.</p>
+        <table class="settings-table">
+          <thead>
+            <tr><th>Macronutrient</th><th>Recommended Range</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Carbohydrates<span class="range-badge">g/kg</span></td><td>2–4 g per kg bodyweight per day</td></tr>
+            <tr><td>Protein<span class="range-badge">g/kg</span></td><td>1.2–2 g per kg bodyweight per day</td></tr>
+            <tr><td>Fat<span class="range-badge">g/kg</span></td><td>1–1.5 g per kg bodyweight per day</td></tr>
+          </tbody>
+        </table>
+
+        <p style="font-weight:600;color:var(--navy);margin:1.5rem 0 0.5rem;">Session-Based Parameters</p>
+        <p>These parameters control how your targets scale with training session intensity and duration.</p>
+        <table class="settings-table">
+          <thead>
+            <tr><th>Parameter</th><th>Description</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Calories/hr Upper &amp; Lower</td>
+              <td>Range of extra calories per hour added above baseline during a session. Scales with RPE — at low RPE you hit the lower bound, at high RPE you approach the upper.</td>
+            </tr>
+            <tr>
+              <td>Carbohydrates/hr Upper &amp; Lower</td>
+              <td>Range of carbohydrates per hour consumed <em>during</em> training. Scales with RPE. The lower value applies to easy sessions; the upper to high-intensity efforts.</td>
+            </tr>
+            <tr>
+              <td>RPE Inflection Point</td>
+              <td>The RPE at which carbohydrate intake rises most steeply. Lower values suit fuelling moderate sessions or gut-training. Higher values keep carbohydrate intake low until high-intensity efforts.</td>
+            </tr>
+            <tr>
+              <td>Steepness</td>
+              <td>How sharply carbohydrates or calories ramp around the inflection point. Steep = rapid increase over a narrow RPE range. Shallow = gradual increase across multiple RPE levels.</td>
+            </tr>
+            <tr>
+              <td>Min Duration for Carbs</td>
+              <td>Session must exceed this threshold (minutes) before within-session carbohydrates are added. <strong>Recommended: 60–90 min.</strong> Keeps carbohydrate targets appropriate for short sessions.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<!-- REFERENCES -->
+<div id="refs" class="refs">
+  <div class="refs-inner">
+    <h3>Scientific References</h3>
+    <div class="refs-grid">
+      <div class="ref-item">
+        <strong>Carbohydrate &amp; Energy from Training Load</strong>
+        Rothschild et al. (2025). A Novel Method to Predict Carbohydrate and Energy Expenditure During Endurance Exercise. <em>Sports Medicine</em>, 55(3):753–774.
+        <br><a href="https://doi.org/10.1007/s40279-024-02131-z">doi:10.1007/s40279-024-02131-z</a>
+      </div>
+      <div class="ref-item">
+        <strong>Carbohydrate Periodisation</strong>
+        Impey et al. (2018). Fuel for the Work Required: A Theoretical Framework for CHO Periodization. <em>Frontiers in Physiology</em>.
+        <br><a href="https://doi.org/10.3389/fphys.2018.01405">doi:10.3389/fphys.2018.01405</a>
+      </div>
+      <div class="ref-item">
+        <strong>Carbohydrate Intake During Exercise</strong>
+        Burke et al. (2011). Carbohydrates for training and competition. <em>Journal of Sports Sciences</em>.
+        <br><a href="https://doi.org/10.1080/02640414.2011.585473">doi:10.1080/02640414.2011.585473</a>
+      </div>
+      <div class="ref-item">
+        <strong>Protein Requirements for Athletes</strong>
+        Morton et al. (2018). A systematic review on protein supplementation and resistance training. <em>British Journal of Sports Medicine</em>.
+        <br><a href="https://doi.org/10.1136/bjsports-2017-097608">doi:10.1136/bjsports-2017-097608</a>
+      </div>
+      <div class="ref-item">
+        <strong>RPE-Based Training Monitoring</strong>
+        Foster et al. (2001). A New Approach to Monitoring Exercise Training. <em>Journal of Strength and Conditioning Research</em>.
+      </div>
+      <div class="ref-item">
+        <strong>Food Nutritional Data</strong>
+        U.S. Department of Agriculture. FoodData Central.
+        <br><a href="https://fdc.nal.usda.gov">fdc.nal.usda.gov</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    2026 <strong>GEM Performance</strong> · <strong>G</strong>oal-Driven, <strong>E</strong>vidence-Based, <strong>M</strong>onitoring tools for athletes<br>
+    <span style="font-size:0.74rem;">G.E.McConnochie PhD &nbsp;·&nbsp; <a href="mailto:contactgemperformance@gmail.com">contactgemperformance@gmail.com</a></span>
+  </div>
+  <div style="display:flex;gap:1rem;align-items:center;flex-wrap:wrap;">
+    <a href="/terms" style="color:rgba(255,255,255,0.6);font-size:0.82rem;text-decoration:underline;">Terms of Service</a>
+    <a href="/privacy" style="color:rgba(255,255,255,0.6);font-size:0.82rem;text-decoration:underline;">Privacy Policy</a>
+    <a href="https://app.glycogo.fit/" style="background:var(--green);color:white;padding:0.5rem 1.2rem;border-radius:6px;font-weight:600;font-size:0.85rem;text-decoration:none;">Try for free</a>
+  </div>
+</footer>
+
+<script>
+  // Fade-up on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((el, i) => {
+      if (el.isIntersecting) {
+        el.target.style.transitionDelay = '0s';
+        el.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  // Active sidebar link on scroll
+  const sections = document.querySelectorAll('[id]');
+  const sidebarLinks = document.querySelectorAll('.sidebar-nav a[href^="#"]');
+  const onScroll = () => {
+    let current = '';
+    sections.forEach(sec => {
+      const top = sec.getBoundingClientRect().top;
+      if (top < 120) current = sec.id;
+    });
+    sidebarLinks.forEach(a => {
+      a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+    });
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+</script>
+</body>
+</html>
