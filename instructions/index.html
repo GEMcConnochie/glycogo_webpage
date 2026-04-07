@@ -27,7 +27,7 @@ nav {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 100;
+  z-index: 9999;  /* ← INCREASED */
   height: var(--nav-height);
   display: flex;
   align-items: center;
@@ -38,6 +38,7 @@ nav {
   border-bottom: 1px solid var(--border);
   transition: height 0.25s ease, background 0.25s ease;
 }
+
 nav.shrink { height: var(--nav-height-scrolled); }
 nav img { height: 60px; transition: height 0.25s ease; }
 nav.shrink img { height: 48px; }
