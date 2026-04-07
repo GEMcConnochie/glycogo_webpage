@@ -63,9 +63,15 @@ nav.shrink img { height: 48px; }
  
 /* LAYOUT */
 .docs-layout { 
-  grid-template-columns: 1fr;  /* Single column */
-  /* rest stays the same */
+  display: grid;
+  grid-template-columns: 240px 1fr;  /* ← Add this */
+  gap: 2rem;  /* ← Add this */
+  max-width: 1100px;  /* ← Add this */
+  margin: 0 auto;  /* ← Add this */
+  padding: 2rem;
+  min-height: 100vh;
 }
+
  
 /* SIDEBAR */
 .sidebar { position: sticky; top: calc(var(--nav-height) + 10px); }
@@ -199,7 +205,27 @@ footer a:hover { color: var(--orange-light); }
 <!-- MAIN LAYOUT -->
 <div class="docs-layout">
  
-  
+  <!-- SIDEBAR -->
+<aside class="sidebar">
+  <div class="sidebar-label">Contents</div>
+  <nav class="sidebar-nav">
+    <a href="#login">Log In</a>
+    <a href="#settings">Configure Settings</a>
+    <a href="#database">Build Your Food Database</a>
+    <a href="#sessions">Add or Sync Training Sessions</a>
+    <a href="#logging">Plan and Log Nutrition</a>
+    <a href="#ai">AI Nutrition Assistant</a>
+    <a href="#save">Save Your Day & Track Trends</a>
+    <div class="sidebar-divider"></div>
+    <a href="#settings-ref">Settings Reference</a>
+  </nav>
+</aside>
+
+<!-- CONTENT -->
+<main class="docs-content">
+  <!-- your existing sections here -->
+</main>
+
  
   <!-- CONTENT -->
   <main class="docs-content">
