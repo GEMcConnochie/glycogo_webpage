@@ -24,36 +24,24 @@ body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--t
 /* NAV */
 nav {
   position: fixed;
-  top: 350px;  /* ← POSITION BELOW THE HERO SECTION */
+  top: 0;
   left: 0;
   right: 0;
-  z-index: 9999 !important;
+  z-index: 9999;  /* ← INCREASED */
   height: var(--nav-height);
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 2.5rem;
-  background: #f0f7f4 !important;
+  background: rgba(240, 247, 244, 0.9);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
-  transition: all 0.25s ease;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: height 0.25s ease, background 0.25s ease;
 }
 
-nav.shrink { 
-  height: var(--nav-height-scrolled); 
-  top: 300px;  /* ← ADJUST WHEN SCROLLED */
-}
-
-nav img { 
-  height: 60px; 
-  transition: height 0.25s ease; 
-}
-
-nav.shrink img { 
-  height: 48px; 
-}
-
+nav.shrink { height: var(--nav-height-scrolled); }
+nav img { height: 60px; transition: height 0.25s ease; }
+nav.shrink img { height: 48px; }
  
 .nav-logo { font-family: 'Space Mono', monospace; font-size: 1.4rem; font-weight: 700; color: var(--green); letter-spacing: -0.02em; }
 .nav-logo span { color: var(--orange); }
@@ -64,14 +52,7 @@ nav.shrink img {
 .nav-cta:hover { background: var(--green-light) !important; }
  
 /* PAGE HERO */
-.page-hero { 
-  padding: 6rem 2rem 4rem; 
-  background: var(--navy); 
-  text-align: center; 
-  position: relative; 
-  overflow: hidden;
-  z-index: 1;
-}
+.page-hero { padding: 6rem 2rem 4rem; background: var(--navy); text-align: center; position: relative; overflow: hidden; }
 .page-hero-bg { position: absolute; inset: 0; z-index: 0; background: radial-gradient(ellipse 60% 70% at 30% 50%, rgba(46,125,50,0.12) 0%, transparent 60%), radial-gradient(ellipse 50% 60% at 75% 60%, rgba(230,92,0,0.08) 0%, transparent 60%); }
 .page-hero-grid { position: absolute; inset: 0; z-index: 0; background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px); background-size: 40px 40px; }
 .page-hero-content { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
@@ -188,7 +169,17 @@ footer a:hover { color: var(--orange-light); }
 </head>
 <body>
  
-<!-- NAV -->
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-grid"></div>
+  <div class="page-hero-content">
+    <div class="page-hero-badge">Documentation</div>
+    <h1>Getting started with <em>Glycogo</em></h1>
+  </div>
+</div>
+
+<!-- NAV (moved below hero) -->
 <nav id="main-nav">
   <a href="/" style="display:flex;align-items:center;text-decoration:none;">
     <img src="/3dglycogo.svg" alt="Glycogo" style="height:60px;">
@@ -201,16 +192,6 @@ footer a:hover { color: var(--orange-light); }
     <a href="https://app.glycogo.fit/" class="nav-cta">Try for free</a>
   </div>
 </nav>
- 
-<!-- PAGE HERO -->
-<div class="page-hero">
-  <div class="page-hero-bg"></div>
-  <div class="page-hero-grid"></div>
-  <div class="page-hero-content">
-    <div class="page-hero-badge">Documentation</div>
-    <h1>Getting started with <em>Glycogo</em></h1>
-  </div>
-</div>
  
 <!-- MAIN LAYOUT -->
 <div class="docs-layout">
