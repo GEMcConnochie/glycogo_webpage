@@ -247,25 +247,23 @@ footer a:hover { color: var(--orange-light); }
       </div>
     </div>
  
-    <!-- STEP 2: Configure Settings -->
-    <div id="settings" class="step-section fade-up">
-      <div class="step-header orange">
-        <div class="step-num-badge orange">02</div>
-        <div class="step-header-text">
-          <h2>Configure Settings</h2>
-          <p>Set your bodyweight-based targets and training intensity scaling</p>
-        </div>
-      </div>
-      <div class="step-body">
-        <p>Set your bodyweight and baseline macronutrient targets — carbohydrates, protein, and fat per kilogram of bodyweight. These form the foundation of your daily nutrition on rest days.</p>
-        <p>Then configure how your carbohydrate and calorie targets scale with session intensity. This is where Glycogo's periodisation logic lives — targets increase with RPE and duration, so you eat more on hard days and less on easy ones.</p>
-        <div class="tip">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-          Start with the default scaling settings and adjust over time as you learn how your body responds to different fuelling levels.
-        </div>
-        <p>See the <a href="#settings-ref" style="color:var(--green);font-weight:600;">Settings Reference</a> below for a full description of every parameter and recommended starting ranges.</p>
+  <!-- STEP 2: Configure Settings -->
+  <div id="settings" class="step-section fade-up">
+    <div class="step-header orange">
+      <div class="step-num-badge orange">02</div>
+      <div class="step-header-text">
+        <h2>Configure Settings</h2>
+        <p>Set your energy availability, macronutrient targets, and training intensity scaling</p>
       </div>
     </div>
+    <div class="step-body">
+      <p>Start by entering your bodyweight and body fat percentage — or use the appearance estimator if you don't know your exact number. These are used to calculate your <strong>fat-free mass (FFM)</strong>, which is the basis for all calorie targets.</p>
+      <p>Your <strong>Energy Availability (EA)</strong> sets how many calories are available for body functions per kilogram of fat-free mass. An EA of around 40–45 kcal/kg FFM is considered optimal for health and performance. Below 30 kcal/kg is associated with REDs (Relative Energy Deficiency in Sport) and is not recommended for extended periods.</p>
+      <p>From your EA target, set your baseline <strong>carbohydrate</strong> and <strong>protein</strong> targets in %. These targets apply on rest days and form the foundation of your daily nutrition.</p>
+      <p>Finally, configure how your within-session carbohydrate intake and calories added for training scale with session intensity. Targets increase with RPE, so you eat more on the hard days with longer harder sessions, and less on easy ones.</p>
+      <p>See the <a href="#settings-ref" style="color:var(--green);font-weight:600;">Settings Reference</a> below for a full description of every parameter.</p>
+    </div>
+  </div>
  
     <!-- STEP 3: Food Database -->
     <div id="database" class="step-section fade-up">
@@ -429,11 +427,24 @@ footer a:hover { color: var(--orange-light); }
         </div>
       </div>
       <div class="step-body">
-        <p style="font-weight:600;color:var(--navy);margin-bottom:0.5rem;">Weight-Based Targets</p>
+        <p style="font-weight:600;color:var(--navy);margin-bottom:0.5rem;">Energy and Macronutrient Targets</p>
         <p>These determine your baseline energy and macronutrient requirements without considering training expenditure.</p>
         <table class="settings-table">
-          <thead><tr><th>Macronutrient</th><th>Recommended Range</th></tr></thead>
+          <thead><tr><th>Macronutrient</th><th>Recommended Baseline Range</th></tr></thead>
           <tbody>
+            <tr>
+          <td>Energy Availability<span class="range-badge">kcal/kg FFM</span></td>
+          <td>
+            Calories available for body functions after accounting for exercise cost — but note that on rest days (no exercise), EA equals your total intake divided by FFM.
+            Use the zone guide below as a starting point:
+            <ul style="margin:0.4rem 0 0 1rem;line-height:1.8;">
+              <li><span style="color:#ef4444;font-weight:600;">25–30</span> — Low. Associated with RED-S, hormonal disruption, and impaired recovery. Avoid prolonged exposure.</li>
+              <li><span style="color:#f59e0b;font-weight:600;">30–40</span> — Moderate. May be appropriate short-term (e.g. planned weight loss phases) but can impair adaptation over time.</li>
+              <li><span style="color:#22c55e;font-weight:600;">40–50</span> — Optimal. Supports health, hormonal function, and training adaptation for most athletes. <strong>Recommended starting point: 40.</strong></li>
+              <li><span style="color:#16a34a;font-weight:600;">50–55</span> — High. Suited to heavy training blocks, growth phases, or athletes with very high energy demands.</li>
+            </ul>
+          </td>
+        </tr>
             <tr><td>Carbohydrates<span class="range-badge">g/kg</span></td><td>2–4 g per kg bodyweight per day</td></tr>
             <tr><td>Protein<span class="range-badge">g/kg</span></td><td>1.2–2 g per kg bodyweight per day</td></tr>
             <tr><td>Fat<span class="range-badge">g/kg</span></td><td>1–1.5 g per kg bodyweight per day</td></tr>
@@ -447,7 +458,6 @@ footer a:hover { color: var(--orange-light); }
             <tr><td>Calories/hr Upper &amp; Lower</td><td>Range of extra calories per hour added above baseline during a session. Scales with RPE — at low RPE you hit the lower bound, at high RPE you approach the upper.</td></tr>
             <tr><td>Carbohydrates/hr Upper &amp; Lower</td><td>Range of carbohydrates per hour consumed <em>during</em> training. Scales with RPE. The lower value applies to easy sessions; the upper to high-intensity efforts.</td></tr>
             <tr><td>RPE Inflection Point</td><td>The RPE at which the rise in carbohydrate intake with intensity is centered around. Lower values support higher fuelling for moderate sessions or gut-training. Higher values keep carbohydrate intake low until high-intensity efforts.</td></tr>
-            <tr><td>Steepness</td><td>How sharply carbohydrates or calories ramp around the inflection point. Steep = rapid increase over a narrow RPE range. Shallow = gradual increase across multiple RPE levels.</td></tr>
             <tr><td>Min Duration for Carbs</td><td>Session must exceed this threshold (minutes) before within-session carbohydrates are added. <strong>Recommended: 60–90 min.</strong> Keeps carbohydrate targets appropriate for short sessions.</td></tr>
           </tbody>
         </table>
