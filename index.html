@@ -105,10 +105,18 @@
   .section-sub { font-size: 1.05rem; color: var(--muted); line-height: 1.7; max-width: 540px; }
 
   /* FEATURES */
-  .features { max-width: 1100px; margin: 0 auto; }
+  .features { max-width: 1400px; margin: 0 auto; }
+    .features-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+    
+    @media (max-width: 900px) {
+      .features-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    
+    @media (max-width: 540px) {
+      .features-grid { grid-template-columns: 1fr; }
+    }
   .features-header { text-align: center; margin-bottom: 3.5rem; }
   .features-header .section-sub { margin: 0 auto; max-width: 480px !important;}
-  .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
 
   .feature-card { background: white; border: 1px solid var(--border); border-radius: 14px; padding: 1.8rem; transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s; position: relative; overflow: hidden; }
   .feature-card::before { content: ''; position: absolute; top:0; left:0; right:0; height:3px; background: linear-gradient(90deg,var(--green),var(--orange)); opacity:0; transition: opacity 0.2s; }
