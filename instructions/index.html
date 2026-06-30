@@ -210,14 +210,14 @@ footer a:hover { color: var(--orange-light); }
         <div class="step-num-badge orange">02</div>
         <div class="step-header-text">
           <h2>Configure Settings</h2>
-          <p>Set your energy availability, macronutrient targets, and training intensity scaling</p>
+          <p>Set your energy availability, macronutrient targets, and sport-specific thresholds</p>
         </div>
       </div>
       <div class="step-body">
         <p>Start by entering your bodyweight and body fat percentage — or use the appearance estimator if you don't know your exact number. These are used to calculate your <strong>fat-free mass (FFM)</strong>, which is the basis for all calorie targets.</p>
-        <p>Your <strong>Energy Availability (EA)</strong> sets how many calories are available for body functions per kilogram of fat-free mass. An EA of around 40–45 kcal/kg FFM is considered optimal for health and performance. Below 30 kcal/kg is associated with REDs (Relative Energy Deficiency in Sport) and is not recommended for extended periods.</p>
-        <p>From your EA target, set your baseline <strong>carbohydrate</strong> and <strong>protein</strong> targets in %. These targets apply on rest days and form the foundation of your daily nutrition.</p>
-        <p>Finally, configure how your within-session carbohydrate intake and calories added for training scale with session intensity. Targets increase with RPE, so you eat more on the hard days with longer harder sessions, and less on easy ones.</p>
+        <p>Your <strong>Energy Availability (EA)</strong> sets how many calories are available for body functions per kilogram of fat-free mass. An EA of around 40–45 kcal/kg FFM is considered optimal for health and performance.</p>
+        <p>From your EA target, set your baseline <strong>carbohydrate</strong> and <strong>protein</strong> targets. These targets apply on rest days and form the foundation of your daily nutrition.</p>
+        <p>Finally, configure your sport-specific metabolic parameters. Entering your **Cycling FTP**, **Running Critical Speed (CS)**, and **Critical Swim Speed (CSS)** allows Glycogo to automatically calculate caloric expenditure and fueling targets using sport-specific metabolic formulas rather than generic estimates.</p>
         <p>See the <a href="#settings-ref" style="color:var(--green);font-weight:600;">Settings Reference</a> below for a full description of every parameter.</p>
       </div>
     </div>
@@ -265,6 +265,11 @@ footer a:hover { color: var(--orange-light); }
       </div>
       <div class="step-body">
         <p>Enter session duration and RPE manually to calculate fuel targets, or sync planned and completed sessions via <strong>Intervals.icu</strong> — a free training hub that connects with Garmin, Wahoo, Polar, Suunto, Apple Watch, and more.</p>
+        <p>When workouts are synced, Glycogo automatically estimates their <strong>Training Load / RPE (1-100)</strong> using precise physiological rules:</p>
+        <ul style="margin: 0.5rem 0 1rem 1.5rem; font-size: 0.93rem; color: var(--muted); line-height: 1.7;">
+          <li><strong>Completed Workouts</strong>: RPE is calculated using actual <strong>Power (watts)</strong> or <strong>Heart Rate (HR)</strong> to measure physical work done.</li>
+          <li><strong>Planned Workouts</strong>: RPE is estimated using planned <strong>Power</strong> or target <strong>Speed/Pace</strong> (distance and time target).</li>
+        </ul>
         <p>Each session generates its own pre-, during-, and post-session fuelling targets based on duration and RPE. These sit alongside your baseline daily targets so you always know how much to eat and when.</p>
         <div class="tip">
           <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
@@ -409,13 +414,14 @@ footer a:hover { color: var(--orange-light); }
             <tr><td>Fat<span class="range-badge">g/kg</span></td><td>1–1.5 g per kg bodyweight per day</td></tr>
           </tbody>
         </table>
-        <p style="font-weight:600;color:var(--navy);margin:1.5rem 0 0.5rem;">Session-Based Parameters</p>
-        <p>These parameters control how your targets scale up with training session intensity and duration.</p>
+        <p style="font-weight:600;color:var(--navy);margin:1.5rem 0 0.5rem;">Session and Sport-Specific Parameters</p>
+        <p>These parameters control how your targets scale up and how sport-specific calories are calculated.</p>
         <table class="settings-table">
           <thead><tr><th>Parameter</th><th>Description</th></tr></thead>
           <tbody>
-            <tr><td>Calories/hr Upper &amp; Lower</td><td>Range of extra calories per hour added above baseline during a session. Scales with RPE — at low RPE you hit the lower bound, at high RPE you approach the upper.</td></tr>
-            <tr><td>Carbohydrates/hr Upper &amp; Lower</td><td>Range of carbohydrates per hour consumed <em>during</em> training. Scales with RPE. The lower value applies to easy sessions; the upper to high-intensity efforts.</td></tr>
+            <tr><td>Cycling FTP &amp; Efficiency</td><td>Functional Threshold Power (watts) and conversion efficiency (default 21%). Used to compute precise cycling calories from target/actual watts.</td></tr>
+            <tr><td>Running CS &amp; Easy Pace</td><td>Critical Speed (CS) and easy pace thresholds. Calibrates pace calculations to running metabolic expenditure.</td></tr>
+            <tr><td>Swimming CSS &amp; Easy Pace</td><td>Critical Swim Speed (CSS) and easy pace. Calibrates swim speed inputs using power-law drag cost scaling.</td></tr>
             <tr><td>Min Duration for Carbs</td><td>Session must exceed this threshold (minutes) before within-session carbohydrates are added. <strong>Recommended: 60–90 min.</strong> Keeps carbohydrate targets appropriate for short sessions.</td></tr>
           </tbody>
         </table>
