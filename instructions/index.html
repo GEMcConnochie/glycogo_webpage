@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<link rel="icon" type="image/png" href="/logosmall.png">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Instructions | Glycogo</title>
@@ -108,6 +109,44 @@ section, .step-section, [id] { scroll-margin-top: calc(var(--nav-height) + 16px)
 .tip > span { flex: 1; min-width: 0; }
 .tip svg { width: 16px; height: 16px; stroke: var(--green); fill: none; stroke-width: 2; flex-shrink: 0; margin-top: 2px; }
 .step-body ul { margin: 0.5rem 0 1rem 1.5rem; font-size: 0.93rem; color: var(--muted); line-height: 1.7; }
+.step-body ul.compact { margin: 0.4rem 0 0.75rem 1.1rem; line-height: 1.55; }
+.step-body ul.compact li { margin-bottom: 0.35rem; }
+.step-body ul.compact li:last-child { margin-bottom: 0; }
+
+/* QUICK START + WORKFLOW */
+.quick-start { background: linear-gradient(135deg, var(--green-pale), white); border: 1px solid var(--border); border-radius: 12px; padding: 1.1rem 1.25rem; margin-bottom: 1rem; }
+.quick-start h3 { font-size: 0.95rem; font-weight: 700; color: var(--navy); margin-bottom: 0.65rem; }
+.quick-start ol { margin: 0 0 0 1.2rem; font-size: 0.9rem; color: var(--muted); line-height: 1.65; }
+.quick-start ol li { margin-bottom: 0.3rem; }
+.quick-start ol li:last-child { margin-bottom: 0; }
+
+.workflow { display: flex; flex-direction: column; align-items: center; gap: 0; margin: 1rem 0 0.5rem; padding: 1rem; background: rgba(26,26,62,0.03); border: 1px solid var(--border); border-radius: 12px; }
+.workflow-step { font-size: 0.88rem; font-weight: 600; color: var(--navy); background: white; border: 1px solid var(--border); border-radius: 8px; padding: 0.45rem 1.1rem; text-align: center; min-width: 10rem; }
+.workflow-arrow { color: var(--green); font-size: 1rem; line-height: 1; padding: 0.15rem 0; }
+
+/* IN-APP ICONS */
+.app-icons-note { display: flex; flex-wrap: wrap; gap: 0.75rem 1.25rem; align-items: center; background: rgba(46,125,50,0.05); border: 1px solid rgba(46,125,50,0.15); border-radius: 10px; padding: 0.85rem 1rem; margin: 1rem 0; font-size: 0.85rem; color: var(--muted); line-height: 1.5; }
+.app-icon-item { display: flex; align-items: center; gap: 0.45rem; font-weight: 600; color: var(--navy); white-space: nowrap; }
+.app-icon { width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 2px 8px rgba(0,0,0,0.12); }
+.app-icon svg { width: 17px; height: 17px; fill: white; }
+.app-icon.training { background: #e65c00; }
+.app-icon.food { background: #61aa39; }
+.app-icon.ai { background: #2d2d7a; }
+
+.settings-group { margin: 1rem 0 0.5rem; }
+.settings-group h4 { font-size: 0.82rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: var(--green); margin-bottom: 0.45rem; }
+.settings-group ul { margin: 0 0 0 1.1rem; font-size: 0.88rem; line-height: 1.6; }
+
+details.advanced { margin-top: 1rem; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+details.advanced > summary { cursor: pointer; padding: 0.75rem 1rem; font-size: 0.88rem; font-weight: 700; color: var(--navy-mid); background: rgba(26,26,62,0.04); list-style: none; }
+details.advanced > summary::-webkit-details-marker { display: none; }
+details.advanced > summary::after { content: '+'; float: right; color: var(--green); font-weight: 700; }
+details.advanced[open] > summary::after { content: '−'; }
+details.advanced .advanced-body { padding: 0.85rem 1rem 1rem; font-size: 0.87rem; color: var(--muted); line-height: 1.65; border-top: 1px solid var(--border); }
+details.advanced .advanced-body p { margin-bottom: 0.65rem; font-size: 0.87rem; }
+details.advanced .advanced-body ul { margin: 0.35rem 0 0 1.1rem; font-size: 0.87rem; line-height: 1.6; }
+
+.why-lead { font-size: 0.93rem; color: var(--navy); font-weight: 500; line-height: 1.65; margin-bottom: 0.85rem; }
  
 /* REFERENCES */
 .refs { background: var(--navy); color: rgba(255,255,255,0.6); }
@@ -168,7 +207,6 @@ footer a:hover { color: var(--orange-light); }
   <div class="page-hero-content">
     <div class="page-hero-badge">Documentation</div>
     <h1>Getting started with <em>Glycogo</em></h1>
-    <p>User guide for the Glycogo app at <a href="https://web.glycogo.fit/" style="color:var(--orange-light);font-weight:600;">web.glycogo.fit</a></p>
   </div>
 </div>
 
@@ -176,190 +214,197 @@ footer a:hover { color: var(--orange-light); }
 <div class="docs-layout">
   <main class="docs-content">
 
+    <!-- QUICK START -->
+    <div id="quick-start" class="step-section fade-up">
+      <div class="step-header teal">
+        <div class="step-num-badge teal" style="font-size:0.6rem;">60s</div>
+        <div class="step-header-text">
+          <h2>1-minute quick start</h2>
+        </div>
+      </div>
+      <div class="step-body">
+        <ol class="compact" style="margin:0 0 0 1.2rem;font-size:0.9rem;color:var(--muted);line-height:1.65;">
+          <li>Sign in on the app or at <strong>web.glycogo.fit</strong> and finish onboarding.</li>
+          <li>Add today's training (or sync from your device).</li>
+          <li>Log meals with <strong>Log Food</strong>.</li>
+          <li>Mark each meal complete once you've eaten it.</li>
+          <li>Tap <strong>Save Day</strong> when you're done.</li>
+        </ol>
+        <div class="app-icons-note">
+          <span style="flex:1 1 100%;margin-bottom:0.15rem;">Three action buttons sit at the bottom of every screen.</span>
+          <span class="app-icon-item">
+            <span class="app-icon training"><svg viewBox="0 0 24 24"><path d="M20.57 14.86L22 13.43 20.57 12 17 15.57 8.43 7 12 3.43 10.57 2 9.14 3.43 7.71 2 5.57 4.14 4.14 2.71 2.71 4.14l1.43 1.43L2 7.71l1.43 1.43L2 10.57 3.43 12 7 8.43 15.57 17 12 20.57 13.43 22l1.43-1.43L16.29 22l2.14-2.14 1.43 1.43 1.43-1.43-1.43-1.43L22 16.29z"/></svg></span>
+            Add training
+          </span>
+          <span class="app-icon-item">
+            <span class="app-icon food"><svg viewBox="0 0 24 24"><path d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7zm5-3v8h2.5v8H21V2c-2.76 0-5 2.24-5 4z"/></svg></span>
+            Add food / Log Food
+          </span>
+          <span class="app-icon-item">
+            <span class="app-icon ai"><svg viewBox="0 0 24 24"><path d="M20 9V7c0-1.1-.9-2-2-2h-3V3c0-.55-.45-1-1-1h-4c-.55 0-1 .45-1 1v2H6c-1.1 0-2 .9-2 2v2c-1.66 0-3 1.34-3 3s1.34 3 3 3v4c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2v-4c1.66 0 3-1.34 3-3s-1.34-3-3-3zM9 5h6v2H9V5zm1 10H8v-2h8v2z"/></svg></span>
+            AI Coach
+          </span>
+        </div>
+      </div>
+    </div>
+
     <!-- STEP 1 -->
     <div id="login" class="step-section fade-up">
       <div class="step-header">
         <div class="step-num-badge">01</div>
         <div class="step-header-text">
           <h2>Log In</h2>
-          <p>Create an account to save your data and enable syncing</p>
+          <p>Save your data and sync across devices</p>
         </div>
       </div>
       <div class="step-body">
-        <p>Sign in at <strong>web.glycogo.fit</strong> with email and password or Google. Your food logs, foods, settings, and history sync to your account.</p>
-        <p>First launch runs a short <strong>onboarding</strong> for body composition, macros, and meals. Sports benchmarks and Intervals.icu are optional and can be added later in Settings.</p>
-        <div class="checklist">
-          <div class="checklist-item">
-            <svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" class="check-circle" stroke-width="1.5"/><path d="M6.5 10l2.5 2.5 4.5-4.5" class="check-check" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Intervals.icu sync needs an account
-          </div>
-          <div class="checklist-item">
-            <svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" class="check-circle" stroke-width="1.5"/><path d="M6.5 10l2.5 2.5 4.5-4.5" class="check-check" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Tap <strong>Save Day</strong> on Home to build Trends history
-          </div>
-        </div>
+        <p class="why-lead">Your logs, foods, settings, and history stay linked to your account so you can pick up on any device.</p>
+        <ul class="compact">
+          <li>Sign in on the app or at <strong>web.glycogo.fit</strong> (email or Google).</li>
+          <li>First launch runs short onboarding for body composition, targets, and meals.</li>
+          <li>Syncing workouts from your device requires a free Intervals.icu account.</li>
+        </ul>
       </div>
     </div>
 
     <!-- STEP 2 -->
-    <div id="app" class="step-section fade-up">
-      <div class="step-header teal">
-        <div class="step-num-badge teal">02</div>
+    <div id="settings" class="step-section fade-up">
+      <div class="step-header orange">
+        <div class="step-num-badge orange">02</div>
         <div class="step-header-text">
-          <h2>Navigate the App</h2>
-          <p>Home, Trends, Foods, Settings, and floating action buttons</p>
+          <h2>Configure Settings</h2>
+          <p>Personalise your calorie and carbohydrate targets</p>
         </div>
       </div>
       <div class="step-body">
-        <p><strong>Tabs:</strong></p>
-        <ul>
-          <li><strong>Home:</strong> day strip, macros, meals, training, within-day energy (today), Save Day, Carb Load</li>
-          <li><strong>Trends:</strong> charts after Save Day</li>
-          <li><strong>Foods:</strong> personal food library</li>
-          <li><strong>Settings:</strong> profile, targets, sports, Intervals.icu, subscription</li>
-        </ul>
-        <p><strong>Floating buttons:</strong></p>
-        <ul>
-          <li><strong>Add food:</strong> Search, Quick add, Barcode, Meal photo, Meal template</li>
-          <li><strong>Add training:</strong> add a session for the selected day</li>
-          <li><strong>AI Coach:</strong> nutrition chat (right side)</li>
-        </ul>
-        <p><strong>Log Food</strong> opens the meal builder: stage foods, pick meal and time, log to the diary.</p>
+        <p class="why-lead">Glycogo personalises calorie and carbohydrate recommendations using your body composition, training, and performance data. A few minutes here makes your daily targets much more accurate.</p>
+
+        <div class="settings-group">
+          <h4>Basic settings</h4>
+          <ul class="compact">
+            <li>Body weight and body fat % (or use <strong>Estimate BF%</strong>)</li>
+            <li>Energy Availability</li>
+            <li>Macro split (%)</li>
+            <li>Meal distribution and default meal times</li>
+            <li>Training session slots and pre-session snacks</li>
+          </ul>
+        </div>
+
+        <div class="settings-group">
+          <h4>Sport settings</h4>
+          <ul class="compact">
+            <li>Select the sports and activities you train (running, cycling, swimming, gym, team sports, winter sports, and more)</li>
+            <li>Add custom sports with your own calorie ranges if needed</li>
+            <li>Carbohydrates per hour (lower / upper)</li>
+            <li>Minimum duration for carbohydrates: during-session fuel only applies above this unless High-carb fuelling is on for that session.</li>
+            <li><em>Recommended:</em> Enter critical power/paces, and estimated efficiency for running, cycling, and swimming to dial in your RPE estimations and refine calorie estimates when <strong>Use device session calories</strong> is off.</li>
+          </ul>
+        </div>
+
+        <div class="settings-group">
+          <h4>Device sync</h4>
+          <ul class="compact">
+            <li>Connect your device via an Intervals.icu account to sync workouts</li>
+            <li>Turn on <strong>Use device session calories</strong> to use synced device burn data</li>
+          </ul>
+        </div>
+        <p style="font-size:0.87rem;margin-top:0.75rem;">See the <a href="#settings-ref" style="color:var(--green);font-weight:600;">Settings Reference</a> for Energy Availability zones and other parameters.</p>
       </div>
     </div>
 
     <!-- STEP 3 -->
-    <div id="settings" class="step-section fade-up">
-      <div class="step-header orange">
-        <div class="step-num-badge orange">03</div>
+    <div id="database" class="step-section fade-up">
+      <div class="step-header navy">
+        <div class="step-num-badge navy">03</div>
         <div class="step-header-text">
-          <h2>Configure Settings</h2>
-          <p>Core profile, meals, and optional sport refinements</p>
+          <h2>Build Your Food Library</h2>
+          <p>Save foods you eat often</p>
         </div>
       </div>
       <div class="step-body">
-        <p>Enter bodyweight and body fat % (or use the appearance estimator) to set fat-free mass and calorie targets.</p>
-        <p>Set <strong>Energy Availability</strong>, macro split, meal distribution, and training session slots.</p>
-        <p>Optionally under <strong>Sports &amp; session targets</strong>, pick sports and add FTP, critical pace, swim CSS, efficiency, and carbs-per-hour bounds when you know them. The <strong>fueling heatmap</strong> previews in-session carbs by duration and RPE.</p>
-        <p>Optionally connect <strong>Intervals.icu</strong> and choose <strong>use device session calories</strong>.</p>
-        <p>See <a href="#settings-ref" style="color:var(--green);font-weight:600;">Settings Reference</a> for parameter details.</p>
+        <p class="why-lead">A personal library means less searching every time you log.</p>
+        <ul class="compact">
+          <li>Add custom foods on the <strong>Foods</strong> tab, via <strong>Quick add</strong>, or a barcode scan.</li>
+          <li>Search an extensive online database and sports nutrition products and add them to your favourites.</li>
+        </ul>
       </div>
     </div>
 
     <!-- STEP 4 -->
-    <div id="database" class="step-section fade-up">
-      <div class="step-header navy">
-        <div class="step-num-badge navy">04</div>
+    <div id="sessions" class="step-section fade-up">
+      <div class="step-header">
+        <div class="step-num-badge teal">04</div>
         <div class="step-header-text">
-          <h2>Build Your Food Library</h2>
-          <p>Personal foods on the Foods tab; search databases when logging</p>
+          <h2>Add or Sync Training Sessions</h2>
+          <p>Training drives your fuel targets</p>
         </div>
       </div>
       <div class="step-body">
-        <p>The <strong>Foods</strong> tab holds your personal library. Add custom foods with per-100g macros and serving sizes, or quick-log to a meal.</p>
-        <p>When logging, <strong>Search</strong> includes:</p>
-        <ul>
-          <li><strong>Your foods</strong> (always available)</li>
-          <li><strong>Database</strong> (Open Food Facts)</li>
-          <li><strong>Sports nutrition</strong></li>
+        <p class="why-lead">Glycogo adjusts daily calories and carbohydrates based on what you train. Without sessions, targets stay at your rest-day baseline.</p>
+        <ul class="compact">
+          <li>Add manually with <strong>Add training</strong> <span class="app-icon training" style="display:inline-flex;width:22px;height:22px;vertical-align:middle;margin:0 2px;"><svg viewBox="0 0 24 24" style="width:12px;height:12px;"><path d="M20.57 14.86L22 13.43 20.57 12 17 15.57 8.43 7 12 3.43 10.57 2 9.14 3.43 7.71 2 5.57 4.14 4.14 2.71 2.71 4.14l1.43 1.43L2 7.71l1.43 1.43L2 10.57 3.43 12 7 8.43 15.57 17 12 20.57 13.43 22l1.43-1.43L16.29 22l2.14-2.14 1.43 1.43 1.43-1.43-1.43-1.43L22 16.29z"/></svg></span>, or your training day or week from your device on Home.</li>
+          <li><strong>Session RPE</strong> (1–100): rate the whole workout, not peak intervals only.</li>
+          <li>RPE sets carbohydrates and calories <em>per hour</em>; duration scales the during-session total.</li>
+          <li><strong>High-carb fuelling</strong> and <strong>Merge sessions</strong> are available when editing a session.</li>
         </ul>
-        <p>Barcode and meal photo entry use the <strong>Add food</strong> FAB.</p>
+        <p style="font-size:0.87rem;margin-top:0.75rem;">See the <a href="#rpe-ref" style="color:var(--green);font-weight:600;">RPE Reference</a> below.</p>
       </div>
     </div>
 
     <!-- STEP 5 -->
-    <div id="sessions" class="step-section fade-up">
-      <div class="step-header">
-        <div class="step-num-badge teal">05</div>
-        <div class="step-header-text">
-          <h2>Add or Sync Training Sessions</h2>
-          <p>Manual entry or automatic import via Intervals.icu</p>
-        </div>
-      </div>
-      <div class="step-body">
-        <p>Add sessions with the <strong>Add training</strong> FAB, or sync via <strong>Sync Intervals</strong> / <strong>Sync training week</strong> on Home (Intervals.icu).</p>
-        <p>Manual entry: name, sport, time, duration, and <strong>session RPE</strong> (Borg CR100, 1–100). The slider shows a short label. Rate the whole session, not peak intervals only.</p>
-        <p>RPE sets carbs and calories per hour during the workout; duration scales during-session totals.</p>
-        <p>Synced RPE uses, in order:</p>
-        <ul>
-          <li><strong>Completed:</strong> power vs FTP, Intervals RPE, heart rate, other intensity fields</li>
-          <li><strong>Planned:</strong> planned power vs FTP, planned pace/speed vs critical pace or CSS, Intervals RPE</li>
-        </ul>
-        <p>Edit synced RPE if needed. Use <strong>High-carb fuelling</strong> for upper-range during-session carbs, or <strong>Merge sessions</strong> when multiple sessions share a day.</p>
-        <div class="tip">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-          <span>See <a href="#rpe-ref" style="color:var(--green);font-weight:600;">RPE Reference</a> and the <a href="/#faq" style="color:var(--green);font-weight:600;">FAQ</a>.</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- STEP 6 -->
     <div id="logging" class="step-section fade-up">
       <div class="step-header orange">
-        <div class="step-num-badge orange">06</div>
+        <div class="step-num-badge orange">05</div>
         <div class="step-header-text">
           <h2>Plan and Log Nutrition</h2>
-          <p>Templates, smart suggestions, and flexible entry</p>
+          <p>Hit your targets meal by meal</p>
         </div>
       </div>
       <div class="step-body">
-        <p>Open <strong>Log Food</strong> from the FAB, a meal card, or Foods. Stage items, set meal and time, then <strong>Log to diary</strong>.</p>
-        <ul>
-          <li><strong>Suggest quantities</strong> fills remaining macros for the current meal</li>
-          <li><strong>Meal templates</strong> reload saved combinations</li>
-          <li>Check a meal card to <strong>mark complete</strong> (locks intake and redistributes targets to open meals)</li>
-          <li><strong>Carb Load</strong> on Home raises baseline carbs for that weekday; training fuel still adds on top</li>
-          <li><strong>Within-day energy</strong> chart on today shows cumulative balance from meals and training</li>
+        <p class="why-lead">Logging shows how much you still need to eat today and updates as training changes your targets and you complete meals.</p>
+        <ul class="compact">
+          <li>Open <strong>Log Food</strong> from a meal card, the Foods tab, or <strong>Add food</strong> <span class="app-icon food" style="display:inline-flex;width:22px;height:22px;vertical-align:middle;margin:0 2px;"><svg viewBox="0 0 24 24" style="width:12px;height:12px;"><path d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7zm5-3v8h2.5v8H21V2c-2.76 0-5 2.24-5 4z"/></svg></span>.</li>
+          <li><strong>Suggest quantities</strong> fills remaining macros for the meal you are building.</li>
+          <li><strong>Meal templates</strong> reload saved food combinations and serving sizes.</li>
+          <li><strong>Carb Load</strong> on Home raises baseline carbohydrates for that weekday; session fuel still adds on top.</li>
         </ul>
-        <p><strong>All Foods</strong> bulk-edits the log; <strong>Reset day</strong> clears the selected date.</p>
+        <div class="tip" style="margin-top:0.85rem;">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          <span><strong>Mark a meal complete</strong> once you've eaten it. Glycogo locks that meal and automatically redistributes your remaining calories and macros across the rest of the day.</span>
+        </div>
       </div>
     </div>
 
-    <!-- STEP 7: AI Assistant -->
+    <!-- STEP 6: AI Assistant -->
     <div id="ai" class="step-section fade-up" style="border-color:rgba(26,26,62,0.15);">
       <div style="display:flex;align-items:center;gap:1rem;padding:1.5rem 1.8rem;border-bottom:1px solid var(--border);background:linear-gradient(to right,rgba(45,45,122,0.07),transparent);">
         <div class="step-num-badge ai">AI</div>
         <div class="step-header-text">
           <h2>AI Nutrition Assistant</h2>
-          <p>Context-aware coaching, photo logging, and meal suggestions</p>
+          <p>Fast logging and fuelling advice</p>
         </div>
-        <div style="margin-left:auto;font-size:0.73rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--orange);background:rgba(230,92,0,0.08);border:1px solid rgba(230,92,0,0.2);border-radius:5px;padding:0.2rem 0.6rem;">New</div>
       </div>
       <div class="step-body">
-        <p>Tap the <strong>AI Coach</strong> FAB to chat with context from your sessions, targets, and log.</p>
-        <div class="ai-grid">
-          <div class="ai-feature">
-            <div class="ai-feature-icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
-            <div><h4>Fast-log food</h4><p>Describe a meal in text and add it to your log.</p></div>
-          </div>
-          <div class="ai-feature">
-            <div class="ai-feature-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
-            <div><h4>Photo estimate</h4><p>Identify foods and estimate macros from a photo.</p></div>
-          </div>
-          <div class="ai-feature">
-            <div class="ai-feature-icon"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
-            <div><h4>Meal suggestions</h4><p>Ideas based on remaining targets; add from chat.</p></div>
-          </div>
-          <div class="ai-feature">
-            <div class="ai-feature-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
-            <div><h4>Fuelling advice</h4><p>What and when to eat around training.</p></div>
-          </div>
-        </div>
+        <p class="why-lead">The coach sees your sessions, targets, and current log, so suggestions fit your day rather than generic advice.</p>
+        <p>Open <strong>AI Coach</strong> <span class="app-icon ai" style="display:inline-flex;width:22px;height:22px;vertical-align:middle;margin:0 2px;"><svg viewBox="0 0 24 24" style="width:12px;height:12px;"><path d="M20 9V7c0-1.1-.9-2-2-2h-3V3c0-.55-.45-1-1-1h-4c-.55 0-1 .45-1 1v2H6c-1.1 0-2 .9-2 2v2c-1.66 0-3 1.34-3 3s1.34 3 3 3v4c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2v-4c1.66 0 3-1.34 3-3s-1.34-3-3-3zM9 5h6v2H9V5zm1 10H8v-2h8v2z"/></svg></span> to fast-log food, get meal ideas and recipes, or ask about fuelling around training.</p>
       </div>
     </div>
 
-    <!-- STEP 8 -->
+    <!-- STEP 7 -->
     <div id="save" class="step-section fade-up">
       <div class="step-header">
-        <div class="step-num-badge">08</div>
+        <div class="step-num-badge">07</div>
         <div class="step-header-text">
           <h2>Save Your Day &amp; Track Trends</h2>
-          <p>Build a history and watch your fuelling patterns over time</p>
+          <p>Build history over time</p>
         </div>
       </div>
       <div class="step-body">
-        <p>Tap <strong>Save Day</strong> on Home to store the day in history. View charts on the <strong>Trends</strong> tab (30 / 90 days or all time). Optionally push totals to Intervals.icu wellness fields.</p>
-        <p><strong>Reset day</strong> clears the food log for the selected date.</p>
+        <p class="why-lead"><strong>Save Day</strong> stores your completed nutrition and training data in Trends. You can still go back and edit yesterday's log if you need to.</p>
+        <ul class="compact">
+          <li>Charts on the <strong>Trends</strong> tab appear after you save a few days.</li>
+          <li><strong>Reset day</strong> clears the food log for the selected date.</li>
+        </ul>
       </div>
     </div>
 
@@ -369,46 +414,42 @@ footer a:hover { color: var(--orange-light); }
         <div class="step-num-badge navy" style="font-size:0.65rem;letter-spacing:-0.03em;">REF</div>
         <div class="step-header-text">
           <h2>Nutrition Settings Reference</h2>
-          <p>Parameter reference</p>
+          <p>Parameter descriptions</p>
         </div>
       </div>
       <div class="step-body">
         <p style="font-weight:600;color:var(--navy);margin-bottom:0.5rem;">Energy and Macronutrient Targets</p>
         <table class="settings-table">
-          <thead><tr><th>Setting</th><th>Description</th></tr></thead>
+          <thead><tr><th>Parameter</th><th>Description</th></tr></thead>
           <tbody>
             <tr>
               <td>Energy Availability<span class="range-badge">kcal/kg FFM</span></td>
               <td>
+                Calories available for body functions after accounting for exercise cost:
                 <ul style="margin:0.4rem 0 0 1rem;line-height:1.8;">
-                  <li><span style="color:#ef4444;font-weight:600;">25–30</span>: Low (REDs risk with prolonged use)</li>
-                  <li><span style="color:#f59e0b;font-weight:600;">30–40</span>: Moderate (weight loss phases)</li>
-                  <li><span style="color:#22c55e;font-weight:600;">40–50</span>: Optimal for most athletes</li>
-                  <li><span style="color:#16a34a;font-weight:600;">50–55</span>: High (heavy training / growth)</li>
+                  <li><span style="color:#ef4444;font-weight:600;">25–30</span>: Low. Prolonged use is associated with REDs and impaired recovery.</li>
+                  <li><span style="color:#f59e0b;font-weight:600;">30–40</span>: Moderate. Appropriate for weight loss phases.</li>
+                  <li><span style="color:#22c55e;font-weight:600;">40–50</span>: Optimal for most athletes.</li>
+                  <li><span style="color:#16a34a;font-weight:600;">50–55</span>: High. Suited to heavy training blocks and growth phases.</li>
                 </ul>
               </td>
             </tr>
-            <tr><td>Carbohydrates<span class="range-badge">g/kg</span></td><td>Baseline daily carb target.</td></tr>
-            <tr><td>Protein<span class="range-badge">g/kg</span></td><td>Baseline daily protein target.</td></tr>
-            <tr><td>Fat<span class="range-badge">g/kg</span></td><td>Baseline daily fat target.</td></tr>
-            <tr><td>Carb Load<span class="range-badge">g/kg</span></td><td>Weekday toggle on Home for higher baseline carbs before an event. Session fuel still adds on top.</td></tr>
+            <tr><td>Macro split (%)</td><td>Carbohydrate, protein, and fat as a share of daily energy. Must total 100%.</td></tr>
+            <tr><td>Carb Load</td><td>Weekday toggle on Home for higher baseline carbohydrates before an event. Session fuel still adds on top.</td></tr>
           </tbody>
         </table>
-        <p style="font-weight:600;color:var(--navy);margin:1.5rem 0 0.5rem;">Session and Sport Settings (optional)</p>
+        <p style="font-weight:600;color:var(--navy);margin:1.5rem 0 0.5rem;">Session and Sport-Specific Parameters</p>
         <table class="settings-table">
-          <thead><tr><th>Setting</th><th>Description</th></tr></thead>
+          <thead><tr><th>Parameter</th><th>Description</th></tr></thead>
           <tbody>
-            <tr><td>Sport selection</td><td>Running, cycling, swimming, custom sports.</td></tr>
-            <tr><td>Cycling FTP &amp; Efficiency</td><td>Refines cycling calories from power.</td></tr>
-            <tr><td>Running CS &amp; Easy Pace</td><td>Refines run calorie estimates.</td></tr>
-            <tr><td>Swimming CSS &amp; Easy Pace</td><td>Refines swim calorie estimates.</td></tr>
-            <tr><td>Min Duration for Carbs</td><td>When during-session carbs apply to shorter workouts.</td></tr>
-            <tr><td>Carbs per hour (lower / upper)</td><td>During-session carb bounds; see fueling heatmap.</td></tr>
-            <tr><td>Fueling heatmap</td><td>Preview of in-session carbs by duration and RPE.</td></tr>
-            <tr><td>High-carb fuelling</td><td>Upper-bound during-session carbs for that workout.</td></tr>
-            <tr><td>Use Device Session Calories</td><td>Synced device calories (net active) vs sport-based estimates.</td></tr>
-            <tr><td>Pre-Session Snack &amp; Timing</td><td>Pre-workout snack and lead time.</td></tr>
-            <tr><td>Mark meal complete</td><td>Locks logged intake; redistributes targets to open meals.</td></tr>
+            <tr><td>Selected sports &amp; activities</td><td>Running, cycling, swimming, MET-based activities (fitness, sports, water, winter, outdoor), and custom sports you define.</td></tr>
+            <tr><td>Custom sport kcal/hr</td><td>Easy and max calories per hour for a sport you add yourself.</td></tr>
+            <tr><td>Critical power / pace</td><td>Threshold power (cycling), critical speed (running), or swimming critical speed. Sets the high end of sport calorie estimates. Can be entered directly or calculated from time trials.</td></tr>
+            <tr><td>Easy power / pace</td><td>Easy-ride power (cycling), easy run pace, or easy swim pace. Sets the low end of sport calorie estimates.</td></tr>
+            <tr><td>Efficiency</td><td>Gross efficiency (cycling), running efficiency, and propulsive efficiency (swimming). Adjusts calorie burn at a given power or pace.</td></tr>
+            <tr><td>Carbohydrates per hour (lower / upper)</td><td>Lower and upper bounds for during-session carbohydrates by effort.</td></tr>
+            <tr><td>Minimum duration for carbohydrates</td><td>During-session carbohydrates apply only when a session is longer than this. High-carb fuelling on a session overrides this.</td></tr>
+            <tr><td>Use device session calories</td><td>When enabled, synced sessions from your device use calorie data with resting expenditure subtracted.</td></tr>
           </tbody>
         </table>
       </div>
@@ -424,32 +465,31 @@ footer a:hover { color: var(--orange-light); }
         </div>
       </div>
       <div class="step-body">
-        <p>Overall session difficulty on the Borg CR100 scale®. Sets carbs and calories per hour during exercise.</p>
+        <p>Session RPE reflects overall session difficulty on the Borg CR100 scale®. It sets target carbohydrates and calories per hour during exercise.</p>
         <table class="settings-table">
           <thead>
             <tr>
               <th>RPE</th>
-              <th>Description</th>
-              <th>Typical Session Feel</th>
-              <th>Approximate Intensity</th>
+              <th>Label</th>
+              <th>Typical feel</th>
             </tr>
           </thead>
           <tbody>
-            <tr><td>0–10</td><td>Very Easy</td><td>Recovery effort with minimal physiological strain.</td><td>Zone 1</td></tr>
-            <tr><td>10–20</td><td>Easy</td><td>Relaxed aerobic training with comfortable conversation.</td><td>Low Zone 1</td></tr>
-            <tr><td>20–30</td><td>Steady Easy</td><td>Light endurance work with slightly elevated breathing.</td><td>Zone 1–2</td></tr>
-            <tr><td>30–40</td><td>Moderate</td><td>Comfortable aerobic training requiring some focus.</td><td>Zone 2</td></tr>
-            <tr><td>40–50</td><td>Moderately Hard</td><td>Steady endurance work with noticeable effort.</td><td>Upper Zone 2</td></tr>
-            <tr><td>50–60</td><td>Strong</td><td>Purposeful aerobic training with controlled strain.</td><td>Zone 3</td></tr>
-            <tr><td>60–70</td><td>Hard</td><td>Demanding but sustainable training requiring concentration.</td><td>Upper Zone 3</td></tr>
-            <tr><td>70–80</td><td>Very Hard</td><td>Heavy sustained effort. Threshold-style sessions for many athletes.</td><td>Zone 4</td></tr>
-            <tr><td>80–90</td><td>Extremely Hard</td><td>Very demanding session load with limited recovery between efforts.</td><td>High Zone 4 / mixed Zone 5</td></tr>
-            <tr><td>90–100</td><td>Maximal Session Load</td><td>Maximal effort sustainable for 30–60 minutes, or an extremely hard interval session with short recoveries.</td><td>Top of Zone 4 or dense Zone 5 intervals</td></tr>
+            <tr><td>0–10</td><td>Very Easy</td><td>Recovery effort</td></tr>
+            <tr><td>10–20</td><td>Easy</td><td>Comfortable conversation</td></tr>
+            <tr><td>20–30</td><td>Steady Easy</td><td>Light endurance</td></tr>
+            <tr><td>30–40</td><td>Moderate</td><td>Comfortable aerobic</td></tr>
+            <tr><td>40–50</td><td>Moderately Hard</td><td>Noticeable effort</td></tr>
+            <tr><td>50–60</td><td>Strong</td><td>Purposeful training</td></tr>
+            <tr><td>60–70</td><td>Hard</td><td>Demanding but sustainable</td></tr>
+            <tr><td>70–80</td><td>Very Hard</td><td>Threshold-style efforts or hard intervals</td></tr>
+            <tr><td>80–90</td><td>Extremely Hard</td><td>V02 interals with limited recovery or an intense prolonged effort</td></tr>
+            <tr><td>90–100</td><td>Maximal Session Load</td><td>Race or race-like effort</td></tr>
           </tbody>
         </table>
         <div class="tip">
           <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-          <span>Interval recoveries, warm-up, and cool-down lower overall RPE vs peak reps. See the <a href="/#faq" style="color:var(--green);font-weight:600;">FAQ</a>.</span>
+          <span>If recoveries, warm-up, and cool-down are logged as part of the session, overall RPE will be lower vs peak rep RPE. More in the <a href="/#faq" style="color:var(--green);font-weight:600;">FAQ</a>.</span>
         </div>
       </div>
     </div>
