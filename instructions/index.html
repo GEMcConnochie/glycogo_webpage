@@ -309,6 +309,10 @@ footer a:hover { color: var(--orange-light); }
             <svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" class="check-circle" stroke-width="1.5"/><path d="M6.5 10l2.5 2.5 4.5-4.5" class="check-check" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
             Log pre-, during-, and post-workout nutrition separately for each session
           </div>
+          <div class="checklist-item">
+            <svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" class="check-circle" stroke-width="1.5"/><path d="M6.5 10l2.5 2.5 4.5-4.5" class="check-check" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Monitor your hour-by-hour balance with the <strong>Within-Day Energy Timeline</strong> chart. This helps you identify and avoid spending prolonged periods in a deficit below 300–400 kcal, which is linked to Low Energy Availability (LEA) markers.</span>
+          </div>
         </div>
       </div>
     </div>
@@ -412,6 +416,7 @@ footer a:hover { color: var(--orange-light); }
             <tr><td>Carbohydrates<span class="range-badge">g/kg</span></td><td>2–4 g per kg bodyweight per day</td></tr>
             <tr><td>Protein<span class="range-badge">g/kg</span></td><td>1.2–2.2 g per kg bodyweight per day</td></tr>
             <tr><td>Fat<span class="range-badge">g/kg</span></td><td>1–1.5 g per kg bodyweight per day</td></tr>
+            <tr><td>Carb Load<span class="range-badge">mode</span></td><td>Overrides standard percentage splits with fixed targets (Carbohydrates: 10g/kg, Protein: 1.6g/kg, Fat: 1.0g/kg) to maximize muscle glycogen storage before a key event or race.</td></tr>
           </tbody>
         </table>
         <p style="font-weight:600;color:var(--navy);margin:1.5rem 0 0.5rem;">Session and Sport-Specific Parameters</p>
@@ -423,6 +428,8 @@ footer a:hover { color: var(--orange-light); }
             <tr><td>Running CS &amp; Easy Pace</td><td>Critical Speed (CS) and easy pace thresholds. Calibrates pace calculations to running metabolic expenditure.</td></tr>
             <tr><td>Swimming CSS &amp; Easy Pace</td><td>Critical Swim Speed (CSS) and easy pace. Calibrates swim speed inputs using power-law drag cost scaling.</td></tr>
             <tr><td>Min Duration for Carbs</td><td>Session must exceed this threshold (minutes) before within-session carbohydrates are added. <strong>Recommended: 60–90 min.</strong> Keeps carbohydrate targets appropriate for short sessions.</td></tr>
+            <tr><td>Use Device Session Calories</td><td>When enabled, imports raw exercise calories from Garmin/Wahoo/Strava (via Intervals.icu) and converts to net active calories by subtracting resting expenditure. If disabled, uses core physiological pace/power calculations.</td></tr>
+            <tr><td>Pre-Session Snack &amp; Timing</td><td>Toggles the pre-workout snack recommendation and configures how many minutes prior to the session start it should be scheduled (default 60 minutes).</td></tr>
           </tbody>
         </table>
       </div>
