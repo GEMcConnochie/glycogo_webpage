@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Instructions — Glycogo</title>
-<meta name="description" content="How to use Glycogo — periodised nutrition planning for athletes.">
+<title>Instructions | Glycogo</title>
+<meta name="description" content="How to use Glycogo: periodised nutrition planning for athletes.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
@@ -105,7 +105,9 @@ section, .step-section, [id] { scroll-margin-top: calc(var(--nav-height) + 16px)
  
 /* TIP BOX */
 .tip { display: flex; gap: 0.75rem; align-items: flex-start; background: rgba(46,125,50,0.06); border: 1px solid rgba(46,125,50,0.2); border-left: 3px solid var(--green); border-radius: 8px; padding: 0.9rem 1.1rem; margin: 1rem 0; font-size: 0.87rem; color: var(--muted); line-height: 1.65; }
+.tip > span { flex: 1; min-width: 0; }
 .tip svg { width: 16px; height: 16px; stroke: var(--green); fill: none; stroke-width: 2; flex-shrink: 0; margin-top: 2px; }
+.step-body ul { margin: 0.5rem 0 1rem 1.5rem; font-size: 0.93rem; color: var(--muted); line-height: 1.7; }
  
 /* REFERENCES */
 .refs { background: var(--navy); color: rgba(255,255,255,0.6); }
@@ -153,8 +155,9 @@ footer a:hover { color: var(--orange-light); }
     <a href="/#features">Features</a>
     <a href="/#how">How it works</a>
     <a href="/#science">Science</a>
+    <a href="/#faq">FAQ</a>
     <a href="/#support">Support</a>
-    <a href="https://app.glycogo.fit/" class="nav-cta">Try for free</a>
+    <a href="https://web.glycogo.fit/" class="nav-cta">Try for free</a>
   </div>
 </nav> 
 
@@ -165,6 +168,7 @@ footer a:hover { color: var(--orange-light); }
   <div class="page-hero-content">
     <div class="page-hero-badge">Documentation</div>
     <h1>Getting started with <em>Glycogo</em></h1>
+    <p>User guide for the Glycogo app at <a href="https://web.glycogo.fit/" style="color:var(--orange-light);font-weight:600;">web.glycogo.fit</a></p>
   </div>
 </div>
 
@@ -182,142 +186,136 @@ footer a:hover { color: var(--orange-light); }
         </div>
       </div>
       <div class="step-body">
-        <p>Create an account to save food logs, custom foods, and settings, and to enable Intervals.icu sync. Your data is linked to your account and persists across sessions.</p>
+        <p>Sign in at <strong>web.glycogo.fit</strong> with email and password or Google. Your food logs, foods, settings, and history sync to your account.</p>
+        <p>First launch runs a short <strong>onboarding</strong> for body composition, macros, and meals. Sports benchmarks and Intervals.icu are optional and can be added later in Settings.</p>
         <div class="checklist">
           <div class="checklist-item">
             <svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" class="check-circle" stroke-width="1.5"/><path d="M6.5 10l2.5 2.5 4.5-4.5" class="check-check" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Food logs and custom foods saved to your account
+            Intervals.icu sync needs an account
           </div>
           <div class="checklist-item">
             <svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" class="check-circle" stroke-width="1.5"/><path d="M6.5 10l2.5 2.5 4.5-4.5" class="check-check" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Settings and targets remembered between visits
-          </div>
-          <div class="checklist-item">
-            <svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" class="check-circle" stroke-width="1.5"/><path d="M6.5 10l2.5 2.5 4.5-4.5" class="check-check" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Required for Intervals.icu training sync
-          </div>
-          <div class="checklist-item">
-            <svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" class="check-circle" stroke-width="1.5"/><path d="M6.5 10l2.5 2.5 4.5-4.5" class="check-check" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Trend history stored and available over time
+            Tap <strong>Save Day</strong> on Home to build Trends history
           </div>
         </div>
       </div>
     </div>
 
     <!-- STEP 2 -->
-    <div id="settings" class="step-section fade-up">
-      <div class="step-header orange">
-        <div class="step-num-badge orange">02</div>
+    <div id="app" class="step-section fade-up">
+      <div class="step-header teal">
+        <div class="step-num-badge teal">02</div>
         <div class="step-header-text">
-          <h2>Configure Settings</h2>
-          <p>Set your energy availability, macronutrient targets, and sport-specific thresholds</p>
+          <h2>Navigate the App</h2>
+          <p>Home, Trends, Foods, Settings, and floating action buttons</p>
         </div>
       </div>
       <div class="step-body">
-        <p>Start by entering your bodyweight and body fat percentage — or use the appearance estimator if you don't know your exact number. These are used to calculate your <strong>fat-free mass (FFM)</strong>, which is the basis for all calorie targets.</p>
-        <p>Your <strong>Energy Availability (EA)</strong> sets how many calories are available for body functions per kilogram of fat-free mass. An EA of around 40–45 kcal/kg FFM is considered optimal for health and performance.</p>
-        <p>From your EA target, set your baseline <strong>carbohydrate</strong> and <strong>protein</strong> targets. These targets apply on rest days and form the foundation of your daily nutrition.</p>
-        <p>Finally, configure your sport-specific metabolic parameters. Entering your <strong>Cycling FTP</strong>, <strong>Running Critical Speed (CS)</strong>, and <strong>Critical Swim Speed (CSS)</strong> allows Glycogo to automatically calculate caloric expenditure and fueling targets using sport-specific metabolic formulas rather than generic estimates.</p>
-        <p>See the <a href="#settings-ref" style="color:var(--green);font-weight:600;">Settings Reference</a> below for a full description of every parameter.</p>
+        <p><strong>Tabs:</strong></p>
+        <ul>
+          <li><strong>Home:</strong> day strip, macros, meals, training, within-day energy (today), Save Day, Carb Load</li>
+          <li><strong>Trends:</strong> charts after Save Day</li>
+          <li><strong>Foods:</strong> personal food library</li>
+          <li><strong>Settings:</strong> profile, targets, sports, Intervals.icu, subscription</li>
+        </ul>
+        <p><strong>Floating buttons:</strong></p>
+        <ul>
+          <li><strong>Add food:</strong> Search, Quick add, Barcode, Meal photo, Meal template</li>
+          <li><strong>Add training:</strong> add a session for the selected day</li>
+          <li><strong>AI Coach:</strong> nutrition chat (right side)</li>
+        </ul>
+        <p><strong>Log Food</strong> opens the meal builder: stage foods, pick meal and time, log to the diary.</p>
       </div>
     </div>
 
     <!-- STEP 3 -->
-    <div id="database" class="step-section fade-up">
-      <div class="step-header navy">
-        <div class="step-num-badge navy">03</div>
+    <div id="settings" class="step-section fade-up">
+      <div class="step-header orange">
+        <div class="step-num-badge orange">03</div>
         <div class="step-header-text">
-          <h2>Build Your Food Database</h2>
-          <p>Search Open Food Facts foods or add your own custom entries</p>
+          <h2>Configure Settings</h2>
+          <p>Core profile, meals, and optional sport refinements</p>
         </div>
       </div>
       <div class="step-body">
-        <p>Search thousands of foods from the Open Food Facts database, or add custom foods with full macro and serving-size control. Head to the <strong>Food Database</strong> tab to manage your library.</p>
-        <div class="checklist">
-          <div class="checklist-item">
-            <svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" class="check-circle" stroke-width="1.5"/><path d="M6.5 10l2.5 2.5 4.5-4.5" class="check-check" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Search the <strong>Open Food Facts</strong> database for verified nutritional data</span>
-          </div>
-          <div class="checklist-item">
-            <svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" class="check-circle" stroke-width="1.5"/><path d="M6.5 10l2.5 2.5 4.5-4.5" class="check-check" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Add custom foods with your own macros and serving sizes
-          </div>
-          <div class="checklist-item">
-            <svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" class="check-circle" stroke-width="1.5"/><path d="M6.5 10l2.5 2.5 4.5-4.5" class="check-check" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Edit macros and serving sizes at any time
-          </div>
-          <div class="checklist-item">
-            <svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" class="check-circle" stroke-width="1.5"/><path d="M6.5 10l2.5 2.5 4.5-4.5" class="check-check" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Your custom foods are saved to your account for reuse
-          </div>
-        </div>
+        <p>Enter bodyweight and body fat % (or use the appearance estimator) to set fat-free mass and calorie targets.</p>
+        <p>Set <strong>Energy Availability</strong>, macro split, meal distribution, and training session slots.</p>
+        <p>Optionally under <strong>Sports &amp; session targets</strong>, pick sports and add FTP, critical pace, swim CSS, efficiency, and carbs-per-hour bounds when you know them. The <strong>fueling heatmap</strong> previews in-session carbs by duration and RPE.</p>
+        <p>Optionally connect <strong>Intervals.icu</strong> and choose <strong>use device session calories</strong>.</p>
+        <p>See <a href="#settings-ref" style="color:var(--green);font-weight:600;">Settings Reference</a> for parameter details.</p>
       </div>
     </div>
 
     <!-- STEP 4 -->
+    <div id="database" class="step-section fade-up">
+      <div class="step-header navy">
+        <div class="step-num-badge navy">04</div>
+        <div class="step-header-text">
+          <h2>Build Your Food Library</h2>
+          <p>Personal foods on the Foods tab; search databases when logging</p>
+        </div>
+      </div>
+      <div class="step-body">
+        <p>The <strong>Foods</strong> tab holds your personal library. Add custom foods with per-100g macros and serving sizes, or quick-log to a meal.</p>
+        <p>When logging, <strong>Search</strong> includes:</p>
+        <ul>
+          <li><strong>Your foods</strong> (always available)</li>
+          <li><strong>Database</strong> (Open Food Facts)</li>
+          <li><strong>Sports nutrition</strong></li>
+        </ul>
+        <p>Barcode and meal photo entry use the <strong>Add food</strong> FAB.</p>
+      </div>
+    </div>
+
+    <!-- STEP 5 -->
     <div id="sessions" class="step-section fade-up">
       <div class="step-header">
-        <div class="step-num-badge teal">04</div>
+        <div class="step-num-badge teal">05</div>
         <div class="step-header-text">
           <h2>Add or Sync Training Sessions</h2>
           <p>Manual entry or automatic import via Intervals.icu</p>
         </div>
       </div>
       <div class="step-body">
-        <p>Enter session duration and RPE manually to calculate fuel targets, or sync planned and completed sessions via <strong>Intervals.icu</strong> — a free training hub that connects with Garmin, Wahoo, Polar, Suunto, Apple Watch, and more.</p>
-        <p>When workouts are synced, Glycogo automatically estimates their <strong>Training Load / RPE (1-100)</strong> using precise physiological rules:</p>
-        <ul style="margin: 0.5rem 0 1rem 1.5rem; font-size: 0.93rem; color: var(--muted); line-height: 1.7;">
-          <li><strong>Completed Workouts</strong>: RPE is calculated using actual <strong>Power (watts)</strong> or <strong>Heart Rate (HR)</strong> to measure physical work done.</li>
-          <li><strong>Planned Workouts</strong>: RPE is estimated using planned <strong>Power</strong> or target <strong>Speed/Pace</strong> (distance and time target).</li>
+        <p>Add sessions with the <strong>Add training</strong> FAB, or sync via <strong>Sync Intervals</strong> / <strong>Sync training week</strong> on Home (Intervals.icu).</p>
+        <p>Manual entry: name, sport, time, duration, and <strong>session RPE</strong> (Borg CR100, 1–100). The slider shows a short label. Rate the whole session, not peak intervals only.</p>
+        <p>RPE sets carbs and calories per hour during the workout; duration scales during-session totals.</p>
+        <p>Synced RPE uses, in order:</p>
+        <ul>
+          <li><strong>Completed:</strong> power vs FTP, Intervals RPE, heart rate, other intensity fields</li>
+          <li><strong>Planned:</strong> planned power vs FTP, planned pace/speed vs critical pace or CSS, Intervals RPE</li>
         </ul>
-        <p>Each session generates its own pre-, during-, and post-session fuelling targets based on duration and RPE. These sit alongside your baseline daily targets so you always know how much to eat and when.</p>
+        <p>Edit synced RPE if needed. Use <strong>High-carb fuelling</strong> for upper-range during-session carbs, or <strong>Merge sessions</strong> when multiple sessions share a day.</p>
         <div class="tip">
           <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-          RPE-based scaling is proven to be a suitable tool to determine calorie and carbohydrate intake (Rothschild, 2025). Hourly effort is based on The Borg CR100 scale®. 
-    <a href="#rpe-ref" style="color:var(--green);font-weight:600;">
-      RPE Reference
-    </a>
-  </div>
+          <span>See <a href="#rpe-ref" style="color:var(--green);font-weight:600;">RPE Reference</a> and the <a href="/#faq" style="color:var(--green);font-weight:600;">FAQ</a>.</span>
+        </div>
       </div>
     </div>
 
-    <!-- STEP 5 -->
+    <!-- STEP 6 -->
     <div id="logging" class="step-section fade-up">
       <div class="step-header orange">
-        <div class="step-num-badge orange">05</div>
+        <div class="step-num-badge orange">06</div>
         <div class="step-header-text">
           <h2>Plan and Log Nutrition</h2>
           <p>Templates, smart suggestions, and flexible entry</p>
         </div>
       </div>
       <div class="step-body">
-        <p>Select multiple foods and specify weight or serving-based amounts per meal. Glycogo shows your remaining calorie and carbohydrate targets in real time as you build your log.</p>
-        <div class="checklist">
-          <div class="checklist-item">
-            <svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" class="check-circle" stroke-width="1.5"/><path d="M6.5 10l2.5 2.5 4.5-4.5" class="check-check" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Save food combinations as <strong>Meal Templates</strong> and reload them with one click</span>
-          </div>
-          <div class="checklist-item">
-            <svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" class="check-circle" stroke-width="1.5"/><path d="M6.5 10l2.5 2.5 4.5-4.5" class="check-check" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Turn yesterday's log into today's or start fresh. No re-entering the same foods
-          </div>
-          <div class="checklist-item">
-            <svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" class="check-circle" stroke-width="1.5"/><path d="M6.5 10l2.5 2.5 4.5-4.5" class="check-check" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Use <strong>Suggest Quantities</strong> to automatically calculate amounts that best match your remaining targets</span>
-          </div>
-          <div class="checklist-item">
-            <svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" class="check-circle" stroke-width="1.5"/><path d="M6.5 10l2.5 2.5 4.5-4.5" class="check-check" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Log pre-, during-, and post-workout nutrition separately for each session
-          </div>
-          <div class="checklist-item">
-            <svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" class="check-circle" stroke-width="1.5"/><path d="M6.5 10l2.5 2.5 4.5-4.5" class="check-check" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Monitor your hour-by-hour balance with the <strong>Within-Day Energy Timeline</strong> chart. This helps you identify and avoid spending prolonged periods in a deficit below 300–400 kcal, which is linked to Low Energy Availability (LEA) markers.</span>
-          </div>
-        </div>
+        <p>Open <strong>Log Food</strong> from the FAB, a meal card, or Foods. Stage items, set meal and time, then <strong>Log to diary</strong>.</p>
+        <ul>
+          <li><strong>Suggest quantities</strong> fills remaining macros for the current meal</li>
+          <li><strong>Meal templates</strong> reload saved combinations</li>
+          <li>Check a meal card to <strong>mark complete</strong> (locks intake and redistributes targets to open meals)</li>
+          <li><strong>Carb Load</strong> on Home raises baseline carbs for that weekday; training fuel still adds on top</li>
+          <li><strong>Within-day energy</strong> chart on today shows cumulative balance from meals and training</li>
+        </ul>
+        <p><strong>All Foods</strong> bulk-edits the log; <strong>Reset day</strong> clears the selected date.</p>
       </div>
     </div>
 
-    <!-- STEP 6: AI Assistant -->
+    <!-- STEP 7: AI Assistant -->
     <div id="ai" class="step-section fade-up" style="border-color:rgba(26,26,62,0.15);">
       <div style="display:flex;align-items:center;gap:1rem;padding:1.5rem 1.8rem;border-bottom:1px solid var(--border);background:linear-gradient(to right,rgba(45,45,122,0.07),transparent);">
         <div class="step-num-badge ai">AI</div>
@@ -328,61 +326,40 @@ footer a:hover { color: var(--orange-light); }
         <div style="margin-left:auto;font-size:0.73rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--orange);background:rgba(230,92,0,0.08);border:1px solid rgba(230,92,0,0.2);border-radius:5px;padding:0.2rem 0.6rem;">New</div>
       </div>
       <div class="step-body">
-        <p>Open the <strong>AI Assistant</strong> tab to log food faster and get intelligent nutrition support tailored to your goals, training load, and daily targets. The assistant has full context about your sessions, remaining macros, and what you've already logged.</p>
+        <p>Tap the <strong>AI Coach</strong> FAB to chat with context from your sessions, targets, and log.</p>
         <div class="ai-grid">
           <div class="ai-feature">
             <div class="ai-feature-icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
-            <div><h4>Fast-log food</h4><p>Describe a meal in plain text and have it added to your log instantly.</p></div>
+            <div><h4>Fast-log food</h4><p>Describe a meal in text and add it to your log.</p></div>
           </div>
           <div class="ai-feature">
             <div class="ai-feature-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
-            <div><h4>Estimate from photo</h4><p>Snap or upload a photo of your meal and let the assistant identify foods and estimate macros automatically.</p></div>
+            <div><h4>Photo estimate</h4><p>Identify foods and estimate macros from a photo.</p></div>
           </div>
           <div class="ai-feature">
             <div class="ai-feature-icon"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
-            <div><h4>Meal suggestions</h4><p>Receive meal ideas based on your current log and remaining targets, and add them directly to your day.</p></div>
+            <div><h4>Meal suggestions</h4><p>Ideas based on remaining targets; add from chat.</p></div>
           </div>
           <div class="ai-feature">
             <div class="ai-feature-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
-            <div><h4>Fuelling advice</h4><p>Ask for session-specific guidance on what and when to eat around your training, informed by sports nutrition best practices.</p></div>
+            <div><h4>Fuelling advice</h4><p>What and when to eat around training.</p></div>
           </div>
-        </div>
-        <div class="tip">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-          Suggested meals can be added to your log directly from the chat.
         </div>
       </div>
     </div>
 
-    <!-- STEP 7 -->
+    <!-- STEP 8 -->
     <div id="save" class="step-section fade-up">
       <div class="step-header">
-        <div class="step-num-badge">07</div>
+        <div class="step-num-badge">08</div>
         <div class="step-header-text">
           <h2>Save Your Day &amp; Track Trends</h2>
           <p>Build a history and watch your fuelling patterns over time</p>
         </div>
       </div>
       <div class="step-body">
-        <p>Save daily totals to populate trend charts and optionally upload to Intervals.icu so your nutrition data sits alongside your training data in one place. Use <strong>Reset Day</strong> to clear the log and begin a new entry.</p>
-        <div class="checklist">
-          <div class="checklist-item">
-            <svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" class="check-circle" stroke-width="1.5"/><path d="M6.5 10l2.5 2.5 4.5-4.5" class="check-check" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Daily totals saved and displayed in trend charts over time
-          </div>
-          <div class="checklist-item">
-            <svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" class="check-circle" stroke-width="1.5"/><path d="M6.5 10l2.5 2.5 4.5-4.5" class="check-check" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            See how actual intake compares to targets across training load fluctuations
-          </div>
-          <div class="checklist-item">
-            <svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" class="check-circle" stroke-width="1.5"/><path d="M6.5 10l2.5 2.5 4.5-4.5" class="check-check" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Sync daily totals to <strong>Intervals.icu wellness fields</strong> alongside your training metrics</span>
-          </div>
-          <div class="checklist-item">
-            <svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" class="check-circle" stroke-width="1.5"/><path d="M6.5 10l2.5 2.5 4.5-4.5" class="check-check" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Use Reset Day to start a fresh log for a new date
-          </div>
-        </div>
+        <p>Tap <strong>Save Day</strong> on Home to store the day in history. View charts on the <strong>Trends</strong> tab (30 / 90 days or all time). Optionally push totals to Intervals.icu wellness fields.</p>
+        <p><strong>Reset day</strong> clears the food log for the selected date.</p>
       </div>
     </div>
 
@@ -392,44 +369,46 @@ footer a:hover { color: var(--orange-light); }
         <div class="step-num-badge navy" style="font-size:0.65rem;letter-spacing:-0.03em;">REF</div>
         <div class="step-header-text">
           <h2>Nutrition Settings Reference</h2>
-          <p>Full parameter descriptions and recommended starting ranges</p>
+          <p>Parameter reference</p>
         </div>
       </div>
       <div class="step-body">
         <p style="font-weight:600;color:var(--navy);margin-bottom:0.5rem;">Energy and Macronutrient Targets</p>
-        <p>These determine your baseline energy and macronutrient requirements without considering training expenditure.</p>
         <table class="settings-table">
-          <thead><tr><th>Macronutrient</th><th>Recommended Baseline Range</th></tr></thead>
+          <thead><tr><th>Setting</th><th>Description</th></tr></thead>
           <tbody>
             <tr>
               <td>Energy Availability<span class="range-badge">kcal/kg FFM</span></td>
               <td>
-                Calories available for body functions after accounting for exercise cost:
                 <ul style="margin:0.4rem 0 0 1rem;line-height:1.8;">
-                  <li><span style="color:#ef4444;font-weight:600;">25–30</span> — Low. Prolonged periods in this range are associated with REDs, hormonal disruption, and impaired recovery.</li>
-                  <li><span style="color:#f59e0b;font-weight:600;">30–40</span> — Moderate. Appropriate for weight loss phases but may impair adaptation over time.</li>
-                  <li><span style="color:#22c55e;font-weight:600;">40–50</span> — Optimal. Supports health, hormonal function, and training adaptation for most athletes.</li>
-                  <li><span style="color:#16a34a;font-weight:600;">50–55</span> — High. Suited to heavy training blocks and growth phases.</li>
+                  <li><span style="color:#ef4444;font-weight:600;">25–30</span>: Low (REDs risk with prolonged use)</li>
+                  <li><span style="color:#f59e0b;font-weight:600;">30–40</span>: Moderate (weight loss phases)</li>
+                  <li><span style="color:#22c55e;font-weight:600;">40–50</span>: Optimal for most athletes</li>
+                  <li><span style="color:#16a34a;font-weight:600;">50–55</span>: High (heavy training / growth)</li>
                 </ul>
               </td>
             </tr>
-            <tr><td>Carbohydrates<span class="range-badge">g/kg</span></td><td>2–4 g per kg bodyweight per day</td></tr>
-            <tr><td>Protein<span class="range-badge">g/kg</span></td><td>1.2–2.2 g per kg bodyweight per day</td></tr>
-            <tr><td>Fat<span class="range-badge">g/kg</span></td><td>1–1.5 g per kg bodyweight per day</td></tr>
-            <tr><td>Carb Load<span class="range-badge">mode</span></td><td>Overrides standard percentage splits with fixed targets (Carbohydrates: 10g/kg, Protein: 1.6g/kg, Fat: 1.0g/kg) to maximize muscle glycogen storage before a key event or race.</td></tr>
+            <tr><td>Carbohydrates<span class="range-badge">g/kg</span></td><td>Baseline daily carb target.</td></tr>
+            <tr><td>Protein<span class="range-badge">g/kg</span></td><td>Baseline daily protein target.</td></tr>
+            <tr><td>Fat<span class="range-badge">g/kg</span></td><td>Baseline daily fat target.</td></tr>
+            <tr><td>Carb Load<span class="range-badge">g/kg</span></td><td>Weekday toggle on Home for higher baseline carbs before an event. Session fuel still adds on top.</td></tr>
           </tbody>
         </table>
-        <p style="font-weight:600;color:var(--navy);margin:1.5rem 0 0.5rem;">Session and Sport-Specific Parameters</p>
-        <p>These parameters control how your targets scale up and how sport-specific calories are calculated.</p>
+        <p style="font-weight:600;color:var(--navy);margin:1.5rem 0 0.5rem;">Session and Sport Settings (optional)</p>
         <table class="settings-table">
-          <thead><tr><th>Parameter</th><th>Description</th></tr></thead>
+          <thead><tr><th>Setting</th><th>Description</th></tr></thead>
           <tbody>
-            <tr><td>Cycling FTP &amp; Efficiency</td><td>Functional Threshold Power (watts) and conversion efficiency (default 21%). Used to compute precise cycling calories from target/actual watts.</td></tr>
-            <tr><td>Running CS &amp; Easy Pace</td><td>Critical Speed (CS) and easy pace thresholds. Calibrates pace calculations to running metabolic expenditure.</td></tr>
-            <tr><td>Swimming CSS &amp; Easy Pace</td><td>Critical Swim Speed (CSS) and easy pace. Calibrates swim speed inputs using power-law drag cost scaling.</td></tr>
-            <tr><td>Min Duration for Carbs</td><td>Session must exceed this threshold (minutes) before within-session carbohydrates are added. <strong>Recommended: 60–90 min.</strong> Keeps carbohydrate targets appropriate for short sessions.</td></tr>
-            <tr><td>Use Device Session Calories</td><td>When enabled, imports raw exercise calories from Garmin/Wahoo/Strava (via Intervals.icu) and converts to net active calories by subtracting resting expenditure. If disabled, uses core physiological pace/power calculations.</td></tr>
-            <tr><td>Pre-Session Snack &amp; Timing</td><td>Toggles the pre-workout snack recommendation and configures how many minutes prior to the session start it should be scheduled (default 60 minutes).</td></tr>
+            <tr><td>Sport selection</td><td>Running, cycling, swimming, custom sports.</td></tr>
+            <tr><td>Cycling FTP &amp; Efficiency</td><td>Refines cycling calories from power.</td></tr>
+            <tr><td>Running CS &amp; Easy Pace</td><td>Refines run calorie estimates.</td></tr>
+            <tr><td>Swimming CSS &amp; Easy Pace</td><td>Refines swim calorie estimates.</td></tr>
+            <tr><td>Min Duration for Carbs</td><td>When during-session carbs apply to shorter workouts.</td></tr>
+            <tr><td>Carbs per hour (lower / upper)</td><td>During-session carb bounds; see fueling heatmap.</td></tr>
+            <tr><td>Fueling heatmap</td><td>Preview of in-session carbs by duration and RPE.</td></tr>
+            <tr><td>High-carb fuelling</td><td>Upper-bound during-session carbs for that workout.</td></tr>
+            <tr><td>Use Device Session Calories</td><td>Synced device calories (net active) vs sport-based estimates.</td></tr>
+            <tr><td>Pre-Session Snack &amp; Timing</td><td>Pre-workout snack and lead time.</td></tr>
+            <tr><td>Mark meal complete</td><td>Locks logged intake; redistributes targets to open meals.</td></tr>
           </tbody>
         </table>
       </div>
@@ -445,7 +424,7 @@ footer a:hover { color: var(--orange-light); }
         </div>
       </div>
       <div class="step-body">
-        <p>Session RPE is based on the Borg CR100 Scale® and reflects the overall difficulty of the session to determine carbohydrates per hour and caloric expenditure.</p>
+        <p>Overall session difficulty on the Borg CR100 scale®. Sets carbs and calories per hour during exercise.</p>
         <table class="settings-table">
           <thead>
             <tr>
@@ -470,7 +449,7 @@ footer a:hover { color: var(--orange-light); }
         </table>
         <div class="tip">
           <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-          If logged as a single session, interval recoveries, warm-up, and cool-down periods are included and may reduce overall session RPE despite very high peak efforts.
+          <span>Interval recoveries, warm-up, and cool-down lower overall RPE vs peak reps. See the <a href="/#faq" style="color:var(--green);font-weight:600;">FAQ</a>.</span>
         </div>
       </div>
     </div>
@@ -525,7 +504,8 @@ footer a:hover { color: var(--orange-light); }
   <div style="display:flex;gap:1rem;align-items:center;flex-wrap:wrap;">
     <a href="/terms" style="color:rgba(255,255,255,0.6);font-size:0.82rem;text-decoration:underline;">Terms of Service</a>
     <a href="/privacy" style="color:rgba(255,255,255,0.6);font-size:0.82rem;text-decoration:underline;">Privacy Policy</a>
-    <a href="https://app.glycogo.fit/" style="background:var(--green);color:white;padding:0.5rem 1.2rem;border-radius:6px;font-weight:600;font-size:0.85rem;text-decoration:none;">Try for free</a>
+    <a href="/#faq" style="color:rgba(255,255,255,0.6);font-size:0.82rem;text-decoration:underline;">FAQ</a>
+    <a href="https://web.glycogo.fit/" style="background:var(--green);color:white;padding:0.5rem 1.2rem;border-radius:6px;font-weight:600;font-size:0.85rem;text-decoration:none;">Try for free</a>
   </div>
 </footer>
 
