@@ -580,14 +580,11 @@
           </div>
         </details>
 
-      </div>
-    </details>
-
-    <details class="faq-item" id="faq-session-rpe">
+        <details class="faq-item" id="faq-session-rpe">
           <summary>How should I rate my session RPE?</summary>
           <div class="faq-body">
-            <p>When you add or edit a session manually, rate the <strong>overall difficulty of the whole workout</strong> on the Borg CR100 scale (1–100). This is session RPE: how hard the entire session felt, not the peak effort of your hardest interval.</p>
-            <p>Include warm-up, recoveries, and cool-down in your judgment. A long aerobic ride with a few surges usually rates lower than a steady threshold block, even if peak power or pace was high.</p>
+            <p>When you add or edit a session manually, rate the <strong>overall difficulty of the whole workout</strong> on the Borg CR100 scale (1–100). This is session RPE: how hard the entire session felt relative to what you could maximally sustain for ~1hr, not the peak effort of your hardest interval.</p>
+            <p>A long aerobic ride with a few surges usually rates lower than a steady threshold block, even if peak power or pace was high.</p>
             <p>As you move the slider in the app, a short label updates (for example “Moderate”, “Strong”, or “Very Hard”) to match the CR100 bands:</p>
             <ul>
               <li><strong>Very Easy to Easy (roughly 1–20):</strong> Recovery or relaxed aerobic work.</li>
@@ -597,7 +594,7 @@
               <li><strong>Extremely Hard to Maximal (roughly 80–100):</strong> Very heavy or race-like sessions.</li>
             </ul>
             <div class="faq-callout note">
-              <strong>Tip:</strong> If you log intervals as one session, easy recoveries between reps usually lower the overall rating compared with your hardest rep.
+              <strong>Tip:</strong> If you log intervals, warm up and cool-down as one session, the easy sections and recoveries between reps should lower the overall rating compared with your hardest rep.
             </div>
           </div>
         </details>
@@ -605,27 +602,28 @@
         <details class="faq-item" id="faq-synced-rpe">
           <summary>How is RPE calculated for a synced session?</summary>
           <div class="faq-body">
-            <p>When a workout arrives from <strong>Intervals.icu</strong>, Glycogo estimates training load (shown as RPE 1–100) from the activity data. It uses the strongest available signal first rather than asking you to re-enter effort.</p>
+            <p>When a workout arrives from <strong>Intervals.icu</strong>, Glycogo estimates training load (shown as RPE 1–100) from the activity data. It uses the best available metric first rather than requiring you to manually enter effort.</p>
             <p><strong>Completed workouts</strong> are estimated in this order:</p>
             <ol>
               <li><strong>Cycling power</strong> compared with your FTP (from Glycogo sport settings or Intervals.icu).</li>
               <li><strong>Manual RPE</strong> you logged in Intervals.icu, if present.</li>
-              <li><strong>Average heart rate</strong> compared with your threshold (if available) or max heart rate.</li>
+              <li><strong>Average heart rate</strong> compared with your threshold or max heart rate.</li>
+              <li>Other intensity fields from the activity when the above are missing.</li>
             </ol>
             <p><strong>Planned workouts</strong> use:</p>
             <ol>
               <li><strong>Planned cycling power</strong> vs FTP.</li>
               <li><strong>Planned pace or speed</strong> vs your critical run pace or swim CSS from sport settings.</li>
-              <li><strong>Manual RPE</strong> from Intervals.icu, then other intensity fields if available.</li>
+              <li><strong>Manual RPE</strong> from Intervals.icu, then other intensity fields.</li>
             </ol>
-            <p>If none of these matrics are available, Glycogo uses a moderate default (50) until you change it. You can always edit RPE after sync if the estimate does not match how the session felt.</p>
+            <p>If nothing usable is available, Glycogo uses a moderate default (50) until you change it. You can always edit RPE after sync if the estimate does not match how the session felt.</p>
             <div class="faq-callout note">
               Power, pace, and heart-rate estimates work best when FTP, critical pace, swim CSS, and heart-rate thresholds are set in your sport settings or on Intervals.icu.
             </div>
           </div>
         </details>
 
-       </div>
+      </div>
     </details>
 
     <details class="faq-group fade-up">
