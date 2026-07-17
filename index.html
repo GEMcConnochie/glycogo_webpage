@@ -143,6 +143,16 @@
   .chat-label { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(255,255,255,0.38); margin-bottom: 0.2rem; }
   .chat-action { align-self: flex-start; margin-top: 0.1rem; background: var(--green); color: white; border: none; padding: 0.45rem 1rem; border-radius: 6px; font-size: 0.78rem; font-weight: 600; cursor: pointer; font-family: 'DM Sans', sans-serif; transition: background 0.2s; }
   .chat-action:hover { background: var(--green-light); }
+  .chat-img-attach {
+    display: inline-flex; align-items: center; gap: 0.35rem; font-size: 0.72rem;
+    color: rgba(255,255,255,0.55); padding: 0.25rem 0.5rem; border-radius: 6px;
+    background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+  }
+  .chat-macro-row { display: flex; flex-wrap: wrap; gap: 0.35rem 0.6rem; margin-top: 0.55rem; }
+  .chat-macro {
+    font-size: 0.72rem; font-weight: 600; color: rgba(255,255,255,0.88);
+    background: rgba(255,255,255,0.1); padding: 0.15rem 0.45rem; border-radius: 4px;
+  }
 
   /* HOW IT WORKS */
   .how { background: white; }
@@ -187,6 +197,77 @@
   .bmc-wrap a img:hover { transform: translateY(-2px); }
   .support-bio { font-size: 0.9rem; color: var(--muted); line-height: 1.7; max-width: 520px; margin: 0 auto; }
 
+  /* FAQ */
+  .faq { background: white; border-top: 1px solid var(--border); }
+  .faq-inner { max-width: 820px; margin: 0 auto; }
+  .faq-header { text-align: center; margin-bottom: 3rem; }
+  .faq-header .section-sub { margin: 0 auto; max-width: 560px; }
+  .faq-groups { display: flex; flex-direction: column; gap: 1rem; }
+  .faq-group {
+    margin-bottom: 0; background: var(--white); border: 1px solid var(--border);
+    border-radius: 14px; overflow: hidden;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .faq-group[open] { border-color: var(--green); box-shadow: 0 8px 24px rgba(46,125,50,0.08); }
+  .faq-group > summary.faq-group-title {
+    list-style: none; cursor: pointer; display: flex; align-items: center;
+    justify-content: space-between; gap: 1rem;
+    font-size: 0.78rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--orange); padding: 1rem 1.25rem;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .faq-group > summary.faq-group-title::-webkit-details-marker { display: none; }
+  .faq-group > summary.faq-group-title::after {
+    content: '+'; flex-shrink: 0; width: 1.65rem; height: 1.65rem; border-radius: 8px;
+    background: rgba(230,92,0,0.1); color: var(--orange); font-family: 'Space Mono', monospace;
+    font-size: 1rem; font-weight: 700; display: flex; align-items: center; justify-content: center;
+    transition: background 0.2s, color 0.2s;
+  }
+  .faq-group[open] > summary.faq-group-title {
+    border-bottom-color: var(--border); background: var(--bg);
+  }
+  .faq-group[open] > summary.faq-group-title::after {
+    content: '−'; background: var(--orange); color: white;
+  }
+  .faq-group > .faq-list { padding: 1rem 1rem 1.15rem; }
+  .faq-list { display: flex; flex-direction: column; gap: 0.85rem; }
+  .faq-item {
+    background: var(--bg); border: 1px solid var(--border); border-radius: 12px;
+    overflow: hidden; transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .faq-item[open] { border-color: var(--green); box-shadow: 0 6px 20px rgba(46,125,50,0.08); }
+  .faq-item summary {
+    list-style: none; cursor: pointer; padding: 1.1rem 1.25rem;
+    font-size: 1rem; font-weight: 700; color: var(--navy); line-height: 1.4;
+    display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem;
+  }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary::after {
+    content: '+'; flex-shrink: 0; width: 1.5rem; height: 1.5rem; border-radius: 6px;
+    background: var(--green-pale); color: var(--green); font-family: 'Space Mono', monospace;
+    font-size: 1rem; font-weight: 700; display: flex; align-items: center; justify-content: center;
+    transition: transform 0.2s, background 0.2s;
+  }
+  .faq-item[open] summary::after { content: '−'; background: var(--green); color: white; }
+  .faq-body {
+    padding: 0 1.25rem 1.25rem; font-size: 0.92rem; color: var(--muted); line-height: 1.7;
+  }
+  .faq-body p + p { margin-top: 0.75rem; }
+  .faq-body ul, .faq-body ol { margin: 0.75rem 0 0 1.1rem; }
+  .faq-body ul { list-style: disc; }
+  .faq-body ol { list-style: decimal; }
+  .faq-body li { margin-bottom: 0.45rem; }
+  .faq-body li:last-child { margin-bottom: 0; }
+  .faq-callout {
+    border-radius: 8px; padding: 0.85rem 1rem; margin-bottom: 0.85rem; font-size: 0.88rem; line-height: 1.6;
+  }
+  .faq-callout strong { color: var(--navy); }
+  .faq-callout.important { background: var(--green-pale); border-left: 3px solid var(--green); color: var(--text); }
+  .faq-callout.note { background: rgba(45,45,122,0.06); border-left: 3px solid var(--navy-mid); color: var(--text); }
+  .faq-link { color: var(--green); font-weight: 600; text-decoration: none; }
+  .faq-link:hover { text-decoration: underline; }
+
   /* FOOTER */
   footer { background: var(--navy); color: rgba(255,255,255,0.5); padding: 2.5rem 2.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; font-size: 0.82rem; }
   footer strong { color: white; }
@@ -221,6 +302,7 @@
     <a href="#features">Features</a>
     <a href="#how">How it works</a>
     <a href="#science">Science</a>
+    <a href="#faq">FAQ</a>
     <a href="#support">Support</a>
     <a href="/instructions/">User Guide</a>
     <a href="https://app.glycogo.fit/" class="nav-cta">Try for free</a>
@@ -243,7 +325,7 @@
     </div>
     <div class="integrations">
       <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2e7d32" stroke-width="1.5"/><path d="M5 8l2 2 4-4" stroke="#2e7d32" stroke-width="1.5" stroke-linecap="round"/></svg>
-      Syncs with major<span>Fitness Devices</span> · Based on peer-reviewed sports science
+      Syncs with major <span>Fitness Devices</span> · Based on peer-reviewed sports science
     </div>
   </div>
 </section>
@@ -403,7 +485,7 @@
         <div class="step-num">01</div>
         <div class="step-body">
           <div class="step-title">Set your baseline targets</div>
-          <p class="step-desc">Enter your bodyweight, energy availabliity target, and baseline macronutrient distribution. These form the foundation of your daily nutrition outside of any training sessions.</p>
+          <p class="step-desc">Enter your bodyweight, energy availability target, and baseline macronutrient distribution. These form the foundation of your daily nutrition outside of any training sessions.</p>
         </div>
       </div>
       <div class="step fade-up">
@@ -442,8 +524,8 @@
         <strong>Carbohydrate and energy prediction from training load</strong> — Rothschild et al. (2025). A Novel Method to Predict Carbohydrate and Energy Expenditure During Endurance Exercise Using Measures of Training Load. <em>Sports Medicine</em>, 55(3):753–774. <a href="https://doi.org/10.1007/s40279-024-02131-z">doi:10.1007/s40279-024-02131-z</a>
       </div>
       <div class="citation">
-  <strong>Relative Energy Deficiency in Sport (REDs)</strong> — Mountjoy et al. (2023). 2023 International Olympic Committee's (IOC) consensus statement on Relative Energy Deficiency in Sport (REDs). <em>British Journal of Sports Medicine</em>, 57(17):1073–1097. <a href="https://doi.org/10.1136/bjsports-2023-106994">doi:10.1136/bjsports-2023-106994</a>
-</div>
+        <strong>Relative Energy Deficiency in Sport (REDs)</strong> — Mountjoy et al. (2023). 2023 International Olympic Committee's (IOC) consensus statement on Relative Energy Deficiency in Sport (REDs). <em>British Journal of Sports Medicine</em>, 57(17):1073–1097. <a href="https://doi.org/10.1136/bjsports-2023-106994">doi:10.1136/bjsports-2023-106994</a>
+      </div>
       <div class="citation">
         <strong>Carbohydrate periodisation</strong> — Impey et al. (2018). Fuel for the Work Required: A Theoretical Framework for CHO Periodization. <em>Frontiers in Physiology</em>. <a href="https://doi.org/10.3389/fphys.2018.01405">doi:10.3389/fphys.2018.01405</a>
       </div>
@@ -454,6 +536,273 @@
         <strong>Protein requirements for athletes</strong> — Morton et al. (2018). A systematic review, meta-analysis and meta-regression of the effect of protein supplementation on resistance training-induced gains in muscle mass. <em>British Journal of Sports Medicine</em>. <a href="https://doi.org/10.1136/bjsports-2017-097608">doi:10.1136/bjsports-2017-097608</a>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="faq">
+  <div class="faq-inner">
+    <div class="faq-header fade-up">
+      <div class="section-label">FAQ</div>
+      <h2 class="section-title">Common Questions</h2>
+      <p class="section-sub">How Glycogo calculates training fuel, daily targets, and within-day energy balance without the jargon.</p>
+    </div>
+
+    <div class="faq-groups">
+
+    <details class="faq-group fade-up">
+      <summary class="faq-group-title">Workouts &amp; device calories</summary>
+      <div class="faq-list">
+
+        <details class="faq-item">
+          <summary>What does “Use device session calories” do?</summary>
+          <div class="faq-body">
+            <ul>
+              <li><strong>When enabled:</strong> Glycogo starts from the calorie value reported by your synced device or platform (Garmin, Strava, Wahoo, Intervals.icu, and similar), then converts it to net active calories for fuelling targets.</li>
+              <li><strong>When disabled:</strong> Glycogo estimates session burn using your sport settings (for example cycling power, running pace, swim pace, efficiency preferences, and body weight) instead of the device number.</li>
+            </ul>
+            <p>Even with device calories enabled, Glycogo will still show a lower figure than your watch. The app removes the resting portion of the device estimate so daily nutrition stays consistent.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Why do workout calories in Glycogo differ from my Garmin, Wahoo, or Strava?</summary>
+          <div class="faq-body">
+            <p>During exercise your body draws energy from resting metabolism and from the work your muscles perform. Sports watches usually report the combined total. Glycogo separates the active portion so it is not counted twice, because your daily meal targets already include your baseline resting needs.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>How does Glycogo sync training sessions?</summary>
+          <div class="faq-body">
+            <p>Glycogo connects to <strong>Intervals.icu</strong>, which can pull planned and completed workouts from major fitness platforms. Imported sessions drive pre-session, during-session, and recovery fuel targets for that day.</p>
+            <p>You can also add or edit sessions manually inside the app.</p>
+          </div>
+        </details>
+
+      </div>
+    </details>
+
+    <details class="faq-group fade-up">
+      <summary class="faq-group-title">Within-day energy balance</summary>
+      <div class="faq-list">
+
+        <details class="faq-item">
+          <summary>What is within-day energy availability?</summary>
+          <div class="faq-body">
+            <div class="faq-callout note">
+              Within-day energy availability tracks your hour-by-hour balance between what you eat and what you burn as the day unfolds.
+            </div>
+            <p>Many apps only look at your total at the end of the day. Glycogo focuses on <strong>when</strong> you are in deficit, because prolonged low-energy periods during the day are linked to hormonal disruption and poorer recovery and body-composition outcomes, even if a large evening meal brings the daily total back to balance.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>What does the within-day energy availability timeline chart show?</summary>
+          <div class="faq-body">
+            <p>The timeline is your within-day energy picture, showing both projected and logged meals, training sessions, and how your cumulative balance changes through the day.</p>
+            <p>Meal and session markers are interactive: hover or tap for details. The chart highlights when you spend extended time in a notable energy deficit, and helps you adjust meal timing or size to optimize energy levels over the day.</p>
+          </div>
+        </details>
+
+        <details class="faq-item" id="faq-morning-deficit">
+          <summary>Why does the app show a deficit when I first wake up?</summary>
+          <div class="faq-body">
+            <p>Your body keeps burning energy overnight for temperature regulation, brain function, and repair. Glycogo uses a circadian model that spreads resting metabolism unevenly across the day (less overnight, more during active hours) rather than dividing it equally across 24 hours.</p>
+            <p>The negative balance you see in the morning reflects overnight energy use and gives a realistic starting point for within-day fuelling. It is expected and not a sign that something is wrong with your settings.</p>
+          </div>
+        </details>
+
+      </div>
+    </details>
+
+    <details class="faq-group fade-up">
+      <summary class="faq-group-title">Fueling settings</summary>
+      <div class="faq-list">
+
+        <details class="faq-item">
+          <summary>What should my carbs-per-hour range be?</summary>
+          <div class="faq-body">
+            <p>Your lower and upper bounds should reflect gut tolerance, training experience, and session demands:</p>
+            <ul>
+              <li><strong>Lower bound:</strong> Easy aerobic, recovery, or low-intensity, shorter-duration work. A common starting range is roughly 30–50 g/hr to support stable energy without overloading the gut.</li>
+              <li><strong>Upper bound:</strong> Hard intervals, threshold work, or race-specific sessions where glycogen use is high.</li>
+              <li><strong>General athletes:</strong> Up to about 90 g/hr is a widely used upper guideline for sustained hard exercise (ACSM guidelines).</li>
+              <li><strong>Higher-output, gut-trained athletes:</strong> Some athletes tolerate and use more than 90 g/hr, especially when total energy demand is very high or when staying fuelled across long or multi-session days. Higher intakes require deliberate gut training in practice. You can raise your upper limit as needed or as you adapt.</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>What should my minimum session duration be?</summary>
+          <div class="faq-body">
+            <p>This setting controls when Glycogo adds <strong>during-session</strong> carbohydrate targets. Lowering the threshold adds during-session fuel to shorter workouts. Raising it keeps fuelling focused on truly long efforts.</p>
+            <p>The default is <strong>60 minutes</strong>, which suits most endurance training, with 60–90 minutes a good range. Shorter sessions often do not need intra-workout carbs.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>What is the high-carb fuelling setting for a session?</summary>
+          <div class="faq-body">
+            <p>When you enable <strong>High-carb fuelling</strong> on an individual workout, Glycogo always includes during-session carbohydrate targets for that session at the upper end of your carbs/hr range, even if it is shorter than your minimum duration setting or at a lower intensity.</p>
+            <p>This is useful for gut training (practising higher carb intakes in training) or when pre-session fuel is limited and you still need on-the-go carbohydrates during the workout.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>What is the difference between during-session carbs vs total carbs added for the session?</summary>
+          <div class="faq-body">
+            <p><strong>During-session carbs</strong> are the carbohydrates you aim to take in <em>while</em> exercising, based on your carbs-per-hour settings and how long the workout lasts.</p>
+            <p><strong>Total carbs added for the session</strong> is the full fuelling bump that workout contributes to your day: during-session carbs <em>plus</em> the pre-session and recovery carbohydrate allocated around that workout.</p>
+            <p>Daily carbohydrate targets then combine your baseline meals with the total added from all sessions on that day.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>What is the “Carb Load” setting used for?</summary>
+          <div class="faq-body">
+            <p>Carb loading increases your baseline daily carbohydrate target for a chosen day to support fuller muscle glycogen stores before a key event or long effort.</p>
+            <div class="faq-callout important">
+              <strong>Tip:</strong> Training on a carb-load day still adds session fuel on top of the elevated baseline. If you also have a workout that day, consider the lower end of your carb-load range so the total goal stays practical.
+            </div>
+          </div>
+        </details>
+
+      </div>
+    </details>
+
+    <details class="faq-group fade-up">
+      <summary class="faq-group-title">Meal timing</summary>
+      <div class="faq-list">
+
+        <details class="faq-item">
+          <summary>Why does the app schedule a pre-session snack?</summary>
+          <div class="faq-body">
+            <p>Pre-session snacks help top up carbohydrate stores, which is particularly important for pre-breakfast training or before hard or long work. By default the app places this about an hour before your session starts. You can change the timing or turn pre-session snacks off in settings.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Why did my default meal times shift after I added a workout?</summary>
+          <div class="faq-body">
+            <p>If your meal’s default time in settings (for example Breakfast at 07:30, Lunch at 12:30, Dinner at 18:30) falls within a workout session block, Glycogo automatically shifts it to avoid overlap and ensure adequate digestion time.</p>
+            <p>The meal is moved to either <strong>60 minutes before the session starts</strong> or <strong>directly to the end of the session</strong>, selecting whichever option is closest to the meal’s original default time.</p>
+            <p>With multiple sessions on one day, fuelling is planned per workout and daily targets reflect the combined training load. See <a class="faq-link" href="#faq-multiple-workouts">multiple workouts on the same day</a>.</p>
+          </div>
+        </details>
+
+        <details class="faq-item" id="faq-multiple-workouts">
+          <summary>How does Glycogo handle multiple workouts on the same day?</summary>
+          <div class="faq-body">
+            <p>Each session gets its own pre-session, during-session, and recovery nutrition timing. Net training energy and carbohydrate needs for the day reflect the combined load from all sessions.</p>
+          </div>
+        </details>
+
+      </div>
+    </details>
+
+    <details class="faq-group fade-up">
+      <summary class="faq-group-title">Sport settings &amp; calorie estimates</summary>
+      <div class="faq-list">
+
+        <details class="faq-item">
+          <summary>What is the fueling heat map on the settings screen?</summary>
+          <div class="faq-body">
+            <p>It shows how your planned carbohydrate intake per hour varies with session duration and RPE. Use it as a visual guide to how fuelling ramps up as efforts get longer or harder.</p>
+            <p>Hover or tap to explore values. Use it alongside your carbs-per-hour bounds to check that easy and hard sessions produce targets that match your training and gut tolerance.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>What if I do not know my FTP, critical pace, or swim CSS?</summary>
+          <div class="faq-body">
+            <p>Leave those fields blank or at zero and Glycogo falls back to standard sport-specific estimates scaled to your body weight. You still get a usable calorie and fuelling range; entering personal benchmarks later will refine it.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>What if I do not know my efficiency for cycling, running, or swimming?</summary>
+          <div class="faq-body">
+            <p>Leave the efficiency sliders at their defaults. They represent typical values for each sport. You do not need lab testing to start using Glycogo.</p>
+            <ul>
+              <li><strong>Cycling:</strong> Default reflects a typical gross efficiency for trained riders. Move left if you are newer to cycling or a more fast-twitch dominant athlete, and vice versa.</li>
+              <li><strong>Running:</strong> Default reflects a typical economy. Less economical runners need more fuel at the same pace; well-trained, economical runners need less.</li>
+              <li><strong>Swimming:</strong> Default reflects typical propulsive efficiency in the water. Less efficient technique or higher drag means higher calorie needs at the same pace.</li>
+            </ul>
+            <p>You can adjust these settings over time based on feel, recovery, and performance.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>How does cycling efficiency affect calorie burn?</summary>
+          <div class="faq-body">
+            <p>Cycling efficiency describes how much of your total energy output reaches the pedals as useful power:</p>
+            <ul>
+              <li><strong>Lower efficiency:</strong> More energy is lost as heat for the same power, so calorie burn is higher.</li>
+              <li><strong>Higher efficiency:</strong> Less total energy is needed to hold the same power, so calorie burn is lower.</li>
+            </ul>
+            <p>Adjust the slider in settings if your real-world fuelling feedback suggests your defaults are too high or too low.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>How does running economy affect calorie burn?</summary>
+          <div class="faq-body">
+            <p>Running economy works on the same principle as cycling efficiency. It reflects how much energy you spend to sustain a given pace. Less economical runners burn more calories at the same speed; more economical runners burn less.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Why is swimming calorie estimation sensitive to technique and pace?</summary>
+          <div class="faq-body">
+            <p>Water creates far more resistance than air. Small increases in speed can demand a disproportionately large rise in effort, and technique has a big impact on how much energy is spent fighting drag and staying aligned in the water, so calorie burn should not be based on speed alone.</p>
+            <p>Glycogo’s swim settings let you account for your personal efficiency. If you are unsure, start conservative and adjust based on how sessions feel and recover.</p>
+          </div>
+        </details>
+
+      </div>
+    </details>
+
+    <details class="faq-group fade-up">
+      <summary class="faq-group-title">Using the app</summary>
+      <div class="faq-list">
+
+        <details class="faq-item">
+          <summary>What does “Suggest quantities” do?</summary>
+          <div class="faq-body">
+            <p>When you log or plan foods, Suggest quantities recommends portion sizes to help close your remaining macro gaps for that meal, especially carbohydrates and calories, without manual trial and error.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>What are meal templates and the meal builder?</summary>
+          <div class="faq-body">
+            <p>Templates let you save combinations of foods you eat often and reload them in one step. The meal builder stages foods before you log them to a meal, so you can search, scan, or add items, edit amounts, and review the full meal before logging.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>What happens when I mark a meal complete?</summary>
+          <div class="faq-body">
+            <p>Marking a meal complete tells Glycogo you have eaten what you planned for that meal. It updates your within-day timeline and projections so the rest of the day reflects logged intake rather than planned placeholders.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Are my changes saved if sync is temporarily unavailable?</summary>
+          <div class="faq-body">
+            <p>Yes. Edits are stored on your device first and sync to your account when connectivity returns. Retry runs in the background so you do not need to re-enter meals because of a brief connection issue.</p>
+          </div>
+        </details>
+
+      </div>
+    </details>
+
+    </div>
+
+    <p class="section-sub fade-up" style="text-align:center;margin:2rem auto 0;max-width:520px;">
+      More detail in the <a class="faq-link" href="/instructions/">User Guide</a>. Still stuck? <a class="faq-link" href="mailto:contactgemperformance@gmail.com">Get in touch</a>.
+    </p>
   </div>
 </section>
 
@@ -482,6 +831,7 @@
   <div style="display:flex;gap:1rem;align-items:center;flex-wrap:wrap;">
     <a href="/terms" style="color:rgba(255,255,255,0.6);font-size:0.82rem;text-decoration:underline;">Terms of Service</a>
     <a href="/privacy" style="color:rgba(255,255,255,0.6);font-size:0.82rem;text-decoration:underline;">Privacy Policy</a>
+    <a href="#faq" style="color:rgba(255,255,255,0.6);font-size:0.82rem;text-decoration:underline;">FAQ</a>
     <a href="https://app.glycogo.fit/" style="background:var(--green);color:white;padding:0.5rem 1.2rem;border-radius:6px;font-weight:600;font-size:0.85rem;text-decoration:none;">Try for free</a>
   </div>
 </footer>
@@ -494,6 +844,18 @@
     el.style.transitionDelay = `${(i % 4) * 0.08}s`;
     observer.observe(el);
   });
+
+  function openFaqAnchor() {
+    const id = decodeURIComponent((location.hash || '').slice(1));
+    if (!id) return;
+    const target = document.getElementById(id);
+    if (!target) return;
+    const group = target.closest('.faq-group');
+    if (group) group.open = true;
+    if (target.matches('details.faq-item')) target.open = true;
+  }
+  window.addEventListener('hashchange', openFaqAnchor);
+  openFaqAnchor();
 </script>
 </body>
 </html>
