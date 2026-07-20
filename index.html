@@ -101,6 +101,7 @@
     position: absolute; inset: 0; z-index: 0;
     width: 100%; height: 100%; object-fit: cover;
     opacity: 1;
+    background: var(--navy);
   }
   .hero-overlay {
     position: absolute; inset: 0; z-index: 1;
@@ -536,7 +537,6 @@
       <a href="#science">Science</a>
       <a href="#faq">FAQ</a>
       <a href="#support">Support</a>
-      <a href="/instructions/">User Guide</a>
       <a href="https://web.glycogo.fit/" class="nav-cta">Try for free</a>
     </div>
   </div>
@@ -544,7 +544,7 @@
 
 <!-- HERO -->
 <section class="hero">
-  <video class="hero-video" autoplay muted loop playsinline poster="assets/app-home.png">
+  <video class="hero-video" autoplay muted loop playsinline>
     <source src="assets/demo.mp4" type="video/mp4">
   </video>
   <div class="hero-overlay"></div>
@@ -665,8 +665,7 @@
       <div class="feature-card fade-up">
         <div class="feature-icon"><svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
         <div class="feature-title">Trend Tracking</div>
-        <p class="feature-desc">See how actual intake compares to targets over time and how it fluctuates with training load. Daily totals sync back to Intervals.icu wellness fields so nutrition data sits alongside training data.</p>
-      </div>
+        <p class="feature-desc">Plot within-day energy to see how your hour-by-hour energy balance shifts with meals and training, and view history to visualise how actual intake matches up against to targets fluctuates with training load over time.</p>      </div>
 
       <div class="feature-card fade-up">
         <div class="feature-icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
@@ -881,6 +880,20 @@
     </div>
 
     <div class="faq-groups">
+	
+	<details class="faq-group fade-up">
+      <summary class="faq-group-title">Pricing</summary>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>How much does Glycogo cost?</summary>
+          <div class="faq-body">
+            <p>Premium is priced at about the cost of just<strong>one energy gel per month</strong> — roughly <strong>€3.50</strong> or <strong>$4 USD</strong>.</p>
+            <p>You can use Glycogo for free too! A subscription unlocks premium features such as Intervals.icu sync, photo and barcode logging, a greater food database, and the AI nutrition assistant.</p>
+          </div>
+        </details>
+      </div>
+    </details>
+    <details class="faq-group fade-up">
 
     <details class="faq-group fade-up">
       <summary class="faq-group-title">Workouts &amp; device calories</summary>
@@ -1058,6 +1071,15 @@
           </div>
         </details>
 
+        <details class="faq-item" id="faq-pre-session-snack-timing">
+          <summary>What effect does pre-session snack timing have?</summary>
+          <div class="faq-body">
+            <p>The timing setting controls how many minutes before your session the pre-session snack is scheduled, and how much carbohydrate is able to be placed in that slot.</p>
+            <p>Shorter gaps use a lower carb cap , whilst longer gaps allow more. This reflects sport nutrition guidelines on how much fuel is practical to absorb before hard work without overloading the gut.</p>
+            <p>If the pre-session target would exceed this cap, the excess calories and carbohydrates spill over to your other meals.</p>
+          </div>
+        </details>
+		
         <details class="faq-item">
           <summary>Why did my default meal times shift after I added a workout?</summary>
           <div class="faq-body">
@@ -1178,7 +1200,7 @@
     </div>
 
     <p class="section-sub fade-up" style="text-align:center;margin:2rem auto 0;max-width:520px;">
-      More detail in the <a class="faq-link" href="/instructions/">User Guide</a>. Still stuck? <a class="faq-link" href="mailto:contactgemperformance@gmail.com">Get in touch</a>.
+      Still stuck? <a class="faq-link" href="mailto:contactgemperformance@gmail.com">Get in touch</a>.
     </p>
   </div>
 </section>
