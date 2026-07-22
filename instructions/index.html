@@ -260,7 +260,7 @@ footer a:hover { color: var(--orange-light); }
       <div class="step-body">
         <p class="why-lead">Your logs, foods, settings, and history stay linked to your account so you can pick up on any device.</p>
         <ul class="compact">
-          <li>Sign in on the app or at <strong>web.glycogo.fit</strong> (email or Google).</li>
+          <li>Sign in on the app or at <strong>web.glycogo.fit</strong>.</li>
           <li>First launch runs short onboarding for body composition, targets, and meals.</li>
           <li>Syncing workouts from your device requires a free Intervals.icu account.</li>
         </ul>
@@ -282,7 +282,7 @@ footer a:hover { color: var(--orange-light); }
         <div class="settings-group">
           <h4>Basic settings</h4>
           <ul class="compact">
-            <li>Body weight and body fat % (or use <strong>Estimate BF%</strong>)</li>
+            <li>Body weight and known or estimate body fat %</li>
             <li>Energy Availability</li>
             <li>Macro split (%)</li>
             <li>Meal distribution and default meal times</li>
@@ -296,7 +296,7 @@ footer a:hover { color: var(--orange-light); }
             <li>Select the sports and activities you train (running, cycling, swimming, gym, team sports, winter sports, and more)</li>
             <li>Add custom sports with your own calorie ranges if needed</li>
             <li>Carbohydrates per hour (lower / upper)</li>
-            <li>Minimum duration for carbohydrates: during-session fuel only applies above this unless High-carb fuelling is on for that session.</li>
+            <li>Minimum duration for carbohydrates: during-session fuel only applies above this unless High-carb fuelling is selected for that session.</li>
             <li><em>Recommended:</em> Enter critical power/paces, and estimated efficiency for running, cycling, and swimming to dial in your RPE estimations and refine calorie estimates when <strong>Use device session calories</strong> is off.</li>
           </ul>
         </div>
@@ -342,10 +342,11 @@ footer a:hover { color: var(--orange-light); }
       <div class="step-body">
         <p class="why-lead">Glycogo adjusts daily calories and carbohydrates based on what you train. Without sessions, targets stay at your rest-day baseline.</p>
         <ul class="compact">
-          <li>Add manually with <strong>Add training</strong> <span class="app-icon training" style="display:inline-flex;width:22px;height:22px;vertical-align:middle;margin:0 2px;"><svg viewBox="0 0 24 24" style="width:12px;height:12px;"><path d="M20.57 14.86L22 13.43 20.57 12 17 15.57 8.43 7 12 3.43 10.57 2 9.14 3.43 7.71 2 5.57 4.14 4.14 2.71 2.71 4.14l1.43 1.43L2 7.71l1.43 1.43L2 10.57 3.43 12 7 8.43 15.57 17 12 20.57 13.43 22l1.43-1.43L16.29 22l2.14-2.14 1.43 1.43 1.43-1.43-1.43-1.43L22 16.29z"/></svg></span>, or your training day or week from your device on Home.</li>
+          <li>Add sessions manually with <strong>Add training</strong> <span class="app-icon training" style="display:inline-flex;width:22px;height:22px;vertical-align:middle;margin:0 2px;"><svg viewBox="0 0 24 24" style="width:12px;height:12px;"><path d="M20.57 14.86L22 13.43 20.57 12 17 15.57 8.43 7 12 3.43 10.57 2 9.14 3.43 7.71 2 5.57 4.14 4.14 2.71 2.71 4.14l1.43 1.43L2 7.71l1.43 1.43L2 10.57 3.43 12 7 8.43 15.57 17 12 20.57 13.43 22l1.43-1.43L16.29 22l2.14-2.14 1.43 1.43 1.43-1.43-1.43-1.43L22 16.29z"/></svg></span>, or your training day or week from your device on Home.</li>
           <li><strong>Session RPE</strong> (1–100): rate the whole workout, not peak intervals only.</li>
           <li>RPE sets carbohydrates and calories <em>per hour</em>; duration scales the during-session total.</li>
-          <li><strong>High-carb fuelling</strong> and <strong>Merge sessions</strong> are available when editing a session.</li>
+          <li>Optionally: turn on<strong>High-carb fuelling</strong>, useful for GI-training, or when you might be going into a session with limited fuel.          
+		  <strong>Merge sessions</strong>button allows you to treat multiple workout, such as a brick session, as one.</li>
         </ul>
         <p style="font-size:0.87rem;margin-top:0.75rem;">See the <a href="#rpe-ref" style="color:var(--green);font-weight:600;">RPE Reference</a> below.</p>
       </div>
@@ -427,10 +428,10 @@ footer a:hover { color: var(--orange-light); }
               <td>
                 Calories available for body functions after accounting for exercise cost:
                 <ul style="margin:0.4rem 0 0 1rem;line-height:1.8;">
-                  <li><span style="color:#ef4444;font-weight:600;">25–30</span>: Low. Prolonged use is associated with REDs and impaired recovery.</li>
+                  <li><span style="color:#ef4444;font-weight:600;">25–30</span>: Low. Prolonged periods in this state is associated with REDs and impaired recovery.</li>
                   <li><span style="color:#f59e0b;font-weight:600;">30–40</span>: Moderate. Appropriate for weight loss phases.</li>
-                  <li><span style="color:#22c55e;font-weight:600;">40–50</span>: Optimal for most athletes.</li>
-                  <li><span style="color:#16a34a;font-weight:600;">50–55</span>: High. Suited to heavy training blocks and growth phases.</li>
+                  <li><span style="color:#22c55e;font-weight:600;">40–45</span>: Optimal for most athletes.</li>
+                  <li><span style="color:#16a34a;font-weight:600;">45–55</span>: High. Suited to heavy training blocks, athletes with higher expenditure outside of trainig, and growth phases.</li>
                 </ul>
               </td>
             </tr>
