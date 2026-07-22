@@ -444,6 +444,7 @@
     transition: background 0.2s;
   }
   .faq-group > summary.faq-group-title::-webkit-details-marker { display: none; }
+  .faq-group > summary.faq-group-title::marker { content: ''; display: none; }
   .faq-group > summary.faq-group-title::after {
     content: '+'; flex-shrink: 0; width: 1.6rem; height: 1.6rem; border-radius: 8px;
     background: rgba(230,92,0,0.1); color: var(--orange);
@@ -466,6 +467,7 @@
     display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem;
   }
   .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary::marker { content: ''; display: none; }
   .faq-item summary::after {
     content: '+'; flex-shrink: 0; width: 1.45rem; height: 1.45rem; border-radius: 8px;
     background: var(--green-pale); color: var(--green);
@@ -880,20 +882,19 @@
     </div>
 
     <div class="faq-groups">
-	
-	<details class="faq-group fade-up">
+
+    <details class="faq-group fade-up">
       <summary class="faq-group-title">Pricing</summary>
       <div class="faq-list">
         <details class="faq-item">
           <summary>How much does Glycogo cost?</summary>
           <div class="faq-body">
-            <p>Premium is priced at about the cost of just<strong>one energy gel per month</strong> — roughly <strong>€3.50</strong> or <strong>$4 USD</strong>.</p>
+            <p>Premium is priced at about the cost of just <strong>one energy gel per month</strong> — roughly <strong>€3.50</strong> or <strong>$4 USD</strong>.</p>
             <p>You can use Glycogo for free too! A subscription unlocks premium features such as Intervals.icu sync, photo and barcode logging, a greater food database, and the AI nutrition assistant.</p>
           </div>
         </details>
       </div>
     </details>
-    <details class="faq-group fade-up">
 
     <details class="faq-group fade-up">
       <summary class="faq-group-title">Workouts &amp; device calories</summary>
@@ -1075,11 +1076,11 @@
           <summary>What effect does pre-session snack timing have?</summary>
           <div class="faq-body">
             <p>The timing setting controls how many minutes before your session the pre-session snack is scheduled, and how much carbohydrate is able to be placed in that slot.</p>
-            <p>Shorter gaps use a lower carb cap , whilst longer gaps allow more. This reflects sport nutrition guidelines on how much fuel is practical to absorb before hard work without overloading the gut.</p>
+            <p>Shorter gaps use a lower carb cap, whilst longer gaps allow more. This reflects sport nutrition guidelines on how much fuel is practical to absorb before hard work without overloading the gut.</p>
             <p>If the pre-session target would exceed this cap, the excess calories and carbohydrates spill over to your other meals.</p>
           </div>
         </details>
-		
+
         <details class="faq-item">
           <summary>Why did my default meal times shift after I added a workout?</summary>
           <div class="faq-body">
@@ -1183,7 +1184,7 @@
           <summary>What happens when I mark a meal complete?</summary>
           <div class="faq-body">
           <p>Marking a meal complete tells Glycogo you have eaten what you logged for that meal. That meal’s targets lock to your actual intake, and any remaining calories and macros for the day are <strong>redistributed</strong> across your still-open meals using your meal distribution settings.</p>
-            <p>Your within-day timeline and projections update too, so the rest of the day reflects logged intake.</p>          \
+            <p>Your within-day timeline and projections update too, so the rest of the day reflects logged intake.</p>
           </div>
         </details>
 
