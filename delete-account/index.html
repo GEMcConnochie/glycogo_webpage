@@ -71,17 +71,6 @@ nav {
 }
 .content > p { color: var(--muted); margin-bottom: 1.25rem; }
 
-.callout {
-  background: linear-gradient(135deg, var(--green-pale), #fff);
-  border: 1px solid rgba(46,125,50,0.22);
-  border-left: 4px solid var(--green);
-  border-radius: 12px;
-  padding: 1.25rem 1.35rem;
-  margin: 1.5rem 0 2rem;
-}
-.callout strong { color: var(--navy); display: block; margin-bottom: 0.35rem; font-size: 1rem; }
-.callout p { color: var(--muted); margin: 0; font-size: 0.95rem; }
-
 .section {
   background: #fff;
   border: 1px solid var(--border);
@@ -104,36 +93,6 @@ nav {
 .section li { margin-bottom: 0.55rem; }
 .section li:last-child { margin-bottom: 0; }
 .section a { color: var(--green); font-weight: 600; }
-
-.steps {
-  counter-reset: step;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-.steps li {
-  counter-increment: step;
-  position: relative;
-  padding-left: 2.75rem;
-  margin-bottom: 1rem;
-}
-.steps li::before {
-  content: counter(step);
-  position: absolute;
-  left: 0;
-  top: 0.05rem;
-  width: 1.85rem;
-  height: 1.85rem;
-  border-radius: 999px;
-  background: var(--green);
-  color: #fff;
-  font-family: 'Space Mono', monospace;
-  font-size: 0.78rem;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
 .data-table {
   width: 100%;
@@ -209,25 +168,6 @@ footer a { color: rgba(255,255,255,0.6); text-decoration: underline; }
 </div>
 
 <main class="content">
-  <div class="callout">
-    <strong>Before you delete</strong>
-    <p>
-      Export anything you want to keep first. Account deletion is permanent and removes your nutrition logs,
-      settings, and training data from Glycogo servers.
-    </p>
-  </div>
-
-  <section class="section" id="delete-in-app">
-    <h2>Delete in the Glycogo app</h2>
-    <ol class="steps">
-      <li>Open <a href="https://web.glycogo.fit/">Glycogo</a> and sign in.</li>
-      <li>Go to <strong>Settings</strong>.</li>
-      <li>Scroll to <strong>Delete Account</strong>, confirm, and follow the prompts.</li>
-    </ol>
-    <p style="color:var(--muted); font-size:0.9rem; margin-top:0.85rem;">
-      Deletion is processed immediately on our servers. Cancel any active subscription first if you no longer want to be billed.
-    </p>
-  </section>
 
   <section class="section" id="delete-by-email">
     <h2>Request deletion by email</h2>
