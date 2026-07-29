@@ -907,14 +907,14 @@
               <li><strong>When enabled:</strong> Glycogo starts from the calorie value reported by your synced device or platform (Garmin, Strava, Wahoo, Intervals.icu, and similar), then converts it to net active calories for fuelling targets.</li>
               <li><strong>When disabled:</strong> Glycogo estimates session burn using your sport settings (for example cycling power, running pace, swim pace, efficiency preferences, and body weight) instead of the device number.</li>
             </ul>
-            <p>Even with device calories enabled, Glycogo will still show a lower figure than your watch. The app removes the resting portion of the device estimate so daily nutrition stays consistent.</p>
+            <p>Even with device calories enabled, Glycogo will still likely show a lower figure than your watch. The app removes the resting portion of the device estimate to avoid double adding this expenditure.</p>
           </div>
         </details>
 
         <details class="faq-item">
           <summary>Why do workout calories in Glycogo differ from my Garmin, Wahoo, or Strava?</summary>
           <div class="faq-body">
-            <p>During exercise your body draws energy from resting metabolism and from the work your muscles perform. Sports watches usually report the combined total. Glycogo separates the active portion so it is not counted twice, because your daily meal targets already include your baseline resting needs.</p>
+            <p>During exercise your body draws energy from resting metabolism and from the work your muscles perform. Sports watches usually report the combined total. Glycogo separates the active portion so it is not counted twice, because your daily meal targets already include your general daily needs.</p>
           </div>
         </details>
 
@@ -1015,10 +1015,10 @@
           <div class="faq-body">
             <p>Your lower and upper bounds should reflect gut tolerance, training experience, and session demands:</p>
             <ul>
-              <li><strong>Lower bound:</strong> Easy aerobic, recovery, or low-intensity, shorter-duration work. A common starting range is roughly 30–50 g/hr to support stable energy without overloading the gut.</li>
+              <li><strong>Lower bound:</strong> Easy aerobic, recovery, or low-intensity, shorter-duration work. A common starting range is roughly 50-60 g/hr to support stable energy without overloading the gut.</li>
               <li><strong>Upper bound:</strong> Hard intervals, threshold work, or race-specific sessions where glycogen use is high.</li>
               <li><strong>General athletes:</strong> Up to about 90 g/hr is a widely used upper guideline for sustained hard exercise (ACSM guidelines).</li>
-              <li><strong>Higher-output, gut-trained athletes:</strong> Some athletes tolerate and use more than 90 g/hr, especially when total energy demand is very high or when staying fuelled across long or multi-session days. Higher intakes require deliberate gut training in practice. You can raise your upper limit as needed or as you adapt.</li>
+              <li><strong>Higher-output, gut-trained athletes:</strong> Some athletes tolerate and use more than 90 g/hr, especially when total energy demand is very high or when staying fuelled across long or multi-session days. Higher intakes often deliberate gut training in practice. You can raise your upper limit as needed or as you adapt.</li>
             </ul>
           </div>
         </details>
@@ -1086,7 +1086,6 @@
           <div class="faq-body">
             <p>If your meal’s default time in settings (for example Breakfast at 07:30, Lunch at 12:30, Dinner at 18:30) falls within a workout session block, Glycogo automatically shifts it to avoid overlap and ensure adequate digestion time.</p>
             <p>The meal is moved to either <strong>60 minutes before the session starts</strong> or <strong>directly to the end of the session</strong>, selecting whichever option is closest to the meal’s original default time.</p>
-            <p>With multiple sessions on one day, fuelling is planned per workout and daily targets reflect the combined training load. See <a class="faq-link" href="#faq-multiple-workouts">multiple workouts on the same day</a>.</p>
           </div>
         </details>
 
@@ -1188,10 +1187,22 @@
           </div>
         </details>
 
-        <details class="faq-item">
-          <summary>Are my changes saved if sync is temporarily unavailable?</summary>
+        <details class="faq-item" id="faq-hide-calories">
+          <summary>Why would I choose to hide calories?</summary>
           <div class="faq-body">
-            <p>Yes. Edits are stored on your device first and sync to your account when connectivity returns. Retry runs in the background so you do not need to re-enter meals because of a brief connection issue.</p>
+            <p>Hiding calories keeps the focus on <strong>carbohydrates, protein, and fat</strong> instead of calorie totals. Many athletes find that useful when they want to fuel for training and recovery without calorie counting as the main scoreboard.</p>
+            <p>When enabled, kcal numbers are hidden across the home day view, meal cards, food search, and related charts, while carb/protein/fat targets and logging still work as usual. You can turn it back on any time from the home screen eye symbol control.</p>
+          </div>
+        </details>
+
+        <details class="faq-item" id="faq-start-day-fresh">
+          <summary>What does “Start each day fresh” do?</summary>
+          <div class="faq-body">
+            <p>This setting controls whether Glycogo auto-fills a new weekday from your usual meals for that day of the week.</p>
+            <ul>
+              <li><strong>On (default):</strong> each day starts empty of logged foods. You build the day yourself (or use templates / AI when you want).</li>
+              <li><strong>Off:</strong> after you save a day, Glycogo can remember that weekday’s standard meals and snacks and copy them onto the same weekday next week when that day is still empty, handy if Mondays or training days look similar every week.</li>
+            </ul>
           </div>
         </details>
 
