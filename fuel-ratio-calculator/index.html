@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon" type="image/png" href="/logosmall.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fuel Ratio Calculator — Glucose:Fructose Carb Calculator for Endurance Athletes | Glycogo</title>
+<meta name="description" content="Plan your race-day carb intake with a glucose:fructose ratio calculator built on real gut-absorption science. Compare 38 verified sports nutrition products from 23 brands (SiS, Maurten, Tailwind, Precision Fuel, Neversecond and more) plus whole foods, and see exactly how your mix stacks up against the 2:1 and 1:0.8 ratios used in endurance research.">
+<meta name="keywords" content="glucose fructose ratio, carb ratio calculator, endurance nutrition, sports gel comparison, 2:1 ratio, 1:0.8 ratio, carbohydrate absorption, SGLT1 GLUT5, fuel ratio calculator, energy gel ratio">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Glycogo">
+<link rel="canonical" href="https://glycogo.fit/fuel-ratio-calculator/">
+
+<!-- Open Graph / social sharing -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Fuel Ratio Calculator — Glucose:Fructose Carb Calculator for Endurance Athletes">
+<meta property="og:description" content="Plan race-day carb intake with a glucose:fructose calculator built on gut-absorption science. Compare 38 verified sports nutrition products from 23 brands, or build a mix from whole foods.">
+<meta property="og:site_name" content="Glycogo">
+<meta property="og:url" content="https://glycogo.fit/fuel-ratio-calculator/">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Fuel Ratio Calculator — Glucose:Fructose Carb Calculator">
+<meta name="twitter:description" content="38 verified sports nutrition products, 23 brands, one glucose:fructose ratio calculator built on gut-absorption science.">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Glycogo Fuel Ratio Calculator",
+  "url": "https://glycogo.fit/fuel-ratio-calculator/",
+  "applicationCategory": "HealthApplication",
+  "operatingSystem": "Any (web browser)",
+  "description": "A glucose:fructose ratio calculator for endurance athletes. Set a target carb intake rate and duration, build a fuel mix from whole foods or verified sports nutrition products, and compare against the glucose:fructose ratios used in gut-absorption research (2:1 and 1:0.8).",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "featureList": [
+    "Target carb intake and glucose:fructose blend planner",
+    "Whole food glucose:fructose lookup",
+    "38 verified sports nutrition products across 23 brands",
+    "Fuel gauge comparing your mix to your target ratio"
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+/* -------- Glycogo brand palette, sampled from the logo -------- */
+:root{
+  --bg:#FFFFFF;
+  --bg-2:#FAFAF8;
+  --panel:#FFFFFF;
+  --panel-2:#F2F3EE;
+  --line:rgba(30,32,36,0.09);
+  --line-strong:rgba(30,32,36,0.16);
+  --text:#1E2024;
+  --text-dim:#5B5F66;
+  --text-faint:#93979E;
+  --glucose:#DA7E12;
+  --glucose-soft:#FBEBD4;
+  --glucose-dim:#A9600D;
+  --fructose:#46469A;
+  --fructose-soft:#E4E4F3;
+  --fructose-dim:#33336F;
+  --good:#4B8A30;
+  --good-soft:#E4F0DD;
+  --warn:#B87A1E;
+  --bad:#C23B4F;
+  --radius-sm:6px;
+  --radius-md:9px;
+  --nav-h:72px;
+  --green:#2e7d32;
+  --green-light:#43a047;
+  --green-pale:#e8f5e9;
+  --navy:#1a1a3e;
+  --muted:#5c6670;
+  --border:#e8ece9;
+  --white:#ffffff;
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:'Inter',system-ui,sans-serif;
+  min-height:100vh;
+  -webkit-font-smoothing:antialiased;
+  padding-top:var(--nav-h);
+}
+::selection{ background:var(--glucose); color:#fff; }
+a{color:inherit;}
+.wrap{ max-width:1040px; margin:0 auto; padding:0 20px; }
+
+/* ---------- SITE NAV ---------- */
+nav#main-nav{
+  position:fixed; top:0; left:0; right:0; z-index:200;
+  height:var(--nav-h);
+  background:rgba(255,255,255,0.92);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--border);
+  font-family:'DM Sans',sans-serif;
+}
+.nav-inner{
+  max-width:1140px; margin:0 auto; height:100%;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:0 2rem;
+}
+.nav-inner > a{ display:flex; align-items:center; text-decoration:none; }
+.nav-inner img{ height:52px; }
+.nav-links{ display:flex; gap:1.75rem; align-items:center; }
+.nav-links > a,
+.nav-dropdown-toggle{
+  text-decoration:none; color:var(--muted); font-size:0.88rem; font-weight:500;
+  transition:color 0.2s; background:none; border:none; cursor:pointer;
+  font-family:inherit; padding:0; display:inline-flex; align-items:center; gap:0.3rem;
+}
+.nav-links > a:hover,
+.nav-dropdown-toggle:hover,
+.nav-dropdown.open .nav-dropdown-toggle{ color:var(--green); }
+.nav-dropdown{ position:relative; }
+.nav-dropdown-toggle .chev{
+  width:0; height:0; border-left:4px solid transparent; border-right:4px solid transparent;
+  border-top:4px solid currentColor; opacity:0.7; transition:transform 0.2s;
+}
+.nav-dropdown.open .chev{ transform:rotate(180deg); }
+.nav-dropdown-menu{
+  position:absolute; top:calc(100% + 0.65rem); left:50%; transform:translateX(-50%) translateY(4px);
+  min-width:220px; background:var(--white); border:1px solid var(--border);
+  border-radius:12px; box-shadow:0 12px 40px rgba(26,26,62,0.12); padding:0.4rem;
+  opacity:0; visibility:hidden; pointer-events:none;
+  transition:opacity 0.18s ease, transform 0.18s ease, visibility 0.18s; z-index:300;
+}
+.nav-dropdown.open .nav-dropdown-menu,
+.nav-dropdown:hover .nav-dropdown-menu,
+.nav-dropdown:focus-within .nav-dropdown-menu{
+  opacity:1; visibility:visible; pointer-events:auto; transform:translateX(-50%) translateY(0);
+}
+.nav-dropdown-menu a{
+  display:block; padding:0.7rem 0.9rem; border-radius:8px;
+  text-decoration:none; color:var(--navy); font-size:0.86rem; font-weight:500;
+  transition:background 0.15s, color 0.15s; white-space:nowrap;
+}
+.nav-dropdown-menu a:hover{ background:var(--green-pale); color:var(--green); }
+.nav-cta{
+  background:var(--green) !important; color:white !important;
+  padding:0.6rem 1.35rem !important; border-radius:999px !important;
+  font-weight:700 !important; font-size:0.88rem !important;
+}
+.nav-cta:hover{ background:var(--green-light) !important; }
+@media (max-width:800px){
+  .nav-links{ display:none; }
+}
+
+/* ---------- HEADER ---------- */
+header.top{ padding:36px 0 30px; border-bottom:1px solid var(--line); }
+.eyebrow{
+  font-family:'JetBrains Mono',monospace;
+  font-size:11.5px; letter-spacing:0.1em; text-transform:uppercase; color:var(--fructose);
+  display:flex; align-items:center; gap:8px; margin-bottom:16px; font-weight:600;
+}
+.eyebrow::before{ content:""; width:16px; height:2px; background:var(--glucose); }
+h1.title{
+  font-family:'Space Grotesk',sans-serif; font-weight:700;
+  font-size:clamp(30px,5vw,46px); margin:0 0 12px; line-height:1.08; color:var(--text); letter-spacing:-0.01em;
+}
+.subtitle{ color:var(--text-dim); font-size:16px; max-width:620px; line-height:1.6; margin:0; }
+
+/* ---------- SECTION SHELL ---------- */
+section{ padding:40px 0; border-bottom:1px solid var(--line); }
+.section-head{ display:flex; align-items:baseline; justify-content:space-between; gap:16px; margin-bottom:20px; flex-wrap:wrap; }
+.section-num{
+  font-family:'JetBrains Mono',monospace; color:var(--text-faint);
+  font-size:11.5px; letter-spacing:0.08em; font-weight:600;
+}
+h2.section-title{
+  font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:20px; margin:4px 0 0; color:var(--text); letter-spacing:-0.005em;
+}
+.section-desc{ color:var(--text-dim); font-size:14.5px; max-width:620px; line-height:1.6; margin-top:6px; }
+
+/* ---------- PLANNER ---------- */
+.planner-grid{ display:grid; grid-template-columns:1fr 1fr; gap:32px; }
+@media(max-width:720px){ .planner-grid{ grid-template-columns:1fr; } }
+
+.control{ margin-bottom:24px; }
+.control label{
+  display:flex; justify-content:space-between; align-items:baseline;
+  font-family:'JetBrains Mono',monospace; font-size:11.5px; letter-spacing:0.03em; text-transform:uppercase; color:var(--text-dim);
+  margin-bottom:10px; font-weight:600;
+}
+.control label .val{ color:var(--text); font-size:15px; font-weight:700; font-family:'Space Grotesk',sans-serif; }
+.control .hint{ font-size:12.5px; color:var(--text-faint); margin-top:8px; line-height:1.5; }
+input[type="range"]{
+  -webkit-appearance:none; appearance:none;
+  width:100%; height:4px; background:var(--panel-2); border-radius:2px; outline:none; border:1px solid var(--line-strong);
+}
+input[type="range"]::-webkit-slider-thumb{
+  -webkit-appearance:none; appearance:none;
+  width:16px; height:16px; border-radius:50%;
+  background:var(--glucose); border:2px solid #fff; cursor:pointer;
+  box-shadow:0 0 0 1px var(--glucose), 0 1px 3px rgba(0,0,0,0.25);
+}
+input[type="range"]::-moz-range-thumb{
+  width:16px; height:16px; border-radius:50%;
+  background:var(--glucose); border:2px solid #fff; cursor:pointer;
+  box-shadow:0 0 0 1px var(--glucose), 0 1px 3px rgba(0,0,0,0.25);
+}
+input[type="range"]:disabled{ opacity:0.4; }
+input[type="range"]:disabled::-webkit-slider-thumb{ background:var(--text-faint); box-shadow:0 0 0 1px var(--text-faint); }
+
+.band-labels{ display:flex; justify-content:space-between; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:0.02em; text-transform:uppercase; color:var(--text-faint); margin-top:8px; font-weight:600;}
+.band-labels .b-left{ color:var(--glucose-dim); }
+.band-labels .b-right{ color:var(--fructose); }
+.locked-note{
+  font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:0.01em;
+  color:var(--fructose-dim); background:var(--fructose-soft); border-radius:var(--radius-sm); padding:8px 11px; margin-top:8px; display:none; font-weight:600;
+}
+
+.readout-panel{ background:var(--panel-2); border-radius:var(--radius-md); border:1px solid var(--line); padding:22px 24px; }
+.readout-row{ display:flex; justify-content:space-between; align-items:center; padding:10px 0; border-bottom:1px solid var(--line-strong); }
+.readout-row:last-child{ border-bottom:none; }
+.readout-label{ font-size:12.5px; color:var(--text-dim); text-transform:uppercase; letter-spacing:0.03em; font-weight:600; }
+.readout-value{ font-family:'JetBrains Mono',monospace; font-size:17px; font-weight:700; }
+.readout-value.glu{ color:var(--glucose-dim); }
+.readout-value.fru{ color:var(--fructose); }
+.blend-bar{ height:7px; border-radius:4px; overflow:hidden; background:linear-gradient(90deg, var(--glucose), var(--glucose) var(--split,58%), var(--fructose) var(--split,58%), var(--fructose)); margin:16px 0 7px; }
+
+/* ---------- GAUGE ---------- */
+.gauge-wrap{ margin-top:8px; }
+.gauge-labels{ display:flex; justify-content:space-between; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:0.04em; text-transform:uppercase; color:var(--text-faint); margin-bottom:6px; font-weight:600;}
+.gauge-labels .l{ color:var(--glucose-dim); }
+.gauge-labels .r{ color:var(--fructose); }
+.gauge-track{
+  position:relative; height:30px; border-radius:var(--radius-sm);
+  background:linear-gradient(90deg, var(--glucose-soft), var(--panel-2) 48%, var(--panel-2) 52%, var(--fructose-soft));
+  border:1px solid var(--line-strong);
+}
+.gauge-track .ticks{ position:absolute; inset:0; display:flex; justify-content:space-between; padding:0 1px; pointer-events:none;}
+.gauge-track .ticks i{ width:1px; background:rgba(30,32,36,0.09); }
+.gauge-marker{ position:absolute; top:-8px; bottom:-8px; width:2px; transform:translateX(-1px); }
+.gauge-marker .line{ position:absolute; top:0; bottom:0; width:2px; left:0; }
+.gauge-marker .flag{
+  position:absolute; top:-22px; left:50%; transform:translateX(-50%);
+  font-family:'JetBrains Mono',monospace; font-size:9.5px; letter-spacing:0.03em; text-transform:uppercase;
+  white-space:nowrap; padding:2px 7px; border-radius:3px; font-weight:700;
+}
+.gauge-marker.target .line{ background:var(--text); }
+.gauge-marker.target .flag{ background:var(--text); color:#fff; top:-24px;}
+.gauge-marker.mix .line{ background:var(--glucose); }
+.gauge-marker.mix .flag{ bottom:-24px; top:auto; background:var(--glucose); color:#fff; }
+.gauge-caption{ margin-top:32px; font-size:13.5px; color:var(--text-dim); line-height:1.6; }
+.gauge-caption b{ color:var(--text); font-weight:700; }
+
+/* ---------- TABS ---------- */
+.tabs{ display:flex; gap:2px; margin-bottom:20px; border-bottom:1px solid var(--line-strong); width:fit-content; }
+.tab-btn{
+  font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:0.03em; text-transform:uppercase;
+  background:transparent; color:var(--text-dim); border:none; padding:10px 4px; margin-right:22px; cursor:pointer; font-weight:600;
+  border-bottom:2px solid transparent; margin-bottom:-1px;
+}
+.tab-btn.active{ color:var(--glucose-dim); border-bottom-color:var(--glucose); }
+.tab-panel{ display:none; }
+.tab-panel.active{ display:block; }
+
+/* ---------- FILTER ROW ---------- */
+.filter-row{ display:flex; gap:10px; flex-wrap:wrap; margin-bottom:14px; }
+.filter-row input[type="text"], .filter-row select{
+  background:var(--panel-2); border:1px solid var(--line-strong); color:var(--text);
+  font-family:'Inter',sans-serif; font-weight:500; font-size:13.5px; padding:10px 13px; outline:none; border-radius:var(--radius-sm);
+}
+.filter-row input[type="text"]{ flex:1; min-width:180px; }
+.filter-row input[type="text"]::placeholder{ color:var(--text-faint); font-weight:400; }
+.filter-row select{ min-width:160px; }
+.result-count{ font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--text-faint); margin-bottom:10px; text-transform:uppercase; letter-spacing:0.03em; font-weight:600;}
+.list-head{ font-family:'JetBrains Mono',monospace; font-size:10.5px; text-transform:uppercase; letter-spacing:0.03em; color:var(--text-faint); font-weight:700; padding:0 4px 8px; border-bottom:1px solid var(--line-strong); }
+.food-list-head{ display:grid; grid-template-columns:1fr 120px 90px 84px; gap:16px; align-items:center; }
+.product-list-head{ display:grid; grid-template-columns:16px 1.6fr 80px 120px 140px; gap:14px; align-items:center; }
+.food-list-head > div:last-child, .product-list-head > div:last-child{ text-align:right; }
+@media(max-width:640px){ .food-list-head{ display:none; } }
+@media(max-width:720px){ .product-list-head{ display:none; } }
+
+/* ---------- FOOD LIST ---------- */
+.food-list{ display:flex; flex-direction:column; }
+.food-row{
+  background:var(--bg); border-bottom:1px solid var(--line);
+  display:grid; grid-template-columns:1fr 120px 90px 84px; gap:16px; align-items:center; padding:13px 4px;
+}
+@media(max-width:640px){ .food-row{ grid-template-columns:1fr; gap:8px; } }
+.food-name{ font-weight:600; font-size:14px; }
+.food-note{ color:var(--text-faint); font-size:12px; margin-top:2px; }
+.ratio-badge{
+  font-family:'JetBrains Mono',monospace; font-size:11px; padding:4px 8px; border-radius:4px;
+  white-space:nowrap; background:var(--panel-2); color:var(--text-dim); font-weight:700;
+}
+.ratio-badge .g{ color:var(--glucose-dim); }
+.ratio-badge .f{ color:var(--fructose); }
+.add-btn{
+  font-family:'JetBrains Mono',monospace; font-size:11.5px; text-transform:uppercase; letter-spacing:0.02em;
+  background:var(--text); color:#fff; border:none; border-radius:var(--radius-sm); padding:9px 15px; cursor:pointer; white-space:nowrap; font-weight:600;
+}
+.add-btn:hover{ background:var(--glucose-dim); }
+.qty-input{
+  width:58px; background:#fff; border:1px solid var(--line-strong); border-radius:var(--radius-sm); color:var(--text);
+  font-family:'JetBrains Mono',monospace; font-size:12.5px; padding:8px; text-align:center; font-weight:600;
+}
+
+/* ---------- PRODUCT LIST (expandable) ---------- */
+.product-list{ display:flex; flex-direction:column; }
+.product-item{ border-bottom:1px solid var(--line); }
+.product-row{
+  display:grid; grid-template-columns:16px 1.6fr 80px 120px 140px; gap:14px; align-items:center;
+  padding:13px 4px; cursor:pointer;
+}
+@media(max-width:720px){ .product-row{ grid-template-columns:14px 1fr; row-gap:8px; } .product-row .ratio-badge, .product-row .p-carbs{ display:none; } }
+.p-chevron{ color:var(--text-faint); font-size:10px; transition:transform 0.15s ease; }
+.product-item.expanded .p-chevron{ transform:rotate(90deg); color:var(--glucose); }
+.p-name-wrap{ min-width:0; }
+.p-name{ font-weight:600; font-size:13.5px; line-height:1.3; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.p-brand{ font-family:'JetBrains Mono',monospace; font-size:10px; text-transform:uppercase; letter-spacing:0.03em; color:var(--text-faint); margin-top:2px; font-weight:600;}
+.p-carbs{ font-family:'JetBrains Mono',monospace; font-size:12.5px; color:var(--text-dim); white-space:nowrap; font-weight:700;}
+.product-add{ display:flex; align-items:center; gap:8px; }
+.product-detail{ display:none; padding:0 4px 18px 30px; }
+.product-item.expanded .product-detail{ display:block; }
+.detail-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:12px 20px; margin:14px 0; }
+.detail-cell .dl{ font-family:'JetBrains Mono',monospace; font-size:10px; text-transform:uppercase; letter-spacing:0.03em; color:var(--text-faint); margin-bottom:3px; font-weight:700;}
+.detail-cell .dv{ font-size:13px; color:var(--text); font-weight:500; }
+.detail-link{ font-size:12px; color:var(--fructose); text-decoration:none; display:inline-block; margin-top:4px; padding:8px 14px; border:1px solid var(--fructose); border-radius:var(--radius-sm); font-weight:600; }
+.detail-link:hover{ background:var(--fructose); color:#fff; }
+.verified-tag{ display:inline-flex; align-items:center; gap:5px; font-family:'JetBrains Mono',monospace; font-size:10px; color:var(--good); background:var(--good-soft); padding:3px 8px; border-radius:4px; font-weight:700; letter-spacing:0.02em;}
+
+.show-more-wrap{ text-align:center; margin-top:16px; }
+.show-more-btn{
+  font-family:'JetBrains Mono',monospace; font-size:12px; text-transform:uppercase; letter-spacing:0.03em;
+  background:transparent; color:var(--fructose); border:1px solid var(--line-strong); border-radius:var(--radius-sm);
+  padding:10px 22px; cursor:pointer; font-weight:600;
+}
+.show-more-btn:hover{ border-color:var(--fructose); background:var(--fructose-soft); }
+
+.empty-note{ color:var(--text-faint); font-size:13px; padding:20px; text-align:center; border:1px dashed var(--line-strong); border-radius:var(--radius-md); }
+
+/* ---------- MIX LIST ---------- */
+.mix-list{ display:flex; flex-direction:column; margin-bottom:24px; }
+.mix-row{ background:var(--bg); border-bottom:1px solid var(--line); display:grid; grid-template-columns:1.4fr repeat(4,1fr) auto; gap:12px; align-items:center; padding:12px 4px; font-size:13px; }
+@media(max-width:800px){ .mix-row{ grid-template-columns:1fr; gap:4px; } .mix-row .mcol{ display:flex; justify-content:space-between; } .mix-row .mcol::before{ content:attr(data-label); color:var(--text-faint); font-family:'JetBrains Mono',monospace; font-size:10px; text-transform:uppercase; font-weight:700;} }
+.mix-row .mname{ font-weight:600; }
+.mix-row .mval{ font-family:'JetBrains Mono',monospace; font-weight:700; }
+.remove-btn{ background:#fff; border:1px solid var(--line-strong); border-radius:var(--radius-sm); color:var(--text-faint); width:26px; height:26px; cursor:pointer; font-size:12px; line-height:1;}
+.remove-btn:hover{ color:#fff; background:var(--bad); border-color:var(--bad); }
+.mix-head{ display:grid; grid-template-columns:1.4fr repeat(4,1fr) auto; gap:12px; padding:0 4px 8px; font-family:'JetBrains Mono',monospace; font-size:10.5px; text-transform:uppercase; letter-spacing:0.03em; color:var(--text-faint); font-weight:700; border-bottom:1px solid var(--line-strong);}
+@media(max-width:800px){ .mix-head{ display:none; } }
+
+.totals-strip{ display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:var(--radius-md); overflow:hidden; }
+@media(max-width:640px){ .totals-strip{ grid-template-columns:repeat(2,1fr); } }
+.total-cell{ background:var(--panel-2); padding:17px 16px; }
+.total-cell .tl{ font-family:'JetBrains Mono',monospace; font-size:10.5px; text-transform:uppercase; letter-spacing:0.03em; color:var(--text-faint); margin-bottom:6px; font-weight:700;}
+.total-cell .tv{ font-family:'JetBrains Mono',monospace; font-size:22px; font-weight:700; }
+.total-cell .tv.glu{ color:var(--glucose-dim); }
+.total-cell .tv.fru{ color:var(--fructose); }
+
+footer{ padding:36px 0 60px; text-align:center; }
+footer .brand{ font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:15px; letter-spacing:0.02em; color:var(--text-dim); }
+footer .brand .dot{ color:var(--glucose); }
+footer p{ color:var(--text-faint); font-size:12px; line-height:1.7; margin-top:10px; }
+footer a{ color:var(--fructose); text-decoration:none; font-weight:600; }
+footer a:hover{ text-decoration:underline; }
+</style>
+</head>
+<body>
+
+<nav id="main-nav">
+  <div class="nav-inner">
+    <a href="/"><img src="/3dglycogo.svg" alt="Glycogo"></a>
+    <div class="nav-links">
+      <a href="/#features">Features</a>
+      <a href="/#showcase">How it works</a>
+      <a href="/#science">Science</a>
+      <a href="/#faq">FAQ</a>
+      <a href="/#support">Support</a>
+      <div class="nav-dropdown">
+        <button type="button" class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+          Free calculators <span class="chev" aria-hidden="true"></span>
+        </button>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="/fuel-ratio-calculator/" role="menuitem" aria-current="page">Carb fuel-ratio calculator</a>
+        </div>
+      </div>
+      <a href="https://web.glycogo.fit/" class="nav-cta">Try for free</a>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap">
+  <header class="top">
+    <div class="eyebrow">Glycogo — Endurance Fueling Tool</div>
+    <h1 class="title">Fuel Ratio Calculator</h1>
+    <p class="subtitle">Build a fuel mix from whole foods or verified sports nutrition products, and check it against the glucose:fructose intake your body can actually absorb at race pace.</p>
+  </header>
+
+  <noscript>
+    <style>
+      .noscript-block{ padding:24px 0; border-bottom:1px solid var(--line); }
+      .noscript-block table{ width:100%; border-collapse:collapse; font-size:13px; margin-top:12px; }
+      .noscript-block th, .noscript-block td{ text-align:left; padding:8px 10px; border-bottom:1px solid var(--line); }
+      .noscript-block th{ font-family:'JetBrains Mono',monospace; text-transform:uppercase; font-size:11px; color:var(--text-faint); }
+    </style>
+    <div class="noscript-block">
+      <p>This calculator needs JavaScript enabled for the interactive planner and fuel mix builder. Below is the underlying reference data: glucose:fructose splits for common whole foods, and 38 sports nutrition products with manufacturer-confirmed ratios, spanning 23 brands including Science in Sport, Maurten, Tailwind Nutrition, Precision Fuel &amp; Hydration, Neversecond, Enervit, and Skratch Labs.</p>
+      <h2>Whole foods — glucose % / fructose % of sugars</h2>
+      <table>
+        <thead><tr><th>Food</th><th>Glucose / Fructose</th></tr></thead>
+        <tbody><tr><td>Banana (ripe)</td><td>49% / 49%</td></tr>
+<tr><td>Dates (dried)</td><td>50% / 50%</td></tr>
+<tr><td>Raisins</td><td>52% / 48%</td></tr>
+<tr><td>Honey</td><td>47% / 53%</td></tr>
+<tr><td>Maple syrup</td><td>56% / 44%</td></tr>
+<tr><td>Apple (raw/purée)</td><td>25% / 75%</td></tr>
+<tr><td>Orange juice</td><td>45% / 55%</td></tr>
+<tr><td>Sweet potato (cooked)</td><td>80% / 20%</td></tr>
+<tr><td>White rice (cooked)</td><td>100% / 0%</td></tr>
+<tr><td>Rice syrup / maltodextrin</td><td>100% / 0%</td></tr>
+<tr><td>Table sugar (sucrose)</td><td>50% / 50%</td></tr>
+<tr><td>Dextrose (glucose powder)</td><td>100% / 0%</td></tr>
+<tr><td>Barley syrup</td><td>65% / 35%</td></tr>
+<tr><td>Dates syrup</td><td>50% / 50%</td></tr>
+<tr><td>Maltodextrin (powder)</td><td>100% / 0%</td></tr>
+<tr><td>Dried mango</td><td>50% / 50%</td></tr>
+<tr><td>Dried pineapple</td><td>50% / 50%</td></tr></tbody>
+      </table>
+      <h2>Verified sports nutrition products</h2>
+      <table>
+        <thead><tr><th>Brand</th><th>Product</th><th>Category</th><th>Carbs</th><th>Ratio</th></tr></thead>
+        <tbody><tr><td>Science in Sport</td><td>Beta Fuel Gel</td><td>Energy Gel</td><td>40g</td><td>1 : 0.8</td></tr>
+<tr><td>Science in Sport</td><td>Beta Fuel Energy Chews</td><td>Chews</td><td>46g</td><td>1 : 0.8</td></tr>
+<tr><td>Science in Sport</td><td>Beta Fuel Energy Drink Mix</td><td>Drink Powder</td><td>80g</td><td>1 : 0.8</td></tr>
+<tr><td>Science in Sport</td><td>GO Energy Bake</td><td>Energy Bar</td><td>30g</td><td>2 : 1</td></tr>
+<tr><td>Science in Sport</td><td>GO Isotonic Energy Gel</td><td>Energy Gel</td><td>22g</td><td>All glucose</td></tr>
+<tr><td>Maurten</td><td>Gel 100</td><td>Energy Gel</td><td>25g</td><td>1 : 0.8</td></tr>
+<tr><td>Tailwind Nutrition</td><td>High Carb Fuel</td><td>Drink Powder</td><td>90g</td><td>2 : 1</td></tr>
+<tr><td>Puresport</td><td>Energy Gel (DualCarb)</td><td>Energy Gel</td><td>30g</td><td>1 : 0.8</td></tr>
+<tr><td>Carbs Fuel</td><td>Original Energy Gel</td><td>Energy Gel</td><td>50g</td><td>2 : 1</td></tr>
+<tr><td>The Feed</td><td>The Feed Lab High-Carb Drink Mix</td><td>Drink Powder</td><td>30g</td><td>2 : 1</td></tr>
+<tr><td>TORQ</td><td>Energy Gel</td><td>Energy Gel</td><td>30g</td><td>2 : 1</td></tr>
+<tr><td>HIGH5</td><td>Energy Drink</td><td>Drink Powder</td><td>44g</td><td>2 : 1</td></tr>
+<tr><td>Precision Fuel & Hydration</td><td>PF 30 Gel</td><td>Energy Gel</td><td>30g</td><td>2 : 1</td></tr>
+<tr><td>Precision Fuel & Hydration</td><td>PF 90 Gel</td><td>Energy Gel</td><td>90g</td><td>2 : 1</td></tr>
+<tr><td>Precision Fuel & Hydration</td><td>Carb & Electrolyte Drink Mix</td><td>Drink Powder</td><td>30g</td><td>2 : 1</td></tr>
+<tr><td>Neversecond</td><td>C30 Energy Gel</td><td>Energy Gel</td><td>30g</td><td>2 : 1</td></tr>
+<tr><td>Neversecond</td><td>C30 Sports Drink</td><td>Drink Powder</td><td>30g</td><td>2 : 1</td></tr>
+<tr><td>Neversecond</td><td>C90 High Carb Drink Mix</td><td>Drink Powder</td><td>90g</td><td>2 : 1</td></tr>
+<tr><td>Enervit</td><td>Carbo Gel C2:1PRO</td><td>Energy Gel</td><td>40g</td><td>2 : 1</td></tr>
+<tr><td>Enervit</td><td>Isocarb C2:1PRO Drink Mix</td><td>Drink Powder</td><td>60g</td><td>2 : 1</td></tr>
+<tr><td>Skratch Labs</td><td>Super High-Carb Sport Drink Mix</td><td>Drink Powder</td><td>50g</td><td>11.5 : 1</td></tr>
+<tr><td>226ERS</td><td>High Fructose Gel</td><td>Energy Gel</td><td>55g</td><td>1 : 0.8</td></tr>
+<tr><td>AMACX</td><td>Drink Gel</td><td>Energy Gel</td><td>30g</td><td>2 : 1</td></tr>
+<tr><td>AMACX</td><td>Turbo Gel</td><td>Energy Gel</td><td>40g</td><td>1 : 0.8</td></tr>
+<tr><td>AMACX</td><td>Energy Drink</td><td>Drink Powder</td><td>30g</td><td>2 : 1</td></tr>
+<tr><td>PowerBar</td><td>PowerGel Original</td><td>Energy Gel</td><td>26g</td><td>2 : 1</td></tr>
+<tr><td>Hammer Nutrition</td><td>Hammer Gel</td><td>Energy Gel</td><td>22g</td><td>~35 : 1</td></tr>
+<tr><td>Huma</td><td>Chia Energy Gel</td><td>Energy Gel</td><td>24g</td><td>2 : 1</td></tr>
+<tr><td>Winforce</td><td>Fast Energy Gel</td><td>Energy Gel</td><td>42g</td><td>1 : 0.8</td></tr>
+<tr><td>4Endurance</td><td>2:1 Energy Gel</td><td>Energy Gel</td><td>30g</td><td>2 : 1</td></tr>
+<tr><td>Maurten</td><td>Drink Mix 160</td><td>Drink Powder</td><td>40g</td><td>1 : 0.7</td></tr>
+<tr><td>Maurten</td><td>Drink Mix 320</td><td>Drink Powder</td><td>80g</td><td>1 : 0.7</td></tr>
+<tr><td>Näak</td><td>Boost Energy Gel</td><td>Energy Gel</td><td>25g</td><td>2 : 1</td></tr>
+<tr><td>Active Root</td><td>Energy Gel Mix</td><td>Energy Gel</td><td>24g</td><td>1 : 1</td></tr>
+<tr><td>Victus</td><td>02 During Gel</td><td>Energy Gel</td><td>45g</td><td>2 : 1</td></tr>
+<tr><td>Precision Fuel & Hydration</td><td>PF 300 Flow Gel</td><td>Energy Gel</td><td>300g</td><td>2 : 1</td></tr>
+<tr><td>Nduranz</td><td>Nrgy Gel 45</td><td>Energy Gel</td><td>45g</td><td>1 : 0.8</td></tr>
+<tr><td>Nduranz</td><td>Nrgy Drink 90</td><td>Drink Powder</td><td>90g</td><td>1 : 0.8</td></tr></tbody>
+      </table>
+    </div>
+  </noscript>
+
+  <!-- SECTION 1: PLANNER -->
+  <section>
+    <div class="section-head">
+      <div>
+        <div class="section-num">01 · TARGET</div>
+        <h2 class="section-title">Set your intake target</h2>
+      </div>
+    </div>
+    <p class="section-desc">Gut absorption of glucose alone tops out around 60 g/hour. Past that, pairing it with fructose — which uses a separate transporter — unlocks higher total intake. The ratio you need shifts as intake climbs, down to a floor of 1 : 0.8 at 120 g/h and above.</p>
+
+    <div class="planner-grid">
+      <div>
+        <div class="control">
+          <label>Target carb intake <span class="val" id="carbsPerHourVal">90 g/h</span></label>
+          <input type="range" id="carbsPerHour" min="0" max="200" step="5" value="90">
+          <div class="hint">Below ~60 g/h, glucose alone typically covers demand — fructose is optional, not required.</div>
+        </div>
+        <div class="control">
+          <label>Session duration <span class="val" id="durationVal">2.0 h</span></label>
+          <input type="range" id="duration" min="0" max="10" step="0.25" value="2">
+        </div>
+        <div class="control">
+          <label>Fuel blend <span class="val" id="blendVal">—</span></label>
+          <input type="range" id="ratioBlend" min="0" max="1" step="0.001" value="0.5">
+          <div class="band-labels"><span class="b-left" id="bandMaxLabel">All glucose</span><span class="b-right" id="bandMinLabel">1 : 0.8</span></div>
+          <div class="locked-note" id="lockedNote">Locked at 1 : 0.8 — the recommended floor for 120 g/h and above</div>
+        </div>
+      </div>
+      <div class="readout-panel">
+        <div class="readout-row"><span class="readout-label">Glucose / hour</span><span class="readout-value glu" id="targetGluHr">—</span></div>
+        <div class="readout-row"><span class="readout-label">Fructose / hour</span><span class="readout-value fru" id="targetFruHr">—</span></div>
+        <div class="readout-row"><span class="readout-label">Total carbs, full session</span><span class="readout-value" id="targetTotalSession">—</span></div>
+        <div class="blend-bar" id="blendBar"></div>
+        <div style="text-align:center; font-family:'JetBrains Mono',monospace; font-size:13px; font-weight:700; color:var(--text);">
+          <span id="blendRatioText">—</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: BUILD MIX -->
+  <section>
+    <div class="section-head">
+      <div>
+        <div class="section-num">02 · SOURCES</div>
+        <h2 class="section-title">Add whole foods &amp; products</h2>
+      </div>
+    </div>
+    <p class="section-desc">Search real food, or browse sports nutrition products with a <b>manufacturer-confirmed</b> glucose:fructose ratio — no estimates or guesswork, every product links straight to the brand's own page.</p>
+
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="foods">Whole Foods</button>
+      <button class="tab-btn" data-tab="products">Sports Products</button>
+    </div>
+
+    <div class="tab-panel active" id="panel-foods">
+      <div class="filter-row">
+        <input type="text" id="foodSearch" placeholder="Search whole foods (e.g. banana, honey, dates)…">
+      </div>
+      <div class="result-count" id="foodCount"></div>
+      <div class="list-head food-list-head">
+        <div>Food</div><div>G : F Ratio</div><div>Weight</div><div></div>
+      </div>
+      <div class="food-list" id="foodList"></div>
+      <div id="foodEmpty" class="empty-note" style="display:none;">No foods match that search.</div>
+      <div class="show-more-wrap" id="foodShowMoreWrap" style="display:none;">
+        <button class="show-more-btn" id="foodShowMoreBtn">Show all foods</button>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="panel-products">
+      <div class="filter-row">
+        <input type="text" id="productSearch" placeholder="Search products or brands (e.g. gel, Maurten, drink mix)…">
+        <select id="categoryFilter"><option value="">All categories</option></select>
+      </div>
+      <div class="result-count" id="productCount"></div>
+      <div class="list-head product-list-head">
+        <div></div><div>Product</div><div>Carbs</div><div>G : F Ratio</div><div>Servings</div>
+      </div>
+      <div class="product-list" id="productList"></div>
+      <div id="productEmpty" class="empty-note" style="display:none;">No products match that search.</div>
+      <div class="show-more-wrap" id="showMoreWrap" style="display:none;">
+        <button class="show-more-btn" id="showMoreBtn">Show all products</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: YOUR MIX -->
+  <section>
+    <div class="section-head">
+      <div>
+        <div class="section-num">03 · YOUR MIX</div>
+        <h2 class="section-title">Current fuel plan</h2>
+      </div>
+    </div>
+
+    <div id="mixEmpty" class="empty-note">Nothing added yet — pull items in from Whole Foods or Sports Products above.</div>
+
+    <div id="mixTableWrap" style="display:none;">
+      <div class="mix-head">
+        <div>Item</div><div>Amount</div><div>Carbs</div><div>Glucose</div><div>Fructose</div><div></div>
+      </div>
+      <div class="mix-list" id="mixList"></div>
+    </div>
+
+    <div class="totals-strip">
+      <div class="total-cell"><div class="tl">Total carbs</div><div class="tv" id="mixTotalCarbs">0.0 g</div></div>
+      <div class="total-cell"><div class="tl">Glucose</div><div class="tv glu" id="mixTotalGlu">0.0 g</div></div>
+      <div class="total-cell"><div class="tl">Fructose</div><div class="tv fru" id="mixTotalFru">0.0 g</div></div>
+      <div class="total-cell"><div class="tl">G : F ratio</div><div class="tv" id="mixRatioText">—</div></div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: GAUGE -->
+  <section style="border-bottom:none;">
+    <div class="section-head">
+      <div>
+        <div class="section-num">04 · READOUT</div>
+        <h2 class="section-title">Fuel gauge</h2>
+      </div>
+    </div>
+    <p class="section-desc">Where your mix's composition sits between pure glucose and pure fructose, against the blend you set above.</p>
+
+    <div class="gauge-wrap">
+      <div class="gauge-labels"><span class="l">100% Glucose</span><span class="r">100% Fructose</span></div>
+      <div class="gauge-track" id="gaugeTrack">
+        <div class="ticks" id="gaugeTicks"></div>
+        <div class="gauge-marker target" id="markerTarget" style="left:50%;"><div class="line"></div><div class="flag">Target</div></div>
+        <div class="gauge-marker mix" id="markerMix" style="left:50%;"><div class="line"></div><div class="flag">Your mix</div></div>
+      </div>
+      <p class="gauge-caption" id="gaugeCaption">Add items to your mix to see how it compares.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p class="brand">glycogo<span class="dot">.</span></p>
+    <p>Verified glucose:fructose data, sourced from each brand's own product pages.<br>
+    Something off? Email <a href="mailto:contact@glycogo.fit">contact@glycogo.fit</a></p>
+  </footer>
+</div>
+
+<script>
+const FOODS = [{"food": "Banana (ripe)", "carbs_per_100g": 22.8, "sugars_per_100g": 10.0, "glucose_pct_sugars": 49.0, "fructose_pct_sugars": 49.0, "notes": "Balanced; easily digested"}, {"food": "Dates (dried)", "carbs_per_100g": 75.0, "sugars_per_100g": 64.0, "glucose_pct_sugars": 50.0, "fructose_pct_sugars": 50.0, "notes": "High-carb gel-friendly"}, {"food": "Raisins", "carbs_per_100g": 79.0, "sugars_per_100g": 59.0, "glucose_pct_sugars": 52.0, "fructose_pct_sugars": 48.0, "notes": "Portable dense"}, {"food": "Honey", "carbs_per_100g": 82.4, "sugars_per_100g": 80.0, "glucose_pct_sugars": 47.0, "fructose_pct_sugars": 53.0, "notes": "Slightly fructose-heavy"}, {"food": "Maple syrup", "carbs_per_100g": 67.0, "sugars_per_100g": 60.0, "glucose_pct_sugars": 56.0, "fructose_pct_sugars": 44.0, "notes": "Mild taste"}, {"food": "Apple (raw/pur\u00e9e)", "carbs_per_100g": 13.8, "sugars_per_100g": 10.0, "glucose_pct_sugars": 25.0, "fructose_pct_sugars": 75.0, "notes": "Fructose-heavy; slower emptying"}, {"food": "Orange juice", "carbs_per_100g": 10.4, "sugars_per_100g": 8.0, "glucose_pct_sugars": 45.0, "fructose_pct_sugars": 55.0, "notes": "Balanced + hydrating"}, {"food": "Sweet potato (cooked)", "carbs_per_100g": 20.0, "sugars_per_100g": 6.0, "glucose_pct_sugars": 80.0, "fructose_pct_sugars": 20.0, "notes": "Mostly glucose/starch"}, {"food": "White rice (cooked)", "carbs_per_100g": 28.0, "sugars_per_100g": 0.1, "glucose_pct_sugars": 100.0, "fructose_pct_sugars": 0.0, "notes": "Essentially glucose (starch)"}, {"food": "Rice syrup / maltodextrin", "carbs_per_100g": 100.0, "sugars_per_100g": 100.0, "glucose_pct_sugars": 100.0, "fructose_pct_sugars": 0.0, "notes": "Pure glucose polymer; ideal pairing"}, {"food": "Table sugar (sucrose)", "carbs_per_100g": 100.0, "sugars_per_100g": 100.0, "glucose_pct_sugars": 50.0, "fructose_pct_sugars": 50.0, "notes": "Standard 1:1 reference"}, {"food": "Dextrose (glucose powder)", "carbs_per_100g": 100.0, "sugars_per_100g": 100.0, "glucose_pct_sugars": 100.0, "fructose_pct_sugars": 0.0, "notes": "Rapidly absorbed pure glucose"}, {"food": "Barley syrup", "carbs_per_100g": 75.0, "sugars_per_100g": 50.0, "glucose_pct_sugars": 65.0, "fructose_pct_sugars": 35.0, "notes": "Slightly glucose-heavy maltose source"}, {"food": "Dates syrup", "carbs_per_100g": 70.0, "sugars_per_100g": 65.0, "glucose_pct_sugars": 50.0, "fructose_pct_sugars": 50.0, "notes": "Liquid alternative for gels"}, {"food": "Maltodextrin (powder)", "carbs_per_100g": 100.0, "sugars_per_100g": 0.0, "glucose_pct_sugars": 100.0, "fructose_pct_sugars": 0.0, "notes": "Starch polymer; minimal fructose"}, {"food": "Dried mango", "carbs_per_100g": 75.0, "sugars_per_100g": 66.0, "glucose_pct_sugars": 50.0, "fructose_pct_sugars": 50.0, "notes": "Chewy high-carb snack"}, {"food": "Dried pineapple", "carbs_per_100g": 74.0, "sugars_per_100g": 63.0, "glucose_pct_sugars": 50.0, "fructose_pct_sugars": 50.0, "notes": "Tropical energy-dense"}];
+
+/* ---------------- CURATED, VERIFIED PRODUCTS ----------------
+   Every ratio below is stated directly by the manufacturer (or, for
+   SiS GO Isotonic, confirmed as a single-source maltodextrin gel with
+   no added fructose; Skratch's figure is derived from their own stated
+   46g Cluster Dextrin + 4g fructose split). Sourced July 2026 — brands
+   do reformulate, so it's worth spot-checking the linked page.        */
+const PRODUCTS = [
+  { name:"Beta Fuel Gel", brand:"Science in Sport", category:"Energy Gel", carbsPerServing:40, servingLabel:"40g carbs / 60ml gel", ratioLabel:"1 : 0.8", glucosePct:55.6, fructosePct:44.4, source:"scienceinsport.com", url:"https://www.scienceinsport.com/beta-fuel-gel-pack", note:"Maltodextrin : fructose, as stated by SiS" },
+  { name:"Beta Fuel Energy Chews", brand:"Science in Sport", category:"Chews", carbsPerServing:46, servingLabel:"46g carbs / pack (7g per chew)", ratioLabel:"1 : 0.8", glucosePct:55.6, fructosePct:44.4, source:"scienceinsport.com", url:"https://www.scienceinsport.com/sports-nutrition/beta-fuel-fuelling-guide/", note:"Maltodextrin : fructose, as stated by SiS" },
+  { name:"Beta Fuel Energy Drink Mix", brand:"Science in Sport", category:"Drink Powder", carbsPerServing:80, servingLabel:"80g carbs / serving", ratioLabel:"1 : 0.8", glucosePct:55.6, fructosePct:44.4, source:"scienceinsport.com", url:"https://www.scienceinsport.com/beta", note:"Maltodextrin : fructose, as stated by SiS" },
+  { name:"GO Energy Bake", brand:"Science in Sport", category:"Energy Bar", carbsPerServing:30, servingLabel:"30g carbs (20g glucose / 10g fructose)", ratioLabel:"2 : 1", glucosePct:66.7, fructosePct:33.3, source:"scienceinsport.com", url:"https://www.scienceinsport.com/sis-go-energy-bake-12-pack", note:"Maltodextrin : fructose, as stated by SiS" },
+  { name:"GO Isotonic Energy Gel", brand:"Science in Sport", category:"Energy Gel", carbsPerServing:22, servingLabel:"22g carbs / 60ml gel", ratioLabel:"All glucose", glucosePct:100, fructosePct:0, source:"scienceinsport.com", url:"https://www.scienceinsport.com/sis-go-isotonic-energy-gel-pack", note:"Single-source maltodextrin — no added fructose" },
+  { name:"Gel 100", brand:"Maurten", category:"Energy Gel", carbsPerServing:25, servingLabel:"25g carbs / sachet", ratioLabel:"1 : 0.8", glucosePct:55.6, fructosePct:44.4, source:"maurten.com", url:"https://www.maurten.com/products/gel-100-box-us", note:"Glucose : fructose, as stated by Maurten" },
+  { name:"High Carb Fuel", brand:"Tailwind Nutrition", category:"Drink Powder", carbsPerServing:90, servingLabel:"90g carbs / serving", ratioLabel:"2 : 1", glucosePct:66.7, fructosePct:33.3, source:"tailwindnutrition.com", url:"https://tailwindnutrition.com/products/highcarbfuel", note:"Glucose : fructose, as stated by Tailwind" },
+  { name:"Energy Gel (DualCarb)", brand:"Puresport", category:"Energy Gel", carbsPerServing:30, servingLabel:"30g carbs / gel", ratioLabel:"1 : 0.8", glucosePct:55.6, fructosePct:44.4, source:"puresport.co", url:"https://puresport.co/en-us/products/energy-gels-variety", note:"Glucose : fructose, as stated by Puresport" },
+  { name:"Original Energy Gel", brand:"Carbs Fuel", category:"Energy Gel", carbsPerServing:50, servingLabel:"50g carbs / gel", ratioLabel:"2 : 1", glucosePct:66.7, fructosePct:33.3, source:"carbsfuel.com", url:"https://carbsfuel.com/products/carbs-fuel-energy-gel", note:"Glucose : fructose, as stated by Carbs Fuel" },
+  { name:"The Feed Lab High-Carb Drink Mix", brand:"The Feed", category:"Drink Powder", carbsPerServing:30, servingLabel:"30g carbs / scoop", ratioLabel:"2 : 1", glucosePct:66.7, fructosePct:33.3, source:"thefeed.com", url:"https://thefeed.com/products/the-feed-lab-high-carb-drink-mix", note:"Glucose : fructose, as stated by The Feed" },
+  { name:"Energy Gel", brand:"TORQ", category:"Energy Gel", carbsPerServing:30, servingLabel:"30g carbs / gel", ratioLabel:"2 : 1", glucosePct:66.7, fructosePct:33.3, source:"torqusa.com", url:"https://torqusa.com/pages/energy-gels", note:"Maltodextrin : fructose, as stated by TORQ" },
+  { name:"Energy Drink", brand:"HIGH5", category:"Drink Powder", carbsPerServing:44, servingLabel:"44g carbs / 47g serving", ratioLabel:"2 : 1", glucosePct:66.7, fructosePct:33.3, source:"highfive.co.uk", url:"https://highfive.co.uk/products/energydrink", note:"Glucose : fructose, as stated by HIGH5" },
+  { name:"PF 30 Gel", brand:"Precision Fuel & Hydration", category:"Energy Gel", carbsPerServing:30, servingLabel:"30g carbs / gel", ratioLabel:"2 : 1", glucosePct:66.7, fructosePct:33.3, source:"precisionhydration.com", url:"https://www.precisionhydration.com/us/en/products/pf-30-gel/", note:"Glucose : fructose, as stated by Precision Fuel" },
+  { name:"PF 90 Gel", brand:"Precision Fuel & Hydration", category:"Energy Gel", carbsPerServing:90, servingLabel:"90g carbs / gel", ratioLabel:"2 : 1", glucosePct:66.7, fructosePct:33.3, source:"precisionhydration.com", url:"https://www.precisionhydration.com/us/en/products/pf-90-gel/", note:"Glucose : fructose, as stated by Precision Fuel" },
+  { name:"Carb & Electrolyte Drink Mix", brand:"Precision Fuel & Hydration", category:"Drink Powder", carbsPerServing:30, servingLabel:"30g carbs / 16oz serving", ratioLabel:"2 : 1", glucosePct:66.7, fructosePct:33.3, source:"thefeed.com", url:"https://thefeed.com/products/precision-fuel-carb-electrolyte-drink-mix", note:"Glucose : fructose, as stated by Precision Fuel" },
+  { name:"C30 Energy Gel", brand:"Neversecond", category:"Energy Gel", carbsPerServing:30, servingLabel:"30g carbs / gel", ratioLabel:"2 : 1", glucosePct:66.7, fructosePct:33.3, source:"never2.com", url:"https://never2.com/products/c30-energy-gel-12ct-60ml", note:"Glucose : fructose, as stated by Neversecond" },
+  { name:"C30 Sports Drink", brand:"Neversecond", category:"Drink Powder", carbsPerServing:30, servingLabel:"30g carbs / scoop", ratioLabel:"2 : 1", glucosePct:66.7, fructosePct:33.3, source:"never2.com", url:"https://never2.com/products/c30-sports-drink-640g", note:"Glucose : fructose, as stated by Neversecond" },
+  { name:"C90 High Carb Drink Mix", brand:"Neversecond", category:"Drink Powder", carbsPerServing:90, servingLabel:"90g carbs / serving", ratioLabel:"2 : 1", glucosePct:66.7, fructosePct:33.3, source:"never2.com", url:"https://never2.com/products/c90-high-carb-drink", note:"Glucose : fructose, as stated by Neversecond" },
+  { name:"Carbo Gel C2:1PRO", brand:"Enervit", category:"Energy Gel", carbsPerServing:40, servingLabel:"40g carbs / 60ml gel", ratioLabel:"2 : 1", glucosePct:66.7, fructosePct:33.3, source:"enervit.com", url:"https://www.enervit.com/en/products/the-carbo-gel-c-2-1-pro-orange.html", note:"Maltodextrin : fructose, as stated by Enervit" },
+  { name:"Isocarb C2:1PRO Drink Mix", brand:"Enervit", category:"Drink Powder", carbsPerServing:60, servingLabel:"60g carbs / 2 scoops", ratioLabel:"2 : 1", glucosePct:66.7, fructosePct:33.3, source:"enervit.com", url:"https://www.enervit.com/en/products/isocarb-c-2-1-pro.html", note:"Maltodextrin : fructose, as stated by Enervit" },
+  { name:"Super High-Carb Sport Drink Mix", brand:"Skratch Labs", category:"Drink Powder", carbsPerServing:50, servingLabel:"50g carbs / packet (46g Cluster Dextrin + 4g fructose)", ratioLabel:"11.5 : 1", glucosePct:92, fructosePct:8, source:"skratchlabs.com", url:"https://www.skratchlabs.com/products/super-high-carb-sport-drink-mix", note:"Cluster Dextrin : fructose split, as stated by Skratch Labs" },
+  { name:"High Fructose Gel", brand:"226ERS", category:"Energy Gel", carbsPerServing:55, servingLabel:"55g carbs / 80g gel", ratioLabel:"1 : 0.8", glucosePct:55.6, fructosePct:44.4, source:"226ers.com", url:"https://www.226ers.com/en/high-fructose-gel-energy-gel-80g-220566.html", note:"Maltodextrin : fructose, as stated by 226ERS" },
+  { name:"Drink Gel", brand:"AMACX", category:"Energy Gel", carbsPerServing:30, servingLabel:"30g carbs / 60ml gel", ratioLabel:"2 : 1", glucosePct:66.7, fructosePct:33.3, source:"amacx.com", url:"https://amacx.com/products/drink-gel-orange", note:"Glucose : fructose, as stated by AMACX" },
+  { name:"Turbo Gel", brand:"AMACX", category:"Energy Gel", carbsPerServing:40, servingLabel:"40g carbs / gel", ratioLabel:"1 : 0.8", glucosePct:55.6, fructosePct:44.4, source:"amacx.com", url:"https://amacx.com/products/turbo-gel-citrus", note:"Glucose : fructose, as stated by AMACX" },
+  { name:"Energy Drink", brand:"AMACX", category:"Drink Powder", carbsPerServing:30, servingLabel:"30g carbs / 31g serving", ratioLabel:"2 : 1", glucosePct:66.7, fructosePct:33.3, source:"amacx.com", url:"https://amacx.com/products/energy-drink", note:"Glucose : fructose, as stated by AMACX" },
+  { name:"PowerGel Original", brand:"PowerBar", category:"Energy Gel", carbsPerServing:26, servingLabel:"26g carbs / 41g pouch", ratioLabel:"2 : 1", glucosePct:66.7, fructosePct:33.3, source:"powerbar.com", url:"https://www.powerbar.com/en-de/products/powergel-original-high-carb-energy-gel", note:"C2Max glucose : fructose, as stated by PowerBar" },
+  { name:"Hammer Gel", brand:"Hammer Nutrition", category:"Energy Gel", carbsPerServing:22, servingLabel:"22g carbs / 33g serving (~0.6g fructose)", ratioLabel:"~35 : 1", glucosePct:97, fructosePct:3, source:"hammernutrition.com", url:"https://hammernutrition.com/products/hammer-gel", note:"Maltodextrin-based; ~0.5-0.7g fructose per serving, as stated by Hammer Nutrition's own FAQ" },
+  { name:"Chia Energy Gel", brand:"Huma", category:"Energy Gel", carbsPerServing:24, servingLabel:"24g carbs / gel", ratioLabel:"2 : 1", glucosePct:66.7, fructosePct:33.3, source:"humagel.com", url:"https://humagel.com/products/original-flavors", note:"Glucose : fructose, as stated by Huma" },
+  { name:"Fast Energy Gel", brand:"Winforce", category:"Energy Gel", carbsPerServing:42, servingLabel:"42g carbs / serving", ratioLabel:"1 : 0.8", glucosePct:55.6, fructosePct:44.4, source:"winforce.com", url:"https://www.winforce.com/en/products/endurance/", note:"Glucose : fructose, as stated by Winforce" },
+  { name:"2:1 Energy Gel", brand:"4Endurance", category:"Energy Gel", carbsPerServing:30, servingLabel:"30g carbs / gel", ratioLabel:"2 : 1", glucosePct:66.7, fructosePct:33.3, source:"4endurance.com", url:"https://4endurance.com/products/energy-gel-4endurance", note:"Glucose (maltodextrin) : fructose, as stated by 4Endurance" },
+  { name:"Drink Mix 160", brand:"Maurten", category:"Drink Powder", carbsPerServing:40, servingLabel:"40g carbs / 500ml serving", ratioLabel:"1 : 0.7", glucosePct:58.75, fructosePct:41.25, source:"maurten.com", url:"https://www.maurten.com/products/drink-mix-160-box-us", note:"Fructose/glucose ratio of 0.7:1, as stated by Maurten's own FAQ" },
+  { name:"Drink Mix 320", brand:"Maurten", category:"Drink Powder", carbsPerServing:80, servingLabel:"80g carbs / 500ml serving (33g fructose)", ratioLabel:"1 : 0.7", glucosePct:58.75, fructosePct:41.25, source:"maurten.com", url:"https://www.maurten.com/products/drink-mix-320-box-us", note:"Fructose/glucose ratio of 0.7:1, as stated by Maurten's own FAQ — note this differs from Maurten's Gel line, which uses 1:0.8" },
+  { name:"Boost Energy Gel", brand:"Näak", category:"Energy Gel", carbsPerServing:25, servingLabel:"25g carbs / gel", ratioLabel:"2 : 1", glucosePct:66.7, fructosePct:33.3, source:"naak.com", url:"https://www.naak.com/products/boost-gel", note:"Glucose : fructose, as stated by Näak" },
+  { name:"Energy Gel Mix", brand:"Active Root", category:"Energy Gel", carbsPerServing:24, servingLabel:"24g carbs / 25g serving", ratioLabel:"1 : 1", glucosePct:50, fructosePct:50, source:"activeroot.co.uk", url:"https://activeroot.co.uk/products/energy-gel-mix", note:"Cane sugar (sucrose) is chemically 50% glucose / 50% fructose, per Active Root's own ingredient panel" },
+  { name:"02 During Gel", brand:"Victus", category:"Energy Gel", carbsPerServing:45, servingLabel:"45g carbs / gel", ratioLabel:"2 : 1", glucosePct:66.7, fructosePct:33.3, source:"victus.sport", url:"https://victus.sport/en/shop/02-during/gel", note:"Stated as 2:1:1.5 maltodextrin:glucose:fructose — maltodextrin and glucose share the same absorption pathway, so combined that's a 2:1 glucose-equivalent:fructose ratio" },
+  { name:"PF 300 Flow Gel", brand:"Precision Fuel & Hydration", category:"Energy Gel", carbsPerServing:300, servingLabel:"300g carbs / pouch (equiv. 10 gels)", ratioLabel:"2 : 1", glucosePct:66.7, fructosePct:33.3, source:"precisionhydration.com", url:"https://www.precisionhydration.com/us/en/products/pf-300-flow-gel/", note:"Glucose : fructose, as stated by Precision Fuel" },
+  { name:"Nrgy Gel 45", brand:"Nduranz", category:"Energy Gel", carbsPerServing:45, servingLabel:"45g carbs / 75g gel", ratioLabel:"1 : 0.8", glucosePct:55.6, fructosePct:44.4, source:"nduranz.com", url:"https://nduranz.com/products/nrgy-gel-45", note:"Glucose : fructose, as stated by Nduranz" },
+  { name:"Nrgy Drink 90", brand:"Nduranz", category:"Drink Powder", carbsPerServing:90, servingLabel:"90g carbs / 500ml serving", ratioLabel:"1 : 0.8", glucosePct:55.6, fructosePct:44.4, source:"nduranz.com", url:"https://nduranz.com/products/nrgy-drink-90", note:"Glucose : fructose, as stated by Nduranz" }
+];
+
+/* Common brand aliases, folded into search matching so "SiS" finds
+   Science in Sport products, "PF" finds Precision Fuel & Hydration, etc. */
+const BRAND_ALIASES = {
+  "Science in Sport": ["sis"],
+  "Precision Fuel & Hydration": ["pf", "precision fuel", "precision hydration"],
+  "Neversecond": ["never2", "never second"],
+  "226ERS": ["226 ers"]
+};
+
+let mixItems = [];
+let idCounter = 1;
+let expandedIds = new Set();
+let showAllProducts = false;
+let showAllFoods = false;
+const DEFAULT_PRODUCT_LIMIT = 10;
+const DEFAULT_FOOD_LIMIT = 10;
+
+/* ---------------- FOOD COMPUTATION ---------------- */
+function computeFoodEntry(food, grams){
+  const carbsPer100 = food.carbs_per_100g;
+  const sugarsPer100 = food.sugars_per_100g;
+  const gPct = food.glucose_pct_sugars/100;
+  const fPct = food.fructose_pct_sugars/100;
+  const carbs = carbsPer100*grams/100;
+  const sugars = sugarsPer100*grams/100;
+  const starch = Math.max(carbs-sugars,0);
+  const glucose = sugars*gPct + starch;
+  const fructose = sugars*fPct;
+  return {carbs, glucose, fructose};
+}
+
+function computeProductEntry(product, servings){
+  const carbs = product.carbsPerServing*servings;
+  const glucose = carbs*(product.glucosePct/100);
+  const fructose = carbs*(product.fructosePct/100);
+  return {carbs, glucose, fructose};
+}
+
+/* ---------------- RENDER: FOOD LIST ---------------- */
+function ratioBadgeHtml(gPct, fPct){
+  return `<span class="ratio-badge"><span class="g">${gPct}% G</span> / <span class="f">${fPct}% F</span></span>`;
+}
+
+function renderFoodList(){
+  const search = document.getElementById('foodSearch').value.trim().toLowerCase();
+  const searchTokens = search.split(/\s+/).filter(Boolean);
+  const list = document.getElementById('foodList');
+  const emptyNote = document.getElementById('foodEmpty');
+  const countEl = document.getElementById('foodCount');
+  const showMoreWrap = document.getElementById('foodShowMoreWrap');
+  const showMoreBtn = document.getElementById('foodShowMoreBtn');
+
+  let filtered = FOODS.filter(f=>{
+    if(!searchTokens.length) return true;
+    const hay = (f.food+' '+(f.notes||'')).toLowerCase();
+    return searchTokens.every(tok=>hay.includes(tok));
+  });
+
+  const shown = showAllFoods ? filtered : filtered.slice(0, DEFAULT_FOOD_LIMIT);
+  countEl.textContent = `${filtered.length} whole food${filtered.length===1?'':'s'}`;
+
+  if(shown.length===0){
+    list.innerHTML = '';
+    emptyNote.style.display='block';
+    showMoreWrap.style.display='none';
+    return;
+  }
+  emptyNote.style.display='none';
+
+  if(filtered.length > DEFAULT_FOOD_LIMIT && !showAllFoods){
+    showMoreWrap.style.display='block';
+    showMoreBtn.textContent = `Show all ${filtered.length} foods`;
+  } else {
+    showMoreWrap.style.display='none';
+  }
+
+  list.innerHTML = shown.map(f => `
+    <div class="food-row">
+      <div>
+        <div class="food-name">${f.food}</div>
+        <div class="food-note">${f.notes||''} · ${f.carbs_per_100g}g carbs /100g</div>
+      </div>
+      ${ratioBadgeHtml(f.glucose_pct_sugars, f.fructose_pct_sugars)}
+      <input type="number" class="qty-input" id="qty-food-${escId(f.food)}" value="50" min="0" step="5">
+      <button class="add-btn" data-food="${escAttr(f.food)}">+ Add</button>
+    </div>
+  `).join('');
+  list.querySelectorAll('.add-btn').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      const name = btn.getAttribute('data-food');
+      const food = FOODS.find(x=>x.food===name);
+      const qtyInput = document.getElementById(`qty-food-${escId(name)}`);
+      const grams = parseFloat(qtyInput.value)||0;
+      if(grams<=0) return;
+      const r = computeFoodEntry(food, grams);
+      mixItems.push({id:idCounter++, name:food.food, amountLabel:`${grams} g`, carbs:r.carbs, glucose:r.glucose, fructose:r.fructose});
+      renderMix();
+    });
+  });
+}
+
+/* ---------------- RENDER: PRODUCTS (expandable list) ---------------- */
+function populateCategoryFilter(){
+  const cats = new Set(PRODUCTS.map(p=>p.category));
+  const sel = document.getElementById('categoryFilter');
+  [...cats].sort().forEach(c=>{
+    const opt = document.createElement('option');
+    opt.value = c; opt.textContent = c;
+    sel.appendChild(opt);
+  });
+}
+
+function productSearchHay(p){
+  const aliases = BRAND_ALIASES[p.brand] ? BRAND_ALIASES[p.brand].join(' ') : '';
+  return (p.name+' '+p.brand+' '+p.category+' '+aliases).toLowerCase();
+}
+
+function renderProductGrid(){
+  const search = document.getElementById('productSearch').value.trim().toLowerCase();
+  const searchTokens = search.split(/\s+/).filter(Boolean);
+  const cat = document.getElementById('categoryFilter').value;
+  const list = document.getElementById('productList');
+  const emptyNote = document.getElementById('productEmpty');
+  const countEl = document.getElementById('productCount');
+  const showMoreWrap = document.getElementById('showMoreWrap');
+  const showMoreBtn = document.getElementById('showMoreBtn');
+
+  let filtered = PRODUCTS.filter(p=>{
+    if(cat && p.category!==cat) return false;
+    if(searchTokens.length){
+      const hay = productSearchHay(p);
+      // every typed word must appear somewhere in name/brand/category/aliases,
+      // so "science in sport" or "sport science" both match all SiS products
+      if(!searchTokens.every(tok=>hay.includes(tok))) return false;
+    }
+    return true;
+  });
+
+  const shown = showAllProducts ? filtered : filtered.slice(0, DEFAULT_PRODUCT_LIMIT);
+  countEl.textContent = `${filtered.length} verified product${filtered.length===1?'':'s'}`;
+
+  if(shown.length===0){
+    list.innerHTML = '';
+    emptyNote.style.display='block';
+    showMoreWrap.style.display='none';
+    return;
+  }
+  emptyNote.style.display='none';
+
+  if(filtered.length > DEFAULT_PRODUCT_LIMIT && !showAllProducts){
+    showMoreWrap.style.display='block';
+    showMoreBtn.textContent = `Show all ${filtered.length} products`;
+  } else {
+    showMoreWrap.style.display='none';
+  }
+
+  list.innerHTML = shown.map((p,i)=>{
+    const pid = p.brand+'|'+p.name;
+    const expanded = expandedIds.has(pid);
+    const ratioDisplay = p.ratioLabel==='All glucose' ? '100/0' : `${p.glucosePct.toFixed(0)}/${p.fructosePct.toFixed(0)}`;
+    return `
+    <div class="product-item ${expanded?'expanded':''}" data-pid="${escAttr(pid)}">
+      <div class="product-row" data-toggle="${escAttr(pid)}">
+        <div class="p-chevron">▶</div>
+        <div class="p-name-wrap">
+          <div class="p-name">${p.name}</div>
+          <div class="p-brand">${p.brand} · ${p.category}</div>
+        </div>
+        <div class="p-carbs">${p.carbsPerServing}g carbs</div>
+        ${ratioBadgeHtml(p.glucosePct.toFixed(0), p.fructosePct.toFixed(0))}
+        <div class="product-add">
+          <input type="number" class="qty-input" id="qty-prod-${i}" value="1" min="0" step="0.5" style="width:52px;">
+          <button class="add-btn" data-prod="${i}">+ Add</button>
+        </div>
+      </div>
+      <div class="product-detail">
+        <span class="verified-tag">✓ Verified — ${p.ratioLabel}</span>
+        <div class="detail-grid">
+          <div class="detail-cell"><div class="dl">Serving</div><div class="dv">${p.servingLabel}</div></div>
+          <div class="detail-cell"><div class="dl">Category</div><div class="dv">${p.category}</div></div>
+          <div class="detail-cell"><div class="dl">Ratio source</div><div class="dv">${p.note}</div></div>
+        </div>
+        <a class="detail-link" href="${p.url}" target="_blank" rel="noopener">View on ${p.source} ↗</a>
+      </div>
+    </div>`;
+  }).join('');
+
+  list.querySelectorAll('.product-row').forEach(row=>{
+    row.addEventListener('click', (e)=>{
+      if(e.target.closest('.product-add')) return;
+      const pid = row.getAttribute('data-toggle');
+      if(expandedIds.has(pid)) expandedIds.delete(pid); else expandedIds.add(pid);
+      row.closest('.product-item').classList.toggle('expanded');
+    });
+  });
+
+  list.querySelectorAll('.add-btn').forEach(btn=>{
+    btn.addEventListener('click', (e)=>{
+      e.stopPropagation();
+      const i = parseInt(btn.getAttribute('data-prod'));
+      const product = shown[i];
+      const qtyInput = document.getElementById(`qty-prod-${i}`);
+      const servings = parseFloat(qtyInput.value)||0;
+      if(servings<=0) return;
+      const r = computeProductEntry(product, servings);
+      mixItems.push({id:idCounter++, name:`${product.name} (${product.brand})`, amountLabel:`${servings} serv.`, carbs:r.carbs, glucose:r.glucose, fructose:r.fructose});
+      renderMix();
+    });
+  });
+  list.querySelectorAll('.qty-input').forEach(inp=>{
+    inp.addEventListener('click', e=>e.stopPropagation());
+  });
+}
+
+/* ---------------- MIX LIST + TOTALS ---------------- */
+function renderMix(){
+  const wrap = document.getElementById('mixTableWrap');
+  const emptyNote = document.getElementById('mixEmpty');
+  const list = document.getElementById('mixList');
+
+  if(mixItems.length===0){
+    wrap.style.display='none';
+    emptyNote.style.display='block';
+  } else {
+    wrap.style.display='block';
+    emptyNote.style.display='none';
+    list.innerHTML = mixItems.map(item=>`
+      <div class="mix-row">
+        <div class="mname">${item.name}</div>
+        <div class="mcol" data-label="Amount"><span class="mval">${item.amountLabel}</span></div>
+        <div class="mcol" data-label="Carbs"><span class="mval">${item.carbs.toFixed(1)} g</span></div>
+        <div class="mcol" data-label="Glucose"><span class="mval" style="color:var(--glucose-dim);">${item.glucose.toFixed(1)} g</span></div>
+        <div class="mcol" data-label="Fructose"><span class="mval" style="color:var(--fructose);">${item.fructose.toFixed(1)} g</span></div>
+        <button class="remove-btn" data-id="${item.id}">✕</button>
+      </div>
+    `).join('');
+    list.querySelectorAll('.remove-btn').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        const id = parseFloat(btn.getAttribute('data-id'));
+        mixItems = mixItems.filter(i=>i.id!==id);
+        renderMix();
+      });
+    });
+  }
+
+  const totalCarbs = mixItems.reduce((s,i)=>s+i.carbs,0);
+  const totalGlu = mixItems.reduce((s,i)=>s+i.glucose,0);
+  const totalFru = mixItems.reduce((s,i)=>s+i.fructose,0);
+
+  document.getElementById('mixTotalCarbs').textContent = `${totalCarbs.toFixed(1)} g`;
+  document.getElementById('mixTotalGlu').textContent = `${totalGlu.toFixed(1)} g`;
+  document.getElementById('mixTotalFru').textContent = `${totalFru.toFixed(1)} g`;
+
+  let ratioText = '—';
+  if(totalGlu>0 && totalFru>0){
+    ratioText = `${(totalGlu/totalFru).toFixed(2)} : 1`;
+  } else if(totalGlu>0 && totalFru===0){
+    ratioText = 'All glucose';
+  } else if(totalFru>0 && totalGlu===0){
+    ratioText = 'All fructose';
+  }
+  document.getElementById('mixRatioText').textContent = ratioText;
+
+  updateGauge(totalGlu, totalFru);
+}
+
+/* ---------------- TARGET PLANNER ---------------- */
+/* The RIGHT/floor end of the slider is fixed forever at 1:0.8 — that's
+   the hard minimum ratio, it never moves. The LEFT/ceiling end (most
+   glucose you're allowed to choose) is what shifts as intake climbs:
+     <= 60 g/h  : ceiling = 100% glucose  (no fructose required at all)
+        90 g/h  : ceiling = 2 : 1         (glucose fraction = 2/3 = 0.6667)
+       120 g/h  : ceiling = 1 : 0.8       (glucose fraction = 1/1.8 = 0.5556)
+   Between 60-90 and 90-120 the ceiling interpolates linearly. At 120 g/h
+   and above the ceiling has dropped all the way to meet the floor, so
+   there's no range left to choose from and the slider locks.             */
+const GF_ALL_GLUCOSE = 1.0;
+const GF_2_1 = 2/3;
+const GF_1_0_8 = 1/1.8;
+
+function lerp(a, b, t){ return a + (b-a)*t; }
+
+function ceilingGlucoseFrac(carbsPerHour){
+  if(carbsPerHour<=60) return GF_ALL_GLUCOSE;
+  if(carbsPerHour<=90) return lerp(GF_ALL_GLUCOSE, GF_2_1, (carbsPerHour-60)/(90-60));
+  if(carbsPerHour<=120) return lerp(GF_2_1, GF_1_0_8, (carbsPerHour-90)/(120-90));
+  return GF_1_0_8;
+}
+
+function formatRatioFromFrac(glucoseFrac){
+  const fructoseFrac = 1-glucoseFrac;
+  if(fructoseFrac<=0.001) return 'All glucose';
+  if(glucoseFrac>=GF_2_1-0.0001) return `${(glucoseFrac/fructoseFrac).toFixed(2)} : 1`;
+  return `1 : ${(fructoseFrac/glucoseFrac).toFixed(2)}`;
+}
+
+function getBand(carbsPerHour){
+  const ceiling = ceilingGlucoseFrac(carbsPerHour);
+  const floor = GF_1_0_8;
+  const locked = carbsPerHour>=120;
+  return {
+    locked,
+    minGluFrac: floor,
+    maxGluFrac: ceiling,
+    minLabel: '1 : 0.8',
+    maxLabel: formatRatioFromFrac(ceiling)
+  };
+}
+
+let lastTarget = null;
+
+function renderPlanner(){
+  const carbsPerHour = parseFloat(document.getElementById('carbsPerHour').value);
+  const duration = parseFloat(document.getElementById('duration').value);
+  document.getElementById('carbsPerHourVal').textContent = `${carbsPerHour} g/h`;
+  document.getElementById('durationVal').textContent = `${duration.toFixed(2)} h`;
+
+  const band = getBand(carbsPerHour);
+  const blendSlider = document.getElementById('ratioBlend');
+  const lockedNote = document.getElementById('lockedNote');
+
+  document.getElementById('bandMaxLabel').textContent = band.maxLabel;
+  document.getElementById('bandMinLabel').textContent = band.minLabel;
+
+  let blendPos = parseFloat(blendSlider.value);
+  if(band.locked){
+    blendSlider.disabled = true;
+    blendSlider.value = 1;
+    blendPos = 1;
+    lockedNote.style.display = 'block';
+    lockedNote.textContent = 'Locked at 1 : 0.8 — the recommended floor for 120 g/h and above';
+  } else {
+    blendSlider.disabled = false;
+    lockedNote.style.display = 'none';
+  }
+
+  const glucoseFrac = band.maxGluFrac - blendPos*(band.maxGluFrac-band.minGluFrac);
+  const fructoseFrac = 1-glucoseFrac;
+
+  const gluPerHr = carbsPerHour*glucoseFrac;
+  const fruPerHr = carbsPerHour*fructoseFrac;
+  const totalCarbs = carbsPerHour*duration;
+
+  lastTarget = {gluPerHr, fruPerHr, glucoseFrac, fructoseFrac, totalCarbs};
+
+  document.getElementById('targetGluHr').textContent = `${gluPerHr.toFixed(1)} g`;
+  document.getElementById('targetFruHr').textContent = `${fruPerHr.toFixed(1)} g`;
+  document.getElementById('targetTotalSession').textContent = `${totalCarbs.toFixed(0)} g`;
+
+  const gluPct = (glucoseFrac*100);
+  const fruPct = (fructoseFrac*100);
+  const ratioText = formatRatioFromFrac(glucoseFrac);
+  document.getElementById('blendVal').textContent = ratioText;
+  document.getElementById('blendRatioText').textContent = `${ratioText}  (${gluPct.toFixed(0)}% glucose / ${fruPct.toFixed(0)}% fructose)`;
+  document.getElementById('blendBar').style.setProperty('--split', `${gluPct}%`);
+
+  const totalGlu = mixItems.reduce((s,i)=>s+i.glucose,0);
+  const totalFru = mixItems.reduce((s,i)=>s+i.fructose,0);
+  updateGauge(totalGlu, totalFru);
+}
+
+/* ---------------- GAUGE ---------------- */
+function glucosePctFromRatio(glu, fru){
+  const total = glu+fru;
+  if(total<=0) return null;
+  return (glu/total)*100;
+}
+
+function updateGauge(totalGlu, totalFru){
+  const ticks = document.getElementById('gaugeTicks');
+  if(ticks.children.length===0){
+    for(let i=0;i<=10;i++){ const el=document.createElement('i'); ticks.appendChild(el); }
+  }
+
+  const targetMarker = document.getElementById('markerTarget');
+  const targetGluPct = lastTarget ? lastTarget.glucoseFrac*100 : 50;
+  targetMarker.style.left = `${100-targetGluPct}%`;
+
+  const mixMarker = document.getElementById('markerMix');
+  const mixGluPct = glucosePctFromRatio(totalGlu, totalFru);
+  const caption = document.getElementById('gaugeCaption');
+
+  if(mixGluPct===null){
+    mixMarker.style.display='none';
+    caption.innerHTML = `Add items to your mix to see how it compares to your <b>${targetGluPct.toFixed(0)}% glucose</b> target blend.`;
+    return;
+  }
+  mixMarker.style.display='block';
+  mixMarker.style.left = `${100-mixGluPct}%`;
+
+  const diff = Math.abs(mixGluPct-targetGluPct);
+  let verdict;
+  if(diff<=6) verdict = `<span style="color:var(--good);">closely matches</span>`;
+  else if(diff<=15) verdict = `<span style="color:var(--warn);">is reasonably close to</span>`;
+  else verdict = `<span style="color:var(--bad);">is well off</span>`;
+
+  caption.innerHTML = `Your mix runs <b>${mixGluPct.toFixed(0)}% glucose</b> and ${verdict} the target blend (<b>${targetGluPct.toFixed(0)}% glucose</b>) for a ${document.getElementById('carbsPerHour').value} g/h intake rate.`;
+}
+
+/* ---------------- TABS ---------------- */
+function initTabs(){
+  document.querySelectorAll('.tab-btn').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+      document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById(`panel-${btn.getAttribute('data-tab')}`).classList.add('active');
+    });
+  });
+}
+
+function escId(s){ return s.replace(/[^a-zA-Z0-9]/g,'_'); }
+function escAttr(s){ return s.replace(/"/g,'&quot;'); }
+
+/* ---------------- INIT ---------------- */
+document.getElementById('carbsPerHour').addEventListener('input', renderPlanner);
+document.getElementById('duration').addEventListener('input', renderPlanner);
+document.getElementById('ratioBlend').addEventListener('input', renderPlanner);
+document.getElementById('foodSearch').addEventListener('input', renderFoodList);
+document.getElementById('foodShowMoreBtn').addEventListener('click', ()=>{ showAllFoods = true; renderFoodList(); });
+document.getElementById('productSearch').addEventListener('input', renderProductGrid);
+document.getElementById('categoryFilter').addEventListener('change', renderProductGrid);
+document.getElementById('showMoreBtn').addEventListener('click', ()=>{ showAllProducts = true; renderProductGrid(); });
+
+initTabs();
+renderFoodList();
+populateCategoryFilter();
+renderProductGrid();
+renderPlanner();
+renderMix();
+
+/* Inject Product ItemList structured data for search engines, generated
+   from the live PRODUCTS array so it can never drift out of sync. */
+(function injectProductStructuredData(){
+  const itemListElement = PRODUCTS.map((p, i) => ({
+    "@type": "ListItem",
+    "position": i + 1,
+    "item": {
+      "@type": "Product",
+      "name": `${p.brand} ${p.name}`,
+      "brand": { "@type": "Brand", "name": p.brand },
+      "category": p.category,
+      "url": p.url,
+      "additionalProperty": [
+        { "@type": "PropertyValue", "name": "Carbs per serving", "value": `${p.carbsPerServing}g` },
+        { "@type": "PropertyValue", "name": "Glucose:Fructose ratio", "value": p.ratioLabel }
+      ]
+    }
+  }));
+  const ld = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Verified glucose:fructose ratio sports nutrition products",
+    "numberOfItems": PRODUCTS.length,
+    "itemListElement": itemListElement
+  };
+  const script = document.createElement('script');
+  script.type = 'application/ld+json';
+  script.textContent = JSON.stringify(ld);
+  document.head.appendChild(script);
+})();
+
+document.querySelectorAll('.nav-dropdown').forEach((dd) => {
+  const btn = dd.querySelector('.nav-dropdown-toggle');
+  if (!btn) return;
+  btn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const open = !dd.classList.contains('open');
+    document.querySelectorAll('.nav-dropdown.open').forEach((o) => {
+      o.classList.remove('open');
+      o.querySelector('.nav-dropdown-toggle')?.setAttribute('aria-expanded', 'false');
+    });
+    dd.classList.toggle('open', open);
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+});
+document.addEventListener('click', () => {
+  document.querySelectorAll('.nav-dropdown.open').forEach((o) => {
+    o.classList.remove('open');
+    o.querySelector('.nav-dropdown-toggle')?.setAttribute('aria-expanded', 'false');
+  });
+});
+</script>
+</body>
+</html>

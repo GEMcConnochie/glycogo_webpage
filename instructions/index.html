@@ -35,8 +35,39 @@ nav.shrink img { height: 48px; }
 .nav-logo { font-family: 'Space Mono', monospace; font-size: 1.4rem; font-weight: 700; color: var(--green); letter-spacing: -0.02em; }
 .nav-logo span { color: var(--orange); }
 .nav-links { display: flex; gap: 2rem; align-items: center; }
-.nav-links a { text-decoration: none; color: var(--muted); font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
-.nav-links a:hover { color: var(--green); }
+.nav-links > a,
+.nav-dropdown-toggle {
+  text-decoration: none; color: var(--muted); font-size: 0.9rem; font-weight: 500; transition: color 0.2s;
+  background: none; border: none; cursor: pointer; font-family: inherit; padding: 0;
+  display: inline-flex; align-items: center; gap: 0.3rem;
+}
+.nav-links > a:hover,
+.nav-dropdown-toggle:hover,
+.nav-dropdown.open .nav-dropdown-toggle { color: var(--green); }
+.nav-dropdown { position: relative; }
+.nav-dropdown-toggle .chev {
+  width: 0; height: 0; border-left: 4px solid transparent; border-right: 4px solid transparent;
+  border-top: 4px solid currentColor; opacity: 0.7; transition: transform 0.2s;
+}
+.nav-dropdown.open .chev { transform: rotate(180deg); }
+.nav-dropdown-menu {
+  position: absolute; top: calc(100% + 0.65rem); left: 50%; transform: translateX(-50%) translateY(4px);
+  min-width: 220px; background: var(--white); border: 1px solid var(--border);
+  border-radius: 12px; box-shadow: 0 12px 40px rgba(26,26,62,0.12); padding: 0.4rem;
+  opacity: 0; visibility: hidden; pointer-events: none;
+  transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s; z-index: 300;
+}
+.nav-dropdown.open .nav-dropdown-menu,
+.nav-dropdown:hover .nav-dropdown-menu,
+.nav-dropdown:focus-within .nav-dropdown-menu {
+  opacity: 1; visibility: visible; pointer-events: auto; transform: translateX(-50%) translateY(0);
+}
+.nav-dropdown-menu a {
+  display: block; padding: 0.7rem 0.9rem; border-radius: 8px;
+  text-decoration: none; color: var(--text); font-size: 0.86rem; font-weight: 500;
+  transition: background 0.15s, color 0.15s; white-space: nowrap;
+}
+.nav-dropdown-menu a:hover { background: var(--green-pale); color: var(--green); }
 .nav-cta { background: var(--green) !important; color: white !important; padding: 0.5rem 1.2rem !important; border-radius: 6px !important; font-weight: 600 !important; }
 .nav-cta:hover { background: var(--green-light) !important; }
  
@@ -196,6 +227,14 @@ footer a:hover { color: var(--orange-light); }
     <a href="/#science">Science</a>
     <a href="/#faq">FAQ</a>
     <a href="/#support">Support</a>
+    <div class="nav-dropdown">
+      <button type="button" class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+        Free calculators <span class="chev" aria-hidden="true"></span>
+      </button>
+      <div class="nav-dropdown-menu" role="menu">
+        <a href="/fuel-ratio-calculator/" role="menuitem">Carb fuel-ratio calculator</a>
+      </div>
+    </div>
     <a href="https://web.glycogo.fit/" class="nav-cta">Try for free</a>
   </div>
 </nav> 
@@ -567,6 +606,27 @@ footer a:hover { color: var(--orange-light); }
     sidebarLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + current));
   };
   window.addEventListener('scroll', onScroll, { passive: true });
+
+  document.querySelectorAll('.nav-dropdown').forEach((dd) => {
+    const btn = dd.querySelector('.nav-dropdown-toggle');
+    if (!btn) return;
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const open = !dd.classList.contains('open');
+      document.querySelectorAll('.nav-dropdown.open').forEach((o) => {
+        o.classList.remove('open');
+        o.querySelector('.nav-dropdown-toggle')?.setAttribute('aria-expanded', 'false');
+      });
+      dd.classList.toggle('open', open);
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  });
+  document.addEventListener('click', () => {
+    document.querySelectorAll('.nav-dropdown.open').forEach((o) => {
+      o.classList.remove('open');
+      o.querySelector('.nav-dropdown-toggle')?.setAttribute('aria-expanded', 'false');
+    });
+  });
 </script>
 </body>
 </html>
