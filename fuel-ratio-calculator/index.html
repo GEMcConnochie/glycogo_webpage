@@ -82,7 +82,7 @@ html,body{margin:0;padding:0;}
 body{
   background:var(--bg);
   color:var(--text);
-  font-family:'DM Sans',system-ui,sans-serif;
+  font-family:'DM Sans', system-ui, -apple-system, sans-serif;
   min-height:100vh;
   -webkit-font-smoothing:antialiased;
   padding-top:var(--nav-h);
@@ -154,7 +154,7 @@ nav#main-nav{
 /* ---------- HEADER ---------- */
 header.top{ padding:36px 0 30px; border-bottom:1px solid var(--line); }
 .eyebrow{
-  font-family:'Space Mono',monospace;
+  font-family:'DM Sans',sans-serif;
   font-size:11.5px; letter-spacing:0.1em; text-transform:uppercase; color:var(--fructose);
   display:flex; align-items:center; gap:8px; margin-bottom:16px; font-weight:600;
 }
@@ -169,7 +169,7 @@ h1.title{
 section{ padding:40px 0; border-bottom:1px solid var(--line); }
 .section-head{ display:flex; align-items:baseline; justify-content:space-between; gap:16px; margin-bottom:20px; flex-wrap:wrap; }
 .section-num{
-  font-family:'Space Mono',monospace; color:var(--text-faint);
+  font-family:'DM Sans',sans-serif; color:var(--text-faint);
   font-size:11.5px; letter-spacing:0.08em; font-weight:600;
 }
 h2.section-title{
@@ -184,11 +184,12 @@ h2.section-title{
 .control{ margin-bottom:24px; }
 .control label{
   display:flex; justify-content:space-between; align-items:baseline;
-  font-family:'Space Mono',monospace; font-size:11.5px; letter-spacing:0.03em; text-transform:uppercase; color:var(--text-dim);
+  font-family:'DM Sans',sans-serif; font-size:11.5px; letter-spacing:0.03em; text-transform:uppercase; color:var(--text-dim);
   margin-bottom:10px; font-weight:600;
 }
 .control label .val{ color:var(--text); font-size:15px; font-weight:700; font-family:'DM Sans',sans-serif; }
 .control .hint{ font-size:12.5px; color:var(--text-faint); margin-top:8px; line-height:1.5; }
+input, select, button { font-family: inherit; }
 input[type="range"]{
   -webkit-appearance:none; appearance:none;
   width:100%; height:4px; background:var(--panel-2); border-radius:2px; outline:none; border:1px solid var(--line-strong);
@@ -207,11 +208,11 @@ input[type="range"]::-moz-range-thumb{
 input[type="range"]:disabled{ opacity:0.4; }
 input[type="range"]:disabled::-webkit-slider-thumb{ background:var(--text-faint); box-shadow:0 0 0 1px var(--text-faint); }
 
-.band-labels{ display:flex; justify-content:space-between; font-family:'Space Mono',monospace; font-size:11px; letter-spacing:0.02em; text-transform:uppercase; color:var(--text-faint); margin-top:8px; font-weight:600;}
+.band-labels{ display:flex; justify-content:space-between; font-family:'DM Sans',sans-serif; font-size:11px; letter-spacing:0.02em; text-transform:uppercase; color:var(--text-faint); margin-top:8px; font-weight:600;}
 .band-labels .b-left{ color:var(--glucose-dim); }
 .band-labels .b-right{ color:var(--fructose); }
 .locked-note{
-  font-family:'Space Mono',monospace; font-size:11px; letter-spacing:0.01em;
+  font-family:'DM Sans',sans-serif; font-size:11px; letter-spacing:0.01em;
   color:var(--fructose-dim); background:var(--fructose-soft); border-radius:var(--radius-sm); padding:8px 11px; margin-top:8px; display:none; font-weight:600;
 }
 
@@ -226,7 +227,7 @@ input[type="range"]:disabled::-webkit-slider-thumb{ background:var(--text-faint)
 
 /* ---------- GAUGE ---------- */
 .gauge-wrap{ margin-top:8px; }
-.gauge-labels{ display:flex; justify-content:space-between; font-family:'Space Mono',monospace; font-size:11px; letter-spacing:0.04em; text-transform:uppercase; color:var(--text-faint); margin-bottom:6px; font-weight:600;}
+.gauge-labels{ display:flex; justify-content:space-between; font-family:'DM Sans',sans-serif; font-size:11px; letter-spacing:0.04em; text-transform:uppercase; color:var(--text-faint); margin-bottom:6px; font-weight:600;}
 .gauge-labels .l{ color:var(--glucose-dim); }
 .gauge-labels .r{ color:var(--fructose); }
 .gauge-track{
@@ -253,7 +254,7 @@ input[type="range"]:disabled::-webkit-slider-thumb{ background:var(--text-faint)
 /* ---------- TABS ---------- */
 .tabs{ display:flex; gap:2px; margin-bottom:20px; border-bottom:1px solid var(--line-strong); width:fit-content; }
 .tab-btn{
-  font-family:'Space Mono',monospace; font-size:12px; letter-spacing:0.03em; text-transform:uppercase;
+  font-family:'DM Sans',sans-serif; font-size:12px; letter-spacing:0.03em; text-transform:uppercase;
   background:transparent; color:var(--text-dim); border:none; padding:10px 4px; margin-right:22px; cursor:pointer; font-weight:600;
   border-bottom:2px solid transparent; margin-bottom:-1px;
 }
@@ -270,8 +271,8 @@ input[type="range"]:disabled::-webkit-slider-thumb{ background:var(--text-faint)
 .filter-row input[type="text"]{ flex:1; min-width:180px; }
 .filter-row input[type="text"]::placeholder{ color:var(--text-faint); font-weight:400; }
 .filter-row select{ min-width:160px; }
-.result-count{ font-family:'Space Mono',monospace; font-size:11px; color:var(--text-faint); margin-bottom:10px; text-transform:uppercase; letter-spacing:0.03em; font-weight:600;}
-.list-head{ font-family:'Space Mono',monospace; font-size:10.5px; text-transform:uppercase; letter-spacing:0.03em; color:var(--text-faint); font-weight:700; padding:0 4px 8px; border-bottom:1px solid var(--line-strong); }
+.result-count{ font-family:'DM Sans',sans-serif; font-size:11px; color:var(--text-faint); margin-bottom:10px; text-transform:uppercase; letter-spacing:0.03em; font-weight:600;}
+.list-head{ font-family:'DM Sans',sans-serif; font-size:10.5px; text-transform:uppercase; letter-spacing:0.03em; color:var(--text-faint); font-weight:700; padding:0 4px 8px; border-bottom:1px solid var(--line-strong); }
 .food-list-head{ display:grid; grid-template-columns:1fr 120px 90px 84px; gap:16px; align-items:center; }
 .product-list-head{ display:grid; grid-template-columns:16px 1.6fr 80px 120px 140px; gap:14px; align-items:center; }
 .food-list-head > div:last-child, .product-list-head > div:last-child{ text-align:right; }
@@ -294,7 +295,7 @@ input[type="range"]:disabled::-webkit-slider-thumb{ background:var(--text-faint)
 .ratio-badge .g{ color:var(--glucose-dim); }
 .ratio-badge .f{ color:var(--fructose); }
 .add-btn{
-  font-family:'Space Mono',monospace; font-size:11.5px; text-transform:uppercase; letter-spacing:0.02em;
+  font-family:'DM Sans',sans-serif; font-size:11.5px; text-transform:uppercase; letter-spacing:0.02em;
   background:var(--text); color:#fff; border:none; border-radius:var(--radius-sm); padding:9px 15px; cursor:pointer; white-space:nowrap; font-weight:600;
 }
 .add-btn:hover{ background:var(--glucose-dim); }
@@ -315,13 +316,13 @@ input[type="range"]:disabled::-webkit-slider-thumb{ background:var(--text-faint)
 .product-item.expanded .p-chevron{ transform:rotate(90deg); color:var(--glucose); }
 .p-name-wrap{ min-width:0; }
 .p-name{ font-weight:600; font-size:13.5px; line-height:1.3; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
-.p-brand{ font-family:'Space Mono',monospace; font-size:10px; text-transform:uppercase; letter-spacing:0.03em; color:var(--text-faint); margin-top:2px; font-weight:600;}
+.p-brand{ font-family:'DM Sans',sans-serif; font-size:10px; text-transform:uppercase; letter-spacing:0.03em; color:var(--text-faint); margin-top:2px; font-weight:600;}
 .p-carbs{ font-family:'Space Mono',monospace; font-size:12.5px; color:var(--text-dim); white-space:nowrap; font-weight:700;}
 .product-add{ display:flex; align-items:center; gap:8px; }
 .product-detail{ display:none; padding:0 4px 18px 30px; }
 .product-item.expanded .product-detail{ display:block; }
 .detail-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:12px 20px; margin:14px 0; }
-.detail-cell .dl{ font-family:'Space Mono',monospace; font-size:10px; text-transform:uppercase; letter-spacing:0.03em; color:var(--text-faint); margin-bottom:3px; font-weight:700;}
+.detail-cell .dl{ font-family:'DM Sans',sans-serif; font-size:10px; text-transform:uppercase; letter-spacing:0.03em; color:var(--text-faint); margin-bottom:3px; font-weight:700;}
 .detail-cell .dv{ font-size:13px; color:var(--text); font-weight:500; }
 .detail-link{ font-size:12px; color:var(--fructose); text-decoration:none; display:inline-block; margin-top:4px; padding:8px 14px; border:1px solid var(--fructose); border-radius:var(--radius-sm); font-weight:600; }
 .detail-link:hover{ background:var(--fructose); color:#fff; }
@@ -329,7 +330,7 @@ input[type="range"]:disabled::-webkit-slider-thumb{ background:var(--text-faint)
 
 .show-more-wrap{ text-align:center; margin-top:16px; }
 .show-more-btn{
-  font-family:'Space Mono',monospace; font-size:12px; text-transform:uppercase; letter-spacing:0.03em;
+  font-family:'DM Sans',sans-serif; font-size:12px; text-transform:uppercase; letter-spacing:0.03em;
   background:transparent; color:var(--fructose); border:1px solid var(--line-strong); border-radius:var(--radius-sm);
   padding:10px 22px; cursor:pointer; font-weight:600;
 }
@@ -340,18 +341,18 @@ input[type="range"]:disabled::-webkit-slider-thumb{ background:var(--text-faint)
 /* ---------- MIX LIST ---------- */
 .mix-list{ display:flex; flex-direction:column; margin-bottom:24px; }
 .mix-row{ background:var(--bg); border-bottom:1px solid var(--line); display:grid; grid-template-columns:1.4fr repeat(4,1fr) auto; gap:12px; align-items:center; padding:12px 4px; font-size:13px; }
-@media(max-width:800px){ .mix-row{ grid-template-columns:1fr; gap:4px; } .mix-row .mcol{ display:flex; justify-content:space-between; } .mix-row .mcol::before{ content:attr(data-label); color:var(--text-faint); font-family:'Space Mono',monospace; font-size:10px; text-transform:uppercase; font-weight:700;} }
+@media(max-width:800px){ .mix-row{ grid-template-columns:1fr; gap:4px; } .mix-row .mcol{ display:flex; justify-content:space-between; } .mix-row .mcol::before{ content:attr(data-label); color:var(--text-faint); font-family:'DM Sans',sans-serif; font-size:10px; text-transform:uppercase; font-weight:700;} }
 .mix-row .mname{ font-weight:600; }
 .mix-row .mval{ font-family:'Space Mono',monospace; font-weight:700; }
 .remove-btn{ background:#fff; border:1px solid var(--line-strong); border-radius:var(--radius-sm); color:var(--text-faint); width:26px; height:26px; cursor:pointer; font-size:12px; line-height:1;}
 .remove-btn:hover{ color:#fff; background:var(--bad); border-color:var(--bad); }
-.mix-head{ display:grid; grid-template-columns:1.4fr repeat(4,1fr) auto; gap:12px; padding:0 4px 8px; font-family:'Space Mono',monospace; font-size:10.5px; text-transform:uppercase; letter-spacing:0.03em; color:var(--text-faint); font-weight:700; border-bottom:1px solid var(--line-strong);}
+.mix-head{ display:grid; grid-template-columns:1.4fr repeat(4,1fr) auto; gap:12px; padding:0 4px 8px; font-family:'DM Sans',sans-serif; font-size:10.5px; text-transform:uppercase; letter-spacing:0.03em; color:var(--text-faint); font-weight:700; border-bottom:1px solid var(--line-strong);}
 @media(max-width:800px){ .mix-head{ display:none; } }
 
 .totals-strip{ display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:var(--radius-md); overflow:hidden; }
 @media(max-width:640px){ .totals-strip{ grid-template-columns:repeat(2,1fr); } }
 .total-cell{ background:var(--panel-2); padding:17px 16px; }
-.total-cell .tl{ font-family:'Space Mono',monospace; font-size:10.5px; text-transform:uppercase; letter-spacing:0.03em; color:var(--text-faint); margin-bottom:6px; font-weight:700;}
+.total-cell .tl{ font-family:'DM Sans',sans-serif; font-size:10.5px; text-transform:uppercase; letter-spacing:0.03em; color:var(--text-faint); margin-bottom:6px; font-weight:700;}
 .total-cell .tv{ font-family:'Space Mono',monospace; font-size:22px; font-weight:700; }
 .total-cell .tv.glu{ color:var(--glucose-dim); }
 .total-cell .tv.fru{ color:var(--fructose); }
@@ -400,7 +401,7 @@ footer a:hover{ text-decoration:underline; }
       .noscript-block{ padding:24px 0; border-bottom:1px solid var(--line); }
       .noscript-block table{ width:100%; border-collapse:collapse; font-size:13px; margin-top:12px; }
       .noscript-block th, .noscript-block td{ text-align:left; padding:8px 10px; border-bottom:1px solid var(--line); }
-      .noscript-block th{ font-family:'Space Mono',monospace; text-transform:uppercase; font-size:11px; color:var(--text-faint); }
+      .noscript-block th{ font-family:'DM Sans',sans-serif; text-transform:uppercase; font-size:11px; color:var(--text-faint); }
     </style>
     <div class="noscript-block">
       <p>This calculator needs JavaScript enabled for the interactive planner and fuel mix builder. Below is the underlying reference data: glucose:fructose splits for common whole foods, and 38 sports nutrition products with manufacturer-confirmed ratios, spanning 23 brands including Science in Sport, Maurten, Tailwind Nutrition, Precision Fuel &amp; Hydration, Neversecond, Enervit, and Skratch Labs.</p>
