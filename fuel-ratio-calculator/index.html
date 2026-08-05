@@ -19,7 +19,7 @@
 <meta property="og:url" content="https://glycogo.fit/fuel-ratio-calculator/">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Fuel Ratio Calculator — Glucose:Fructose Carb Calculator">
+<meta name="twitter:title" content="Fuel Ratio Calculator: Glucose:Fructose Carb Calculator">
 <meta name="twitter:description" content="38 verified sports nutrition products, 23 brands, one glucose:fructose ratio calculator built on gut-absorption science.">
 
 <script type="application/ld+json">
@@ -43,31 +43,31 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
 /* -------- Glycogo brand palette, sampled from the logo -------- */
 :root{
   --bg:#FFFFFF;
-  --bg-2:#FAFAF8;
+  --bg-2:#f7faf8;
   --panel:#FFFFFF;
-  --panel-2:#F2F3EE;
-  --line:rgba(30,32,36,0.09);
-  --line-strong:rgba(30,32,36,0.16);
-  --text:#1E2024;
-  --text-dim:#5B5F66;
+  --panel-2:#f7faf8;
+  --line:rgba(26,26,62,0.08);
+  --line-strong:rgba(26,26,62,0.14);
+  --text:#1a1a3e;
+  --text-dim:#5c6670;
   --text-faint:#93979E;
-  --glucose:#DA7E12;
-  --glucose-soft:#FBEBD4;
-  --glucose-dim:#A9600D;
-  --fructose:#46469A;
-  --fructose-soft:#E4E4F3;
-  --fructose-dim:#33336F;
-  --good:#4B8A30;
-  --good-soft:#E4F0DD;
-  --warn:#B87A1E;
-  --bad:#C23B4F;
+  --glucose:#e65c00;
+  --glucose-soft:#fff3e0;
+  --glucose-dim:#b34200;
+  --fructose:#2d2d7a;
+  --fructose-soft:#e8eaf6;
+  --fructose-dim:#1a1a3e;
+  --good:#2e7d32;
+  --good-soft:#e8f5e9;
+  --warn:#e65c00;
+  --bad:#c62828;
   --radius-sm:6px;
-  --radius-md:9px;
+  --radius-md:12px;
   --nav-h:72px;
   --green:#2e7d32;
   --green-light:#43a047;
@@ -82,7 +82,7 @@ html,body{margin:0;padding:0;}
 body{
   background:var(--bg);
   color:var(--text);
-  font-family:'Inter',system-ui,sans-serif;
+  font-family:'DM Sans',system-ui,sans-serif;
   min-height:100vh;
   -webkit-font-smoothing:antialiased;
   padding-top:var(--nav-h);
@@ -154,13 +154,13 @@ nav#main-nav{
 /* ---------- HEADER ---------- */
 header.top{ padding:36px 0 30px; border-bottom:1px solid var(--line); }
 .eyebrow{
-  font-family:'JetBrains Mono',monospace;
+  font-family:'Space Mono',monospace;
   font-size:11.5px; letter-spacing:0.1em; text-transform:uppercase; color:var(--fructose);
   display:flex; align-items:center; gap:8px; margin-bottom:16px; font-weight:600;
 }
 .eyebrow::before{ content:""; width:16px; height:2px; background:var(--glucose); }
 h1.title{
-  font-family:'Space Grotesk',sans-serif; font-weight:700;
+  font-family:'DM Sans',sans-serif; font-weight:700;
   font-size:clamp(30px,5vw,46px); margin:0 0 12px; line-height:1.08; color:var(--text); letter-spacing:-0.01em;
 }
 .subtitle{ color:var(--text-dim); font-size:16px; max-width:620px; line-height:1.6; margin:0; }
@@ -169,11 +169,11 @@ h1.title{
 section{ padding:40px 0; border-bottom:1px solid var(--line); }
 .section-head{ display:flex; align-items:baseline; justify-content:space-between; gap:16px; margin-bottom:20px; flex-wrap:wrap; }
 .section-num{
-  font-family:'JetBrains Mono',monospace; color:var(--text-faint);
+  font-family:'Space Mono',monospace; color:var(--text-faint);
   font-size:11.5px; letter-spacing:0.08em; font-weight:600;
 }
 h2.section-title{
-  font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:20px; margin:4px 0 0; color:var(--text); letter-spacing:-0.005em;
+  font-family:'DM Sans',sans-serif; font-weight:600; font-size:20px; margin:4px 0 0; color:var(--text); letter-spacing:-0.005em;
 }
 .section-desc{ color:var(--text-dim); font-size:14.5px; max-width:620px; line-height:1.6; margin-top:6px; }
 
@@ -184,10 +184,10 @@ h2.section-title{
 .control{ margin-bottom:24px; }
 .control label{
   display:flex; justify-content:space-between; align-items:baseline;
-  font-family:'JetBrains Mono',monospace; font-size:11.5px; letter-spacing:0.03em; text-transform:uppercase; color:var(--text-dim);
+  font-family:'Space Mono',monospace; font-size:11.5px; letter-spacing:0.03em; text-transform:uppercase; color:var(--text-dim);
   margin-bottom:10px; font-weight:600;
 }
-.control label .val{ color:var(--text); font-size:15px; font-weight:700; font-family:'Space Grotesk',sans-serif; }
+.control label .val{ color:var(--text); font-size:15px; font-weight:700; font-family:'DM Sans',sans-serif; }
 .control .hint{ font-size:12.5px; color:var(--text-faint); margin-top:8px; line-height:1.5; }
 input[type="range"]{
   -webkit-appearance:none; appearance:none;
@@ -207,11 +207,11 @@ input[type="range"]::-moz-range-thumb{
 input[type="range"]:disabled{ opacity:0.4; }
 input[type="range"]:disabled::-webkit-slider-thumb{ background:var(--text-faint); box-shadow:0 0 0 1px var(--text-faint); }
 
-.band-labels{ display:flex; justify-content:space-between; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:0.02em; text-transform:uppercase; color:var(--text-faint); margin-top:8px; font-weight:600;}
+.band-labels{ display:flex; justify-content:space-between; font-family:'Space Mono',monospace; font-size:11px; letter-spacing:0.02em; text-transform:uppercase; color:var(--text-faint); margin-top:8px; font-weight:600;}
 .band-labels .b-left{ color:var(--glucose-dim); }
 .band-labels .b-right{ color:var(--fructose); }
 .locked-note{
-  font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:0.01em;
+  font-family:'Space Mono',monospace; font-size:11px; letter-spacing:0.01em;
   color:var(--fructose-dim); background:var(--fructose-soft); border-radius:var(--radius-sm); padding:8px 11px; margin-top:8px; display:none; font-weight:600;
 }
 
@@ -219,14 +219,14 @@ input[type="range"]:disabled::-webkit-slider-thumb{ background:var(--text-faint)
 .readout-row{ display:flex; justify-content:space-between; align-items:center; padding:10px 0; border-bottom:1px solid var(--line-strong); }
 .readout-row:last-child{ border-bottom:none; }
 .readout-label{ font-size:12.5px; color:var(--text-dim); text-transform:uppercase; letter-spacing:0.03em; font-weight:600; }
-.readout-value{ font-family:'JetBrains Mono',monospace; font-size:17px; font-weight:700; }
+.readout-value{ font-family:'Space Mono',monospace; font-size:17px; font-weight:700; }
 .readout-value.glu{ color:var(--glucose-dim); }
 .readout-value.fru{ color:var(--fructose); }
 .blend-bar{ height:7px; border-radius:4px; overflow:hidden; background:linear-gradient(90deg, var(--glucose), var(--glucose) var(--split,58%), var(--fructose) var(--split,58%), var(--fructose)); margin:16px 0 7px; }
 
 /* ---------- GAUGE ---------- */
 .gauge-wrap{ margin-top:8px; }
-.gauge-labels{ display:flex; justify-content:space-between; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:0.04em; text-transform:uppercase; color:var(--text-faint); margin-bottom:6px; font-weight:600;}
+.gauge-labels{ display:flex; justify-content:space-between; font-family:'Space Mono',monospace; font-size:11px; letter-spacing:0.04em; text-transform:uppercase; color:var(--text-faint); margin-bottom:6px; font-weight:600;}
 .gauge-labels .l{ color:var(--glucose-dim); }
 .gauge-labels .r{ color:var(--fructose); }
 .gauge-track{
@@ -240,7 +240,7 @@ input[type="range"]:disabled::-webkit-slider-thumb{ background:var(--text-faint)
 .gauge-marker .line{ position:absolute; top:0; bottom:0; width:2px; left:0; }
 .gauge-marker .flag{
   position:absolute; top:-22px; left:50%; transform:translateX(-50%);
-  font-family:'JetBrains Mono',monospace; font-size:9.5px; letter-spacing:0.03em; text-transform:uppercase;
+  font-family:'Space Mono',monospace; font-size:9.5px; letter-spacing:0.03em; text-transform:uppercase;
   white-space:nowrap; padding:2px 7px; border-radius:3px; font-weight:700;
 }
 .gauge-marker.target .line{ background:var(--text); }
@@ -253,7 +253,7 @@ input[type="range"]:disabled::-webkit-slider-thumb{ background:var(--text-faint)
 /* ---------- TABS ---------- */
 .tabs{ display:flex; gap:2px; margin-bottom:20px; border-bottom:1px solid var(--line-strong); width:fit-content; }
 .tab-btn{
-  font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:0.03em; text-transform:uppercase;
+  font-family:'Space Mono',monospace; font-size:12px; letter-spacing:0.03em; text-transform:uppercase;
   background:transparent; color:var(--text-dim); border:none; padding:10px 4px; margin-right:22px; cursor:pointer; font-weight:600;
   border-bottom:2px solid transparent; margin-bottom:-1px;
 }
@@ -265,13 +265,13 @@ input[type="range"]:disabled::-webkit-slider-thumb{ background:var(--text-faint)
 .filter-row{ display:flex; gap:10px; flex-wrap:wrap; margin-bottom:14px; }
 .filter-row input[type="text"], .filter-row select{
   background:var(--panel-2); border:1px solid var(--line-strong); color:var(--text);
-  font-family:'Inter',sans-serif; font-weight:500; font-size:13.5px; padding:10px 13px; outline:none; border-radius:var(--radius-sm);
+  font-family:'DM Sans',sans-serif; font-weight:500; font-size:13.5px; padding:10px 13px; outline:none; border-radius:var(--radius-sm);
 }
 .filter-row input[type="text"]{ flex:1; min-width:180px; }
 .filter-row input[type="text"]::placeholder{ color:var(--text-faint); font-weight:400; }
 .filter-row select{ min-width:160px; }
-.result-count{ font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--text-faint); margin-bottom:10px; text-transform:uppercase; letter-spacing:0.03em; font-weight:600;}
-.list-head{ font-family:'JetBrains Mono',monospace; font-size:10.5px; text-transform:uppercase; letter-spacing:0.03em; color:var(--text-faint); font-weight:700; padding:0 4px 8px; border-bottom:1px solid var(--line-strong); }
+.result-count{ font-family:'Space Mono',monospace; font-size:11px; color:var(--text-faint); margin-bottom:10px; text-transform:uppercase; letter-spacing:0.03em; font-weight:600;}
+.list-head{ font-family:'Space Mono',monospace; font-size:10.5px; text-transform:uppercase; letter-spacing:0.03em; color:var(--text-faint); font-weight:700; padding:0 4px 8px; border-bottom:1px solid var(--line-strong); }
 .food-list-head{ display:grid; grid-template-columns:1fr 120px 90px 84px; gap:16px; align-items:center; }
 .product-list-head{ display:grid; grid-template-columns:16px 1.6fr 80px 120px 140px; gap:14px; align-items:center; }
 .food-list-head > div:last-child, .product-list-head > div:last-child{ text-align:right; }
@@ -288,19 +288,19 @@ input[type="range"]:disabled::-webkit-slider-thumb{ background:var(--text-faint)
 .food-name{ font-weight:600; font-size:14px; }
 .food-note{ color:var(--text-faint); font-size:12px; margin-top:2px; }
 .ratio-badge{
-  font-family:'JetBrains Mono',monospace; font-size:11px; padding:4px 8px; border-radius:4px;
+  font-family:'Space Mono',monospace; font-size:11px; padding:4px 8px; border-radius:4px;
   white-space:nowrap; background:var(--panel-2); color:var(--text-dim); font-weight:700;
 }
 .ratio-badge .g{ color:var(--glucose-dim); }
 .ratio-badge .f{ color:var(--fructose); }
 .add-btn{
-  font-family:'JetBrains Mono',monospace; font-size:11.5px; text-transform:uppercase; letter-spacing:0.02em;
+  font-family:'Space Mono',monospace; font-size:11.5px; text-transform:uppercase; letter-spacing:0.02em;
   background:var(--text); color:#fff; border:none; border-radius:var(--radius-sm); padding:9px 15px; cursor:pointer; white-space:nowrap; font-weight:600;
 }
 .add-btn:hover{ background:var(--glucose-dim); }
 .qty-input{
   width:58px; background:#fff; border:1px solid var(--line-strong); border-radius:var(--radius-sm); color:var(--text);
-  font-family:'JetBrains Mono',monospace; font-size:12.5px; padding:8px; text-align:center; font-weight:600;
+  font-family:'Space Mono',monospace; font-size:12.5px; padding:8px; text-align:center; font-weight:600;
 }
 
 /* ---------- PRODUCT LIST (expandable) ---------- */
@@ -315,21 +315,21 @@ input[type="range"]:disabled::-webkit-slider-thumb{ background:var(--text-faint)
 .product-item.expanded .p-chevron{ transform:rotate(90deg); color:var(--glucose); }
 .p-name-wrap{ min-width:0; }
 .p-name{ font-weight:600; font-size:13.5px; line-height:1.3; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
-.p-brand{ font-family:'JetBrains Mono',monospace; font-size:10px; text-transform:uppercase; letter-spacing:0.03em; color:var(--text-faint); margin-top:2px; font-weight:600;}
-.p-carbs{ font-family:'JetBrains Mono',monospace; font-size:12.5px; color:var(--text-dim); white-space:nowrap; font-weight:700;}
+.p-brand{ font-family:'Space Mono',monospace; font-size:10px; text-transform:uppercase; letter-spacing:0.03em; color:var(--text-faint); margin-top:2px; font-weight:600;}
+.p-carbs{ font-family:'Space Mono',monospace; font-size:12.5px; color:var(--text-dim); white-space:nowrap; font-weight:700;}
 .product-add{ display:flex; align-items:center; gap:8px; }
 .product-detail{ display:none; padding:0 4px 18px 30px; }
 .product-item.expanded .product-detail{ display:block; }
 .detail-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:12px 20px; margin:14px 0; }
-.detail-cell .dl{ font-family:'JetBrains Mono',monospace; font-size:10px; text-transform:uppercase; letter-spacing:0.03em; color:var(--text-faint); margin-bottom:3px; font-weight:700;}
+.detail-cell .dl{ font-family:'Space Mono',monospace; font-size:10px; text-transform:uppercase; letter-spacing:0.03em; color:var(--text-faint); margin-bottom:3px; font-weight:700;}
 .detail-cell .dv{ font-size:13px; color:var(--text); font-weight:500; }
 .detail-link{ font-size:12px; color:var(--fructose); text-decoration:none; display:inline-block; margin-top:4px; padding:8px 14px; border:1px solid var(--fructose); border-radius:var(--radius-sm); font-weight:600; }
 .detail-link:hover{ background:var(--fructose); color:#fff; }
-.verified-tag{ display:inline-flex; align-items:center; gap:5px; font-family:'JetBrains Mono',monospace; font-size:10px; color:var(--good); background:var(--good-soft); padding:3px 8px; border-radius:4px; font-weight:700; letter-spacing:0.02em;}
+.verified-tag{ display:inline-flex; align-items:center; gap:5px; font-family:'Space Mono',monospace; font-size:10px; color:var(--good); background:var(--good-soft); padding:3px 8px; border-radius:4px; font-weight:700; letter-spacing:0.02em;}
 
 .show-more-wrap{ text-align:center; margin-top:16px; }
 .show-more-btn{
-  font-family:'JetBrains Mono',monospace; font-size:12px; text-transform:uppercase; letter-spacing:0.03em;
+  font-family:'Space Mono',monospace; font-size:12px; text-transform:uppercase; letter-spacing:0.03em;
   background:transparent; color:var(--fructose); border:1px solid var(--line-strong); border-radius:var(--radius-sm);
   padding:10px 22px; cursor:pointer; font-weight:600;
 }
@@ -340,24 +340,24 @@ input[type="range"]:disabled::-webkit-slider-thumb{ background:var(--text-faint)
 /* ---------- MIX LIST ---------- */
 .mix-list{ display:flex; flex-direction:column; margin-bottom:24px; }
 .mix-row{ background:var(--bg); border-bottom:1px solid var(--line); display:grid; grid-template-columns:1.4fr repeat(4,1fr) auto; gap:12px; align-items:center; padding:12px 4px; font-size:13px; }
-@media(max-width:800px){ .mix-row{ grid-template-columns:1fr; gap:4px; } .mix-row .mcol{ display:flex; justify-content:space-between; } .mix-row .mcol::before{ content:attr(data-label); color:var(--text-faint); font-family:'JetBrains Mono',monospace; font-size:10px; text-transform:uppercase; font-weight:700;} }
+@media(max-width:800px){ .mix-row{ grid-template-columns:1fr; gap:4px; } .mix-row .mcol{ display:flex; justify-content:space-between; } .mix-row .mcol::before{ content:attr(data-label); color:var(--text-faint); font-family:'Space Mono',monospace; font-size:10px; text-transform:uppercase; font-weight:700;} }
 .mix-row .mname{ font-weight:600; }
-.mix-row .mval{ font-family:'JetBrains Mono',monospace; font-weight:700; }
+.mix-row .mval{ font-family:'Space Mono',monospace; font-weight:700; }
 .remove-btn{ background:#fff; border:1px solid var(--line-strong); border-radius:var(--radius-sm); color:var(--text-faint); width:26px; height:26px; cursor:pointer; font-size:12px; line-height:1;}
 .remove-btn:hover{ color:#fff; background:var(--bad); border-color:var(--bad); }
-.mix-head{ display:grid; grid-template-columns:1.4fr repeat(4,1fr) auto; gap:12px; padding:0 4px 8px; font-family:'JetBrains Mono',monospace; font-size:10.5px; text-transform:uppercase; letter-spacing:0.03em; color:var(--text-faint); font-weight:700; border-bottom:1px solid var(--line-strong);}
+.mix-head{ display:grid; grid-template-columns:1.4fr repeat(4,1fr) auto; gap:12px; padding:0 4px 8px; font-family:'Space Mono',monospace; font-size:10.5px; text-transform:uppercase; letter-spacing:0.03em; color:var(--text-faint); font-weight:700; border-bottom:1px solid var(--line-strong);}
 @media(max-width:800px){ .mix-head{ display:none; } }
 
 .totals-strip{ display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:var(--radius-md); overflow:hidden; }
 @media(max-width:640px){ .totals-strip{ grid-template-columns:repeat(2,1fr); } }
 .total-cell{ background:var(--panel-2); padding:17px 16px; }
-.total-cell .tl{ font-family:'JetBrains Mono',monospace; font-size:10.5px; text-transform:uppercase; letter-spacing:0.03em; color:var(--text-faint); margin-bottom:6px; font-weight:700;}
-.total-cell .tv{ font-family:'JetBrains Mono',monospace; font-size:22px; font-weight:700; }
+.total-cell .tl{ font-family:'Space Mono',monospace; font-size:10.5px; text-transform:uppercase; letter-spacing:0.03em; color:var(--text-faint); margin-bottom:6px; font-weight:700;}
+.total-cell .tv{ font-family:'Space Mono',monospace; font-size:22px; font-weight:700; }
 .total-cell .tv.glu{ color:var(--glucose-dim); }
 .total-cell .tv.fru{ color:var(--fructose); }
 
 footer{ padding:36px 0 60px; text-align:center; }
-footer .brand{ font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:15px; letter-spacing:0.02em; color:var(--text-dim); }
+footer .brand{ font-family:'DM Sans',sans-serif; font-weight:700; font-size:15px; letter-spacing:0.02em; color:var(--text-dim); }
 footer .brand .dot{ color:var(--glucose); }
 footer p{ color:var(--text-faint); font-size:12px; line-height:1.7; margin-top:10px; }
 footer a{ color:var(--fructose); text-decoration:none; font-weight:600; }
@@ -381,6 +381,7 @@ footer a:hover{ text-decoration:underline; }
         </button>
         <div class="nav-dropdown-menu" role="menu">
           <a href="/fuel-ratio-calculator/" role="menuitem" aria-current="page">Carb fuel-ratio calculator</a>
+          <a href="/athlete_supplement_timer.html" role="menuitem">Athlete supplement timer</a>
         </div>
       </div>
       <a href="https://web.glycogo.fit/" class="nav-cta">Try for free</a>
@@ -399,7 +400,7 @@ footer a:hover{ text-decoration:underline; }
       .noscript-block{ padding:24px 0; border-bottom:1px solid var(--line); }
       .noscript-block table{ width:100%; border-collapse:collapse; font-size:13px; margin-top:12px; }
       .noscript-block th, .noscript-block td{ text-align:left; padding:8px 10px; border-bottom:1px solid var(--line); }
-      .noscript-block th{ font-family:'JetBrains Mono',monospace; text-transform:uppercase; font-size:11px; color:var(--text-faint); }
+      .noscript-block th{ font-family:'Space Mono',monospace; text-transform:uppercase; font-size:11px; color:var(--text-faint); }
     </style>
     <div class="noscript-block">
       <p>This calculator needs JavaScript enabled for the interactive planner and fuel mix builder. Below is the underlying reference data: glucose:fructose splits for common whole foods, and 38 sports nutrition products with manufacturer-confirmed ratios, spanning 23 brands including Science in Sport, Maurten, Tailwind Nutrition, Precision Fuel &amp; Hydration, Neversecond, Enervit, and Skratch Labs.</p>
@@ -477,7 +478,7 @@ footer a:hover{ text-decoration:underline; }
         <h2 class="section-title">Set your intake target</h2>
       </div>
     </div>
-    <p class="section-desc">Gut absorption of glucose alone tops out around 60 g/hour. Past that, pairing it with fructose — which uses a separate transporter — unlocks higher total intake. The ratio you need shifts as intake climbs, down to a floor of 1 : 0.8 at 120 g/h and above.</p>
+    <p class="section-desc">Gut absorption of glucose alone tops out around 60 g/hour. Past that, pairing it with fructose, which uses a separate transporter, allows higher total intake. The ratio you need shifts as intake climbs, down to a floor of 1 : 0.8 at 120 g/h and above.</p>
 
     <div class="planner-grid">
       <div>
@@ -494,7 +495,7 @@ footer a:hover{ text-decoration:underline; }
           <label>Fuel blend <span class="val" id="blendVal">—</span></label>
           <input type="range" id="ratioBlend" min="0" max="1" step="0.001" value="0.5">
           <div class="band-labels"><span class="b-left" id="bandMaxLabel">All glucose</span><span class="b-right" id="bandMinLabel">1 : 0.8</span></div>
-          <div class="locked-note" id="lockedNote">Locked at 1 : 0.8 — the recommended floor for 120 g/h and above</div>
+          <div class="locked-note" id="lockedNote">Locked at 1 : 0.8 - the recommended floor for 120 g/h and above</div>
         </div>
       </div>
       <div class="readout-panel">
@@ -502,7 +503,7 @@ footer a:hover{ text-decoration:underline; }
         <div class="readout-row"><span class="readout-label">Fructose / hour</span><span class="readout-value fru" id="targetFruHr">—</span></div>
         <div class="readout-row"><span class="readout-label">Total carbs, full session</span><span class="readout-value" id="targetTotalSession">—</span></div>
         <div class="blend-bar" id="blendBar"></div>
-        <div style="text-align:center; font-family:'JetBrains Mono',monospace; font-size:13px; font-weight:700; color:var(--text);">
+        <div style="text-align:center; font-family:'Space Mono',monospace; font-size:13px; font-weight:700; color:var(--text);">
           <span id="blendRatioText">—</span>
         </div>
       </div>
@@ -517,7 +518,7 @@ footer a:hover{ text-decoration:underline; }
         <h2 class="section-title">Add whole foods &amp; products</h2>
       </div>
     </div>
-    <p class="section-desc">Search real food, or browse sports nutrition products with a <b>manufacturer-confirmed</b> glucose:fructose ratio — no estimates or guesswork, every product links straight to the brand's own page.</p>
+    <p class="section-desc">Search real food, or browse sports nutrition products with a <b>manufacturer-confirmed</b> glucose:fructose ratio, with product links.</p>
 
     <div class="tabs">
       <button class="tab-btn active" data-tab="foods">Whole Foods</button>
@@ -565,7 +566,7 @@ footer a:hover{ text-decoration:underline; }
       </div>
     </div>
 
-    <div id="mixEmpty" class="empty-note">Nothing added yet — pull items in from Whole Foods or Sports Products above.</div>
+    <div id="mixEmpty" class="empty-note">Nothing added yet. Pull items in from Whole Foods or Sports Products above.</div>
 
     <div id="mixTableWrap" style="display:none;">
       <div class="mix-head">
