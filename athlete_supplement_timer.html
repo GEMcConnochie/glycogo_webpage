@@ -114,10 +114,10 @@ h3 { font-size: 15px; font-weight: 700; margin: 24px 0 10px; color: var(--text);
 label { display: block; font-size: 12px; font-weight: 700; margin: 8px 0 4px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.03em; }
 
 input, select, button { font-family: inherit; }
-input[type=time], input[type=email], select {
+input[type=time], select {
   width: 100%; padding: 10px 12px; border: 1px solid var(--border); border-radius: 10px; background: var(--white); color: var(--text); font-size: 14px; font-weight: 500; outline: none; transition: border-color 0.2s;
 }
-input[type=time]:focus, input[type=email]:focus, select:focus {
+input[type=time]:focus, select:focus {
   border-color: var(--green);
 }
 
@@ -278,17 +278,12 @@ footer { padding: 36px 0; text-align: center; color: var(--muted); font-size: 12
       </div>
 
       <h3>Calendar Reminder</h3>
-      <label for="email">Email (optional, for session storage reference)</label>
-      <input id="email" type="email" placeholder="you@example.com">
-      <p class="muted" style="margin-top: 6px;">Nothing here transmits email — the address is optional and unused. To send your schedule to yourself, use <b>Email to self</b>: it opens your device's share sheet so you can attach the .ics to any email or app.</p>
 
       <div class="btns">
         <button class="primary" onclick="build()">Build schedule</button>
         <button class="secondary" onclick="downloadICS()">Download iCalendar (.ics)</button>
-        <button class="secondary" onclick="emailICS()">Email to self</button>
         <button class="secondary" onclick="resetAll()">Reset</button>
       </div>
-      <p class="muted" id="shareNote" style="display:none;"></p>
     </section>
 
     <section class="card">
@@ -615,34 +610,6 @@ function downloadICS(ics){
   setTimeout(()=>URL.revokeObjectURL(a.href),1000);
 }
 
-function shareNote(msg){
-  const el=$('shareNote');
-  if(!el) return;
-  el.textContent=msg;
-  el.style.display='block';
-  clearTimeout(el._t);
-  el._t=setTimeout(()=>{ el.style.display='none'; },6000);
-}
-
-function emailICS(){
-  const ics=buildICS();
-  if(!ics) return;
-  const file=new File([ics],'athlete-supplement-schedule.ics',{type:'text/calendar;charset=utf-8'});
-  if(typeof navigator.share==='function' && navigator.canShare && navigator.canShare({files:[file]})){
-    navigator.share({
-      files:[file],
-      title:'My Glycogo supplement schedule',
-      text:'Import these supplement reminders into your calendar:'
-    }).catch(err=>{
-      if(err && err.name==='AbortError') return; // user closed the share sheet
-      downloadICS(ics);
-      shareNote("Sharing isn't available here, so the .ics was downloaded instead. Attach it to an email to yourself from your files.");
-    });
-  } else {
-    downloadICS(ics);
-    shareNote("This browser doesn't support sharing files, so the .ics was downloaded instead. Attach it to an email to yourself from your files.");
-  }
-}
 function resetAll(){location.reload()}
 
 // Setup mobile nav toggling
