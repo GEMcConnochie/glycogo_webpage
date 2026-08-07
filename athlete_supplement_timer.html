@@ -6,6 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Athlete Supplement Timer — Evidence-Based Timing Planner | Glycogo</title>
 <meta name="description" content="Build a personalized, evidence-based daily supplement timing schedule tailored to your routine, meals, and training sessions. Grounded in the IOC Consensus Statement and recent clinical research.">
+<link rel="canonical" href="https://glycogo.fit/athlete_supplement_timer.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -266,6 +267,7 @@ footer { padding: 36px 0; text-align: center; color: var(--muted); font-size: 12
         <label class="check"><input type="checkbox" value="beta"><span><b>Beta-alanine</b></span></label>
         <label class="check"><input type="checkbox" value="nitrate"><span><b>Beetroot / Nitrate</b></span></label>
         <label class="check"><input type="checkbox" value="bicarb"><span><b>Bicarbonate</b></span></label>
+        <label class="check"><input type="checkbox" value="sulforaphane"><span><b>Sulforaphane / Broccoli sprouts</b></span></label>
         <label class="check"><input type="checkbox" value="magnesium"><span><b>Magnesium</b></span></label>
         <label class="check"><input type="checkbox" value="zinc"><span><b>Zinc</b></span></label>
         <label class="check"><input type="checkbox" value="potassium"><span><b>Potassium</b></span></label>
@@ -353,6 +355,69 @@ function add(time,title,detail,tags=[]){
   schedule.push({time:hhmm(time),title,detail,tags});
 }
 
+/* Competing minerals: calcium, iron, zinc and magnesium block each other's
+   absorption, so any two must stay at least 2h apart. */
+const MINERAL = {
+  'Iron':     ['Calcium','Zinc','Magnesium'],
+  'Calcium':  ['Iron','Zinc','Magnesium'],
+  'Zinc':     ['Iron','Calcium','Magnesium'],
+  'Magnesium':['Iron','Calcium','Zinc']
+};
+const MINERAL_GAP = 120; // minutes
+
+function resolveMineralConflicts(){
+  const minerals = schedule.filter(e => MINERAL[e.title]);
+  if(minerals.length < 2) return;
+  schedule = schedule.filter(e => !MINERAL[e.title]);
+
+  const wake = mins($('wake').value), bed = mins($('bed').value);
+  const meals = [
+    { name:'Breakfast', t: mins($('breakfast').value) },
+    { name:'Lunch',     t: mins($('lunch').value) },
+    { name:'Dinner',    t: mins($('dinner').value) }
+  ].filter(m => m.t !== null);
+
+  const placed = [];
+  const clear = (t, title) => !placed.some(p => Math.abs(p.time - t) < MINERAL_GAP && MINERAL[p.title].includes(title));
+  const byRank = (order) => (a,b) => order.indexOf(a.name) - order.indexOf(b.name);
+
+  // Place a mineral at its best-ranked clear meal, else walk back from bed-180 in 2h steps
+  function placeWithMeal(e, order){
+    const pick = meals.slice().sort(byRank(order)).find(m => clear(m.t, e.title));
+    if(pick){ e.time = hhmm(pick.t); e.detail = `Take with food (${pick.name}).`; }
+    else {
+      let t = bed - 180;
+      while(!clear(t, e.title) && t > wake) t -= MINERAL_GAP;
+      e.time = hhmm(t); e.detail = 'Take with food.';
+    }
+    placed.push({ time: mins(e.time), title: e.title });
+  }
+
+  const iron = minerals.find(e => e.title==='Iron');
+  const mag  = minerals.find(e => e.title==='Magnesium');
+  const zinc = minerals.find(e => e.title==='Zinc');
+  const cal  = minerals.find(e => e.title==='Calcium');
+
+  // Iron keeps its anchor (wake+30 or post-training); everyone else avoids it
+  if(iron) placed.push({ time: mins(iron.time), title: 'Iron' });
+
+  // Magnesium: 60 min before bed, nudged earlier if too close to iron
+  if(mag){
+    let t = bed - 60;
+    while(!clear(t,'Magnesium') && t > wake) t -= MINERAL_GAP;
+    mag.time = hhmm(t);
+    mag.detail = 'Take before bed.';
+    placed.push({ time: mins(mag.time), title: 'Magnesium' });
+  }
+
+  // Zinc prefers lunch; calcium prefers dinner, then breakfast (pairs with D3/K2).
+  // Gaps are checked as < 2h, so exactly-2h spacing is accepted on purpose.
+  if(zinc) placeWithMeal(zinc, ['Lunch','Dinner','Breakfast']);
+  if(cal)  placeWithMeal(cal, ['Dinner','Breakfast','Lunch']);
+
+  schedule = schedule.concat(minerals).sort((a,b)=>mins(a.time)-mins(b.time));
+}
+
 function build(){
   schedule=[];
   const selected=[...document.querySelectorAll('#supps input:checked')].map(x=>x.value);
@@ -374,27 +439,33 @@ function build(){
 
   // 2. Dietary Nitrate / Beetroot
   if(selected.includes('nitrate')){
-    add(referenceTrain - 150, 'Beetroot / Nitrate', 'Take 2-3 hours before training.', ['performance']);
+    add(referenceTrain - 120, 'Beetroot / Nitrate', 'Take 2 hours before training; avoid mouthwash.', ['performance']);
   }
 
   // 3. Sodium Bicarbonate
   if(selected.includes('bicarb')){
-    add(referenceTrain - 135, 'Sodium Bicarbonate', 'Take 2-2.5 hours before training, with a meal.', ['performance']);
+    add(referenceTrain - 120, 'Sodium Bicarbonate', 'Take 2 hours before training, with a meal.', ['performance']);
   }
 
-  // 4. Collagen (with Vit C)
+  // 3b. Sulforaphane / Broccoli Sprouts — cellular stress priming 3h before a hard session or race
+  if(selected.includes('sulforaphane')){
+    add(referenceTrain - 180, 'Sulforaphane / Broccoli Sprouts', 'Take 3 hours before training; raw sprouts.', ['performance']);
+  }
+
+  // 4. Collagen (with Vit C) — vitamin C co-locates here unless iron needs it more (see Vit C below)
   if(selected.includes('collagen')){
-    add(referenceTrain - 45, 'Collagen (with Vit C)', 'Take 40-60 min before training, with Vitamin C.', ['performance']);
+    const vitCHere = !selected.includes('iron'); // still a recommendation when vit C isn't selected
+    add(referenceTrain - 45, 'Collagen (with Vit C)', vitCHere ? 'Take 40-60 min before training, with Vitamin C.' : 'Take 40-60 min before training.', ['performance']);
   }
 
-  // 5. Iron
+  // 5. Iron — first thing on an empty stomach, or within 30 min of finishing a morning session
   if(selected.includes('iron')){
-    let ironTime = wake + 30;
-    // Separate from workout to avoid hepcidin absorption blocks
-    if (referenceTrain - ironTime < 180) {
-      ironTime = bed - 180;
+    const morningTrain = training.find(t => t.time < 12*60); // session starting before noon
+    if(morningTrain){
+      add(morningTrain.time + morningTrain.dur + 30, 'Iron', 'Within 30 min of finishing training.', ['medical']);
+    } else {
+      add(wake + 30, 'Iron', 'First thing in the morning, empty stomach.', ['medical']);
     }
-    add(ironTime, 'Iron', 'Morning, empty stomach; at least 3h from training.', ['medical']);
   }
 
   // 6. Vitamin D3
@@ -449,13 +520,23 @@ function build(){
     add(potMeal.time, 'Potassium', 'Prefer dietary sources (bananas, sweet potatoes).', ['medical']);
   }
 
-  // 15. Vitamin C
+  // 15. Vitamin C — co-locates with iron (boosts absorption) or collagen (synthesis), else standalone
   if(selected.includes('vitc')){
-    let vitCTime = mins($('breakfast').value) + 60;
-    if (training.some(t => Math.abs(t.time - vitCTime) < 180)) {
-      vitCTime = bed - 120; // Shift to evening if training occurs near breakfast
+    const ironEv = schedule.find(e => e.title === 'Iron');
+    const collEv  = schedule.find(e => e.title === 'Collagen (with Vit C)');
+    let vitCTime, vitCDetail;
+    if(ironEv){
+      vitCTime = mins(ironEv.time);
+      vitCDetail = 'Take with iron to boost absorption.';
+    } else if(collEv){
+      vitCTime = mins(collEv.time);
+      vitCDetail = 'Take with collagen for synthesis.';
+    } else {
+      vitCTime = mins($('breakfast').value) + 60;
+      if (training.some(t => Math.abs(t.time - vitCTime) < 180)) vitCTime = bed - 120;
+      vitCDetail = 'Take at least 3h away from training.';
     }
-    add(vitCTime, 'Vitamin C', 'Take at least 3h away from training.', ['medical']);
+    add(vitCTime, 'Vitamin C', vitCDetail, ['medical']);
   }
 
   // 16. Whey Protein
@@ -473,7 +554,8 @@ function build(){
     add(bed - 30, 'Casein Protein', 'Take 30 min before bed.', ['food']);
   }
 
-  // Sort by time
+  // Keep competing minerals apart, then sort by time
+  resolveMineralConflicts();
   schedule.sort((a,b)=>mins(a.time)-mins(b.time));
   render();
 }
@@ -515,6 +597,7 @@ function buildICS(){
     out+='DTSTAMP:'+stamp(now)+'\r\n';
     out+='DTSTART:'+stamp(start)+'\r\n';
     out+='DTEND:'+stamp(end)+'\r\n';
+    out+='RRULE:FREQ=DAILY\r\n';
     out+='SUMMARY:'+icsEscape(e.title)+'\r\n';
     out+='DESCRIPTION:'+icsEscape(e.detail)+'\r\n';
     out+='BEGIN:VALARM\r\nTRIGGER:-PT10M\r\nACTION:DISPLAY\r\nDESCRIPTION:'+icsEscape(e.title)+'\r\nEND:VALARM\r\n';
