@@ -278,13 +278,15 @@ footer { padding: 36px 0; text-align: center; color: var(--muted); font-size: 12
       <h3>Calendar Reminder</h3>
       <label for="email">Email (optional, for session storage reference)</label>
       <input id="email" type="email" placeholder="you@example.com">
-      <p class="muted" style="margin-top: 6px;">This prototype does not transmit email. The address is retained only in this local page session for calendar metadata generation.</p>
+      <p class="muted" style="margin-top: 6px;">Nothing here transmits email — the address is optional and unused. To send your schedule to yourself, use <b>Email to self</b>: it opens your device's share sheet so you can attach the .ics to any email or app.</p>
 
       <div class="btns">
         <button class="primary" onclick="build()">Build schedule</button>
         <button class="secondary" onclick="downloadICS()">Download iCalendar (.ics)</button>
+        <button class="secondary" onclick="emailICS()">Email to self</button>
         <button class="secondary" onclick="resetAll()">Reset</button>
       </div>
+      <p class="muted" id="shareNote" style="display:none;"></p>
     </section>
 
     <section class="card">
@@ -367,22 +369,22 @@ function build(){
 
   // 1. Caffeine
   if(selected.includes('caffeine')){
-    add(referenceTrain - 45, 'Caffeine', 'Pre-exercise alertness: Consuming 3-6 mg/kg body weight 45-60 minutes before training optimizes plasma levels and reduces rating of perceived exertion. Avoid late doses within 6-9 hours of sleep to prevent sleep fragmentation (Spriet, 2014; IOC Consensus, 2018).', ['performance']);
+    add(referenceTrain - 45, 'Caffeine', 'Pre-workout alertness: take 45-60 min before training.', ['performance']);
   }
 
   // 2. Dietary Nitrate / Beetroot
   if(selected.includes('nitrate')){
-    add(referenceTrain - 150, 'Beetroot / Nitrate', 'Nitric oxide synthesis: Ingest 300-600mg nitrate (e.g. ~70ml beetroot shot) 2-3 hours pre-exercise to align with peak plasma nitrite levels. Elevates muscular efficiency and tissue perfusion. Avoid antiseptic mouthwash around use to preserve oral bacteria (Jones, 2014; IOC Consensus, 2018).', ['performance']);
+    add(referenceTrain - 150, 'Beetroot / Nitrate', 'Take 2-3 hours before training.', ['performance']);
   }
 
   // 3. Sodium Bicarbonate
   if(selected.includes('bicarb')){
-    add(referenceTrain - 135, 'Sodium Bicarbonate', 'Extracellular buffering: Ingest 200-300 mg/kg body mass 120-150 minutes pre-exercise. Consuming alongside a carbohydrate-rich meal (like your pre-training meal) helps offset potential gastrointestinal distress (Carr et al., 2011; IOC Consensus, 2018).', ['performance']);
+    add(referenceTrain - 135, 'Sodium Bicarbonate', 'Take 2-2.5 hours before training, with a meal.', ['performance']);
   }
 
   // 4. Collagen (with Vit C)
   if(selected.includes('collagen')){
-    add(referenceTrain - 45, 'Collagen (with Vit C)', 'Connective tissue loading: Ingesting 10-15g collagen/gelatin paired with ~50mg Vitamin C 40-60 minutes before training increases collagen synthesis in tendons and ligaments, supporting structural joint recovery (Shaw et al., 2017).', ['performance']);
+    add(referenceTrain - 45, 'Collagen (with Vit C)', 'Take 40-60 min before training, with Vitamin C.', ['performance']);
   }
 
   // 5. Iron
@@ -392,59 +394,59 @@ function build(){
     if (referenceTrain - ironTime < 180) {
       ironTime = bed - 180;
     }
-    add(ironTime, 'Iron', 'Hepcidin-sensitive timing: Ingest in the morning on an empty stomach (or with a Vitamin C source) to maximize absorption. Separate from training by at least 3 hours (exercise spikes hepcidin, blocking uptake) and avoid calcium or caffeine co-ingestion (Sim et al., 2019; IOC Consensus, 2018).', ['medical']);
+    add(ironTime, 'Iron', 'Morning, empty stomach; at least 3h from training.', ['medical']);
   }
 
   // 6. Vitamin D3
   const fatMeal = nearestMeal(wake + 120, true) || nearestMeal(wake + 120, false);
   if(selected.includes('vitd') && fatMeal){
-    add(fatMeal.time, 'Vitamin D3', `Lipophilic absorption: Take with ${fatMeal.name} (which contains dietary fat). Vitamin D is fat-soluble, and absorption is significantly enhanced when paired with food lipids (Close et al., 2013; IOC Consensus, 2018).`, ['food']);
+    add(fatMeal.time, 'Vitamin D3', `Fat-soluble — take with ${fatMeal.name} (contains fat).`, ['food']);
   }
 
   // 7. Vitamin K2
   if(selected.includes('k2') && fatMeal){
-    add(fatMeal.time, 'Vitamin K2', `Synergistic calcium regulation: Take with ${fatMeal.name} alongside Vitamin D3. Keeps absorption optimal and supports bone mineralization pathways by helping direct calcium to the bone matrix (IOC Consensus, 2018).`, ['food']);
+    add(fatMeal.time, 'Vitamin K2', `Fat-soluble — take with ${fatMeal.name} (contains fat).`, ['food']);
   }
 
   // 8. Omega-3
   if(selected.includes('omega3')){
     const m = nearestMeal(mins($('lunch').value), false) || fatMeal;
-    if(m) add(m.time, 'Omega-3', `Lipid absorption: Take with ${m.name}. Co-ingestion with fat-containing food aids emulsification and uptake, and minimizes common GI side effects like lipid reflux (Philpott et al., 2019).`, ['food']);
+    if(m) add(m.time, 'Omega-3', `Fat-soluble — take with ${m.name} (contains fat).`, ['food']);
   }
 
   // 9. Calcium
   if(selected.includes('calcium')){
     const calcMeal = nearestMeal(bed - 180) || { name: 'Dinner', time: bed - 180 };
-    add(calcMeal.time, 'Calcium', 'Bone remodeling support: Best absorbed when taken with meals (particularly calcium carbonate forms). Limit doses to 500mg at a time to maximize uptake efficiency, and separate from iron by at least 2 hours (Sale & Elliott-Sale, 2019; IOC Consensus, 2018).', ['medical']);
+    add(calcMeal.time, 'Calcium', 'Take with meals.', ['medical']);
   }
 
   // 10. Creatine
   if(selected.includes('creatine')){
     const creatineTime = training.length ? (training[training.length - 1].time + training[training.length - 1].dur + 30) : (mins($('breakfast').value) + 30);
-    add(creatineTime, 'Creatine Monohydrate', 'Insulin-mediated uptake: Ingest 3-5g daily. Timing is highly flexible, but co-ingesting with a carbohydrate/protein meal or post-training improves muscular accumulation via insulin-stimulated pathways (Antonio & Ciccone, 2013; Kreider et al., 2017).', ['performance']);
+    add(creatineTime, 'Creatine Monohydrate', 'Take anytime; best with carbs or protein.', ['performance']);
   }
 
   // 11. Beta-alanine
   if(selected.includes('beta')){
-    add(mins($('breakfast').value), 'Beta-alanine', 'Intracellular buffering (Dose 1): Split your daily intake into small doses (~1.6g) to prevent paresthesia (tingling). Chronic loading (3.2-6.4g/day for 4-12 weeks) is required to build carnosine stores; acute pre-workout timing is not necessary (Trexler et al., 2015; IOC Consensus, 2018).', ['performance']);
-    add(Math.round((mins($('lunch').value) + bed) / 2), 'Beta-alanine', 'Intracellular buffering (Dose 2): Second divided daily dose (1.6g) to sustain carnosine loading without paresthesia (Trexler et al., 2015).', ['performance']);
+    add(mins($('breakfast').value), 'Beta-alanine', 'Split daily dose to avoid tingling.', ['performance']);
+    add(Math.round((mins($('lunch').value) + bed) / 2), 'Beta-alanine', 'Split daily dose to avoid tingling.', ['performance']);
   }
 
   // 12. Magnesium
   if(selected.includes('magnesium')){
-    add(bed - 60, 'Magnesium', 'Muscle relaxation support: Ingest 60 minutes before bed. Magnesium can support neuromuscular relaxation. If mild GI distress occurs, shift to co-ingestion with dinner (Volpe, 2015).', ['food']);
+    add(bed - 60, 'Magnesium', 'Take 60 min before bed.', ['food']);
   }
 
   // 13. Zinc
   if(selected.includes('zinc')){
     const zincMeal = nearestMeal(mins($('lunch').value)) || { name: 'Dinner', time: bed - 180 };
-    add(zincMeal.time, 'Zinc', 'Immune health: Take with food (such as breakfast or dinner) to avoid transient nausea. Avoid high-dose chronic supplementation (>40mg/day) to prevent secondary copper deficiency (Prasad, 2013; IOC Consensus, 2018).', ['medical']);
+    add(zincMeal.time, 'Zinc', `Take with food (${zincMeal.name}).`, ['medical']);
   }
 
   // 14. Potassium
   if(selected.includes('potassium')){
     const potMeal = nearestMeal(mins($('dinner').value)) || { name: 'Dinner', time: bed - 180 };
-    add(potMeal.time, 'Potassium', 'Electrolyte balance: Prefer dietary sources (bananas, sweet potatoes). Supplemental potassium should only be taken under direct clinical supervision, as excessive ingestion can trigger cardiac arrhythmias (IOC Consensus, 2018).', ['medical']);
+    add(potMeal.time, 'Potassium', 'Prefer dietary sources (bananas, sweet potatoes).', ['medical']);
   }
 
   // 15. Vitamin C
@@ -453,22 +455,22 @@ function build(){
     if (training.some(t => Math.abs(t.time - vitCTime) < 180)) {
       vitCTime = bed - 120; // Shift to evening if training occurs near breakfast
     }
-    add(vitCTime, 'Vitamin C', 'Antioxidant adaptation window: If consuming daily in high doses (>500mg), separate ingestion from training by at least 3 hours. Blunting reactive oxygen species (ROS) close to exercise can interfere with mitochondrial biogenesis and long-term training adaptations (Ristow et al., 2009; Merry & Ristow, 2016).', ['medical']);
+    add(vitCTime, 'Vitamin C', 'Take at least 3h away from training.', ['medical']);
   }
 
   // 16. Whey Protein
   if(selected.includes('whey')){
     if(training.length){
       const lastTrain = training[training.length - 1];
-      add(lastTrain.time + lastTrain.dur + 15, 'Whey Protein', 'Post-workout recovery: Rapidly digested, leucine-rich protein. Consuming 20-40g within 0-2 hours post-exercise stimulates muscle protein synthesis (MPS). Co-ingest with carbohydrates for glycogen replenishment (Morton et al., 2018; Kerksick et al., 2018).', ['food']);
+      add(lastTrain.time + lastTrain.dur + 15, 'Whey Protein', 'Post-workout for recovery.', ['food']);
     } else {
-      add(mins($('breakfast').value) + 15, 'Whey Protein', 'Dietary protein distribution: Ingest 20-40g to distribute daily protein intake. Target a threshold of 0.4g/kg protein per meal every 3-4 hours to optimize muscular adaptation (Morton et al., 2018; Kerksick et al., 2018).', ['food']);
+      add(mins($('breakfast').value) + 15, 'Whey Protein', 'Take with a meal for daily protein intake.', ['food']);
     }
   }
 
   // 17. Casein Protein
   if(selected.includes('casein')){
-    add(bed - 30, 'Casein Protein', 'Pre-sleep recovery: A slow-digesting protein that forms a gel in the stomach, providing a slow, sustained release of amino acids overnight. Ingesting 30-40g 30 minutes before bed prevents overnight muscle protein breakdown (Res et al., 2012; Trommelen & van Loon, 2016).', ['food']);
+    add(bed - 30, 'Casein Protein', 'Take 30 min before bed.', ['food']);
   }
 
   // Sort by time
@@ -500,9 +502,9 @@ function makeDate(time, offset=0){
 }
 function stamp(d){return d.getFullYear()+String(d.getMonth()+1).padStart(2,'0')+String(d.getDate()).padStart(2,'0')+'T'+String(d.getHours()).padStart(2,'0')+String(d.getMinutes()).padStart(2,'0')+'00'}
 
-function downloadICS(){
+function buildICS(){
   if(!schedule.length) build();
-  if(!schedule.length) return;
+  if(!schedule.length) return null;
   const now=new Date();
   let out='BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Athlete Supplement Timer//EN\r\nCALSCALE:GREGORIAN\r\n';
   schedule.forEach((e,i)=>{
@@ -519,9 +521,44 @@ function downloadICS(){
     out+='END:VEVENT\r\n';
   });
   out+='END:VCALENDAR\r\n';
-  const blob=new Blob([out],{type:'text/calendar;charset=utf-8'});
+  return out;
+}
+
+function downloadICS(ics){
+  if(!ics) ics=buildICS();
+  if(!ics) return;
+  const blob=new Blob([ics],{type:'text/calendar;charset=utf-8'});
   const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='athlete-supplement-schedule.ics'; a.click();
   setTimeout(()=>URL.revokeObjectURL(a.href),1000);
+}
+
+function shareNote(msg){
+  const el=$('shareNote');
+  if(!el) return;
+  el.textContent=msg;
+  el.style.display='block';
+  clearTimeout(el._t);
+  el._t=setTimeout(()=>{ el.style.display='none'; },6000);
+}
+
+function emailICS(){
+  const ics=buildICS();
+  if(!ics) return;
+  const file=new File([ics],'athlete-supplement-schedule.ics',{type:'text/calendar;charset=utf-8'});
+  if(typeof navigator.share==='function' && navigator.canShare && navigator.canShare({files:[file]})){
+    navigator.share({
+      files:[file],
+      title:'My Glycogo supplement schedule',
+      text:'Import these supplement reminders into your calendar:'
+    }).catch(err=>{
+      if(err && err.name==='AbortError') return; // user closed the share sheet
+      downloadICS(ics);
+      shareNote("Sharing isn't available here, so the .ics was downloaded instead. Attach it to an email to yourself from your files.");
+    });
+  } else {
+    downloadICS(ics);
+    shareNote("This browser doesn't support sharing files, so the .ics was downloaded instead. Attach it to an email to yourself from your files.");
+  }
 }
 function resetAll(){location.reload()}
 
