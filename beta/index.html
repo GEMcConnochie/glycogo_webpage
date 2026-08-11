@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Early Access | Glycogo</title>
-<meta name="description" content="Join Glycogo early access: test new Android features before they launch and help shape the app.">
+<meta name="description" content="Join Glycogo early access on Android: join the group, join the closed test, install the app.">
 <link rel="canonical" href="https://glycogo.fit/beta">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -33,8 +33,6 @@ nav {
 nav.shrink { height: var(--nav-height-scrolled); }
 nav img { height: 60px; transition: height 0.25s ease; }
 nav.shrink img { height: 48px; }
-.nav-logo { font-family: 'Space Mono', monospace; font-size: 1.4rem; font-weight: 700; color: var(--green); letter-spacing: -0.02em; }
-.nav-logo span { color: var(--orange); }
 .nav-links { display: flex; gap: 2rem; align-items: center; }
 .nav-links > a,
 .nav-dropdown-toggle {
@@ -85,40 +83,17 @@ nav.shrink img { height: 48px; }
 /* LAYOUT */
 .docs-layout { max-width: 900px; margin: 0 auto; padding: 3rem 2rem; }
 
-/* STEP SECTIONS */
+/* STEP SECTION */
 .step-section { background: white; border: 1px solid var(--border); border-radius: 16px; margin-bottom: 1.5rem; overflow: hidden; transition: box-shadow 0.2s; }
-section, .step-section, [id] { scroll-margin-top: calc(var(--nav-height) + 16px); }
 .step-section:hover { box-shadow: 0 8px 32px rgba(46,125,50,0.08); }
-
-.step-header { display: flex; align-items: center; gap: 1rem; padding: 1.5rem 1.8rem; border-bottom: 1px solid var(--border); background: linear-gradient(to right, var(--green-pale), transparent); }
-.step-header.orange { background: linear-gradient(to right, rgba(230,92,0,0.06), transparent); }
-.step-header.navy { background: linear-gradient(to right, rgba(26,26,62,0.05), transparent); }
-
-.step-num-badge { font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; color: white; background: var(--green); width: 32px; height: 32px; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-.step-num-badge.orange { background: var(--orange); }
-.step-num-badge.navy { background: var(--navy-mid); }
-
-.step-header-text h2 { font-size: 1.1rem; font-weight: 700; color: var(--navy); }
-.step-header-text p { font-size: 0.85rem; color: var(--muted); margin-top: 0.15rem; }
 .step-body { padding: 1.8rem; }
-.step-body p { font-size: 0.93rem; color: var(--muted); line-height: 1.75; margin-bottom: 1rem; }
-.step-body p:last-child { margin-bottom: 0; }
-.step-body strong { color: var(--navy); font-weight: 600; }
-.step-body ul { margin: 0.5rem 0 1rem 1.5rem; font-size: 0.93rem; color: var(--muted); line-height: 1.7; }
-.step-body ul.compact { margin: 0.4rem 0 0.75rem 1.1rem; line-height: 1.55; }
-.step-body ul.compact li { margin-bottom: 0.35rem; }
-.step-body ul.compact li:last-child { margin-bottom: 0; }
-
-/* TIP BOX */
-.tip { display: flex; gap: 0.75rem; align-items: flex-start; background: rgba(46,125,50,0.06); border: 1px solid rgba(46,125,50,0.2); border-left: 3px solid var(--green); border-radius: 8px; padding: 0.9rem 1.1rem; margin: 1rem 0; font-size: 0.87rem; color: var(--muted); line-height: 1.65; }
-.tip > span { flex: 1; min-width: 0; }
-.tip svg { width: 16px; height: 16px; stroke: var(--green); fill: none; stroke-width: 2; flex-shrink: 0; margin-top: 2px; }
+.step-body p { font-size: 0.95rem; color: var(--muted); line-height: 1.7; margin-bottom: 0.5rem; }
 
 /* EA STEP ROWS */
 .ea-step { display: flex; align-items: center; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid var(--border); }
 .ea-step:last-of-type { border-bottom: none; }
-.ea-num { font-family: 'Space Mono', monospace; font-size: 0.8rem; font-weight: 700; color: var(--green); background: var(--green-pale); border: 1px solid rgba(46,125,50,0.25); width: 32px; height: 32px; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-.ea-label { flex: 1; font-size: 0.95rem; font-weight: 600; color: var(--navy); }
+.ea-num { font-family: 'Space Mono', monospace; font-size: 0.95rem; font-weight: 700; color: var(--orange); width: 1.6rem; text-align: center; flex-shrink: 0; }
+.ea-label { flex: 1; font-size: 1rem; font-weight: 600; color: var(--navy); }
 .join-btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; background: var(--green); color: #fff; text-decoration: none; font-weight: 700; font-size: 0.9rem; padding: 0.7rem 1.2rem; border-radius: 8px; transition: background 0.2s, transform 0.15s; white-space: nowrap; }
 .join-btn:hover { background: var(--green-light); transform: translateY(-1px); }
 .join-btn.alt { background: var(--navy-mid); }
@@ -137,16 +112,12 @@ footer a:hover { color: var(--orange-light); }
 
 /* RESPONSIVE */
 @media (max-width: 860px) {
-  .docs-layout { grid-template-columns: 1fr; padding: 2rem 1.2rem; }
+  .docs-layout { padding: 2rem 1.2rem; }
   .nav-links { display: none; }
   footer { flex-direction: column; text-align: center; }
 }
-@media (max-width: 640px) {
-  .join-grid { grid-template-columns: 1fr; }
-}
 @media (max-width: 540px) {
   .page-hero { padding: 6rem 1.5rem 3rem; }
-  .step-header { padding: 1.2rem 1.3rem; }
   .step-body { padding: 1.3rem; }
 }
 </style>
@@ -183,24 +154,14 @@ footer a:hover { color: var(--orange-light); }
   <div class="page-hero-content">
     <div class="page-hero-badge">Early Access</div>
     <h1>Help shape <em>Glycogo</em></h1>
-    <p>Test new Android features before they launch. The web app stays live at web.glycogo.fit.</p>
+    <p>Test new Android features before they launch.</p>
   </div>
 </div>
 
 <!-- MAIN LAYOUT -->
 <div class="docs-layout">
   <main class="docs-content">
-
-    <!-- STEP 1: JOIN THE GROUP -->
-    <!-- THREE STEPS -->
-    <div id="steps" class="step-section fade-up">
-      <div class="step-header orange">
-        <div class="step-num-badge orange" style="font-size:0.6rem;">EA</div>
-        <div class="step-header-text">
-          <h2>Three steps to early access</h2>
-          <p>Android only</p>
-        </div>
-      </div>
+    <div class="step-section fade-up">
       <div class="step-body">
         <p>Use the same Google account for these three steps:</p>
         <div class="ea-step">
@@ -218,13 +179,8 @@ footer a:hover { color: var(--orange-light); }
           <span class="ea-label">Install the app</span>
           <a class="join-btn alt" href="https://play.google.com/store/apps/details?id=fit.glycogo.glycogo_mobile" target="_blank" rel="noopener">Install</a>
         </div>
-        <div class="tip">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-          <span>To leave early access later, open the closed test link and tap <strong>Leave the testing program</strong>.</span>
-        </div>
       </div>
     </div>
-
   </main>
 </div>
 
@@ -244,14 +200,13 @@ footer a:hover { color: var(--orange-light); }
 </footer>
 
 <script>
+  const nav = document.getElementById('main-nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('shrink', window.scrollY > 40), { passive: true });
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(el => { if (el.isIntersecting) el.target.classList.add('visible'); });
   }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
   document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-
-  const nav = document.getElementById('main-nav');
-  const onScroll = () => { nav.classList.toggle('shrink', window.scrollY > 40); };
-  window.addEventListener('scroll', onScroll, { passive: true });
 
   document.querySelectorAll('.nav-dropdown').forEach((dd) => {
     const btn = dd.querySelector('.nav-dropdown-toggle');
