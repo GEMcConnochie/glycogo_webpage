@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Glycogo Energy Bill</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+:root{
+  --bg:#FFFFFF;
+  --bg2:#F7F9F7;
+  --navy:#1A1A3E;
+  --navy2:#2D2D7A;
+  --green:#2E7D32;
+  --green2:#43A047;
+  --orange:#E65C00;
+  --orange2:#FF7043;
+  --red:#D32F2F;
+  --grid:#E2E6E2;
+  --muted:#68716B;
+  --text:#1A1A3E;
+  --line:#1A1A3E;
+  --rest:#D8DDD9;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{
+  background:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:100vh;
+  font-family:'Inter',sans-serif;
+}
+#card{
+  position:relative;
+  width:1080px;height:1350px;
+  background:
+    radial-gradient(900px 500px at 100% 0%,rgba(67,160,71,.10),transparent 60%),
+    radial-gradient(800px 500px at 0% 100%,rgba(230,92,0,.07),transparent 60%),
+    linear-gradient(180deg,var(--bg) 0%,var(--bg2) 100%);
+  overflow:hidden;color:var(--text);
+  padding:64px 68px 48px;
+  display:flex;flex-direction:column;
+}
+#card:before{
+ content:"";position:absolute;inset:0;pointer-events:none;
+ background-image:repeating-linear-gradient(115deg,rgba(26,26,62,.018) 0,rgba(26,26,62,.018) 2px,transparent 2px,transparent 28px);
+}
+.eyebrow{
+ font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:.18em;
+ color:var(--orange);font-weight:700;display:flex;align-items:center;gap:10px
+}
+.eyebrow:before{content:"";width:34px;height:4px;background:var(--orange);display:inline-block}
+h1{
+ font-family:'Bebas Neue','Inter',sans-serif;font-weight:400;font-size:118px;line-height:.92;
+ letter-spacing:.01em;margin-top:14px;color:var(--navy)
+}
+h1 span{color:var(--orange)}
+.subtitle{
+ margin-top:14px;max-width:830px;font-size:19.5px;line-height:1.5;color:var(--muted);font-weight:500
+}
+.subtitle b{color:var(--navy);font-weight:800}
+.legend{
+ margin-top:24px;display:flex;align-items:center;gap:26px;flex-wrap:wrap;
+ font-family:'JetBrains Mono',monospace;font-size:17px;color:var(--muted)
+}
+.legend .item,.legend .lineitem{display:flex;align-items:center;gap:8px}
+.swatch{width:14px;height:14px;border-radius:3px;display:inline-block}
+.linesample{width:34px;height:4px;background:var(--line);display:inline-block;border-radius:2px}
+#chartWrap{margin-top:18px;flex:1;position:relative}
+.axis-label{font-family:'JetBrains Mono',monospace;font-size:17px;fill:var(--muted)}
+.gridline{stroke:var(--grid);stroke-width:1}
+.stagetick{font-family:'JetBrains Mono',monospace;font-size:17px;fill:var(--muted);text-anchor:middle}
+.resttick{font-family:'JetBrains Mono',monospace;font-size:15px;fill:#AAB2AD;text-anchor:middle;letter-spacing:.05em}
+#callouts{margin-top:8px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px}
+.callout{
+ background:rgba(255,255,255,.72);border:1px solid #DDE3DE;border-radius:14px;
+ padding:20px 22px;position:relative;overflow:hidden
+}
+.callout:after{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--green)}
+.callout .tag{
+ font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;font-weight:700;text-transform:uppercase
+}
+.callout .big{font-family:'Bebas Neue',sans-serif;font-size:44px;line-height:1;margin-top:8px;letter-spacing:.01em;color:var(--navy)}
+.callout .desc{margin-top:8px;font-size:13.5px;color:var(--muted);line-height:1.45;font-weight:500}
+.c1 .tag{color:var(--orange)}
+.c2 .tag{color:var(--navy2)}
+.c3 .tag{color:var(--green)}
+footer{
+ margin-top:26px;display:flex;justify-content:space-between;align-items:flex-end;
+ font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--muted);
+ letter-spacing:.02em;border-top:1px solid #DDE3DE;padding-top:16px
+}
+footer .brand{color:var(--green);font-weight:800;letter-spacing:.08em}
+</style>
+</head>
+<body>
+<div id="card">
+  <div class="eyebrow">GRAND TOUR · ON-BIKE ENERGY DATA</div>
+  <h1>THE ENERGY<br>BILL<span>.</span></h1>
+  <div class="subtitle">
+    On-bike energy expenditure swung from <b>~1,700 kcal</b> on the time trial to <b>5,830 kcal</b> on the hardest
+    mountain stage — while body mass held steady around 66–69 kg across three weeks of racing.
+    Bars = on-bike kcal expended. Line = body mass (kg).
+  </div>
+
+  <div class="legend">
+    <div class="item"><span class="swatch" style="background:var(--green2)"></span>Flat</div>
+    <div class="item"><span class="swatch" style="background:var(--orange)"></span>Hilly</div>
+    <div class="item"><span class="swatch" style="background:var(--red)"></span>Mountain</div>
+    <div class="item"><span class="swatch" style="background:var(--navy2)"></span>Time Trial</div>
+    <div class="item"><span class="swatch" style="background:var(--rest)"></span>Rest Day</div>
+    <div class="lineitem"><span class="linesample"></span>Body mass (kg)</div>
+  </div>
+
+  <div id="chartWrap">
+    <svg id="chart" width="944" height="560" viewBox="0 0 944 560"></svg>
+  </div>
+
+  <div id="callouts">
+    <div class="callout c1">
+      <div class="tag">Energy range</div>
+      <div class="big">1,701 → 5,830</div>
+      <div class="desc">On-bike kcal went from the opening time trial to the biggest mountain day — a 3.4x swing.</div>
+    </div>
+    <div class="callout c2">
+      <div class="tag">Body mass</div>
+      <div class="big">66.8 → 67.8 kg</div>
+      <div class="desc">Up just 1 kg across three weeks of racing, while daily energy burn ranged more than threefold.</div>
+    </div>
+    <div class="callout c3">
+      <div class="tag">Peak day · Stage 20</div>
+      <div class="big">5,830 kcal</div>
+      <div class="desc">The hardest day of the race and the highest on-bike energy expenditure recorded.</div>
+    </div>
+  </div>
+
+  <footer>
+    <span>Source: on-bike energy expenditure and daily body mass, single-subject case study, Vuelta a España 2021 (Table 1)</span>
+    <span class="brand">GLYCOGO</span>
+  </footer>
+</div>
+
+<script>
+const stages=[
+{s:'1',type:'itt',eee:1701,bm:66.8},{s:'2',type:'flat',eee:2681,bm:66.3},
+{s:'3',type:'mountain',eee:4150,bm:66.8},{s:'4',type:'flat',eee:2780,bm:65.0},
+{s:'5',type:'flat',eee:2715,bm:67.3},{s:'6',type:'mountain',eee:3293,bm:66.8},
+{s:'7',type:'mountain',eee:4800,bm:66.9},{s:'8',type:'flat',eee:3083,bm:66.4},
+{s:'9',type:'mountain',eee:5086,bm:66.8},{s:'R',type:'rest',eee:566,bm:68.4},
+{s:'10',type:'hilly',eee:4672,bm:66.6},{s:'11',type:'hilly',eee:3411,bm:66.9},
+{s:'12',type:'hilly',eee:3307,bm:66.4},{s:'13',type:'flat',eee:3202,bm:66.9},
+{s:'14',type:'mountain',eee:4343,bm:68.0},{s:'15',type:'mountain',eee:3014,bm:66.9},
+{s:'R',type:'rest',eee:560,bm:69.0},{s:'16',type:'flat',eee:3671,bm:67.5},
+{s:'17',type:'mountain',eee:5306,bm:68.3},{s:'18',type:'mountain',eee:5592,bm:68.4},
+{s:'19',type:'hilly',eee:4769,bm:68.2},{s:'20',type:'mountain',eee:5830,bm:67.8}
+];
+const colors={flat:'#43A047',hilly:'#E65C00',mountain:'#D32F2F',itt:'#2D2D7A',rest:'#D8DDD9'};
+const svgNS='http://www.w3.org/2000/svg',svg=document.getElementById('chart');
+const W=944,H=560,padL=56,padR=44,padT=10,padB=46,chartW=W-padL-padR,chartH=H-padT-padB;
+const n=stages.length,gap=8,barW=(chartW-gap*(n-1))/n,eeeMax=6000,bmMin=64,bmMax=70;
+const yEEE=v=>padT+chartH-(v/eeeMax)*chartH, yBM=v=>padT+chartH-((v-bmMin)/(bmMax-bmMin))*chartH;
+function el(tag,attrs){const e=document.createElementNS(svgNS,tag);for(const k in attrs)e.setAttribute(k,attrs[k]);return e;}
+[0,1500,3000,4500,6000].forEach(v=>{
+ const y=yEEE(v);svg.appendChild(el('line',{x1:padL,x2:W-padR,y1:y,y2:y,class:'gridline'}));
+ const t=el('text',{x:padL-10,y:y+4,class:'axis-label','text-anchor':'end'});t.textContent=v===0?'0':(v/1000)+'k';svg.appendChild(t);
+});
+[64,66,68,70].forEach(v=>{
+ const y=yBM(v),t=el('text',{x:W-padR+10,y:y+4,class:'axis-label'});t.textContent=v;svg.appendChild(t);
+});
+let lt=el('text',{x:padL,y:12,class:'axis-label',style:'fill:#2D2D7A;font-weight:700'});lt.textContent='on-bike kcal expended';svg.appendChild(lt);
+let rt=el('text',{x:W-padR-60,y:12,class:'axis-label',style:'fill:#2D2D7A;font-weight:700'});rt.textContent='body mass kg →';svg.appendChild(rt);
+
+const barCenters=[];
+stages.forEach((d,i)=>{
+ const x=padL+i*(barW+gap),y=yEEE(d.eee),h=padT+chartH-y,cx=x+barW/2;barCenters.push(cx);
+ svg.appendChild(el('rect',{x,y,width:barW,height:h,rx:d.rest?3:4,fill:colors[d.type],opacity:d.rest?.65:(d.type==='itt'?.9:1)}));
+ const label=el('text',{x:cx,y:H-padB+20,class:d.rest?'resttick':'stagetick'});label.textContent=d.rest?'REST':d.s;svg.appendChild(label);
+});
+svg.appendChild(el('line',{x1:padL,x2:W-padR,y1:padT+chartH,y2:padT+chartH,stroke:'#BFC7C1','stroke-width':1.4}));
+
+const pts=stages.map((d,i)=>[barCenters[i],yBM(d.bm)].join(',')).join(' ');
+svg.appendChild(el('polyline',{points:pts,fill:'none',stroke:'#1A1A3E','stroke-width':7,opacity:.08,'stroke-linecap':'round','stroke-linejoin':'round'}));
+svg.appendChild(el('polyline',{points:pts,fill:'none',stroke:'#1A1A3E','stroke-width':2.8,'stroke-linecap':'round','stroke-linejoin':'round'}));
+stages.forEach((d,i)=>{
+ const cx=barCenters[i],cy=yBM(d.bm);
+ svg.appendChild(el('circle',{cx,cy,r:4.2,fill:'#1A1A3E',stroke:'#fff','stroke-width':1.6}));
+ if(d.bm===65.0||d.bm===69.0){
+  const t=el('text',{x:cx,y:cy-11,class:'axis-label','text-anchor':'middle',style:'fill:#1A1A3E;font-size:16px;font-weight:800'});t.textContent=d.bm;svg.appendChild(t);
+ }
+});
+</script>
+</body>
+</html>

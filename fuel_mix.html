@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Glycogo Fuel Mix</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+:root{
+  --bg:#FFFFFF;
+  --bg2:#F7F9F7;
+  --navy:#1A1A3E;
+  --navy2:#2D2D7A;
+  --green:#2E7D32;
+  --green2:#43A047;
+  --orange:#E65C00;
+  --orange2:#FF7043;
+  --grid:#E2E6E2;
+  --muted:#68716B;
+  --amber:#F2B705;
+  --blue:#1E88E5;
+  --text:#1A1A3E;
+  --line:#1A1A3E;
+  --rest:#D8DDD9;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{
+  background:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:100vh;
+  font-family:'Inter',sans-serif;
+}
+#card{
+  position:relative;
+  width:1080px;height:1350px;
+  background:
+    radial-gradient(900px 500px at 100% 0%,rgba(67,160,71,.10),transparent 60%),
+    radial-gradient(800px 500px at 0% 100%,rgba(230,92,0,.07),transparent 60%),
+    linear-gradient(180deg,var(--bg) 0%,var(--bg2) 100%);
+  overflow:hidden;color:var(--text);
+  padding:64px 68px 48px;
+  display:flex;flex-direction:column;
+}
+#card:before{
+ content:"";position:absolute;inset:0;pointer-events:none;
+ background-image:repeating-linear-gradient(115deg,rgba(26,26,62,.018) 0,rgba(26,26,62,.018) 2px,transparent 2px,transparent 28px);
+}
+.eyebrow{
+ font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:.18em;
+ color:var(--orange);font-weight:700;display:flex;align-items:center;gap:10px
+}
+.eyebrow:before{content:"";width:34px;height:4px;background:var(--orange);display:inline-block}
+h1{
+ font-family:'Bebas Neue','Inter',sans-serif;font-weight:400;font-size:118px;line-height:.92;
+ letter-spacing:.01em;margin-top:14px;color:var(--navy)
+}
+h1 span{color:var(--orange)}
+.subtitle{
+ margin-top:14px;max-width:830px;font-size:19.5px;line-height:1.5;color:var(--muted);font-weight:500
+}
+.subtitle b{color:var(--navy);font-weight:800}
+.legend{
+ margin-top:22px;display:flex;align-items:center;gap:24px;flex-wrap:wrap;
+ font-family:'JetBrains Mono',monospace;font-size:16.5px;color:var(--muted)
+}
+.legend .item,.legend .lineitem{display:flex;align-items:center;gap:8px}
+.swatch{width:14px;height:14px;border-radius:3px;display:inline-block}
+.linesample{width:34px;height:4px;background:var(--line);display:inline-block;border-radius:2px}
+#chartWrap{margin-top:16px;flex:1;position:relative}
+.axis-label{font-family:'JetBrains Mono',monospace;font-size:17px;fill:var(--muted)}
+.gridline{stroke:var(--grid);stroke-width:1}
+.stagetick{font-family:'JetBrains Mono',monospace;font-size:17px;fill:var(--muted);text-anchor:middle}
+.resttick{font-family:'JetBrains Mono',monospace;font-size:15px;fill:#AAB2AD;text-anchor:middle;letter-spacing:.05em}
+#callouts{margin-top:8px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px}
+.callout{
+ background:rgba(255,255,255,.72);border:1px solid #DDE3DE;border-radius:14px;
+ padding:20px 22px;position:relative;overflow:hidden
+}
+.callout:after{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--green)}
+.callout .tag{
+ font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;font-weight:700;text-transform:uppercase
+}
+.callout .big{font-family:'Bebas Neue',sans-serif;font-size:44px;line-height:1;margin-top:8px;letter-spacing:.01em;color:var(--navy)}
+.callout .desc{margin-top:8px;font-size:13.5px;color:var(--muted);line-height:1.45;font-weight:500}
+.c1 .tag{color:var(--orange)}
+.c2 .tag{color:var(--green)}
+.c3 .tag{color:var(--navy2)}
+footer{
+ margin-top:26px;display:flex;justify-content:space-between;align-items:flex-end;
+ font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--muted);
+ letter-spacing:.02em;border-top:1px solid #DDE3DE;padding-top:16px
+}
+footer .brand{color:var(--green);font-weight:800;letter-spacing:.08em}
+</style>
+</head>
+<body>
+<div id="card">
+  <div class="eyebrow">GRAND TOUR · RACE FUELING DATA</div>
+  <h1>THE FUEL<br>MIX<span>.</span></h1>
+  <div class="subtitle">
+    Where did one elite rider's on-bike carbs actually come from? Stacked bars split every stage's carbohydrate
+    by source — <b>whole food, bars, gels and drinks</b>. Whole food led the mix; concentrated drinks appeared
+    on the hardest days. The line tracks the fuelling rate in grams per hour.
+  </div>
+
+  <div class="legend">
+    <div class="item"><span class="swatch" style="background:var(--green)"></span>Whole food</div>
+    <div class="item"><span class="swatch" style="background:var(--amber)"></span>Bars</div>
+    <div class="item"><span class="swatch" style="background:var(--orange)"></span>Gels</div>
+    <div class="item"><span class="swatch" style="background:var(--blue)"></span>CHO drink</div>
+    <div class="item"><span class="swatch" style="background:var(--navy2)"></span>Concentrated drink</div>
+    <div class="lineitem"><span class="linesample"></span>Carb rate (g/h)</div>
+  </div>
+  <div id="chartWrap">
+    <svg id="chart" width="944" height="560" viewBox="0 0 944 560"></svg>
+  </div>
+
+  <div id="callouts">
+    <div class="callout c1">
+      <div class="tag">Biggest source</div>
+      <div class="big">37%</div>
+      <div class="desc">Most on-bike carbs came from whole food — rice cakes and small sandwiches — not sports products.</div>
+    </div>
+    <div class="callout c2">
+      <div class="tag">Gels + bars combined</div>
+      <div class="big">112 g</div>
+      <div class="desc">Bars (66 g) and gels (46 g) delivered a further 112 g of carbs per racing stage, on average.</div>
+    </div>
+    <div class="callout c3">
+      <div class="tag">Peak day · Stage 20</div>
+      <div class="big">106 g/h</div>
+      <div class="desc">The hardest day: 508 g on the bike at 106 g/h, topped up with a concentrated drink.</div>
+    </div>
+  </div>
+
+  <footer>
+    <span>Source: in-race CHO intake by source and rate, single-subject case study, Vuelta a España 2021 (Table 2)</span>
+    <span class="brand">GLYCOGO</span>
+  </footer>
+</div>
+
+<script>
+const stages=[
+{s:'1',type:'itt'},
+{s:'2',type:'flat',gels:66,bars:75,whole:96,drink:30,conc:0,gh:63},
+{s:'3',type:'mountain',gels:88,bars:75,whole:86,drink:60,conc:0,gh:52},
+{s:'4',type:'flat',gels:22,bars:50,whole:58,drink:60,conc:0,gh:48},
+{s:'5',type:'flat',gels:44,bars:75,whole:118,drink:30,conc:0,gh:57},
+{s:'6',type:'mountain',gels:22,bars:75,whole:72,drink:30,conc:0,gh:50},
+{s:'7',type:'mountain',gels:88,bars:150,whole:96,drink:0,conc:80,gh:92},
+{s:'8',type:'flat',gels:22,bars:75,whole:120,drink:30,conc:0,gh:58},
+{s:'9',type:'mountain',gels:66,bars:75,whole:120,drink:30,conc:160,gh:82},
+{s:'R',type:'rest'},
+{s:'10',type:'hilly',gels:44,bars:50,whole:120,drink:30,conc:160,gh:82},
+{s:'11',type:'hilly',gels:44,bars:0,whole:120,drink:0,conc:80,gh:65},
+{s:'12',type:'hilly',gels:66,bars:50,whole:120,drink:60,conc:0,gh:70},
+{s:'13',type:'flat',gels:44,bars:100,whole:142,drink:0,conc:0,gh:54},
+{s:'14',type:'mountain',gels:22,bars:50,whole:152,drink:0,conc:160,gh:81},
+{s:'15',type:'mountain',gels:22,bars:37,whole:96,drink:30,conc:0,gh:41},
+{s:'R',type:'rest'},
+{s:'16',type:'flat',gels:44,bars:50,whole:154,drink:90,conc:0,gh:79},
+{s:'17',type:'mountain',gels:22,bars:50,whole:152,drink:0,conc:80,gh:55},
+{s:'18',type:'mountain',gels:22,bars:100,whole:120,drink:60,conc:160,gh:87},
+{s:'19',type:'hilly',gels:44,bars:75,whole:118,drink:90,conc:80,gh:86},
+{s:'20',type:'mountain',gels:88,bars:50,whole:120,drink:90,conc:160,gh:106}
+];
+const colors={whole:'#2E7D32',bars:'#F2B705',gels:'#E65C00',drink:'#1E88E5',conc:'#2D2D7A'};
+const svgNS='http://www.w3.org/2000/svg',svg=document.getElementById('chart');
+const W=944,H=560,padL=56,padR=44,padT=10,padB=46,chartW=W-padL-padR,chartH=H-padT-padB;
+const n=stages.length,gap=8,barW=(chartW-gap*(n-1))/n,choMax=600,ghMax=120;
+const yCHO=v=>padT+chartH-(v/choMax)*chartH, yGH=v=>padT+chartH-(v/ghMax)*chartH;
+function el(tag,attrs){const e=document.createElementNS(svgNS,tag);for(const k in attrs)e.setAttribute(k,attrs[k]);return e;}
+[0,150,300,450,600].forEach(v=>{
+ const y=yCHO(v);svg.appendChild(el('line',{x1:padL,x2:W-padR,y1:y,y2:y,class:'gridline'}));
+ const t=el('text',{x:padL-10,y:y+4,class:'axis-label','text-anchor':'end'});t.textContent=v;svg.appendChild(t);
+});
+[0,40,80,120].forEach(v=>{
+ const y=yGH(v),t=el('text',{x:W-padR+10,y:y+4,class:'axis-label'});t.textContent=v;svg.appendChild(t);
+});
+let lt=el('text',{x:padL,y:12,class:'axis-label',style:'fill:#2D2D7A;font-weight:700'});lt.textContent='on-bike carbohydrate (g)';svg.appendChild(lt);
+let rt=el('text',{x:W-padR-70,y:12,class:'axis-label',style:'fill:#2D2D7A;font-weight:700'});rt.textContent='carb g/h →';svg.appendChild(rt);
+
+const barCenters=[];
+stages.forEach((d,i)=>{
+ const x=padL+i*(barW+gap),cx=x+barW/2;barCenters.push(cx);
+ if(d.whole!==undefined){
+   const segs=[['whole',d.whole],['bars',d.bars],['gels',d.gels],['drink',d.drink],['conc',d.conc]];
+   let acc=0;
+   segs.forEach(([k,v])=>{
+     if(!v)return;
+     const yTop=yCHO(acc+v),yBot=yCHO(acc),h=yBot-yTop;
+     svg.appendChild(el('rect',{x,y:yTop,width:barW,height:h,rx:2,fill:colors[k],stroke:'#fff','stroke-width':1}));
+     acc+=v;
+   });
+ } else {
+   const h=10,y=padT+chartH-h;
+   svg.appendChild(el('rect',{x,y,width:barW,height:h,rx:3,fill:'#D8DDD9',opacity:.5}));
+ }
+ const label=el('text',{x:cx,y:H-padB+20,class:d.rest?'resttick':'stagetick'});
+ label.textContent=d.rest?'REST':d.s;
+ svg.appendChild(label);
+});
+svg.appendChild(el('line',{x1:padL,x2:W-padR,y1:padT+chartH,y2:padT+chartH,stroke:'#BFC7C1','stroke-width':1.4}));
+
+let seg=[],segments=[];
+stages.forEach((d,i)=>{if(d.gh!==undefined)seg.push([barCenters[i],yGH(d.gh)]);else{if(seg.length>1)segments.push(seg);seg=[];}});
+if(seg.length>1)segments.push(seg);
+segments.forEach(s=>{
+ const pts=s.map(p=>p.join(',')).join(' ');
+ svg.appendChild(el('polyline',{points:pts,fill:'none',stroke:'#1A1A3E','stroke-width':7,opacity:.08,'stroke-linecap':'round','stroke-linejoin':'round'}));
+ svg.appendChild(el('polyline',{points:pts,fill:'none',stroke:'#1A1A3E','stroke-width':2.8,'stroke-linecap':'round','stroke-linejoin':'round'}));
+});
+stages.forEach((d,i)=>{
+ if(d.gh!==undefined){
+  const cx=barCenters[i],cy=yGH(d.gh);
+  svg.appendChild(el('circle',{cx,cy,r:4.2,fill:'#1A1A3E',stroke:'#fff','stroke-width':1.6}));
+  if(d.gh>=90||d.gh<=45){
+   const t=el('text',{x:cx,y:cy-11,class:'axis-label','text-anchor':'middle',style:'fill:#1A1A3E;font-size:16px;font-weight:800'});t.textContent=d.gh;svg.appendChild(t);
+  }
+ }
+});
+</script>
+</body>
+</html>
