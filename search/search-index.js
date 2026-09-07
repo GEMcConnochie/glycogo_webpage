@@ -67,6 +67,29 @@ window.GLYCOGO_INDEX = [
   },
 
   {
+    id: "substrate-explorer",
+    title: "Substrate Explorer — Carb vs Fat Fuel Use Calculator",
+    url: "/substrate-explorer/",
+    type: "Calculator",
+    description: "Free interactive calculator: see how your carbohydrate and fat burn split changes with intensity (RPE, heart rate or power), session duration, and daily diet. Computed live by the same engine that powers the Glycogo app.",
+    keywords: [
+      "carb fat ratio", "substrate utilisation", "substrate utilization", "RER",
+      "fat burning zone", "fatmax", "crossover", "carbohydrate oxidation", "fat oxidation",
+      "RPE", "CR100", "heart rate", "power", "FTP", "VO2max", "glycogen",
+      "endurance fueling", "fuel split", "low carb diet", "high carb"
+    ],
+    aliases: [
+      "when do i burn fat", "fat burning zone calculator", "carb vs fat", "substrate explorer",
+      "fatmax", "what fuel am i burning", "rpe to fuel", "burning carbs or fat"
+    ],
+    text: "The Substrate Explorer shows how your fuel mix shifts with intensity: the carbs and fat your body burns per hour at every effort level, shaped by your fitness, the session, and what you ate. Pick an intensity axis — Borg CR100 RPE, heart rate, or power — set FTP, LTHR, weight, age and sex, choose a session duration, and adjust daily carbohydrate availability. The curves are computed live by the same substrate engine that powers the Glycogo app, with a 50/50 fuel crossover marker.",
+    sections: [
+      { label: "Pick an intensity axis & athlete profile", url: "/substrate-explorer/", text: "Choose RPE (Borg CR100 mapped through the Glycogo load-zone equivalency table), heart rate, or power as the x-axis, and set FTP, LTHR, weight, age and sex." },
+      { label: "Carb vs fat, per hour, at every intensity", url: "/substrate-explorer/", text: "Chart of carbs and fat in grams and % of energy across intensity with a 50/50 crossover marker. Adjust session duration and daily carbohydrate availability." }
+    ]
+  },
+
+  {
     id: "supplement-timer",
     title: "Athlete Supplement Timer — Evidence-Based Timing Planner",
     url: "/athlete_supplement_timer.html",
