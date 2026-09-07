@@ -304,7 +304,7 @@ input[type="range"]:disabled{ opacity:0.4; }
 .tip .t-carb{ color:#ffb27d; }
 .tip .t-fat{ color:#a8a8ff; }
 .tip .t-rer{ color:#7bd389; }
-.tip .t-dim{ color:rgba(255,255,255,0.6); }
+										   
 
 .content-panel{ margin-top:16px; }
 .content-panel p{ color:var(--text-dim); font-size:14px; line-height:1.75; margin:10px 0; }
@@ -396,14 +396,14 @@ footer a:hover{ text-decoration:underline; }
     <div class="section-head">
       <div>
         <div class="section-num">02 · FUEL SPLIT</div>
-        <h2 class="section-title">Carb vs fat, per hour, at every intensity</h2>
+        <h2 class="section-title">Carb vs fat utilisation</h2>
       </div>
     </div>
     <div class="chart-grid">
       <div class="chart-side">
         <div class="legend">
-          <span><span class="swatch l-carb"></span>carbs <span class="mono" id="lg_carb">–</span>% of energy</span>
-          <span><span class="swatch l-fat"></span>fat <span class="mono" id="lg_fat">–</span>% of energy</span>
+          <span><span class="swatch l-carb"></span>carbs</span>
+          <span><span class="swatch l-fat"></span>fat</span>
         </div>
 
         <div class="chart-holder">
@@ -445,7 +445,7 @@ footer a:hover{ text-decoration:underline; }
       <div class="readout-row"><span class="readout-label">Carbs</span><span class="readout-value carb" id="ro_carb">-</span></div>
       <div class="readout-row"><span class="readout-label">Fat</span><span class="readout-value fat" id="ro_fat">-</span></div>
       <div class="readout-row"><span class="readout-label">RER</span><span class="readout-value rer" id="ro_rer">-</span></div>
-      <div class="readout-row"><span class="readout-label">Total burn</span><span class="readout-value" id="ro_kcal">-</span></div>
+																																   
     </div>
 
   </section>
@@ -453,11 +453,11 @@ footer a:hover{ text-decoration:underline; }
   <div class="panel content-panel" id="physiology">
     <h2 class="section-title">The physiology behind the curves</h2>
     <p><strong>Measurement basis.</strong> Substrate use during exercise is quantified by indirect calorimetry: because fat and carbohydrate oxidation yield different volumes of CO₂ per litre of O₂ consumed, the non-protein respiratory exchange ratio (RER = VCO₂ / VO₂) identifies the fuel mix. RER 0.70 corresponds to near-exclusive fat oxidation, RER 1.00 to near-exclusive carbohydrate, and RER ≈ 0.85 to an even energy split (Peronnet &amp; Massicotte, 1991). Each point on the chart is reported as an implied RER with matching carbohydrate and fat oxidation rates in grams per hour, converted with non-protein energy equivalents (carbohydrate ≈ 4 kcal/g, fat ≈ 9 kcal/g).</p>
-    <p><strong>Intensity: the crossover and fatmax.</strong> As relative intensity rises, catecholamine drive, type-II motor-unit recruitment, and the energy rate demanded per unit of muscle shift supply toward muscle glycogen and blood glucose, and the relative fat contribution falls: the classic “crossover” (Brooks &amp; Mercier, 1994; Romijn et al., 1993). In trained athletes, absolute fat oxidation commonly peaks around 45–65 % VO₂max (the “fatmax” zone), although with substantial individual variation (Achten &amp; Jeukendrup, 2003). </p>
-    <p><strong>Availability: what moves the curve.</strong> Substrate availability influences oxidation. Pre-exercise and during-exercise carbohydrate raise carbohydrate oxidation at a given intensity; habitual carbohydrate intake and training status reshape glycogen stores and oxidative capacity; low-carbohydrate availability raises the relative fat contribution (Romijn et al., 1993; Burke et al., 2011). The model further adjusts for session duration, sex, age, and body mass, reflecting the group-level effects quantified in modelling analyses of submaximal exercise (Rothschild et al., 2022).</p>
+    <p><strong>The crossover point.</strong> As relative intensity rises, catecholamine drive, type-II motor-unit recruitment, and the energy rate demanded per unit of muscle shift supply toward muscle glycogen and blood glucose, and the relative fat contribution falls: the classic “crossover” (Brooks &amp; Mercier, 1994; Romijn et al., 1993). In trained athletes, absolute fat oxidation commonly peaks around 45–65 % VO₂max (the “fatmax” zone), although with substantial individual variation (Achten &amp; Jeukendrup, 2003). </p>
+    <p><strong>What moves the curve.</strong> Substrate availability influences oxidation. Pre-exercise and during-exercise carbohydrate raise carbohydrate oxidation at a given intensity; habitual carbohydrate intake and training status reshape glycogen stores and oxidative capacity; low-carbohydrate availability raises the relative fat contribution (Romijn et al., 1993; Burke et al., 2011). The model further adjusts for session duration, sex, age, and body mass, reflecting the group-level effects quantified in modelling analyses of submaximal exercise (Rothschild et al., 2022).</p>
     <!-- Static SEO values: computed from the production model for the page's
          default athlete (70 kg male, 34 y, 4.0 g/kg CHO, 1.5 g/kg fat,
-         60 min, 600 kcal/h). Regenerate if the page defaults change.
+         60 min). Regenerate if the page defaults change.
          RER column intentionally omitted: the model's implied RER deviates
          slightly from the linear non-protein table (see note below table). -->
     <p><strong>Worked example (reference athlete).</strong> 70 kg, male, 34 years, moderate-carbohydrate diet (4.0 g/kg CHO, 1.5 g/kg fat daily), 60-minute session at ~600 kcal/h. The production model returns:</p>
@@ -544,7 +544,19 @@ async function fetchCurve(axis, cfg) {
   });
   if (!res.ok) {
     let message = "";
-    try { const err = await res.json(); message = (err.detail && err.detail.message) || ""; } catch (_) {}
+    let retryAfterS = 0;
+    try {
+      const err = await res.json();
+      message = (err.detail && err.detail.message) || "";
+      retryAfterS = Number((err.detail && err.detail.retry_after_s) || res.headers.get("Retry-After") || 0);
+    } catch (_) {}
+    if (res.status === 429) {
+      // Rate limited: stop hammering until the server window clears instead of
+      // firing again on the next slider tick.
+      const waitS = Math.max(2, Math.ceil(retryAfterS || 15));
+      cooldownUntil = Date.now() + waitS * 1000;
+      throw new Error("rate limited — the estimate API allows 10 requests per minute; retry in " + waitS + "s");
+    }
     throw new Error(message || ("API error " + res.status));
   }
   const data = await res.json();
@@ -618,9 +630,11 @@ function axisLabel() { return axis === "rpe" ? "RPE" : axis === "hr" ? "HR (bpm)
 function updateAxisFields() {
   $("field-ftp").classList.toggle("hidden", axis !== "power");
   $("field-lthr").classList.toggle("hidden", axis !== "hr");
-}
+ 
 
-let refreshSeq = 0;   // bumps on every Calculate press: stale responses are dropped
+}let refreshSeq = 0;   // bumps on every Calculate press: stale responses are dropped
+let cooldownUntil = 0; // rate-limit cooldown: suppress new requests until the server window clears
+																								   
 
 // Update the point readouts only; the curve is refetched solely on demand
 // (Calculate button / axis or athlete changes), one request per deliberate
@@ -641,6 +655,11 @@ async function requestCurve() {
   if (!b) {
     data = { points: [] };
     draw();
+    return;
+  }
+  const waitMs = cooldownUntil - Date.now();
+  if (waitMs > 0) {
+    $("calcStatus").textContent = "Rate limited by the estimate API — retry available in " + Math.ceil(waitMs / 1000) + "s.";
     return;
   }
   const seq = ++refreshSeq;
@@ -766,9 +785,9 @@ function draw() {
     ctx.fillText("50/50 @ " + axisLabel() + " " + Math.round(cross.x), cx + 6, padT + 12);
   }
 
-  const last = pts[pts.length - 1];
-  $("lg_carb").textContent = (last.carb_frac * 100).toFixed(0);
-  $("lg_fat").textContent = ((1 - last.carb_frac) * 100).toFixed(0);
+								   
+															   
+																	
 }
 
 // hover
@@ -802,7 +821,7 @@ canvas.addEventListener("mousemove", e => {
     "<b>" + axisLabel() + " " + Math.round(p.x) + "</b><br>" +
     "<span class='t-carb'>carbs</span> <b>" + p.carb_g_hr.toFixed(0) + "</b> g/h (" + (p.carb_frac * 100).toFixed(0) + "% of energy) &nbsp; " +
     "<span class='t-fat'>fat</span> <b>" + p.fat_g_hr.toFixed(0) + "</b> g/h (" + ((1 - p.carb_frac) * 100).toFixed(0) + "% of energy)<br>" +
-    "<span class='t-rer'>RER</span> <b>" + p.rer.toFixed(3) + "</b> &nbsp;·&nbsp; <span class='t-dim'>" + p.kcal_hr.toFixed(0) + " kcal/h total</span>";
+    "<span class='t-rer'>RER</span> <b>" + p.rer.toFixed(3) + "</b>";
   let tx = sx + 14, ty = e.clientY - rect.top + 14;
   if (tx + tip.offsetWidth > W) tx = sx - tip.offsetWidth - 14;
   tip.style.left = tx + "px"; tip.style.top = ty + "px";
@@ -811,13 +830,13 @@ canvas.addEventListener("mousemove", e => {
   $("ro_carb").textContent = p.carb_g_hr.toFixed(0) + " g/h  ·  " + (p.carb_frac * 100).toFixed(0) + "%";
   $("ro_fat").textContent = p.fat_g_hr.toFixed(0) + " g/h  ·  " + ((1 - p.carb_frac) * 100).toFixed(0) + "%";
   $("ro_rer").textContent = p.rer.toFixed(3);
-  $("ro_kcal").textContent = p.kcal_hr.toFixed(0) + " kcal/h";
+															  
 });
 canvas.addEventListener("mouseleave", () => {
   tip.style.display = "none";
   $("ro_point").textContent = "hover the chart";
   $("ro_carb").textContent = "-"; $("ro_fat").textContent = "-";
-  $("ro_rer").textContent = "-"; $("ro_kcal").textContent = "-";
+  $("ro_rer").textContent = "-";
   draw();
 });
 
@@ -849,8 +868,16 @@ bindSlider("daily_fat", "v_daily_fat", v => (+v).toFixed(2) + " g/kg");
 bindSlider("pre_cho", "v_pre_cho", v => v + " g");
 bindSlider("during_cho", "v_during_cho", v => v + " g/h");
 
-// Athlete settings change the axis bounds/semantics too, so refetch immediately.
-for (const id of ["ftp", "lthr", "weight", "age"]) $(id).addEventListener("input", () => requestCurve());
+
+// Athlete settings change the axis bounds/semantics too, so refetch — but
+// debounced: dragging a number input fires dozens of `input` events, and each
+// curve request is ~161 model evaluations against a 10/min-per-IP budget.
+let settingsTimer = null;
+function requestCurveDebounced() {
+  clearTimeout(settingsTimer);
+  settingsTimer = setTimeout(requestCurve, 450);
+}
+for (const id of ["ftp", "lthr", "weight", "age"]) $(id).addEventListener("input", requestCurveDebounced);
 $("sex").addEventListener("change", () => requestCurve());
 window.addEventListener("resize", draw);
 
