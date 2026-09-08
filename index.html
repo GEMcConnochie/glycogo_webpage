@@ -148,11 +148,11 @@
     --bg: #ffffff; --bg-soft: #f7faf8; --white: #ffffff; --text: #1a1a3e;
     --muted: #5c6670; --border: #e8ece9;
     --surface: #ffffff;
-    --shadow-sm: 0 4px 20px rgba(26,26,62,0.06);
-    --shadow-md: 0 20px 50px rgba(26,26,62,0.10);
-    --shadow-lg: 0 32px 80px rgba(26,26,62,0.14);
-    --radius: 20px;
-    --radius-lg: 28px;
+    --shadow-sm: 0 1px 2px rgba(26,26,62,0.06);
+    --shadow-md: 0 10px 24px rgba(26,26,62,0.10);
+    --shadow-lg: 0 20px 48px rgba(26,26,62,0.12);
+    --radius: 10px;
+    --radius-lg: 14px;
     --nav-h: 72px;
     --max: 1140px;
   }
@@ -235,12 +235,12 @@
   .nav-cta {
     background: var(--green) !important;
     color: white !important; padding: 0.6rem 1.35rem !important;
-    border-radius: 999px !important; font-weight: 700 !important;
+    border-radius: 8px !important; font-weight: 600 !important;
     font-size: 0.88rem !important;
     box-shadow: none !important;
     transition: background 0.2s, transform 0.15s !important;
   }
-  .nav-cta:hover { background: var(--green-light) !important; transform: translateY(-1px); box-shadow: none !important; }
+  .nav-cta:hover { background: var(--green-light) !important; box-shadow: none !important; }
 
   /* HERO */
   .hero {
@@ -258,7 +258,6 @@
   }
   .hero-overlay {
     position: absolute; inset: 0; z-index: 1;
-    /* Dark tint for text contrast — keep alphas low so the video shows through */
     background: linear-gradient(
       160deg,
       rgba(15, 15, 28, 0.52) 0%,
@@ -274,7 +273,7 @@
       radial-gradient(ellipse 45% 40% at 12% 88%, rgba(230,92,0,0.06) 0%, transparent 50%);
     pointer-events: none;
   }
-  .hero-grid { display: none; }
+  .hero-bg, .hero-grid { display: none; }
   .hero-shell {
     position: relative; z-index: 3; width: 100%;
     max-width: var(--max); margin: 0 auto; padding: 0 2rem;
@@ -282,18 +281,13 @@
   }
   .hero-copy { text-align: left; }
   .hero-badge {
-    display: inline-flex; align-items: center; gap: 0.45rem;
+    display: inline-block;
     background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.14);
-    border-radius: 999px; padding: 0.35rem 1rem;
+    border-radius: 8px; padding: 0.35rem 1rem;
     font-size: 0.78rem; font-weight: 600; color: var(--green-light);
     margin-bottom: 1.25rem;
     animation: fadeUp 0.6s ease both;
   }
-  .hero-badge::before {
-    content: ''; width: 7px; height: 7px; border-radius: 50%;
-    background: var(--green-light); animation: pulse 2s infinite;
-  }
-  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(1.3)} }
   .hero h1 {
     font-size: clamp(2.75rem, 5.5vw, 4.25rem); font-weight: 800;
     line-height: 1.02; letter-spacing: -0.04em; color: white;
@@ -307,20 +301,20 @@
   .hero-sub em {
     font-style: normal;
     color: var(--green-light);
-    font-weight: 700; /* optional */
+    font-weight: 700;
 }
   .hero-actions {
     display: flex; gap: 0.85rem; flex-wrap: wrap;
     animation: fadeUp 0.6s 0.24s ease both;
   }
   .btn-primary {
-    background: var(--green); color: white; padding: 1rem 2.25rem; border-radius: 999px;
+    background: var(--green); color: white; padding: 1rem 2.25rem; border-radius: 8px;
     font-size: 1.02rem; font-weight: 700; text-decoration: none;
-    transition: transform 0.15s, background 0.2s;
+    transition: background 0.2s;
   }
-  .btn-primary:hover { transform: translateY(-2px); background: var(--green-light); }
+  .btn-primary:hover { background: var(--green-light); }
   .btn-ghost {
-    color: white; padding: 1rem 1.75rem; border-radius: 999px;
+    color: white; padding: 1rem 1.75rem; border-radius: 8px;
     font-size: 0.98rem; font-weight: 600; text-decoration: none;
     border: 1.5px solid rgba(255,255,255,0.35); background: transparent;
     transition: border-color 0.2s, background 0.2s;
@@ -333,30 +327,25 @@
   }
   .hero-points li {
     font-size: 0.78rem; color: rgba(255,255,255,0.72); line-height: 1.45;
-    padding: 0.35rem 0.75rem; border-radius: 999px;
+    padding: 0.35rem 0.75rem; border-radius: 8px;
     background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12);
   }
 
   /* HERO MEDIA / DEVICE FRAME */
   .hero-media { position: relative; animation: fadeUp 0.7s 0.2s ease both; z-index: 1; }
-  .hero-media::before {
-    content: ''; position: absolute; inset: -8% -6%;
-    background: radial-gradient(circle, rgba(46,125,50,0.12) 0%, transparent 70%);
-    z-index: 0;
-  }
   .device-frame {
     position: relative; z-index: 1; margin: 0 auto; max-width: 300px;
-    padding: 10px; border-radius: 40px;
+    padding: 10px; border-radius: 18px;
     background: #111118;
-    box-shadow: 0 32px 80px rgba(0,0,0,0.45), 0 0 0 1px rgba(255,255,255,0.08);
+    box-shadow: 0 20px 48px rgba(0,0,0,0.35), 0 0 0 1px rgba(255,255,255,0.08);
   }
   .device-notch {
     width: 88px; height: 22px; background: #0f0f18;
     border-radius: 0 0 14px 14px; margin: 0 auto 8px;
   }
   .device-screen {
-    border-radius: 26px; overflow: hidden;
-    background: linear-gradient(160deg, #dce8e3 0%, #f5faf8 100%);
+    border-radius: 12px; overflow: hidden;
+    background: #ffffff;
     aspect-ratio: 9 / 19.5; position: relative;
     border: 1px solid rgba(255,255,255,0.08);
   }
@@ -389,11 +378,6 @@
     border-radius: 14px; padding: 1rem 1.15rem;
     box-shadow: var(--shadow-sm);
   }
-  .trust-tag {
-    display: inline-block; font-size: 0.65rem; font-weight: 800;
-    letter-spacing: 0.1em; text-transform: uppercase; color: var(--orange);
-    margin-bottom: 0.45rem;
-  }
   .trust-item strong {
     display: block; font-size: 0.92rem; font-weight: 700; color: var(--navy);
     line-height: 1.25; margin-bottom: 0.35rem;
@@ -422,7 +406,7 @@
   }
   @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
   .sport-tag {
-    flex-shrink: 0; padding: 0.5rem 1.1rem; border-radius: 999px;
+    flex-shrink: 0; padding: 0.5rem 1.1rem; border-radius: 8px;
     background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12);
     font-size: 0.85rem; font-weight: 600; color: white; white-space: nowrap;
   }
@@ -434,11 +418,6 @@
   }
   .split-row + .split-row { border-top: 1px solid var(--border); }
   .split-row.reverse .split-visual { order: -1; }
-  .split-kicker {
-    font-size: 0.72rem; font-weight: 800; letter-spacing: 0.14em;
-    text-transform: uppercase; color: var(--orange); margin-bottom: 0.65rem;
-  }
-  .split-kicker span { color: var(--green); margin-right: 0.5rem; }
   .split-copy h3 {
     font-size: clamp(1.5rem, 2.8vw, 2.1rem); font-weight: 800;
     color: var(--navy); line-height: 1.15; letter-spacing: -0.025em; margin-bottom: 1rem;
@@ -452,7 +431,7 @@
   .app-shot-duo .app-shot { aspect-ratio: 4 / 5; }
   .app-shot {
     border-radius: var(--radius-lg); overflow: hidden; aspect-ratio: 7 / 5;
-    background: linear-gradient(145deg, #eef4f1, #fafcfb);
+    background: var(--bg-soft);
     border: 1px solid var(--border); box-shadow: var(--shadow-md);
     position: relative;
   }
@@ -480,8 +459,8 @@
     position: absolute; inset: 0; display: flex; flex-direction: column;
     align-items: center; justify-content: center; gap: 0.75rem;
     padding: 1.5rem; text-align: center;
-    background: linear-gradient(160deg, rgba(46,125,50,0.08) 0%, rgba(45,45,122,0.06) 100%);
-    border: 2px dashed rgba(46,125,50,0.25);
+    background: var(--bg-soft);
+    border: 1px solid var(--border);
   }
   .media-placeholder svg { width: 40px; height: 40px; stroke: var(--green); fill: none; stroke-width: 1.5; opacity: 0.7; }
   .media-placeholder span { font-size: 0.78rem; font-weight: 600; color: var(--muted); line-height: 1.45; max-width: 180px; }
@@ -495,10 +474,6 @@
 
   /* SECTIONS */
   section.block { padding: 5rem 0; }
-  .section-label {
-    font-size: 0.72rem; font-weight: 800; letter-spacing: 0.14em;
-    text-transform: uppercase; color: var(--green); margin-bottom: 0.65rem;
-  }
   .section-title {
     font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 800;
     line-height: 1.08; letter-spacing: -0.03em; color: var(--navy); margin-bottom: 0.85rem;
@@ -521,8 +496,8 @@
     border-color: rgba(46,125,50,0.35);
   }
   .feature-icon {
-    width: 42px; height: 42px; border-radius: 12px;
-    background: linear-gradient(135deg, var(--green-pale), rgba(255,255,255,0.9));
+    width: 42px; height: 42px; border-radius: 8px;
+    background: var(--green-pale);
     display: flex; align-items: center; justify-content: center; margin-bottom: 0.9rem;
   }
   .feature-icon svg { width: 20px; height: 20px; stroke: var(--green); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
@@ -531,23 +506,23 @@
 
   /* CHATBOT */
   .chatbot-highlight {
-    background: linear-gradient(135deg, var(--navy) 0%, #252560 50%, var(--navy-mid) 100%);
+    background: var(--navy);
     border-radius: var(--radius-lg); padding: 2.25rem; color: white;
     display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center;
-    margin-top: 1.25rem; box-shadow: var(--shadow-lg);
+    margin-top: 1.25rem;
   }
   .chatbot-highlight .feature-title { color: white; font-size: 1.15rem; margin-bottom: 0.75rem; }
   .chatbot-highlight .feature-desc { color: rgba(255,255,255,0.78); font-size: 0.92rem; line-height: 1.65; }
   .chat-demo {
-    background: rgba(255,255,255,0.06); border-radius: 14px; padding: 1.1rem;
+    background: rgba(255,255,255,0.06); border-radius: 10px; padding: 1.1rem;
     display: flex; flex-direction: column; gap: 0.7rem;
-    border: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.1);
   }
   .chat-msg { font-size: 0.82rem; line-height: 1.5; padding: 0.6rem 0.9rem; border-radius: 10px; max-width: 88%; }
   .chat-msg.user { background: rgba(46,125,50,0.45); color: white; align-self: flex-end; }
   .chat-msg.bot { background: rgba(255,255,255,0.12); color: rgba(255,255,255,0.92); align-self: flex-start; }
   .chat-label { font-size: 0.66rem; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(255,255,255,0.38); margin-bottom: 0.2rem; }
-  .chat-action { align-self: flex-start; background: var(--green); color: white; border: none; padding: 0.45rem 1rem; border-radius: 999px; font-size: 0.76rem; font-weight: 600; cursor: pointer; font-family: 'DM Sans', sans-serif; }
+  .chat-action { align-self: flex-start; background: var(--green); color: white; border: none; padding: 0.45rem 1rem; border-radius: 8px; font-size: 0.76rem; font-weight: 600; cursor: pointer; font-family: 'DM Sans', sans-serif; }
   .chat-img-attach { display: inline-flex; align-items: center; gap: 0.35rem; font-size: 0.72rem; color: rgba(255,255,255,0.55); padding: 0.25rem 0.5rem; border-radius: 6px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); }
   .chat-macro-row { display: flex; flex-wrap: wrap; gap: 0.35rem 0.6rem; margin-top: 0.55rem; }
   .chat-macro { font-size: 0.72rem; font-weight: 600; color: rgba(255,255,255,0.88); background: rgba(255,255,255,0.1); padding: 0.15rem 0.45rem; border-radius: 4px; }
@@ -562,22 +537,16 @@
 
   /* SCIENCE */
   .science {
-    background: linear-gradient(160deg, var(--navy) 0%, #222258 100%);
+    background: var(--navy);
     color: white; position: relative; overflow: hidden;
   }
-  .science::before {
-    content: ''; position: absolute; inset: 0;
-    background: radial-gradient(ellipse 50% 60% at 80% 20%, rgba(230,92,0,0.12) 0%, transparent 60%);
-    pointer-events: none;
-  }
   .science-inner { max-width: 820px; margin: 0 auto; padding: 0 2rem; text-align: center; position: relative; z-index: 1; }
-  .science .section-label { color: var(--orange-light); }
   .science .section-title { color: white; }
   .science .section-sub { color: rgba(255,255,255,0.68); margin: 0 auto 2.25rem; }
   .citations { display: flex; flex-direction: column; gap: 0.85rem; text-align: left; }
   .citation {
     background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.09);
-    border-left: 3px solid var(--orange); border-radius: 12px;
+    border-radius: 8px;
     padding: 1rem 1.15rem; font-size: 0.86rem; color: rgba(255,255,255,0.75); line-height: 1.6;
   }
   .citation strong { color: white; }
@@ -646,8 +615,8 @@
   .faq-body ul, .faq-body ol { margin: 0.7rem 0 0 1.1rem; }
   .faq-callout { border-radius: 10px; padding: 0.8rem 0.95rem; margin-bottom: 0.8rem; font-size: 0.86rem; line-height: 1.6; }
   .faq-callout strong { color: var(--navy); }
-  .faq-callout.important { background: var(--green-pale); border-left: 3px solid var(--green); }
-  .faq-callout.note { background: rgba(45,45,122,0.06); border-left: 3px solid var(--navy-mid); }
+  .faq-callout.important { background: var(--green-pale); }
+  .faq-callout.note { background: rgba(45,45,122,0.06); }
   .faq-link { color: var(--green); font-weight: 600; text-decoration: none; }
   .faq-link:hover { text-decoration: underline; }
 
@@ -727,8 +696,6 @@
     <source src="assets/demo.mp4" type="video/mp4">
   </video>
   <div class="hero-overlay"></div>
-  <div class="hero-bg"></div>
-  <div class="hero-grid"></div>
   <div class="hero-shell">
     <div class="hero-copy">
       <div class="hero-badge">Built for all athletes</div>
@@ -767,27 +734,20 @@
 
 <!-- WHY GLYCOGO -->
 <div class="trust-bar">
-  <div class="trust-bar-header">
-    <div class="section-label">Why Glycogo</div>
-  </div>
   <div class="trust-inner">
     <div class="trust-item">
-      <div class="trust-tag">Periodised</div>
       <strong>Targets that scale with load</strong>
       <span>Carbohydrate and calorie targets ramp with session RPE and duration.</span>
     </div>
     <div class="trust-item">
-      <div class="trust-tag">Connected</div>
       <strong>Sync your planned and completed training</strong>
       <span>Import sessions from your device and get fuel targets for each workout.</span>
     </div>
     <div class="trust-item">
-      <div class="trust-tag">Customised</div>
       <strong>Tailored to how you train</strong>
       <span>Set your sports, meal times, carb ranges, and intensity scaling to match your routine.</span>
     </div>
     <div class="trust-item">
-      <div class="trust-tag">Evidence-based</div>
       <strong>Grounded in sports science</strong>
       <span>Intensity-based scaling grounded in peer-reviewed research.</span>
     </div>
@@ -809,7 +769,6 @@
 <section id="features" class="block" style="background:var(--bg-soft);">
   <div class="features">
     <div class="features-header fade-up">
-      <div class="section-label">Features</div>
       <h2 class="section-title">Everything you need to fuel smarter</h2>
       <p class="section-sub">
       Track and plan your nutrition with ease using a data and detail-driven, customizable approach, powered by the latest research and technology.
@@ -868,7 +827,6 @@
     <!-- AI CHATBOT -->
     <div class="chatbot-highlight fade-up">
       <div>
-        <div class="section-label" style="color:var(--orange-light);">New</div>
         <div class="feature-title">AI Nutrition Assistant</div>
         <p class="feature-desc">Photograph your plate and the app will estimate calories and macros from the image. Ask for meal ideas, recipe suggestions, or food swaps — informed by your training sessions, remaining targets for the day, and what you have already logged. Suggested meals can be added to your log directly from the chat.</p>
         <br>
@@ -931,7 +889,6 @@
 <section id="showcase" class="showcase">
   <div class="container">
     <div class="showcase-intro fade-up">
-      <div class="section-label">The app</div>
       <h2 class="section-title">Set up in minutes</h2>
       <p class="section-sub" style="margin:0 auto;text-align:center;">Connect your training data, set your targets, and start fuelling with precision.</p>
     </div>
@@ -939,7 +896,6 @@
     <div id="how" class="how-inner">
       <div class="split-row fade-up">
         <div class="split-copy">
-          <div class="split-kicker"><span>01</span> Set up</div>
           <h3>Set your baseline targets &amp; intensity scaling</h3>
           <p>Enter your bodyweight, energy availability target, and baseline macronutrient distribution — the foundation of your daily nutrition outside training sessions.</p>
           <p>Then set upper and lower carbohydrate and calorie limits per hour, and dial in your fueling for each sport. Fully customisable to your training output and GI tolerance.</p>
@@ -968,7 +924,6 @@
 
       <div class="split-row reverse fade-up">
         <div class="split-copy">
-          <div class="split-kicker"><span>02</span> Sync</div>
           <h3>Sync your sessions</h3>
           <p>Connect to your device via Intervals.icu to automatically pull in your training sessions, or add one manually. Each session gets its own pre/post and during-session fuel targets based on duration and intensity.</p>
         </div>
@@ -986,7 +941,6 @@
 
       <div class="split-row fade-up">
         <div class="split-copy">
-          <div class="split-kicker"><span>03</span> Log</div>
           <h3>Log food</h3>
           <p>Log foods using saved meals, barcode scanning, photo recognition, suggested recipies, or search an extensive database. Use Suggest quantities or ask the AI assistant for a meal that hits your remaining targets.</p>
         </div>
@@ -1004,7 +958,6 @@
 
       <div class="split-row reverse fade-up">
         <div class="split-copy">
-          <div class="split-kicker"><span>04</span> Trends</div>
           <h3>Track trends</h3>
           <p>See how actual intake compares to targets over time and how it fluctuates with training load. Save daily totals and watch your fuelling patterns build — synced to Intervals.icu wellness fields alongside your training data.</p>
         </div>
@@ -1026,7 +979,6 @@
 <!-- SCIENCE -->
 <section id="science" class="science block">
   <div class="science-inner fade-up">
-    <div class="section-label">Evidence-based</div>
     <h2 class="section-title">Grounded in Research, Designed for Optimisation</h2>
     <p class="section-sub">The carbohydrate periodisation approach and intensity-based scaling are grounded in peer-reviewed research from leading sports science journals.</p>
     <div class="citations">
@@ -1053,9 +1005,8 @@
 <section id="faq" class="faq block">
   <div class="faq-inner">
     <div class="faq-header fade-up">
-      <div class="section-label">FAQ</div>
       <h2 class="section-title">Common Questions</h2>
-      <p class="section-sub">How Glycogo calculates training fuel, daily targets, and within-day energy balance without the jargon.</p>
+      <p class="section-sub">How Glycogo calculates training fuel, daily targets, and within-day energy balance.</p>
     </div>
 
     <div class="faq-groups">
@@ -1387,7 +1338,6 @@
 <!-- SUPPORT -->
 <section id="support" class="support block">
   <div class="support-inner fade-up">
-    <div class="section-label">Support the project</div>
     <p class="section-sub">
     Glycogo is designed to be an affordable, budget-friendly tool. If you find it useful, a small donation goes a long way to help keep it running and support ongoing development. For full access and extra features, consider subscribing.
     </p>

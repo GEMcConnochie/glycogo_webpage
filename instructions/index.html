@@ -8,6 +8,7 @@
 <meta name="description" content="How to use Glycogo: periodised nutrition planning for athletes.">
 <link rel="canonical" href="https://glycogo.fit/instructions">
 <link rel="preconnect" href="https://fonts.googleapis.com">
+
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -77,7 +78,7 @@ nav.shrink img { height: 48px; }
 .page-hero-bg { position: absolute; inset: 0; z-index: 0; background: radial-gradient(ellipse 60% 70% at 30% 50%, rgba(46,125,50,0.12) 0%, transparent 60%), radial-gradient(ellipse 50% 60% at 75% 60%, rgba(230,92,0,0.08) 0%, transparent 60%); }
 .page-hero-grid { position: absolute; inset: 0; z-index: 0; background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px); background-size: 40px 40px; }
 .page-hero-content { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
-.page-hero-badge { display: inline-flex; align-items: center; gap: 0.4rem; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 999px; padding: 0.3rem 1rem; font-size: 0.8rem; font-weight: 600; color: var(--green-light); margin-bottom: 1.2rem; }
+.page-hero-badge { display: inline-flex; align-items: center; gap: 0.4rem; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 8px; padding: 0.3rem 1rem; font-size: 0.8rem; font-weight: 600; color: var(--green-light); margin-bottom: 1.2rem; }
 .page-hero h1 { font-size: clamp(2.2rem,5vw,3.8rem); font-weight: 800; line-height: 1.08; letter-spacing: -0.03em; color: white; margin-bottom: 1rem; }
 .page-hero h1 em { font-style: normal; color: var(--orange-light); }
 .page-hero p { font-size: 1.1rem; color: rgba(255,255,255,0.65); line-height: 1.7; max-width: 520px; margin: 0 auto; }
@@ -86,20 +87,16 @@ nav.shrink img { height: 48px; }
 .docs-layout { max-width: 900px; margin: 0 auto; padding: 3rem 2rem; }
  
 /* STEP SECTIONS */
-.step-section { background: white; border: 1px solid var(--border); border-radius: 16px; margin-bottom: 1.5rem; overflow: hidden; transition: box-shadow 0.2s; }
-section, .step-section, [id] { scroll-margin-top: calc(var(--nav-height) + 16px); }
+.step-section { background: white; border: 1px solid var(--border); border-radius: 10px; margin-bottom: 1.5rem; overflow: hidden; transition: box-shadow 0.2s; }
 .step-section:hover { box-shadow: 0 8px 32px rgba(46,125,50,0.08); }
+section, .step-section, [id] { scroll-margin-top: calc(var(--nav-height) + 16px); }
  
 .step-header { display: flex; align-items: center; gap: 1rem; padding: 1.5rem 1.8rem; border-bottom: 1px solid var(--border); background: linear-gradient(to right, var(--green-pale), transparent); }
 .step-header.orange { background: linear-gradient(to right, rgba(230,92,0,0.06), transparent); }
 .step-header.navy { background: linear-gradient(to right, rgba(26,26,62,0.05), transparent); }
 .step-header.teal { background: linear-gradient(to right, rgba(67,160,71,0.07), transparent); }
  
-.step-num-badge { font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; color: white; background: var(--green); width: 32px; height: 32px; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-.step-num-badge.orange { background: var(--orange); }
-.step-num-badge.navy { background: var(--navy-mid); }
-.step-num-badge.teal { background: var(--green-light); }
-.step-num-badge.ai { background: linear-gradient(135deg, var(--navy-mid), var(--orange)); }
+.step-num-badge, .step-num-badge.orange, .step-num-badge.navy, .step-num-badge.teal, .step-num-badge.ai { display: none; }
  
 .step-header-text h2 { font-size: 1.1rem; font-weight: 700; color: var(--navy); }
 .step-header-text p { font-size: 0.85rem; color: var(--muted); margin-top: 0.15rem; }
@@ -137,7 +134,7 @@ section, .step-section, [id] { scroll-margin-top: calc(var(--nav-height) + 16px)
 .ai-feature p { font-size: 0.8rem; color: var(--muted); line-height: 1.5; margin: 0; }
  
 /* TIP BOX */
-.tip { display: flex; gap: 0.75rem; align-items: flex-start; background: rgba(46,125,50,0.06); border: 1px solid rgba(46,125,50,0.2); border-left: 3px solid var(--green); border-radius: 8px; padding: 0.9rem 1.1rem; margin: 1rem 0; font-size: 0.87rem; color: var(--muted); line-height: 1.65; }
+.tip { display: flex; gap: 0.75rem; align-items: flex-start; background: rgba(46,125,50,0.06); border: 1px solid rgba(46,125,50,0.2); border-radius: 8px; padding: 0.9rem 1.1rem; margin: 1rem 0; font-size: 0.87rem; color: var(--muted); line-height: 1.65; }
 .tip > span { flex: 1; min-width: 0; }
 .tip svg { width: 16px; height: 16px; stroke: var(--green); fill: none; stroke-width: 2; flex-shrink: 0; margin-top: 2px; }
 .step-body ul { margin: 0.5rem 0 1rem 1.5rem; font-size: 0.93rem; color: var(--muted); line-height: 1.7; }
@@ -146,7 +143,7 @@ section, .step-section, [id] { scroll-margin-top: calc(var(--nav-height) + 16px)
 .step-body ul.compact li:last-child { margin-bottom: 0; }
 
 /* QUICK START + WORKFLOW */
-.quick-start { background: linear-gradient(135deg, var(--green-pale), white); border: 1px solid var(--border); border-radius: 12px; padding: 1.1rem 1.25rem; margin-bottom: 1rem; }
+.quick-start { background: var(--green-pale); border: 1px solid var(--border); border-radius: 12px; padding: 1.1rem 1.25rem; margin-bottom: 1rem; }
 .quick-start h3 { font-size: 0.95rem; font-weight: 700; color: var(--navy); margin-bottom: 0.65rem; }
 .quick-start ol { margin: 0 0 0 1.2rem; font-size: 0.9rem; color: var(--muted); line-height: 1.65; }
 .quick-start ol li { margin-bottom: 0.3rem; }
@@ -159,7 +156,7 @@ section, .step-section, [id] { scroll-margin-top: calc(var(--nav-height) + 16px)
 /* IN-APP ICONS */
 .app-icons-note { display: flex; flex-wrap: wrap; gap: 0.75rem 1.25rem; align-items: center; background: rgba(46,125,50,0.05); border: 1px solid rgba(46,125,50,0.15); border-radius: 10px; padding: 0.85rem 1rem; margin: 1rem 0; font-size: 0.85rem; color: var(--muted); line-height: 1.5; }
 .app-icon-item { display: flex; align-items: center; gap: 0.45rem; font-weight: 600; color: var(--navy); white-space: nowrap; }
-.app-icon { width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 2px 8px rgba(0,0,0,0.12); }
+.app-icon { width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
 .app-icon svg { width: 17px; height: 17px; fill: white; }
 .app-icon.training { background: #e65c00; }
 .app-icon.food { background: #61aa39; }
@@ -185,7 +182,7 @@ details.advanced .advanced-body ul { margin: 0.35rem 0 0 1.1rem; font-size: 0.87
 .refs-inner { max-width: 1100px; margin: 0 auto; padding: 3rem 2rem; }
 .refs h3 { font-size: 0.85rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 1.25rem; }
 .refs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 0.75rem; }
-.ref-item { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-left: 3px solid var(--orange); border-radius: 8px; padding: 0.9rem 1.1rem; font-size: 0.82rem; line-height: 1.6; }
+.ref-item { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 0.9rem 1.1rem; font-size: 0.82rem; line-height: 1.6; }
 .ref-item strong { color: rgba(255,255,255,0.85); display: block; margin-bottom: 0.25rem; }
 .ref-item a { color: var(--orange-light); text-decoration: none; }
 .ref-item a:hover { text-decoration: underline; }
@@ -247,7 +244,6 @@ footer a:hover { color: var(--orange-light); }
   <div class="page-hero-bg"></div>
   <div class="page-hero-grid"></div>
   <div class="page-hero-content">
-    <div class="page-hero-badge">Documentation</div>
     <h1>Getting started with <em>Glycogo</em></h1>
   </div>
 </div>
@@ -519,16 +515,16 @@ footer a:hover { color: var(--orange-light); }
             </tr>
           </thead>
           <tbody>
-            <tr><td>0–10</td><td>Very Easy</td><td>Recovery effort with minimal physiological strain.</td><td>Zone 1</td></tr>
-            <tr><td>10–20</td><td>Easy</td><td>Relaxed aerobic training with comfortable conversation.</td><td>Low Zone 1</td></tr>
-            <tr><td>20–30</td><td>Steady Easy</td><td>Light endurance work with slightly elevated breathing.</td><td>Zone 1–2</td></tr>
-            <tr><td>30–40</td><td>Moderate</td><td>Comfortable aerobic training requiring some focus.</td><td>Zone 2</td></tr>
-            <tr><td>40–50</td><td>Moderately Hard</td><td>Steady endurance work with noticeable effort.</td><td>Upper Zone 2</td></tr>
-            <tr><td>50–60</td><td>Strong</td><td>Purposeful aerobic training with controlled strain.</td><td>Zone 3</td></tr>
-            <tr><td>60–70</td><td>Hard</td><td>Demanding but sustainable training requiring concentration.</td><td>Upper Zone 3</td></tr>
-            <tr><td>70–80</td><td>Very Hard</td><td>Heavy sustained effort or very hard intervals.</td><td>Zone 4</td></tr>
-            <tr><td>80–90</td><td>Extremely Hard</td><td>Very demanding, prolonged session, or intense efforts with short recovery.</td><td>High Zone 4 / mixed Zone 5</td></tr>
-            <tr><td>90–100</td><td>Maximal Session Load</td><td>Maximal effort sustainable for 30–60 minutes, or an extremely hard interval session.</td><td>Top of Zone 4 or dense Zone 5 intervals</td></tr>
+            <tr><td style="color:#1eb851;font-weight:700;">0–10</td><td>Very Easy</td><td>Recovery effort with minimal physiological strain.</td><td>Zone 1</td></tr>
+            <tr><td style="color:#1eb829;font-weight:700;">10–20</td><td>Easy</td><td>Relaxed aerobic training with comfortable conversation.</td><td>Low Zone 1</td></tr>
+            <tr><td style="color:#3bb81e;font-weight:700;">20–30</td><td>Steady Easy</td><td>Light endurance work with slightly elevated breathing.</td><td>Zone 1–2</td></tr>
+            <tr><td style="color:#63b81e;font-weight:700;">30–40</td><td>Moderate</td><td>Comfortable aerobic training requiring some focus.</td><td>Zone 2</td></tr>
+            <tr><td style="color:#8bb81e;font-weight:700;">40–50</td><td>Moderately Hard</td><td>Steady endurance work with noticeable effort.</td><td>Upper Zone 2</td></tr>
+            <tr><td style="color:#b2b81e;font-weight:700;">50–60</td><td>Strong</td><td>Purposeful aerobic training with controlled strain.</td><td>Zone 3</td></tr>
+            <tr><td style="color:#b8961e;font-weight:700;">60–70</td><td>Hard</td><td>Demanding but sustainable training requiring concentration.</td><td>Upper Zone 3</td></tr>
+            <tr><td style="color:#b86e1e;font-weight:700;">70–80</td><td>Very Hard</td><td>Heavy sustained effort or very hard intervals.</td><td>Zone 4</td></tr>
+            <tr><td style="color:#b8461e;font-weight:700;">80–90</td><td>Extremely Hard</td><td>Very demanding, prolonged session, or intense efforts with short recovery.</td><td>High Zone 4 / mixed Zone 5</td></tr>
+            <tr><td style="color:#b81e1e;font-weight:700;">90–100</td><td>Maximal Session Load</td><td>Maximal effort sustainable for 30–60 minutes, or an extremely hard interval session.</td><td>Top of Zone 4 or dense Zone 5 intervals</td></tr>
           </tbody>
         </table>
         <div class="tip">
@@ -542,7 +538,7 @@ footer a:hover { color: var(--orange-light); }
 </div>
 
 <!-- REFERENCES -->
-<div id="RPE-ref" class="refs">
+<div id="references" class="refs">
   <div class="refs-inner">
     <h3>Scientific References</h3>
     <div class="refs-grid">

@@ -12,8 +12,8 @@
   --gs-muted: #5c6670;
   --gs-faint: #93979e;
   --gs-border: #e8ece9;
-  --gs-radius: 16px;
-  --gs-font: 'DM Sans', system-ui, -apple-system, sans-serif;
+  --gs-radius: 10px;
+  --gs-font: 'DM Sans', sans-serif;
   --gs-mono: 'Space Mono', monospace;
 }
 
@@ -42,7 +42,7 @@
   flex-direction: column;
   background: var(--gs-bg);
   border: 1px solid var(--gs-border);
-  border-radius: 22px;
+  border-radius: 12px;
   box-shadow: 0 40px 90px rgba(15, 15, 28, 0.45);
   overflow: hidden;
   animation: gs-pop 0.18s ease both;
@@ -127,7 +127,7 @@
   color: var(--gs-navy);
   background: var(--gs-green-pale);
   border: 1px solid rgba(46, 125, 50, 0.25);
-  border-radius: 999px;
+  border-radius: 8px;
   padding: 5px 12px;
   text-decoration: none;
   transition: background 0.15s, transform 0.15s;
@@ -180,7 +180,7 @@
   color: var(--gs-orange);
   background: rgba(230, 92, 0, 0.08);
   border: 1px solid rgba(230, 92, 0, 0.18);
-  border-radius: 999px;
+  border-radius: 8px;
   padding: 3px 9px;
 }
 #glyco-search-root .gs-result-section {

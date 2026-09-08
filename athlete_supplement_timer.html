@@ -9,6 +9,7 @@
 <link rel="canonical" href="https://glycogo.fit/athlete_supplement_timer.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -21,8 +22,8 @@
   --shadow-sm: 0 4px 20px rgba(26,26,62,0.06);
   --shadow-md: 0 20px 50px rgba(26,26,62,0.10);
   --shadow-lg: 0 32px 80px rgba(26,26,62,0.14);
-  --radius: 20px;
-  --radius-lg: 28px;
+  --radius: 10px;
+  --radius-lg: 14px;
   --nav-h: 72px;
   --max: 1140px;
 }
@@ -31,7 +32,7 @@ body {
   margin: 0;
   background: var(--bg-soft);
   color: var(--text);
-  font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+  font-family: 'DM Sans', sans-serif;
   line-height: 1.5;
   padding-top: var(--nav-h);
   -webkit-font-smoothing: antialiased;
@@ -88,7 +89,7 @@ nav#main-nav {
 .nav-dropdown-menu a:hover { background: var(--green-pale); color: var(--green); }
 .nav-cta {
   background: var(--green) !important; color: white !important;
-  padding: 0.6rem 1.35rem !important; border-radius: 999px !important;
+  padding: 0.6rem 1.35rem !important; border-radius: 8px !important;
   font-weight: 700 !important; font-size: 0.88rem !important;
 }
 .nav-cta:hover { background: var(--green-light) !important; }
@@ -138,7 +139,7 @@ input[type=time]:focus, select:focus {
 
 /* ---------- BUTTONS ---------- */
 .btns { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 24px; }
-button { border: 0; border-radius: 999px; padding: 11px 20px; font-weight: 700; font-size: 14px; cursor: pointer; transition: transform 0.15s, background 0.2s; }
+button { border: 0; border-radius: 8px; padding: 11px 20px; font-weight: 700; font-size: 14px; cursor: pointer; transition: transform 0.15s, background 0.2s; }
 button:active { transform: scale(0.98); }
 .primary { background: var(--green); color: white; }
 .primary:hover { background: var(--green-light); }
@@ -156,7 +157,7 @@ button:active { transform: scale(0.98); }
 .event h3 { margin: 0 0 4px; font-size: 15px; border: 0; padding: 0; text-transform: none; letter-spacing: normal; }
 .event p { margin: 0; color: var(--muted); font-size: 13.5px; line-height: 1.5; }
 
-.notice { border-left: 4px solid var(--orange); background: #fff3e0; padding: 12px 16px; border-radius: 8px; margin-bottom: 20px; font-size: 13.5px; color: var(--text); }
+.notice { background: #fff3e0; padding: 12px 16px; border-radius: 8px; margin-bottom: 20px; font-size: 13.5px; color: var(--text); }
 .muted { color: var(--muted); font-size: 13px; line-height: 1.5; }
 .empty { padding: 35px; text-align: center; color: var(--muted); border: 1px dashed var(--border); border-radius: 14px; font-size: 14px; }
 
@@ -291,7 +292,7 @@ footer { padding: 36px 0; text-align: center; color: var(--muted); font-size: 12
     <section class="card">
       <h2>2. Suggested schedule</h2>
       <div class="notice">
-        <b>Crucial Safety Guidance:</b> This planner is a timing optimization tool, not a medical prescription. Micronutrients (Iron, Calcium, Vitamin D, Zinc, and Potassium) should only be supplemented to address assessed dietary gaps or clinically verified deficiencies. Always consult a sports dietitian or physician.
+        <b>Disclaimer:</b> This planner is a timing optimization tool, not a medical prescription. Micronutrients (Iron, Calcium, Vitamin D, Zinc, and Potassium) should only be supplemented to address assessed dietary gaps or clinically verified deficiencies. Always consult a sports dietitian or physician.
       </div>
       <div id="timeline" class="timeline">
         <div class="empty">Select your supplements and click <b>Build schedule</b>.</div>
