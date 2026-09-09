@@ -41,6 +41,32 @@
 }
 </script>
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://glycogo.fit/" },
+    { "@type": "ListItem", "position": 2, "name": "Free calculators", "item": "https://glycogo.fit/#calculators" },
+    { "@type": "ListItem", "position": 3, "name": "Carb fuel-ratio calculator", "item": "https://glycogo.fit/fuel-ratio-calculator/" }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "Why does the glucose:fructose ratio matter?", "acceptedAnswer": {"@type": "Answer", "text": "Gut absorption of glucose alone tops out around 60 g/h because it relies on a single transporter (SGLT1). Fructose is absorbed through a separate transporter (GLUT5), so pairing the two allows higher total intake and faster absorption, down to a floor of 1:0.8 at 120 g/h and above."}},
+    {"@type": "Question", "name": "What is the 2:1 glucose:fructose ratio?", "acceptedAnswer": {"@type": "Answer", "text": "Two parts glucose (or glucose polymers such as maltodextrin) to one part fructose — the classic multiple-transportable-carbohydrate blend used in endurance research. It supports intakes above ~60 g/h and is the most common ratio across energy gels, chews, and drink mixes."}},
+    {"@type": "Question", "name": "What is the 1:0.8 ratio?", "acceptedAnswer": {"@type": "Answer", "text": "A higher-fructose blend used at the top end of intake (120 g/h and above), where research points to a floor around 1:0.8. Products such as SiS Beta Fuel and Maurten Gel 100 use this ratio."}},
+    {"@type": "Question", "name": "How many carbs per hour should I aim for?", "acceptedAnswer": {"@type": "Answer", "text": "It depends on session duration and intensity. Around 60 g/h covers longer easy sessions; 60-90 g/h is a common race range; up to 120 g/h suits sustained hard efforts if gut-trained. Below ~60 g/h, glucose alone is usually sufficient and fructose is optional."}},
+    {"@type": "Question", "name": "Are whole foods as good as energy gels?", "acceptedAnswer": {"@type": "Answer", "text": "Many whole foods have favourable glucose:fructose splits — dates and ripe banana are near 50/50, raisins 52/48, honey 47/53 — so they can replicate the same ratios. Practical downsides are bulk, fibre, and batch variability compared with engineered gels."}}
+  ]
+}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -334,6 +360,15 @@ input[type="range"]:disabled::-webkit-slider-thumb{ background:var(--text-faint)
 
 .empty-note{ color:var(--text-faint); font-size:13px; padding:20px; text-align:center; border:1px dashed var(--line-strong); border-radius:var(--radius-md); }
 
+/* ---------- FAQ ---------- */
+.faq-item{ border-bottom:1px solid var(--line); padding:16px 0; }
+.faq-item:first-of-type{ padding-top:0; }
+.faq-item h3{ font-family:'DM Sans', sans-serif; font-size:14.5px; font-weight:700; color:var(--text); margin:0 0 6px; }
+.faq-item p{ font-size:13.5px; color:var(--text-dim); line-height:1.7; margin:0; max-width:700px; }
+.related-tools{ font-size:13.5px; color:var(--text-dim); line-height:1.7; margin-top:20px; }
+.related-tools a{ color:var(--fructose); text-decoration:none; font-weight:600; }
+.related-tools a:hover{ text-decoration:underline; }
+
 /* ---------- MIX LIST ---------- */
 .mix-list{ display:flex; flex-direction:column; margin-bottom:24px; }
 .mix-row{ background:var(--bg); border-bottom:1px solid var(--line); display:grid; grid-template-columns:1.4fr repeat(4,1fr) auto; gap:12px; align-items:center; padding:12px 4px; font-size:13px; }
@@ -379,7 +414,7 @@ footer a:hover{ text-decoration:underline; }
         </button>
         <div class="nav-dropdown-menu" role="menu">
           <a href="/fuel-ratio-calculator/" role="menuitem" aria-current="page">Carb fuel-ratio calculator</a>
-          <a href="/substrate-explorer/" role="menuitem">Substrate explorer</a>
+          <a href="/substrate-explorer/" role="menuitem">Fat &amp; carb utilization calculator</a>
           <a href="/athlete_supplement_timer.html" role="menuitem">Athlete supplement timer</a>
         </div>
       </div>
@@ -390,8 +425,8 @@ footer a:hover{ text-decoration:underline; }
 
 <div class="wrap">
   <header class="top">
-    <h1 class="title">Fuel Ratio Calculator</h1>
-    <p class="subtitle">Build a fuel mix from whole foods or verified sports nutrition products, and check it against the glucose:fructose intake your body can actually absorb at race pace.</p>
+    <h1 class="title">Glucose:Fructose Fuel Ratio Calculator</h1>
+    <p class="subtitle">Build a carb fuel mix from whole foods or verified sports nutrition products, and check it against the glucose:fructose intake your body can actually absorb at race pace — from 60 g/h of glucose alone to 120 g/h and beyond with the right blend.</p>
   </header>
 
   <noscript>
@@ -598,6 +633,36 @@ footer a:hover{ text-decoration:underline; }
       </div>
       <p class="gauge-caption" id="gaugeCaption">Add items to your mix to see how it compares.</p>
     </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="section-head">
+      <div>
+        <h2 class="section-title">Frequently asked questions</h2>
+      </div>
+    </div>
+    <div class="faq-item">
+      <h3>Why does the glucose:fructose ratio matter?</h3>
+      <p>Gut absorption of glucose alone tops out around 60 g/h because it relies on a single transporter (SGLT1). Fructose is absorbed through a separate transporter (GLUT5), so pairing the two allows higher total intake and faster absorption, down to a floor of 1:0.8 at 120 g/h and above.</p>
+    </div>
+    <div class="faq-item">
+      <h3>What is the 2:1 glucose:fructose ratio?</h3>
+      <p>Two parts glucose (or glucose polymers such as maltodextrin) to one part fructose — the classic multiple-transportable-carbohydrate blend used in endurance research. It supports intakes above ~60 g/h and is the most common ratio across energy gels, chews, and drink mixes.</p>
+    </div>
+    <div class="faq-item">
+      <h3>What is the 1:0.8 ratio?</h3>
+      <p>A higher-fructose blend used at the top end of intake (120 g/h and above), where research points to a floor around 1:0.8. Products such as SiS Beta Fuel and Maurten Gel 100 use this ratio.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How many carbs per hour should I aim for?</h3>
+      <p>It depends on session duration and intensity. Around 60 g/h covers longer easy sessions; 60–90 g/h is a common race range; up to 120 g/h suits sustained hard efforts if gut-trained. Below ~60 g/h, glucose alone is usually sufficient and fructose is optional.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Are whole foods as good as energy gels?</h3>
+      <p>Many whole foods have favourable glucose:fructose splits — dates and ripe banana are near 50/50, raisins 52/48, honey 47/53 — so they can replicate the same ratios. Practical downsides are bulk, fibre, and batch variability compared with engineered gels.</p>
+    </div>
+    <p class="related-tools"><b>Related tools:</b> see how the carbs and fat you actually <em>burn</em> at each intensity with the <a href="/substrate-explorer/">fat vs carb utilization calculator</a>, or time your race-day intake and other ergogenic aids with the <a href="/athlete_supplement_timer.html">athlete supplement timer</a>.</p>
   </section>
 
   <footer>

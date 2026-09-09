@@ -62,30 +62,34 @@ window.GLYCOGO_INDEX = [
       { label: "Set your intake target", url: "/fuel-ratio-calculator/#target", text: "Set target carbs per hour and session duration. Glucose alone saturates around 60 g/h; pairing with fructose via a separate transporter supports up to 120 g/h and above at a 1:0.8 floor." },
       { label: "Whole foods — glucose % / fructose %", url: "/fuel-ratio-calculator/#foods", text: "Banana 49/49, dates 50/50, raisins 52/48, honey 47/53, maple syrup 56/44, apple 25/75, orange juice 45/55, sweet potato 80/20, white rice 100/0, table sugar 50/50, dextrose 100/0, maltodextrin 100/0." },
       { label: "Verified sports nutrition products", url: "/fuel-ratio-calculator/#products", text: "38 verified products across 23 brands: Science in Sport Beta Fuel, Maurten Gel 100 and Drink Mix, Tailwind High Carb Fuel, Precision Fuel PF 30 and PF 90, Neversecond C30 and C90, Enervit C2:1PRO, Skratch Labs, TORQ, HIGH5, 226ERS and more. Manufacturer-confirmed ratios." },
-      { label: "Current fuel plan & gauge", url: "/fuel-ratio-calculator/#mix", text: "Build your fuel plan, see total carbs, glucose, fructose, and the G:F ratio of your mix, and compare it against the target blend with the fuel gauge." }
+      { label: "Current fuel plan & gauge", url: "/fuel-ratio-calculator/#mix", text: "Build your fuel plan, see total carbs, glucose, fructose, and the G:F ratio of your mix, and compare it against the target blend with the fuel gauge." },
+      { label: "FAQ · glucose:fructose ratio explained", url: "/fuel-ratio-calculator/#faq", text: "Why the glucose:fructose ratio matters: glucose absorption saturates around 60 g/h (SGLT1), fructose uses a separate transporter (GLUT5), so pairing them supports up to 120 g/h at a 1:0.8 floor. 2:1 is the classic blend; whole foods like dates and banana are near 50/50." }
     ]
   },
 
   {
     id: "substrate-explorer",
-    title: "Substrate Explorer — Carb vs Fat Fuel Use Calculator",
+    title: "Fat & Carb Utilization Calculator — Substrate Fuel Mix by Intensity",
     url: "/substrate-explorer/",
     type: "Calculator",
-    description: "Free interactive calculator: see how your carbohydrate and fat burn split changes with intensity (RPE, heart rate or power), session duration, and daily diet. Computed live by the same engine that powers the Glycogo app.",
+    description: "Free fat vs carb utilization calculator: see grams of fat and carbohydrate you burn per hour at every exercise intensity (RPE, heart rate or power), with RER and the 50/50 fuel crossover. Live, from the Glycogo substrate engine.",
     keywords: [
-      "carb fat ratio", "substrate utilisation", "substrate utilization", "RER",
-      "fat burning zone", "fatmax", "crossover", "carbohydrate oxidation", "fat oxidation",
+      "fat vs carb", "fat and carb utilization", "substrate utilization", "substrate utilisation",
+      "RER", "fat burning zone", "fatmax", "crossover", "carbohydrate oxidation", "fat oxidation",
+      "fat oxidation calculator", "carbohydrate oxidation calculator", "substrate utilization calculator",
       "RPE", "CR100", "heart rate", "power", "FTP", "VO2max", "glycogen",
-      "endurance fueling", "fuel split", "low carb diet", "high carb"
+      "endurance fueling", "fuel split", "low carb diet", "high carb", "carb fat ratio"
     ],
     aliases: [
-      "when do i burn fat", "fat burning zone calculator", "carb vs fat", "substrate explorer",
-      "fatmax", "what fuel am i burning", "rpe to fuel", "burning carbs or fat"
+      "when do i burn fat", "fat burning zone calculator", "carb vs fat", "fat vs carbs",
+      "substrate explorer", "substrate utilization", "fat oxidation", "burning fat",
+      "fatmax", "what fuel am i burning", "rpe to fuel", "burning carbs or fat",
+      "fat or carbs at intensity", "crossover point"
     ],
-    text: "The Substrate Explorer shows how your fuel mix shifts with intensity: the carbs and fat your body burns per hour at every effort level, shaped by your fitness, the session, and what you ate. Pick an intensity axis — Borg CR100 RPE, heart rate, or power — set FTP, LTHR, weight, age and sex, choose a session duration, and adjust daily carbohydrate availability. The curves are computed live by the same substrate engine that powers the Glycogo app, with a 50/50 fuel crossover marker.",
+    text: "The Fat vs Carb Utilization Calculator shows how your substrate utilization shifts with intensity: the grams of carbohydrate and fat your body burns per hour at every effort level, shaped by your fitness, the session, and what you ate. Pick an intensity axis — Borg CR100 RPE, heart rate, or power — set FTP, LTHR, weight, age and sex, choose a session duration, and adjust daily carbohydrate availability. The carb vs fat curves are computed live by the same substrate engine that powers the Glycogo app, with a 50/50 fuel crossover marker.",
     sections: [
-      { label: "Pick an intensity axis & athlete profile", url: "/substrate-explorer/", text: "Choose RPE (Borg CR100 mapped through the Glycogo load-zone equivalency table), heart rate, or power as the x-axis, and set FTP, LTHR, weight, age and sex." },
-      { label: "Carb vs fat, per hour, at every intensity", url: "/substrate-explorer/", text: "Chart of carbs and fat in grams and % of energy across intensity with a 50/50 crossover marker. Adjust session duration and daily carbohydrate availability." }
+      { label: "Set intensity axis & athlete profile", url: "/substrate-explorer/", text: "Choose RPE (Borg CR100 mapped through the Glycogo load-zone equivalency table), heart rate, or power as the x-axis, and set FTP, LTHR, weight, age and sex." },
+      { label: "Fat vs carb utilization by intensity", url: "/substrate-explorer/", text: "Chart of fat and carbohydrate oxidation in grams and % of energy across intensity with a 50/50 crossover marker. Adjust session duration and daily carbohydrate availability." }
     ]
   },
 

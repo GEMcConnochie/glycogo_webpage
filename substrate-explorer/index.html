@@ -4,41 +4,53 @@
 <link rel="icon" type="image/png" href="/logosmall.png">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Substrate Explorer: Carb vs Fat Fuel Use Calculator | Glycogo</title>
-<meta name="description" content="Free interactive demo: see how your carbohydrate and fat burn split changes with intensity (RPE, heart rate or power), session duration, and daily diet. Computed live by the same engine that powers the Glycogo app.">
-<meta name="keywords" content="carb fat ratio, substrate utilisation, RER, endurance fueling, VO2max, RPE, FTP, fat burning zone, carbohydrate oxidation, Glycogo">
+<title>Fat vs Carb Utilization Calculator — Substrate Fuel Mix by Intensity | Glycogo</title>
+<meta name="description" content="Free fat vs carb utilization calculator: see grams of fat and carbohydrate you burn per hour at every exercise intensity (RPE, heart rate or power), with RER and the 50/50 fuel crossover. Live, from the Glycogo substrate engine.">
+<meta name="keywords" content="fat vs carb utilization, fat and carb utilization, substrate utilization, substrate utilisation, fat oxidation, carbohydrate oxidation, RER, fatmax, fat burning zone, crossover point, endurance fueling, RPE, FTP, VO2max, Glycogo">
 <meta name="robots" content="index, follow">
 <meta name="author" content="Glycogo">
 <link rel="canonical" href="https://glycogo.fit/substrate-explorer/">
 
 <!-- Open Graph / social sharing -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="Substrate Explorer: Carb vs Fat Fuel Use Calculator">
-<meta property="og:description" content="Interactive demo of the Glycogo substrate model: see how your carb/fat fuel split responds to intensity, duration, and diet.">
+<meta property="og:title" content="Fat vs Carb Utilization Calculator — Substrate Fuel Mix by Intensity">
+<meta property="og:description" content="See how many grams of fat and carbohydrate you burn per hour at every intensity — RPE, heart rate or power — with RER and the 50/50 crossover.">
 <meta property="og:site_name" content="Glycogo">
 <meta property="og:url" content="https://glycogo.fit/substrate-explorer/">
 <meta property="og:image" content="https://glycogo.fit/logosmall.png">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Substrate Explorer: Carb vs Fat Fuel Use Calculator">
-<meta name="twitter:description" content="Interactive demo of the Glycogo substrate model: fuel split by intensity, duration, and diet.">
+<meta name="twitter:title" content="Fat vs Carb Utilization Calculator — Substrate Fuel Mix by Intensity">
+<meta name="twitter:description" content="Free fat vs carb utilization calculator: grams of fat and carbohydrate burned per hour at every intensity, with RER and the 50/50 crossover.">
 <meta name="twitter:image" content="https://glycogo.fit/logosmall.png">
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Glycogo Substrate Explorer",
+  "name": "Glycogo Fat vs Carb Utilization Calculator",
   "url": "https://glycogo.fit/substrate-explorer/",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "Any (web browser)",
-  "description": "Interactive free demo of the Glycogo substrate utilisation model: carb vs fat oxidation per hour across intensity (RPE, HR or power), session duration, and daily diet.",
+  "description": "Free interactive calculator of fat vs carbohydrate (substrate) utilization during exercise: grams per hour of fat and carbohydrate oxidation across intensity (RPE, heart rate or power), session duration, and daily diet.",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
   "featureList": [
-    "Carb and fat grams-per-hour curves across intensity",
+    "Fat and carbohydrate grams-per-hour oxidation curves across intensity",
     "RPE (CR100), heart rate, or power axes",
     "Diet, sex, age and fitness adjustments",
     "50/50 fuel crossover marker"
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://glycogo.fit/" },
+    { "@type": "ListItem", "position": 2, "name": "Free calculators", "item": "https://glycogo.fit/#calculators" },
+    { "@type": "ListItem", "position": 3, "name": "Fat vs carb utilization calculator", "item": "https://glycogo.fit/substrate-explorer/" }
   ]
 }
 </script>
@@ -338,7 +350,7 @@ footer a:hover{ text-decoration:underline; }
         </button>
         <div class="nav-dropdown-menu" role="menu">
           <a href="/fuel-ratio-calculator/" role="menuitem">Carb fuel-ratio calculator</a>
-          <a href="/substrate-explorer/" role="menuitem" class="current" aria-current="page">Substrate explorer</a>
+          <a href="/substrate-explorer/" role="menuitem" class="current" aria-current="page">Fat &amp; carb utilization calculator</a>
           <a href="/athlete_supplement_timer.html" role="menuitem">Athlete supplement timer</a>
         </div>
       </div>
@@ -349,8 +361,8 @@ footer a:hover{ text-decoration:underline; }
 
 <div class="wrap">
   <header class="top">
-    <h1 class="title">Substrate Explorer</h1>
-    <p class="subtitle">See how your fuel mix shifts with intensity: the carbs and fat your body burns per hour at every effort level, shaped by your fitness, the session, and what you ate. The curves are computed by the same engine as the Glycogo app, live.</p>
+    <h1 class="title">Fat vs Carb Utilization Calculator</h1>
+    <p class="subtitle">See how your substrate utilization shifts with intensity: the grams of fat and carbohydrate your body burns per hour at every effort level, shaped by your fitness, the session, and what you ate. The carb vs fat curves are computed live by the same engine that powers the Glycogo app.</p>
   </header>
 
   <!-- SECTION 1: INTENSITY & ATHLETE -->
@@ -390,7 +402,7 @@ footer a:hover{ text-decoration:underline; }
   <section>
     <div class="section-head">
       <div>
-        <h2 class="section-title">Carb vs fat utilisation</h2>
+        <h2 class="section-title">Fat vs carb utilization by intensity</h2>
       </div>
     </div>
     <div class="chart-grid">
@@ -466,6 +478,7 @@ footer a:hover{ text-decoration:underline; }
     <p>For this athlete the 50/50 crossover (RER ≈ 0.85) falls near RPE 20 on the CR-100 scale; lower carbohydrate availability would move it toward higher intensities.</p>
     <p>The interactive readout also reports the model’s implied RER at each point. Because the model maps fuel split to RER through a smooth physiological response curve rather than the strictly linear non-protein approximation, its implied RER can sit a few thousandths above the linear table at high intensities; the static table therefore lists only the internally consistent energy split and oxidation rates.</p>
     <p><strong>Limitations.</strong> Outputs are group-level predictions of substrate partitioning for the inputs you supply, not measurements of your metabolism. Day-to-day variability, training status, diet history, heat, and gut tolerance all move real-world values. Use the explorer to compare scenarios and structure fueling, not as metabolic testing.</p>
+    <p><strong>Related tools.</strong> Want the carbohydrate side of your race-day fuelling quantified? Build a glucose:fructose intake plan with the <a href="/fuel-ratio-calculator/">carb fuel-ratio calculator</a>, or use <a href="/">Glycogo</a> for periodised carb and calorie targets that scale with your training load.</p>
     <p class="refs">Key references:
       Brooks GA, Mercier J. <em>J Appl Physiol</em> 1994 (<a href="https://pubmed.ncbi.nlm.nih.gov/7928844/" rel="noopener" target="_blank">the crossover concept</a>) ·
       Romijn JA et al. <em>Am J Physiol</em> 1993 (<a href="https://pubmed.ncbi.nlm.nih.gov/8214047/" rel="noopener" target="_blank">substrate kinetics by intensity</a>) ·
