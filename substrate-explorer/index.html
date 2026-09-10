@@ -4,7 +4,7 @@
 <link rel="icon" type="image/png" href="/logosmall.png">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fat vs Carb Utilization Calculator — Substrate Fuel Mix by Intensity | Glycogo</title>
+<title>Fat vs Carb Utilization Calculator - Substrate Fuel Mix by Intensity | Glycogo</title>
 <meta name="description" content="Free fat vs carb utilization calculator: see grams of fat and carbohydrate you burn per hour at every exercise intensity (RPE, heart rate or power), with RER and the 50/50 fuel crossover. Live, from the Glycogo substrate engine.">
 <meta name="keywords" content="fat vs carb utilization, fat and carb utilization, substrate utilization, substrate utilisation, fat oxidation, carbohydrate oxidation, RER, fatmax, fat burning zone, crossover point, endurance fueling, RPE, FTP, VO2max, Glycogo">
 <meta name="robots" content="index, follow">
@@ -13,14 +13,14 @@
 
 <!-- Open Graph / social sharing -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="Fat vs Carb Utilization Calculator — Substrate Fuel Mix by Intensity">
-<meta property="og:description" content="See how many grams of fat and carbohydrate you burn per hour at every intensity — RPE, heart rate or power — with RER and the 50/50 crossover.">
+<meta property="og:title" content="Fat vs Carb Utilization Calculator - Substrate Fuel Mix by Intensity">
+<meta property="og:description" content="See how many grams of fat and carbohydrate you burn per hour at every intensity (RPE, heart rate or power) with RER and the 50/50 crossover.">
 <meta property="og:site_name" content="Glycogo">
 <meta property="og:url" content="https://glycogo.fit/substrate-explorer/">
 <meta property="og:image" content="https://glycogo.fit/logosmall.png">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Fat vs Carb Utilization Calculator — Substrate Fuel Mix by Intensity">
+<meta name="twitter:title" content="Fat vs Carb Utilization Calculator - Substrate Fuel Mix by Intensity">
 <meta name="twitter:description" content="Free fat vs carb utilization calculator: grams of fat and carbohydrate burned per hour at every intensity, with RER and the 50/50 crossover.">
 <meta name="twitter:image" content="https://glycogo.fit/logosmall.png">
 
@@ -563,7 +563,7 @@ async function fetchCurve(axis, cfg) {
       // firing again on the next slider tick.
       const waitS = Math.max(2, Math.ceil(retryAfterS || 15));
       cooldownUntil = Date.now() + waitS * 1000;
-      throw new Error("rate limited — the estimate API allows 10 requests per minute; retry in " + waitS + "s");
+      throw new Error("rate limited: the estimate API allows 10 requests per minute; retry in " + waitS + "s");
     }
     throw new Error(message || ("API error " + res.status));
   }
@@ -667,7 +667,7 @@ async function requestCurve() {
   }
   const waitMs = cooldownUntil - Date.now();
   if (waitMs > 0) {
-    $("calcStatus").textContent = "Rate limited by the estimate API — retry available in " + Math.ceil(waitMs / 1000) + "s.";
+    $("calcStatus").textContent = "Rate limited by the estimate API: retry available in " + Math.ceil(waitMs / 1000) + "s.";
     return;
   }
   const seq = ++refreshSeq;
@@ -877,7 +877,7 @@ bindSlider("pre_cho", "v_pre_cho", v => v + " g");
 bindSlider("during_cho", "v_during_cho", v => v + " g/h");
 
 
-// Athlete settings change the axis bounds/semantics too, so refetch — but
+// Athlete settings change the axis bounds/semantics too, so refetch. But
 // debounced: dragging a number input fires dozens of `input` events, and each
 // curve request is ~161 model evaluations against a 10/min-per-IP budget.
 let settingsTimer = null;

@@ -1,4 +1,4 @@
-/* Glycogo site search engine — Reciprocal Rank Fusion (RRF).
+/* Glycogo site search engine - Reciprocal Rank Fusion (RRF).
  *
  * Mirrors the approach ChatGPT uses to combine multiple search results:
  * several independent "retrievers" each produce a ranked list, and RRF
@@ -8,11 +8,11 @@
  * contributes through the *order* it produces, never through raw scores.
  *
  * Retrievers:
- *   1. phrase  — exact contiguous phrase match in page text
- *   2. terms   — BM25 (k1=1.2, b=0.75) over title + keywords + text
- *   3. title   — query tokens found in the page title / keywords
- *   4. alias   — configured keywords & synonyms (e.g. "maurten" -> calculator)
- *   5. prefix  — prefix / edit-distance-1 token matching (typos, plurals)
+ *   1. phrase  - exact contiguous phrase match in page text
+ *   2. terms   - BM25 (k1=1.2, b=0.75) over title + keywords + text
+ *   3. title   - query tokens found in the page title / keywords
+ *   4. alias   - configured keywords & synonyms (e.g. "maurten" -> calculator)
+ *   5. prefix  - prefix / edit-distance-1 token matching (typos, plurals)
  *
  * Exposes window.GlycogoSearch.search(query) and .explain(query).
  */
@@ -61,7 +61,7 @@
       textT: normalize(d.text),
       allT: normalize(all),
       sectionTexts: (d.sections || []).map(function (s) {
-        return { label: s.label, url: s.url, t: normalize(s.label + ' ' + s.text), raw: s.label + ' — ' + s.text };
+        return { label: s.label, url: s.url, t: normalize(s.label + ' ' + s.text), raw: s.label + ': ' + s.text };
       })
     };
   });

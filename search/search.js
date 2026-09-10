@@ -1,4 +1,4 @@
-/* Glycogo site search — UI wiring.
+/* Glycogo site search - UI wiring.
  * Injects the RRF-powered modal. No visible trigger: open with
  * Ctrl/Cmd+K or "/"; Esc closes; ↑/↓ navigate; Enter opens.
  * Reads ?q= from the URL to deep-link a query.
@@ -35,7 +35,7 @@
       '<div class="gs-panel">' +
         '<div class="gs-input-wrap">' +
           '<span class="gs-ico">' + ICON_MAG + '</span>' +
-          '<input class="gs-input" type="text" placeholder="Ask anything — search the site…" autocomplete="off" spellcheck="false" aria-label="Search">' +
+          '<input class="gs-input" type="text" placeholder="Ask anything: search the site…" autocomplete="off" spellcheck="false" aria-label="Search">' +
           '<button type="button" class="gs-esc" aria-label="Close">esc</button>' +
         '</div>' +
         '<div class="gs-sources">' +
@@ -45,7 +45,7 @@
         '<button type="button" class="gs-debug-toggle" hidden>Why these results?</button>' +
         '<div class="gs-debug"></div>' +
         '<div class="gs-footer">' +
-          '<span class="gs-note">RRF search — phrase · BM25 · title · aliases · prefix</span>' +
+          '<span class="gs-note">RRF search: phrase · BM25 · title · aliases · prefix</span>' +
           '<span class="gs-keys"><span><kbd>↑</kbd><kbd>↓</kbd> navigate</span><span><kbd>↵</kbd> open</span><span><kbd>esc</kbd> close</span></span>' +
         '</div>' +
       '</div>' +
@@ -168,7 +168,7 @@
     if (!lastQuery || lastQuery.length < 2) {
       var hint = document.createElement('div');
       hint.className = 'gs-hint';
-      hint.innerHTML = 'Type at least 2 characters — try <span class="gs-kbd-inline">carb ratio</span>, <span class="gs-kbd-inline">creatine</span>, <span class="gs-kbd-inline">Intervals.icu</span> or <span class="gs-kbd-inline">delete account</span>';
+      hint.innerHTML = 'Type at least 2 characters: try <span class="gs-kbd-inline">carb ratio</span>, <span class="gs-kbd-inline">creatine</span>, <span class="gs-kbd-inline">Intervals.icu</span> or <span class="gs-kbd-inline">delete account</span>';
       resultsEl.appendChild(hint);
       return;
     }
@@ -219,7 +219,7 @@
   });
   function renderDebug() {
     var ex = SEARCH.explain(lastQuery);
-    var html = '<div><b>Reciprocal Rank Fusion</b> — score = Σ w/(k + rank), k=' + ex.k + '<br>';
+    var html = '<div><b>Reciprocal Rank Fusion</b>: score = Σ w/(k + rank), k=' + ex.k + '<br>';
     ex.lists.forEach(function (l) {
       html += '&nbsp;· ' + l.name + ' (' + l.count + ' docs): ' + l.top.map(esc).join(', ') + '<br>';
     });

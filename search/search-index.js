@@ -4,7 +4,7 @@
 window.GLYCOGO_INDEX = [
   {
     id: "home",
-    title: "Glycogo — Periodised Nutrition Planner for Athletes",
+    title: "Glycogo | Periodised Nutrition Planner for Athletes",
     url: "/",
     type: "Home",
     description: "Periodised nutrition planning for athletes and active individuals. Carbohydrate and calorie targets that scale with training load. Syncs with Intervals.icu.",
@@ -25,7 +25,7 @@ window.GLYCOGO_INDEX = [
       { label: "Science", url: "/#science", text: "Intensity-based carbohydrate and calorie scaling grounded in peer-reviewed sports science, including carbohydrate periodisation and energy availability research." },
       { label: "FAQ · How much does Glycogo cost?", url: "/#faq", text: "Premium is priced at about the cost of just 1-2 gels per month, roughly EUR 4.40 or 5 USD. There is a free tier; a subscription unlocks Intervals.icu sync, photo and barcode logging, a larger food database, and the AI nutrition assistant." },
       { label: "FAQ · How does Glycogo sync training sessions?", url: "/#faq", text: "Glycogo connects to Intervals.icu, which pulls planned and completed workouts from major fitness platforms. Imported sessions drive pre-session, during-session, and recovery fuel targets. Sessions can also be added manually." },
-      { label: "FAQ · How should I rate my session RPE?", url: "/#faq", text: "Rate the overall difficulty of the whole workout on the Borg CR100 scale (1-100) — how hard the entire session felt, not the peak effort of the hardest interval." },
+      { label: "FAQ · How should I rate my session RPE?", url: "/#faq", text: "Rate the overall difficulty of the whole workout on the Borg CR100 scale (1-100): how hard the entire session felt, not the peak effort of the hardest interval." },
       { label: "FAQ · What should my carbs-per-hour range be?", url: "/#faq", text: "A common lower starting range is roughly 50-60 g/hr for easy aerobic work, with an upper bound around 90 g/hr for sustained hard exercise. Gut-trained athletes can tolerate and use more." },
       { label: "FAQ · What is the high-carb fuelling setting?", url: "/#faq", text: "When enabled on a workout, Glycogo always includes during-session carbohydrate targets at the upper end of your carbs-per-hour range, even for shorter or lower-intensity sessions. Useful for gut training or limited pre-session fuel." },
       { label: "FAQ · What should my minimum session duration be?", url: "/#faq", text: "This setting controls when during-session carbohydrate targets are added. Default is 60 minutes, with 60-90 minutes a good range. Shorter sessions often do not need intra-workout carbs." },
@@ -41,7 +41,7 @@ window.GLYCOGO_INDEX = [
 
   {
     id: "fuel-ratio",
-    title: "Fuel Ratio Calculator — Glucose:Fructose Carb Calculator for Endurance Athletes",
+    title: "Fuel Ratio Calculator - Glucose:Fructose Carb Calculator for Endurance Athletes",
     url: "/fuel-ratio-calculator/",
     type: "Calculator",
     description: "Plan race-day carb intake with a glucose:fructose ratio calculator built on gut-absorption science. Compare 38 verified sports nutrition products from 23 brands plus whole foods against the 2:1 and 1:0.8 ratios used in endurance research.",
@@ -60,7 +60,7 @@ window.GLYCOGO_INDEX = [
     text: "The Fuel Ratio Calculator plans your race-day carb intake with a glucose:fructose ratio built on gut-absorption science. Gut absorption of glucose alone tops out around 60 g/hour; pairing it with fructose, which uses a separate transporter (SGLT1 for glucose, GLUT5 for fructose), allows higher total intake, down to a floor of 1:0.8 at 120 g/h and above. Set a target carb intake and session duration, build a fuel mix from whole foods or 38 verified sports nutrition products spanning 23 brands including Science in Sport, Maurten, Tailwind Nutrition, Precision Fuel and Hydration, Neversecond, Enervit, and Skratch Labs, and check your mix against your target with the fuel gauge.",
     sections: [
       { label: "Set your intake target", url: "/fuel-ratio-calculator/#target", text: "Set target carbs per hour and session duration. Glucose alone saturates around 60 g/h; pairing with fructose via a separate transporter supports up to 120 g/h and above at a 1:0.8 floor." },
-      { label: "Whole foods — glucose % / fructose %", url: "/fuel-ratio-calculator/#foods", text: "Banana 49/49, dates 50/50, raisins 52/48, honey 47/53, maple syrup 56/44, apple 25/75, orange juice 45/55, sweet potato 80/20, white rice 100/0, table sugar 50/50, dextrose 100/0, maltodextrin 100/0." },
+      { label: "Whole foods: glucose % / fructose %", url: "/fuel-ratio-calculator/#foods", text: "Banana 49/49, dates 50/50, raisins 52/48, honey 47/53, maple syrup 56/44, apple 25/75, orange juice 45/55, sweet potato 80/20, white rice 100/0, table sugar 50/50, dextrose 100/0, maltodextrin 100/0." },
       { label: "Verified sports nutrition products", url: "/fuel-ratio-calculator/#products", text: "38 verified products across 23 brands: Science in Sport Beta Fuel, Maurten Gel 100 and Drink Mix, Tailwind High Carb Fuel, Precision Fuel PF 30 and PF 90, Neversecond C30 and C90, Enervit C2:1PRO, Skratch Labs, TORQ, HIGH5, 226ERS and more. Manufacturer-confirmed ratios." },
       { label: "Current fuel plan & gauge", url: "/fuel-ratio-calculator/#mix", text: "Build your fuel plan, see total carbs, glucose, fructose, and the G:F ratio of your mix, and compare it against the target blend with the fuel gauge." },
       { label: "FAQ · glucose:fructose ratio explained", url: "/fuel-ratio-calculator/#faq", text: "Why the glucose:fructose ratio matters: glucose absorption saturates around 60 g/h (SGLT1), fructose uses a separate transporter (GLUT5), so pairing them supports up to 120 g/h at a 1:0.8 floor. 2:1 is the classic blend; whole foods like dates and banana are near 50/50." }
@@ -69,7 +69,7 @@ window.GLYCOGO_INDEX = [
 
   {
     id: "substrate-explorer",
-    title: "Fat & Carb Utilization Calculator — Substrate Fuel Mix by Intensity",
+    title: "Fat & Carb Utilization Calculator - Substrate Fuel Mix by Intensity",
     url: "/substrate-explorer/",
     type: "Calculator",
     description: "Free fat vs carb utilization calculator: see grams of fat and carbohydrate you burn per hour at every exercise intensity (RPE, heart rate or power), with RER and the 50/50 fuel crossover. Live, from the Glycogo substrate engine.",
@@ -86,7 +86,7 @@ window.GLYCOGO_INDEX = [
       "fatmax", "what fuel am i burning", "rpe to fuel", "burning carbs or fat",
       "fat or carbs at intensity", "crossover point"
     ],
-    text: "The Fat vs Carb Utilization Calculator shows how your substrate utilization shifts with intensity: the grams of carbohydrate and fat your body burns per hour at every effort level, shaped by your fitness, the session, and what you ate. Pick an intensity axis — Borg CR100 RPE, heart rate, or power — set FTP, LTHR, weight, age and sex, choose a session duration, and adjust daily carbohydrate availability. The carb vs fat curves are computed live by the same substrate engine that powers the Glycogo app, with a 50/50 fuel crossover marker.",
+    text: "The Fat vs Carb Utilization Calculator shows how your substrate utilization shifts with intensity: the grams of carbohydrate and fat your body burns per hour at every effort level, shaped by your fitness, the session, and what you ate. Pick an intensity axis (Borg CR100 RPE, heart rate, or power), set FTP, LTHR, weight, age and sex, choose a session duration, and adjust daily carbohydrate availability. The carb vs fat curves are computed live by the same substrate engine that powers the Glycogo app, with a 50/50 fuel crossover marker.",
     sections: [
       { label: "Set intensity axis & athlete profile", url: "/substrate-explorer/", text: "Choose RPE (Borg CR100 mapped through the Glycogo load-zone equivalency table), heart rate, or power as the x-axis, and set FTP, LTHR, weight, age and sex." },
       { label: "Fat vs carb utilization by intensity", url: "/substrate-explorer/", text: "Chart of fat and carbohydrate oxidation in grams and % of energy across intensity with a 50/50 crossover marker. Adjust session duration and daily carbohydrate availability." }
@@ -95,7 +95,7 @@ window.GLYCOGO_INDEX = [
 
   {
     id: "supplement-timer",
-    title: "Athlete Supplement Timer — Evidence-Based Timing Planner",
+    title: "Athlete Supplement Timer - Evidence-Based Timing Planner",
     url: "/athlete_supplement_timer.html",
     type: "Calculator",
     description: "Build a personalized, evidence-based daily supplement timing schedule tailored to your routine, meals, and training sessions. Grounded in the IOC Consensus Statement and recent clinical research.",
@@ -111,7 +111,7 @@ window.GLYCOGO_INDEX = [
       "protein timing", "vitamin d", "omega 3", "beetroot juice", "supplement planner",
       "supplement reminder", "nutrient timing"
     ],
-    text: "The Athlete Supplement Timer builds an evidence-based daily supplement timing schedule around your training sessions, meal times, absorption considerations, and sleep. Select the supplements you use — caffeine, creatine, beta-alanine, whey and casein protein, collagen with vitamin C, vitamin D3, omega-3, dietary nitrate or beetroot, bicarbonate, electrolytes, and micronutrients like iron, calcium, zinc, magnesium, and potassium — set your routine, and download calendar reminders. Grounded in the IOC Consensus Statement on dietary supplements and the high-performance athlete, with safety guidance on micronutrients and anti-doping (Informed-Sport / HASTA batch-tested products).",
+    text: "The Athlete Supplement Timer builds an evidence-based daily supplement timing schedule around your training sessions, meal times, absorption considerations, and sleep. Select the supplements you use: caffeine, creatine, beta-alanine, whey and casein protein, collagen with vitamin C, vitamin D3, omega-3, dietary nitrate or beetroot, bicarbonate, electrolytes, and micronutrients like iron, calcium, zinc, magnesium, and potassium, set your routine, and download calendar reminders. Grounded in the IOC Consensus Statement on dietary supplements and the high-performance athlete, with safety guidance on micronutrients and anti-doping (Informed-Sport / HASTA batch-tested products).",
     sections: [
       { label: "Build your schedule", url: "/athlete_supplement_timer.html#build", text: "Add training sessions, meal times, bed time, and select supplements to generate a suggested daily timing schedule with rationale for each supplement." },
       { label: "Suggested schedule", url: "/athlete_supplement_timer.html#schedule", text: "A personalized day plan showing when to take each supplement relative to training, meals, and sleep, with evidence notes." },
@@ -121,7 +121,7 @@ window.GLYCOGO_INDEX = [
 
   {
     id: "instructions",
-    title: "Instructions — How to use Glycogo",
+    title: "Instructions: How to use Glycogo",
     url: "/instructions",
     type: "Docs",
     description: "How to use Glycogo: periodised nutrition planning for athletes. Quick start, settings, logging, sessions, AI assistant, and references.",
@@ -154,7 +154,7 @@ window.GLYCOGO_INDEX = [
 
   {
     id: "beta",
-    title: "Early Access — Join the Glycogo Android Beta",
+    title: "Early Access: Join the Glycogo Android Beta",
     url: "/beta",
     type: "Early access",
     description: "Join Glycogo early access on Android: join the group, join the closed test, install the app.",
@@ -171,10 +171,10 @@ window.GLYCOGO_INDEX = [
 
   {
     id: "privacy",
-    title: "Privacy Policy — Glycogo",
+    title: "Privacy Policy | Glycogo",
     url: "/privacy",
     type: "Legal",
-    description: "Privacy Policy for Glycogo — periodised nutrition planning for endurance athletes.",
+    description: "Privacy Policy for Glycogo: periodised nutrition planning for endurance athletes.",
     keywords: ["privacy policy", "data", "personal data", "gdpr", "cookie", "consent", "third party", "deletion", "rights"],
     aliases: ["privacy", "data protection", "what data do you collect"],
     text: "Privacy policy for Glycogo: what personal data is collected, how it is used and stored, third-party services, cookies, your rights, and how to contact us. Covers account data, nutrition logs, training data, and device information.",
@@ -185,10 +185,10 @@ window.GLYCOGO_INDEX = [
 
   {
     id: "terms",
-    title: "Terms of Service — Glycogo",
+    title: "Terms of Service | Glycogo",
     url: "/terms",
     type: "Legal",
-    description: "Terms of Service for Glycogo — periodised nutrition planning for endurance athletes.",
+    description: "Terms of Service for Glycogo: periodised nutrition planning for endurance athletes.",
     keywords: ["terms of service", "terms", "conditions", "license", "subscription", "refund", "liability", "acceptable use"],
     aliases: ["terms and conditions", "tos", "legal"],
     text: "Terms of service for Glycogo: your account, the free tier and premium subscription, acceptable use, intellectual property, disclaimers, limitation of liability, and changes to the service.",
@@ -199,7 +199,7 @@ window.GLYCOGO_INDEX = [
 
   {
     id: "delete-account",
-    title: "Delete Account — Glycogo",
+    title: "Delete Account | Glycogo",
     url: "/delete-account",
     type: "Legal",
     description: "How to delete your Glycogo account and associated data.",

@@ -4,7 +4,7 @@
 <link rel="icon" type="image/png" href="/logosmall.png">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Athlete Supplement Timer — Evidence-Based Timing Planner | Glycogo</title>
+<title>Athlete Supplement Timer - Evidence-Based Timing Planner | Glycogo</title>
 <meta name="description" content="Free supplement timing planner for athletes: when to take creatine, caffeine, protein, beta-alanine, beetroot and more around your training, meals and sleep. Evidence-based schedule with calendar reminders.">
 <meta name="keywords" content="supplement timing, when to take supplements, creatine timing, caffeine timing, protein timing, pre workout, beta-alanine, beetroot juice, vitamin d, omega-3, nutrient timing, supplement schedule, athlete supplements, IOC consensus">
 <meta name="robots" content="index, follow">
@@ -13,15 +13,15 @@
 
 <!-- Open Graph / social sharing -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="Athlete Supplement Timer — Evidence-Based Timing Planner">
-<meta property="og:description" content="Build an evidence-based daily supplement timing schedule around training, meals, and sleep — creatine, caffeine, protein, beetroot and more — with downloadable calendar reminders.">
+<meta property="og:title" content="Athlete Supplement Timer - Evidence-Based Timing Planner">
+<meta property="og:description" content="Build an evidence-based daily supplement timing schedule around training, meals, and sleep: creatine, caffeine, protein, beetroot and more, with downloadable calendar reminders.">
 <meta property="og:site_name" content="Glycogo">
 <meta property="og:url" content="https://glycogo.fit/athlete_supplement_timer.html">
 <meta property="og:image" content="https://glycogo.fit/logosmall.png">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Athlete Supplement Timer — Evidence-Based Timing Planner">
-<meta name="twitter:description" content="When to take creatine, caffeine, protein, beetroot and more — a free evidence-based supplement timing planner with calendar reminders.">
+<meta name="twitter:title" content="Athlete Supplement Timer - Evidence-Based Timing Planner">
+<meta name="twitter:description" content="When to take creatine, caffeine, protein, beetroot and more: a free evidence-based supplement timing planner with calendar reminders.">
 <meta name="twitter:image" content="https://glycogo.fit/logosmall.png">
 
 <script type="application/ld+json">
@@ -204,7 +204,6 @@ button:active { transform: scale(0.98); }
 .event h3 { margin: 0 0 4px; font-size: 15px; border: 0; padding: 0; text-transform: none; letter-spacing: normal; }
 .event p { margin: 0; color: var(--muted); font-size: 13.5px; line-height: 1.5; }
 
-.notice { background: #fff3e0; padding: 12px 16px; border-radius: 8px; margin-bottom: 20px; font-size: 13.5px; color: var(--text); }
 .muted { color: var(--muted); font-size: 13px; line-height: 1.5; }
 .empty { padding: 35px; text-align: center; color: var(--muted); border: 1px dashed var(--border); border-radius: 14px; font-size: 14px; }
 
@@ -338,9 +337,6 @@ footer { padding: 36px 0; text-align: center; color: var(--muted); font-size: 12
 
     <section class="card">
       <h2>2. Suggested schedule</h2>
-      <div class="notice">
-        <b>Disclaimer:</b> This planner is a timing optimization tool, not a medical prescription. Micronutrients (Iron, Calcium, Vitamin D, Zinc, and Potassium) should only be supplemented to address assessed dietary gaps or clinically verified deficiencies. Always consult a sports dietitian or physician.
-      </div>
       <div id="timeline" class="timeline">
         <div class="empty">Select your supplements and click <b>Build schedule</b>.</div>
       </div>
@@ -496,18 +492,18 @@ function build(){
     add(referenceTrain - 120, 'Sodium Bicarbonate', 'Take 2 hours before training, with a meal.', ['performance']);
   }
 
-  // 3b. Sulforaphane / Broccoli Sprouts — cellular stress priming 3h before a hard session or race
+  // 3b. Sulforaphane / Broccoli Sprouts: cellular stress priming 3h before a hard session or race
   if(selected.includes('sulforaphane')){
     add(referenceTrain - 180, 'Sulforaphane / Broccoli Sprouts', 'Take 3 hours before training; raw sprouts.', ['performance']);
   }
 
-  // 4. Collagen (with Vit C) — vitamin C co-locates here unless iron needs it more (see Vit C below)
+  // 4. Collagen (with Vit C): vitamin C co-locates here unless iron needs it more (see Vit C below)
   if(selected.includes('collagen')){
     const vitCHere = !selected.includes('iron'); // still a recommendation when vit C isn't selected
     add(referenceTrain - 45, 'Collagen (with Vit C)', vitCHere ? 'Take 40-60 min before training, with Vitamin C.' : 'Take 40-60 min before training.', ['performance']);
   }
 
-  // 5. Iron — first thing on an empty stomach, or within 30 min of finishing a morning session
+  // 5. Iron: first thing on an empty stomach, or within 30 min of finishing a morning session
   if(selected.includes('iron')){
     const morningTrain = training.find(t => t.time < 12*60); // session starting before noon
     if(morningTrain){
@@ -520,18 +516,18 @@ function build(){
   // 6. Vitamin D3
   const fatMeal = nearestMeal(wake + 120, true) || nearestMeal(wake + 120, false);
   if(selected.includes('vitd') && fatMeal){
-    add(fatMeal.time, 'Vitamin D3', `Fat-soluble — take with ${fatMeal.name} (contains fat).`, ['food']);
+    add(fatMeal.time, 'Vitamin D3', `Fat-soluble: take with ${fatMeal.name} (contains fat).`, ['food']);
   }
 
   // 7. Vitamin K2
   if(selected.includes('k2') && fatMeal){
-    add(fatMeal.time, 'Vitamin K2', `Fat-soluble — take with ${fatMeal.name} (contains fat).`, ['food']);
+    add(fatMeal.time, 'Vitamin K2', `Fat-soluble: take with ${fatMeal.name} (contains fat).`, ['food']);
   }
 
   // 8. Omega-3
   if(selected.includes('omega3')){
     const m = nearestMeal(mins($('lunch').value), false) || fatMeal;
-    if(m) add(m.time, 'Omega-3', `Fat-soluble — take with ${m.name} (contains fat).`, ['food']);
+    if(m) add(m.time, 'Omega-3', `Fat-soluble: take with ${m.name} (contains fat).`, ['food']);
   }
 
   // 9. Calcium
@@ -569,7 +565,7 @@ function build(){
     add(potMeal.time, 'Potassium', 'Prefer dietary sources (bananas, sweet potatoes).', ['medical']);
   }
 
-  // 15. Vitamin C — co-locates with iron (boosts absorption) or collagen (synthesis), else standalone
+  // 15. Vitamin C: co-locates with iron (boosts absorption) or collagen (synthesis), else standalone
   if(selected.includes('vitc')){
     const ironEv = schedule.find(e => e.title === 'Iron');
     const collEv  = schedule.find(e => e.title === 'Collagen (with Vit C)');
