@@ -73,7 +73,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&display=swap" rel="stylesheet">
 <style>
 /* -------- Glycogo brand palette, sampled from the logo -------- */
 :root{
@@ -283,7 +283,7 @@ input[type="range"]:disabled{ opacity:0.4; }
 .readout-row{ display:flex; justify-content:space-between; align-items:center; padding:9px 0; border-bottom:1px solid var(--line); }
 .readout-row:last-child{ border-bottom:none; }
 .readout-label{ font-size:12px; color:var(--text-dim); text-transform:uppercase; letter-spacing:0.03em; font-weight:600; }
-.readout-value{ font-family:'Space Mono',monospace; font-size:16px; font-weight:700; }
+.readout-value{ font-family:'DM Sans',sans-serif; font-size:16px; font-weight:700; }
 .readout-value.carb{ color:var(--glucose-dim); }
 .readout-value.fat{ color:var(--fructose); }
 .readout-value.rer{ color:var(--green); }
@@ -294,7 +294,7 @@ input[type="range"]:disabled{ opacity:0.4; }
 .legend .swatch{ display:inline-block; width:22px; height:3px; border-radius:2px; vertical-align:middle; margin-right:6px; }
 .legend .l-carb{ background:var(--glucose); }
 .legend .l-fat{ background:var(--fructose); }
-.legend .mono{ font-family:'Space Mono',monospace; font-weight:700; }
+.legend .mono{ font-family:'DM Sans',sans-serif; font-weight:700; }
 .legend .right{ margin-left:auto; }
 
 /* chart */
@@ -320,9 +320,29 @@ input[type="range"]:disabled{ opacity:0.4; }
 .content-panel .refs{ font-size:12px; color:var(--text-faint); line-height:1.8; margin-top:14px; }
 .content-panel .refs a{ color:var(--fructose); }
 .content-panel table{ border-collapse:collapse; margin:12px 0; font-size:13px; }
-.content-panel th,.content-panel td{ border:1px solid var(--line); padding:6px 12px; text-align:right; font-family:'Space Mono',monospace; color:var(--text); }
+.content-panel th,.content-panel td{ border:1px solid var(--line); padding:6px 12px; text-align:right; font-family:'DM Sans',sans-serif; color:var(--text); }
 .content-panel th{ font-family:'DM Sans', sans-serif; font-weight:600; color:var(--text-dim); background:var(--bg-2); }
 .content-panel td:first-child,.content-panel th:first-child{ text-align:left; }
+
+/* collapsible content sections */
+details.content-panel{ padding:0; overflow:hidden; }
+details.content-panel > summary{
+  list-style:none; cursor:pointer;
+  display:flex; align-items:center; justify-content:space-between; gap:16px;
+  padding:20px 22px;
+}
+details.content-panel > summary::-webkit-details-marker{ display:none; }
+details.content-panel > summary::marker{ content:''; }
+details.content-panel > summary .section-title{ margin:0; }
+details.content-panel > summary:hover .section-title{ color:var(--glucose-dim); }
+details.content-panel > summary::after{
+  content:'+'; flex-shrink:0; width:26px; height:26px; border-radius:3px;
+  background:var(--bg-2); color:var(--glucose-dim);
+  font-size:16px; font-weight:700; line-height:1;
+  display:flex; align-items:center; justify-content:center;
+}
+details.content-panel[open] > summary::after{ content:'−'; background:var(--glucose); color:#fff; }
+details.content-panel > .details-body{ padding:0 22px 22px; }
 
 footer{ padding:36px 0 60px; text-align:center; }
 footer .brand{ font-family:'DM Sans', sans-serif; font-weight:700; font-size:15px; letter-spacing:0.02em; color:var(--text-dim); }
@@ -456,8 +476,11 @@ footer a:hover{ text-decoration:underline; }
 
   </section>
 
-  <div class="panel content-panel" id="physiology">
-    <h2 class="section-title">The physiology behind the curves</h2>
+  <details class="panel content-panel" id="physiology">
+    <summary>
+      <h2 class="section-title">The physiology behind the curves</h2>
+    </summary>
+    <div class="details-body">
     <p><strong>Measurement basis.</strong> Substrate use during exercise is quantified by indirect calorimetry: because fat and carbohydrate oxidation yield different volumes of CO₂ per litre of O₂ consumed, the non-protein respiratory exchange ratio (RER = VCO₂ / VO₂) identifies the fuel mix. RER 0.70 corresponds to near-exclusive fat oxidation, RER 1.00 to near-exclusive carbohydrate, and RER ≈ 0.85 to an even energy split (Peronnet &amp; Massicotte, 1991). Each point on the chart is reported as an implied RER with matching carbohydrate and fat oxidation rates in grams per hour, converted with non-protein energy equivalents (carbohydrate ≈ 4 kcal/g, fat ≈ 9 kcal/g).</p>
     <p><strong>The crossover point.</strong> As relative intensity rises, catecholamine drive, type-II motor-unit recruitment, and the energy rate demanded per unit of muscle shift supply toward muscle glycogen and blood glucose, and the relative fat contribution falls: the classic “crossover” (Brooks &amp; Mercier, 1994; Romijn et al., 1993). In trained athletes, absolute fat oxidation commonly peaks around 45–65 % VO₂max (the “fatmax” zone), although with substantial individual variation (Achten &amp; Jeukendrup, 2003). </p>
     <p><strong>What moves the curve.</strong> Substrate availability influences oxidation. Pre-exercise and during-exercise carbohydrate raise carbohydrate oxidation at a given intensity; habitual carbohydrate intake and training status reshape glycogen stores and oxidative capacity; low-carbohydrate availability raises the relative fat contribution (Romijn et al., 1993; Burke et al., 2011). The model further adjusts for session duration, sex, age, and body mass, reflecting the group-level effects quantified in modelling analyses of submaximal exercise (Rothschild et al., 2022).</p>
@@ -486,10 +509,14 @@ footer a:hover{ text-decoration:underline; }
       Peronnet F, Massicotte D. <em>Can J Sport Sci</em> 1991 (<a href="https://pubmed.ncbi.nlm.nih.gov/1645211/" rel="noopener" target="_blank">non-protein RER table</a>) ·
       Burke LM et al. <em>J Sports Sci</em> 2011 (<a href="https://pubmed.ncbi.nlm.nih.gov/21660838/" rel="noopener" target="_blank">carbohydrates for training and competition</a>) ·
       Rothschild JA, Kilding AE, Stewart T, Plews DJ. <em>Sports Med</em> 2022 (<a href="https://pubmed.ncbi.nlm.nih.gov/35829994/" rel="noopener" target="_blank">factors influencing substrate oxidation during submaximal cycling: a modelling analysis</a>).</p>
-  </div>
+    </div>
+  </details>
 
-  <div class="panel content-panel" id="faq">
-    <h2 class="section-title">Frequently asked questions</h2>
+  <details class="panel content-panel" id="faq">
+    <summary>
+      <h2 class="section-title">Frequently asked questions</h2>
+    </summary>
+    <div class="details-body">
     <h3>What is RER and what does RER 0.85 mean?</h3>
     <p>RER (respiratory exchange ratio) is the volume of CO₂ exhaled divided by O₂ consumed, the core measurement of indirect calorimetry. RER 0.70 ≈ 100 % of energy from fat, RER 1.00 ≈ 100 % from carbohydrate, and RER ≈ 0.85 marks an even 50/50 energy split. The chart’s RER readout is the model’s implied RER at that point.</p>
     <h3>At what intensity does fuel use become 50/50?</h3>
@@ -500,7 +527,8 @@ footer a:hover{ text-decoration:underline; }
     <p>No. They estimate <em>endogenous oxidation</em>, what your body burns from muscle glycogen, blood glucose, and plasma fatty acids. Exogenous fueling targets (for example, 60–90 g/h of multiple-transportable carbohydrate during long sessions) are a separate prescription that only partially overlaps oxidation.</p>
     <h3>How accurate are the estimates?</h3>
     <p>They apply group-level relationships from indirect-calorimetry research to the inputs you choose, so individual values vary with fitness, training status, diet history, and environment. Use the tool to compare scenarios and plan fueling structure; for individualised session fueling, the Glycogo app incorporates measured power, heart rate, and energy expenditure.</p>
-  </div>
+    </div>
+  </details>
 </div>
 
 
@@ -756,7 +784,7 @@ function draw() {
   }
 
   ctx.strokeStyle = C_GRID; ctx.fillStyle = C_TICK;
-  ctx.font = "10.5px 'Space Mono', monospace"; ctx.lineWidth = 1;
+  ctx.font = "10.5px 'DM Sans', sans-serif"; ctx.lineWidth = 1;
   ctx.beginPath();
   for (const t of niceTicks(0, 100, 5)) {
     const y = Yp(t); ctx.moveTo(padL, y); ctx.lineTo(W - padR, y);
