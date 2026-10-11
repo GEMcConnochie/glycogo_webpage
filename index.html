@@ -312,7 +312,7 @@
     font-weight: 700;
 }
   .hero-actions {
-    display: flex; gap: 0.85rem; flex-wrap: wrap;
+    display: flex; gap: 0.85rem; flex-wrap: wrap; align-items: center;
     animation: fadeUp 0.6s 0.24s ease both;
   }
   .btn-primary {
@@ -321,13 +321,9 @@
     transition: background 0.2s;
   }
   .btn-primary:hover { background: var(--green-light); }
-  .btn-ghost {
-    color: white; padding: 1rem 1.75rem; border-radius: 8px;
-    font-size: 0.98rem; font-weight: 600; text-decoration: none;
-    border: 1.5px solid rgba(255,255,255,0.35); background: transparent;
-    transition: border-color 0.2s, background 0.2s;
-  }
-  .btn-ghost:hover { border-color: white; background: rgba(255,255,255,0.08); }
+  .play-badge { display: inline-flex; align-items: center; text-decoration: none; }
+  .play-badge img { display: block; height: 58px; width: auto; max-width: 100%; transition: opacity 0.2s, transform 0.2s; }
+  .play-badge:hover img { opacity: 0.85; transform: translateY(-1px); }
   .hero-points {
     display: flex; flex-wrap: wrap; gap: 0.5rem 0.65rem; margin-top: 2rem;
     list-style: none; padding: 0;
@@ -736,8 +732,10 @@
 		<em>Training changes every day. Your nutrition should too.</em>
       </p>
       <div class="hero-actions">
-        <a href="https://web.glycogo.fit/" class="btn-primary">Try for free</a>
-        <a href="/beta" class="btn-ghost">Try the app</a>
+        <a href="https://web.glycogo.fit/" class="btn-primary">Web App</a>
+        <a href="https://play.google.com/store/apps/details?id=fit.glycogo.glycogo_mobile" class="play-badge" target="_blank" rel="noopener">
+          <img src="assets/google-play-badge.png" alt="Get it on Google Play">
+        </a>
       </div>
       <ul class="hero-points">
         <li>Syncs with major fitness devices</li>
@@ -1406,10 +1404,6 @@
         <img src="coffee.png" alt="Buy Me A Coffee" style="height:40px;width:145px;">
       </a>
     </div>
-    <p class="support-bio" style="margin-bottom:1.5rem;">Want to test new features before they launch? Join early access.</p>
-    <div style="display:flex;justify-content:center;margin-bottom:1.25rem;">
-      <a href="/beta" class="btn-primary">Join early access</a>
-    </div>
     <p class="support-bio">Designed and built by a PhD-qualified engineer and exercise scientist, with experience in research, data systems, and performance analytics. Support is appreciated. I am currently seeking professional opportunities.</p>
   </div>
 </section>
@@ -1421,7 +1415,6 @@
     <span style="font-size:0.74rem;">G.E.McConnochie PhD &nbsp;·&nbsp; <a href="mailto:contactgemperformance@gmail.com">contactgemperformance@gmail.com</a></span>
   </div>
   <div style="display:flex;gap:1rem;align-items:center;flex-wrap:wrap;">
-    <a href="/beta" style="color:rgba(255,255,255,0.8);font-size:0.82rem;font-weight:600;text-decoration:underline;">Early access</a>
     <a href="/terms" style="color:rgba(255,255,255,0.6);font-size:0.82rem;text-decoration:underline;">Terms of Service</a>
     <a href="/privacy" style="color:rgba(255,255,255,0.6);font-size:0.82rem;text-decoration:underline;">Privacy Policy</a>
     <a href="#faq" style="color:rgba(255,255,255,0.6);font-size:0.82rem;text-decoration:underline;">FAQ</a>
