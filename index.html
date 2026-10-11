@@ -154,7 +154,7 @@
 <meta property="og:type" content="website">
 <link rel="canonical" href="https://glycogo.fit">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Space+Mono:wght@400;700&family=Michroma&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
@@ -174,7 +174,7 @@
   }
   html { scroll-behavior: smooth; }
   body {
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Space Grotesk', 'DM Sans', sans-serif;
     background: var(--bg);
     color: var(--text);
     overflow-x: hidden;
@@ -296,14 +296,6 @@
     display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;
   }
   .hero-copy { text-align: left; }
-  .hero-badge {
-    display: inline-block;
-    background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.14);
-    border-radius: 8px; padding: 0.35rem 1rem;
-    font-size: 0.78rem; font-weight: 600; color: var(--green-light);
-    margin-bottom: 1.25rem;
-    animation: fadeUp 0.6s ease both;
-  }
   .hero h1 {
     font-size: clamp(2.75rem, 5.5vw, 4.25rem); font-weight: 800;
     line-height: 1.02; letter-spacing: -0.04em; color: white;
@@ -496,9 +488,33 @@
   }
   .section-sub { font-size: 1.02rem; color: var(--muted); line-height: 1.7; max-width: 560px; }
 
+  /* DISPLAY TYPE (Michroma) */
+  /* Michroma ships a single 400 weight, so weight is simulated with a text-stroke
+     (crisper than synthetic bold at display sizes). Tune with --display-stroke. */
+  :root { --display-stroke: 0.04em; --display-bump: 2px; }
+  .hero h1, .section-title {
+    font-family: 'Michroma', 'Space Grotesk', sans-serif;
+    font-weight: 400;
+    font-synthesis-weight: none;
+    -webkit-text-stroke: var(--display-stroke) currentColor;
+    letter-spacing: 0;
+  }
+  .hero h1 { font-size: clamp(calc(1.75rem + var(--display-bump)), calc(3.6vw + var(--display-bump)), calc(2.9rem + var(--display-bump))); line-height: 1.18; }
+  /* Michroma has no italic face, so the browser synthesises an oblique. */
+  .hero h1 .h1-italic { font-style: italic; }
+  .section-title { font-size: clamp(calc(1.35rem + var(--display-bump)), calc(2.4vw + var(--display-bump)), calc(2rem + var(--display-bump))); line-height: 1.22; }
+  /* Split-row headings stay minimal: body face, no display treatment. */
+  .split-copy h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: clamp(1.15rem, 2vw, 1.5rem);
+    line-height: 1.35;
+    letter-spacing: -0.01em;
+  }
+
   /* FEATURES */
-  .features { max-width: var(--max); margin: 0 auto; padding: 0 2rem; }
-  .features-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.15rem; }
+  .features { max-width: 1240px; margin: 0 auto; padding: 0 2rem; }
+  .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
   .features-header { text-align: center; margin-bottom: 3rem; }
   .features-header .section-sub { margin: 0 auto; max-width: 520px !important; }
   .feature-card {
@@ -538,7 +554,7 @@
   .chat-msg.user { background: rgba(46,125,50,0.45); color: white; align-self: flex-end; }
   .chat-msg.bot { background: rgba(255,255,255,0.12); color: rgba(255,255,255,0.92); align-self: flex-start; }
   .chat-label { font-size: 0.66rem; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(255,255,255,0.38); margin-bottom: 0.2rem; }
-  .chat-action { align-self: flex-start; background: var(--green); color: white; border: none; padding: 0.45rem 1rem; border-radius: 8px; font-size: 0.76rem; font-weight: 600; cursor: pointer; font-family: 'DM Sans', sans-serif; }
+  .chat-action { align-self: flex-start; background: var(--green); color: white; border: none; padding: 0.45rem 1rem; border-radius: 8px; font-size: 0.76rem; font-weight: 600; cursor: pointer; font-family: 'Space Grotesk', sans-serif; }
   .chat-img-attach { display: inline-flex; align-items: center; gap: 0.35rem; font-size: 0.72rem; color: rgba(255,255,255,0.55); padding: 0.25rem 0.5rem; border-radius: 6px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); }
   .chat-macro-row { display: flex; flex-wrap: wrap; gap: 0.35rem 0.6rem; margin-top: 0.55rem; }
   .chat-macro { font-size: 0.72rem; font-weight: 600; color: rgba(255,255,255,0.88); background: rgba(255,255,255,0.1); padding: 0.15rem 0.45rem; border-radius: 4px; }
@@ -714,8 +730,7 @@
   <div class="hero-overlay"></div>
   <div class="hero-shell">
     <div class="hero-copy">
-      <div class="hero-badge">Built for all athletes</div>
-      <h1>The Nutrition App That Moves<br><em>Before You Do.</em></h1>
+      <h1>The Nutrition App That <span class="h1-italic">Moves</span><br><em>Before You Do.</em></h1>
       <p class="hero-sub">
         Plan, track, and personalise your nutrition with carbohydrate and calorie targets that automatically adapt to your training<br><br>
 		<em>Training changes every day. Your nutrition should too.</em>

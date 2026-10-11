@@ -9,11 +9,11 @@
 <link rel="canonical" href="https://glycogo.fit/instructions">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Space+Mono:wght@400;700&family=Michroma&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
-  --nav-height: 80px;
+--display-stroke: 0.04em; --nav-height: 80px;
   --nav-height-scrolled: 64px;
   --green: #2e7d32; --green-light: #43a047; --green-pale: #e8f5e9;
   --orange: #e65c00; --orange-light: #ff7043;
@@ -22,7 +22,7 @@
   --muted: #5a6a5a; --border: #c8d8c8;
 }
 html { scroll-behavior: smooth; }
-body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; padding-top: var(--nav-height); }
+body { font-family: 'Space Grotesk', sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; padding-top: var(--nav-height); }
  
 /* NAV */
 nav {
@@ -79,7 +79,7 @@ nav.shrink img { height: 48px; }
 .page-hero-grid { position: absolute; inset: 0; z-index: 0; background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px); background-size: 40px 40px; }
 .page-hero-content { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
 .page-hero-badge { display: inline-flex; align-items: center; gap: 0.4rem; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 8px; padding: 0.3rem 1rem; font-size: 0.8rem; font-weight: 600; color: var(--green-light); margin-bottom: 1.2rem; }
-.page-hero h1 { font-size: clamp(2.2rem,5vw,3.8rem); font-weight: 800; line-height: 1.08; letter-spacing: -0.03em; color: white; margin-bottom: 1rem; }
+.page-hero h1 { font-family: 'Michroma', 'Space Grotesk', sans-serif; font-weight: 400; font-synthesis-weight: none; -webkit-text-stroke: var(--display-stroke) currentColor; font-size: clamp(1.6rem, 3.6vw, 2.75rem); line-height: 1.2; letter-spacing: 0; color: white; margin-bottom: 1rem; }
 .page-hero h1 em { font-style: normal; color: var(--orange-light); }
 .page-hero p { font-size: 1.1rem; color: rgba(255,255,255,0.65); line-height: 1.7; max-width: 520px; margin: 0 auto; }
 
