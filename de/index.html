@@ -1,0 +1,1494 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<link rel="icon" type="image/png" href="/logosmall.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "url": "https://glycogo.fit",
+  "logo": "https://glycogo.fit/logosmall.png"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Glycogo",
+  "url": "https://glycogo.fit",
+  "description": "Periodised nutrition planning for athletes and active individuals. Scales carbohydrate and calorie targets with training load.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Glycogo",
+    "logo": "https://glycogo.fit/logosmall.png"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much does Glycogo cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Premium is priced at about the cost of just 1-2 gels per month, roughly €4.40 or $5 USD. There is also a free tier; a subscription unlocks premium features such as Intervals.icu sync, photo and barcode logging, a larger food database, and the AI nutrition assistant."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does Glycogo sync training sessions?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Glycogo connects to Intervals.icu, which can pull planned and completed workouts from major fitness platforms. Imported sessions drive pre-session, during-session, and recovery fuel targets for that day. You can also add or edit sessions manually inside the app."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How should I rate my session RPE?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Rate the overall difficulty of the whole workout on the Borg CR100 scale (1-100): how hard the entire session felt relative to what you could maximally sustain for about an hour, not the peak effort of your hardest interval."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What should my carbs-per-hour range be?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Your lower and upper bounds should reflect gut tolerance, training experience, and session demands. A common lower starting range is roughly 50-60 g/hr for easy aerobic work, while an upper bound of about 90 g/hr is a widely used guideline for sustained hard exercise. Gut-trained athletes can tolerate and use more."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the high-carb fuelling setting for a session?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "When enabled on an individual workout, Glycogo always includes during-session carbohydrate targets at the upper end of your carbs-per-hour range, even if the session is shorter than your minimum duration setting or at lower intensity. It is useful for gut training or when pre-session fuel is limited."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What should my minimum session duration be?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "This setting controls when Glycogo adds during-session carbohydrate targets. The default is 60 minutes, which suits most endurance training, with 60-90 minutes a good range. Shorter sessions often do not need intra-workout carbs."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is within-day energy availability?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Within-day energy availability tracks your hour-by-hour balance between what you eat and what you burn as the day unfolds. Glycogo focuses on when you are in deficit, because prolonged low-energy periods are linked to hormonal disruption and poorer recovery, even if the daily total returns to balance later in the day."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does the app show a deficit when I first wake up?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Your body keeps burning energy overnight for temperature regulation, brain function, and repair. Glycogo uses a circadian model that spreads resting metabolism unevenly across the day, so the negative balance in the morning reflects overnight energy use and is expected."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does the app schedule a pre-session snack?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pre-session snacks help top up carbohydrate stores, which is particularly important for pre-breakfast training or before hard or long work. By default the app places this about an hour before your session starts, and you can change the timing or turn it off in settings."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens when I mark a meal complete?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Marking a meal complete locks that meal's targets to your actual intake, and any remaining calories and macros for the day are redistributed across your still-open meals using your meal distribution settings. Your within-day timeline and projections update too."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why would I choose to hide calories?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hiding calories keeps the focus on carbohydrates, protein, and fat instead of calorie totals. When enabled, kcal numbers are hidden across the home day view, meal cards, food search, and related charts, while carb/protein/fat targets and logging still work as usual."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does Glycogo handle multiple workouts on the same day?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Each session gets its own pre-session, during-session, and recovery nutrition timing. Net training energy and carbohydrate needs for the day reflect the combined load from all sessions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can Glycogo plan the whole race day, and not just the days around it?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Glycogo includes a Race Day Fuel & Hydration Planner that turns your targets into a plan for the race itself, block by block: how much carbohydrate and fluid to take in during each segment, what to use at each aid station, and how your sweat rate and the conditions adjust the totals. You can import a planned race from Intervals.icu and have the plan built from its distance, duration, and intensity, or build it manually."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does Glycogo work out how much fat and carbohydrate I am burning?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "From the intensity of the session and your own inputs, using published group-level relationships between exercise intensity and substrate oxidation. In the lab, the fuel mix is measured by indirect calorimetry: the ratio of CO2 produced to O2 consumed (RER) indicates whether the energy is coming from fat or carbohydrate, and that research gives the expected fat and carbohydrate oxidation rates for a given intensity, body size, sex, age, and carbohydrate availability. Glycogo applies those relationships to the session, so the fat and carbohydrate split shifts with how hard you are working. The exact model and its coefficients are proprietary, and because the relationships are group-level rather than individual measurements, treat the fuel mix as a planning estimate rather than metabolic testing."
+      }
+    }
+  ]
+}
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Glycogo | Periodisierter Ernährungsplaner für Sportler</title>
+<meta name="description" content="Periodisierte Ernährungsplanung für Sportler: Kohlenhydrat- und Kalorienziele passen sich der Trainingsbelastung an, synchronisiert mit Intervals.icu.">
+<meta property="og:title" content="Glycogo | Periodisierter Ernährungsplaner für Sportler">
+<meta property="og:description" content="Nutrition planner and tracking app that scales with your training load.">
+<meta property="og:url" content="https://glycogo.fit/de/">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://glycogo.fit/de/">
+<!-- i18n:alternates -->
+<link rel="alternate" hreflang="en" href="https://glycogo.fit/">
+<link rel="alternate" hreflang="de" href="https://glycogo.fit/de/">
+<link rel="alternate" hreflang="es" href="https://glycogo.fit/es/">
+<link rel="alternate" hreflang="fr" href="https://glycogo.fit/fr/">
+<link rel="alternate" hreflang="it" href="https://glycogo.fit/it/">
+<link rel="alternate" hreflang="nl" href="https://glycogo.fit/nl/">
+<link rel="alternate" hreflang="x-default" href="https://glycogo.fit/">
+<!-- /i18n:alternates -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Space+Mono:wght@400;700&family=Michroma&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --green: #2e7d32; --green-light: #43a047; --green-pale: #e8f5e9;
+    --orange: #e65c00; --orange-light: #ff7043;
+    --navy: #1a1a3e; --navy-mid: #2d2d7a;
+    --bg: #ffffff; --bg-soft: #f7faf8; --white: #ffffff; --text: #1a1a3e;
+    --muted: #5c6670; --border: #e8ece9;
+    --surface: #ffffff;
+    --shadow-sm: 0 1px 2px rgba(26,26,62,0.06);
+    --shadow-md: 0 10px 24px rgba(26,26,62,0.10);
+    --shadow-lg: 0 20px 48px rgba(26,26,62,0.12);
+    --radius: 10px;
+    --radius-lg: 14px;
+    --nav-h: 72px;
+    --max: 1140px;
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Space Grotesk', 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: var(--max); margin: 0 auto; padding: 0 2rem; }
+  section { scroll-margin-top: calc(var(--nav-h) + 20px); }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+    height: var(--nav-h);
+    background: transparent;
+    backdrop-filter: none;
+    border-bottom: 1px solid transparent;
+    transition: height 0.25s ease, background 0.25s ease, box-shadow 0.25s ease, border-color 0.25s, backdrop-filter 0.25s;
+  }
+  nav.scrolled {
+    height: 60px;
+    background: rgba(255,255,255,0.96);
+    backdrop-filter: blur(16px);
+    border-bottom-color: var(--border);
+    box-shadow: var(--shadow-sm);
+  }
+  nav.scrolled img { height: 44px !important; }
+  .nav-inner {
+    max-width: var(--max); margin: 0 auto; height: 100%;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 2rem;
+  }
+  .nav-inner > a { display: flex; align-items: center; text-decoration: none; }
+  .nav-inner img { height: 52px; transition: height 0.25s ease; }
+  .nav-links { display: flex; gap: 1.75rem; align-items: center; }
+  .nav-links > a,
+  .nav-dropdown-toggle {
+    text-decoration: none; color: rgba(255,255,255,0.82); font-size: 0.88rem; font-weight: 500;
+    transition: color 0.2s;
+    background: none; border: none; cursor: pointer;
+    font-family: inherit; padding: 0; display: inline-flex; align-items: center; gap: 0.3rem;
+  }
+  .nav-links > a:hover,
+  .nav-dropdown-toggle:hover,
+  .nav-dropdown.open .nav-dropdown-toggle { color: white; }
+  nav.scrolled .nav-links > a,
+  nav.scrolled .nav-dropdown-toggle { color: var(--muted); }
+  nav.scrolled .nav-links > a:hover,
+  nav.scrolled .nav-dropdown-toggle:hover,
+  nav.scrolled .nav-dropdown.open .nav-dropdown-toggle { color: var(--green); }
+  .nav-dropdown { position: relative; }
+  .nav-dropdown-toggle .chev {
+    width: 0; height: 0; border-left: 4px solid transparent; border-right: 4px solid transparent;
+    border-top: 4px solid currentColor; opacity: 0.7; transition: transform 0.2s;
+  }
+  .nav-dropdown.open .chev { transform: rotate(180deg); }
+  .nav-dropdown-menu {
+    position: absolute; top: calc(100% + 0.65rem); left: 50%; transform: translateX(-50%) translateY(4px);
+    min-width: 220px; background: var(--white); border: 1px solid var(--border);
+    border-radius: 12px; box-shadow: var(--shadow-md); padding: 0.4rem;
+    opacity: 0; visibility: hidden; pointer-events: none;
+    transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s;
+    z-index: 300;
+  }
+  .nav-dropdown.open .nav-dropdown-menu,
+  .nav-dropdown:hover .nav-dropdown-menu,
+  .nav-dropdown:focus-within .nav-dropdown-menu {
+    opacity: 1; visibility: visible; pointer-events: auto; transform: translateX(-50%) translateY(0);
+  }
+  .nav-dropdown-menu a {
+    display: block; padding: 0.7rem 0.9rem; border-radius: 8px;
+    text-decoration: none; color: var(--text); font-size: 0.86rem; font-weight: 500;
+    transition: background 0.15s, color 0.15s; white-space: nowrap;
+  }
+  .nav-dropdown-menu a:hover { background: var(--green-pale); color: var(--green); }
+  .nav-cta {
+    background: var(--green) !important;
+    color: white !important; padding: 0.6rem 1.35rem !important;
+    border-radius: 8px !important; font-weight: 600 !important;
+    font-size: 0.88rem !important;
+    box-shadow: none !important;
+    transition: background 0.2s, transform 0.15s !important;
+  }
+  .nav-cta:hover { background: var(--green-light) !important; box-shadow: none !important; }
+
+  /* HERO */
+  .hero {
+    min-height: 92vh; position: relative; overflow: hidden;
+    padding: calc(var(--nav-h) + 2rem) 0 3.5rem;
+    display: flex; align-items: center;
+    background: var(--navy);
+    color: white;
+  }
+  .hero-video {
+    position: absolute; inset: 0; z-index: 0;
+    width: 100%; height: 100%; object-fit: cover;
+    opacity: 1;
+    background: var(--navy);
+  }
+  .hero-overlay {
+    position: absolute; inset: 0; z-index: 1;
+    background: linear-gradient(
+      160deg,
+      rgba(15, 15, 28, 0.52) 0%,
+      rgba(20, 20, 40, 0.38) 50%,
+      rgba(15, 15, 28, 0.55) 100%
+    );
+    pointer-events: none;
+  }
+  .hero-bg {
+    position: absolute; inset: 0; z-index: 2;
+    background:
+      radial-gradient(ellipse 55% 45% at 78% 18%, rgba(46,125,50,0.10) 0%, transparent 55%),
+      radial-gradient(ellipse 45% 40% at 12% 88%, rgba(230,92,0,0.06) 0%, transparent 50%);
+    pointer-events: none;
+  }
+  .hero-bg, .hero-grid { display: none; }
+  .hero-shell {
+    position: relative; z-index: 3; width: 100%;
+    max-width: var(--max); margin: 0 auto; padding: 0 2rem;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;
+  }
+  .hero-copy { text-align: left; }
+  .hero h1 {
+    font-size: clamp(2.75rem, 5.5vw, 4.25rem); font-weight: 800;
+    line-height: 1.02; letter-spacing: -0.04em; color: white;
+    margin-bottom: 1.25rem; animation: fadeUp 0.6s 0.08s ease both;
+  }
+  .hero h1 em { font-style: normal; color: var(--green-light); }
+  .hero-sub {
+    font-size: 1.12rem; color: rgba(255,255,255,0.72); line-height: 1.7;
+    max-width: 520px; margin: 0 0 2rem; animation: fadeUp 0.6s 0.16s ease both;
+  }
+  .hero-sub em {
+    font-style: normal;
+    color: var(--green-light);
+    font-weight: 700;
+}
+  .hero-actions {
+    display: flex; gap: 0.85rem; flex-wrap: wrap; align-items: center;
+    animation: fadeUp 0.6s 0.24s ease both;
+  }
+  .btn-primary {
+    background: var(--green); color: white; padding: 1rem 2.25rem; border-radius: 8px;
+    font-size: 1.02rem; font-weight: 700; text-decoration: none;
+    transition: background 0.2s;
+  }
+  .btn-primary:hover { background: var(--green-light); }
+  .play-badge { display: inline-flex; align-items: center; text-decoration: none; }
+  .play-badge img { display: block; height: 58px; width: auto; max-width: 100%; transition: opacity 0.2s, transform 0.2s; }
+  .play-badge:hover img { opacity: 0.85; transform: translateY(-1px); }
+  .hero-points {
+    display: flex; flex-wrap: wrap; gap: 0.5rem 0.65rem; margin-top: 2rem;
+    list-style: none; padding: 0;
+    animation: fadeUp 0.6s 0.32s ease both;
+  }
+  .hero-points li {
+    font-size: 0.78rem; color: rgba(255,255,255,0.72); line-height: 1.45;
+    padding: 0.35rem 0.75rem; border-radius: 8px;
+    background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12);
+  }
+
+  /* HERO MEDIA / DEVICE FRAME */
+  .hero-media { position: relative; animation: fadeUp 0.7s 0.2s ease both; z-index: 1; }
+  .device-frame {
+    position: relative; z-index: 1; margin: 0 auto; max-width: 300px;
+    padding: 10px; border-radius: 18px;
+    background: #111118;
+    box-shadow: 0 20px 48px rgba(0,0,0,0.35), 0 0 0 1px rgba(255,255,255,0.08);
+  }
+  .device-notch {
+    width: 88px; height: 22px; background: #0f0f18;
+    border-radius: 0 0 14px 14px; margin: 0 auto 8px;
+  }
+  .device-screen {
+    border-radius: 12px; overflow: hidden;
+    background: #ffffff;
+    aspect-ratio: 9 / 19.5; position: relative;
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+  .media-slot { width: 100%; height: 100%; position: relative; }
+  .media-slot img, .media-slot video {
+    width: 100%; height: 100%; object-fit: cover; display: block;
+  }
+  .media-slot img.is-missing { display: none; }
+  .media-slot .media-placeholder { border: none; border-radius: 0; }
+  .media-slot img.is-missing + .media-placeholder,
+  .media-slot:not(:has(img:not(.is-missing))) .media-placeholder { display: flex; }
+  .media-slot:has(img:not(.is-missing)) .media-placeholder { display: none; }
+
+  /* TRUST BAR (compact highlight cards) */
+  .trust-bar {
+    border-bottom: 1px solid var(--border);
+    background: var(--bg-soft); padding: 1.75rem 0 2rem;
+    margin-top: -1.5rem; position: relative; z-index: 2;
+  }
+  .trust-bar-header {
+    max-width: var(--max); margin: 0 auto 1.1rem; padding: 0 2rem;
+    text-align: center;
+  }
+  .trust-inner {
+    max-width: var(--max); margin: 0 auto; padding: 0 2rem;
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem;
+  }
+  .trust-item {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 14px; padding: 1rem 1.15rem;
+    box-shadow: var(--shadow-sm);
+  }
+  .trust-item strong {
+    display: block; font-size: 0.92rem; font-weight: 700; color: var(--navy);
+    line-height: 1.25; margin-bottom: 0.35rem;
+  }
+  .trust-item span { font-size: 0.78rem; color: var(--muted); line-height: 1.45; display: block; }
+
+  /* SPORT MARQUEE */
+  .sport-marquee {
+    background: var(--navy); color: white; padding: 1.1rem 0; overflow: hidden;
+  }
+  .sport-marquee p {
+    text-align: center; font-size: 0.82rem; font-weight: 600;
+    letter-spacing: 0.06em; text-transform: uppercase; color: rgba(255,255,255,0.55);
+    max-width: var(--max); margin: 0 auto 0.85rem; padding: 0 2rem;
+  }
+  .sport-track-wrap {
+    display: flex; justify-content: center;
+    overflow: hidden; width: 100%;
+    mask-image: linear-gradient(90deg, transparent, black 12%, black 88%, transparent);
+    -webkit-mask-image: linear-gradient(90deg, transparent, black 12%, black 88%, transparent);
+  }
+  .sport-track {
+    display: flex; gap: 0.75rem; width: max-content;
+    animation: marquee 35s linear infinite;
+    will-change: transform;
+  }
+  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  .sport-tag {
+    flex-shrink: 0; padding: 0.5rem 1.1rem; border-radius: 8px;
+    background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12);
+    font-size: 0.85rem; font-weight: 600; color: white; white-space: nowrap;
+  }
+
+  /* SPLIT ROWS (app + copy) */
+  .split-row {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
+    align-items: center; padding: 4.5rem 0;
+  }
+  .split-row + .split-row { border-top: 1px solid var(--border); }
+  .split-row.reverse .split-visual { order: -1; }
+  .split-copy h3 {
+    font-size: clamp(1.5rem, 2.8vw, 2.1rem); font-weight: 800;
+    color: var(--navy); line-height: 1.15; letter-spacing: -0.025em; margin-bottom: 1rem;
+  }
+  .split-copy p { font-size: 0.95rem; color: var(--muted); line-height: 1.7; }
+  .split-copy p + p { margin-top: 0.85rem; }
+  .app-shot-duo {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+    align-items: start;
+  }
+  .app-shot-duo .app-shot { aspect-ratio: 4 / 5; }
+  .app-shot {
+    border-radius: var(--radius-lg); overflow: hidden; aspect-ratio: 7 / 5;
+    background: var(--bg-soft);
+    border: 1px solid var(--border); box-shadow: var(--shadow-md);
+    position: relative;
+  }
+  .app-shot:has(> img:not(.is-missing)) { aspect-ratio: auto; }
+  .app-shot-duo .app-shot:has(> img:not(.is-missing)) { aspect-ratio: 4 / 5; }
+  .app-shot img, .app-shot video {
+    width: 100%; height: 100%; object-fit: contain; display: block;
+    background: #f3f7f5;
+  }
+  .app-shot:has(> img:not(.is-missing)) img {
+    height: auto; object-fit: contain;
+  }
+  .app-shot-duo .app-shot:has(> img:not(.is-missing)) img {
+    height: 100%; object-fit: contain;
+  }
+  .app-shot img.is-missing { display: none; }
+  .app-shot .media-placeholder { border: none; border-radius: 0; position: absolute; inset: 0; }
+  .app-shot img.is-missing + .media-placeholder,
+  .app-shot:not(:has(img:not(.is-missing))) .media-placeholder { display: flex; }
+  .app-shot:has(img:not(.is-missing)) .media-placeholder { display: none; }
+
+  /* legacy stats (unused) */
+  .stats-wrap { display: none; }
+  .media-placeholder {
+    position: absolute; inset: 0; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; gap: 0.75rem;
+    padding: 1.5rem; text-align: center;
+    background: var(--bg-soft);
+    border: 1px solid var(--border);
+  }
+  .media-placeholder svg { width: 40px; height: 40px; stroke: var(--green); fill: none; stroke-width: 1.5; opacity: 0.7; }
+  .media-placeholder span { font-size: 0.78rem; font-weight: 600; color: var(--muted); line-height: 1.45; max-width: 180px; }
+  .media-placeholder small { font-size: 0.68rem; color: rgba(90,106,90,0.85); font-weight: 400; }
+
+  /* SHOWCASE (split container) */
+  .showcase { padding: 0; background: var(--bg); }
+  .showcase-intro { text-align: center; max-width: 620px; margin: 0 auto; padding: 4rem 2rem 1rem; }
+  .showcase-grid { display: none; }
+  .showcase-card { display: none; }
+
+  /* SECTIONS */
+  section.block { padding: 5rem 0; }
+  .section-title {
+    font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 800;
+    line-height: 1.08; letter-spacing: -0.03em; color: var(--navy); margin-bottom: 0.85rem;
+  }
+  .section-sub { font-size: 1.02rem; color: var(--muted); line-height: 1.7; max-width: 560px; }
+
+  /* DISPLAY TYPE (Michroma) */
+  /* Michroma ships a single 400 weight, so weight is simulated with a text-stroke
+     (crisper than synthetic bold at display sizes). Tune with --display-stroke. */
+  :root { --display-stroke: 0.04em; --display-bump: 2px; }
+  .hero h1, .section-title {
+    font-family: 'Michroma', 'Space Grotesk', sans-serif;
+    font-weight: 400;
+    font-synthesis-weight: none;
+    -webkit-text-stroke: var(--display-stroke) currentColor;
+    letter-spacing: 0;
+  }
+  .hero h1 { font-size: clamp(calc(1.75rem + var(--display-bump)), calc(3.6vw + var(--display-bump)), calc(2.9rem + var(--display-bump))); line-height: 1.18; }
+  /* Michroma has no italic face, so the browser synthesises an oblique. */
+  .hero h1 .h1-italic { font-style: italic; }
+  .section-title { font-size: clamp(calc(1.35rem + var(--display-bump)), calc(2.4vw + var(--display-bump)), calc(2rem + var(--display-bump))); line-height: 1.22; }
+  /* Split-row headings stay minimal: body face, no display treatment. */
+  .split-copy h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: clamp(1.15rem, 2vw, 1.5rem);
+    line-height: 1.35;
+    letter-spacing: -0.01em;
+  }
+
+  /* FEATURES */
+  .features { max-width: 1240px; margin: 0 auto; padding: 0 2rem; }
+  .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+  .features-header { text-align: center; margin-bottom: 3rem; }
+  .features-header .section-sub { margin: 0 auto; max-width: 520px !important; }
+  .feature-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 1.5rem;
+    transition: transform 0.22s, box-shadow 0.22s, border-color 0.22s;
+    box-shadow: var(--shadow-sm);
+  }
+  .feature-card:hover {
+    transform: translateY(-4px); box-shadow: var(--shadow-md);
+    border-color: rgba(46,125,50,0.35);
+  }
+  .feature-icon {
+    width: 42px; height: 42px; border-radius: 8px;
+    background: var(--green-pale);
+    display: flex; align-items: center; justify-content: center; margin-bottom: 0.9rem;
+  }
+  .feature-icon svg { width: 20px; height: 20px; stroke: var(--green); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  .feature-title { font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 0.45rem; }
+  .feature-desc { font-size: 0.88rem; color: var(--muted); line-height: 1.65; }
+
+  /* CHATBOT */
+  .chatbot-highlight {
+    background: var(--navy);
+    border-radius: var(--radius-lg); padding: 2.25rem; color: white;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center;
+    margin-top: 1.25rem;
+  }
+  .chatbot-highlight .feature-title { color: white; font-size: 1.15rem; margin-bottom: 0.75rem; }
+  .chatbot-highlight .feature-desc { color: rgba(255,255,255,0.78); font-size: 0.92rem; line-height: 1.65; }
+  .chat-demo {
+    background: rgba(255,255,255,0.06); border-radius: 10px; padding: 1.1rem;
+    display: flex; flex-direction: column; gap: 0.7rem;
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+  .chat-msg { font-size: 0.82rem; line-height: 1.5; padding: 0.6rem 0.9rem; border-radius: 10px; max-width: 88%; }
+  .chat-msg.user { background: rgba(46,125,50,0.45); color: white; align-self: flex-end; }
+  .chat-msg.bot { background: rgba(255,255,255,0.12); color: rgba(255,255,255,0.92); align-self: flex-start; }
+  .chat-label { font-size: 0.66rem; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(255,255,255,0.38); margin-bottom: 0.2rem; }
+  .chat-action { align-self: flex-start; background: var(--green); color: white; border: none; padding: 0.45rem 1rem; border-radius: 8px; font-size: 0.76rem; font-weight: 600; cursor: pointer; font-family: 'Space Grotesk', sans-serif; }
+  .chat-img-attach { display: inline-flex; align-items: center; gap: 0.35rem; font-size: 0.72rem; color: rgba(255,255,255,0.55); padding: 0.25rem 0.5rem; border-radius: 6px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); }
+  .chat-macro-row { display: flex; flex-wrap: wrap; gap: 0.35rem 0.6rem; margin-top: 0.55rem; }
+  .chat-macro { font-size: 0.72rem; font-weight: 600; color: rgba(255,255,255,0.88); background: rgba(255,255,255,0.1); padding: 0.15rem 0.45rem; border-radius: 4px; }
+
+  /* HOW IT WORKS */
+  .how { background: var(--bg); }
+  .how-inner { max-width: var(--max); margin: 0 auto; padding: 0 2rem; }
+  .how-header { text-align: center; margin-bottom: 1rem; max-width: 640px; margin-left: auto; margin-right: auto; }
+  .how-header .section-sub { margin: 0 auto; text-align: center; }
+  .steps { display: block; }
+  .step { display: none; }
+
+  /* SCIENCE */
+  .science {
+    background: var(--navy);
+    color: white; position: relative; overflow: hidden;
+  }
+  .science-inner { max-width: 820px; margin: 0 auto; padding: 0 2rem; text-align: center; position: relative; z-index: 1; }
+  .science .section-title { color: white; }
+  .science .section-sub { color: rgba(255,255,255,0.68); margin: 0 auto 2.25rem; }
+  .citations { display: flex; flex-direction: column; gap: 0.85rem; text-align: left; }
+  .citation {
+    background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.09);
+    border-radius: 8px;
+    padding: 1rem 1.15rem; font-size: 0.86rem; color: rgba(255,255,255,0.75); line-height: 1.6;
+  }
+  .citation strong { color: white; }
+  .citation a { color: var(--orange-light); }
+
+  /* SUPPORT */
+  .support { text-align: center; }
+  .support-inner { max-width: 620px; margin: 0 auto; padding: 0 2rem; }
+  .support .section-sub { margin: 0 auto 1.75rem; }
+  .bmc-wrap { display: flex; justify-content: center; margin-bottom: 1.25rem; }
+  .bmc-wrap a img { height: 40px; width: 145px; border-radius: 8px; transition: transform 0.2s; }
+  .support-bio { font-size: 0.88rem; color: var(--muted); line-height: 1.7; max-width: 520px; margin: 0 auto; }
+
+  /* FAQ */
+  .faq { background: var(--surface); border-top: 1px solid var(--border); }
+  .faq-inner { max-width: 820px; margin: 0 auto; padding: 0 2rem; }
+  .faq-header { text-align: center; margin-bottom: 2.75rem; }
+  .faq-groups { display: flex; flex-direction: column; gap: 0.85rem; }
+  .faq-group {
+    background: var(--bg); border: 1px solid var(--border);
+    border-radius: var(--radius); overflow: hidden;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .faq-group[open] { border-color: rgba(46,125,50,0.4); box-shadow: var(--shadow-sm); }
+  .faq-group > summary.faq-group-title {
+    list-style: none; cursor: pointer; display: flex; align-items: center;
+    justify-content: space-between; gap: 1rem;
+    font-size: 0.74rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--orange); padding: 1rem 1.2rem;
+    transition: background 0.2s;
+  }
+  .faq-group > summary.faq-group-title::-webkit-details-marker { display: none; }
+  .faq-group > summary.faq-group-title::marker { content: ''; display: none; }
+  .faq-group > summary.faq-group-title::after {
+    content: '+'; flex-shrink: 0; width: 1.6rem; height: 1.6rem; border-radius: 8px;
+    background: rgba(230,92,0,0.1); color: var(--orange);
+    font-family: 'Space Mono', monospace; font-size: 1rem; font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .faq-group[open] > summary.faq-group-title { background: rgba(255,255,255,0.6); }
+  .faq-group[open] > summary.faq-group-title::after { content: '−'; background: var(--orange); color: white; }
+  .faq-group > .faq-list { padding: 0.85rem 1rem 1.1rem; }
+  .faq-list { display: flex; flex-direction: column; gap: 0.75rem; }
+  .faq-item {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 12px; overflow: hidden;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .faq-item[open] { border-color: rgba(46,125,50,0.35); box-shadow: var(--shadow-sm); }
+  .faq-item summary {
+    list-style: none; cursor: pointer; padding: 1rem 1.15rem;
+    font-size: 0.95rem; font-weight: 700; color: var(--navy); line-height: 1.4;
+    display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem;
+  }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary::marker { content: ''; display: none; }
+  .faq-item summary::after {
+    content: '+'; flex-shrink: 0; width: 1.45rem; height: 1.45rem; border-radius: 8px;
+    background: var(--green-pale); color: var(--green);
+    font-family: 'Space Mono', monospace; font-size: 0.95rem; font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .faq-item[open] summary::after { content: '−'; background: var(--green); color: white; }
+  .faq-body { padding: 0 1.15rem 1.15rem; font-size: 0.9rem; color: var(--muted); line-height: 1.7; }
+  .faq-body p + p { margin-top: 0.7rem; }
+  .faq-body ul, .faq-body ol { margin: 0.7rem 0 0 1.1rem; }
+  .faq-callout { border-radius: 10px; padding: 0.8rem 0.95rem; margin-bottom: 0.8rem; font-size: 0.86rem; line-height: 1.6; }
+  .faq-callout strong { color: var(--navy); }
+  .faq-callout.important { background: var(--green-pale); }
+  .faq-callout.note { background: rgba(45,45,122,0.06); }
+  .faq-link { color: var(--green); font-weight: 600; text-decoration: none; }
+  .faq-link:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer {
+    background: var(--navy); color: rgba(255,255,255,0.5);
+    padding: 2.5rem 2rem; display: flex; justify-content: space-between;
+    align-items: center; flex-wrap: wrap; gap: 1rem; font-size: 0.82rem;
+  }
+  footer strong { color: white; }
+  footer a { color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s; }
+  footer a:hover { color: var(--orange-light); }
+
+  @keyframes fadeUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+  .fade-up { opacity:0; transform:translateY(24px); transition:opacity 0.6s ease,transform 0.6s ease; }
+  .fade-up.visible { opacity:1; transform:translateY(0); }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-video { display: none; }
+    .sport-track { animation: none; flex-wrap: wrap; justify-content: center; width: auto; max-width: var(--max); margin: 0 auto; padding: 0 2rem; }
+  }
+  @media (max-width: 1024px) {
+    .hero-shell { grid-template-columns: 1fr; gap: 2.5rem; text-align: center; }
+    .hero-copy { text-align: center; }
+    .hero-sub { margin-left: auto; margin-right: auto; }
+    .hero-actions { justify-content: center; }
+    .hero-points { justify-content: center; }
+    .features-grid { grid-template-columns: repeat(2, 1fr); }
+    .split-row, .split-row.reverse { grid-template-columns: 1fr; gap: 2rem; }
+    .split-row.reverse .split-visual { order: 0; }
+    .trust-inner { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 800px) {
+    .nav-links { display: none; }
+    .chatbot-highlight { grid-template-columns: 1fr; }
+    footer { flex-direction: column; text-align: center; }
+  }
+  @media (max-width: 540px) {
+    .features-grid { grid-template-columns: 1fr; }
+    .trust-inner { grid-template-columns: 1fr; }
+    .app-shot-duo { grid-template-columns: 1fr; }
+    .container, .nav-inner, .hero-shell, .features, .faq-inner, .how-inner, .science-inner, .support-inner, .trust-bar-header, .trust-inner { padding-left: 1.25rem; padding-right: 1.25rem; }
+  }
+</style>
+<link rel="stylesheet" href="/search/search.css">
+<script src="/assets/i18n.js" defer></script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="main-nav">
+  <div class="nav-inner">
+    <a href="/de/"><img src="/3dglycogo.svg" alt="Glycogo"></a>
+    <div class="nav-links">
+      <a href="#features">Funktionen</a>
+      <a href="#showcase">So funktioniert’s</a>
+      <a href="#science">Wissenschaft</a>
+      <a href="#faq">FAQ</a>
+      <a href="#support">Hilfe</a>
+      <div class="nav-dropdown">
+        <button type="button" class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+          Rechner <span class="chev" aria-hidden="true"></span>
+        </button>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="/de/fuel-ratio-calculator/" role="menuitem">Kohlenhydrat-Verhältnis-Rechner</a>
+          <a href="/de/substrate-explorer/" role="menuitem">Rechner für Fett- und Kohlenhydratverbrauch</a>
+          <a href="/de/athlete_supplement_timer.html" role="menuitem">Supplement-Timer für Sportler</a>
+        </div>
+      </div>
+      <a href="https://web.glycogo.fit/" class="nav-cta">Kostenlos testen</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <video class="hero-video" autoplay muted loop playsinline>
+    <source src="/assets/demo.mp4" type="video/mp4">
+  </video>
+  <div class="hero-overlay"></div>
+  <div class="hero-shell">
+    <div class="hero-copy">
+      <h1>Die Ernährungs-App, die sich <span class="h1-italic">bewegt</span><br><em>bevor du es tust.</em></h1>
+      <p class="hero-sub">
+        Plane, verfolge und personalisiere deine Ernährung mit Kohlenhydrat- und Kalorienzielen, die sich automatisch an dein Training anpassen<br><br>
+		<em>Training ändert sich täglich. Deine Ernährung sollte das auch.</em>
+      </p>
+      <div class="hero-actions">
+        <a href="https://web.glycogo.fit/" class="btn-primary">Web-App</a>
+        <a href="https://play.google.com/store/apps/details?id=fit.glycogo.glycogo_mobile" class="play-badge" target="_blank" rel="noopener">
+          <img src="/assets/google-play-badge.png" alt="Jetzt bei Google Play">
+        </a>
+      </div>
+      <ul class="hero-points">
+        <li>Synchronisiert mit gängigen Fitnessgeräten</li>
+        <li>Gestützt auf Sportwissenschaft</li>
+        <li>Premium-Funktionen zum Preis eines Gels pro Monat</li>
+      </ul>
+    </div>
+    <div class="hero-media">
+      <div class="device-frame">
+        <div class="device-notch"></div>
+        <div class="device-screen">
+          <div class="media-slot">
+            <img src="/assets/app-home.png" alt="Glycogo-Startbildschirm">
+            <div class="media-placeholder">
+              <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+              <span>App-Screenshot</span>
+              <small>assets/app-home.png</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY GLYCOGO -->
+<div class="trust-bar">
+  <div class="trust-inner">
+    <div class="trust-item">
+      <strong>Ziele, die mit der Belastung wachsen</strong>
+      <span>Kohlenhydrat- und Kalorienziele steigen mit RPE und Dauer der Einheit.</span>
+    </div>
+    <div class="trust-item">
+      <strong>Synchronisiere geplantes und absolviertes Training</strong>
+      <span>Importiere Einheiten von deinem Gerät und erhalte Ernährungsziele für jedes Training.</span>
+    </div>
+    <div class="trust-item">
+      <strong>Zugeschnitten auf dein Training</strong>
+      <span>Lege Sportarten, Essenszeiten, Kohlenhydratbereiche und die Intensitätsskalierung passend zu deinem Alltag fest.</span>
+    </div>
+    <div class="trust-item">
+      <strong>Fundiert in der Sportwissenschaft</strong>
+      <span>Intensitätsbasierte Skalierung auf Grundlage begutachteter Forschung.</span>
+    </div>
+  </div>
+</div>
+
+<!-- SPORTS -->
+<div class="sport-marquee">
+  <p>Egal welcher Sport – Glycogo skaliert deine Ernährung</p>
+  <div class="sport-track-wrap">
+    <div class="sport-track">
+      <span class="sport-tag">Laufen</span><span class="sport-tag">Radfahren</span><span class="sport-tag">Schwimmen</span><span class="sport-tag">Triathlon</span><span class="sport-tag">Fitnessstudio</span><span class="sport-tag">Mannschaftssport</span><span class="sport-tag">Wintersport</span><span class="sport-tag">+ mehr</span>
+      <span class="sport-tag">Laufen</span><span class="sport-tag">Radfahren</span><span class="sport-tag">Schwimmen</span><span class="sport-tag">Triathlon</span><span class="sport-tag">Fitnessstudio</span><span class="sport-tag">Mannschaftssport</span><span class="sport-tag">Wintersport</span><span class="sport-tag">+ mehr</span>
+    </div>
+  </div>
+</div>
+
+<!-- FEATURES -->
+<section id="features" class="block" style="background:var(--bg-soft);">
+  <div class="features">
+    <div class="features-header fade-up">
+      <h2 class="section-title">Alles, was du für klügere Ernährung brauchst</h2>
+      <p class="section-sub">
+      Verfolge und plane deine Ernährung mühelos mit einem anpassbaren, daten- und detailorientierten Ansatz, gestützt auf aktuelle Forschung und Technologie.
+      </p>
+    </div>
+    <div class="features-grid">
+
+      <div class="feature-card fade-up">
+        <div class="feature-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+        <div class="feature-title">Periodisierte Ziele</div>
+        <p class="feature-desc">Kohlenhydrat- und Kalorienziele skalieren mit RPE und Dauer der Einheit. Lege Ober- und Untergrenzen pro Stunde fest und steuere, wie die Zufuhr mit der Trainingsintensität steigt.</p>
+      </div>
+
+      <div class="feature-card fade-up">
+        <div class="feature-icon"><svg viewBox="0 0 24 24"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg></div>
+        <div class="feature-title">Synchronisiere dein Training</div>
+        <p class="feature-desc">Importiere geplante und absolvierte Einheiten automatisch von großen Fitness-Tracking-Plattformen über den Intervals.icu-Hub (kostenloses Konto erforderlich). Glycogo berechnet die Ernährung vor, während und nach dem Training für jede Einheit.</p>
+      </div>
+
+      <div class="feature-card fade-up">
+        <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+        <div class="feature-title">Gespeicherte Mahlzeitenvorlagen und Tagesprotokoll</div>
+        <p class="feature-desc">Speichere Mahlzeiten als Vorlagen und lade sie mit einem Klick erneut. Übernimm das Protokoll von gestern auf heute oder starte neu. Kein tägliches Neueintippen derselben Lebensmittel mehr.</p>
+      </div>
+
+      <div class="feature-card fade-up">
+        <div class="feature-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+        <div class="feature-title">Intelligente Mengenvorschläge</div>
+        <p class="feature-desc">Wähle deine Lebensmittel aus und berechne automatisch die Mengen, die du für die verbleibenden Kohlenhydrat- und Kalorienziele brauchst.</p>
+      </div>
+
+      <div class="feature-card fade-up">
+        <div class="feature-icon"><svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+        <div class="feature-title">Trendverfolgung</div>
+        <p class="feature-desc">Stelle die Energie im Tagesverlauf dar, um zu sehen, wie sich deine stündliche Energiebilanz mit Mahlzeiten und Training verschiebt, und sieh dir den Verlauf an, um zu erkennen, wie deine Zufuhr gegenüber den Zielen mit der Trainingsbelastung schwankt.</p>      </div>
+
+      <div class="feature-card fade-up">
+        <div class="feature-icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+        <div class="feature-title">Eigene Lebensmitteldatenbank</div>
+        <p class="feature-desc">Durchsuche Tausende Lebensmittel aus einer umfangreichen Datenbank oder füge eigene Lebensmittel mit voller Kontrolle über Makros und Portionsgrößen hinzu.</p>
+      </div>
+
+      <div class="feature-card fade-up">
+        <div class="feature-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><circle cx="12" cy="10" r="3"/><path d="M5 7h1"/></svg></div>
+        <div class="feature-title">Erfassung per Foto</div>
+        <p class="feature-desc">Fotografiere deine Mahlzeit und lass die KI Lebensmittel erkennen und Makros automatisch schätzen – ohne manuelle Suche.</p>
+      </div>
+      <div class="feature-card fade-up">
+        <div class="feature-icon"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="2" height="14"/><rect x="7" y="5" width="1" height="14"/><rect x="10" y="5" width="2" height="14"/><rect x="14" y="5" width="1" height="14"/><rect x="17" y="5" width="3" height="14"/><rect x="21" y="5" width="1" height="14"/></svg></div>
+        <div class="feature-title">Barcode-Scanner</div>
+        <p class="feature-desc">Scanne Barcodes von verpackten Lebensmitteln und erhalte in Sekunden genaue Nährwertdaten aus einer umfangreichen Datenbank.</p>
+      </div>
+
+      <div class="feature-card fade-up">
+        <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg></div>
+        <div class="feature-title">Wettkampftag-Planer</div>
+        <p class="feature-desc">Plane den Wettkampf selbst: Kohlenhydrat- und Flüssigkeitsziele für jeden Abschnitt, was du an jeder Verpflegungsstation nimmst und wie Schweißrate, Intensität und Bedingungen deine Zufuhr anpassen.</p>
+      </div>
+
+    </div>
+
+    <!-- AI CHATBOT -->
+    <div class="chatbot-highlight fade-up">
+      <div>
+        <div class="feature-title">KI-Ernährungsassistent</div>
+        <p class="feature-desc">Fotografiere deinen Teller und die App schätzt Kalorien und Makros aus dem Bild. Frage nach Ideen für Mahlzeiten, Rezeptvorschlägen oder Lebensmitteltausch – auf Basis deiner Einheiten, der verbleibenden Tagesziele und dessen, was du bereits erfasst hast. Vorgeschlagene Mahlzeiten lassen sich direkt aus dem Chat ins Protokoll übernehmen.</p>
+        <br>
+        <p class="feature-desc" style="color:rgba(255,255,255,0.45);font-size:0.82rem;">Liest deine Einheiten, Kalorien- und Kohlenhydratziele sowie dein aktuelles Protokoll und gibt praktische, persönliche Vorschläge statt allgemeiner Ratschläge.</p>
+      </div>
+      <div class="chat-demo">
+
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:0.25rem;">
+          <div class="chat-label" style="align-self:flex-end;">Du</div>
+          <div class="chat-img-attach">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            mahlzeit_foto.jpg
+          </div>
+          <div class="chat-msg user">Meinen Teller erfassen</div>
+        </div>
+
+        <div>
+          <div class="chat-label">Assistent</div>
+          <div class="chat-msg bot">
+            Ich sehe gegrillte Hähnchenbrust, gedämpften Brokkoli und weißen Reis. Basierend auf deinen Portionsgrößen (ca. 180 g Hähnchen, 200 g gekochter Reis, 150 g Brokkoli):
+            <div class="chat-macro-row">
+              <span class="chat-macro">619 kcal</span>
+              <span class="chat-macro">Protein 47 g</span>
+              <span class="chat-macro">Kohlenhydrate 71 g</span>
+              <span class="chat-macro">Fett 8 g</span>
+            </div>
+          </div>
+          <button class="chat-action">+ Diese Mahlzeit zum Mittagessen erfassen</button>
+        </div>
+
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:0.25rem;">
+          <div class="chat-label" style="align-self:flex-end;">Du</div>
+          <div class="chat-msg user">Schlage einen guten Snack nach dem Lauf vor</div>
+        </div>
+
+        <div>
+          <div class="chat-label">Assistent</div>
+          <div class="chat-msg bot">
+            Dir bleiben heute noch 42 g Kohlenhydrate und 230 kcal. Nach einem Lauf hilft ein Verhältnis von 3:1 zwischen Kohlenhydraten und Protein, Glykogen aufzufüllen und die Muskelreparatur zu unterstützen.<br><br>
+            <strong style="color:white;">Fettarmer griechischer Joghurt + Banane</strong><br>
+            170 g griechischer Joghurt + 1 mittlere Banane
+            <div class="chat-macro-row">
+              <span class="chat-macro">228 kcal</span>
+              <span class="chat-macro">Protein 18 g</span>
+              <span class="chat-macro">Kohlenhydrate 38 g</span>
+              <span class="chat-macro">Fett 2 g</span>
+            </div>
+          </div>
+          <button class="chat-action">+ Diesen Snack erfassen</button>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- APP SHOWCASE + HOW (split rows) -->
+<section id="showcase" class="showcase">
+  <div class="container">
+    <div class="showcase-intro fade-up">
+      <h2 class="section-title">In Minuten eingerichtet</h2>
+      <p class="section-sub" style="margin:0 auto;text-align:center;">Verbinde deine Trainingsdaten, setze deine Ziele und ernähre dich präzise.</p>
+    </div>
+
+    <div id="how" class="how-inner">
+      <div class="split-row fade-up">
+        <div class="split-copy">
+          <h3>Lege Basisziele und Intensitätsskalierung fest</h3>
+          <p>Gib Körpergewicht, Ziel für die Energieverfügbarkeit und die Basisverteilung der Makronährstoffe ein – das Fundament deiner täglichen Ernährung außerhalb der Trainingseinheiten.</p>
+          <p>Lege dann Ober- und Untergrenzen für Kohlenhydrate und Kalorien pro Stunde fest und stimme die Ernährung für jede Sportart ab. Vollständig anpassbar an deine Trainingsleistung und Magen-Darm-Toleranz.</p>
+        </div>
+        <div class="split-visual">
+          <div class="app-shot-duo">
+            <div class="app-shot">
+              <img src="/assets/app-settings.png" alt="Glycogo-Einstellungen">
+              <div class="media-placeholder">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                <span>Einstellungen</span>
+                <small>assets/app-settings.png</small>
+              </div>
+            </div>
+            <div class="app-shot">
+              <img src="/assets/app-carbs.png" alt="Intensitätsskalierung">
+              <div class="media-placeholder">
+                <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                <span>Intensitätsskalierung</span>
+                <small>assets/app-carbs.png</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="split-row reverse fade-up">
+        <div class="split-copy">
+          <h3>Synchronisiere deine Einheiten</h3>
+          <p>Verbinde dein Gerät über Intervals.icu, um Trainingseinheiten automatisch zu übernehmen, oder füge eine manuell hinzu. Jede Einheit erhält eigene Ernährungsziele vor, während und nach dem Training – abhängig von Dauer und Intensität.</p>
+        </div>
+        <div class="split-visual">
+          <div class="app-shot">
+            <img src="/assets/app-sports.png" alt="Glycogo-Startbildschirm">
+            <div class="media-placeholder">
+              <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              <span>Screenshot von Start und Training</span>
+              <small>assets/app-sports.png</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="split-row fade-up">
+        <div class="split-copy">
+          <h3>Lebensmittel erfassen</h3>
+          <p>Erfasse Lebensmittel über gespeicherte Mahlzeiten, Barcode-Scan, Fotoerkennung, vorgeschlagene Rezepte oder eine Suche in einer umfangreichen Datenbank. Nutze Mengen vorschlagen oder frage den KI-Assistenten nach einer Mahlzeit, die deine restlichen Ziele deckt.</p>
+        </div>
+        <div class="split-visual">
+          <div class="app-shot">
+            <img src="/assets/app-log-food.png" alt="Lebensmittel erfassen">
+            <div class="media-placeholder">
+              <svg viewBox="0 0 24 24"><path d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7zm5-3v8h2.5v8H21V2c-2.76 0-5 2.24-5 4z"/></svg>
+              <span>Screenshot von Lebensmittel erfassen</span>
+              <small>assets/app-log-food.png</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="split-row reverse fade-up">
+        <div class="split-copy">
+          <h3>Trends verfolgen</h3>
+          <p>Sieh, wie sich deine Zufuhr im Zeitverlauf zu den Zielen verhält und wie sie mit der Trainingsbelastung schwankt. Speichere Tagessummen und beobachte, wie deine Ernährungsmuster entstehen – synchronisiert mit den Wellness-Feldern von Intervals.icu neben deinen Trainingsdaten.</p>
+        </div>
+        <div class="split-visual">
+          <div class="app-shot">
+            <img src="/assets/app-trends.png" alt="Trendverfolgung">
+            <div class="media-placeholder">
+              <svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+              <span>Screenshot der Trends</span>
+              <small>assets/app-trends.png</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCIENCE -->
+<section id="science" class="science block">
+  <div class="science-inner fade-up">
+    <h2 class="section-title">Fundiert in der Forschung, auf Optimierung ausgelegt</h2>
+    <p class="section-sub">Der Ansatz der Kohlenhydratperiodisierung und die intensitätsbasierte Skalierung stützen sich auf begutachtete Forschung aus führenden sportwissenschaftlichen Fachzeitschriften.</p>
+    <div class="citations">
+      <div class="citation">
+        <strong>Vorhersage von Kohlenhydrat- und Energiebedarf aus der Trainingsbelastung</strong>: Rothschild et al. (2025). A Novel Method to Predict Carbohydrate and Energy Expenditure During Endurance Exercise Using Measures of Training Load. <em>Sports Medicine</em>, 55(3):753–774. <a href="https://doi.org/10.1007/s40279-024-02131-z">doi:10.1007/s40279-024-02131-z</a>
+      </div>
+      <div class="citation">
+        <strong>Relative Energieverfügbarkeitsstörung im Sport (REDs)</strong>: Mountjoy et al. (2023). 2023 International Olympic Committee's (IOC) consensus statement on Relative Energy Deficiency in Sport (REDs). <em>British Journal of Sports Medicine</em>, 57(17):1073–1097. <a href="https://doi.org/10.1136/bjsports-2023-106994">doi:10.1136/bjsports-2023-106994</a>
+      </div>
+      <div class="citation">
+        <strong>Kohlenhydratperiodisierung</strong>: Impey et al. (2018). Fuel for the Work Required: A Theoretical Framework for CHO Periodization. <em>Frontiers in Physiology</em>. <a href="https://doi.org/10.3389/fphys.2018.01405">doi:10.3389/fphys.2018.01405</a>
+      </div>
+      <div class="citation">
+        <strong>Kohlenhydratzufuhr während des Sports</strong>: Burke et al. (2011). Carbohydrates for training and competition. <em>Journal of Sports Sciences</em>. <a href="https://doi.org/10.1080/02640414.2011.585473">doi:10.1080/02640414.2011.585473</a>
+      </div>
+      <div class="citation">
+        <strong>Proteinbedarf von Sportlern</strong>: Morton et al. (2018). A systematic review, meta-analysis and meta-regression of the effect of protein supplementation on resistance training-induced gains in muscle mass. <em>British Journal of Sports Medicine</em>. <a href="https://doi.org/10.1136/bjsports-2017-097608">doi:10.1136/bjsports-2017-097608</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="faq block">
+  <div class="faq-inner">
+    <div class="faq-header fade-up">
+      <h2 class="section-title">Häufige Fragen</h2>
+      <p class="section-sub">Wie Glycogo Trainingsernährung, Tagesziele und die Energiebilanz im Tagesverlauf berechnet.</p>
+    </div>
+
+    <div class="faq-groups">
+
+    <details class="faq-group fade-up">
+      <summary class="faq-group-title">Preis</summary>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>Was kostet Glycogo?</summary>
+          <div class="faq-body">
+            <p>Premium kostet etwa so viel wie nur <strong>1–2 Gels pro Monat</strong>, also rund <strong>€4.40</strong> oder <strong>5 USD</strong>.</p>
+            <p>Du kannst Glycogo auch kostenlos nutzen! Das Abonnement schaltet Premium-Funktionen frei, etwa die Intervals.icu-Synchronisierung, Foto- und Barcode-Erfassung, eine größere Lebensmitteldatenbank und den KI-Ernährungsassistenten.</p>
+          </div>
+        </details>
+      </div>
+    </details>
+
+    <details class="faq-group fade-up">
+      <summary class="faq-group-title">Trainingseinheiten und Gerätekalorien</summary>
+      <div class="faq-list">
+
+        <details class="faq-item">
+          <summary>Was bewirkt „Sitzungskalorien des Geräts verwenden“?</summary>
+          <div class="faq-body">
+            <ul>
+              <li><strong>Wenn aktiviert:</strong> Glycogo geht vom Kalorienwert deines synchronisierten Geräts oder deiner Plattform aus (Garmin, Strava, Wahoo, Intervals.icu und ähnliche) und rechnet ihn in netto aktive Kalorien für die Ernährungsziele um.</li>
+              <li><strong>Wenn deaktiviert:</strong> Glycogo schätzt den Verbrauch der Einheit anhand deiner Sporteinstellungen (zum Beispiel Radleistung, Laufpace, Schwimmpace, Effizienzpräferenzen und Körpergewicht) statt anhand des Gerätewerts.</li>
+            </ul>
+            <p>Auch mit aktivierten Gerätekalorien zeigt Glycogo wahrscheinlich einen niedrigeren Wert als deine Uhr. Die App zieht den Ruheanteil der Geräteschätzung ab, damit dieser Verbrauch nicht doppelt zählt.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Warum weichen die Trainingskalorien in Glycogo von Garmin, Wahoo oder Strava ab?</summary>
+          <div class="faq-body">
+            <p>Beim Sport bezieht dein Körper Energie aus dem Ruhestoffwechsel und aus der Arbeit deiner Muskeln. Sportuhren melden meist die Summe. Glycogo trennt den aktiven Anteil, damit er nicht doppelt zählt, denn deine täglichen Mahlzeitenziele enthalten bereits deinen allgemeinen Tagesbedarf.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Wie synchronisiert Glycogo Trainingseinheiten?</summary>
+          <div class="faq-body">
+            <p>Glycogo verbindet sich mit <strong>Intervals.icu</strong>, das geplante und absolvierte Trainings von großen Fitnessplattformen übernehmen kann. Importierte Einheiten bestimmen die Ernährungsziele vor, während und nach dem Training an diesem Tag.</p>
+            <p>Du kannst Einheiten auch manuell in der App hinzufügen oder bearbeiten.</p>
+          </div>
+        </details>
+
+        <details class="faq-item" id="faq-session-rpe">
+          <summary>Wie sollte ich die RPE meiner Einheit bewerten?</summary>
+          <div class="faq-body">
+            <p>Wenn du eine Einheit manuell hinzufügst oder bearbeitest, bewerte die <strong>Gesamtschwierigkeit der ganzen Einheit</strong> auf der Borg-CR100-Skala (1–100). Das ist die Sitzungs-RPE: wie hart sich die gesamte Einheit im Verhältnis zu dem anfühlte, was du etwa eine Stunde lang maximal halten könntest – nicht die Spitzenbelastung deines härtesten Intervalls.</p>
+            <p>Eine lange aerobe Ausfahrt mit einigen Antritten wird meist niedriger bewertet als ein gleichmäßiger Schwellenblock, auch wenn Spitzenleistung oder Tempo hoch waren.</p>
+            <p>Wenn du den Regler in der App bewegst, aktualisiert sich ein kurzes Label (zum Beispiel „Moderat“, „Stark“ oder „Sehr hart“) passend zu den CR100-Bereichen:</p>
+            <ul>
+              <li><strong>Sehr leicht bis leicht (etwa 1–20):</strong> Regeneration oder entspannte aerobe Arbeit.</li>
+              <li><strong>Gleichmäßig leicht bis moderat (etwa 20–40):</strong> Angenehme Ausdauer mit etwas Fokus.</li>
+              <li><strong>Mäßig hart bis stark (etwa 40–60):</strong> Zielgerichtetes Training mit klarer Anstrengung.</li>
+              <li><strong>Hart bis sehr hart (etwa 60–80):</strong> Fordende, anhaltende Arbeit.</li>
+              <li><strong>Extrem hart bis maximal (etwa 80–100):</strong> Sehr schwere oder wettkampfähnliche Einheiten.</li>
+            </ul>
+            <div class="faq-callout note">
+              <strong>Tipp:</strong> Wenn du Intervalle, Aufwärmen und Auslaufen als eine Einheit erfasst, sollten die leichten Abschnitte und die Erholung zwischen den Wiederholungen die Gesamtbewertung im Vergleich zu deiner härtesten Wiederholung senken.
+            </div>
+          </div>
+        </details>
+
+        <details class="faq-item" id="faq-synced-rpe">
+          <summary>Wie wird die RPE für eine synchronisierte Einheit berechnet?</summary>
+          <div class="faq-body">
+            <p>Wenn ein Training synchronisiert wird, schätzt Glycogo die Trainingsbelastung (angezeigt als RPE 1–100) aus den Aktivitätsdaten. Es nutzt zuerst die beste verfügbare Messgröße, statt dir die manuelle Eingabe der Anstrengung abzuverlangen.</p>
+            <p><strong>Absolvierte Trainings</strong> werden in dieser Reihenfolge geschätzt:</p>
+            <ol>
+              <li><strong>Radleistung</strong> im Vergleich zu deiner FTP (aus den Glycogo-Sporteinstellungen oder Intervals.icu).</li>
+              <li><strong>Manuelle RPE</strong> die du in Intervals.icu eingetragen hast, falls vorhanden.</li>
+              <li><strong>Durchschnittliche Herzfrequenz</strong> im Vergleich zu deiner Schwellen- oder Maximalherzfrequenz.</li>
+              <li>Andere Intensitätsfelder der Aktivität, wenn die oben genannten fehlen.</li>
+            </ol>
+            <div style="margin: 24px 0;"></div>
+            <p><strong>Geplante Trainings</strong> nutzen:</p>
+            <ol>
+              <li><strong>Geplante Radleistung</strong> gegenüber der FTP.</li>
+              <li><strong>Geplante Pace oder Geschwindigkeit</strong> gegenüber deiner kritischen Laufpace oder deinem Schwimm-CSS aus den Sporteinstellungen.</li>
+              <li><strong>Manuelle RPE</strong> aus Intervals.icu, dann andere Intensitätsfelder.</li>
+            </ol>
+            <p>Wenn nichts Brauchbares verfügbar ist, nutzt Glycogo einen moderaten Standardwert (50), bis du ihn änderst. Du kannst die RPE nach der Synchronisierung jederzeit bearbeiten, wenn die Schätzung nicht zum Gefühl der Einheit passt.</p>
+            <div class="faq-callout note">
+              Leistungs-, Pace- und Herzfrequenzschätzungen funktionieren am besten, wenn FTP, kritische Pace, Schwimm-CSS und Herzfrequenzschwellen in deinen Sporteinstellungen oder bei Intervals.icu hinterlegt sind.
+            </div>
+          </div>
+        </details>
+
+      </div>
+    </details>
+
+    <details class="faq-group fade-up">
+      <summary class="faq-group-title">Energiebilanz im Tagesverlauf</summary>
+      <div class="faq-list">
+
+        <details class="faq-item">
+          <summary>Was ist die Energieverfügbarkeit im Tagesverlauf?</summary>
+          <div class="faq-body">
+            <div class="faq-callout note">
+              Die Energieverfügbarkeit im Tagesverlauf verfolgt stündlich deine Bilanz zwischen dem, was du isst, und dem, was du verbrauchst, während der Tag voranschreitet.
+            </div>
+            <p>Viele Apps betrachten nur deine Tagessumme. Glycogo legt den Fokus darauf, <strong>wann</strong> du im Defizit bist, denn längere Phasen niedriger Energie am Tag werden mit hormonellen Störungen und schlechteren Ergebnissen bei Regeneration und Körperzusammensetzung in Verbindung gebracht – selbst wenn eine große Abendmahlzeit die Tagessumme wieder ausgleicht.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Was zeigt das Zeitdiagramm der Energieverfügbarkeit im Tagesverlauf?</summary>
+          <div class="faq-body">
+            <p>Die Zeitachse ist dein Energiebild des Tages: Sie zeigt geplante und erfasste Mahlzeiten, Trainingseinheiten und wie sich deine kumulierte Bilanz im Tagesverlauf ändert.</p>
+            <p>Mahlzeiten- und Einheitenmarker sind interaktiv: Fahre darüber oder tippe für Details. Das Diagramm hebt hervor, wann du längere Zeit in einem deutlichen Energiedefizit bist, und hilft dir, Timing oder Größe der Mahlzeiten anzupassen, um dein Energieniveau über den Tag zu optimieren.</p>
+          </div>
+        </details>
+
+        <details class="faq-item" id="faq-morning-deficit">
+          <summary>Warum zeigt die App direkt nach dem Aufwachen ein Defizit?</summary>
+          <div class="faq-body">
+            <p>Dein Körper verbraucht auch nachts Energie für Temperaturregulation, Gehirnfunktion und Reparatur. Glycogo nutzt ein zirkadianes Modell, das den Ruhestoffwechsel ungleich über den Tag verteilt (nachts weniger, in aktiven Stunden mehr), statt ihn gleichmäßig auf 24 Stunden aufzuteilen.</p>
+            <p>Die negative Bilanz am Morgen spiegelt den nächtlichen Energieverbrauch wider und liefert einen realistischen Ausgangspunkt für die Ernährung über den Tag. Das ist zu erwarten und kein Zeichen für ein Problem mit deinen Einstellungen.</p>
+          </div>
+        </details>
+
+      </div>
+    </details>
+
+    <details class="faq-group fade-up">
+      <summary class="faq-group-title">Ernährungseinstellungen</summary>
+      <div class="faq-list">
+
+        <details class="faq-item">
+          <summary>Welchen Kohlenhydratbereich pro Stunde sollte ich wählen?</summary>
+          <div class="faq-body">
+            <p>Deine Ober- und Untergrenze sollten Magen-Darm-Toleranz, Trainingserfahrung und Anforderungen der Einheit widerspiegeln:</p>
+            <ul>
+              <li><strong>Untergrenze:</strong> Leichte aerobe, regenerative oder kurzzeitige Arbeit mit niedriger Intensität. Ein üblicher Startbereich liegt bei etwa 30–50 g/h für stabile Energie, ohne den Magen-Darm-Trakt zu überlasten.</li>
+              <li><strong>Obergrenze:</strong> Harte Intervalle, Schwellenarbeit oder wettkampfspezifische Einheiten mit hohem Glykogenverbrauch.</li>
+              <li><strong>Allgemeine Sportler:</strong> Bis etwa 90 g/h ist eine weit verbreitete Obergrenze für anhaltend harte Belastung (ACSM-Richtlinien).</li>
+              <li><strong>Sportler mit höherer Leistung und trainiertem Magen-Darm-Trakt:</strong> Manche Sportler vertragen und nutzen mehr als 90 g/h, besonders bei sehr hohem Gesamtenergiebedarf oder wenn an langen Tagen oder bei mehreren Einheiten durchgehend Energie zugeführt werden muss. Höhere Mengen erfordern in der Praxis oft gezieltes Magen-Darm-Training. Du kannst deine Obergrenze bei Bedarf oder mit zunehmender Anpassung anheben.</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Wie lang sollte meine Mindestdauer pro Einheit sein?</summary>
+          <div class="faq-body">
+            <p>Diese Einstellung steuert, wann Glycogo Kohlenhydratziele <strong>während der Einheit</strong> hinzufügt. Ein niedrigerer Schwellenwert ergänzt die Ernährung auch bei kürzeren Trainings. Ein höherer hält die Ernährung auf wirklich lange Belastungen fokussiert.</p>
+            <p>Der Standardwert ist <strong>60 Minuten</strong>, was für die meisten Ausdauertrainings passt; 60–90 Minuten sind ein guter Bereich. Kürzere Einheiten brauchen oft keine Kohlenhydrate während des Trainings.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Wozu dient die Einstellung für kohlenhydratreiche Ernährung einer Einheit?</summary>
+          <div class="faq-body">
+            <p>Wenn du <strong>Kohlenhydratreiche Ernährung</strong> bei einem einzelnen Training aktivierst, nimmt Glycogo für diese Einheit immer Kohlenhydratziele während des Trainings am oberen Ende deines Kohlenhydratbereichs pro Stunde auf – auch wenn sie kürzer als deine Mindestdauer oder weniger intensiv ist.</p>
+            <p>Das ist nützlich für Magen-Darm-Training (höhere Kohlenhydratmengen im Training üben) oder wenn die Zufuhr vor der Einheit begrenzt ist und du trotzdem unterwegs Kohlenhydrate brauchst.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Was ist der Unterschied zwischen Kohlenhydraten während der Einheit und den gesamten durch die Einheit ergänzten Kohlenhydraten?</summary>
+          <div class="faq-body">
+            <p><strong>Kohlenhydrate während der Einheit</strong> sind die Kohlenhydrate, die du aufnehmen willst, <em>während</em> du trainierst – basierend auf deinen Kohlenhydrateinstellungen pro Stunde und der Dauer des Trainings.</p>
+            <p><strong>Gesamte durch die Einheit ergänzte Kohlenhydrate</strong> ist der gesamte Ernährungszuschlag, den dieses Training zu deinem Tag beiträgt: Kohlenhydrate während der Einheit <em>plus</em> die vor und nach diesem Training eingeplanten Kohlenhydrate.</p>
+            <p>Die täglichen Kohlenhydratziele kombinieren dann deine Basismahlzeiten mit der Gesamtsumme aller Einheiten dieses Tages.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Wozu dient die Einstellung „Kohlenhydratbeladung“?</summary>
+          <div class="faq-body">
+            <p>Kohlenhydratbeladung erhöht dein tägliches Basisziel an Kohlenhydraten für einen gewählten Tag, um vor einem Schlüsselereignis oder einer langen Belastung vollere Muskelglykogenspeicher zu unterstützen.</p>
+            <div class="faq-callout important">
+              <strong>Tipp:</strong> Training an einem Beladungstag ergänzt weiterhin die Ernährung der Einheit zusätzlich zur erhöhten Basis. Wenn du an diesem Tag auch trainierst, wähle eher das untere Ende deines Beladungsbereichs, damit das Gesamtziel praktikabel bleibt.
+            </div>
+          </div>
+        </details>
+
+      </div>
+    </details>
+
+    <details class="faq-group fade-up">
+      <summary class="faq-group-title">Mahlzeitenzeiten</summary>
+      <div class="faq-list">
+
+        <details class="faq-item">
+          <summary>Warum plant die App einen Snack vor der Einheit?</summary>
+          <div class="faq-body">
+            <p>Snacks vor der Einheit helfen, die Kohlenhydratspeicher aufzufüllen, und können für Training vor dem Frühstück oder vor harter oder langer Arbeit eingeplant werden. Standardmäßig legt die App ihn etwa eine Stunde vor Beginn der Einheit. Du kannst den Zeitpunkt ändern oder die Snacks in den Einstellungen deaktivieren.</p>
+          </div>
+        </details>
+
+        <details class="faq-item" id="faq-pre-session-snack-timing">
+          <summary>Welchen Einfluss hat der Zeitpunkt des Snacks vor der Einheit?</summary>
+          <div class="faq-body">
+            <p>Die Zeiteinstellung legt fest, wie viele Minuten vor deiner Einheit der Snack geplant wird und wie viele Kohlenhydrate in dieses Zeitfenster passen.</p>
+            <p>Kürzere Abstände nutzen eine niedrigere Kohlenhydratgrenze, längere erlauben mehr. Das folgt sport-ernährungswissenschaftlichen Empfehlungen dazu, wie viel Energie vor harter Arbeit praktisch aufgenommen werden kann, ohne den Magen-Darm-Trakt zu überlasten.</p>
+            <p>Würde das Ziel vor der Einheit diese Grenze überschreiten, gehen die überschüssigen Kalorien und Kohlenhydrate auf deine anderen Mahlzeiten über.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Warum haben sich meine Standard-Essenszeiten nach dem Hinzufügen eines Trainings verschoben?</summary>
+          <div class="faq-body">
+            <p>Wenn die Standardzeit einer Mahlzeit in den Einstellungen (zum Beispiel Frühstück um 07:30, Mittagessen um 12:30, Abendessen um 18:30) in einen Trainingsblock fällt, verschiebt Glycogo sie automatisch, um Überschneidungen zu vermeiden und ausreichend Verdauungszeit zu sichern.</p>
+            <p>Die Mahlzeit wird entweder auf <strong>60 Minuten vor Beginn der Einheit</strong> oder <strong>direkt an das Ende der Einheit</strong> verschoben – je nachdem, welche Option näher an der ursprünglichen Standardzeit der Mahlzeit liegt.</p>
+          </div>
+        </details>
+
+        <details class="faq-item" id="faq-multiple-workouts">
+          <summary>Wie geht Glycogo mit mehreren Trainings am selben Tag um?</summary>
+          <div class="faq-body">
+            <p>Jede Einheit erhält ihr eigenes Timing für Ernährung vor, während und nach dem Training. Der Netto-Energie- und Kohlenhydratbedarf des Tages spiegelt die kombinierte Belastung aller Einheiten wider.</p>
+          </div>
+        </details>
+
+      </div>
+    </details>
+
+    <details class="faq-group fade-up">
+      <summary class="faq-group-title">Wettkampftag</summary>
+      <div class="faq-list">
+
+        <details class="faq-item">
+          <summary>Kann Glycogo den ganzen Wettkampftag planen, nicht nur die Tage davor und danach?</summary>
+          <div class="faq-body">
+            <p>Ja. Glycogo enthält einen <strong>Planer für Wettkampfernährung und -hydratation</strong> , der deine Ziele in einen Plan für den Wettkampf selbst umsetzt – Block für Block: wie viele Kohlenhydrate und Flüssigkeit in jedem Abschnitt aufzunehmen sind, was an jeder Verpflegungsstation zu verwenden ist und wie deine Schweißrate und die Bedingungen die Summen anpassen.</p>
+            <p>Du kannst einen geplanten Wettkampf importieren aus <strong>Intervals.icu</strong> und den Plan aus Distanz, Dauer und Intensität erstellen lassen – oder ihn manuell aufbauen.</p>
+          </div>
+        </details>
+
+      </div>
+    </details>
+
+    <details class="faq-group fade-up">
+      <summary class="faq-group-title">Sporteinstellungen und Kalorienschätzungen</summary>
+      <div class="faq-list">
+
+        <details class="faq-item">
+          <summary>Was ist die Ernährungs-Heatmap im Einstellungsbildschirm?</summary>
+          <div class="faq-body">
+            <p>Sie zeigt, wie deine geplante Kohlenhydratzufuhr pro Stunde mit Dauer und RPE der Einheit variiert. Nutze sie als visuellen Leitfaden dafür, wie die Ernährung ansteigt, wenn Belastungen länger oder härter werden.</p>
+            <p>Nutze sie zusammen mit deinen Kohlenhydratgrenzen pro Stunde, um zu prüfen, ob leichte und harte Einheiten Ziele ergeben, die zu deinem Training und deiner Magen-Darm-Toleranz passen.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Was, wenn ich meine FTP, kritische Pace oder mein Schwimm-CSS nicht kenne?</summary>
+          <div class="faq-body">
+            <p>Lass diese Felder leer oder auf null und Glycogo nutzt standardsportartspezifische Schätzungen, skaliert auf dein Körpergewicht. Du erhältst trotzdem einen brauchbaren Kalorien- und Ernährungsbereich; persönliche Referenzwerte später verfeinern ihn.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Was, wenn ich meine Effizienz beim Radfahren, Laufen oder Schwimmen nicht kenne?</summary>
+          <div class="faq-body">
+            <p>Lass die Effizienzregler auf ihren Standardwerten. Sie stehen für typische Werte der jeweiligen Sportart. Du brauchst keine Labortests, um mit Glycogo zu starten.</p>
+            <ul>
+              <li><strong>Radfahren:</strong> Der Standardwert entspricht einer typischen Bruttoeffizienz trainierter Radfahrer. Verschiebe ihn nach links, wenn du neu im Radsport bist oder eher schnellkräftige Fasern hast – und umgekehrt.</li>
+              <li><strong>Laufen:</strong> Der Standardwert entspricht einer typischen Ökonomie. Weniger ökonomische Läufer brauchen bei gleichem Tempo mehr Energie; gut trainierte, ökonomische Läufer weniger.</li>
+              <li><strong>Schwimmen:</strong> Der Standardwert entspricht einer typischen Vortriebseffizienz im Wasser. Weniger effiziente Technik oder höherer Widerstand bedeuten bei gleichem Tempo einen höheren Kalorienbedarf.</li>
+            </ul>
+            <p>Du kannst diese Einstellungen im Laufe der Zeit anhand von Gefühl, Regeneration und Leistung anpassen.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Wie beeinflusst die Effizienz beim Radfahren den Kalorienverbrauch?</summary>
+          <div class="faq-body">
+            <p>Die Effizienz beim Radfahren beschreibt, wie viel deiner gesamten Energieabgabe als mechanische Leistung an die Pedale gelangt:</p>
+            <ul>
+              <li><strong>Geringere Effizienz:</strong> Bei gleicher Leistung geht mehr Energie als Wärme verloren, der Kalorienverbrauch ist also höher.</li>
+              <li><strong>Höhere Effizienz:</strong> Für die gleiche Leistung wird weniger Gesamtenergie benötigt, der Kalorienverbrauch ist also niedriger.</li>
+            </ul>
+            <p>Passe den Regler in den Einstellungen an, wenn deine Erfahrung mit der Ernährung darauf hindeutet, dass die Standardwerte zu hoch oder zu niedrig sind.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Wie beeinflusst die Laufökonomie den Kalorienverbrauch?</summary>
+          <div class="faq-body">
+            <p>Die Laufökonomie folgt demselben Prinzip wie die Effizienz beim Radfahren. Sie zeigt, wie viel Energie du für ein bestimmtes Tempo aufwendest. Weniger ökonomische Läufer verbrennen bei gleicher Geschwindigkeit mehr Kalorien, ökonomischere weniger.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Warum reagiert die Kalorienschätzung beim Schwimmen so stark auf Technik und Tempo?</summary>
+          <div class="faq-body">
+            <p>Wasser erzeugt viel mehr Widerstand als Luft. Kleine Geschwindigkeitszunahmen können einen überproportional großen Anstieg der Anstrengung erfordern, und die Technik hat großen Einfluss darauf, wie viel Energie für den Kampf gegen den Widerstand und die Ausrichtung im Wasser aufgewendet wird. Der Kalorienverbrauch sollte daher nicht allein auf der Geschwindigkeit beruhen.</p>
+            <p>Mit den Schwimmeinstellungen von Glycogo kannst du deine persönliche Effizienz berücksichtigen. Wenn du unsicher bist, beginne vorsichtig und passe anhand von Gefühl und Regeneration der Einheiten an.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Wie ermittelt Glycogo, wie viel Fett und Kohlenhydrate ich verbrenne?</summary>
+          <div class="faq-body">
+            <p>Aus der Intensität der Einheit und deinen Angaben, anhand veröffentlichter Zusammenhänge auf Gruppenebene zwischen Trainingsintensität und Substratoxidation. Im Labor wird der Brennstoffmix per indirekter Kalorimetrie gemessen: Das Verhältnis von produziertem CO₂ zu verbrauchtem O₂ (RER) zeigt, ob die Energie aus Fett oder Kohlenhydraten stammt, und diese Forschung liefert die erwarteten Fett- und Kohlenhydratoxidationsraten für eine gegebene Intensität, Körpergröße, Geschlecht, Alter und Kohlenhydratverfügbarkeit.</p>
+            <p>Glycogo wendet diese Zusammenhänge auf die Einheit an, sodass sich die Aufteilung von Fett und Kohlenhydraten mit der Intensität deiner Arbeit verschiebt. Das genaue Modell und seine Koeffizienten sind proprietär, und da die Zusammenhänge auf Gruppenebene und nicht auf Einzelmessungen beruhen, betrachte den Brennstoffmix als Planungsschätzung und nicht als Stoffwechseltest.</p>
+          </div>
+        </details>
+
+      </div>
+    </details>
+
+    <details class="faq-group fade-up">
+      <summary class="faq-group-title">Die App nutzen</summary>
+      <div class="faq-list">
+
+        <details class="faq-item">
+          <summary>Was bewirkt „Mengen vorschlagen“?</summary>
+          <div class="faq-body">
+            <p>Wenn du Lebensmittel erfasst oder planst, empfiehlt „Mengen vorschlagen“ Portionsgrößen, um die verbleibenden Makrolücken dieser Mahlzeit zu schließen – vor allem Kohlenhydrate und Kalorien – ohne manuelles Ausprobieren.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Was sind Mahlzeitenvorlagen und der Mahlzeiten-Builder?</summary>
+          <div class="faq-body">
+            <p>Mit Vorlagen speicherst du Kombinationen häufig gegessener Lebensmittel und lädst sie in einem Schritt. Der Mahlzeiten-Builder stellt Lebensmittel bereit, bevor du sie einer Mahlzeit zuordnest: Du kannst suchen, scannen oder hinzufügen, Mengen bearbeiten und die ganze Mahlzeit prüfen, bevor du sie erfasst.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Was passiert, wenn ich eine Mahlzeit als abgeschlossen markiere?</summary>
+          <div class="faq-body">
+          <p>Eine Mahlzeit als abgeschlossen zu markieren sagt Glycogo, dass du gegessen hast, was du für sie erfasst hattest. Die Ziele dieser Mahlzeit richten sich an deiner Zufuhr aus, und verbleibende Kalorien und Makros des Tages werden <strong>neu verteilt</strong> auf deine noch offenen Mahlzeiten – nach deinen Einstellungen zur Mahlzeitenverteilung.</p>
+            <p>Deine Zeitachse und Prognosen aktualisieren sich ebenfalls, sodass der Rest des Tages die erfasste Zufuhr widerspiegelt.</p>
+          </div>
+        </details>
+
+        <details class="faq-item" id="faq-hide-calories">
+          <summary>Warum sollte ich Kalorien ausblenden?</summary>
+          <div class="faq-body">
+            <p>Kalorien auszublenden richtet den Fokus auf <strong>Kohlenhydrate, Protein und Fett</strong> statt auf Kaloriensummen. Viele Sportler finden das hilfreich, wenn sie sich für Training und Regeneration ernähren wollen, ohne Kalorienzählen als Hauptmaßstab.</p>
+            <p>Wenn aktiviert, werden kcal-Werte in der Tagesansicht, den Mahlzeitenkarten, der Lebensmittelsuche und zugehörigen Diagrammen ausgeblendet, während Kohlenhydrat-, Protein- und Fettziele sowie die Erfassung wie gewohnt funktionieren. Du kannst sie jederzeit über das Augensymbol auf dem Startbildschirm wieder einblenden.</p>
+          </div>
+        </details>
+
+
+      </div>
+    </details>
+
+    </div>
+
+    <p class="section-sub fade-up" style="text-align:center;margin:2rem auto 0;max-width:520px;">
+      Noch nicht weitergekommen? <a class="faq-link" href="mailto:contactgemperformance@gmail.com">Kontakt aufnehmen</a>.
+    </p>
+  </div>
+</section>
+
+<!-- SUPPORT -->
+<section id="support" class="support block">
+  <div class="support-inner fade-up">
+    <p class="section-sub">
+    Glycogo ist als bezahlbares, budgetfreundliches Werkzeug gedacht. Wenn es dir hilft, trägt eine kleine Spende viel dazu bei, den Betrieb zu sichern und die Weiterentwicklung zu unterstützen. Für vollen Zugriff und zusätzliche Funktionen kannst du abonnieren.
+    </p>
+    <div class="bmc-wrap">
+      <a href="https://www.buymeacoffee.com/gemperformance" target="_blank">
+        <img src="/coffee.png" alt="Buy Me a Coffee" style="height:40px;width:145px;">
+      </a>
+    </div>
+    <p class="support-bio">Entworfen und entwickelt von einem promovierten Ingenieur und Sportwissenschaftler mit Erfahrung in Forschung, Datensystemen und Leistungsanalyse. Unterstützung ist willkommen. Ich suche derzeit berufliche Möglichkeiten.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    2026 <strong>GEM Performance</strong> · <strong>G</strong>oal-Driven, <strong>E</strong>vidence-Based, <strong>M</strong>onitoring tools for athletes<br>
+    <span style="font-size:0.74rem;">G.E.McConnochie PhD &nbsp;·&nbsp; <a href="mailto:contactgemperformance@gmail.com">contactgemperformance@gmail.com</a></span>
+  </div>
+  <div style="display:flex;gap:1rem;align-items:center;flex-wrap:wrap;">
+    <a href="/terms" style="color:rgba(255,255,255,0.6);font-size:0.82rem;text-decoration:underline;">Nutzungsbedingungen</a>
+    <a href="/privacy" style="color:rgba(255,255,255,0.6);font-size:0.82rem;text-decoration:underline;">Datenschutzerklärung</a>
+    <a href="#faq" style="color:rgba(255,255,255,0.6);font-size:0.82rem;text-decoration:underline;">FAQ</a>
+    <a href="https://web.glycogo.fit/" style="background:var(--green);color:white;padding:0.5rem 1.2rem;border-radius:6px;font-weight:600;font-size:0.85rem;text-decoration:none;">Kostenlos testen</a>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('main-nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 24), { passive: true });
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(el => { if (el.isIntersecting) el.target.classList.add('visible'); });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.fade-up').forEach((el, i) => {
+    el.style.transitionDelay = `${(i % 4) * 0.08}s`;
+    observer.observe(el);
+  });
+
+  function openFaqAnchor() {
+    const id = decodeURIComponent((location.hash || '').slice(1));
+    if (!id) return;
+    const target = document.getElementById(id);
+    if (!target) return;
+    const group = target.closest('.faq-group');
+    if (group) group.open = true;
+    if (target.matches('details.faq-item')) target.open = true;
+  }
+  window.addEventListener('hashchange', openFaqAnchor);
+  openFaqAnchor();
+
+  document.querySelectorAll('.media-slot img, .app-shot img').forEach((img) => {
+    const mark = () => {
+      if (img.naturalWidth > 0) img.classList.remove('is-missing');
+      else img.classList.add('is-missing');
+    };
+    img.addEventListener('load', mark);
+    img.addEventListener('error', () => img.classList.add('is-missing'));
+    mark();
+  });
+
+  document.querySelectorAll('.nav-dropdown').forEach((dd) => {
+    const btn = dd.querySelector('.nav-dropdown-toggle');
+    if (!btn) return;
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const open = !dd.classList.contains('open');
+      document.querySelectorAll('.nav-dropdown.open').forEach((o) => {
+        o.classList.remove('open');
+        o.querySelector('.nav-dropdown-toggle')?.setAttribute('aria-expanded', 'false');
+      });
+      dd.classList.toggle('open', open);
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  });
+  document.addEventListener('click', () => {
+    document.querySelectorAll('.nav-dropdown.open').forEach((o) => {
+      o.classList.remove('open');
+      o.querySelector('.nav-dropdown-toggle')?.setAttribute('aria-expanded', 'false');
+    });
+  });
+</script>
+<script src="/search/search-index.js"></script>
+<script src="/search/search-rrf.js"></script>
+<script src="/search/search.js"></script>
+</body>
+</html>

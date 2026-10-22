@@ -10,6 +10,15 @@
 <meta name="robots" content="index, follow">
 <meta name="author" content="Glycogo">
 <link rel="canonical" href="https://glycogo.fit/substrate-explorer/">
+<!-- i18n:alternates -->
+<link rel="alternate" hreflang="en" href="https://glycogo.fit/substrate-explorer/">
+<link rel="alternate" hreflang="de" href="https://glycogo.fit/de/substrate-explorer/">
+<link rel="alternate" hreflang="es" href="https://glycogo.fit/es/substrate-explorer/">
+<link rel="alternate" hreflang="fr" href="https://glycogo.fit/fr/substrate-explorer/">
+<link rel="alternate" hreflang="it" href="https://glycogo.fit/it/substrate-explorer/">
+<link rel="alternate" hreflang="nl" href="https://glycogo.fit/nl/substrate-explorer/">
+<link rel="alternate" hreflang="x-default" href="https://glycogo.fit/substrate-explorer/">
+<!-- /i18n:alternates -->
 
 <!-- Open Graph / social sharing -->
 <meta property="og:type" content="website">
@@ -352,6 +361,7 @@ footer a{ color:var(--fructose); text-decoration:none; font-weight:600; }
 footer a:hover{ text-decoration:underline; }
 </style>
 <link rel="stylesheet" href="/search/search.css">
+<script src="/assets/i18n.js" defer></script>
 </head>
 <body>
 
@@ -711,7 +721,8 @@ async function requestCurve() {
   } catch (err) {
     // Keep the last good curve on the chart; surface the failure.
     if (seq === refreshSeq) {
-      $("calcStatus").textContent = "Estimate failed: " + (err && err.message ? err.message : "network error");
+      const reason = String((err && err.message) || "network error").replace(/[&<>]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));
+      $("calcStatus").innerHTML = "<span>Estimate failed</span>: " + reason;
     }
   } finally {
     if (seq === refreshSeq) {

@@ -1,48 +1,651 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://glycogo.fit/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://glycogo.fit/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://glycogo.fit/de/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://glycogo.fit/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://glycogo.fit/fr/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://glycogo.fit/it/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://glycogo.fit/nl/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://glycogo.fit/"/>
+  </url>
+  <url>
+    <loc>https://glycogo.fit/de/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://glycogo.fit/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://glycogo.fit/de/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://glycogo.fit/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://glycogo.fit/fr/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://glycogo.fit/it/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://glycogo.fit/nl/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://glycogo.fit/"/>
+  </url>
+  <url>
+    <loc>https://glycogo.fit/es/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://glycogo.fit/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://glycogo.fit/de/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://glycogo.fit/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://glycogo.fit/fr/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://glycogo.fit/it/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://glycogo.fit/nl/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://glycogo.fit/"/>
+  </url>
+  <url>
+    <loc>https://glycogo.fit/fr/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://glycogo.fit/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://glycogo.fit/de/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://glycogo.fit/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://glycogo.fit/fr/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://glycogo.fit/it/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://glycogo.fit/nl/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://glycogo.fit/"/>
+  </url>
+  <url>
+    <loc>https://glycogo.fit/it/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://glycogo.fit/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://glycogo.fit/de/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://glycogo.fit/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://glycogo.fit/fr/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://glycogo.fit/it/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://glycogo.fit/nl/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://glycogo.fit/"/>
+  </url>
+  <url>
+    <loc>https://glycogo.fit/nl/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://glycogo.fit/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://glycogo.fit/de/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://glycogo.fit/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://glycogo.fit/fr/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://glycogo.fit/it/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://glycogo.fit/nl/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://glycogo.fit/"/>
   </url>
   <url>
     <loc>https://glycogo.fit/fuel-ratio-calculator/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://glycogo.fit/fuel-ratio-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://glycogo.fit/de/fuel-ratio-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://glycogo.fit/es/fuel-ratio-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://glycogo.fit/fr/fuel-ratio-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://glycogo.fit/it/fuel-ratio-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://glycogo.fit/nl/fuel-ratio-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://glycogo.fit/fuel-ratio-calculator/"/>
+  </url>
+  <url>
+    <loc>https://glycogo.fit/de/fuel-ratio-calculator/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://glycogo.fit/fuel-ratio-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://glycogo.fit/de/fuel-ratio-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://glycogo.fit/es/fuel-ratio-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://glycogo.fit/fr/fuel-ratio-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://glycogo.fit/it/fuel-ratio-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://glycogo.fit/nl/fuel-ratio-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://glycogo.fit/fuel-ratio-calculator/"/>
+  </url>
+  <url>
+    <loc>https://glycogo.fit/es/fuel-ratio-calculator/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://glycogo.fit/fuel-ratio-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://glycogo.fit/de/fuel-ratio-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://glycogo.fit/es/fuel-ratio-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://glycogo.fit/fr/fuel-ratio-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://glycogo.fit/it/fuel-ratio-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://glycogo.fit/nl/fuel-ratio-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://glycogo.fit/fuel-ratio-calculator/"/>
+  </url>
+  <url>
+    <loc>https://glycogo.fit/fr/fuel-ratio-calculator/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://glycogo.fit/fuel-ratio-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://glycogo.fit/de/fuel-ratio-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://glycogo.fit/es/fuel-ratio-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://glycogo.fit/fr/fuel-ratio-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://glycogo.fit/it/fuel-ratio-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://glycogo.fit/nl/fuel-ratio-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://glycogo.fit/fuel-ratio-calculator/"/>
+  </url>
+  <url>
+    <loc>https://glycogo.fit/it/fuel-ratio-calculator/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://glycogo.fit/fuel-ratio-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://glycogo.fit/de/fuel-ratio-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://glycogo.fit/es/fuel-ratio-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://glycogo.fit/fr/fuel-ratio-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://glycogo.fit/it/fuel-ratio-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://glycogo.fit/nl/fuel-ratio-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://glycogo.fit/fuel-ratio-calculator/"/>
+  </url>
+  <url>
+    <loc>https://glycogo.fit/nl/fuel-ratio-calculator/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://glycogo.fit/fuel-ratio-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://glycogo.fit/de/fuel-ratio-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://glycogo.fit/es/fuel-ratio-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://glycogo.fit/fr/fuel-ratio-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://glycogo.fit/it/fuel-ratio-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://glycogo.fit/nl/fuel-ratio-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://glycogo.fit/fuel-ratio-calculator/"/>
   </url>
   <url>
     <loc>https://glycogo.fit/substrate-explorer/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://glycogo.fit/substrate-explorer/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://glycogo.fit/de/substrate-explorer/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://glycogo.fit/es/substrate-explorer/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://glycogo.fit/fr/substrate-explorer/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://glycogo.fit/it/substrate-explorer/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://glycogo.fit/nl/substrate-explorer/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://glycogo.fit/substrate-explorer/"/>
+  </url>
+  <url>
+    <loc>https://glycogo.fit/de/substrate-explorer/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://glycogo.fit/substrate-explorer/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://glycogo.fit/de/substrate-explorer/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://glycogo.fit/es/substrate-explorer/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://glycogo.fit/fr/substrate-explorer/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://glycogo.fit/it/substrate-explorer/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://glycogo.fit/nl/substrate-explorer/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://glycogo.fit/substrate-explorer/"/>
+  </url>
+  <url>
+    <loc>https://glycogo.fit/es/substrate-explorer/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://glycogo.fit/substrate-explorer/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://glycogo.fit/de/substrate-explorer/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://glycogo.fit/es/substrate-explorer/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://glycogo.fit/fr/substrate-explorer/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://glycogo.fit/it/substrate-explorer/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://glycogo.fit/nl/substrate-explorer/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://glycogo.fit/substrate-explorer/"/>
+  </url>
+  <url>
+    <loc>https://glycogo.fit/fr/substrate-explorer/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://glycogo.fit/substrate-explorer/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://glycogo.fit/de/substrate-explorer/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://glycogo.fit/es/substrate-explorer/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://glycogo.fit/fr/substrate-explorer/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://glycogo.fit/it/substrate-explorer/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://glycogo.fit/nl/substrate-explorer/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://glycogo.fit/substrate-explorer/"/>
+  </url>
+  <url>
+    <loc>https://glycogo.fit/it/substrate-explorer/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://glycogo.fit/substrate-explorer/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://glycogo.fit/de/substrate-explorer/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://glycogo.fit/es/substrate-explorer/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://glycogo.fit/fr/substrate-explorer/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://glycogo.fit/it/substrate-explorer/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://glycogo.fit/nl/substrate-explorer/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://glycogo.fit/substrate-explorer/"/>
+  </url>
+  <url>
+    <loc>https://glycogo.fit/nl/substrate-explorer/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://glycogo.fit/substrate-explorer/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://glycogo.fit/de/substrate-explorer/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://glycogo.fit/es/substrate-explorer/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://glycogo.fit/fr/substrate-explorer/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://glycogo.fit/it/substrate-explorer/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://glycogo.fit/nl/substrate-explorer/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://glycogo.fit/substrate-explorer/"/>
   </url>
   <url>
     <loc>https://glycogo.fit/athlete_supplement_timer.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://glycogo.fit/athlete_supplement_timer.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://glycogo.fit/de/athlete_supplement_timer.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://glycogo.fit/es/athlete_supplement_timer.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://glycogo.fit/fr/athlete_supplement_timer.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://glycogo.fit/it/athlete_supplement_timer.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://glycogo.fit/nl/athlete_supplement_timer.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://glycogo.fit/athlete_supplement_timer.html"/>
   </url>
   <url>
-    <loc>https://glycogo.fit/instructions</loc>
+    <loc>https://glycogo.fit/de/athlete_supplement_timer.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://glycogo.fit/athlete_supplement_timer.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://glycogo.fit/de/athlete_supplement_timer.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://glycogo.fit/es/athlete_supplement_timer.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://glycogo.fit/fr/athlete_supplement_timer.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://glycogo.fit/it/athlete_supplement_timer.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://glycogo.fit/nl/athlete_supplement_timer.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://glycogo.fit/athlete_supplement_timer.html"/>
+  </url>
+  <url>
+    <loc>https://glycogo.fit/es/athlete_supplement_timer.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://glycogo.fit/athlete_supplement_timer.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://glycogo.fit/de/athlete_supplement_timer.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://glycogo.fit/es/athlete_supplement_timer.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://glycogo.fit/fr/athlete_supplement_timer.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://glycogo.fit/it/athlete_supplement_timer.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://glycogo.fit/nl/athlete_supplement_timer.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://glycogo.fit/athlete_supplement_timer.html"/>
+  </url>
+  <url>
+    <loc>https://glycogo.fit/fr/athlete_supplement_timer.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://glycogo.fit/athlete_supplement_timer.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://glycogo.fit/de/athlete_supplement_timer.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://glycogo.fit/es/athlete_supplement_timer.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://glycogo.fit/fr/athlete_supplement_timer.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://glycogo.fit/it/athlete_supplement_timer.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://glycogo.fit/nl/athlete_supplement_timer.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://glycogo.fit/athlete_supplement_timer.html"/>
+  </url>
+  <url>
+    <loc>https://glycogo.fit/it/athlete_supplement_timer.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://glycogo.fit/athlete_supplement_timer.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://glycogo.fit/de/athlete_supplement_timer.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://glycogo.fit/es/athlete_supplement_timer.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://glycogo.fit/fr/athlete_supplement_timer.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://glycogo.fit/it/athlete_supplement_timer.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://glycogo.fit/nl/athlete_supplement_timer.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://glycogo.fit/athlete_supplement_timer.html"/>
+  </url>
+  <url>
+    <loc>https://glycogo.fit/nl/athlete_supplement_timer.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://glycogo.fit/athlete_supplement_timer.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://glycogo.fit/de/athlete_supplement_timer.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://glycogo.fit/es/athlete_supplement_timer.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://glycogo.fit/fr/athlete_supplement_timer.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://glycogo.fit/it/athlete_supplement_timer.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://glycogo.fit/nl/athlete_supplement_timer.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://glycogo.fit/athlete_supplement_timer.html"/>
+  </url>
+  <url>
+    <loc>https://glycogo.fit/instructions/</loc>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://glycogo.fit/instructions/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://glycogo.fit/de/instructions/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://glycogo.fit/es/instructions/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://glycogo.fit/fr/instructions/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://glycogo.fit/it/instructions/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://glycogo.fit/nl/instructions/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://glycogo.fit/instructions/"/>
   </url>
   <url>
-    <loc>https://glycogo.fit/privacy</loc>
+    <loc>https://glycogo.fit/de/instructions/</loc>
     <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://glycogo.fit/instructions/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://glycogo.fit/de/instructions/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://glycogo.fit/es/instructions/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://glycogo.fit/fr/instructions/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://glycogo.fit/it/instructions/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://glycogo.fit/nl/instructions/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://glycogo.fit/instructions/"/>
   </url>
   <url>
-    <loc>https://glycogo.fit/terms</loc>
+    <loc>https://glycogo.fit/es/instructions/</loc>
     <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://glycogo.fit/instructions/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://glycogo.fit/de/instructions/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://glycogo.fit/es/instructions/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://glycogo.fit/fr/instructions/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://glycogo.fit/it/instructions/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://glycogo.fit/nl/instructions/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://glycogo.fit/instructions/"/>
   </url>
   <url>
-    <loc>https://glycogo.fit/beta</loc>
+    <loc>https://glycogo.fit/fr/instructions/</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://glycogo.fit/instructions/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://glycogo.fit/de/instructions/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://glycogo.fit/es/instructions/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://glycogo.fit/fr/instructions/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://glycogo.fit/it/instructions/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://glycogo.fit/nl/instructions/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://glycogo.fit/instructions/"/>
+  </url>
+  <url>
+    <loc>https://glycogo.fit/it/instructions/</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://glycogo.fit/instructions/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://glycogo.fit/de/instructions/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://glycogo.fit/es/instructions/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://glycogo.fit/fr/instructions/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://glycogo.fit/it/instructions/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://glycogo.fit/nl/instructions/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://glycogo.fit/instructions/"/>
+  </url>
+  <url>
+    <loc>https://glycogo.fit/nl/instructions/</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://glycogo.fit/instructions/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://glycogo.fit/de/instructions/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://glycogo.fit/es/instructions/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://glycogo.fit/fr/instructions/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://glycogo.fit/it/instructions/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://glycogo.fit/nl/instructions/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://glycogo.fit/instructions/"/>
+  </url>
+  <url>
+    <loc>https://glycogo.fit/beta/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://glycogo.fit/beta/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://glycogo.fit/de/beta/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://glycogo.fit/es/beta/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://glycogo.fit/fr/beta/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://glycogo.fit/it/beta/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://glycogo.fit/nl/beta/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://glycogo.fit/beta/"/>
   </url>
   <url>
-    <loc>https://glycogo.fit/delete-account</loc>
+    <loc>https://glycogo.fit/de/beta/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://glycogo.fit/beta/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://glycogo.fit/de/beta/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://glycogo.fit/es/beta/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://glycogo.fit/fr/beta/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://glycogo.fit/it/beta/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://glycogo.fit/nl/beta/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://glycogo.fit/beta/"/>
+  </url>
+  <url>
+    <loc>https://glycogo.fit/es/beta/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://glycogo.fit/beta/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://glycogo.fit/de/beta/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://glycogo.fit/es/beta/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://glycogo.fit/fr/beta/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://glycogo.fit/it/beta/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://glycogo.fit/nl/beta/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://glycogo.fit/beta/"/>
+  </url>
+  <url>
+    <loc>https://glycogo.fit/fr/beta/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://glycogo.fit/beta/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://glycogo.fit/de/beta/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://glycogo.fit/es/beta/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://glycogo.fit/fr/beta/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://glycogo.fit/it/beta/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://glycogo.fit/nl/beta/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://glycogo.fit/beta/"/>
+  </url>
+  <url>
+    <loc>https://glycogo.fit/it/beta/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://glycogo.fit/beta/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://glycogo.fit/de/beta/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://glycogo.fit/es/beta/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://glycogo.fit/fr/beta/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://glycogo.fit/it/beta/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://glycogo.fit/nl/beta/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://glycogo.fit/beta/"/>
+  </url>
+  <url>
+    <loc>https://glycogo.fit/nl/beta/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://glycogo.fit/beta/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://glycogo.fit/de/beta/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://glycogo.fit/es/beta/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://glycogo.fit/fr/beta/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://glycogo.fit/it/beta/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://glycogo.fit/nl/beta/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://glycogo.fit/beta/"/>
+  </url>
+  <url>
+    <loc>https://glycogo.fit/privacy/</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://glycogo.fit/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://glycogo.fit/de/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://glycogo.fit/es/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://glycogo.fit/fr/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://glycogo.fit/it/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://glycogo.fit/nl/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://glycogo.fit/privacy/"/>
+  </url>
+  <url>
+    <loc>https://glycogo.fit/de/privacy/</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://glycogo.fit/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://glycogo.fit/de/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://glycogo.fit/es/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://glycogo.fit/fr/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://glycogo.fit/it/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://glycogo.fit/nl/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://glycogo.fit/privacy/"/>
+  </url>
+  <url>
+    <loc>https://glycogo.fit/es/privacy/</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://glycogo.fit/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://glycogo.fit/de/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://glycogo.fit/es/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://glycogo.fit/fr/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://glycogo.fit/it/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://glycogo.fit/nl/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://glycogo.fit/privacy/"/>
+  </url>
+  <url>
+    <loc>https://glycogo.fit/fr/privacy/</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://glycogo.fit/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://glycogo.fit/de/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://glycogo.fit/es/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://glycogo.fit/fr/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://glycogo.fit/it/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://glycogo.fit/nl/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://glycogo.fit/privacy/"/>
+  </url>
+  <url>
+    <loc>https://glycogo.fit/it/privacy/</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://glycogo.fit/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://glycogo.fit/de/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://glycogo.fit/es/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://glycogo.fit/fr/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://glycogo.fit/it/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://glycogo.fit/nl/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://glycogo.fit/privacy/"/>
+  </url>
+  <url>
+    <loc>https://glycogo.fit/nl/privacy/</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://glycogo.fit/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://glycogo.fit/de/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://glycogo.fit/es/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://glycogo.fit/fr/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://glycogo.fit/it/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://glycogo.fit/nl/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://glycogo.fit/privacy/"/>
+  </url>
+  <url>
+    <loc>https://glycogo.fit/terms/</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://glycogo.fit/terms/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://glycogo.fit/de/terms/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://glycogo.fit/es/terms/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://glycogo.fit/fr/terms/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://glycogo.fit/it/terms/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://glycogo.fit/nl/terms/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://glycogo.fit/terms/"/>
+  </url>
+  <url>
+    <loc>https://glycogo.fit/de/terms/</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://glycogo.fit/terms/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://glycogo.fit/de/terms/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://glycogo.fit/es/terms/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://glycogo.fit/fr/terms/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://glycogo.fit/it/terms/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://glycogo.fit/nl/terms/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://glycogo.fit/terms/"/>
+  </url>
+  <url>
+    <loc>https://glycogo.fit/es/terms/</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://glycogo.fit/terms/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://glycogo.fit/de/terms/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://glycogo.fit/es/terms/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://glycogo.fit/fr/terms/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://glycogo.fit/it/terms/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://glycogo.fit/nl/terms/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://glycogo.fit/terms/"/>
+  </url>
+  <url>
+    <loc>https://glycogo.fit/fr/terms/</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://glycogo.fit/terms/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://glycogo.fit/de/terms/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://glycogo.fit/es/terms/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://glycogo.fit/fr/terms/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://glycogo.fit/it/terms/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://glycogo.fit/nl/terms/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://glycogo.fit/terms/"/>
+  </url>
+  <url>
+    <loc>https://glycogo.fit/it/terms/</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://glycogo.fit/terms/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://glycogo.fit/de/terms/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://glycogo.fit/es/terms/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://glycogo.fit/fr/terms/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://glycogo.fit/it/terms/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://glycogo.fit/nl/terms/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://glycogo.fit/terms/"/>
+  </url>
+  <url>
+    <loc>https://glycogo.fit/nl/terms/</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://glycogo.fit/terms/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://glycogo.fit/de/terms/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://glycogo.fit/es/terms/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://glycogo.fit/fr/terms/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://glycogo.fit/it/terms/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://glycogo.fit/nl/terms/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://glycogo.fit/terms/"/>
+  </url>
+  <url>
+    <loc>https://glycogo.fit/delete-account/</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://glycogo.fit/delete-account/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://glycogo.fit/de/delete-account/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://glycogo.fit/es/delete-account/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://glycogo.fit/fr/delete-account/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://glycogo.fit/it/delete-account/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://glycogo.fit/nl/delete-account/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://glycogo.fit/delete-account/"/>
+  </url>
+  <url>
+    <loc>https://glycogo.fit/de/delete-account/</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://glycogo.fit/delete-account/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://glycogo.fit/de/delete-account/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://glycogo.fit/es/delete-account/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://glycogo.fit/fr/delete-account/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://glycogo.fit/it/delete-account/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://glycogo.fit/nl/delete-account/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://glycogo.fit/delete-account/"/>
+  </url>
+  <url>
+    <loc>https://glycogo.fit/es/delete-account/</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://glycogo.fit/delete-account/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://glycogo.fit/de/delete-account/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://glycogo.fit/es/delete-account/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://glycogo.fit/fr/delete-account/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://glycogo.fit/it/delete-account/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://glycogo.fit/nl/delete-account/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://glycogo.fit/delete-account/"/>
+  </url>
+  <url>
+    <loc>https://glycogo.fit/fr/delete-account/</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://glycogo.fit/delete-account/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://glycogo.fit/de/delete-account/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://glycogo.fit/es/delete-account/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://glycogo.fit/fr/delete-account/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://glycogo.fit/it/delete-account/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://glycogo.fit/nl/delete-account/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://glycogo.fit/delete-account/"/>
+  </url>
+  <url>
+    <loc>https://glycogo.fit/it/delete-account/</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://glycogo.fit/delete-account/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://glycogo.fit/de/delete-account/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://glycogo.fit/es/delete-account/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://glycogo.fit/fr/delete-account/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://glycogo.fit/it/delete-account/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://glycogo.fit/nl/delete-account/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://glycogo.fit/delete-account/"/>
+  </url>
+  <url>
+    <loc>https://glycogo.fit/nl/delete-account/</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://glycogo.fit/delete-account/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://glycogo.fit/de/delete-account/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://glycogo.fit/es/delete-account/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://glycogo.fit/fr/delete-account/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://glycogo.fit/it/delete-account/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://glycogo.fit/nl/delete-account/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://glycogo.fit/delete-account/"/>
   </url>
 </urlset>

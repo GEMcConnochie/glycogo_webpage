@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<link rel="icon" type="image/png" href="/logosmall.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacybeleid | Glycogo</title>
+<meta name="description" content="Privacybeleid van Glycogo: welke gegevens we verzamelen, waarom, waar ze worden opgeslagen en hoe je ze laat verwijderen.">
+<link rel="canonical" href="https://glycogo.fit/nl/privacy/">
+<!-- i18n:alternates -->
+<link rel="alternate" hreflang="en" href="https://glycogo.fit/privacy/">
+<link rel="alternate" hreflang="de" href="https://glycogo.fit/de/privacy/">
+<link rel="alternate" hreflang="es" href="https://glycogo.fit/es/privacy/">
+<link rel="alternate" hreflang="fr" href="https://glycogo.fit/fr/privacy/">
+<link rel="alternate" hreflang="it" href="https://glycogo.fit/it/privacy/">
+<link rel="alternate" hreflang="nl" href="https://glycogo.fit/nl/privacy/">
+<link rel="alternate" hreflang="x-default" href="https://glycogo.fit/privacy/">
+<!-- /i18n:alternates -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Space+Mono:wght@400;700&family=Michroma&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+--display-stroke: 0.04em; --green: #2e7d32; --green-light: #43a047; --green-pale: #e8f5e9;
+    --orange: #e65c00; --orange-light: #ff7043;
+    --navy: #1a1a3e; --navy-mid: #2d2d7a;
+    --bg: #f0f7f4; --white: #ffffff; --text: #1a1a3e;
+    --muted: #5a6a5a; --border: #c8d8c8;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Space Grotesk', sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; }
+
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1rem 2.5rem; background: rgba(240,247,244,0.9);
+    backdrop-filter: blur(12px); border-bottom: 1px solid var(--border);
+  }
+  .nav-links { display: flex; gap: 2rem; align-items: center; }
+  .nav-links > a,
+  .nav-dropdown-toggle {
+    text-decoration: none; color: var(--muted); font-size: 0.9rem; font-weight: 500; transition: color 0.2s;
+    background: none; border: none; cursor: pointer; font-family: inherit; padding: 0;
+    display: inline-flex; align-items: center; gap: 0.3rem;
+  }
+  .nav-links > a:hover,
+  .nav-dropdown-toggle:hover,
+  .nav-dropdown.open .nav-dropdown-toggle { color: var(--green); }
+  .nav-dropdown { position: relative; }
+  .nav-dropdown-toggle .chev {
+    width: 0; height: 0; border-left: 4px solid transparent; border-right: 4px solid transparent;
+    border-top: 4px solid currentColor; opacity: 0.7; transition: transform 0.2s;
+  }
+  .nav-dropdown.open .chev { transform: rotate(180deg); }
+  .nav-dropdown-menu {
+    position: absolute; top: calc(100% + 0.65rem); left: 50%; transform: translateX(-50%) translateY(4px);
+    min-width: 220px; background: var(--white); border: 1px solid var(--border);
+    border-radius: 12px; box-shadow: 0 12px 40px rgba(26,26,62,0.12); padding: 0.4rem;
+    opacity: 0; visibility: hidden; pointer-events: none;
+    transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s; z-index: 300;
+  }
+  .nav-dropdown.open .nav-dropdown-menu,
+  .nav-dropdown:hover .nav-dropdown-menu,
+  .nav-dropdown:focus-within .nav-dropdown-menu {
+    opacity: 1; visibility: visible; pointer-events: auto; transform: translateX(-50%) translateY(0);
+  }
+  .nav-dropdown-menu a {
+    display: block; padding: 0.7rem 0.9rem; border-radius: 8px;
+    text-decoration: none; color: var(--text); font-size: 0.86rem; font-weight: 500;
+    transition: background 0.15s, color 0.15s; white-space: nowrap;
+  }
+  .nav-dropdown-menu a:hover { background: var(--green-pale); color: var(--green); }
+  .nav-cta { background: var(--green) !important; color: white !important; padding: 0.5rem 1.2rem !important; border-radius: 6px !important; font-weight: 600 !important; }
+
+  .page-hero {
+    background: var(--navy);
+    padding: 8rem 2rem 4rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .page-hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image: linear-gradient(rgba(46,125,50,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(46,125,50,0.06) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  .page-hero-content { position: relative; z-index: 1; }
+  .page-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--orange-light); margin-bottom: 0.75rem; }
+  .page-hero h1 { font-family: 'Michroma', 'Space Grotesk', sans-serif; font-weight: 400; font-synthesis-weight: none; -webkit-text-stroke: var(--display-stroke) currentColor; font-size: clamp(1.5rem, 3.2vw, 2.3rem); line-height: 1.2; letter-spacing: 0; color: white; margin-bottom: 0.75rem; }
+  .page-hero p { color: rgba(255,255,255,0.55); font-size: 0.9rem; }
+
+  .tos-wrap { max-width: 780px; margin: 0 auto; padding: 4rem 2rem 6rem; }
+
+  .tos-section { margin-bottom: 2.5rem; }
+  .tos-section h2 {
+    font-size: 1.1rem; font-weight: 700; color: var(--navy);
+    margin-bottom: 0.75rem; padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--green-pale);
+    display: flex; align-items: center; gap: 0.5rem;
+  }
+  .tos-section h2 .num {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.75rem; font-weight: 700;
+    background: var(--green); color: white;
+    width: 24px; height: 24px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .tos-section p { font-size: 0.95rem; color: var(--muted); line-height: 1.75; margin-bottom: 0.75rem; }
+  .tos-section ul { list-style: none; padding: 0; margin: 0.5rem 0 0.75rem; display: flex; flex-direction: column; gap: 0.4rem; }
+  .tos-section ul li { font-size: 0.95rem; color: var(--muted); line-height: 1.65; padding-left: 1.4rem; position: relative; }
+  .tos-section ul li::before { content: ''; position: absolute; left: 0; top: 0.6em; width: 6px; height: 6px; border-radius: 50%; background: var(--green); }
+
+  .highlight-box {
+    background: white; border: 1px solid var(--border);
+    border-radius: 10px; padding: 1.2rem 1.4rem;
+    margin-bottom: 2.5rem;
+  }
+  .highlight-box p { font-size: 0.9rem; color: var(--muted); line-height: 1.7; margin: 0; }
+  .highlight-box strong { color: var(--navy); }
+
+  .data-table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.88rem; }
+  .data-table th { background: var(--navy); color: white; padding: 0.7rem 1rem; text-align: left; font-weight: 600; }
+  .data-table th:first-child { border-radius: 8px 0 0 0; }
+  .data-table th:last-child { border-radius: 0 8px 0 0; }
+  .data-table td { padding: 0.7rem 1rem; border-bottom: 1px solid var(--border); color: var(--muted); line-height: 1.55; vertical-align: top; }
+  .data-table tr:last-child td { border-bottom: none; }
+  .data-table tr:nth-child(even) td { background: white; }
+
+  .contact-card {
+    background: var(--navy); border-radius: 12px; padding: 2rem;
+    text-align: center; margin-top: 3rem;
+  }
+  .contact-card p { color: rgba(255,255,255,0.65); font-size: 0.9rem; margin-bottom: 0.75rem; }
+  .contact-card a { color: var(--orange-light); font-weight: 600; text-decoration: none; }
+  .contact-card a:hover { text-decoration: underline; }
+
+  footer { background: var(--navy); color: rgba(255,255,255,0.5); padding: 2.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; font-size: 0.82rem; }
+  footer strong { color: white; }
+  footer a { color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s; }
+  footer a:hover { color: var(--orange-light); }
+
+  @media (max-width: 800px) {
+    .nav-links { display: none; }
+    footer { flex-direction: column; text-align: center; }
+    .data-table { font-size: 0.8rem; }
+    .data-table th, .data-table td { padding: 0.5rem 0.7rem; }
+  }
+</style>
+<link rel="stylesheet" href="/search/search.css">
+<script src="/assets/i18n.js" defer></script>
+</head>
+<body>
+
+<nav>
+  <a href="https://glycogo.fit">
+    <img src="/3dglycogo.svg" alt="Glycogo" style="height:60px;">
+  </a>
+  <div class="nav-links">
+    <a href="https://glycogo.fit#features">Functies</a>
+    <a href="https://glycogo.fit#how">Hoe het werkt</a>
+    <a href="https://glycogo.fit#science">Wetenschap</a>
+    <div class="nav-dropdown">
+      <button type="button" class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+        Calculators <span class="chev" aria-hidden="true"></span>
+      </button>
+      <div class="nav-dropdown-menu" role="menu">
+        <a href="/nl/fuel-ratio-calculator/" role="menuitem">Calculator voor koolhydraatverhouding</a>
+        <a href="/nl/substrate-explorer/" role="menuitem">Calculator voor vet- en koolhydraatgebruik</a>
+      </div>
+    </div>
+    <a href="/terms">Voorwaarden</a>
+    <a href="https://app.glycogo.fit/" class="nav-cta">Gratis proberen</a>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-content">
+    <h1>Privacybeleid</h1>
+    <p>Laatst bijgewerkt: april 2026 · Direct van kracht</p>
+  </div>
+</div>
+
+<div class="tos-wrap">
+
+  <div class="highlight-box">
+    <p><strong>In het kort:</strong> Glycogo verzamelt alleen wat nodig is om de dienst te leveren. We verkopen je gegevens niet. Je voedings- en trainingsgegevens zijn van jou. Je kunt op elk moment verwijdering aanvragen. Dit beleid legt precies uit wat we verzamelen, waarom en hoe het wordt gebruikt.</p>
+  </div>
+
+  <div class="tos-section">
+    <h2><span class="num">1</span> Wie we zijn</h2>
+    <p>Glycogo wordt beheerd door GEM Performance, eigendom van G.E. McConnochie PhD, gevestigd in Nieuw-Zeeland. Waar dit beleid spreekt van ‘we’, ‘ons’ of ‘onze’, wordt GEM Performance bedoeld.</p>
+    <p>Contact: <a href="mailto:contactgemperformance@gmail.com" style="color:var(--green);">contactgemperformance@gmail.com</a></p>
+  </div>
+
+  <div class="tos-section">
+    <h2><span class="num">2</span> Welke gegevens we verzamelen</h2>
+    <p>We verzamelen de minimale gegevens die nodig zijn voor de functies van Glycogo:</p>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Gegevens</th>
+          <th>Waarom we ze verzamelen</th>
+          <th>Opslaglocatie</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>E-mailadres</td>
+          <td>Account aanmaken, inloggen en transactionele e-mails</td>
+          <td>Supabase</td>
+        </tr>
+        <tr>
+          <td>Wachtwoord (gehasht)</td>
+          <td>Authenticatie: nooit in platte tekst opgeslagen</td>
+          <td>Supabase</td>
+        </tr>
+        <tr>
+          <td>Weergavenaam</td>
+          <td>Personalisatie binnen de app</td>
+          <td>Supabase</td>
+        </tr>
+        <tr>
+          <td>Voedingsregistraties</td>
+          <td>Voedingsregistratie, doelen en trendanalyse</td>
+          <td>Supabase</td>
+        </tr>
+        <tr>
+          <td>Lichaamsgewicht en macrodoelen</td>
+          <td>Berekenen van persoonlijke voedingsdoelen</td>
+          <td>Supabase</td>
+        </tr>
+        <tr>
+          <td>Trainingen (via Intervals.icu)</td>
+          <td>Voedingsdoelen afstemmen op de trainingsbelasting</td>
+          <td>Supabase</td>
+        </tr>
+        <tr>
+          <td>Intervals.icu-API-sleutel</td>
+          <td>Trainingsgegevens namens jou synchroniseren</td>
+          <td>Supabase (versleuteld)</td>
+        </tr>
+        <tr>
+          <td>Betalingsgegevens</td>
+          <td>Facturering van het abonnement</td>
+          <td>Alleen Stripe: nooit op onze servers</td>
+        </tr>
+        <tr>
+          <td>AI-chatberichten</td>
+          <td>Genereren van persoonlijke voedingsantwoorden</td>
+          <td>Verzonden naar Groq, niet door ons opgeslagen</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="tos-section">
+    <h2><span class="num">3</span> Hoe we je gegevens gebruiken</h2>
+    <p>Je gegevens worden alleen gebruikt om Glycogo te leveren en te verbeteren. Concreet:</p>
+    <ul>
+      <li>Om je account te authenticeren en je sessie te behouden.</li>
+      <li>Om persoonlijke voedings- en koolhydraatdoelen te berekenen en weer te geven.</li>
+      <li>Om trainingen uit Intervals.icu te synchroniseren en voedingsdoelen te genereren.</li>
+      <li>Om de AI-voedingsassistent te voorzien van context over je training en je voedingsregistratie.</li>
+      <li>Om transactionele e-mails (accountverificatie, wachtwoordherstel) te verzenden via Resend.</li>
+      <li>Om abonnementsbetalingen via Stripe te verwerken.</li>
+      <li>Om geanonimiseerde, geaggregeerde gebruikspatronen te analyseren om de app te verbeteren.</li>
+    </ul>
+    <p>We gebruiken je gegevens niet voor advertenties. We verkopen je gegevens niet aan derden.</p>
+  </div>
+
+  <div class="tos-section">
+    <h2><span class="num">4</span> Diensten van derden</h2>
+    <p>Glycogo gebruikt de volgende diensten van derden om te functioneren. Elk heeft een eigen privacybeleid:</p>
+    <ul>
+      <li><strong>Supabase</strong>: database en authenticatie. Gegevens worden opgeslagen op servers van Supabase. <a href="https://supabase.com/privacy" style="color:var(--green);">Privacybeleid</a></li>
+      <li><strong>Stripe</strong>: betalingsverwerking. Betalingsgegevens worden volledig door Stripe verwerkt en komen nooit op onze servers. <a href="https://stripe.com/privacy" style="color:var(--green);">Privacybeleid</a></li>
+      <li><strong>Groq</strong>: drijft de AI-voedingsassistent aan. Je chatberichten en de relevante context (trainingen, voedingsregistratie) worden naar Groq gestuurd om antwoorden te genereren. Groq gebruikt API-gegevens niet om modellen te trainen. <a href="https://groq.com/privacy-policy/" style="color:var(--green);">Privacybeleid</a></li>
+      <li><strong>Intervals.icu</strong>: synchronisatie van trainingsgegevens. Alleen toegankelijk wanneer je je account koppelt, en leest uitsluitend de sessiegegevens die je autoriseert. <a href="https://intervals.icu/privacy" style="color:var(--green);">Privacybeleid</a></li>
+      <li><strong>Resend</strong>: verzenden van transactionele e-mails (verificatie, wachtwoordherstel). <a href="https://resend.com/legal/privacy-policy" style="color:var(--green);">Privacybeleid</a></li>
+    </ul>
+  </div>
+
+  <div class="tos-section">
+    <h2><span class="num">5</span> Cookies en sessies</h2>
+    <p>Glycogo gebruikt één sessiecookie om je tussen bezoeken ingelogd te houden. Deze cookie slaat je Supabase-refreshtoken op en verloopt na 30 dagen of wanneer je uitlogt.</p>
+    <p>We gebruiken geen advertentiecookies, trackingpixels of analysecookies. Er worden geen trackingscripts van derden in de app geladen.</p>
+  </div>
+
+  <div class="tos-section">
+    <h2><span class="num">6</span> Bewaartermijn</h2>
+    <p>Je gegevens worden bewaard zolang je account actief is. Als je je account verwijdert:</p>
+    <ul>
+      <li>Je persoonsgegevens en voedingsregistraties worden binnen 30 dagen verwijderd.</li>
+      <li>Geanonimiseerde geaggregeerde gegevens (bijvoorbeeld het totale aantal registraties) kunnen worden bewaard.</li>
+      <li>Stripe bewaart betalingsgegevens zoals vereist door financiële regelgeving.</li>
+    </ul>
+  </div>
+
+  <div class="tos-section">
+    <h2><span class="num">7</span> Je rechten</h2>
+    <p>Op grond van de Nieuw-Zeelandse Privacy Act 2020 heb je het recht om:</p>
+    <ul>
+      <li>inzage te krijgen in de persoonsgegevens die we over je bewaren.</li>
+      <li>correctie van onjuiste informatie te vragen.</li>
+      <li>verwijdering van je account en de bijbehorende gegevens te vragen.</li>
+      <li>je toestemming voor gegevensverwerking in te trekken (dit vereist verwijdering van het account).</li>
+    </ul>
+    <p>Om een van deze rechten uit te oefenen, mail ons op <a href="mailto:contactgemperformance@gmail.com" style="color:var(--green);">contactgemperformance@gmail.com</a>. We reageren binnen 20 werkdagen, zoals de wet vereist.</p>
+  </div>
+
+  <div class="tos-section">
+    <h2><span class="num">8</span> Gegevensbeveiliging</h2>
+    <p>We nemen redelijke maatregelen om je gegevens te beschermen:</p>
+    <ul>
+      <li>Alle gegevens worden via HTTPS verzonden.</li>
+      <li>Wachtwoorden worden door Supabase gehasht en nooit in platte tekst opgeslagen.</li>
+      <li>Je Intervals.icu-API-sleutel wordt versleuteld opgeslagen.</li>
+      <li>Betalingsgegevens gaan nooit via onze servers en worden volledig door Stripe verwerkt.</li>
+      <li>Toegang tot de database is beperkt en geauthenticeerd.</li>
+    </ul>
+    <p>Geen enkel systeem is volledig veilig. Als je denkt dat je account is gecompromitteerd, neem dan direct contact met ons op.</p>
+  </div>
+
+  <div class="tos-section">
+    <h2><span class="num">9</span> Privacy van kinderen</h2>
+    <p>Glycogo is niet bedoeld voor personen onder de 16 jaar. We verzamelen niet bewust persoonsgegevens van kinderen. Als je denkt dat een kind ons persoonsgegevens heeft verstrekt, neem dan contact op en we verwijderen deze direct.</p>
+  </div>
+
+  <div class="tos-section">
+    <h2><span class="num">10</span> Wijzigingen in dit beleid</h2>
+    <p>We kunnen dit Privacybeleid van tijd tot tijd bijwerken. In dat geval passen we de datum bovenaan deze pagina aan. Bij belangrijke wijzigingen informeren we je per e-mail. Voortgezet gebruik van Glycogo na wijzigingen geldt als aanvaarding van het bijgewerkte beleid.</p>
+  </div>
+
+  <div class="tos-section">
+    <h2><span class="num">11</span> Toepasselijk recht</h2>
+    <p>Dit Privacybeleid wordt beheerst door de wetgeving van Nieuw-Zeeland, inclusief de Privacy Act 2020. Op geschillen is de rechtspraak van de Nieuw-Zeelandse rechter en het Office of the Privacy Commissioner van toepassing.</p>
+  </div>
+
+  <div class="contact-card">
+    <p>Vragen of verzoeken over je privacy?</p>
+    <a href="mailto:contactgemperformance@gmail.com">contactgemperformance@gmail.com</a>
+    <p style="margin-top:0.75rem;">GEM Performance · G.E. McConnochie PhD · Nieuw-Zeeland</p>
+  </div>
+
+</div>
+
+<footer>
+  <div>
+    2026 <strong>GEM Performance</strong> · <strong>G</strong>oal-Driven, <strong>E</strong>vidence-Based, <strong>M</strong>onitoring tools for athletes<br>
+    <span style="font-size:0.74rem;">G.E.McConnochie PhD &nbsp;·&nbsp; <a href="mailto:contactgemperformance@gmail.com">contactgemperformance@gmail.com</a></span>
+  </div>
+  <div style="display:flex;gap:1rem;align-items:center;flex-wrap:wrap;">
+    <a href="/terms" style="color:rgba(255,255,255,0.6);font-size:0.82rem;text-decoration:underline;">Servicevoorwaarden</a>
+    <a href="/privacy" style="color:rgba(255,255,255,0.6);font-size:0.82rem;text-decoration:underline;">Privacybeleid</a>
+    <a href="https://app.glycogo.fit/" style="background:var(--green);color:white;padding:0.5rem 1.2rem;border-radius:6px;font-weight:600;font-size:0.85rem;text-decoration:none;">Gratis proberen</a>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.nav-dropdown').forEach((dd) => {
+    const btn = dd.querySelector('.nav-dropdown-toggle');
+    if (!btn) return;
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const open = !dd.classList.contains('open');
+      document.querySelectorAll('.nav-dropdown.open').forEach((o) => {
+        o.classList.remove('open');
+        o.querySelector('.nav-dropdown-toggle')?.setAttribute('aria-expanded', 'false');
+      });
+      dd.classList.toggle('open', open);
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  });
+  document.addEventListener('click', () => {
+    document.querySelectorAll('.nav-dropdown.open').forEach((o) => {
+      o.classList.remove('open');
+      o.querySelector('.nav-dropdown-toggle')?.setAttribute('aria-expanded', 'false');
+    });
+  });
+</script>
+
+<script src="/search/search-index.js"></script>
+<script src="/search/search-rrf.js"></script>
+<script src="/search/search.js"></script>
+</body>
+</html>

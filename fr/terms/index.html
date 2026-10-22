@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<link rel="icon" type="image/png" href="/logosmall.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Conditions d'utilisation | Glycogo</title>
+<meta name="description" content="Conditions d'utilisation de Glycogo : droits et obligations, abonnement et responsabilité.">
+<link rel="canonical" href="https://glycogo.fit/fr/terms/">
+<!-- i18n:alternates -->
+<link rel="alternate" hreflang="en" href="https://glycogo.fit/terms/">
+<link rel="alternate" hreflang="de" href="https://glycogo.fit/de/terms/">
+<link rel="alternate" hreflang="es" href="https://glycogo.fit/es/terms/">
+<link rel="alternate" hreflang="fr" href="https://glycogo.fit/fr/terms/">
+<link rel="alternate" hreflang="it" href="https://glycogo.fit/it/terms/">
+<link rel="alternate" hreflang="nl" href="https://glycogo.fit/nl/terms/">
+<link rel="alternate" hreflang="x-default" href="https://glycogo.fit/terms/">
+<!-- /i18n:alternates -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Space+Mono:wght@400;700&family=Michroma&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+--display-stroke: 0.04em; --green: #2e7d32; --green-light: #43a047; --green-pale: #e8f5e9;
+    --orange: #e65c00; --orange-light: #ff7043;
+    --navy: #1a1a3e; --navy-mid: #2d2d7a;
+    --bg: #f0f7f4; --white: #ffffff; --text: #1a1a3e;
+    --muted: #5a6a5a; --border: #c8d8c8;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Space Grotesk', sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; }
+
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1rem 2.5rem; background: rgba(240,247,244,0.9);
+    backdrop-filter: blur(12px); border-bottom: 1px solid var(--border);
+  }
+  .nav-logo { font-family: 'Space Mono', monospace; font-size: 1.4rem; font-weight: 700; color: var(--green); letter-spacing: -0.02em; text-decoration: none; }
+  .nav-logo span { color: var(--orange); }
+  .nav-links { display: flex; gap: 2rem; align-items: center; }
+  .nav-links > a,
+  .nav-dropdown-toggle {
+    text-decoration: none; color: var(--muted); font-size: 0.9rem; font-weight: 500; transition: color 0.2s;
+    background: none; border: none; cursor: pointer; font-family: inherit; padding: 0;
+    display: inline-flex; align-items: center; gap: 0.3rem;
+  }
+  .nav-links > a:hover,
+  .nav-dropdown-toggle:hover,
+  .nav-dropdown.open .nav-dropdown-toggle { color: var(--green); }
+  .nav-dropdown { position: relative; }
+  .nav-dropdown-toggle .chev {
+    width: 0; height: 0; border-left: 4px solid transparent; border-right: 4px solid transparent;
+    border-top: 4px solid currentColor; opacity: 0.7; transition: transform 0.2s;
+  }
+  .nav-dropdown.open .chev { transform: rotate(180deg); }
+  .nav-dropdown-menu {
+    position: absolute; top: calc(100% + 0.65rem); left: 50%; transform: translateX(-50%) translateY(4px);
+    min-width: 220px; background: var(--white); border: 1px solid var(--border);
+    border-radius: 12px; box-shadow: 0 12px 40px rgba(26,26,62,0.12); padding: 0.4rem;
+    opacity: 0; visibility: hidden; pointer-events: none;
+    transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s; z-index: 300;
+  }
+  .nav-dropdown.open .nav-dropdown-menu,
+  .nav-dropdown:hover .nav-dropdown-menu,
+  .nav-dropdown:focus-within .nav-dropdown-menu {
+    opacity: 1; visibility: visible; pointer-events: auto; transform: translateX(-50%) translateY(0);
+  }
+  .nav-dropdown-menu a {
+    display: block; padding: 0.7rem 0.9rem; border-radius: 8px;
+    text-decoration: none; color: var(--text); font-size: 0.86rem; font-weight: 500;
+    transition: background 0.15s, color 0.15s; white-space: nowrap;
+  }
+  .nav-dropdown-menu a:hover { background: var(--green-pale); color: var(--green); }
+  .nav-cta { background: var(--green) !important; color: white !important; padding: 0.5rem 1.2rem !important; border-radius: 6px !important; font-weight: 600 !important; }
+
+  /* PAGE HERO */
+  .page-hero {
+    background: var(--navy);
+    padding: 8rem 2rem 4rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .page-hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image: linear-gradient(rgba(46,125,50,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(46,125,50,0.06) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  .page-hero-content { position: relative; z-index: 1; }
+  .page-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--orange-light); margin-bottom: 0.75rem; }
+  .page-hero h1 { font-family: 'Michroma', 'Space Grotesk', sans-serif; font-weight: 400; font-synthesis-weight: none; -webkit-text-stroke: var(--display-stroke) currentColor; font-size: clamp(1.5rem, 3.2vw, 2.3rem); line-height: 1.2; letter-spacing: 0; color: white; margin-bottom: 0.75rem; }
+  .page-hero p { color: rgba(255,255,255,0.55); font-size: 0.9rem; }
+
+  /* CONTENT */
+  .tos-wrap { max-width: 780px; margin: 0 auto; padding: 4rem 2rem 6rem; }
+
+  .tos-section { margin-bottom: 2.5rem; }
+  .tos-section h2 {
+    font-size: 1.1rem; font-weight: 700; color: var(--navy);
+    margin-bottom: 0.75rem; padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--green-pale);
+    display: flex; align-items: center; gap: 0.5rem;
+  }
+  .tos-section h2 .num {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.75rem; font-weight: 700;
+    background: var(--green); color: white;
+    width: 24px; height: 24px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .tos-section p { font-size: 0.95rem; color: var(--muted); line-height: 1.75; margin-bottom: 0.75rem; }
+  .tos-section ul { list-style: none; padding: 0; margin: 0.5rem 0 0.75rem; display: flex; flex-direction: column; gap: 0.4rem; }
+  .tos-section ul li { font-size: 0.95rem; color: var(--muted); line-height: 1.65; padding-left: 1.4rem; position: relative; }
+  .tos-section ul li::before { content: ''; position: absolute; left: 0; top: 0.6em; width: 6px; height: 6px; border-radius: 50%; background: var(--green); }
+
+  .highlight-box {
+    background: white; border: 1px solid var(--border);
+    border-radius: 10px; padding: 1.2rem 1.4rem;
+    margin-bottom: 2.5rem;
+  }
+  .highlight-box p { font-size: 0.9rem; color: var(--muted); line-height: 1.7; margin: 0; }
+  .highlight-box strong { color: var(--navy); }
+
+  .contact-card {
+    background: var(--navy); border-radius: 12px; padding: 2rem;
+    text-align: center; margin-top: 3rem;
+  }
+  .contact-card p { color: rgba(255,255,255,0.65); font-size: 0.9rem; margin-bottom: 0.75rem; }
+  .contact-card a { color: var(--orange-light); font-weight: 600; text-decoration: none; }
+  .contact-card a:hover { text-decoration: underline; }
+
+  footer { background: var(--navy); color: rgba(255,255,255,0.5); padding: 2.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; font-size: 0.82rem; }
+  footer strong { color: white; }
+  footer a { color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s; }
+  footer a:hover { color: var(--orange-light); }
+
+  @media (max-width: 800px) {
+    .nav-links { display: none; }
+    footer { flex-direction: column; text-align: center; }
+  }
+</style>
+<link rel="stylesheet" href="/search/search.css">
+<script src="/assets/i18n.js" defer></script>
+</head>
+<body>
+
+<nav>
+  <a href="https://glycogo.fit">
+  <img src="/3dglycogo.svg" alt="Glycogo" style="height:60px;">
+</a>
+  <div class="nav-links">
+    <a href="https://glycogo.fit#features">Fonctionnalités</a>
+    <a href="https://glycogo.fit#how">Fonctionnement</a>
+    <a href="https://glycogo.fit#science">Science</a>
+    <div class="nav-dropdown">
+      <button type="button" class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+        Calculateurs <span class="chev" aria-hidden="true"></span>
+      </button>
+      <div class="nav-dropdown-menu" role="menu">
+        <a href="/fr/fuel-ratio-calculator/" role="menuitem">Calculateur de ratio glucidique</a>
+        <a href="/fr/substrate-explorer/" role="menuitem">Calculateur d'utilisation des lipides et des glucides</a>
+      </div>
+    </div>
+    <a href="https://app.glycogo.fit/" class="nav-cta">Essayer gratuitement</a>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-content">
+    <h1>Conditions d'utilisation</h1>
+    <p>Dernière mise à jour : avril 2026 · En vigueur immédiatement</p>
+  </div>
+</div>
+
+<div class="tos-wrap">
+
+  <div class="highlight-box">
+    <p><strong>Veuillez lire attentivement ces conditions.</strong> En créant un compte ou en utilisant Glycogo, vous acceptez d'être lié par ces Conditions d'utilisation. Si vous n'êtes pas d'accord, n'utilisez pas le service. Ces conditions constituent un accord juridiquement contraignant entre vous et GEM Performance (G.E. McConnochie PhD).</p>
+  </div>
+
+  <div class="tos-section">
+    <h2><span class="num">1</span> À propos de Glycogo</h2>
+    <p>Glycogo est un outil de planification nutritionnelle périodisée conçu pour les athlètes d'endurance. Il fournit des objectifs de glucides et de calories adaptés à la charge d'entraînement, la saisie des aliments, la synchronisation des entraînements via Intervals.icu et un assistant nutritionnel par IA.</p>
+    <p>Glycogo est exploité par GEM Performance, détenu par G.E. McConnochie PhD, basé en Nouvelle-Zélande.</p>
+  </div>
+
+  <div class="tos-section">
+    <h2><span class="num">2</span> Pas un avis médical</h2>
+    <p>Glycogo est un outil de planification et de suivi nutritionnel. Ce <strong>n'est pas</strong> un service médical et ne fournit ni avis médical, ni diagnostic, ni traitement. L'ensemble du contenu, des objectifs et des suggestions sont fournis à titre informatif et pour la planification de la performance uniquement.</p>
+    <ul>
+      <li>Consultez un professionnel de santé qualifié ou un diététicien diplômé avant de modifier sensiblement votre alimentation.</li>
+      <li>Si vous souffrez d'une pathologie, d'un trouble du comportement alimentaire ou avez un besoin alimentaire spécifique, demandez l'avis d'un professionnel avant d'utiliser cette application.</li>
+      <li>GEM Performance n'assume aucune responsabilité quant aux conséquences sur la santé résultant de l'utilisation de Glycogo.</li>
+    </ul>
+  </div>
+
+  <div class="tos-section">
+    <h2><span class="num">3</span> Essai gratuit</h2>
+    <p>Glycogo propose un essai gratuit de 3 jours aux nouveaux utilisateurs. L'essai commence au moment de la création du compte.</p>
+    <ul>
+      <li>Aucune carte bancaire n'est requise pour commencer l'essai.</li>
+      <li>À l'issue de l'essai, l'accès aux fonctionnalités payantes nécessite un abonnement actif.</li>
+      <li>Les périodes d'essai ne sont pas transférables et ne sont disponibles qu'une fois par personne.</li>
+      <li>La création de plusieurs comptes pour prolonger l'accès d'essai est interdite et peut entraîner la fermeture définitive du compte.</li>
+    </ul>
+  </div>
+
+  <div class="tos-section">
+    <h2><span class="num">4</span> Abonnements et paiement</h2>
+    <p>Les abonnements payants sont traités de manière sécurisée via Stripe. En vous abonnant, vous acceptez les conditions d'utilisation de Stripe en plus des présentes conditions.</p>
+    <ul>
+      <li>Les abonnements sont facturés de manière récurrente (mensuelle ou annuelle, selon votre choix).</li>
+      <li>Vous pouvez résilier votre abonnement à tout moment. L'accès se poursuit jusqu'à la fin de la période de facturation en cours.</li>
+      <li>Aucun remboursement n'est accordé pour les périodes de facturation partielles.</li>
+      <li>Les prix sont indiqués en NZD sauf mention contraire et peuvent être modifiés avec un préavis raisonnable.</li>
+      <li>GEM Performance se réserve le droit de modifier les prix en informant les abonnés existants au moins 14 jours à l'avance.</li>
+    </ul>
+  </div>
+
+  <div class="tos-section">
+    <h2><span class="num">5</span> Responsabilités liées au compte</h2>
+    <p>Vous êtes responsable de la sécurité de votre compte et de toute activité qui y est effectuée.</p>
+    <ul>
+      <li>Vous devez avoir au moins 16 ans pour créer un compte.</li>
+      <li>Vous devez fournir des informations exactes lors de l'inscription.</li>
+      <li>Vous devez utiliser une adresse e-mail permanente ; les adresses jetables ou temporaires ne sont pas autorisées.</li>
+      <li>Un compte par personne. La création de plusieurs comptes pour contourner les limites d'essai ou d'autres restrictions est interdite.</li>
+      <li>Vous ne devez pas partager vos identifiants de connexion avec d'autres personnes.</li>
+      <li>Prévenez-nous immédiatement à <a href="mailto:contactgemperformance@gmail.com">contactgemperformance@gmail.com</a> si vous soupçonnez un accès non autorisé.</li>
+    </ul>
+  </div>
+
+  <div class="tos-section">
+    <h2><span class="num">6</span> Utilisation acceptable</h2>
+    <p>Vous acceptez de ne pas faire un usage abusif de Glycogo. Sont notamment interdits :</p>
+    <ul>
+      <li>Tenter de faire de l'ingénierie inverse, d'extraire ou de copier une partie de l'application.</li>
+      <li>Utiliser le service d'une manière susceptible de l'endommager, de le désactiver ou de le dégrader.</li>
+      <li>Tenter d'accéder sans autorisation à une partie du système.</li>
+      <li>Utiliser des outils automatisés ou des robots pour interagir avec le service.</li>
+      <li>Fournir de fausses informations ou usurper l'identité d'autrui.</li>
+    </ul>
+  </div>
+
+  <div class="tos-section">
+    <h2><span class="num">7</span> Données et confidentialité</h2>
+    <p>Vos données sont stockées de manière sécurisée avec Supabase. Nous ne collectons que ce qui est nécessaire à la fourniture du service, notamment votre adresse e-mail, vos journaux nutritionnels et les données d'entraînement synchronisées depuis Intervals.icu.</p>
+    <ul>
+      <li>Nous ne vendons pas vos données personnelles à des tiers.</li>
+      <li>Les données de nutrition et d'entraînement que vous saisissez restent les vôtres.</li>
+      <li>Nous pouvons utiliser des données anonymisées et agrégées pour améliorer le service.</li>
+      <li>Vous pouvez demander à tout moment la suppression de votre compte et des données associées en nous écrivant.</li>
+      <li>Les informations de paiement sont gérées entièrement par Stripe et ne sont jamais stockées sur nos serveurs.</li>
+    </ul>
+    <p>En utilisant Glycogo, vous consentez au stockage et au traitement de vos données conformément aux présentes conditions et à la loi néo-zélandaise applicable en matière de protection des données (Privacy Act 2020).</p>
+  </div>
+
+  <div class="tos-section">
+    <h2><span class="num">8</span> Intégrations tierces</h2>
+    <p>Glycogo s'intègre à des services tiers, notamment Intervals.icu, Supabase, Stripe et OpenAI. L'utilisation de ces services est soumise à leurs propres conditions et politiques de confidentialité. GEM Performance n'est pas responsable de la disponibilité ni du comportement des services tiers.</p>
+  </div>
+
+  <div class="tos-section">
+    <h2><span class="num">9</span> Disponibilité et modifications</h2>
+    <p>Nous nous efforçons de maintenir Glycogo disponible en permanence, mais nous ne garantissons pas un accès ininterrompu. Nous nous réservons le droit de :</p>
+    <ul>
+      <li>Modifier, suspendre ou interrompre toute partie du service à tout moment.</li>
+      <li>Mettre à jour ces Conditions d'utilisation en informant les utilisateurs dans un délai raisonnable.</li>
+      <li>Modifier les fonctionnalités incluses dans les offres gratuites ou payantes.</li>
+    </ul>
+    <p>La poursuite de l'utilisation de Glycogo après modification des présentes conditions vaut acceptation des conditions mises à jour.</p>
+  </div>
+
+  <div class="tos-section">
+    <h2><span class="num">10</span> Résiliation</h2>
+    <p>GEM Performance se réserve le droit de suspendre ou de résilier les comptes qui enfreignent ces conditions, notamment en cas de création de plusieurs comptes, d'abus du système d'essai ou de mauvaise utilisation de la plateforme. Aucun remboursement ne sera accordé en cas de résiliation pour manquement aux présentes conditions.</p>
+    <p>Vous pouvez résilier votre compte à tout moment en nous contactant.</p>
+  </div>
+
+  <div class="tos-section">
+    <h2><span class="num">11</span> Limitation de responsabilité</h2>
+    <p>Dans toute la mesure permise par la loi, GEM Performance ne saurait être tenu responsable des dommages indirects, accessoires ou consécutifs résultant de votre utilisation de Glycogo, notamment la perte de données, les blessures ou les conséquences sur la santé.</p>
+    <p>Notre responsabilité totale à votre égard, pour toute réclamation, ne saurait excéder le montant que vous avez payé pour le service au cours des 3 mois précédant la réclamation.</p>
+  </div>
+
+  <div class="tos-section">
+    <h2><span class="num">12</span> Droit applicable</h2>
+    <p>Les présentes Conditions d'utilisation sont régies par le droit néo-zélandais. Tout litige relève de la compétence exclusive des tribunaux néo-zélandais.</p>
+  </div>
+
+  <div class="contact-card">
+    <p>Des questions sur ces conditions ? Nous serons ravis de vous aider.</p>
+    <a href="mailto:contactgemperformance@gmail.com">contactgemperformance@gmail.com</a>
+    <p style="margin-top:0.75rem;">GEM Performance · G.E. McConnochie PhD </p>
+  </div>
+
+</div>
+
+<footer>
+  <div>
+    2026 <strong>GEM Performance</strong> · <strong>G</strong>oal-Driven, <strong>E</strong>vidence-Based, <strong>M</strong>onitoring tools for athletes<br>
+    <span style="font-size:0.74rem;">G.E.McConnochie PhD &nbsp;·&nbsp; <a href="mailto:contactgemperformance@gmail.com">contactgemperformance@gmail.com</a></span>
+  </div>
+  <a href="https://app.glycogo.fit/" style="background:var(--green);color:white;padding:0.5rem 1.2rem;border-radius:6px;font-weight:600;font-size:0.85rem;text-decoration:none;">Essayer gratuitement</a>
+</footer>
+
+<script>
+  document.querySelectorAll('.nav-dropdown').forEach((dd) => {
+    const btn = dd.querySelector('.nav-dropdown-toggle');
+    if (!btn) return;
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const open = !dd.classList.contains('open');
+      document.querySelectorAll('.nav-dropdown.open').forEach((o) => {
+        o.classList.remove('open');
+        o.querySelector('.nav-dropdown-toggle')?.setAttribute('aria-expanded', 'false');
+      });
+      dd.classList.toggle('open', open);
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  });
+  document.addEventListener('click', () => {
+    document.querySelectorAll('.nav-dropdown.open').forEach((o) => {
+      o.classList.remove('open');
+      o.querySelector('.nav-dropdown-toggle')?.setAttribute('aria-expanded', 'false');
+    });
+  });
+</script>
+
+<script src="/search/search-index.js"></script>
+<script src="/search/search-rrf.js"></script>
+<script src="/search/search.js"></script>
+</body>
+</html>

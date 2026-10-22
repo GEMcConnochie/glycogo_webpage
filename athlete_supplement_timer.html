@@ -10,6 +10,15 @@
 <meta name="robots" content="index, follow">
 <meta name="author" content="Glycogo">
 <link rel="canonical" href="https://glycogo.fit/athlete_supplement_timer.html">
+<!-- i18n:alternates -->
+<link rel="alternate" hreflang="en" href="https://glycogo.fit/athlete_supplement_timer.html">
+<link rel="alternate" hreflang="de" href="https://glycogo.fit/de/athlete_supplement_timer.html">
+<link rel="alternate" hreflang="es" href="https://glycogo.fit/es/athlete_supplement_timer.html">
+<link rel="alternate" hreflang="fr" href="https://glycogo.fit/fr/athlete_supplement_timer.html">
+<link rel="alternate" hreflang="it" href="https://glycogo.fit/it/athlete_supplement_timer.html">
+<link rel="alternate" hreflang="nl" href="https://glycogo.fit/nl/athlete_supplement_timer.html">
+<link rel="alternate" hreflang="x-default" href="https://glycogo.fit/athlete_supplement_timer.html">
+<!-- /i18n:alternates -->
 
 <!-- Open Graph / social sharing -->
 <meta property="og:type" content="website">
@@ -224,6 +233,7 @@ footer { padding: 36px 0; text-align: center; color: var(--muted); font-size: 12
 }
 </style>
 <link rel="stylesheet" href="/search/search.css">
+<script src="/assets/i18n.js" defer></script>
 </head>
 <body>
 
@@ -429,7 +439,7 @@ function resolveMineralConflicts(){
   // Place a mineral at its best-ranked clear meal, else walk back from bed-180 in 2h steps
   function placeWithMeal(e, order){
     const pick = meals.slice().sort(byRank(order)).find(m => clear(m.t, e.title));
-    if(pick){ e.time = hhmm(pick.t); e.detail = `Take with food (${pick.name}).`; }
+    if(pick){ e.time = hhmm(pick.t); e.detail = ['Take with food (', pick.name, ').']; }
     else {
       let t = bed - 180;
       while(!clear(t, e.title) && t > wake) t -= MINERAL_GAP;
@@ -516,18 +526,18 @@ function build(){
   // 6. Vitamin D3
   const fatMeal = nearestMeal(wake + 120, true) || nearestMeal(wake + 120, false);
   if(selected.includes('vitd') && fatMeal){
-    add(fatMeal.time, 'Vitamin D3', `Fat-soluble: take with ${fatMeal.name} (contains fat).`, ['food']);
+    add(fatMeal.time, 'Vitamin D3', ['Fat-soluble: take with ', fatMeal.name, ' (contains fat).'], ['food']);
   }
 
   // 7. Vitamin K2
   if(selected.includes('k2') && fatMeal){
-    add(fatMeal.time, 'Vitamin K2', `Fat-soluble: take with ${fatMeal.name} (contains fat).`, ['food']);
+    add(fatMeal.time, 'Vitamin K2', ['Fat-soluble: take with ', fatMeal.name, ' (contains fat).'], ['food']);
   }
 
   // 8. Omega-3
   if(selected.includes('omega3')){
     const m = nearestMeal(mins($('lunch').value), false) || fatMeal;
-    if(m) add(m.time, 'Omega-3', `Fat-soluble: take with ${m.name} (contains fat).`, ['food']);
+    if(m) add(m.time, 'Omega-3', ['Fat-soluble: take with ', m.name, ' (contains fat).'], ['food']);
   }
 
   // 9. Calcium
@@ -556,7 +566,7 @@ function build(){
   // 13. Zinc
   if(selected.includes('zinc')){
     const zincMeal = nearestMeal(mins($('lunch').value)) || { name: 'Dinner', time: bed - 180 };
-    add(zincMeal.time, 'Zinc', `Take with food (${zincMeal.name}).`, ['medical']);
+    add(zincMeal.time, 'Zinc', ['Take with food (', zincMeal.name, ').'], ['medical']);
   }
 
   // 14. Potassium
@@ -613,7 +623,7 @@ function render(){
       <div class="time">${e.time}</div>
       <div>
         <div>${e.tags.map(t=>`<span class="tag ${t}">${t==='medical'?'MEDICAL':t==='performance'?'PERFORMANCE':'MEAL/FOOD'}</span>`).join('')}</div>
-        <h3>${e.title}</h3><p>${e.detail}</p>
+        <h3>${e.title}</h3><p>${Array.isArray(e.detail) ? e.detail.map(x=>`<span>${x}</span>`).join('') : e.detail}</p>
       </div>
     </div>`).join('');
 }
@@ -629,6 +639,13 @@ function makeDate(time, offset=0){
 }
 function stamp(d){return d.getFullYear()+String(d.getMonth()+1).padStart(2,'0')+String(d.getDate()).padStart(2,'0')+'T'+String(d.getHours()).padStart(2,'0')+String(d.getMinutes()).padStart(2,'0')+'00'}
 
+function tr(text){
+  return window.GlycogoI18n && window.GlycogoI18n.translate ? window.GlycogoI18n.translate(text) : text;
+}
+function detailText(detail){
+  return (Array.isArray(detail) ? detail.map(tr) : [tr(detail)]).join('');
+}
+
 function buildICS(){
   if(!schedule.length) build();
   if(!schedule.length) return null;
@@ -643,9 +660,9 @@ function buildICS(){
     out+='DTSTART:'+stamp(start)+'\r\n';
     out+='DTEND:'+stamp(end)+'\r\n';
     out+='RRULE:FREQ=DAILY\r\n';
-    out+='SUMMARY:'+icsEscape(e.title)+'\r\n';
-    out+='DESCRIPTION:'+icsEscape(e.detail)+'\r\n';
-    out+='BEGIN:VALARM\r\nTRIGGER:-PT10M\r\nACTION:DISPLAY\r\nDESCRIPTION:'+icsEscape(e.title)+'\r\nEND:VALARM\r\n';
+    out+='SUMMARY:'+icsEscape(tr(e.title))+'\r\n';
+    out+='DESCRIPTION:'+icsEscape(detailText(e.detail))+'\r\n';
+    out+='BEGIN:VALARM\r\nTRIGGER:-PT10M\r\nACTION:DISPLAY\r\nDESCRIPTION:'+icsEscape(tr(e.title))+'\r\nEND:VALARM\r\n';
     out+='END:VEVENT\r\n';
   });
   out+='END:VCALENDAR\r\n';

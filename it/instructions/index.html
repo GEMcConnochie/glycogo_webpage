@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<link rel="icon" type="image/png" href="/logosmall.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Istruzioni | Glycogo</title>
+<meta name="description" content="Come usare Glycogo: pianificazione nutrizionale periodizzata per atleti, passo dopo passo.">
+<link rel="canonical" href="https://glycogo.fit/it/instructions/">
+<!-- i18n:alternates -->
+<link rel="alternate" hreflang="en" href="https://glycogo.fit/instructions/">
+<link rel="alternate" hreflang="de" href="https://glycogo.fit/de/instructions/">
+<link rel="alternate" hreflang="es" href="https://glycogo.fit/es/instructions/">
+<link rel="alternate" hreflang="fr" href="https://glycogo.fit/fr/instructions/">
+<link rel="alternate" hreflang="it" href="https://glycogo.fit/it/instructions/">
+<link rel="alternate" hreflang="nl" href="https://glycogo.fit/nl/instructions/">
+<link rel="alternate" hreflang="x-default" href="https://glycogo.fit/instructions/">
+<!-- /i18n:alternates -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Space+Mono:wght@400;700&family=Michroma&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+--display-stroke: 0.04em; --nav-height: 80px;
+  --nav-height-scrolled: 64px;
+  --green: #2e7d32; --green-light: #43a047; --green-pale: #e8f5e9;
+  --orange: #e65c00; --orange-light: #ff7043;
+  --navy: #1a1a3e; --navy-mid: #2d2d7a;
+  --bg: #f0f7f4; --white: #ffffff; --text: #1a1a3e;
+  --muted: #5a6a5a; --border: #c8d8c8;
+}
+html { scroll-behavior: smooth; }
+body { font-family: 'Space Grotesk', sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; padding-top: var(--nav-height); }
+ 
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 9999; isolation: isolate;
+  height: var(--nav-height); display: flex; align-items: center; justify-content: space-between;
+  padding: 0 2.5rem; background: rgba(240, 247, 244, 0.9); backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border); transition: height 0.25s ease, background 0.25s ease;
+}
+nav.shrink { height: var(--nav-height-scrolled); }
+nav img { height: 60px; transition: height 0.25s ease; }
+nav.shrink img { height: 48px; }
+.nav-logo { font-family: 'Space Mono', monospace; font-size: 1.4rem; font-weight: 700; color: var(--green); letter-spacing: -0.02em; }
+.nav-logo span { color: var(--orange); }
+.nav-links { display: flex; gap: 2rem; align-items: center; }
+.nav-links > a,
+.nav-dropdown-toggle {
+  text-decoration: none; color: var(--muted); font-size: 0.9rem; font-weight: 500; transition: color 0.2s;
+  background: none; border: none; cursor: pointer; font-family: inherit; padding: 0;
+  display: inline-flex; align-items: center; gap: 0.3rem;
+}
+.nav-links > a:hover,
+.nav-dropdown-toggle:hover,
+.nav-dropdown.open .nav-dropdown-toggle { color: var(--green); }
+.nav-dropdown { position: relative; }
+.nav-dropdown-toggle .chev {
+  width: 0; height: 0; border-left: 4px solid transparent; border-right: 4px solid transparent;
+  border-top: 4px solid currentColor; opacity: 0.7; transition: transform 0.2s;
+}
+.nav-dropdown.open .chev { transform: rotate(180deg); }
+.nav-dropdown-menu {
+  position: absolute; top: calc(100% + 0.65rem); left: 50%; transform: translateX(-50%) translateY(4px);
+  min-width: 220px; background: var(--white); border: 1px solid var(--border);
+  border-radius: 12px; box-shadow: 0 12px 40px rgba(26,26,62,0.12); padding: 0.4rem;
+  opacity: 0; visibility: hidden; pointer-events: none;
+  transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s; z-index: 300;
+}
+.nav-dropdown.open .nav-dropdown-menu,
+.nav-dropdown:hover .nav-dropdown-menu,
+.nav-dropdown:focus-within .nav-dropdown-menu {
+  opacity: 1; visibility: visible; pointer-events: auto; transform: translateX(-50%) translateY(0);
+}
+.nav-dropdown-menu a {
+  display: block; padding: 0.7rem 0.9rem; border-radius: 8px;
+  text-decoration: none; color: var(--text); font-size: 0.86rem; font-weight: 500;
+  transition: background 0.15s, color 0.15s; white-space: nowrap;
+}
+.nav-dropdown-menu a:hover { background: var(--green-pale); color: var(--green); }
+.nav-cta { background: var(--green) !important; color: white !important; padding: 0.5rem 1.2rem !important; border-radius: 6px !important; font-weight: 600 !important; }
+.nav-cta:hover { background: var(--green-light) !important; }
+ 
+/* PAGE HERO */
+.page-hero { padding: 6rem 2rem 4rem; background: var(--navy); text-align: center; position: relative; overflow: hidden; z-index: 0; }
+.page-hero-bg { position: absolute; inset: 0; z-index: 0; background: radial-gradient(ellipse 60% 70% at 30% 50%, rgba(46,125,50,0.12) 0%, transparent 60%), radial-gradient(ellipse 50% 60% at 75% 60%, rgba(230,92,0,0.08) 0%, transparent 60%); }
+.page-hero-grid { position: absolute; inset: 0; z-index: 0; background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px); background-size: 40px 40px; }
+.page-hero-content { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
+.page-hero-badge { display: inline-flex; align-items: center; gap: 0.4rem; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 8px; padding: 0.3rem 1rem; font-size: 0.8rem; font-weight: 600; color: var(--green-light); margin-bottom: 1.2rem; }
+.page-hero h1 { font-family: 'Michroma', 'Space Grotesk', sans-serif; font-weight: 400; font-synthesis-weight: none; -webkit-text-stroke: var(--display-stroke) currentColor; font-size: clamp(1.6rem, 3.6vw, 2.75rem); line-height: 1.2; letter-spacing: 0; color: white; margin-bottom: 1rem; }
+.page-hero h1 em { font-style: normal; color: var(--orange-light); }
+.page-hero p { font-size: 1.1rem; color: rgba(255,255,255,0.65); line-height: 1.7; max-width: 520px; margin: 0 auto; }
+
+/* LAYOUT */
+.docs-layout { max-width: 900px; margin: 0 auto; padding: 3rem 2rem; }
+ 
+/* STEP SECTIONS */
+.step-section { background: white; border: 1px solid var(--border); border-radius: 10px; margin-bottom: 1.5rem; overflow: hidden; transition: box-shadow 0.2s; }
+.step-section:hover { box-shadow: 0 8px 32px rgba(46,125,50,0.08); }
+section, .step-section, [id] { scroll-margin-top: calc(var(--nav-height) + 16px); }
+ 
+.step-header { display: flex; align-items: center; gap: 1rem; padding: 1.5rem 1.8rem; border-bottom: 1px solid var(--border); background: linear-gradient(to right, var(--green-pale), transparent); }
+.step-header.orange { background: linear-gradient(to right, rgba(230,92,0,0.06), transparent); }
+.step-header.navy { background: linear-gradient(to right, rgba(26,26,62,0.05), transparent); }
+.step-header.teal { background: linear-gradient(to right, rgba(67,160,71,0.07), transparent); }
+ 
+.step-num-badge, .step-num-badge.orange, .step-num-badge.navy, .step-num-badge.teal, .step-num-badge.ai { display: none; }
+ 
+.step-header-text h2 { font-size: 1.1rem; font-weight: 700; color: var(--navy); }
+.step-header-text p { font-size: 0.85rem; color: var(--muted); margin-top: 0.15rem; }
+.step-body { padding: 1.8rem; }
+.step-body p { font-size: 0.93rem; color: var(--muted); line-height: 1.75; margin-bottom: 1rem; }
+.step-body p:last-child { margin-bottom: 0; }
+.step-body strong { color: var(--navy); font-weight: 600; }
+ 
+/* SETTINGS TABLE */
+.settings-table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.88rem; }
+.settings-table th { text-align: left; padding: 0.6rem 0.9rem; background: var(--green-pale); color: var(--green); font-weight: 700; font-size: 0.75rem; letter-spacing: 0.05em; text-transform: uppercase; }
+.settings-table th:first-child { border-radius: 8px 0 0 0; }
+.settings-table th:last-child { border-radius: 0 8px 0 0; }
+.settings-table td { padding: 0.75rem 0.9rem; border-bottom: 1px solid var(--border); vertical-align: top; color: var(--muted); line-height: 1.6; }
+.settings-table td:first-child { color: var(--navy); font-weight: 600; white-space: nowrap; }
+.settings-table tr:last-child td { border-bottom: none; }
+.settings-table tr:hover td { background: rgba(46,125,50,0.02); }
+ 
+/* RANGE BADGE */
+.range-badge { display: inline-block; font-family: 'Space Mono', monospace; font-size: 0.75rem; background: var(--green-pale); color: var(--green); border: 1px solid var(--border); border-radius: 5px; padding: 0.15rem 0.5rem; font-weight: 700; margin-left: 0.4rem; }
+ 
+/* CHECKLIST */
+.checklist { display: flex; flex-direction: column; gap: 0.6rem; margin: 1rem 0; }
+.checklist-item { display: flex; align-items: flex-start; gap: 0.75rem; font-size: 0.9rem; color: var(--muted); line-height: 1.6; }
+.checklist-item svg { width: 18px; height: 18px; flex-shrink: 0; margin-top: 2px; }
+.check-circle { stroke: var(--green); fill: var(--green-pale); }
+.check-check { stroke: var(--green); fill: none; }
+ 
+/* AI FEATURES GRID */
+.ai-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; margin: 1rem 0; }
+.ai-feature { background: rgba(26,26,62,0.04); border: 1px solid var(--border); border-radius: 10px; padding: 1rem 1.1rem; display: flex; gap: 0.7rem; align-items: flex-start; }
+.ai-feature-icon { width: 32px; height: 32px; border-radius: 8px; background: var(--navy); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.ai-feature-icon svg { width: 15px; height: 15px; stroke: white; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.ai-feature h4 { font-size: 0.88rem; font-weight: 700; color: var(--navy); margin-bottom: 0.2rem; }
+.ai-feature p { font-size: 0.8rem; color: var(--muted); line-height: 1.5; margin: 0; }
+ 
+/* TIP BOX */
+.tip { display: flex; gap: 0.75rem; align-items: flex-start; background: rgba(46,125,50,0.06); border: 1px solid rgba(46,125,50,0.2); border-radius: 8px; padding: 0.9rem 1.1rem; margin: 1rem 0; font-size: 0.87rem; color: var(--muted); line-height: 1.65; }
+.tip > span { flex: 1; min-width: 0; }
+.tip svg { width: 16px; height: 16px; stroke: var(--green); fill: none; stroke-width: 2; flex-shrink: 0; margin-top: 2px; }
+.step-body ul { margin: 0.5rem 0 1rem 1.5rem; font-size: 0.93rem; color: var(--muted); line-height: 1.7; }
+.step-body ul.compact { margin: 0.4rem 0 0.75rem 1.1rem; line-height: 1.55; }
+.step-body ul.compact li { margin-bottom: 0.35rem; }
+.step-body ul.compact li:last-child { margin-bottom: 0; }
+
+/* QUICK START + WORKFLOW */
+.quick-start { background: var(--green-pale); border: 1px solid var(--border); border-radius: 12px; padding: 1.1rem 1.25rem; margin-bottom: 1rem; }
+.quick-start h3 { font-size: 0.95rem; font-weight: 700; color: var(--navy); margin-bottom: 0.65rem; }
+.quick-start ol { margin: 0 0 0 1.2rem; font-size: 0.9rem; color: var(--muted); line-height: 1.65; }
+.quick-start ol li { margin-bottom: 0.3rem; }
+.quick-start ol li:last-child { margin-bottom: 0; }
+
+.workflow { display: flex; flex-direction: column; align-items: center; gap: 0; margin: 1rem 0 0.5rem; padding: 1rem; background: rgba(26,26,62,0.03); border: 1px solid var(--border); border-radius: 12px; }
+.workflow-step { font-size: 0.88rem; font-weight: 600; color: var(--navy); background: white; border: 1px solid var(--border); border-radius: 8px; padding: 0.45rem 1.1rem; text-align: center; min-width: 10rem; }
+.workflow-arrow { color: var(--green); font-size: 1rem; line-height: 1; padding: 0.15rem 0; }
+
+/* IN-APP ICONS */
+.app-icons-note { display: flex; flex-wrap: wrap; gap: 0.75rem 1.25rem; align-items: center; background: rgba(46,125,50,0.05); border: 1px solid rgba(46,125,50,0.15); border-radius: 10px; padding: 0.85rem 1rem; margin: 1rem 0; font-size: 0.85rem; color: var(--muted); line-height: 1.5; }
+.app-icon-item { display: flex; align-items: center; gap: 0.45rem; font-weight: 600; color: var(--navy); white-space: nowrap; }
+.app-icon { width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.app-icon svg { width: 17px; height: 17px; fill: white; }
+.app-icon.training { background: #e65c00; }
+.app-icon.food { background: #61aa39; }
+.app-icon.ai { background: #2d2d7a; }
+
+.settings-group { margin: 1rem 0 0.5rem; }
+.settings-group h4 { font-size: 0.82rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: var(--green); margin-bottom: 0.45rem; }
+.settings-group ul { margin: 0 0 0 1.1rem; font-size: 0.88rem; line-height: 1.6; }
+
+details.advanced { margin-top: 1rem; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+details.advanced > summary { cursor: pointer; padding: 0.75rem 1rem; font-size: 0.88rem; font-weight: 700; color: var(--navy-mid); background: rgba(26,26,62,0.04); list-style: none; }
+details.advanced > summary::-webkit-details-marker { display: none; }
+details.advanced > summary::after { content: '+'; float: right; color: var(--green); font-weight: 700; }
+details.advanced[open] > summary::after { content: '−'; }
+details.advanced .advanced-body { padding: 0.85rem 1rem 1rem; font-size: 0.87rem; color: var(--muted); line-height: 1.65; border-top: 1px solid var(--border); }
+details.advanced .advanced-body p { margin-bottom: 0.65rem; font-size: 0.87rem; }
+details.advanced .advanced-body ul { margin: 0.35rem 0 0 1.1rem; font-size: 0.87rem; line-height: 1.6; }
+
+.why-lead { font-size: 0.93rem; color: var(--navy); font-weight: 500; line-height: 1.65; margin-bottom: 0.85rem; }
+ 
+/* REFERENCES */
+.refs { background: var(--navy); color: rgba(255,255,255,0.6); }
+.refs-inner { max-width: 1100px; margin: 0 auto; padding: 3rem 2rem; }
+.refs h3 { font-size: 0.85rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 1.25rem; }
+.refs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 0.75rem; }
+.ref-item { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 0.9rem 1.1rem; font-size: 0.82rem; line-height: 1.6; }
+.ref-item strong { color: rgba(255,255,255,0.85); display: block; margin-bottom: 0.25rem; }
+.ref-item a { color: var(--orange-light); text-decoration: none; }
+.ref-item a:hover { text-decoration: underline; }
+ 
+/* FOOTER */
+footer { background: var(--navy); color: rgba(255,255,255,0.5); padding: 2.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; font-size: 0.82rem; border-top: 1px solid rgba(255,255,255,0.06); }
+footer strong { color: white; }
+footer a { color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s; }
+footer a:hover { color: var(--orange-light); }
+ 
+/* ANIMATIONS */
+@keyframes fadeUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+.fade-up { opacity:0; transform:translateY(20px); transition:opacity 0.55s ease,transform 0.55s ease; }
+.fade-up.visible { opacity:1; transform:translateY(0); }
+ 
+/* RESPONSIVE */
+@media (max-width: 860px) {
+  .docs-layout { grid-template-columns: 1fr; padding: 2rem 1.2rem; }
+  .sidebar { display: none; }
+  .ai-grid { grid-template-columns: 1fr; }
+  .nav-links { display: none; }
+  footer { flex-direction: column; text-align: center; }
+}
+@media (max-width: 540px) {
+  .page-hero { padding: 6rem 1.5rem 3rem; }
+  .step-header { padding: 1.2rem 1.3rem; }
+  .step-body { padding: 1.3rem; }
+}
+</style>
+<link rel="stylesheet" href="/search/search.css">
+<script src="/assets/i18n.js" defer></script>
+</head>
+<body>
+<!-- NAV -->
+<nav id="main-nav">
+  <a href="/it/" style="display:flex;align-items:center;text-decoration:none;">
+    <img src="/3dglycogo.svg" alt="Glycogo" style="height:60px;">
+  </a>
+  <div class="nav-links">
+    <a href="/it/#features">Funzioni</a>
+    <a href="/it/#how">Come funziona</a>
+    <a href="/it/#science">Scienza</a>
+    <a href="/it/#faq">FAQ</a>
+    <a href="/it/#support">Sostegno</a>
+    <div class="nav-dropdown">
+      <button type="button" class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+        Calcolatori <span class="chev" aria-hidden="true"></span>
+      </button>
+      <div class="nav-dropdown-menu" role="menu">
+        <a href="/it/fuel-ratio-calculator/" role="menuitem">Calcolatore del rapporto di carboidrati</a>
+        <a href="/it/substrate-explorer/" role="menuitem">Calcolatore di utilizzo di grassi e carboidrati</a>
+      </div>
+    </div>
+    <a href="https://web.glycogo.fit/" class="nav-cta">Provala gratis</a>
+  </div>
+</nav> 
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-grid"></div>
+  <div class="page-hero-content">
+    <h1>Inizia con <em>Glycogo</em></h1>
+  </div>
+</div>
+
+<!-- MAIN LAYOUT -->
+<div class="docs-layout">
+  <main class="docs-content">
+
+    <!-- QUICK START -->
+    <div id="quick-start" class="step-section fade-up">
+      <div class="step-header teal">
+        <div class="step-num-badge teal" style="font-size:0.6rem;">60 s</div>
+        <div class="step-header-text">
+          <h2>Avvio rapido in 1 minuto</h2>
+        </div>
+      </div>
+      <div class="step-body">
+        <ol class="compact" style="margin:0 0 0 1.2rem;font-size:0.9rem;color:var(--muted);line-height:1.65;">
+          <li>Accedi nell'app o su <strong>web.glycogo.fit</strong> e completa la configurazione iniziale.</li>
+          <li>Aggiungi l'allenamento di oggi (o sincronizzalo dal dispositivo).</li>
+          <li>Registra i pasti con <strong>Registra cibo</strong>.</li>
+          <li>Segna ogni pasto come completato dopo averlo mangiato.</li>
+          <li>Tocca <strong>Salva giornata</strong> quando hai finito.</li>
+        </ol>
+        <div class="app-icons-note">
+          <span style="flex:1 1 100%;margin-bottom:0.15rem;">Tre pulsanti di azione si trovano in fondo a ogni schermata.</span>
+          <span class="app-icon-item">
+            <span class="app-icon training"><svg viewBox="0 0 24 24"><path d="M20.57 14.86L22 13.43 20.57 12 17 15.57 8.43 7 12 3.43 10.57 2 9.14 3.43 7.71 2 5.57 4.14 4.14 2.71 2.71 4.14l1.43 1.43L2 7.71l1.43 1.43L2 10.57 3.43 12 7 8.43 15.57 17 12 20.57 13.43 22l1.43-1.43L16.29 22l2.14-2.14 1.43 1.43 1.43-1.43-1.43-1.43L22 16.29z"/></svg></span>
+            Aggiungi allenamento
+          </span>
+          <span class="app-icon-item">
+            <span class="app-icon food"><svg viewBox="0 0 24 24"><path d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7zm5-3v8h2.5v8H21V2c-2.76 0-5 2.24-5 4z"/></svg></span>
+            Aggiungi alimento / Registra cibo
+          </span>
+          <span class="app-icon-item">
+            <span class="app-icon ai"><svg viewBox="0 0 24 24"><path d="M20 9V7c0-1.1-.9-2-2-2h-3V3c0-.55-.45-1-1-1h-4c-.55 0-1 .45-1 1v2H6c-1.1 0-2 .9-2 2v2c-1.66 0-3 1.34-3 3s1.34 3 3 3v4c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2v-4c1.66 0 3-1.34 3-3s-1.34-3-3-3zM9 5h6v2H9V5zm1 10H8v-2h8v2z"/></svg></span>
+            Coach IA
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 1 -->
+    <div id="login" class="step-section fade-up">
+      <div class="step-header">
+        <div class="step-num-badge">01</div>
+        <div class="step-header-text">
+          <h2>Accedi</h2>
+          <p>Salva i tuoi dati e sincronizza tra dispositivi</p>
+        </div>
+      </div>
+      <div class="step-body">
+        <p class="why-lead">Registri, alimenti, impostazioni e storico restano collegati al tuo account, così puoi riprendere da qualsiasi dispositivo.</p>
+        <ul class="compact">
+          <li>Accedi nell'app o su <strong>web.glycogo.fit</strong>.</li>
+          <li>Al primo avvio parte una breve configurazione di composizione corporea, obiettivi e pasti.</li>
+          <li>Per sincronizzare gli allenamenti dal dispositivo serve un account Intervals.icu gratuito.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- STEP 2 -->
+    <div id="settings" class="step-section fade-up">
+      <div class="step-header orange">
+        <div class="step-num-badge orange">02</div>
+        <div class="step-header-text">
+          <h2>Configura le impostazioni</h2>
+          <p>Personalizza gli obiettivi di calorie e carboidrati</p>
+        </div>
+      </div>
+      <div class="step-body">
+        <p class="why-lead">Glycogo personalizza le raccomandazioni su calorie e carboidrati usando la composizione corporea e i dati di allenamento e prestazione. Qualche minuto qui rende gli obiettivi giornalieri molto più precisi.</p>
+
+        <div class="settings-group">
+          <h4>Impostazioni di base</h4>
+          <ul class="compact">
+            <li>Peso corporeo e % di grasso corporeo nota o stimata</li>
+            <li>Disponibilità energetica</li>
+            <li>Ripartizione dei macro (%)</li>
+            <li>Distribuzione dei pasti e orari predefiniti</li>
+            <li>Fasce delle sessioni e spuntini pre-sessione</li>
+          </ul>
+        </div>
+
+        <div class="settings-group">
+          <h4>Impostazioni sport</h4>
+          <ul class="compact">
+            <li>Seleziona gli sport e le attività che pratichi (corsa, ciclismo, nuoto, palestra, sport di squadra, sport invernali e altri)</li>
+            <li>Aggiungi sport personalizzati con i tuoi intervalli calorici se necessario</li>
+            <li>Carboidrati all'ora (inferiore / superiore)</li>
+            <li>Durata minima per i carboidrati: la nutrizione durante la sessione si applica solo oltre questa durata, salvo che sia selezionato Alto apporto di carboidrati per quella sessione.</li>
+            <li><em>Consigliato:</em> Inserisci potenza e passi critici e l'efficienza stimata di corsa, ciclismo e nuoto per tarare le stime di RPE e affinare le stime caloriche quando <strong>Usa calorie della sessione dal dispositivo</strong> è disattivato.</li>
+          </ul>
+        </div>
+
+        <div class="settings-group">
+          <h4>Sincronizzazione dispositivo</h4>
+          <ul class="compact">
+            <li>Collega il dispositivo tramite un account Intervals.icu per sincronizzare gli allenamenti</li>
+            <li>Attiva <strong>Usa calorie della sessione dal dispositivo</strong> per usare i dati di dispendio sincronizzati dal dispositivo</li>
+          </ul>
+        </div>
+        <p style="font-size:0.87rem;margin-top:0.75rem;">Consulta la <a href="#settings-ref" style="color:var(--green);font-weight:600;">Riferimento delle impostazioni</a> per le zone di disponibilità energetica e altri parametri.</p>
+      </div>
+    </div>
+
+    <!-- STEP 3 -->
+    <div id="database" class="step-section fade-up">
+      <div class="step-header navy">
+        <div class="step-num-badge navy">03</div>
+        <div class="step-header-text">
+          <h2>Crea la tua libreria alimenti</h2>
+          <p>Salva gli alimenti che mangi spesso</p>
+        </div>
+      </div>
+      <div class="step-body">
+        <p class="why-lead">Una libreria personale significa meno ricerche ogni volta che registri.</p>
+        <ul class="compact">
+          <li>Aggiungi alimenti personalizzati nella scheda <strong>Alimenti</strong> , tramite <strong>Aggiunta rapida</strong> o la scansione di un codice a barre.</li>
+          <li>Cerca in un ampio database online e nei prodotti di nutrizione sportiva e aggiungili ai preferiti.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- STEP 4 -->
+    <div id="sessions" class="step-section fade-up">
+      <div class="step-header">
+        <div class="step-num-badge teal">04</div>
+        <div class="step-header-text">
+          <h2>Aggiungi o sincronizza le sessioni di allenamento</h2>
+          <p>L'allenamento determina i tuoi obiettivi nutrizionali</p>
+        </div>
+      </div>
+      <div class="step-body">
+        <p class="why-lead">Glycogo adatta calorie e carboidrati giornalieri in base a ciò che alleni. Senza sessioni, gli obiettivi restano alla base del giorno di riposo.</p>
+        <ul class="compact">
+          <li>Aggiungi sessioni manualmente con <strong>Aggiungi allenamento</strong> <span class="app-icon training" style="display:inline-flex;width:22px;height:22px;vertical-align:middle;margin:0 2px;"><svg viewBox="0 0 24 24" style="width:12px;height:12px;"><path d="M20.57 14.86L22 13.43 20.57 12 17 15.57 8.43 7 12 3.43 10.57 2 9.14 3.43 7.71 2 5.57 4.14 4.14 2.71 2.71 4.14l1.43 1.43L2 7.71l1.43 1.43L2 10.57 3.43 12 7 8.43 15.57 17 12 20.57 13.43 22l1.43-1.43L16.29 22l2.14-2.14 1.43 1.43 1.43-1.43-1.43-1.43L22 16.29z"/></svg></span>, oppure la giornata o la settimana di allenamento dal dispositivo in Home.</li>
+          <li><strong>RPE della sessione</strong> (1–100): valuta l'intero allenamento, non solo gli intervalli di picco.</li>
+          <li>L'RPE determina carboidrati e calorie <em>all'ora</em>; la durata scala il totale durante la sessione.</li>
+          <li>Facoltativo: attiva<strong>Alto apporto di carboidrati</strong>, utile per l'allenamento gastrointestinale o quando inizi una sessione con poca energia disponibile.          
+		  <strong>Unisci sessioni</strong>ti permette di trattare più allenamenti, come una sessione bici-corsa, come uno solo.</li>
+        </ul>
+        <p style="font-size:0.87rem;margin-top:0.75rem;">Consulta la <a href="#rpe-ref" style="color:var(--green);font-weight:600;">Riferimento RPE</a> qui sotto.</p>
+      </div>
+    </div>
+
+    <!-- STEP 5 -->
+    <div id="logging" class="step-section fade-up">
+      <div class="step-header orange">
+        <div class="step-num-badge orange">05</div>
+        <div class="step-header-text">
+          <h2>Pianifica e registra la nutrizione</h2>
+          <p>Raggiungi gli obiettivi pasto per pasto</p>
+        </div>
+      </div>
+      <div class="step-body">
+        <p class="why-lead">La registrazione mostra quanto ti resta da mangiare oggi e si aggiorna quando l'allenamento cambia gli obiettivi e completi i pasti.</p>
+        <ul class="compact">
+          <li>Apri <strong>Registra cibo</strong> da una scheda pasto, dalla scheda Alimenti o <strong>Aggiungi alimento</strong> <span class="app-icon food" style="display:inline-flex;width:22px;height:22px;vertical-align:middle;margin:0 2px;"><svg viewBox="0 0 24 24" style="width:12px;height:12px;"><path d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7zm5-3v8h2.5v8H21V2c-2.76 0-5 2.24-5 4z"/></svg></span>.</li>
+          <li><strong>Suggerisci quantità</strong> completa i macro rimanenti del pasto che stai costruendo.</li>
+          <li><strong>Modelli di pasto</strong> ricaricano combinazioni di alimenti e porzioni salvate.</li>
+          <li><strong>Carico di carboidrati</strong> in Home aumenta i carboidrati di base di quel giorno della settimana; la nutrizione della sessione si aggiunge a parte.</li>
+        </ul>
+        <div class="tip" style="margin-top:0.85rem;">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          <span><strong>Segna un pasto come completato</strong> dopo averlo mangiato. Glycogo blocca quel pasto e ridistribuisce automaticamente calorie e macro rimanenti sul resto della giornata.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 6: AI Assistant -->
+    <div id="ai" class="step-section fade-up" style="border-color:rgba(26,26,62,0.15);">
+      <div style="display:flex;align-items:center;gap:1rem;padding:1.5rem 1.8rem;border-bottom:1px solid var(--border);background:linear-gradient(to right,rgba(45,45,122,0.07),transparent);">
+        <div class="step-num-badge ai">IA</div>
+        <div class="step-header-text">
+          <h2>Assistente nutrizionale IA</h2>
+          <p>Registrazione rapida e consigli nutrizionali</p>
+        </div>
+      </div>
+      <div class="step-body">
+        <p class="why-lead">Il coach vede le tue sessioni, gli obiettivi e il registro attuale, quindi i suggerimenti si adattano alla tua giornata invece di essere consigli generici.</p>
+        <p>Apri <strong>Coach IA</strong> <span class="app-icon ai" style="display:inline-flex;width:22px;height:22px;vertical-align:middle;margin:0 2px;"><svg viewBox="0 0 24 24" style="width:12px;height:12px;"><path d="M20 9V7c0-1.1-.9-2-2-2h-3V3c0-.55-.45-1-1-1h-4c-.55 0-1 .45-1 1v2H6c-1.1 0-2 .9-2 2v2c-1.66 0-3 1.34-3 3s1.34 3 3 3v4c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2v-4c1.66 0 3-1.34 3-3s-1.34-3-3-3zM9 5h6v2H9V5zm1 10H8v-2h8v2z"/></svg></span> per registrare rapidamente gli alimenti, ottenere idee per i pasti e ricette o chiedere informazioni sulla nutrizione attorno all'allenamento.</p>
+      </div>
+    </div>
+
+    <!-- STEP 7 -->
+    <div id="save" class="step-section fade-up">
+      <div class="step-header">
+        <div class="step-num-badge">07</div>
+        <div class="step-header-text">
+          <h2>Salva la giornata e monitora le tendenze</h2>
+          <p>Costruisci lo storico nel tempo</p>
+        </div>
+      </div>
+      <div class="step-body">
+        <p class="why-lead"><strong>Salva giornata</strong> salva i dati completati di nutrizione e allenamento in Tendenze. Puoi comunque tornare indietro e modificare il registro di ieri se necessario.</p>
+        <ul class="compact">
+          <li>I grafici della scheda <strong>Tendenze</strong> appaiono dopo aver salvato qualche giorno.</li>
+          <li><strong>Ripristina giornata</strong> cancella il registro alimenti della data selezionata.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- SETTINGS REFERENCE -->
+    <div id="settings-ref" class="step-section fade-up">
+      <div class="step-header navy">
+        <div class="step-num-badge navy" style="font-size:0.65rem;letter-spacing:-0.03em;">RIF</div>
+        <div class="step-header-text">
+          <h2>Riferimento delle impostazioni nutrizionali</h2>
+          <p>Descrizione dei parametri</p>
+        </div>
+      </div>
+      <div class="step-body">
+        <p style="font-weight:600;color:var(--navy);margin-bottom:0.5rem;">Obiettivi di energia e macronutrienti</p>
+        <table class="settings-table">
+          <thead><tr><th>Parametro</th><th>Descrizione</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>Disponibilità energetica<span class="range-badge">kcal/kg MG</span></td>
+              <td>
+                Calorie disponibili per le funzioni corporee dopo aver sottratto il costo dell'esercizio:
+                <ul style="margin:0.4rem 0 0 1rem;line-height:1.8;">
+                  <li><span style="color:#ef4444;font-weight:600;">25–30</span>: Bassa. Periodi prolungati in questo stato sono associati a REDs e recupero compromesso.</li>
+                  <li><span style="color:#f59e0b;font-weight:600;">30–40</span>: Moderata. Adatta alle fasi di perdita di peso.</li>
+                  <li><span style="color:#22c55e;font-weight:600;">40–45</span>: Ottimale per la maggior parte degli atleti.</li>
+                  <li><span style="color:#16a34a;font-weight:600;">45–55</span>: Alta. Adatta a blocchi di allenamento pesanti, atleti con dispendio elevato fuori dall'allenamento e fasi di crescita.</li>
+                </ul>
+              </td>
+            </tr>
+            <tr><td>Ripartizione dei macro (%)</td><td>Carboidrati, proteine e grassi come quota dell'energia giornaliera. Devono totalizzare 100%.</td></tr>
+            <tr><td>Carico di carboidrati</td><td>Selettore del giorno in Home per aumentare i carboidrati di base prima di un evento. La nutrizione della sessione si aggiunge a parte.</td></tr>
+          </tbody>
+        </table>
+        <p style="font-weight:600;color:var(--navy);margin:1.5rem 0 0.5rem;">Parametri di sessione e specifici dello sport</p>
+        <table class="settings-table">
+          <thead><tr><th>Parametro</th><th>Descrizione</th></tr></thead>
+          <tbody>
+            <tr><td>Sport e attività selezionati</td><td>Corsa, ciclismo, nuoto, attività basate sui MET (fitness, sport, acqua, invernali, all'aperto) e sport personalizzati che definisci tu.</td></tr>
+            <tr><td>kcal/h degli sport personalizzati</td><td>Calorie orarie facili e massime per uno sport che aggiungi tu.</td></tr>
+            <tr><td>Potenza / passo critico</td><td>Potenza di soglia (ciclismo), velocità critica (corsa) o velocità critica di nuoto. Definisce l'estremo superiore delle stime caloriche dello sport. Può essere inserita direttamente o calcolata da prove a cronometro.</td></tr>
+            <tr><td>Potenza / passo facile</td><td>Potenza in uscita facile (ciclismo), passo di corsa facile o passo di nuoto facile. Definisce l'estremo inferiore delle stime caloriche dello sport.</td></tr>
+            <tr><td>Efficienza</td><td>Efficienza lorda (ciclismo), efficienza di corsa ed efficienza propulsiva (nuoto). Regola il consumo calorico a una data potenza o passo.</td></tr>
+            <tr><td>Carboidrati all'ora (inferiore / superiore)</td><td>Limiti inferiore e superiore dei carboidrati durante la sessione in base allo sforzo.</td></tr>
+            <tr><td>Durata minima per i carboidrati</td><td>I carboidrati durante la sessione si applicano solo se la sessione è più lunga. L'alto apporto di carboidrati su una sessione annulla questa impostazione.</td></tr>
+            <tr><td>Usa calorie della sessione dal dispositivo</td><td>Se attivato, le sessioni sincronizzate dal dispositivo usano i dati calorici con il dispendio a riposo sottratto.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- RPE REFERENCE -->
+    <div id="rpe-ref" class="step-section fade-up">
+      <div class="step-header navy">
+        <div class="step-num-badge navy" style="font-size:0.65rem;letter-spacing:-0.03em;">RPE</div>
+        <div class="step-header-text">
+          <h2>Scala di riferimento RPE</h2>
+          <p>Valutazioni dello sforzo di sessione basate sulla scala Borg CR100®</p>
+        </div>
+      </div>
+      <div class="step-body">
+        <p>Difficoltà complessiva della sessione sulla scala Borg CR100®. Definisce carboidrati e calorie all'ora durante l'esercizio.</p>
+        <table class="settings-table">
+          <thead>
+            <tr>
+              <th>RPE</th>
+              <th>Descrizione</th>
+              <th>Sensazione tipica della sessione</th>
+              <th>Intensità approssimativa</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td style="color:#1eb851;font-weight:700;">0–10</td><td>Molto facile</td><td>Sforzo di recupero con minimo carico fisiologico.</td><td>Zona 1</td></tr>
+            <tr><td style="color:#1eb829;font-weight:700;">10–20</td><td>Facile</td><td>Allenamento aerobico rilassato con conversazione agevole.</td><td>Zona 1 bassa</td></tr>
+            <tr><td style="color:#3bb81e;font-weight:700;">20–30</td><td>Facile costante</td><td>Lavoro di resistenza leggero con respiro leggermente accelerato.</td><td>Zona 1–2</td></tr>
+            <tr><td style="color:#63b81e;font-weight:700;">30–40</td><td>Moderata</td><td>Allenamento aerobico confortevole che richiede un po' di concentrazione.</td><td>Zona 2</td></tr>
+            <tr><td style="color:#8bb81e;font-weight:700;">40–50</td><td>Moderatamente duro</td><td>Lavoro di resistenza costante con sforzo evidente.</td><td>Zona 2 alta</td></tr>
+            <tr><td style="color:#b2b81e;font-weight:700;">50–60</td><td>Forte</td><td>Allenamento aerobico mirato con tensione controllata.</td><td>Zona 3</td></tr>
+            <tr><td style="color:#b8961e;font-weight:700;">60–70</td><td>Duro</td><td>Allenamento impegnativo ma sostenibile che richiede concentrazione.</td><td>Zona 3 alta</td></tr>
+            <tr><td style="color:#b86e1e;font-weight:700;">70–80</td><td>Molto duro</td><td>Sforzo pesante e prolungato o intervalli molto duri.</td><td>Zona 4</td></tr>
+            <tr><td style="color:#b8461e;font-weight:700;">80–90</td><td>Estremamente duro</td><td>Sessione molto impegnativa e prolungata, o sforzi intensi con poco recupero.</td><td>Zona 4 alta / Zona 5 mista</td></tr>
+            <tr><td style="color:#b81e1e;font-weight:700;">90–100</td><td>Carico massimo della sessione</td><td>Sforzo massimale sostenibile per 30–60 minuti, o una sessione di intervalli estremamente dura.</td><td>Parte alta della Zona 4 o intervalli densi in Zona 5</td></tr>
+          </tbody>
+        </table>
+        <div class="tip">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          <span>Se recuperi, riscaldamento e defaticamento fanno parte della sessione, l'RPE complessivo sarà inferiore a quello della ripetuta di picco. Maggiori dettagli nelle <a href="/it/#faq" style="color:var(--green);font-weight:600;">FAQ</a>.</span>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<!-- REFERENCES -->
+<div id="references" class="refs">
+  <div class="refs-inner">
+    <h3>Riferimenti scientifici</h3>
+    <div class="refs-grid">
+      <div class="ref-item">
+        <strong>Carboidrati ed energia dal carico di allenamento</strong>
+        Rothschild et al. (2025). A Novel Method to Predict Carbohydrate and Energy Expenditure During Endurance Exercise. <em>Sports Medicine</em>, 55(3):753–774.
+        <br><a href="https://doi.org/10.1007/s40279-024-02131-z">doi:10.1007/s40279-024-02131-z</a>
+      </div>
+      <div class="ref-item">
+        <strong>Periodizzazione dei carboidrati</strong>
+        Impey et al. (2018). Fuel for the Work Required: A Theoretical Framework for CHO Periodization. <em>Frontiers in Physiology</em>.
+        <br><a href="https://doi.org/10.3389/fphys.2018.01405">doi:10.3389/fphys.2018.01405</a>
+      </div>
+      <div class="ref-item">
+        <strong>Assunzione di carboidrati durante l'esercizio</strong>
+        Burke et al. (2011). Carbohydrates for training and competition. <em>Journal of Sports Sciences</em>.
+        <br><a href="https://doi.org/10.1080/02640414.2011.585473">doi:10.1080/02640414.2011.585473</a>
+      </div>
+      <div class="ref-item">
+        <strong>Fabbisogno proteico degli atleti</strong>
+        Morton et al. (2018). A systematic review on protein supplementation and resistance training. <em>British Journal of Sports Medicine</em>.
+        <br><a href="https://doi.org/10.1136/bjsports-2017-097608">doi:10.1136/bjsports-2017-097608</a>
+      </div>
+      <div class="ref-item">
+        <strong>Relative Energy Deficiency in Sport (REDs)</strong>
+        Mountjoy et al. (2023). 2023 International Olympic Committee's (IOC) consensus statement on Relative Energy Deficiency in Sport (REDs). <em>British Journal of Sports Medicine</em>, 57(17):1073–1097.
+      </div>
+      <div class="ref-item">
+        <strong>Dati nutrizionali degli alimenti</strong>
+        Dipartimento dell'Agricoltura degli Stati Uniti. FoodData Central.
+        <br><a href="https://fdc.nal.usda.gov">fdc.nal.usda.gov</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    2026 <strong>GEM Performance</strong> · <strong>G</strong>oal-Driven, <strong>E</strong>vidence-Based, <strong>M</strong>onitoring tools for athletes<br>
+    <span style="font-size:0.74rem;">G.E.McConnochie PhD &nbsp;·&nbsp; <a href="mailto:contactgemperformance@gmail.com">contactgemperformance@gmail.com</a></span>
+  </div>
+  <div style="display:flex;gap:1rem;align-items:center;flex-wrap:wrap;">
+    <a href="/terms" style="color:rgba(255,255,255,0.6);font-size:0.82rem;text-decoration:underline;">Termini di servizio</a>
+    <a href="/privacy" style="color:rgba(255,255,255,0.6);font-size:0.82rem;text-decoration:underline;">Informativa sulla privacy</a>
+    <a href="/it/#faq" style="color:rgba(255,255,255,0.6);font-size:0.82rem;text-decoration:underline;">FAQ</a>
+    <a href="https://web.glycogo.fit/" style="background:var(--green);color:white;padding:0.5rem 1.2rem;border-radius:6px;font-weight:600;font-size:0.85rem;text-decoration:none;">Provala gratis</a>
+  </div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(el => { if (el.isIntersecting) el.target.classList.add('visible'); });
+  }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  const sections = document.querySelectorAll('[id]');
+  const sidebarLinks = document.querySelectorAll('.sidebar-nav a[href^="#"]');
+  const nav = document.getElementById('main-nav');
+  const onScroll = () => {
+    nav.classList.toggle('shrink', window.scrollY > 40);
+    let current = '';
+    sections.forEach(sec => { if (sec.getBoundingClientRect().top < 120) current = sec.id; });
+    sidebarLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + current));
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  document.querySelectorAll('.nav-dropdown').forEach((dd) => {
+    const btn = dd.querySelector('.nav-dropdown-toggle');
+    if (!btn) return;
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const open = !dd.classList.contains('open');
+      document.querySelectorAll('.nav-dropdown.open').forEach((o) => {
+        o.classList.remove('open');
+        o.querySelector('.nav-dropdown-toggle')?.setAttribute('aria-expanded', 'false');
+      });
+      dd.classList.toggle('open', open);
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  });
+  document.addEventListener('click', () => {
+    document.querySelectorAll('.nav-dropdown.open').forEach((o) => {
+      o.classList.remove('open');
+      o.querySelector('.nav-dropdown-toggle')?.setAttribute('aria-expanded', 'false');
+    });
+  });
+</script>
+<script src="/search/search-index.js"></script>
+<script src="/search/search-rrf.js"></script>
+<script src="/search/search.js"></script>
+</body>
+</html>

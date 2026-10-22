@@ -10,6 +10,15 @@
 <meta name="robots" content="index, follow">
 <meta name="author" content="Glycogo">
 <link rel="canonical" href="https://glycogo.fit/fuel-ratio-calculator/">
+<!-- i18n:alternates -->
+<link rel="alternate" hreflang="en" href="https://glycogo.fit/fuel-ratio-calculator/">
+<link rel="alternate" hreflang="de" href="https://glycogo.fit/de/fuel-ratio-calculator/">
+<link rel="alternate" hreflang="es" href="https://glycogo.fit/es/fuel-ratio-calculator/">
+<link rel="alternate" hreflang="fr" href="https://glycogo.fit/fr/fuel-ratio-calculator/">
+<link rel="alternate" hreflang="it" href="https://glycogo.fit/it/fuel-ratio-calculator/">
+<link rel="alternate" hreflang="nl" href="https://glycogo.fit/nl/fuel-ratio-calculator/">
+<link rel="alternate" hreflang="x-default" href="https://glycogo.fit/fuel-ratio-calculator/">
+<!-- /i18n:alternates -->
 
 <!-- Open Graph / social sharing -->
 <meta property="og:type" content="website">
@@ -396,6 +405,7 @@ footer a{ color:var(--fructose); text-decoration:none; font-weight:600; }
 footer a:hover{ text-decoration:underline; }
 </style>
 <link rel="stylesheet" href="/search/search.css">
+<script src="/assets/i18n.js" defer></script>
 </head>
 <body>
 
@@ -801,7 +811,7 @@ function renderFoodList(){
     <div class="food-row">
       <div>
         <div class="food-name">${f.food}</div>
-        <div class="food-note">${f.notes||''} · ${f.carbs_per_100g}g carbs /100g</div>
+        <div class="food-note"><span>${f.notes||''}</span> · ${f.carbs_per_100g}<span>g carbs /100g</span></div>
       </div>
       ${ratioBadgeHtml(f.glucose_pct_sugars, f.fructose_pct_sugars)}
       <input type="number" class="qty-input" id="qty-food-${escId(f.food)}" value="50" min="0" step="5">
@@ -887,7 +897,7 @@ function renderProductGrid(){
         <div class="p-chevron">▶</div>
         <div class="p-name-wrap">
           <div class="p-name">${p.name}</div>
-          <div class="p-brand">${p.brand} · ${p.category}</div>
+          <div class="p-brand">${p.brand} · <span>${p.category}</span></div>
         </div>
         <div class="p-carbs">${p.carbsPerServing}g carbs</div>
         ${ratioBadgeHtml(p.glucosePct.toFixed(0), p.fructosePct.toFixed(0))}
@@ -1105,7 +1115,7 @@ function updateGauge(totalGlu, totalFru){
 
   if(mixGluPct===null){
     mixMarker.style.display='none';
-    caption.innerHTML = `Add items to your mix to see how it compares to your <b>${targetGluPct.toFixed(0)}% glucose</b> target blend.`;
+    caption.innerHTML = `Add items to your mix to compare it against the target blend of <b>${targetGluPct.toFixed(0)}% <span>glucose</span></b>.`;
     return;
   }
   mixMarker.style.display='block';
@@ -1117,7 +1127,7 @@ function updateGauge(totalGlu, totalFru){
   else if(diff<=15) verdict = `<span style="color:var(--warn);">is reasonably close to</span>`;
   else verdict = `<span style="color:var(--bad);">is well off</span>`;
 
-  caption.innerHTML = `Your mix runs <b>${mixGluPct.toFixed(0)}% glucose</b> and ${verdict} the target blend (<b>${targetGluPct.toFixed(0)}% glucose</b>) for a ${document.getElementById('carbsPerHour').value} g/h intake rate.`;
+  caption.innerHTML = `Your mix runs <b>${mixGluPct.toFixed(0)}% <span>glucose</span></b> and ${verdict} the target blend (<b>${targetGluPct.toFixed(0)}% <span>glucose</span></b><span>) for an intake of</span> ${document.getElementById('carbsPerHour').value} <span>g/h.</span>`;
 }
 
 /* ---------------- TABS ---------------- */

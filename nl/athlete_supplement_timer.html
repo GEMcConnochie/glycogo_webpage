@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<link rel="icon" type="image/png" href="/logosmall.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Supplementtimer voor sporters: evidence-based timingplanner | Glycogo</title>
+<meta name="description" content="Gratis supplementenplanner: wanneer je creatine, cafeïne, eiwit, bèta-alanine en meer neemt rond training, maaltijden en slaap, met agendaherinneringen.">
+<meta name="keywords" content="supplement timing, when to take supplements, creatine timing, caffeine timing, protein timing, pre workout, beta-alanine, beetroot juice, vitamin d, omega-3, nutrient timing, supplement schedule, athlete supplements, IOC consensus">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Glycogo">
+<link rel="canonical" href="https://glycogo.fit/nl/athlete_supplement_timer.html">
+<!-- i18n:alternates -->
+<link rel="alternate" hreflang="en" href="https://glycogo.fit/athlete_supplement_timer.html">
+<link rel="alternate" hreflang="de" href="https://glycogo.fit/de/athlete_supplement_timer.html">
+<link rel="alternate" hreflang="es" href="https://glycogo.fit/es/athlete_supplement_timer.html">
+<link rel="alternate" hreflang="fr" href="https://glycogo.fit/fr/athlete_supplement_timer.html">
+<link rel="alternate" hreflang="it" href="https://glycogo.fit/it/athlete_supplement_timer.html">
+<link rel="alternate" hreflang="nl" href="https://glycogo.fit/nl/athlete_supplement_timer.html">
+<link rel="alternate" hreflang="x-default" href="https://glycogo.fit/athlete_supplement_timer.html">
+<!-- /i18n:alternates -->
+
+<!-- Open Graph / social sharing -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Athlete Supplement Timer - Evidence-Based Timing Planner">
+<meta property="og:description" content="Build an evidence-based daily supplement timing schedule around training, meals, and sleep: creatine, caffeine, protein, beetroot and more, with downloadable calendar reminders.">
+<meta property="og:site_name" content="Glycogo">
+<meta property="og:url" content="https://glycogo.fit/nl/athlete_supplement_timer.html">
+<meta property="og:image" content="https://glycogo.fit/logosmall.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Athlete Supplement Timer - Evidence-Based Timing Planner">
+<meta name="twitter:description" content="When to take creatine, caffeine, protein, beetroot and more: a free evidence-based supplement timing planner with calendar reminders.">
+<meta name="twitter:image" content="https://glycogo.fit/logosmall.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Glycogo Athlete Supplement Timer",
+  "url": "https://glycogo.fit/athlete_supplement_timer.html",
+  "applicationCategory": "HealthApplication",
+  "operatingSystem": "Any (web browser)",
+  "description": "Free supplement timing planner for athletes: builds an evidence-based daily schedule for creatine, caffeine, protein, beta-alanine, dietary nitrate, bicarbonate, vitamins and minerals around your training sessions, meals, and sleep, with downloadable iCalendar reminders.",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "featureList": [
+    "18 supplements with evidence-based timing rules",
+    "Schedules around training sessions, meals, and sleep",
+    "Competing-mineral spacing (calcium, iron, zinc, magnesium)",
+    "Downloadable iCalendar (.ics) reminders"
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://glycogo.fit/" },
+    { "@type": "ListItem", "position": 2, "name": "Free calculators", "item": "https://glycogo.fit/#calculators" },
+    { "@type": "ListItem", "position": 3, "name": "Athlete supplement timer", "item": "https://glycogo.fit/athlete_supplement_timer.html" }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Michroma&display=swap" rel="stylesheet">
+<style>
+:root {
+--display-stroke: 0.04em; --green: #2e7d32; --green-light: #43a047; --green-pale: #e8f5e9;
+  --orange: #e65c00; --orange-light: #ff7043;
+  --navy: #1a1a3e; --navy-mid: #2d2d7a;
+  --bg: #ffffff; --bg-soft: #f7faf8; --white: #ffffff; --text: #1a1a3e;
+  --muted: #5c6670; --border: #e8ece9;
+  --surface: #ffffff;
+  --shadow-sm: 0 4px 20px rgba(26,26,62,0.06);
+  --shadow-md: 0 20px 50px rgba(26,26,62,0.10);
+  --shadow-lg: 0 32px 80px rgba(26,26,62,0.14);
+  --radius: 10px;
+  --radius-lg: 14px;
+  --nav-h: 72px;
+  --max: 1140px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  margin: 0;
+  background: var(--bg-soft);
+  color: var(--text);
+  font-family: 'Space Grotesk', sans-serif;
+  line-height: 1.5;
+  padding-top: var(--nav-h);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- SITE NAV ---------- */
+nav#main-nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  height: var(--nav-h);
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-inner {
+  max-width: var(--max); margin: 0 auto; height: 100%;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 2rem;
+}
+.nav-inner > a { display: flex; align-items: center; text-decoration: none; }
+.nav-inner img { height: 52px; }
+.nav-links { display: flex; gap: 1.75rem; align-items: center; }
+.nav-links > a,
+.nav-dropdown-toggle {
+  text-decoration: none; color: var(--muted); font-size: 0.88rem; font-weight: 500;
+  transition: color 0.2s; background: none; border: none; cursor: pointer;
+  font-family: inherit; padding: 0; display: inline-flex; align-items: center; gap: 0.3rem;
+}
+.nav-links > a:hover,
+.nav-dropdown-toggle:hover,
+.nav-dropdown.open .nav-dropdown-toggle { color: var(--green); }
+.nav-dropdown { position: relative; }
+.nav-dropdown-toggle .chev {
+  width: 0; height: 0; border-left: 4px solid transparent; border-right: 4px solid transparent;
+  border-top: 4px solid currentColor; opacity: 0.7; transition: transform 0.2s;
+}
+.nav-dropdown.open .chev { transform: rotate(180deg); }
+.nav-dropdown-menu {
+  position: absolute; top: calc(100% + 0.65rem); left: 50%; transform: translateX(-50%) translateY(4px);
+  min-width: 220px; background: var(--white); border: 1px solid var(--border);
+  border-radius: 12px; box-shadow: 0 12px 40px rgba(26,26,62,0.12); padding: 0.4rem;
+  opacity: 0; visibility: hidden; pointer-events: none;
+  transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s; z-index: 300;
+}
+.nav-dropdown.open .nav-dropdown-menu,
+.nav-dropdown:hover .nav-dropdown-menu,
+.nav-dropdown:focus-within .nav-dropdown-menu {
+  opacity: 1; visibility: visible; pointer-events: auto; transform: translateX(-50%) translateY(0);
+}
+.nav-dropdown-menu a {
+  display: block; padding: 0.7rem 0.9rem; border-radius: 8px;
+  text-decoration: none; color: var(--navy); font-size: 0.86rem; font-weight: 500;
+  transition: background 0.15s, color 0.15s; white-space: nowrap;
+}
+.nav-dropdown-menu a:hover { background: var(--green-pale); color: var(--green); }
+.nav-cta {
+  background: var(--green) !important; color: white !important;
+  padding: 0.6rem 1.35rem !important; border-radius: 8px !important;
+  font-weight: 700 !important; font-size: 0.88rem !important;
+}
+.nav-cta:hover { background: var(--green-light) !important; }
+@media (max-width: 800px) {
+  .nav-links { display: none; }
+}
+
+/* ---------- HEADER ---------- */
+header.top { padding: 36px 0 30px; border-bottom: 1px solid var(--border); }
+h1.title {
+  font-family: 'Michroma', 'Space Grotesk', sans-serif; font-weight: 400; font-synthesis-weight: none; -webkit-text-stroke: var(--display-stroke) currentColor;
+  font-size: clamp(24px, 4vw, 38px); margin: 0 0 12px; line-height: 1.18; color: var(--text); letter-spacing: 0;
+}
+.subtitle { color: var(--muted); font-size: 16px; max-width: 680px; line-height: 1.6; margin: 0; }
+
+/* ---------- LAYOUT ---------- */
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 20px; }
+.grid { display: grid; grid-template-columns: 380px 1fr; gap: 24px; margin-top: 24px; }
+.card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow-sm); padding: 24px; }
+
+h2 { font-size: 20px; font-weight: 700; margin: 0 0 16px; color: var(--text); }
+h3 { font-size: 15px; font-weight: 700; margin: 24px 0 10px; color: var(--text); text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid var(--border); padding-bottom: 6px; }
+label { display: block; font-size: 12px; font-weight: 700; margin: 8px 0 4px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.03em; }
+
+input, select, button { font-family: inherit; }
+input[type=time], select {
+  width: 100%; padding: 10px 12px; border: 1px solid var(--border); border-radius: 10px; background: var(--white); color: var(--text); font-size: 14px; font-weight: 500; outline: none; transition: border-color 0.2s;
+}
+input[type=time]:focus, select:focus {
+  border-color: var(--green);
+}
+
+.row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 8px; }
+
+/* ---------- CUSTOM CHECKBOXES ---------- */
+.checks { display: grid; grid-template-columns: repeat(auto-fill, minmax(145px, 1fr)); gap: 8px; }
+.check {
+  display: flex; align-items: center; gap: 8px; padding: 10px 12px; border: 1px solid var(--border); border-radius: 12px; cursor: pointer; background: var(--bg-soft); transition: background 0.15s, border-color 0.15s;
+}
+.check:hover { background: var(--green-pale); border-color: var(--green-light); }
+.check input { margin: 0; width: 16px; height: 16px; accent-color: var(--green); cursor: pointer; }
+.check b { font-size: 13px; font-weight: 600; color: var(--text); }
+
+.fat-toggle { display: flex; align-items: center; height: 42px; }
+.fat-toggle label { display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 500; margin: 0; cursor: pointer; color: var(--text); text-transform: none; letter-spacing: normal; }
+.fat-toggle input[type="checkbox"] { width: 16px; height: 16px; accent-color: var(--green); cursor: pointer; }
+
+/* ---------- BUTTONS ---------- */
+.btns { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 24px; }
+button { border: 0; border-radius: 8px; padding: 11px 20px; font-weight: 700; font-size: 14px; cursor: pointer; transition: transform 0.15s, background 0.2s; }
+button:active { transform: scale(0.98); }
+.primary { background: var(--green); color: white; }
+.primary:hover { background: var(--green-light); }
+.secondary { background: var(--bg-soft); color: var(--green); border: 1px solid var(--border); }
+.secondary:hover { background: var(--green-pale); }
+
+/* ---------- TIMELINE ---------- */
+.timeline { display: grid; gap: 12px; }
+.event { display: grid; grid-template-columns: 80px 1fr; gap: 16px; padding: 16px; border: 1px solid var(--border); border-radius: 16px; background: var(--white); box-shadow: var(--shadow-sm); }
+.time { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 16px; color: var(--green); font-variant-numeric: tabular-nums; }
+.tag { display: inline-block; padding: 3px 8px; border-radius: 99px; background: var(--green-pale); color: var(--green); font-size: 10px; font-weight: 700; margin: 0 4px 6px 0; text-transform: uppercase; font-family: 'Space Grotesk', sans-serif; }
+.tag.performance { background: #fff3e0; color: var(--orange); }
+.tag.medical { background: #ffebee; color: var(--bad); }
+.tag.food { background: #e8eaf6; color: var(--fructose); }
+.event h3 { margin: 0 0 4px; font-size: 15px; border: 0; padding: 0; text-transform: none; letter-spacing: normal; }
+.event p { margin: 0; color: var(--muted); font-size: 13.5px; line-height: 1.5; }
+
+.muted { color: var(--muted); font-size: 13px; line-height: 1.5; }
+.empty { padding: 35px; text-align: center; color: var(--muted); border: 1px dashed var(--border); border-radius: 14px; font-size: 14px; }
+
+/* ---------- EVIDENCE & CITATIONS ---------- */
+.sources { margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--border); }
+.sources h2 { font-size: 18px; margin-bottom: 12px; }
+.source-list { padding-left: 20px; font-size: 13px; color: var(--muted); }
+.source-list li { margin-bottom: 10px; line-height: 1.5; }
+.source-list b { color: var(--text); }
+.sources a { color: var(--green); font-weight: 600; text-decoration: none; }
+.sources a:hover { text-decoration: underline; }
+
+footer { padding: 36px 0; text-align: center; color: var(--muted); font-size: 12px; line-height: 1.6; border-top: 1px solid var(--border); margin-top: 40px; }
+
+@media (max-width: 850px) {
+  .grid { grid-template-columns: 1fr; }
+  .event { grid-template-columns: 70px 1fr; }
+}
+</style>
+<link rel="stylesheet" href="/search/search.css">
+<script src="/assets/i18n.js" defer></script>
+</head>
+<body>
+
+<nav id="main-nav">
+  <div class="nav-inner">
+    <a href="/nl/"><img src="/3dglycogo.svg" alt="Glycogo"></a>
+    <div class="nav-links">
+      <a href="/nl/#features">Functies</a>
+      <a href="/nl/#showcase">Hoe het werkt</a>
+      <a href="/nl/#science">Wetenschap</a>
+      <a href="/nl/#faq">FAQ</a>
+      <a href="/nl/#support">Steun</a>
+      <div class="nav-dropdown">
+        <button type="button" class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+          Calculators <span class="chev" aria-hidden="true"></span>
+        </button>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="/nl/fuel-ratio-calculator/" role="menuitem">Calculator voor koolhydraatverhouding</a>
+          <a href="/nl/substrate-explorer/" role="menuitem">Calculator voor vet- en koolhydraatgebruik</a>
+          <a href="/nl/athlete_supplement_timer.html" role="menuitem" aria-current="page">Supplementtimer voor atleten</a>
+        </div>
+      </div>
+      <a href="https://web.glycogo.fit/" class="nav-cta">Gratis proberen</a>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap">
+  <header class="top">
+    <h1 class="title">Supplementtimer voor sporters</h1>
+    <p class="subtitle">Stel een evidence-based dagelijkse supplementtijdlijn op rond training, maaltijden, opname en slaap. Ontdek wanneer je creatine, cafeïne, eiwit, bèta-alanine en rode biet neemt ten opzichte van je sessies en download agendaherinneringen.</p>
+  </header>
+
+  <div class="grid">
+    <section class="card">
+      <h2>1. Je routine</h2>
+      <div class="row">
+        <div><label for="wake">Opstaantijd</label><input id="wake" type="time" value="07:00"></div>
+        <div><label for="bed">Bedtijd</label><input id="bed" type="time" value="22:30"></div>
+      </div>
+
+      <h3>Trainingen</h3>
+      <div class="row">
+        <div><label for="train1">Sessie 1</label><input id="train1" type="time" value="17:00"></div>
+        <div><label for="dur1">Duur</label><select id="dur1"><option value="60">60 min</option><option value="90">90 min</option><option value="120" selected>120 min</option></select></div>
+      </div>
+      <div class="row">
+        <div><label for="train2">Sessie 2 (optioneel)</label><input id="train2" type="time" value=""></div>
+        <div><label for="dur2">Duur</label><select id="dur2"><option value="60">60 min</option><option value="90">90 min</option><option value="120">120 min</option></select></div>
+      </div>
+
+      <h3>Maaltijdtijden</h3>
+      <div class="row">
+        <div><label for="breakfast">Ontbijt</label><input id="breakfast" type="time" value="07:30"></div>
+        <div>
+          <label style="visibility:hidden;">Vetbron</label>
+          <div class="fat-toggle">
+            <label><input type="checkbox" id="bfat" checked> Bevat een vetbron</label>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div><label for="lunch">Lunch</label><input id="lunch" type="time" value="12:30"></div>
+        <div>
+          <label style="visibility:hidden;">Vetbron</label>
+          <div class="fat-toggle">
+            <label><input type="checkbox" id="lfat" checked> Bevat een vetbron</label>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div><label for="dinner">Diner</label><input id="dinner" type="time" value="19:30"></div>
+        <div>
+          <label style="visibility:hidden;">Vetbron</label>
+          <div class="fat-toggle">
+            <label><input type="checkbox" id="dfat" checked> Bevat een vetbron</label>
+          </div>
+        </div>
+      </div>
+
+      <h3>Supplementen</h3>
+      <div class="checks" id="supps">
+        <label class="check"><input type="checkbox" value="iron"><span><b>IJzer</b></span></label>
+        <label class="check"><input type="checkbox" value="caffeine"><span><b>Cafeïne</b></span></label>
+        <label class="check"><input type="checkbox" value="calcium"><span><b>Calcium</b></span></label>
+        <label class="check"><input type="checkbox" value="vitd"><span><b>Vitamine D3</b></span></label>
+        <label class="check"><input type="checkbox" value="k2"><span><b>Vitamine K2</b></span></label>
+        <label class="check"><input type="checkbox" value="omega3"><span><b>Omega-3</b></span></label>
+        <label class="check"><input type="checkbox" value="creatine"><span><b>Creatine</b></span></label>
+        <label class="check"><input type="checkbox" value="beta"><span><b>Bèta-alanine</b></span></label>
+        <label class="check"><input type="checkbox" value="nitrate"><span><b>Rode biet / nitraat</b></span></label>
+        <label class="check"><input type="checkbox" value="bicarb"><span><b>Bicarbonaat</b></span></label>
+        <label class="check"><input type="checkbox" value="sulforaphane"><span><b>Sulforafaan / broccolikiemen</b></span></label>
+        <label class="check"><input type="checkbox" value="magnesium"><span><b>Magnesium</b></span></label>
+        <label class="check"><input type="checkbox" value="zinc"><span><b>Zink</b></span></label>
+        <label class="check"><input type="checkbox" value="potassium"><span><b>Kalium</b></span></label>
+        <label class="check"><input type="checkbox" value="vitc"><span><b>Vitamine C</b></span></label>
+        <label class="check"><input type="checkbox" value="whey"><span><b>Wei-eiwit</b></span></label>
+        <label class="check"><input type="checkbox" value="casein"><span><b>Caseïne</b></span></label>
+        <label class="check"><input type="checkbox" value="collagen"><span><b>Collageen (met vitamine C)</b></span></label>
+      </div>
+
+      <h3>Agendaherinnering</h3>
+
+      <div class="btns">
+        <button class="primary" onclick="build()">Tijdlijn maken</button>
+        <button class="secondary" onclick="downloadICS()">iCalendar downloaden (.ics)</button>
+        <button class="secondary" onclick="resetAll()">Resetten</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>2. Voorgestelde tijdlijn</h2>
+      <div id="timeline" class="timeline">
+        <div class="empty">Selecteer je supplementen en klik op <b>Tijdlijn maken</b>.</div>
+      </div>
+
+      <div class="sources">
+        <h2>Wetenschappelijke bronnen en evidence-notities</h2>
+        <p class="muted" style="margin-bottom: 12px;">De timingstrategieën zijn rechtstreeks samengesteld uit peer-reviewed literatuur, gezamenlijke standpunten en consensusrichtlijnen, niet uit automatische standaardmodellen.</p>
+        <ul class="source-list">
+          <li><b>Overkoepelende consensus:</b> Maughan, R. J., et al. (2018). IOC Consensus Statement: Dietary supplements and the high-performance athlete. <i>British Journal of Sports Medicine</i>, 52(7), 439-455. <a href="https://doi.org/10.1136/bjsports-2018-099027" target="_blank">DOI: 10.1136/bjsports-2017-099027</a>.</li>
+          <li><b>Wei-eiwit en caseïne:</b> Morton, R. W., et al. (2018). A systematic review, meta-analysis and meta-regression of the effect of protein supplementation on resistance training-induced gains. <i>BJSM</i>. <a href="https://doi.org/10.1136/bjsports-2017-097608" target="_blank">DOI: 10.1136/bjsports-2017-097608</a>; Kerksick, C. M., et al. (2018). ISSN position stand: nutrient timing. <i>JISSN</i>. <a href="https://doi.org/10.1186/s12970-017-0189-4" target="_blank">DOI: 10.1186/s12970-017-0189-4</a>.</li>
+          <li><b>Caseïne voor het slapen:</b> Res, P. T., et al. (2012). Protein ingestion before sleep improves postexercise overnight recovery. <i>Medicine & Science in Sports & Exercise</i>. <a href="https://doi.org/10.1249/MSS.0b013e31824cc363" target="_blank">DOI: 10.1249/MSS.0b013e31824cc363</a>; Trommelen, J., & van Loon, L. J. (2016). Pre-sleep protein ingestion to improve skeletal muscle adaptive response. <i>Nutrients</i>. <a href="https://doi.org/10.3390/nu8120763" target="_blank">DOI: 10.3390/nu8120763</a>.</li>
+          <li><b>Collageen en vitamine C:</b> Shaw, G., et al. (2017). Vitamin C-enriched gelatin supplementation before intermittent activity augments collagen synthesis. <i>American Journal of Clinical Nutrition</i>. <a href="https://doi.org/10.3945/ajcn.116.138594" target="_blank">DOI: 10.3945/ajcn.116.138594</a>.</li>
+          <li><b>Vitamine C en afgezwakte adaptaties:</b> Ristow, M., et al. (2009). Antioxidants prevent health-promoting effects of physical exercise in humans. <i>PNAS</i>. <a href="https://doi.org/10.1073/pnas.0903485106" target="_blank">DOI: 10.1073/pnas.0903485106</a>; Merry, T. L., & Ristow, M. (2016). Do antioxidant supplements interfere with adaptations? <i>Journal of Physiology</i>. <a href="https://doi.org/10.1113/JP270654" target="_blank">DOI: 10.1113/JP270654</a>.</li>
+          <li><b>Cafeïne:</b> Spriet, L. L. (2014). Exercise and sport performance with low doses of caffeine. <i>Sports Medicine</i>. <a href="https://doi.org/10.1007/s40279-014-0257-8" target="_blank">DOI: 10.1007/s40279-014-0257-8</a>.</li>
+          <li><b>Creatine:</b> Antonio, J., & Ciccone, V. (2013). The effects of pre versus post workout supplementation of creatine monohydrate. <i>JISSN</i>. <a href="https://doi.org/10.1186/1550-2783-10-36" target="_blank">DOI: 10.1186/1550-2783-10-36</a>; Kreider, R. B., et al. (2017). ISSN position stand: creatine. <i>JISSN</i>. <a href="https://doi.org/10.1186/s12970-017-0173-z" target="_blank">DOI: 10.1186/s12970-017-0173-z</a>.</li>
+          <li><b>Bèta-alanine:</b> Trexler, E. T., et al. (2015). ISSN position stand: Beta-Alanine. <i>JISSN</i>. <a href="https://doi.org/10.1186/s12970-015-0090-y" target="_blank">DOI: 10.1186/s12970-015-0090-y</a>.</li>
+          <li><b>Voedingsnitraat / rode biet:</b> Jones, A. M. (2014). Dietary nitrate supplementation and exercise performance. <i>Sports Medicine</i>. <a href="https://doi.org/10.1007/s40279-014-0149-y" target="_blank">DOI: 10.1007/s40279-014-0149-y</a>.</li>
+          <li><b>Natriumbicarbonaat:</b> Carr, A. J., et al. (2011). Effect of sodium bicarbonate on [HCO3-], pH, and gastrointestinal symptoms. <i>IJSNEM</i>. <a href="https://doi.org/10.1123/ijsnem.21.3.189" target="_blank">DOI: 10.1123/ijsnem.21.3.189</a>.</li>
+          <li><b>IJzerregulatie:</b> Sim, M., et al. (2019). Iron considerations for the athlete: a narrative review. <i>European Journal of Applied Physiology</i>. <a href="https://doi.org/10.1007/s00421-019-04157-y" target="_blank">DOI: 10.1007/s00421-019-04157-y</a>.</li>
+          <li><b>Calcium en botgezondheid:</b> Sale, C., & Elliott-Sale, K. J. (2019). Nutrition and Athlete Bone Health. <i>Sports Medicine</i>. <a href="https://doi.org/10.1007/s40279-019-01161-2" target="_blank">DOI: 10.1007/s40279-019-01161-2</a>.</li>
+          <li><b>Vitamine D3:</b> Close, G. L., et al. (2013). The effects of vitamin D3 supplementation on serum total 25[OH]D concentration and physical performance: a randomised dose-response study. <i>British Journal of Sports Medicine</i>. <a href="https://doi.org/10.1136/bjsports-2012-091735" target="_blank">DOI: 10.1136/bjsports-2012-091735</a>.</li>
+          <li><b>Omega-3:</b> Philpott, J. D., et al. (2019). Applications of omega-3 polyunsaturated fatty acid supplementation for sport performance. <i>Research in Sports Medicine</i>. <a href="https://doi.org/10.1080/15438627.2018.1550401" target="_blank">DOI: 10.1080/15438627.2018.1550401</a>.</li>
+          <li><b>Magnesium:</b> Volpe, S. L. (2015). Magnesium and the Athlete. <i>Current Sports Medicine Reports</i>. <a href="https://doi.org/10.1249/JSR.0000000000000178" target="_blank">DOI: 10.1249/JSR.0000000000000178</a>.</li>
+          <li><b>Zink:</b> Prasad, A. S. (2013). Discovery of Human Zinc Deficiency: Its Impact on Human Health and Disease. <i>Advances in Nutrition</i>. <a href="https://doi.org/10.3945/an.112.003210" target="_blank">DOI: 10.3945/an.112.003210</a>.</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+
+  <p class="muted" style="margin: 28px 0 0; padding-bottom: 24px; max-width: 760px; line-height: 1.7;">
+    <b style="color: var(--text);">Gerelateerde tools:</b> plan hoeveel koolhydraten je tijdens een sessie echt kunt opnemen met de <a href="/nl/fuel-ratio-calculator/" style="color: var(--navy-mid); text-decoration: none; font-weight: 600;">brandstofverhouding-calculator</a>, of bekijk je koolhydraat- en vetgebruik per intensiteit met de <a href="/nl/substrate-explorer/" style="color: var(--navy-mid); text-decoration: none; font-weight: 600;">calculator voor vet- en koolhydraatgebruik</a>.
+  </p>
+</div>
+
+<footer>
+  <div class="wrap">
+    <b>Antidoping en veiligheid:</b> Supplementen kennen contaminatierisico's die tot positieve dopingtests kunnen leiden. Topsporters zouden alleen partijgeteste producten (bijv. Informed-Sport of HASTA) moeten gebruiken en ingrediënten tegen verboden lijsten moeten controleren. Deze planner optimaliseert alleen de timing en schrijft geen doseringen voor.
+  </div>
+</footer>
+
+<script>
+const $ = id => document.getElementById(id);
+let schedule = [];
+
+function mins(t){ if(!t) return null; const [h,m]=t.split(':').map(Number); return h*60+m; }
+function hhmm(m){ m=((m%1440)+1440)%1440; return String(Math.floor(m/60)).padStart(2,'0')+':'+String(m%60).padStart(2,'0'); }
+
+function nearestMeal(target, requireFat=false){
+  const meals=[
+    {name:'Breakfast',time:mins($('breakfast').value),fat:$('bfat').checked},
+    {name:'Lunch',time:mins($('lunch').value),fat:$('lfat').checked},
+    {name:'Dinner',time:mins($('dinner').value),fat:$('dfat').checked}
+  ].filter(x=>x.time!==null);
+  if(!meals.length) return null;
+  let candidates=requireFat ? meals.filter(x=>x.fat) : meals;
+  if(!candidates.length) candidates=meals;
+  return candidates.reduce((a,b)=>Math.abs(a.time-target)<Math.abs(b.time-target)?a:b);
+}
+
+function add(time,title,detail,tags=[]){
+  schedule.push({time:hhmm(time),title,detail,tags});
+}
+
+/* Competing minerals: calcium, iron, zinc and magnesium block each other's
+   absorption, so any two must stay at least 2h apart. */
+const MINERAL = {
+  'Iron':     ['Calcium','Zinc','Magnesium'],
+  'Calcium':  ['Iron','Zinc','Magnesium'],
+  'Zinc':     ['Iron','Calcium','Magnesium'],
+  'Magnesium':['Iron','Calcium','Zinc']
+};
+const MINERAL_GAP = 120; // minutes
+
+function resolveMineralConflicts(){
+  const minerals = schedule.filter(e => MINERAL[e.title]);
+  if(minerals.length < 2) return;
+  schedule = schedule.filter(e => !MINERAL[e.title]);
+
+  const wake = mins($('wake').value), bed = mins($('bed').value);
+  const meals = [
+    { name:'Breakfast', t: mins($('breakfast').value) },
+    { name:'Lunch',     t: mins($('lunch').value) },
+    { name:'Dinner',    t: mins($('dinner').value) }
+  ].filter(m => m.t !== null);
+
+  const placed = [];
+  const clear = (t, title) => !placed.some(p => Math.abs(p.time - t) < MINERAL_GAP && MINERAL[p.title].includes(title));
+  const byRank = (order) => (a,b) => order.indexOf(a.name) - order.indexOf(b.name);
+
+  // Place a mineral at its best-ranked clear meal, else walk back from bed-180 in 2h steps
+  function placeWithMeal(e, order){
+    const pick = meals.slice().sort(byRank(order)).find(m => clear(m.t, e.title));
+    if(pick){ e.time = hhmm(pick.t); e.detail = ['Take with food (', pick.name, ').']; }
+    else {
+      let t = bed - 180;
+      while(!clear(t, e.title) && t > wake) t -= MINERAL_GAP;
+      e.time = hhmm(t); e.detail = 'Take with food.';
+    }
+    placed.push({ time: mins(e.time), title: e.title });
+  }
+
+  const iron = minerals.find(e => e.title==='Iron');
+  const mag  = minerals.find(e => e.title==='Magnesium');
+  const zinc = minerals.find(e => e.title==='Zinc');
+  const cal  = minerals.find(e => e.title==='Calcium');
+
+  // Iron keeps its anchor (wake+30 or post-training); everyone else avoids it
+  if(iron) placed.push({ time: mins(iron.time), title: 'Iron' });
+
+  // Magnesium: 60 min before bed, nudged earlier if too close to iron
+  if(mag){
+    let t = bed - 60;
+    while(!clear(t,'Magnesium') && t > wake) t -= MINERAL_GAP;
+    mag.time = hhmm(t);
+    mag.detail = 'Take before bed.';
+    placed.push({ time: mins(mag.time), title: 'Magnesium' });
+  }
+
+  // Zinc prefers lunch; calcium prefers dinner, then breakfast (pairs with D3/K2).
+  // Gaps are checked as < 2h, so exactly-2h spacing is accepted on purpose.
+  if(zinc) placeWithMeal(zinc, ['Lunch','Dinner','Breakfast']);
+  if(cal)  placeWithMeal(cal, ['Dinner','Breakfast','Lunch']);
+
+  schedule = schedule.concat(minerals).sort((a,b)=>mins(a.time)-mins(b.time));
+}
+
+function build(){
+  schedule=[];
+  const selected=[...document.querySelectorAll('#supps input:checked')].map(x=>x.value);
+  const wake=mins($('wake').value), bed=mins($('bed').value);
+  
+  // Parse training sessions
+  const training = [];
+  if ($('train1').value) training.push({ time: mins($('train1').value), dur: Number($('dur1').value) });
+  if ($('train2').value) training.push({ time: mins($('train2').value), dur: Number($('dur2').value) });
+  training.sort((a,b)=>a.time-b.time);
+  
+  const mainTrain = training.length ? training[0].time : null;
+  const referenceTrain = mainTrain !== null ? mainTrain : wake + 300;
+
+  // 1. Caffeine
+  if(selected.includes('caffeine')){
+    add(referenceTrain - 45, 'Caffeine', 'Pre-workout alertness: take 45-60 min before training.', ['performance']);
+  }
+
+  // 2. Dietary Nitrate / Beetroot
+  if(selected.includes('nitrate')){
+    add(referenceTrain - 120, 'Beetroot / Nitrate', 'Take 2 hours before training; avoid mouthwash.', ['performance']);
+  }
+
+  // 3. Sodium Bicarbonate
+  if(selected.includes('bicarb')){
+    add(referenceTrain - 120, 'Sodium Bicarbonate', 'Take 2 hours before training, with a meal.', ['performance']);
+  }
+
+  // 3b. Sulforaphane / Broccoli Sprouts: cellular stress priming 3h before a hard session or race
+  if(selected.includes('sulforaphane')){
+    add(referenceTrain - 180, 'Sulforaphane / Broccoli Sprouts', 'Take 3 hours before training; raw sprouts.', ['performance']);
+  }
+
+  // 4. Collagen (with Vit C): vitamin C co-locates here unless iron needs it more (see Vit C below)
+  if(selected.includes('collagen')){
+    const vitCHere = !selected.includes('iron'); // still a recommendation when vit C isn't selected
+    add(referenceTrain - 45, 'Collagen (with Vit C)', vitCHere ? 'Take 40-60 min before training, with Vitamin C.' : 'Take 40-60 min before training.', ['performance']);
+  }
+
+  // 5. Iron: first thing on an empty stomach, or within 30 min of finishing a morning session
+  if(selected.includes('iron')){
+    const morningTrain = training.find(t => t.time < 12*60); // session starting before noon
+    if(morningTrain){
+      add(morningTrain.time + morningTrain.dur + 30, 'Iron', 'Within 30 min of finishing training.', ['medical']);
+    } else {
+      add(wake + 30, 'Iron', 'First thing in the morning, empty stomach.', ['medical']);
+    }
+  }
+
+  // 6. Vitamin D3
+  const fatMeal = nearestMeal(wake + 120, true) || nearestMeal(wake + 120, false);
+  if(selected.includes('vitd') && fatMeal){
+    add(fatMeal.time, 'Vitamin D3', ['Fat-soluble: take with ', fatMeal.name, ' (contains fat).'], ['food']);
+  }
+
+  // 7. Vitamin K2
+  if(selected.includes('k2') && fatMeal){
+    add(fatMeal.time, 'Vitamin K2', ['Fat-soluble: take with ', fatMeal.name, ' (contains fat).'], ['food']);
+  }
+
+  // 8. Omega-3
+  if(selected.includes('omega3')){
+    const m = nearestMeal(mins($('lunch').value), false) || fatMeal;
+    if(m) add(m.time, 'Omega-3', ['Fat-soluble: take with ', m.name, ' (contains fat).'], ['food']);
+  }
+
+  // 9. Calcium
+  if(selected.includes('calcium')){
+    const calcMeal = nearestMeal(bed - 180) || { name: 'Dinner', time: bed - 180 };
+    add(calcMeal.time, 'Calcium', 'Take with meals.', ['medical']);
+  }
+
+  // 10. Creatine
+  if(selected.includes('creatine')){
+    const creatineTime = training.length ? (training[training.length - 1].time + training[training.length - 1].dur + 30) : (mins($('breakfast').value) + 30);
+    add(creatineTime, 'Creatine Monohydrate', 'Take anytime; best with carbs or protein.', ['performance']);
+  }
+
+  // 11. Beta-alanine
+  if(selected.includes('beta')){
+    add(mins($('breakfast').value), 'Beta-alanine', 'Split daily dose to avoid tingling.', ['performance']);
+    add(Math.round((mins($('lunch').value) + bed) / 2), 'Beta-alanine', 'Split daily dose to avoid tingling.', ['performance']);
+  }
+
+  // 12. Magnesium
+  if(selected.includes('magnesium')){
+    add(bed - 60, 'Magnesium', 'Take 60 min before bed.', ['food']);
+  }
+
+  // 13. Zinc
+  if(selected.includes('zinc')){
+    const zincMeal = nearestMeal(mins($('lunch').value)) || { name: 'Dinner', time: bed - 180 };
+    add(zincMeal.time, 'Zinc', ['Take with food (', zincMeal.name, ').'], ['medical']);
+  }
+
+  // 14. Potassium
+  if(selected.includes('potassium')){
+    const potMeal = nearestMeal(mins($('dinner').value)) || { name: 'Dinner', time: bed - 180 };
+    add(potMeal.time, 'Potassium', 'Prefer dietary sources (bananas, sweet potatoes).', ['medical']);
+  }
+
+  // 15. Vitamin C: co-locates with iron (boosts absorption) or collagen (synthesis), else standalone
+  if(selected.includes('vitc')){
+    const ironEv = schedule.find(e => e.title === 'Iron');
+    const collEv  = schedule.find(e => e.title === 'Collagen (with Vit C)');
+    let vitCTime, vitCDetail;
+    if(ironEv){
+      vitCTime = mins(ironEv.time);
+      vitCDetail = 'Take with iron to boost absorption.';
+    } else if(collEv){
+      vitCTime = mins(collEv.time);
+      vitCDetail = 'Take with collagen for synthesis.';
+    } else {
+      vitCTime = mins($('breakfast').value) + 60;
+      if (training.some(t => Math.abs(t.time - vitCTime) < 180)) vitCTime = bed - 120;
+      vitCDetail = 'Take at least 3h away from training.';
+    }
+    add(vitCTime, 'Vitamin C', vitCDetail, ['medical']);
+  }
+
+  // 16. Whey Protein
+  if(selected.includes('whey')){
+    if(training.length){
+      const lastTrain = training[training.length - 1];
+      add(lastTrain.time + lastTrain.dur + 15, 'Whey Protein', 'Post-workout for recovery.', ['food']);
+    } else {
+      add(mins($('breakfast').value) + 15, 'Whey Protein', 'Take with a meal for daily protein intake.', ['food']);
+    }
+  }
+
+  // 17. Casein Protein
+  if(selected.includes('casein')){
+    add(bed - 30, 'Casein Protein', 'Take 30 min before bed.', ['food']);
+  }
+
+  // Keep competing minerals apart, then sort by time
+  resolveMineralConflicts();
+  schedule.sort((a,b)=>mins(a.time)-mins(b.time));
+  render();
+}
+
+function render(){
+  const el=$('timeline');
+  if(!schedule.length){el.innerHTML='<div class="empty">No supplements selected.</div>';return;}
+  el.innerHTML=schedule.map(e=>`
+    <div class="event">
+      <div class="time">${e.time}</div>
+      <div>
+        <div>${e.tags.map(t=>`<span class="tag ${t}">${t==='medical'?'MEDICAL':t==='performance'?'PERFORMANCE':'MEAL/FOOD'}</span>`).join('')}</div>
+        <h3>${e.title}</h3><p>${Array.isArray(e.detail) ? e.detail.map(x=>`<span>${x}</span>`).join('') : e.detail}</p>
+      </div>
+    </div>`).join('');
+}
+
+function icsEscape(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n')}
+function nextDate(){
+  const d=new Date(); d.setHours(0,0,0,0); return d;
+}
+function makeDate(time, offset=0){
+  const d=nextDate(); d.setDate(d.getDate()+offset);
+  const [h,m]=time.split(':').map(Number); d.setHours(h,m,0,0);
+  return d;
+}
+function stamp(d){return d.getFullYear()+String(d.getMonth()+1).padStart(2,'0')+String(d.getDate()).padStart(2,'0')+'T'+String(d.getHours()).padStart(2,'0')+String(d.getMinutes()).padStart(2,'0')+'00'}
+
+function tr(text){
+  return window.GlycogoI18n && window.GlycogoI18n.translate ? window.GlycogoI18n.translate(text) : text;
+}
+function detailText(detail){
+  return (Array.isArray(detail) ? detail.map(tr) : [tr(detail)]).join('');
+}
+
+function buildICS(){
+  if(!schedule.length) build();
+  if(!schedule.length) return null;
+  const now=new Date();
+  let out='BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Athlete Supplement Timer//EN\r\nCALSCALE:GREGORIAN\r\n';
+  schedule.forEach((e,i)=>{
+    const start=makeDate(e.time);
+    const end=new Date(start.getTime()+15*60000);
+    out+='BEGIN:VEVENT\r\n';
+    out+='UID:supp-timer-'+Date.now()+'-'+i+'@athletesupplementtimer\r\n';
+    out+='DTSTAMP:'+stamp(now)+'\r\n';
+    out+='DTSTART:'+stamp(start)+'\r\n';
+    out+='DTEND:'+stamp(end)+'\r\n';
+    out+='RRULE:FREQ=DAILY\r\n';
+    out+='SUMMARY:'+icsEscape(tr(e.title))+'\r\n';
+    out+='DESCRIPTION:'+icsEscape(detailText(e.detail))+'\r\n';
+    out+='BEGIN:VALARM\r\nTRIGGER:-PT10M\r\nACTION:DISPLAY\r\nDESCRIPTION:'+icsEscape(tr(e.title))+'\r\nEND:VALARM\r\n';
+    out+='END:VEVENT\r\n';
+  });
+  out+='END:VCALENDAR\r\n';
+  return out;
+}
+
+function downloadICS(ics){
+  if(!ics) ics=buildICS();
+  if(!ics) return;
+  const blob=new Blob([ics],{type:'text/calendar;charset=utf-8'});
+  const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='athlete-supplement-schedule.ics'; a.click();
+  setTimeout(()=>URL.revokeObjectURL(a.href),1000);
+}
+
+function resetAll(){location.reload()}
+
+// Setup mobile nav toggling
+document.querySelectorAll('.nav-dropdown').forEach((dd) => {
+  const btn = dd.querySelector('.nav-dropdown-toggle');
+  btn?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const open = dd.classList.contains('open');
+    document.querySelectorAll('.nav-dropdown.open').forEach((o) => {
+      o.classList.remove('open');
+      o.querySelector('.nav-dropdown-toggle')?.setAttribute('aria-expanded', 'false');
+    });
+    if (!open) {
+      dd.classList.add('open');
+      btn.setAttribute('aria-expanded', 'true');
+    }
+  });
+});
+document.addEventListener('click', () => {
+  document.querySelectorAll('.nav-dropdown.open').forEach((o) => {
+    o.classList.remove('open');
+    o.querySelector('.nav-dropdown-toggle')?.setAttribute('aria-expanded', 'false');
+  });
+});
+
+build();
+</script>
+<script src="/search/search-index.js"></script>
+<script src="/search/search-rrf.js"></script>
+<script src="/search/search.js"></script>
+</body>
+</html>
