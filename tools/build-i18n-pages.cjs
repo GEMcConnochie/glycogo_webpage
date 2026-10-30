@@ -8,7 +8,8 @@
  *     markers below, so re-runs replace rather than duplicate it)
  *   - <lang>/<route>/index.html for every language, translated from the
  *     catalogs in assets/i18n/ with the same normalisation the runtime uses
- *   - sitemap.xml listing all six language variants with xhtml:link alternates
+ *   - sitemap.xml listing all six language variants with xhtml:link alternates,
+ *     plus any English-only URLS that have no translated copies
  *
  * The runtime engine (assets/i18n.js) still loads on the generated pages, so
  * strings the calculators build in JavaScript are translated after paint.
@@ -31,6 +32,12 @@ const PAGES = [
   { route: "/privacy/", file: "privacy/index.html", block: "privacy", priority: "0.3", changefreq: "yearly" },
   { route: "/terms/", file: "terms/index.html", block: "terms", priority: "0.3", changefreq: "yearly" },
   { route: "/delete-account/", file: "delete-account/index.html", block: "deleteAccount", priority: "0.3", changefreq: "yearly" },
+];
+
+/* English-only pages: indexed and listed in the sitemap, but not translated
+   and not part of the language picker, so they get no hreflang alternates. */
+const EXTRA_URLS = [
+  { route: "/compare-sports-nutrition-apps/", priority: "0.7", changefreq: "monthly" },
 ];
 
 const ROUTES = new Set(PAGES.map((p) => p.route));
@@ -332,6 +339,13 @@ for (const page of PAGES) {
     );
     sitemapLines.push("  </url>");
   }
+}
+for (const page of EXTRA_URLS) {
+  sitemapLines.push("  <url>");
+  sitemapLines.push("    <loc>" + SITE + page.route + "</loc>");
+  sitemapLines.push("    <changefreq>" + page.changefreq + "</changefreq>");
+  sitemapLines.push("    <priority>" + page.priority + "</priority>");
+  sitemapLines.push("  </url>");
 }
 sitemapLines.push("</urlset>");
 fs.writeFileSync(path.join(ROOT, "sitemap.xml"), sitemapLines.join("\n") + "\n", "utf8");
