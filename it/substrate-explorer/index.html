@@ -70,7 +70,7 @@
   "@type": "FAQPage",
   "mainEntity": [
     {"@type": "Question", "name": "What is RER and what does RER 0.85 mean?", "acceptedAnswer": {"@type": "Answer", "text": "RER (respiratory exchange ratio) is the volume of CO2 exhaled divided by O2 consumed, the core measurement of indirect calorimetry. On the non-protein scale, RER 0.70 corresponds to almost entirely fat oxidation, RER 1.00 to almost entirely carbohydrate, and RER 0.85 marks an even 50/50 energy split."}},
-    {"@type": "Question", "name": "At what intensity does fuel use become 50/50?", "acceptedAnswer": {"@type": "Answer", "text": "It is athlete-specific. For the default reference athlete on this page (70 kg, male, 34 years, moderate-carbohydrate diet), the 50/50 crossover sits near RPE 20 on the CR-100 scale. Higher carbohydrate availability shifts it toward lower intensities; low-carbohydrate availability shifts it higher."}},
+    {"@type": "Question", "name": "At what intensity does fuel use become 50/50?", "acceptedAnswer": {"@type": "Answer", "text": "It is athlete-specific. For the default reference athlete on this page (70 kg, male, 34 years, moderate-carbohydrate diet), the 50/50 crossover sits near RPE 33 on the CR-100 scale. Higher carbohydrate availability shifts it toward lower intensities; low-carbohydrate availability shifts it higher."}},
     {"@type": "Question", "name": "What is fatmax, and why does the fat curve only fall?", "acceptedAnswer": {"@type": "Answer", "text": "Fatmax is the intensity where absolute fat oxidation peaks, typically 45-65% of VO2max in trained athletes. The page holds energy expenditure fixed at 600 kcal/h, so absolute fat use falls steadily as carbohydrate takes over; in a real session expenditure rises with intensity, producing the fatmax peak before the fall."}},
     {"@type": "Question", "name": "Why does carbohydrate intake shift the curve toward carbohydrate?", "acceptedAnswer": {"@type": "Answer", "text": "Oxidation follows availability: pre-exercise and during-exercise carbohydrate raise plasma glucose delivery and reduce relative fat reliance at the same absolute intensity, while habitual low-carbohydrate intake does the opposite. The diet sliders reproduce these acute and chronic effects."}},
     {"@type": "Question", "name": "Are the g/h numbers intake targets?", "acceptedAnswer": {"@type": "Answer", "text": "No. They estimate endogenous oxidation - what the body burns from muscle glycogen, blood glucose, and plasma fatty acids. Exogenous fueling targets such as 60-90 g/h of multiple-transportable carbohydrate are a separate prescription that only partially overlaps oxidation."}},
@@ -502,14 +502,14 @@ footer a:hover{ text-decoration:underline; }
     <p><strong>Esempio pratico (atleta di riferimento).</strong> 70 kg, uomo, 34 anni, dieta moderata in carboidrati (4,0 g/kg di CHO e 1,5 g/kg di grassi al giorno), sessione di 60 minuti a ~600 kcal/h. Il modello di produzione restituisce:</p>
     <table>
       <tr><th>Intensità (RPE, CR-100)</th><th>Carboidrati, % dell'energia</th><th>Carboidrati (g/h)</th><th>Grassi (g/h)</th></tr>
-      <tr><td>30</td><td>57</td><td>86</td><td>28</td></tr>
-      <tr><td>45</td><td>66</td><td>98</td><td>23</td></tr>
-      <tr><td>60</td><td>71</td><td>104</td><td>20</td></tr>
-      <tr><td>75</td><td>78</td><td>113</td><td>15</td></tr>
-      <tr><td>90</td><td>87</td><td>125</td><td>8</td></tr>
+      <tr><td>30</td><td>47</td><td>71</td><td>35</td></tr>
+      <tr><td>45</td><td>65</td><td>98</td><td>23</td></tr>
+      <tr><td>60</td><td>81</td><td>120</td><td>12</td></tr>
+      <tr><td>75</td><td>93</td><td>136</td><td>5</td></tr>
+      <tr><td>90</td><td>99</td><td>143</td><td>1</td></tr>
     </table>
-    <p>Per questo atleta l'incrocio 50/50 (RER ≈ 0,85) cade vicino a RPE 20 sulla scala CR-100; una minore disponibilità di carboidrati lo sposterebbe verso intensità più alte.</p>
-    <p>La lettura interattiva riporta anche il RER implicito del modello in ogni punto. Poiché il modello collega la ripartizione dei carburanti al RER tramite una curva di risposta fisiologica morbida e non con l'approssimazione non proteica strettamente lineare, il suo RER implicito può superare di qualche millesimo la tabella lineare alle alte intensità; per questo la tabella statica riporta solo la ripartizione energetica e le velocità di ossidazione coerenti tra loro.</p>
+    <p>For this athlete the 50/50 crossover (RER ≈ 0.85) falls near RPE 33 on the CR-100 scale; lower carbohydrate availability would move it toward higher intensities.</p>
+    <p>The interactive readout also reports the model’s implied RER at each point. Because the model maps fuel split to RER through a smooth physiological response curve rather than the strictly linear non-protein approximation, its implied RER can sit up to a couple of hundredths off the linear non-protein table (a little below near 90 % carbohydrate, a little above at the top of the range); the static table therefore lists only the internally consistent energy split and oxidation rates.</p>
     <p><strong>Limiti.</strong> I risultati sono previsioni a livello di gruppo della ripartizione dei substrati per i dati inseriti, non misurazioni del tuo metabolismo. Variabilità quotidiana, stato di allenamento, storia dietetica, caldo e tolleranza intestinale modificano i valori reali. Usa l'explorer per confrontare scenari e strutturare l'apporto, non come test metabolico.</p>
     <p><strong>Strumenti correlati.</strong> Vuoi quantificare la parte di carboidrati della tua nutrizione del giorno gara? Crea un piano di apporto glucosio:fruttosio con il <a href="/it/fuel-ratio-calculator/">calcolatore del rapporto di carburante</a>, oppure usa <a href="/it/">Glycogo</a> per obiettivi periodizzati di carboidrati e calorie che seguono il tuo carico di allenamento.</p>
     <p class="refs">Key references:
@@ -530,7 +530,7 @@ footer a:hover{ text-decoration:underline; }
     <h3>Che cos'è il RER e cosa significa un RER di 0,85?</h3>
     <p>Il RER (quoziente respiratorio) è il volume di CO₂ espirato diviso per l'O₂ consumato: la misura centrale della calorimetria indiretta. RER 0,70 ≈ 100 % dell'energia dai grassi, 1,00 ≈ 100 % dai carboidrati e ≈ 0,85 indica una ripartizione 50/50. Il RER mostrato nel grafico è quello implicito del modello in quel punto.</p>
     <h3>A quale intensità l'uso dei carburanti diventa 50/50?</h3>
-    <p>Dipende dall'atleta. Per l'atleta di riferimento predefinito (70 kg, uomo, 34 anni, dieta moderata in carboidrati) l'incrocio cade vicino a RPE 20 sulla scala CR-100 (facile-moderato). Una maggiore disponibilità di carboidrati lo sposta verso intensità più basse; una bassa disponibilità o un allenamento adattato ai grassi lo sposta più in alto.</p>
+    <p>It is athlete-specific. For the default reference athlete here (70 kg, male, 34 years, moderate-carbohydrate diet) the crossover sits near RPE 33 on the CR-100 scale (moderate). Higher carbohydrate availability shifts it toward lower intensities; low-carbohydrate availability or fat-adapted training shifts it higher.</p>
     <h3>Perché l'apporto di carboidrati sposta la curva verso i carboidrati?</h3>
     <p>La disponibilità di substrati influenza l'ossidazione. I carboidrati prima e durante l'esercizio aumentano l'apporto di glucosio plasmatico e riducono la dipendenza relativa dai grassi a parità di intensità assoluta; un apporto abituale povero di carboidrati fa l'opposto. Sono gli effetti acuti e cronici riprodotti dai cursori della dieta.</p>
     <h3>I valori in g/h sono obiettivi di assunzione?</h3>
@@ -642,13 +642,20 @@ const ZONES = [
 ];
 const ZONE_RPE_BOUNDS = [1, 15, 30, 45, 60, 75, 90, 100];
 const ZONE_IF_BOUNDS  = [0, 0.55, 0.75, 0.88, 0.95, 1.05, 1.20, 1.50];
+// The same boundaries in %LTHR: the inverse of the HR -> intensity table the
+// curve itself is built from, where 100% LTHR is IF 1.00 (84% LTHR = IF 0.75,
+// 90% LTHR = IF 0.88, 95% LTHR = IF 0.95).  Reading them as IF/1.50 would put
+// 100% LTHR at IF 0.67 and paint everything above ~80% LTHR as anaerobic,
+// contradicting the curve drawn on top of it.  Because the HR axis stops at
+// 105% LTHR, the VO2max and anaerobic bands fall off its right edge.
+const ZONE_LTHR_BOUNDS = [0, 0.69, 0.84, 0.9015, 0.95, 1.05, 1.20, 1.50];
 
 function zoneBands(ax) {
-  // Band boundaries in the current axis unit: RPE natively, HR/power via
-  // the table's IF value (IF/1.50 x LTHR or IF x FTP) so the shading always
-  // matches the intensity mapping the curve itself uses.
+  // Band boundaries in the current axis unit: RPE natively, %LTHR or %FTP for
+  // the heart-rate and power axes, so the shading always matches the intensity
+  // mapping the curve itself uses.
   const at = i => ax === "rpe" ? ZONE_RPE_BOUNDS[i]
-    : ax === "hr" ? ZONE_IF_BOUNDS[i] / 1.50 * num("lthr")
+    : ax === "hr" ? ZONE_LTHR_BOUNDS[i] * num("lthr")
     : ZONE_IF_BOUNDS[i] * num("ftp");
   return ZONES.map((z, i) => ({ name: z.name, short: z.short, fill: z.fill, a: at(i), b: at(i + 1) }));
 }

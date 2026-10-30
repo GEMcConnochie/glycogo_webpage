@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon" type="image/png" href="/logosmall.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How sports nutrition apps compare | Glycogo</title>
+<meta name="description" content="A side-by-side comparison of the apps that turn your training into fuelling plans: daily targets, energy availability, session carbohydrate, substrate utilisation, race day and price. Checked on 30 October 2026.">
+<meta name="keywords" content="sports nutrition app comparison, endurance fuelling app, energy availability app, carbohydrate per hour, substrate utilisation, race day fuelling plan, Glycogo">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<meta name="author" content="Glycogo">
+<link rel="canonical" href="https://glycogo.fit/compare-sports-nutrition-apps/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How sports nutrition apps compare">
+<meta property="og:description" content="What four fuelling apps do differently: daily targets, energy availability, session carbohydrate, substrate utilisation, race day and price.">
+<meta property="og:site_name" content="Glycogo">
+<meta property="og:url" content="https://glycogo.fit/compare-sports-nutrition-apps/">
+<meta property="og:image" content="https://glycogo.fit/logosmall.png">
+<meta property="article:modified_time" content="2026-10-30">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How sports nutrition apps compare">
+<meta name="twitter:description" content="What four fuelling apps do differently: daily targets, energy availability, session carbohydrate, substrate utilisation, race day and price.">
+<meta name="twitter:image" content="https://glycogo.fit/logosmall.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Michroma&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --display-stroke:0.04em;
+    --bg:#f6f9f7;
+    --panel-2:#f7faf8;
+    --white:#ffffff;
+    --line:rgba(26,26,62,0.08);
+    --line-strong:rgba(26,26,62,0.14);
+    --text:#1a1a3e;
+    --text-dim:#5c6670;
+    --text-faint:#93979E;
+    --glucose:#e65c00;
+    --glucose-dim:#b34200;
+    --fructose:#2d2d7a;
+    --green:#2e7d32;
+    --green-light:#43a047;
+    --green-pale:#e8f5e9;
+    --nav-h:72px;
+    --radius-sm:6px;
+    --radius-md:12px;
+  }
+  *{ box-sizing:border-box; }
+  html,body{ margin:0; padding:0; }
+  body{
+    background:var(--bg); color:var(--text);
+    font-family:'Space Grotesk', sans-serif;
+    -webkit-font-smoothing:antialiased;
+    padding-top:var(--nav-h);
+  }
+  a{ color:inherit; }
+  .wrap{ max-width:1040px; margin:0 auto; padding:0 2rem; }
+
+  /* ---------- SITE NAV ---------- */
+  nav#main-nav{
+    position:fixed; top:0; left:0; right:0; z-index:200; height:var(--nav-h);
+    background:rgba(255,255,255,0.92); backdrop-filter:blur(16px);
+    border-bottom:1px solid var(--line-strong);
+  }
+  .nav-inner{
+    max-width:1140px; margin:0 auto; height:100%;
+    display:flex; align-items:center; justify-content:space-between; padding:0 2rem;
+  }
+  .nav-inner > a{ display:flex; align-items:center; text-decoration:none; }
+  .nav-inner img{ height:52px; }
+  .nav-links{ display:flex; gap:1.75rem; align-items:center; }
+  .nav-links > a,
+  .nav-dropdown-toggle{
+    text-decoration:none; color:var(--text-dim); font-size:0.88rem; font-weight:500;
+    transition:color 0.2s; background:none; border:none; cursor:pointer;
+    font-family:inherit; padding:0; display:inline-flex; align-items:center; gap:0.3rem;
+  }
+  .nav-links > a:hover,
+  .nav-dropdown-toggle:hover,
+  .nav-dropdown.open .nav-dropdown-toggle{ color:var(--green); }
+  .nav-dropdown{ position:relative; }
+  .nav-dropdown-toggle .chev{
+    width:0; height:0; border-left:4px solid transparent; border-right:4px solid transparent;
+    border-top:4px solid currentColor; opacity:0.7; transition:transform 0.2s;
+  }
+  .nav-dropdown.open .chev{ transform:rotate(180deg); }
+  .nav-dropdown-menu{
+    position:absolute; top:calc(100% + 0.65rem); left:50%; transform:translateX(-50%) translateY(4px);
+    min-width:220px; background:var(--white); border:1px solid var(--line-strong);
+    border-radius:12px; box-shadow:0 12px 40px rgba(26,26,62,0.12); padding:0.4rem;
+    opacity:0; visibility:hidden; pointer-events:none;
+    transition:opacity 0.18s ease, transform 0.18s ease, visibility 0.18s; z-index:300;
+  }
+  .nav-dropdown.open .nav-dropdown-menu,
+  .nav-dropdown:hover .nav-dropdown-menu,
+  .nav-dropdown:focus-within .nav-dropdown-menu{
+    opacity:1; visibility:visible; pointer-events:auto; transform:translateX(-50%) translateY(0);
+  }
+  .nav-dropdown-menu a{
+    display:block; padding:0.7rem 0.9rem; border-radius:8px; text-decoration:none;
+    color:var(--text); font-size:0.86rem; font-weight:500; transition:background 0.15s, color 0.15s; white-space:nowrap;
+  }
+  .nav-dropdown-menu a:hover{ background:var(--green-pale); color:var(--green); }
+  .nav-cta{
+    background:var(--green) !important; color:#fff !important; padding:0.6rem 1.35rem !important;
+    border-radius:8px !important; font-weight:700 !important; font-size:0.88rem !important;
+  }
+  .nav-cta:hover{ background:var(--green-light) !important; }
+  @media (max-width:800px){ .nav-links{ display:none; } }
+
+  /* ---------- HEADER ---------- */
+  header.top{ padding:38px 0 30px; border-bottom:1px solid var(--line-strong); }
+  .eyebrow{
+    font-size:11.5px; letter-spacing:0.1em; text-transform:uppercase; color:var(--glucose-dim);
+    display:flex; align-items:center; gap:8px; margin-bottom:16px; font-weight:600;
+  }
+  .eyebrow::before{ content:""; width:16px; height:2px; background:var(--green); }
+  h1.title{
+    font-family:'Michroma','Space Grotesk',sans-serif; font-weight:400; font-synthesis-weight:none;
+    -webkit-text-stroke:var(--display-stroke) currentColor;
+    font-size:clamp(23px,3.6vw,36px); margin:0 0 14px; line-height:1.18; letter-spacing:0; color:var(--text);
+  }
+  .subtitle{ color:var(--text-dim); font-size:16px; max-width:640px; line-height:1.6; margin:0; }
+
+  /* ---------- SECTIONS ---------- */
+  section{ padding:42px 0; border-bottom:1px solid var(--line); }
+  section:last-of-type{ border-bottom:none; }
+  h2.section-title{ font-weight:600; font-size:20px; margin:0 0 14px; letter-spacing:-0.005em; color:var(--text); }
+  .section-desc{ color:var(--text-dim); font-size:14.5px; max-width:640px; line-height:1.6; margin:0 0 22px; }
+  .prose p{ color:var(--text-dim); font-size:15.5px; line-height:1.72; max-width:640px; margin:0 0 14px; }
+  .prose p:last-child{ margin-bottom:0; }
+  .prose p strong{ color:var(--text); font-weight:600; }
+  .prose a{ color:var(--green); text-decoration:none; border-bottom:1px solid rgba(46,125,50,0.3); }
+  .prose a:hover{ border-bottom-color:var(--green); }
+  .lede{ padding:30px 0 0; }
+  .lede p{ font-size:16px; }
+
+  /* ---------- TABLE ---------- */
+  .cmp-panel{
+    background:var(--white); border:1px solid var(--line-strong); border-radius:var(--radius-md);
+    overflow:hidden;
+  }
+  table{ width:100%; border-collapse:collapse; table-layout:fixed; }
+  caption{ position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+  thead th{
+    text-align:left; vertical-align:bottom; padding:13px 15px 11px;
+    font-size:11.5px; letter-spacing:0.06em; text-transform:uppercase; font-weight:600;
+    color:var(--text-dim); background:var(--panel-2); border-bottom:1px solid var(--line-strong);
+  }
+  thead th:first-child{ width:18%; }
+  thead th.is-own{ background:var(--green-pale); color:var(--green); }
+  thead .own-note{
+    display:block; margin-top:3px; font-size:10.5px; letter-spacing:0; text-transform:none;
+    color:var(--green); font-weight:600; opacity:0.85;
+  }
+  tbody th[scope="row"]{
+    text-align:left; vertical-align:top; padding:14px 15px;
+    font-size:13.5px; font-weight:600; line-height:1.45; color:var(--text);
+    background:#fbfcfb; border-top:1px solid var(--line);
+  }
+  tbody td{
+    vertical-align:top; padding:14px 15px;
+    font-size:13.5px; line-height:1.58; color:var(--text-dim);
+    border-top:1px solid var(--line); border-left:1px solid var(--line);
+  }
+  tbody td.is-own{ background:#f3faf4; color:var(--text); }
+  tbody tr:first-child th, tbody tr:first-child td{ border-top:none; }
+
+  .foot-note{
+    font-size:12.5px; line-height:1.75; color:var(--text-dim); max-width:82ch; margin:16px 0 0;
+  }
+  .foot-note a{ color:var(--text-dim); text-decoration:none; border-bottom:1px solid var(--line-strong); }
+  .foot-note a:hover{ color:var(--green); }
+
+  /* ---------- CLOSING ---------- */
+  .signoff{ display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap; padding:34px 0 44px; }
+  .signoff p{ margin:0; color:var(--text-dim); font-size:15px; line-height:1.6; max-width:56ch; }
+  .btn{
+    display:inline-block; background:var(--green); color:#fff; padding:0.75rem 1.5rem;
+    border-radius:8px; font-weight:700; font-size:0.9rem; text-decoration:none; white-space:nowrap;
+    transition:background 0.2s;
+  }
+  .btn:hover{ background:var(--green-light); }
+
+  footer{ padding:0 0 60px; }
+  footer .brand{ font-weight:700; font-size:14px; letter-spacing:0.02em; color:var(--text-dim); }
+  footer .brand .dot{ color:var(--glucose); }
+  footer p{ color:var(--text-faint); font-size:12px; line-height:1.7; margin:8px 0 0; }
+  footer a{ color:var(--fructose); text-decoration:none; font-weight:600; }
+  footer a:hover{ text-decoration:underline; }
+
+  /* ---------- NARROW ---------- */
+  @media (max-width:900px){
+    .wrap{ padding:0 1.25rem; }
+    header.top{ padding:26px 0 22px; }
+    section{ padding:30px 0; }
+    .cmp-panel{ background:transparent; border:none; border-radius:0; }
+    table, tbody, tr, th, td{ display:block; width:100%; }
+    thead{ display:none; }
+    tbody tr{
+      background:#fff; border:1px solid var(--line-strong); border-radius:var(--radius-md);
+      margin-bottom:12px; overflow:hidden;
+    }
+    tbody tr:first-child th, tbody tr:first-child td{ border-top:1px solid var(--line); }
+    tbody th[scope="row"]{
+      background:linear-gradient(to right, var(--green-pale), var(--panel-2));
+      border:none; border-bottom:1px solid var(--line); padding:10px 14px;
+      font-size:11px; letter-spacing:0.07em; text-transform:uppercase; color:var(--green);
+    }
+    tbody td{ border:none; border-top:1px solid var(--line); padding:11px 14px; }
+    tbody tr th[scope="row"] + td{ border-top:none; }
+    tbody td.is-own{ background:#f3faf4; }
+    tbody td::before{
+      content:attr(data-label); display:block; margin-bottom:3px;
+      font-size:10.5px; font-weight:600; letter-spacing:0.07em; text-transform:uppercase; color:var(--text-faint);
+    }
+    tbody td.is-own::before{ color:var(--green); }
+    .signoff{ padding:26px 0 34px; }
+    footer{ padding-bottom:40px; }
+  }
+  @media (max-width:560px){
+    h1.title{ font-size:clamp(21px,6vw,26px); }
+    .subtitle{ font-size:15px; }
+    .prose p{ font-size:15px; }
+  }
+  @media print{
+    nav#main-nav, .signoff, footer{ display:none; }
+    body{ padding-top:0; }
+    .cmp-panel{ border:1px solid #ccc; }
+    tbody tr{ break-inside:avoid; }
+  }
+</style>
+<link rel="stylesheet" href="/search/search.css">
+<script src="/assets/i18n.js" defer></script>
+</head>
+<body>
+
+<nav id="main-nav">
+  <div class="nav-inner">
+    <a href="/"><img src="/3dglycogo.svg" alt="Glycogo"></a>
+    <div class="nav-links">
+      <a href="/#features">Features</a>
+      <a href="/#showcase">How it works</a>
+      <a href="/#science">Science</a>
+      <a href="/#faq">FAQ</a>
+      <a href="/#support">Support</a>
+      <div class="nav-dropdown">
+        <button type="button" class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+          Free calculators <span class="chev" aria-hidden="true"></span>
+        </button>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="/fuel-ratio-calculator/" role="menuitem">Carb fuel-ratio calculator</a>
+          <a href="/substrate-explorer/" role="menuitem">Fat &amp; carb utilization calculator</a>
+          <a href="/athlete_supplement_timer.html" role="menuitem">Athlete supplement timer</a>
+        </div>
+      </div>
+      <a href="https://app.glycogo.fit/" class="nav-cta">Try for free</a>
+    </div>
+  </div>
+</nav>
+
+<main class="wrap" data-i18n-skip>
+
+  <header class="top">
+    <p class="eyebrow">Comparison</p>
+    <h1 class="title">How sports nutrition apps compare</h1>
+    <p class="subtitle">
+      Four apps now do roughly the same job. Underneath they answer different questions, so the numbers
+      they hand you will not match. Last checked 30 October 2026.
+    </p>
+  </header>
+
+  <div class="prose lede">
+    <p>
+      If you want your training to set your fuelling, there are four apps worth knowing about. Each one turns
+      your sessions, body size and food into daily carbohydrate and calorie targets, fuelling for each
+      session, and something for race day. On the surface they look interchangeable.
+    </p>
+    <p>
+      They are not. What separates them is where the targets come from, whether they use your own physiology
+      rather than a population estimate, whether they show their workings, and what happens when a day does
+      not go to plan. Below is the same set of rows filled in for all four, then the differences that
+      actually change the numbers.
+    </p>
+  </div>
+
+  <section id="compare" aria-labelledby="compare-heading">
+    <h2 class="section-title" id="compare-heading">Side by side</h2>
+    <p class="section-desc">
+      All four set daily targets from training load and all four log food, so those rows are short. The
+      ones further down are where they part company. Last updated 30 October 2026.
+    </p>
+
+    <div class="cmp-panel">
+      <table>
+        <caption>Feature comparison of Glycogo, Hexis, Fuelin and Avitu, checked against vendor sources on 30 October 2026.</caption>
+        <thead>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col" class="is-own">Glycogo<span class="own-note">Our app</span></th>
+            <th scope="col">Hexis</th>
+            <th scope="col">Fuelin</th>
+            <th scope="col">Avitu</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Daily fuelling</th>
+            <td class="is-own" data-label="Glycogo">Energy availability and training expenditure set your requirements, with customisable macro ranges and meal distribution.</td>
+            <td data-label="Hexis">Targets from estimated resting metabolic rate and weight goals, adjusted for training load.</td>
+            <td data-label="Fuelin">Targets from estimated resting metabolic rate and weight goals, adjusted for training load.</td>
+            <td data-label="Avitu">Targets from estimated resting metabolic rate and weight goals, adjusted for training load.</td>
+          </tr>
+          <tr>
+            <th scope="row">Sport-specific modelling</th>
+            <td class="is-own" data-label="Glycogo">Sport-specific inputs: cycling FTP and gross efficiency, running critical speed and running economy, swimming CSS and propulsive efficiency.</td>
+            <td data-label="Hexis">FTP, critical speed and cycling efficiency. No running economy or swim efficiency.</td>
+            <td data-label="Fuelin">FTP and threshold pace, estimated or entered.</td>
+            <td data-label="Avitu">FTP only. No efficiency, critical speed or swim inputs.</td>
+          </tr>
+          <tr>
+            <th scope="row">Energy availability tracking</th>
+            <td class="is-own" data-label="Glycogo">Track energy availability throughout the day, including projected levels, largest hourly deficit and time below target.</td>
+            <td data-label="Hexis">Live Energy shows energy availability through the day.</td>
+            <td data-label="Fuelin">No within-day energy availability.</td>
+            <td data-label="Avitu">No within-day energy availability.</td>
+          </tr>
+          <tr>
+            <th scope="row">Session fuelling</th>
+            <td class="is-own" data-label="Glycogo">Customise carbohydrate-per-hour ranges by sport and GI tolerance, or use recommended targets.</td>
+            <td data-label="Hexis">Fixed carb per hour target, not customisable (unless on a coached plan).</td>
+            <td data-label="Fuelin">Fixed carb per hour target, not customisable (unless on a coached plan).</td>
+            <td data-label="Avitu">Fixed carb per hour target, not customisable.</td>
+          </tr>
+          <tr>
+            <th scope="row">Substrate utilisation</th>
+            <td class="is-own" data-label="Glycogo">Estimated carbohydrate and fat utilisation for each session, from its energy expenditure, intensity and dietary intake.</td>
+            <td data-label="Hexis">No substrate estimate.</td>
+            <td data-label="Fuelin">No substrate estimate.</td>
+            <td data-label="Avitu">No substrate estimate.</td>
+          </tr>
+          <tr>
+            <th scope="row">Calculation transparency</th>
+            <td class="is-own" data-label="Glycogo">See the energy, carbohydrate and estimated fat contribution of each session.</td>
+            <td data-label="Hexis">No calculation shown.</td>
+            <td data-label="Fuelin">No calculation shown.</td>
+            <td data-label="Avitu">Formula visible for a daily target, no session breakdown.</td>
+          </tr>
+          <tr>
+            <th scope="row">Race-day planning</th>
+            <td class="is-own" data-label="Glycogo">Plan fuelling by course profile and section, including products and aid stations. Toggle an 8 to 12 g/kg carb load.</td>
+            <td data-label="Hexis">No in-app race planner.</td>
+            <td data-label="Fuelin">Race week and race day fuelling guidance, no course planning.</td>
+            <td data-label="Avitu">Carb loading and in-activity targets around a key event, no course planning.</td>
+          </tr>
+          <tr>
+            <th scope="row">Meal tracking and carryover</th>
+            <td class="is-own" data-label="Glycogo">Optionally mark meals as completed. Any daily shortfall or surplus carries into the next day's meal targets.</td>
+            <td data-label="Hexis">Meals can be completed, with no next-day carry over.</td>
+            <td data-label="Fuelin">Meal Ticker, with no next-day carry over.</td>
+            <td data-label="Avitu">No meal completion or next-day carry over.</td>
+          </tr>
+          <tr>
+            <th scope="row">Historical data and trends</th>
+            <td class="is-own" data-label="Glycogo">Plot nutrition, wellness and training metrics against targets over any date range.</td>
+            <td data-label="Hexis">Charts for weight, body fat, calories, macros and energy balance.</td>
+            <td data-label="Fuelin">Calendar view of daily and weekly targets against historical macros.</td>
+            <td data-label="Avitu">No history view.</td>
+          </tr>
+          <tr>
+            <th scope="row">Wellness tracking</th>
+            <td class="is-own" data-label="Glycogo">Sleep, hunger, fatigue, soreness, stress, mood, motivation, injury and hydration. Syncs to Intervals.icu.</td>
+            <td data-label="Hexis">No self reported wellbeing ratings.</td>
+            <td data-label="Fuelin">No self reported wellbeing ratings.</td>
+            <td data-label="Avitu">No self reported wellbeing ratings.</td>
+          </tr>
+          <tr>
+            <th scope="row">Food logging</th>
+            <td class="is-own" data-label="Glycogo">Search, custom foods, saved meals, text, voice, photo or barcode. Voice, photo and barcode are Premium.</td>
+            <td data-label="Hexis">Search, barcode, voice, custom foods and meals.</td>
+            <td data-label="Fuelin">AI voice or text logging, barcode, saved recipes and quick log.</td>
+            <td data-label="Avitu">Meal and snack diary, no recipes.</td>
+          </tr>
+          <tr>
+            <th scope="row">Sports products</th>
+            <td class="is-own" data-label="Glycogo">Over 500 products with carbs, caffeine, sodium and glucose to fructose ratio where published.</td>
+            <td data-label="Hexis">No specific sports product catalogue; gels and bars can still be logged from the general food database.</td>
+            <td data-label="Fuelin">Gels, blocks and bars named in in-activity guidance, plus a partner product shop.</td>
+            <td data-label="Avitu">No specific sports product catalogue; products can still be logged from the general food database.</td>
+          </tr>
+          <tr>
+            <th scope="row">Platform</th>
+            <td class="is-own" data-label="Glycogo">Web and Android, plus an installable progressive web app on iPhone.</td>
+            <td data-label="Hexis">iPhone and Android apps, no desktop app.</td>
+            <td data-label="Fuelin">iPhone and Android apps, no desktop app.</td>
+            <td data-label="Avitu">Web and Android. iOS coming soon.</td>
+          </tr>
+          <tr>
+            <th scope="row">Languages</th>
+            <td class="is-own" data-label="Glycogo">English, Spanish, French, Italian, German and Dutch.</td>
+            <td data-label="Hexis">English, French, Italian, Spanish.</td>
+            <td data-label="Fuelin">English only.</td>
+            <td data-label="Avitu">English only.</td>
+          </tr>
+          <tr>
+            <th scope="row">Price</th>
+            <td class="is-own" data-label="Glycogo">Free core features, with optional Premium tools at about €3.50 or $4 a month: AI chat, voice, photo and barcode logging.</td>
+            <td data-label="Hexis">€16.99 a month or €109.99 a year, no free tier.</td>
+            <td data-label="Fuelin">$29 a month or $139 a year, no general free trial.</td>
+            <td data-label="Avitu">€4.99 a month or €49.99 a year, 14 day trial with no card.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="foot-note">
+      Checked against each vendor's own site, app store listing or help centre on 30 October 2026:
+      <a href="https://glycogo.fit/">glycogo.fit</a>,
+      <a href="https://athlete.hexis.live/">athlete.hexis.live</a>,
+      <a href="https://hexis.live/race-planner">hexis.live/race-planner</a>,
+      <a href="https://fuelin.com/">fuelin.com</a> and <a href="https://fuelin.com/faq">its FAQ</a>,
+      <a href="https://avitu.co/">avitu.co</a> and <a href="https://avitu.co/changelog.html">its changelog</a>,
+      plus <a href="https://www.joinbasecamp.com/post/trainingpeaks-fueling-insights-vs-hexis-what-athletes-should-know">BaseCamp's write up on Hexis</a>,
+      <a href="https://2-fuel.com/compare">2fuel's comparison of Hexis</a>,
+      <a href="https://apps.apple.com/us/app/hexis-live/id1610334327">Hexis on the App Store</a>
+      and <a href="https://www.endurancesportswire.com/fuelin-unveils-fuelin-app-2-0-a-revolution-in-personalized-nutrition-for-athletes/">Fuelin's 2.0 release notes</a>.
+      Feature sets and prices change; if something here is out of date, tell us at
+      <a href="mailto:contactgemperformance@gmail.com">contactgemperformance@gmail.com</a> and we will re-check it.
+    </p>
+  </section>
+
+  <section>
+    <h2 class="section-title">Where the numbers come from</h2>
+    <div class="prose">
+      <p>
+        Most apps start with an estimated resting metabolic rate, add the cost of your sessions and turn the
+        total into macro targets. It is a sound way to manage weight, and three of the four do exactly that.
+        It does not tell you how much energy is left for everything other than training, relative to your
+        fat-free mass: the number that matters for hormonal function, bone health and the low energy
+        availability problems that build up quietly over a season.
+      </p>
+      <p>
+        Glycogo sets daily requirements from energy availability and training expenditure, then lets you set
+        macro ranges and meal distribution around them, and tracks availability across the day: projected
+        levels, the largest hourly deficit, and time spent below target. Hexis shows availability live through
+        the day with Live Energy, worked from an estimated resting metabolic rate. Fuelin and Avitu do not
+        compute it within the day at all.
+      </p>
+      <p>
+        Effort is not the same as cost. Two athletes can hold the same heart rate at very different metabolic
+        costs, and the difference shows up in what a session takes out of you. Glycogo takes cycling FTP and
+        gross efficiency, running critical speed and running economy, and swimming CSS with propulsive
+        efficiency, then estimates the carbohydrate and fat each session uses. Hexis asks for FTP, critical
+        speed and cycling efficiency, so cycling and running costs come from your physiology there as well,
+        but running economy and swimming are left out. Fuelin takes FTP and threshold pace. Avitu takes FTP
+        alone, so cycling has a threshold to work from while running and swimming do not. If you train on a
+        power meter or a watch with a threshold estimate you trust, this is the part that moves the numbers most. What
+        comes out of it matters as much as what goes in: only Glycogo turns those inputs into a per-session
+        carbohydrate and fat split.
+      </p>
+      <p>
+        You can see the same engine on its own in the free
+        <a href="/substrate-explorer/">fat and carb utilization calculator</a>: grams of fat and carbohydrate
+        per hour at every intensity, shaped by your fitness and the session.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Session carbohydrate, race day and the next day</h2>
+    <div class="prose">
+      <p>
+        Gut tolerance is individual, trainable and different by sport: 90 g/h on the bike is not 90 g/h
+        running. Glycogo lets you set carbohydrate-per-hour ranges by sport and GI tolerance, or start from
+        the recommended targets. Hexis and Fuelin apply a fixed hourly target that you cannot change in the
+        app unless you are on a coached plan, and Avitu applies one you cannot change at all. That is fine
+        until you are gut training towards something higher. The free
+        <a href="/fuel-ratio-calculator/">carb fuel-ratio calculator</a> shows how a product or a mix of
+        foods splits against the glucose to fructose ratios used in the research.
+      </p>
+      <p>
+        Race day is where a fuelling app either helps or gets in the way. Four hours on a rolling course is
+        not the same as four hours on a climb, and where the aid stations fall decides what you carry.
+        Glycogo plans by course profile and section, including the products you will use and the stations you
+        will pass, with an 8 to 12 g/kg carb load you can switch on for the days before. Fuelin gives race
+        week and race day guidance without course planning. Avitu sets carb loading and in-activity targets
+        around a key event. Hexis has no in-app race planner.
+      </p>
+      <p>
+        The quieter difference is the next day. Glycogo lets you mark meals as completed and carries any
+        shortfall or surplus into tomorrow's meal targets, so a light day on the bike is accounted for rather
+        than quietly forgotten. Hexis and Fuelin allow meals to be completed but do not carry the difference
+        forward. Avitu offers neither.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">What it costs</h2>
+    <div class="prose">
+      <p>
+        Glycogo's core features are free; Premium adds AI chat, voice, photo and barcode logging for about
+        €3.50 or $4 a month. Hexis is €16.99 a month or €109.99 a year with no free tier. Fuelin is $29 a
+        month or $139 a year with no general free trial, and is the most expensive of the four. Avitu is
+        €4.99 a month or €49.99 a year with a 14 day trial that does not ask for a card. Prices are as
+        displayed on 30 October 2026 and are set by each vendor, so check before you subscribe.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">What this does not compare</h2>
+    <div class="prose">
+      <p>
+        Coaching support, dietitian review, food database size, integrations beyond Intervals.icu and how
+        pleasant each app is to use day to day. All of it matters, and none of it is comparable from public
+        documentation. Nor does it rank the four: the right one depends on whether you want a weight
+        management tool with fuelling attached, or a fuelling tool built from your own physiology. The table
+        is there so you can check the specific thing you care about.
+      </p>
+    </div>
+  </section>
+
+  <div class="signoff">
+    <p>Glycogo's core features are free and need no card. Web and Android, in six languages.</p>
+    <a class="btn" href="https://app.glycogo.fit/">Create a free account</a>
+  </div>
+
+  <footer>
+    <div class="brand">GEM Performance<span class="dot">.</span> Glycogo</div>
+    <p>
+      Goal-Driven, Evidence-Based, Monitoring tools for athletes · G.E.McConnochie PhD<br>
+      <a href="mailto:contactgemperformance@gmail.com">contactgemperformance@gmail.com</a> ·
+      <a href="/terms">Terms</a> · <a href="/privacy">Privacy</a>
+    </p>
+  </footer>
+
+</main>
+
+<script>
+  document.querySelectorAll('.nav-dropdown').forEach((dd) => {
+    const btn = dd.querySelector('.nav-dropdown-toggle');
+    if (!btn) return;
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const open = !dd.classList.contains('open');
+      document.querySelectorAll('.nav-dropdown.open').forEach((o) => {
+        o.classList.remove('open');
+        o.querySelector('.nav-dropdown-toggle')?.setAttribute('aria-expanded', 'false');
+      });
+      dd.classList.toggle('open', open);
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  });
+  document.addEventListener('click', () => {
+    document.querySelectorAll('.nav-dropdown.open').forEach((o) => {
+      o.classList.remove('open');
+      o.querySelector('.nav-dropdown-toggle')?.setAttribute('aria-expanded', 'false');
+    });
+  });
+</script>
+
+<script src="/search/search-index.js"></script>
+<script src="/search/search-rrf.js"></script>
+<script src="/search/search.js"></script>
+</body>
+</html>

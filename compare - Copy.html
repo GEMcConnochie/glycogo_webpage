@@ -1,0 +1,379 @@
+<!--
+  Glycogo comparison table, drop-in section for webpage.html.
+
+  One <style> block scoped to .cmp, one <section>, no JS.
+  The Google Fonts links are only so this file previews on its own. Delete them
+  (and the charset line) when pasting into a page that already sets both.
+
+  HOW TO EDIT
+  -----------
+  All wording lives in the <section> at the bottom. Each row is one <tr> block:
+    <th scope="row">Row name</th>
+    <td data-label="Glycogo"> ... </td>   Glycogo, tinted green
+    <td data-label="Hexis"> ... </td>
+    <td data-label="Fuelin"> ... </td>
+    <td data-label="Avitu"> ... </td>
+  One distinction per cell, no more: the reader is scanning, not studying.
+  Cell text is a plain fragment. No bold, no full sentences, no emphasis.
+  A missing feature is written as "No ...", never hedged.
+  A row that carries Glycogo's strongest advantage takes
+    
+  after its note. Keep it to a handful of rows or it stops meaning anything.
+  To add a row, copy a whole <tr>...</tr> block and change the words.
+  To reorder rows, move the <tr> blocks. Keep the four <td> in that brand order
+  and keep the data-label values, or the phone layout loses its brand labels.
+  Leave class names (cmp-..., is-own) alone. Colours are the --c-*
+  variables at the top of the <style> block.
+-->
+<meta charset="UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  .cmp {
+    --c-green: #2e7d32; --c-green-pale: #e8f5e9; --c-orange: #e65c00;
+    --c-navy: #1a1a3e; --c-muted: #5a6a5a; --c-border: #c8d8c8; --c-line: #e7f0e9;
+    font-family: 'DM Sans', sans-serif; color: var(--c-navy);
+    max-width: 1180px; margin: 0 auto; padding: 3rem 2rem 2rem;
+  }
+  .cmp *, .cmp *::before, .cmp *::after { box-sizing: border-box; }
+  .cmp-eyebrow {
+    font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+    color: var(--c-green); margin-bottom: .6rem;
+  }
+  .cmp h2 {
+    font-size: clamp(1.6rem, 3.2vw, 2.3rem); font-weight: 800; letter-spacing: -.03em;
+    line-height: 1.12; margin: 0 0 .8rem;
+  }
+  .cmp h2 em { font-style: normal; color: var(--c-orange); }
+  .cmp-lede { font-size: .96rem; line-height: 1.7; color: var(--c-muted); max-width: 62ch; margin: 0 0 1.8rem; }
+
+  .cmp-shell {
+    background: #fff; border: 1px solid var(--c-border); border-radius: 16px;
+    overflow: hidden; box-shadow: 0 10px 30px rgba(46,125,50,.06);
+  }
+  .cmp table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+  .cmp caption { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+  .cmp thead th {
+    text-align: left; vertical-align: bottom; padding: 1rem .9rem .9rem;
+    font-size: .8rem; font-weight: 700; color: var(--c-navy);
+    background: #f7fbf8; border-bottom: 1px solid var(--c-border);
+  }
+  .cmp thead th:first-child { width: 17%; }
+  .cmp thead th.is-own { background: #d9eeda; border-bottom: 2px solid #9ccf9f; }
+  .cmp thead .cmp-mark { display: block; font-family: 'Space Mono', monospace; font-size: 1rem; color: var(--c-green); letter-spacing: -.02em; }
+  .cmp thead .cmp-own-note { display: block; margin-top: .2rem; font-size: .68rem; font-weight: 600; color: var(--c-green); }
+
+  .cmp tbody th[scope="row"] {
+    text-align: left; vertical-align: top; padding: 1rem .9rem;
+    font-size: .84rem; font-weight: 700; line-height: 1.4; color: var(--c-navy);
+    background: #fbfdfb; border-top: 1px solid var(--c-line);
+  }
+  .cmp tbody td {
+    vertical-align: top; padding: 1rem .9rem;
+    font-size: .84rem; line-height: 1.58; color: #3d4d42;
+    border-top: 1px solid var(--c-line); border-left: 1px solid #f0f6f1;
+  }
+  .cmp tbody td.is-own {
+    background: #eff8f0; color: var(--c-navy); border-left-color: #cfe6d0;
+    box-shadow: inset 3px 0 0 0 #b6dcb8;
+  }
+  .cmp tbody tr:first-child th, .cmp tbody tr:first-child td { border-top: none; }
+
+  .cmp-note { margin: 1rem 0 0; font-size: .76rem; line-height: 1.65; color: var(--c-muted); }
+  .cmp-note a { color: var(--c-green); }
+
+  /* Mobile: each row becomes its own card */
+  @media (max-width: 1040px) {
+    .cmp { padding: 2.2rem 1.25rem 1.5rem; }
+    .cmp-shell { background: transparent; border: none; box-shadow: none; border-radius: 0; }
+    .cmp table, .cmp tbody, .cmp tr, .cmp th, .cmp td { display: block; width: 100%; }
+    .cmp thead { display: none; }
+    .cmp tbody tr {
+      background: #fff; border: 1px solid var(--c-border); border-radius: 14px;
+      margin-bottom: .85rem; overflow: hidden; box-shadow: 0 4px 14px rgba(46,125,50,.05);
+    }
+    .cmp tbody th[scope="row"] {
+      background: linear-gradient(to right, var(--c-green-pale), #f7fbf8);
+      border: none; border-bottom: 1px solid #e0efe1; padding: .75rem 1rem;
+      font-size: .78rem; text-transform: uppercase; letter-spacing: .06em; color: var(--c-green);
+    }
+    .cmp tbody td { border: none; border-bottom: 1px solid #f0f6f1; padding: .65rem .9rem; font-size: .82rem; line-height: 1.5; }
+    .cmp tbody td:last-child { border-bottom: none; }
+    .cmp tbody td.is-own { background: #eff8f0; }
+    .cmp tbody td::before {
+      content: attr(data-label); display: block; margin-bottom: .25rem;
+      font-size: .62rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--c-muted);
+    }
+    .cmp tbody td.is-own::before { color: var(--c-green); }
+  }
+
+  @media print {
+    .cmp { padding: 0; max-width: none; }
+    .cmp-shell { box-shadow: none; }
+    .cmp tbody tr { break-inside: avoid; }
+  }
+</style>
+
+<section class="cmp" id="compare" aria-labelledby="cmp-heading">
+  <p class="cmp-eyebrow">Compare</p>
+  <h2 id="cmp-heading">How Glycogo <em>compares.</em></h2>
+  <p class="cmp-lede">
+    Three other apps do the same job. They differ on what they know about you, what you can see, and what you can change.
+  </p>
+
+  <div class="cmp-shell">
+    <table>
+      <caption>Feature comparison of Glycogo, Hexis, Fuelin and Avitu, checked against vendor sources in October 2026.</caption>
+      <thead>
+        <tr>
+          <th scope="col"></th>
+          <th scope="col" class="is-own"><span class="cmp-mark">Glycogo</span><span class="cmp-own-note">Our app</span></th>
+          <th scope="col">Hexis</th>
+          <th scope="col">Fuelin</th>
+          <th scope="col">Avitu</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">Daily fuelling</th>
+          <td class="is-own" data-label="Glycogo">
+            Energy availability and training expenditure set your requirements, with customisable macro ranges and meal distribution.
+          </td>
+          <td data-label="Hexis">
+            Targets from estimated resting metabolic rate and weight goals, adjusted for training load.
+          </td>
+          <td data-label="Fuelin">
+            Targets from estimated resting metabolic rate and weight goals, adjusted for training load.
+          </td>
+          <td data-label="Avitu">
+            Targets from estimated resting metabolic rate and weight goals, adjusted for training load.
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">Sport-specific modelling</th>
+          <td class="is-own" data-label="Glycogo">
+            Sport-specific inputs: cycling FTP and gross efficiency, running critical speed and running economy, swimming CSS and propulsive efficiency.
+          </td>
+          <td data-label="Hexis">
+            No efficiency or threshold entry.
+          </td>
+          <td data-label="Fuelin">
+            FTP and threshold pace, estimated or entered.
+          </td>
+          <td data-label="Avitu">
+            No efficiency or threshold entry.
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">Energy availability tracking</th>
+          <td class="is-own" data-label="Glycogo">
+            Track energy availability throughout the day, including projected levels, largest hourly deficit and time below target.
+          </td>
+          <td data-label="Hexis">
+            Live Energy shows energy availability through the day.
+          </td>
+          <td data-label="Fuelin">
+            No within-day energy availability.
+          </td>
+          <td data-label="Avitu">
+            No within-day energy availability.
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">Session fuelling</th>
+          <td class="is-own" data-label="Glycogo">
+            Customise carbohydrate-per-hour ranges by sport and GI tolerance, or use recommended targets.
+          </td>
+          <td data-label="Hexis">
+            Fixed carb per hour target, not customisable.
+          </td>
+          <td data-label="Fuelin">
+            Fixed carb per hour target, not customisable.
+          </td>
+          <td data-label="Avitu">
+            Fixed carb per hour target, not customisable.
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">Substrate utilisation</th>
+          <td class="is-own" data-label="Glycogo">
+            Estimated carbohydrate and fat utilisation for each session, from its energy expenditure, intensity and dietary intake.
+          </td>
+          <td data-label="Hexis">
+            No substrate estimate.
+          </td>
+          <td data-label="Fuelin">
+            No substrate estimate.
+          </td>
+          <td data-label="Avitu">
+            No substrate estimate.
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">Calculation transparency</th>
+          <td class="is-own" data-label="Glycogo">
+            See the energy, carbohydrate and estimated fat contribution of each session.
+          </td>
+          <td data-label="Hexis">
+            No calculation shown.
+          </td>
+          <td data-label="Fuelin">
+            No calculation shown.
+          </td>
+          <td data-label="Avitu">
+            Formula visible for a daily target, no session breakdown.
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">Race-day planning</th>
+          <td class="is-own" data-label="Glycogo">
+            Plan fuelling by course profile and section, including products and aid stations. Toggle an 8 to 12 g/kg carb load.
+          </td>
+          <td data-label="Hexis">
+            No in-app race planner.
+          </td>
+          <td data-label="Fuelin">
+            Race week and race day fuelling guidance, no course planning.
+          </td>
+          <td data-label="Avitu">
+            Carb loading and in-activity targets around a key event, no course planning.
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">Meal tracking and carryover</th>
+          <td class="is-own" data-label="Glycogo">
+            Optionally mark meals as completed. Any daily shortfall or surplus carries into the next day's meal targets.
+          </td>
+          <td data-label="Hexis">
+            Meals can be completed, with no next-day carry over.
+          </td>
+          <td data-label="Fuelin">
+            Meal Ticker, with no next-day carry over.
+          </td>
+          <td data-label="Avitu">
+            No meal completion or next-day carry over.
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">Historical data and trends</th>
+          <td class="is-own" data-label="Glycogo">
+            Plot nutrition, wellness and training metrics against targets over any date range.
+          </td>
+          <td data-label="Hexis">
+            Charts for weight, body fat, calories, macros and energy balance.
+          </td>
+          <td data-label="Fuelin">
+            Calendar view of daily and weekly targets against historical macros.
+          </td>
+          <td data-label="Avitu">
+            No history view.
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">Wellness tracking</th>
+          <td class="is-own" data-label="Glycogo">
+            Sleep, hunger, fatigue, soreness, stress, mood, motivation, injury and hydration. Syncs to Intervals.icu.
+          </td>
+          <td data-label="Hexis">
+            No self reported wellbeing ratings.
+          </td>
+          <td data-label="Fuelin">
+            No self reported wellbeing ratings.
+          </td>
+          <td data-label="Avitu">
+            No self reported wellbeing ratings.
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">Food logging</th>
+          <td class="is-own" data-label="Glycogo">
+            Search, custom foods, saved meals, text, voice, photo or barcode. Voice, photo and barcode are Premium.
+          </td>
+          <td data-label="Hexis">
+            Search, barcode, voice, custom foods and meals.
+          </td>
+          <td data-label="Fuelin">
+            AI voice or text logging, barcode, saved recipes and quick log.
+          </td>
+          <td data-label="Avitu">
+            Meal and snack diary, no recipes.
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">Sports products</th>
+          <td class="is-own" data-label="Glycogo">
+            Over 500 products with carbs, caffeine, sodium and glucose to fructose ratio where published.
+          </td>
+          <td data-label="Hexis">
+            No sports product catalogue.
+          </td>
+          <td data-label="Fuelin">
+            Gels, blocks and bars named in in-activity guidance, plus a partner product shop.
+          </td>
+          <td data-label="Avitu">
+            No sports product catalogue.
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">Platform</th>
+          <td class="is-own" data-label="Glycogo">
+            Web and Android. On iPhone, use the web app through Safari and add it to your home screen.
+          </td>
+          <td data-label="Hexis">
+            iPhone and Android apps, no desktop app.
+          </td>
+          <td data-label="Fuelin">
+            iPhone and Android apps, no desktop app.
+          </td>
+          <td data-label="Avitu">
+            Web and Android. iOS coming soon.
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">Languages</th>
+          <td class="is-own" data-label="Glycogo">
+            English, Spanish, French, Italian, German and Dutch.
+          </td>
+          <td data-label="Hexis">
+            English, French, Italian, Spanish.
+          </td>
+          <td data-label="Fuelin">
+            English only.
+          </td>
+          <td data-label="Avitu">
+            English only.
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">Price</th>
+          <td class="is-own" data-label="Glycogo">
+            Free core features, with optional Premium tools at about €3.50 or $4 a month: AI chat, voice, photo and barcode logging.
+          </td>
+          <td data-label="Hexis">
+            €16.99 a month or €109.99 a year, no free tier.
+          </td>
+          <td data-label="Fuelin">
+            $29 a month or $139 a year, no general free trial.
+          </td>
+          <td data-label="Avitu">
+            €4.99 a month or €49.99 a year, 14 day trial with no card.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="cmp-note">
+    Checked against each vendor's own site, app store listing or help centre on 30 October 2026:
+    <a href="https://glycogo.fit/">glycogo.fit</a>,
+    <a href="https://athlete.hexis.live/">athlete.hexis.live</a>,
+    <a href="https://hexis.live/race-planner">hexis.live/race-planner</a>,
+    <a href="https://fuelin.com/">fuelin.com</a> and <a href="https://fuelin.com/faq">its FAQ</a>,
+    <a href="https://avitu.co/">avitu.co</a> and <a href="https://avitu.co/changelog.html">Avitu's changelog</a>,
+    plus <a href="https://www.joinbasecamp.com/post/trainingpeaks-fueling-insights-vs-hexis-what-athletes-should-know">BaseCamp's write up on Hexis</a>,
+    <a href="https://2-fuel.com/compare">2fuel's comparison of Hexis</a>,
+    <a href="https://apps.apple.com/us/app/hexis-live/id1610334327">Hexis on the App Store</a>
+    and <a href="https://www.endurancesportswire.com/fuelin-unveils-fuelin-app-2-0-a-revolution-in-personalized-nutrition-for-athletes/">Fuelin's 2.0 release notes</a>.
+  </p>
+</section>
