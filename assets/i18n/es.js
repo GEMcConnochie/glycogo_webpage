@@ -1009,7 +1009,7 @@ window.GLYCOGO_I18N.es = {
     "Training": "Entrenamiento",
     "Messages": "Mensajes",
     "Fat and carb utilization calculator": "Calculadora de utilización de grasas y carbohidratos",
-    "Open demo dashboard": "Abrir el panel de demostración",
+    "Try it out": "Pruébalo",
     "For coaches and sports nutrition practitioners": "Para entrenadores y profesionales de la nutrición deportiva",
     "Know how your athletes are fuelling.": "Descubre cómo se alimentan tus deportistas.",
     "See what athletes are eating, how their intake stacks up against their requirements and whether they're getting enough carbohydrate to support their training. Glycogo brings nutrition, training and wellness data into one place, so you can assess the detail behind an athlete's daily fuelling.": "Mira qué comen los deportistas, cómo encaja su ingesta con sus necesidades y si obtienen suficientes carbohidratos para su entrenamiento. Glycogo reúne datos de nutrición, entrenamiento y bienestar en un solo lugar para que puedas valorar el detalle que hay detrás de la alimentación diaria de un deportista.",
