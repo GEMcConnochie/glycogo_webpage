@@ -32,6 +32,7 @@ const PAGES = [
   { route: "/privacy/", file: "privacy/index.html", block: "privacy", priority: "0.3", changefreq: "yearly" },
   { route: "/terms/", file: "terms/index.html", block: "terms", priority: "0.3", changefreq: "yearly" },
   { route: "/delete-account/", file: "delete-account/index.html", block: "deleteAccount", priority: "0.3", changefreq: "yearly" },
+  { route: "/for-coaches/", file: "for-coaches/index.html", block: "forCoaches", priority: "0.8", changefreq: "monthly" },
 ];
 
 /* English-only pages: indexed and listed in the sitemap, but not translated
@@ -259,6 +260,13 @@ function setHeadUrls(html, route, lang) {
     /(<meta property="og:url" content=")[^"]*(")/i,
     "$1" + canonical + "$2"
   );
+  // Structured data carries absolute URLs too: a translated copy has to
+  // point at itself, not at the English page it was built from.
+  const english = urlFor("en", route);
+  out = out.replace(
+    /<script type="application\/ld\+json">[\s\S]*?<\/script>/g,
+    (block) => block.split(english).join(canonical)
+  );
   return out;
 }
 
@@ -319,6 +327,17 @@ for (const page of PAGES) {
 
 /* ----------------------------------------------------------------- sitemap */
 
+/* A page's own date, so a crawl after an edit sees a fresh <lastmod> and
+   pages nobody touched are not re-crawled on someone else's change. */
+function lastmodFor(file) {
+  try {
+    const stat = fs.statSync(path.join(ROOT, file));
+    return stat.mtime.toISOString().slice(0, 10);
+  } catch (error) {
+    return new Date().toISOString().slice(0, 10);
+  }
+}
+
 const sitemapLines = ['<?xml version="1.0" encoding="UTF-8"?>'];
 sitemapLines.push(
   '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">'
@@ -327,6 +346,7 @@ for (const page of PAGES) {
   for (const lang of LANGS) {
     sitemapLines.push("  <url>");
     sitemapLines.push("    <loc>" + urlFor(lang, page.route) + "</loc>");
+    sitemapLines.push("    <lastmod>" + lastmodFor(page.file) + "</lastmod>");
     sitemapLines.push("    <changefreq>" + page.changefreq + "</changefreq>");
     sitemapLines.push("    <priority>" + page.priority + "</priority>");
     for (const alt of LANGS) {
@@ -343,6 +363,11 @@ for (const page of PAGES) {
 for (const page of EXTRA_URLS) {
   sitemapLines.push("  <url>");
   sitemapLines.push("    <loc>" + SITE + page.route + "</loc>");
+  sitemapLines.push(
+    "    <lastmod>" +
+      lastmodFor(page.route.replace(/^\//, "") + "index.html") +
+      "</lastmod>"
+  );
   sitemapLines.push("    <changefreq>" + page.changefreq + "</changefreq>");
   sitemapLines.push("    <priority>" + page.priority + "</priority>");
   sitemapLines.push("  </url>");

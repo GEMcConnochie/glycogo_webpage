@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<link rel="icon" type="image/png" href="/logosmall.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Für Trainer | Glycogo</title>
+<meta name="description" content="Know how your athletes are fuelling: what they eat, how intake compares with their targets, and whether they get enough carbohydrate to support their training.">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta name="author" content="Glycogo">
+<link rel="canonical" href="https://glycogo.fit/de/for-coaches/">
+<!-- i18n:alternates -->
+<link rel="alternate" hreflang="en" href="https://glycogo.fit/for-coaches/">
+<link rel="alternate" hreflang="de" href="https://glycogo.fit/de/for-coaches/">
+<link rel="alternate" hreflang="es" href="https://glycogo.fit/es/for-coaches/">
+<link rel="alternate" hreflang="fr" href="https://glycogo.fit/fr/for-coaches/">
+<link rel="alternate" hreflang="it" href="https://glycogo.fit/it/for-coaches/">
+<link rel="alternate" hreflang="nl" href="https://glycogo.fit/nl/for-coaches/">
+<link rel="alternate" hreflang="x-default" href="https://glycogo.fit/for-coaches/">
+<!-- /i18n:alternates -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Für Trainer | Glycogo">
+<meta property="og:description" content="Monitor nutrition across your athletes, from daily intake and energy availability to carbohydrate requirements during training and racing.">
+<meta property="og:site_name" content="Glycogo">
+<meta property="og:url" content="https://glycogo.fit/de/for-coaches/">
+<meta property="og:image" content="https://glycogo.fit/logosmall.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="For coaches | Glycogo">
+<meta name="twitter:description" content="Monitor nutrition across your athletes, from daily intake and energy availability to carbohydrate requirements during training and racing.">
+<meta name="twitter:image" content="https://glycogo.fit/logosmall.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "For coaches | Glycogo",
+  "description": "Know how your athletes are fuelling: what they eat, how intake compares with their targets, and whether they get enough carbohydrate to support their training.",
+  "url": "https://glycogo.fit/de/for-coaches/",
+  "isPartOf": { "@type": "WebSite", "name": "Glycogo", "url": "https://glycogo.fit" },
+  "publisher": { "@type": "Organization", "name": "Glycogo", "url": "https://glycogo.fit", "logo": "https://glycogo.fit/logosmall.png" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://glycogo.fit/" },
+    { "@type": "ListItem", "position": 2, "name": "For coaches", "item": "https://glycogo.fit/de/for-coaches/" }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300..700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #102434;
+    --navy-2: #1b3549;
+    --green: #2f8f4e;
+    --green-dk: #226b3b;
+    --green-soft: #eaf4ec;
+    --green-line: #cbe3d2;
+    --orange: #d2601f;
+    --paper: #f6f7f2;
+    --line: #e2e7e0;
+    --line-2: #eef1ec;
+    --muted: #5c6d7a;
+    --muted-2: #8a97a1;
+    --mono: 'Space Mono', ui-monospace, monospace;
+    --sans: 'DM Sans', system-ui, -apple-system, sans-serif;
+    --r: 10px;
+    --nav-h: 64px;
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0; padding-top: var(--nav-h);
+    font-family: var(--sans); background: #fbfbf8; color: var(--navy);
+    -webkit-font-smoothing: antialiased;
+  }
+  img, video { max-width: 100%; display: block; }
+  a { color: inherit; text-decoration: none; }
+  button { font: inherit; color: inherit; }
+  .wrap { max-width: 1360px; margin: 0 auto; padding: 0 32px; }
+  .eyebrow {
+    font-family: var(--mono); font-size: 11px; letter-spacing: .16em; text-transform: uppercase;
+    color: var(--green); margin: 0 0 18px;
+  }
+  .eyebrow span { color: var(--muted-2); }
+  h1, h2, h3, h4 { font-weight: 500; letter-spacing: -.02em; margin: 0; }
+  h1 { font-size: clamp(38px, 5vw, 62px); line-height: 1.04; letter-spacing: -.035em; max-width: 24ch; }
+  h2 { font-size: clamp(27px, 3.2vw, 40px); line-height: 1.1; letter-spacing: -.028em; max-width: 24ch; }
+  h3 { font-size: 18px; line-height: 1.35; }
+  p { margin: 0; }
+  .lede { font-size: 18.5px; line-height: 1.6; color: var(--muted); max-width: 60ch; margin-top: 22px; }
+
+  /* ---------- nav ---------- */
+  nav#main-nav {
+    position: fixed; inset: 0 0 auto; z-index: 900; height: var(--nav-h);
+    background: #fff; border-bottom: 1px solid var(--line);
+  }
+  .nav-inner {
+    max-width: 1360px; margin: 0 auto; padding: 0 32px; height: 100%;
+    display: flex; align-items: center; justify-content: space-between; gap: 24px;
+  }
+  .nav-inner > a img { height: 30px; width: auto; }
+  .nav-links { display: flex; align-items: center; gap: 24px; }
+  .nav-links > a, .nav-toggle {
+    font-size: 13.5px; font-weight: 500; color: var(--muted); background: none;
+    border: 0; padding: 0; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;
+  }
+  .nav-links > a:hover, .nav-toggle:hover { color: var(--navy); }
+  .nav-cta {
+    background: var(--green); color: #fff !important; font-weight: 500;
+    padding: 10px 18px; border-radius: 6px; font-size: 13.5px;
+  }
+  .nav-cta:hover { background: var(--green-dk); }
+  .nav-dropdown { position: relative; }
+  .nav-toggle .chev {
+    width: 0; height: 0; border-left: 4px solid transparent; border-right: 4px solid transparent;
+    border-top: 4px solid currentColor; opacity: .6; transition: transform .18s;
+  }
+  .nav-dropdown.open .chev { transform: rotate(180deg); }
+  .nav-menu {
+    position: absolute; top: calc(100% + 14px); left: -12px; min-width: 260px; background: #fff;
+    border: 1px solid var(--line); border-radius: 8px; padding: 6px;
+    box-shadow: 0 20px 40px -24px rgba(16, 36, 52, .35);
+    opacity: 0; visibility: hidden; transform: translateY(-4px);
+    transition: opacity .16s, transform .16s, visibility .16s;
+  }
+  .nav-dropdown.open .nav-menu, .nav-dropdown:hover .nav-menu, .nav-dropdown:focus-within .nav-menu {
+    opacity: 1; visibility: visible; transform: none;
+  }
+  .nav-menu a { display: block; padding: 9px 12px; border-radius: 5px; font-size: 13.5px; color: var(--muted); }
+  .nav-menu a:hover { background: var(--paper); color: var(--navy); }
+  .nav-burger {
+    display: none; align-items: center; height: 32px; padding: 0 12px; border: 1px solid var(--line);
+    border-radius: 6px; background: #fff; font-size: 13px; color: var(--navy); cursor: pointer;
+  }
+
+  /* ---------- buttons ---------- */
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    height: 46px; padding: 0 22px; border-radius: 6px; font-size: 14.5px; font-weight: 500;
+    background: var(--green); color: #fff; border: 1px solid var(--green);
+    transition: background .18s, border-color .18s;
+  }
+  .btn:hover { background: var(--green-dk); border-color: var(--green-dk); }
+  .btn.ghost { background: transparent; color: var(--navy); border-color: var(--line); }
+  .btn.ghost:hover { background: #fff; border-color: #cdd5cd; }
+  .btn.light { background: #fff; color: var(--navy); border-color: #fff; }
+  .btn.light:hover { background: var(--green-soft); border-color: var(--green-soft); }
+
+  /* ---------- hero ---------- */
+  .hero { padding: 84px 0 72px; background: #fff; border-bottom: 1px solid var(--line); }
+  .hero-actions { display: flex; gap: 12px; margin-top: 30px; flex-wrap: wrap; }
+
+  /* A lid, a hinge and a deck: the bezel is the dark edge the picture sits in,
+     the camera is what says it is a screen rather than a framed image, and the
+     deck is the part that is wider than the lid when a laptop is open. */
+  .laptop { max-width: 1060px; margin: 56px auto 0; }
+  .laptop-screen {
+    position: relative;
+    border: 11px solid #1c2b35;
+    border-top-width: 13px;
+    border-bottom-width: 15px;
+    border-radius: 18px 18px 5px 5px;
+    background: #1c2b35;
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, .14),
+      0 1px 2px rgba(16, 36, 52, .18),
+      0 46px 90px -58px rgba(16, 36, 52, .7);
+  }
+  /* The camera, centred in the top bezel. */
+  .laptop-screen::before {
+    content: ""; position: absolute; top: -8px; left: 50%; width: 5px; height: 5px;
+    margin-left: -2.5px; border-radius: 50%; background: #40525c;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .12);
+  }
+  /* A glass sheen, barely there: enough that the screen reads as a surface. */
+  .laptop-screen::after {
+    content: ""; position: absolute; inset: 0; pointer-events: none; z-index: 2;
+    background: linear-gradient(118deg, rgba(255, 255, 255, .13) 0%, rgba(255, 255, 255, 0) 42%);
+  }
+  .laptop-screen video { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; background: #e6f2f3; }
+  /* The deck: wider than the lid, its front edge rounded, and a shadow where the
+     screen meets it so the two read as a hinge rather than a stripe. */
+  .laptop-base {
+    position: relative; height: 15px; margin: 0 -54px;
+    background: linear-gradient(#eef3f3, #d3ddde);
+    border: 1px solid #c2ced0; border-top: 0;
+    border-radius: 0 0 15px 15px;
+    box-shadow: 0 22px 34px -30px rgba(16, 36, 52, .6);
+  }
+  .laptop-base::before {
+    content: ""; position: absolute; top: 0; left: 50%; width: 148px; height: 5px;
+    margin-left: -74px; border-radius: 0 0 5px 5px; background: #c0ced0;
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, .5);
+  }
+  .laptop-base::after {
+    content: ""; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+    background: linear-gradient(rgba(16, 36, 52, .22), rgba(16, 36, 52, 0));
+  }
+
+  /* ---------- sections ---------- */
+  .section { padding: 96px 0; }
+  .section + .section { border-top: 1px solid var(--line); }
+  .section-head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 56px; align-items: start; }
+  .section-head .prose { padding-top: 2px; }
+  .prose p { color: var(--muted); font-size: 16px; line-height: 1.65; max-width: 50ch; }
+  .prose p + p { margin-top: 14px; }
+  .prose h4 { font-size: 15px; font-weight: 600; color: var(--navy); margin: 22px 0 8px; }
+  .prose h4:first-child { margin-top: 0; }
+  .subhead { margin-top: 44px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 56px; align-items: start; }
+  .subhead h3 { max-width: 24ch; }
+
+  /* ---------- media ---------- */
+  .media {
+    margin: 36px 0 0; border: 1px solid var(--line); border-radius: var(--r); overflow: hidden;
+    background: #eef6f7;
+    box-shadow: 0 30px 70px -48px rgba(16, 36, 52, .55), 0 1px 0 rgba(16, 36, 52, .02);
+  }
+  .media img, .media video { width: 100%; height: auto; }
+  .media.portrait { max-width: 460px; }
+  .media.tall { max-width: 760px; margin-left: auto; margin-right: auto; }
+  .media.roster-fit { max-width: 1080px; margin-left: auto; margin-right: auto; }
+  .media-row { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); gap: 24px; margin-top: 36px; align-items: start; }
+  .media-row .media { margin-top: 0; }
+  .duo { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; margin-top: 24px; align-items: start; }
+  .duo .media { margin-top: 0; }
+  .pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; margin-top: 36px; align-items: start; }
+  .pair .media { margin-top: 0; }
+  .stack { display: grid; gap: 24px; align-content: start; }
+  .stack .media { margin-top: 0; }
+  .day-row { grid-template-columns: minmax(0, 1fr) minmax(0, 1.28fr); }
+
+  /* ---------- carousel ---------- */
+  .carousel { margin: 36px auto 0; max-width: 1000px; }
+  .carousel-track {
+    display: flex; align-items: flex-start; gap: 20px; overflow-x: auto; scroll-snap-type: x mandatory;
+    scrollbar-width: none; padding-bottom: 4px;
+  }
+  .carousel-track::-webkit-scrollbar { display: none; }
+  .slide {
+    flex: 0 0 82%; margin: 0; scroll-snap-align: start;
+    border: 1px solid var(--line); border-radius: var(--r); overflow: hidden; background: #eef6f7;
+  }
+  .slide img, .slide video { width: 100%; height: auto; display: block; }
+  .carousel-bar { display: flex; align-items: center; gap: 10px; justify-content: flex-end; margin-top: 14px; }
+  .carousel-count { font-family: var(--mono); font-size: 10.5px; color: var(--muted-2); }
+  .carousel-btn {
+    width: 34px; height: 34px; border: 1px solid var(--line); border-radius: 6px; background: #fff;
+    color: var(--navy); cursor: pointer; display: inline-grid; place-items: center; font-size: 14px;
+  }
+  .carousel-btn:hover { border-color: #cdd5cd; }
+
+  /* ---------- cta ---------- */
+  .cta-band { background: var(--navy); color: #fff; padding: 84px 0; }
+  .cta-band .eyebrow { color: #8fc79f; }
+  .cta-band h2 { color: #fff; max-width: 24ch; }
+  .cta-band p { color: #b6c5cf; font-size: 16.5px; line-height: 1.6; margin-top: 16px; max-width: 50ch; }
+  .cta-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 56px; align-items: end; }
+  .cta-actions { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; }
+  .cta-actions .btn + .btn { margin-top: 0; }
+  .cta-note { border-top: 1px solid rgba(255,255,255,.14); margin-top: 44px; padding-top: 24px; }
+  .cta-note p { margin: 0; max-width: 70ch; color: #9fb1bd; font-size: 14px; }
+
+  /* ---------- footer ---------- */
+  footer { background: #fbfbf8; padding: 56px 0 40px; border-top: 1px solid var(--line); }
+  .foot-brand img { height: 28px; margin-bottom: 14px; }
+  .foot-brand p { font-size: 13px; color: var(--muted); line-height: 1.6; }
+  .foot-brand .org { font-family: var(--mono); font-size: 10.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted-2); margin-bottom: 6px; }
+  .foot-legal {
+    display: flex; justify-content: space-between; gap: 20px; margin-top: 40px; padding-top: 18px;
+    border-top: 1px solid var(--line); font-family: var(--mono); font-size: 10px; letter-spacing: .06em; color: var(--muted-2);
+  }
+  .foot-legal a:hover { color: var(--navy); }
+
+  /* ---------- responsive ---------- */
+  @media (max-width: 1080px) {
+    .nav-burger { display: inline-flex; }
+    .nav-links { display: none; }
+    .nav-links.open {
+      display: flex; position: absolute; top: var(--nav-h); left: 0; right: 0;
+      flex-direction: column; align-items: stretch; gap: 2px; margin: 0;
+      background: #fff; border-bottom: 1px solid var(--line); padding: 10px 20px 16px;
+      box-shadow: 0 20px 30px -26px rgba(16, 36, 52, .5);
+    }
+    .nav-links.open > a { padding: 10px 0; }
+    .nav-links.open .nav-cta { margin-top: 8px; text-align: center; }
+    .media-row { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 860px) {
+    .wrap { padding: 0 20px; }
+    .section { padding: 68px 0; }
+    .section-head, .subhead { grid-template-columns: 1fr; gap: 18px; }
+    .hero { padding: 56px 0 44px; }
+    .laptop-base { margin: 0 -10px; }
+    .lane { }
+    .duo, .pair { grid-template-columns: 1fr; }
+    .slide { flex-basis: 92%; }
+    .cta-grid { grid-template-columns: 1fr; gap: 28px; }
+    .foot-legal { flex-direction: column; gap: 8px; }
+  }
+</style>
+</head>
+<body>
+<nav id="main-nav">
+  <div class="nav-inner">
+    <a href="/de/"><img src="/3dglycogo.svg" alt="Glycogo"></a>
+    <button class="nav-burger" aria-expanded="false">Menü</button>
+    <div class="nav-links">
+      <a href="#roster">Kader</a>
+      <a href="#settings">Einstellungen</a>
+      <a href="#day">Tägliche Ernährung</a>
+      <a href="#trends">Trends</a>
+      <a href="#race">Wettkampfplanung</a>
+      <a href="#training">Training</a>
+      <a href="#messages">Nachrichten</a>
+      <div class="nav-dropdown">
+        <button type="button" class="nav-toggle" aria-expanded="false" aria-haspopup="true">Rechner <span class="chev"></span></button>
+        <div class="nav-menu">
+          <a href="/de/fuel-ratio-calculator/">Kohlenhydrat-Verhältnis-Rechner</a>
+          <a href="/de/substrate-explorer/">Rechner für Fett- und Kohlenhydratverbrauch</a>
+          <a href="/de/athlete_supplement_timer.html">Supplement-Timer für Sportler</a>
+        </div>
+      </div>
+      <a href="https://web.glycogo.fit/" class="nav-cta">Demo-Dashboard öffnen</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Für Trainer und Sporternährungsberater</p>
+    <h1>Wisse, wie sich deine Athleten ernähren.</h1>
+    <p class="lede">Sieh, was Athleten essen, wie ihre Aufnahme zu ihrem Bedarf passt und ob sie genug Kohlenhydrate für ihr Training bekommen. Glycogo führt Ernährungs-, Trainings- und Wellbeing-Daten an einem Ort zusammen, sodass du die Details hinter der täglichen Energieversorgung eines Athleten beurteilen kannst.</p>
+    <div class="hero-actions">
+      <a class="btn" href="https://web.glycogo.fit/">Demo-Dashboard öffnen</a>
+      <a class="btn ghost" href="https://web.glycogo.fit/">Trainer-Konto erstellen</a>
+    </div>
+    <div class="laptop">
+      <div class="laptop-screen">
+        <video muted loop playsinline poster="/assets/coaches/hero-tour-poster.jpg?v=45"
+               aria-label="Der Kader, geschwenkt über die Woche eines Athleten: die Energie- und Makrobalken jedes Tages, die geplante Einheit und die Wellbeing-Punkte, dann ein Tag, der sich zu seinen Bewertungen und Mahlzeiten öffnet, und die Mittagskarte, die sich zu ihren Lebensmitteln öffnet.">
+          <source src="/assets/coaches/hero-tour.mp4?v=45" type="video/mp4">
+        </video>
+      </div>
+      <div class="laptop-base"></div>
+    </div>
+  </div>
+</header>
+
+<section class="section" id="roster">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">01. <span>Athletenkader</span></p>
+        <h2>Die Ernährung deines Kaders auf einen Blick.</h2>
+      </div>
+            <div class="prose">
+        <p>Vergleiche die tägliche Energie- und Makronährstoffaufnahme mit den Zielen jedes Athleten. Sieh, wie sich die Ernährung über die Woche verändert – neben geplantem Training und Wellbeing-Bewertungen – und erkenne Athleten, deren Aufnahme genauer betrachtet werden sollte.</p>
+      </div>
+    </div>
+
+    <div class="carousel" data-carousel>
+      <div class="carousel-track">
+        <figure class="slide">
+          <video muted loop playsinline preload="metadata" data-autoplay poster="/assets/coaches/roster-open-poster.jpg?v=45"
+                 aria-label="Die Spalte eines Tages, die sich zu ihren Wellbeing-Bewertungen, der geplanten Einheit und den Mahlzeitenkarten öffnet, dann die Frühstückskarte, die sich zu ihren Lebensmitteln mit Gewichten und Makros öffnet.">
+            <source src="/assets/coaches/roster-open.mp4?v=45" type="video/mp4">
+          </video>
+        </figure>
+        <figure class="slide">
+          <img src="/assets/coaches/roster-attention.jpg?v=6" width="1080" height="810" alt="Die Ansicht „Handlungsbedarf“: drei Athleten, deren Woche ein Flag ausgelöst hat, jeweils mit einer Pille, die sagt, welches Flag und über wie viele Tage, neben einer Reihe von Tageskarten mit Energie- und Makrobalken gegen ihre Ziele, der geplanten Einheit und den Wellbeing-Punkten." loading="lazy">
+        </figure>
+        <figure class="slide">
+          <img src="/assets/coaches/roster-all.jpg?v=6" width="1080" height="810" alt="Die Ansicht „Alle Athleten“: jeder Athlet in einer Zeile mit denselben Flags neben dem Namen, heutige Kalorien gegen Ziel sowie die Wochenmittel für Energieverfügbarkeit, Kohlenhydrate und Protein." loading="lazy">
+        </figure>
+      </div>
+      <div class="carousel-bar">
+        <span class="carousel-count" data-count>1 / 3</span>
+        <button type="button" class="carousel-btn" data-prev aria-label="Vorheriger Bildschirm">&lsaquo;</button>
+        <button type="button" class="carousel-btn" data-next aria-label="Nächster Bildschirm">&rsaquo;</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="section" id="settings">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">02. <span>Individuelle Ernährungs-Einstellungen</span></p>
+        <h2>Ziele setzen, die zum Athleten passen.</h2>
+      </div>
+            <div class="prose">
+        <p>Jeder Athlet hat andere Anforderungen. Setze individuelle Ziele für Energieverfügbarkeit, Makronährstoffe, Mahlzeitenverteilung und Snacks.</p>
+        <p>Der Kohlenhydratbedarf richtet sich nach den Anforderungen jeder Einheit – Dauer und Intensität – mit Zielen für die Tagesaufnahme, vor dem Training und während der Belastung. Einstellungen einzeln oder für Athleten mit ähnlichem Bedarf anwenden.</p>
+      </div>
+    </div>
+
+    <div class="carousel" data-carousel>
+      <div class="carousel-track">
+        <figure class="slide">
+          <img src="/assets/coaches/settings-macros.jpg?v=8" width="1080" height="810" alt="Energieverfügbarkeit für diesen Athleten bei 45 kcal/kg FFG mit ihren Farbzonen unter dem Regler und die Basis-Makros bei 346 g Kohlenhydraten, 126 g Protein und 70 g Fett mit Prozentwerten, Reglern und Gramm pro Kilogramm." loading="lazy">
+        </figure>
+        <figure class="slide">
+          <img src="/assets/coaches/settings-meals.jpg?v=8" width="1080" height="810" alt="Basis-Mahlzeitenstruktur mit zwei Snacks pro Tag, den Verteilungsprozenten und Standard-Erfassungszeiten für Frühstück, beide Snacks, Mittag- und Abendessen sowie der Einstellung für das Überroll-Defizit." loading="lazy">
+        </figure>
+        <figure class="slide">
+          <img src="/assets/coaches/settings-training.jpg?v=8" width="1080" height="810" alt="Trainingsstruktur mit drei Einheiten pro Tag um 06:00, 11:00 und 17:00 Uhr, die erste mit einem Snack 45 Minuten davor, dann die Einheiten-Ziele von 30 bis 90 g/h Kohlenhydraten ab 70 Minuten und die sportartspezifischen Kohlenhydratbereiche, eingestellt für zwei Sportarten." loading="lazy">
+        </figure>
+        <figure class="slide">
+          <img src="/assets/coaches/settings-sports.jpg?v=8" width="1080" height="810" alt="Die Sportartenliste ab ihrer Überschrift mit geöffnetem Radsport: Bruttowirkungsgrad auf dem Regler zwischen unerfahrenen und gut trainierten Radfahrern, die niedrige Leistung in Watt und die 250 W FTP, an denen sie skaliert sind." loading="lazy">
+        </figure>
+      </div>
+      <div class="carousel-bar">
+        <span class="carousel-count" data-count>1 / 4</span>
+        <button type="button" class="carousel-btn" data-prev aria-label="Vorherige Einstellung">&lsaquo;</button>
+        <button type="button" class="carousel-btn" data-next aria-label="Nächste Einstellung">&rsaquo;</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="day">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">03. <span>Tägliche Ernährung und Verpflegung in der Einheit</span></p>
+        <h2>Sieh, was gegessen wird – und wann.</h2>
+      </div>
+            <div class="prose">
+        <p>Tagessummen erzählen nicht die ganze Geschichte. Ein Athlet kann sein Energieziel erreichen und sich rund um Schlüsseleinheiten trotzdem unterversorgt ernähren oder zu viel seiner Aufnahme bis zum Tagesende aufsparen.</p>
+        <p>Prüfe einzelne Mahlzeiten gegen die Ernährungsziele, einschließlich der Energieverfügbarkeit über den Tag. Geplante Trainingseinheiten geben Kontext dazu, wann Athleten essen und wie ihre Aufnahme zu den Anforderungen der Belastung passt.</p>
+      </div>
+    </div>
+
+    <div class="carousel" data-carousel>
+      <div class="carousel-track">
+        <figure class="slide">
+          <video muted loop playsinline preload="metadata" data-autoplay poster="/assets/coaches/day-window-poster.jpg?v=10"
+                 aria-label="Der Tag eines Athleten, wie die Konsole ihn öffnet: Kalorien, Kohlenhydrate, Protein und Fett gegen ihre Ziele, eine Trainernotiz, die in den Tag geschrieben und gesendet wird, die Wellbeing-Bewertungen, dann die Tagesbilanzkurve, bei der sich die Karte jedes Punkts nacheinander öffnet, und die Mahlzeiten gegen ihre Anteile bis hin zum morgendlichen aeroben Schwimmset, um das der Tag gebaut wurde.">
+            <source src="/assets/coaches/day-window.mp4?v=10" type="video/mp4">
+          </video>
+        </figure>
+        <figure class="slide">
+          <img src="/assets/coaches/day-curve.jpg?v=9" width="1080" height="810" alt="Die Tagesbilanzkurve mit geöffneter Karte des 10:30-Uhr-Punkts: ein Defizit von 293 kcal, der geplante Snack 1 mit 373 kcal, Reiswaffeln mit 178 kcal und 38 g Kohlenhydraten, Milch mit 131 kcal und 16 g, Erdnussbutter mit 53 kcal und 2 g sowie insgesamt 362 kcal und 55 g Kohlenhydrate." loading="lazy">
+        </figure>
+      </div>
+      <div class="carousel-bar">
+        <span class="carousel-count" data-count>1 / 2</span>
+        <button type="button" class="carousel-btn" data-prev aria-label="Vorheriger Bildschirm">&lsaquo;</button>
+        <button type="button" class="carousel-btn" data-next aria-label="Nächster Bildschirm">&rsaquo;</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="trends">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">04. <span>Trends und Monitoring</span></p>
+        <h2>Ernährungsdaten neben Training und Wellbeing stellen.</h2>
+      </div>
+            <div class="prose">
+        <p>Sieh, wie sich Energieverfügbarkeit sowie Kohlenhydrat- und Makronährstoffaufnahme über die Zeit verändern – relativ zu den Zielen jedes Athleten.</p>
+        <p>Vergleiche diese Trends mit Trainingsbelastung und Wellbeing-Werten wie Schlaf, Müdigkeit, Hunger und Muskelkater. Ernährungsdaten lassen sich leichter einordnen, wenn du siehst, was sonst in der Trainingswoche eines Athleten passiert.</p>
+      </div>
+    </div>
+
+    <div class="carousel" data-carousel>
+      <div class="carousel-track">
+        <figure class="slide">
+          <video muted loop playsinline preload="metadata" data-autoplay poster="/assets/coaches/trends-carbs-poster.jpg?v=9"
+                 aria-label="Drei Wochen Kohlenhydrataufnahme gegen Ziel, die Schlafbewertungen über den Balken eingeschaltet, dann der Wechsel des Diagramms auf Energieverfügbarkeit mit übernommener Schlaflinie und die unter dem Chart geöffnete Tagesliste.">
+            <source src="/assets/coaches/trends-carbs.mp4?v=9" type="video/mp4">
+          </video>
+        </figure>
+        <figure class="slide">
+          <img src="/assets/coaches/trends-tooltip.jpg?v=5" width="1080" height="810" alt="Das Kohlenhydrat-Trenddiagramm mit geöffneter Tageskarte am 23. Oktober: 330 g gegessen bei einem Ziel von 320 g, eine Trainingsbelastung von 700 und für diesen Tag Schlaf gut, Hunger mittel, Müdigkeit mittel, Muskelkater gering und Gewicht 63,0 kg." loading="lazy">
+        </figure>
+        <figure class="slide">
+          <img src="/assets/coaches/trends-days.jpg?v=5" width="1080" height="810" alt="Die Tagesliste unter denselben drei Wochen: die Kohlenhydrate jedes Tages gegen das eigene Ziel – 544 g gegen 725 g bei der langen Ausfahrt am 31. Oktober in Orange, 509 gegen 533 g am 29. Oktober und 513 gegen 497 g am 1. November in Grün." loading="lazy">
+        </figure>
+      </div>
+      <div class="carousel-bar">
+        <span class="carousel-count" data-count>1 / 3</span>
+        <button type="button" class="carousel-btn" data-prev aria-label="Vorheriger Bildschirm">&lsaquo;</button>
+        <button type="button" class="carousel-btn" data-next aria-label="Nächster Bildschirm">&rsaquo;</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="race">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">05. <span>Wettkampfplanung</span></p>
+        <h2>Wettkampfverpflegung ohne Rätselraten.</h2>
+      </div>
+            <div class="prose">
+        <p>Baue einen Wettkampfplan rund um Strecke, erwartete Zielzeit und Intensität. Setze Ziele für Kohlenhydrate, Flüssigkeit, Natrium und Koffein und verteile dann Produkte und Portionen über das Rennen.</p>
+        <p>Berücksichtige Verpflegungsstationen, Schweissrate und Wetterbedingungen. Importiere eine GPX-Strecke oder ein Intervals.icu-Training, um den Plan an den Anforderungen des Events auszurichten.</p>
+        <p>Der fertige Plan enthält einen zeitlichen Verpflegungsplan, den gesamten Nährstoffbedarf und die Menge jedes benötigten Produkts.</p>
+      </div>
+    </div>
+
+    <div class="carousel" data-carousel>
+      <div class="carousel-track">
+        <figure class="slide">
+          <video muted loop playsinline preload="metadata" data-autoplay poster="/assets/coaches/race-plan-laptop-poster.jpg?v=14"
+                 aria-label="Ein Leadville-100-Wettkampfplan, erstellt und benannt, seine Laufstrecke aus der GPX-Datei importiert, die erwartete Zielzeit eingetippt, dann die Seite zum Intensitätsdiagramm gescrollt: der Kohlenhydrat-Regler eines Abschnitts erhöht, ein Maurten-Koffeingel von Hand zu drei über das Rennen verteilten Abschnitten hinzugefügt, Wasser und ein Getränkepulver im Katalog angehakt und „Auto-fill“, das die Kohlenhydratbalken in jedem Abschnitt anhebt.">
+            <source src="/assets/coaches/race-plan-laptop.mp4?v=14" type="video/mp4">
+          </video>
+        </figure>
+        <figure class="slide">
+          <img src="/assets/coaches/race-source.jpg?v=5" width="1080" height="810" alt="Die 25-km-GPX-Strecke „Island View“, zurückgelesen als 25,6 km mit 1.068 m Anstieg und durchschnittlich 9 % Steigung, die geschätzte Schweissrate von 1,12 l/h und eine Kohlenhydrat-Obergrenze von 90 g/h." loading="lazy">
+        </figure>
+        <figure class="slide">
+          <img src="/assets/coaches/race-course.jpg?v=5" width="1080" height="810" alt="Das eigene Höhenprofil der Strecke in 20-Minuten-Schritten, nach Intensität eingefärbt, mit den Ziellinien für Kohlenhydrate und Flüssigkeit, der geöffnete erste Abschnitt bei 24 von 22 g Kohlenhydraten mit einem Bix-Beutel und 0,5 l Wasser sowie den Such- und Auto-fill-Steuerungen des Verpflegungsplans." loading="lazy">
+        </figure>
+        <figure class="slide">
+          <img src="/assets/coaches/race-plan.jpg?v=5" width="1080" height="810" alt="Der Verpflegungskatalog mit Kohlenhydraten und Flüssigkeit pro Portion für jedes Produkt, Schweissersatz bei 2,8 l Verlust gegen ein Flüssigkeitsziel von 1,4 l und die Plansummen von 77 von 69 g/h Kohlenhydraten und 0,8 von 0,6 l/h Flüssigkeit für 2,00 kg mitzuführende Verpflegung." loading="lazy">
+        </figure>
+      </div>
+      <div class="carousel-bar">
+        <span class="carousel-count" data-count>1 / 4</span>
+        <button type="button" class="carousel-btn" data-prev aria-label="Vorheriger Bildschirm">&lsaquo;</button>
+        <button type="button" class="carousel-btn" data-next aria-label="Nächster Bildschirm">&rsaquo;</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="training">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">06. <span>Trainingsintegration und Einheitenplanung</span></p>
+        <h2>Verpflegungsbedarf am Training ausrichten.</h2>
+      </div>
+            <div class="prose">
+        <p>Importiere geplante und absolvierte Einheiten aus Intervals.icu oder füge Einheiten direkt in Glycogo hinzu.</p>
+        <p>Für jede Einheit schätzt Glycogo den Kohlenhydrat- und Fettverbrauch anhand der individuellen Merkmale des Athleten, von Intensität und Dauer der Belastung, der Ernährung und der während der Einheit aufgenommenen Kohlenhydrate. Diese Schätzungen fliessen in den täglichen Energie- und Kohlenhydratbedarf ein, sodass die Ziele das tatsächliche Training widerspiegeln.</p>
+      </div>
+    </div>
+
+    <div class="carousel" data-carousel>
+      <div class="carousel-track">
+        <figure class="slide">
+          <video muted loop playsinline preload="metadata" data-autoplay poster="/assets/coaches/add-session-poster.jpg?v=9"
+                 aria-label="Die Trainingswoche eines Athleten mit einer Einheit an sechs der sieben Tage, jeweils mit Dauer, RPE, Startzeit und der Kohlenhydratrate, die die App für eine Einheit plant, die lang genug für Verpflegung während der Belastung ist, dann das Einheiten-Formular: ein langer Lauf benannt, auf 90 Minuten gesetzt, der Anstrengungsregler auf RPE 40 verschoben und darunter das Substratdiagramm, das die Kohlenhydrate und das Fett bei dieser Anstrengung zeigt.">
+            <source src="/assets/coaches/add-session.mp4?v=9" type="video/mp4">
+          </video>
+        </figure>
+        <figure class="slide">
+          <img src="/assets/coaches/training.jpg?v=8" width="1080" height="810" alt="Die Trainingswoche eines Athleten in der Trainer-Konsole: eine Einheit an sechs der sieben Tage mit Dauer, RPE, Startzeit und Sportart, die 150-minütige lange Ausfahrt mit ihrer Verpflegungsrate von 70 g/h und jede Einheit nach ihrer Anstrengungszone eingefärbt." loading="lazy">
+        </figure>
+        <figure class="slide">
+          <img src="/assets/coaches/add-substrate.jpg?v=4" width="1080" height="810" alt="Das vollständige Fenster „Einheit hinzufügen“ für einen langen Lauf von 90 Minuten bei RPE 40: Sportart, Name, Dauer und Startzeit, der Anstrengungsregler und darunter das Substratdiagramm mit der Anzeige 795 kcal, 45 g/h während der Einheit, 68 g Kohlenhydrate in der Einheit sowie Kohlenhydrate 61 % bei 122 g gegen Fett 39 % bei 34 g, RER 0,88." loading="lazy">
+        </figure>
+      </div>
+      <div class="carousel-bar">
+        <span class="carousel-count" data-count>1 / 3</span>
+        <button type="button" class="carousel-btn" data-prev aria-label="Vorheriger Bildschirm">&lsaquo;</button>
+        <button type="button" class="carousel-btn" data-next aria-label="Nächster Bildschirm">&rsaquo;</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="messages">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">07. <span>Nachrichten und Athletenverwaltung</span></p>
+        <h2>Halte das Gespräch nah an den Daten.</h2>
+      </div>
+            <div class="prose">
+        <h4>Nachrichten</h4>
+        <p>Sprich Ernährung, Training und Wellbeing direkt mit Athleten ab. Nachrichten lassen sich mit einzelnen Tagen verknüpfen, sodass das Gespräch bei den relevanten Informationen bleibt.</p>
+        <h4>Athletenzugang</h4>
+        <p>Erstelle Athletenprofile und lege ihre Ernährungsanforderungen fest, bevor sie sich registrieren. Athleten treten mit einem Einladungscode bei, und der Zugang kann entzogen werden, wenn sie deine Gruppe verlassen.</p>
+      </div>
+    </div>
+
+    <figure class="media portrait">
+      <img src="/assets/coaches/messages.jpg?v=5" width="1080" height="1440" alt="Das Nachrichtenfenster mit zwei geöffneten Athleten-Threads, jede Notiz mit dem Tag, an dem sie gesendet wurde, und einem Chip, der sie mit der Einheit verknüpft, um die es geht." loading="lazy">
+    </figure>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <div class="cta-grid">
+      <div>
+        <p class="eyebrow">Glycogo für Trainer</p>
+        <h2>Besser informierte Verpflegungsentscheidungen beginnen mit besseren Informationen.</h2>
+        <p>Von der täglichen Aufnahme und Energieverfügbarkeit bis zu Einheiten-Verpflegung und Wettkampfplänen: Glycogo gibt Trainern die Ernährungsdaten an die Hand, mit denen sie über ihre Athleten arbeiten können.</p>
+      </div>
+      <div class="cta-actions">
+        <a class="btn light" href="https://web.glycogo.fit/">Demo-Dashboard öffnen</a>
+        <a class="btn light" href="https://web.glycogo.fit/">Trainer-Konto erstellen</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-brand">
+      <img src="/3dglycogo.svg" alt="Glycogo">
+      <p class="org">GEM Performance · Glycogo</p>
+      <p>Goal-Driven, Evidence-Based Monitoring Tools for Athletes</p>
+      <p>G.E. McConnochie, PhD</p>
+    </div>
+    <div class="foot-legal">
+      <span>contactgemperformance@gmail.com</span>
+      <span><a href="/terms">Nutzungsbedingungen</a> · <a href="/privacy">Datenschutz</a> · <a href="https://web.glycogo.fit/">Athleten-App</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var nav = document.getElementById('main-nav');
+  var dropdown = nav && nav.querySelector('.nav-dropdown');
+  var toggle = nav && nav.querySelector('.nav-toggle');
+  if (dropdown && toggle) {
+    toggle.addEventListener('click', function () {
+      var open = dropdown.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    document.addEventListener('click', function (e) {
+      if (!dropdown.contains(e.target)) { dropdown.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false'); }
+    });
+  }
+
+  var burger = document.querySelector('.nav-burger');
+  var navLinks = document.querySelector('.nav-links');
+  if (burger && navLinks) {
+    burger.addEventListener('click', function () {
+      var open = navLinks.classList.toggle('open');
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  }
+
+  document.querySelectorAll('[data-carousel]').forEach(function (carousel) {
+    var track = carousel.querySelector('.carousel-track');
+    var slides = track ? Array.prototype.slice.call(track.children) : [];
+    var count = carousel.querySelector('[data-count]');
+    if (!track || !slides.length) return;
+
+    function step() {
+      var gap = parseFloat(getComputedStyle(track).columnGap || getComputedStyle(track).gap) || 0;
+      return slides[0].getBoundingClientRect().width + gap;
+    }
+
+    function sync() {
+      var index = Math.round(track.scrollLeft / step());
+      if (count) count.textContent = Math.min(index + 1, slides.length) + ' / ' + slides.length;
+    }
+
+    var prev = carousel.querySelector('[data-prev]');
+    var next = carousel.querySelector('[data-next]');
+    if (prev) prev.addEventListener('click', function () { track.scrollBy({ left: -step(), behavior: 'smooth' }); });
+    if (next) next.addEventListener('click', function () { track.scrollBy({ left: step(), behavior: 'smooth' }); });
+    track.addEventListener('scroll', function () { window.requestAnimationFrame(sync); }, { passive: true });
+    sync();
+  });
+
+  // Every clip on the page plays only while it is on screen: one that is parked
+  // above or below the viewport is paused, so a section further down never runs
+  // unseen and no more than the visible clips decode at once. A third of the clip
+  // has to be showing before it starts, and the tab has to be in front.
+  var clips = Array.prototype.slice.call(document.querySelectorAll('video'));
+  if (clips.length) {
+    var playClip = function (video) {
+      var played = video.play();
+      if (played && played.catch) played.catch(function () {});
+    };
+
+    if ('IntersectionObserver' in window) {
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          var video = entry.target;
+          video.dataset.inView = entry.isIntersecting ? 'true' : 'false';
+          if (entry.isIntersecting && !document.hidden) {
+            playClip(video);
+          } else {
+            video.pause();
+          }
+        });
+      }, { threshold: 0.35 });
+      clips.forEach(function (video) { observer.observe(video); });
+    } else {
+      clips.forEach(playClip);
+    }
+
+    document.addEventListener('visibilitychange', function () {
+      clips.forEach(function (video) {
+        if (video.dataset.inView !== 'true') return;
+        if (document.hidden) { video.pause(); } else { playClip(video); }
+      });
+    });
+  }
+})();
+</script>
+<script src="/assets/i18n.js" defer></script>
+</body>
+</html>
