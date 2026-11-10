@@ -1,6 +1,7 @@
 window.GLYCOGO_I18N = window.GLYCOGO_I18N || {};
 window.GLYCOGO_I18N.es = {
   common: {
+    "See what your athletes eat, when they eat it and how it compares with their targets, including whether they get enough carbohydrate for their training.": "Mira qué comen tus deportistas, cuándo lo comen y cómo se compara con sus objetivos, incluido si obtienen suficientes carbohidratos para su entrenamiento.",
     "Periodised nutrition planning for athletes and active individuals. Scales carbohydrate and calorie targets with training load. Syncs with Intervals.icu.": "Planificación nutricional periodizada para deportistas: objetivos de carbohidratos y calorías según la carga de entrenamiento, con sincronización con Intervals.icu.",
     "Plan your race-day carb intake with a glucose:fructose ratio calculator built on real gut-absorption science. Compare 38 verified sports nutrition products from 23 brands (SiS, Maurten, Tailwind, Precision Fuel, Neversecond and more) plus whole foods, and see exactly how your mix stacks up against the 2:1 and 1:0.8 ratios used in endurance research.": "Calculadora de proporción glucosa:fructosa: planifica los carbohidratos de carrera, compara 38 productos verificados de 23 marcas y alimentos con las proporciones 2:1 y 1:0,8.",
     "Free fat vs carb utilization calculator: see grams of fat and carbohydrate you burn per hour at every exercise intensity (RPE, heart rate or power), with RER and the 50/50 fuel crossover. Live, from the Glycogo substrate engine.": "Calculadora gratuita de uso de grasas e hidratos: gramos de grasa y carbohidratos que quemas por hora en cada intensidad (RPE, pulso o potencia), con RER y el cruce 50/50.",
@@ -1011,9 +1012,8 @@ window.GLYCOGO_I18N.es = {
     "Fat and carb utilization calculator": "Calculadora de utilización de grasas y carbohidratos",
     "Try it out": "Pruébalo",
     "For coaches and sports nutrition practitioners": "Para entrenadores y profesionales de la nutrición deportiva",
-    "Know how your athletes are fuelling.": "Descubre cómo se alimentan tus deportistas.",
+    "The what, when and how of your athletes' fuelling.": "Qué, cuándo y cómo se alimentan tus deportistas.",
     "See what athletes are eating, how their intake stacks up against their requirements and whether they're getting enough carbohydrate to support their training. Glycogo brings nutrition, training and wellness data into one place, so you can assess the detail behind an athlete's daily fuelling.": "Mira qué comen los deportistas, cómo encaja su ingesta con sus necesidades y si obtienen suficientes carbohidratos para su entrenamiento. Glycogo reúne datos de nutrición, entrenamiento y bienestar en un solo lugar para que puedas valorar el detalle que hay detrás de la alimentación diaria de un deportista.",
-    "Create a coach account": "Crear una cuenta de entrenador",
     "Athlete roster": "Plantilla de deportistas",
     "Nutrition across your squad, at a glance.": "La nutrición de tu grupo, de un vistazo.",
     "Compare daily energy and macronutrient intake with each athlete's targets. See how nutrition changes across the week alongside planned training and wellness ratings, and identify athletes whose intake may need a closer look.": "Compara la ingesta diaria de energía y macronutrientes con los objetivos de cada deportista. Observa cómo cambia la nutrición a lo largo de la semana junto al entrenamiento planificado y las valoraciones de bienestar, e identifica a los deportistas cuya ingesta merece una mirada más atenta.",

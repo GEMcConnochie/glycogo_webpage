@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Für Trainer | Glycogo</title>
-<meta name="description" content="Know how your athletes are fuelling: what they eat, how intake compares with their targets, and whether they get enough carbohydrate to support their training.">
+<meta name="description" content="Sieh, was deine Athleten essen, wann sie es essen und wie es zu ihren Zielen passt, einschließlich der Frage, ob sie genug Kohlenhydrate für ihr Training bekommen.">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
 <meta name="author" content="Glycogo">
 <link rel="canonical" href="https://glycogo.fit/de/for-coaches/">
@@ -33,7 +33,7 @@
   "@context": "https://schema.org",
   "@type": "WebPage",
   "name": "For coaches | Glycogo",
-  "description": "Know how your athletes are fuelling: what they eat, how intake compares with their targets, and whether they get enough carbohydrate to support their training.",
+  "description": "See what your athletes eat, when they eat it and how it compares with their targets, including whether they get enough carbohydrate for their training.",
   "url": "https://glycogo.fit/de/for-coaches/",
   "isPartOf": { "@type": "WebSite", "name": "Glycogo", "url": "https://glycogo.fit" },
   "publisher": { "@type": "Organization", "name": "Glycogo", "url": "https://glycogo.fit", "logo": "https://glycogo.fit/logosmall.png" }
@@ -51,23 +51,23 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300..700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --navy: #102434;
-    --navy-2: #1b3549;
-    --green: #2f8f4e;
-    --green-dk: #226b3b;
-    --green-soft: #eaf4ec;
-    --green-line: #cbe3d2;
-    --orange: #d2601f;
-    --paper: #f6f7f2;
-    --line: #e2e7e0;
-    --line-2: #eef1ec;
-    --muted: #5c6d7a;
-    --muted-2: #8a97a1;
+    --navy: #1a1a3e;
+    --navy-2: #2d2d7a;
+    --green: #2e7d32;
+    --green-light: #43a047;
+    --green-soft: #e8f5e9;
+    --green-line: #c8d8c8;
+    --orange: #e65c00;
+    --paper: #f7faf8;
+    --line: #e8ece9;
+    --line-2: #f3f6f4;
+    --muted: #5c6670;
+    --muted-2: #93979e;
     --mono: 'Space Mono', ui-monospace, monospace;
-    --sans: 'DM Sans', system-ui, -apple-system, sans-serif;
+    --sans: 'Space Grotesk', system-ui, -apple-system, sans-serif;
     --r: 10px;
     --nav-h: 64px;
   }
@@ -75,7 +75,7 @@
   html { scroll-behavior: smooth; }
   body {
     margin: 0; padding-top: var(--nav-h);
-    font-family: var(--sans); background: #fbfbf8; color: var(--navy);
+    font-family: var(--sans); background: #ffffff; color: var(--navy);
     -webkit-font-smoothing: antialiased;
   }
   img, video { max-width: 100%; display: block; }
@@ -114,7 +114,7 @@
     background: var(--green); color: #fff !important; font-weight: 500;
     padding: 10px 18px; border-radius: 6px; font-size: 13.5px;
   }
-  .nav-cta:hover { background: var(--green-dk); }
+  .nav-cta:hover { background: var(--green-light); }
   .nav-dropdown { position: relative; }
   .nav-toggle .chev {
     width: 0; height: 0; border-left: 4px solid transparent; border-right: 4px solid transparent;
@@ -124,7 +124,7 @@
   .nav-menu {
     position: absolute; top: calc(100% + 14px); left: -12px; min-width: 260px; background: #fff;
     border: 1px solid var(--line); border-radius: 8px; padding: 6px;
-    box-shadow: 0 20px 40px -24px rgba(16, 36, 52, .35);
+    box-shadow: 0 20px 40px -24px rgba(26, 26, 62, .35);
     opacity: 0; visibility: hidden; transform: translateY(-4px);
     transition: opacity .16s, transform .16s, visibility .16s;
   }
@@ -145,9 +145,9 @@
     background: var(--green); color: #fff; border: 1px solid var(--green);
     transition: background .18s, border-color .18s;
   }
-  .btn:hover { background: var(--green-dk); border-color: var(--green-dk); }
+  .btn:hover { background: var(--green-light); border-color: var(--green-light); }
   .btn.ghost { background: transparent; color: var(--navy); border-color: var(--line); }
-  .btn.ghost:hover { background: #fff; border-color: #cdd5cd; }
+  .btn.ghost:hover { background: #fff; border-color: #c8d8c8; }
   .btn.light { background: #fff; color: var(--navy); border-color: #fff; }
   .btn.light:hover { background: var(--green-soft); border-color: var(--green-soft); }
 
@@ -161,15 +161,15 @@
   .laptop { max-width: 1060px; margin: 56px auto 0; }
   .laptop-screen {
     position: relative;
-    border: 11px solid #1c2b35;
+    border: 11px solid var(--navy);
     border-top-width: 13px;
     border-bottom-width: 15px;
     border-radius: 18px 18px 5px 5px;
-    background: #1c2b35;
+    background: var(--navy);
     box-shadow:
       inset 0 1px 0 rgba(255, 255, 255, .14),
-      0 1px 2px rgba(16, 36, 52, .18),
-      0 46px 90px -58px rgba(16, 36, 52, .7);
+      0 1px 2px rgba(26, 26, 62, .18),
+      0 46px 90px -58px rgba(26, 26, 62, .7);
   }
   /* The camera, centred in the top bezel. */
   .laptop-screen::before {
@@ -182,7 +182,7 @@
     content: ""; position: absolute; inset: 0; pointer-events: none; z-index: 2;
     background: linear-gradient(118deg, rgba(255, 255, 255, .13) 0%, rgba(255, 255, 255, 0) 42%);
   }
-  .laptop-screen video { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; background: #e6f2f3; }
+  .laptop-screen video { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; background: #f0f7f4; }
   /* The deck: wider than the lid, its front edge rounded, and a shadow where the
      screen meets it so the two read as a hinge rather than a stripe. */
   .laptop-base {
@@ -190,7 +190,7 @@
     background: linear-gradient(#eef3f3, #d3ddde);
     border: 1px solid #c2ced0; border-top: 0;
     border-radius: 0 0 15px 15px;
-    box-shadow: 0 22px 34px -30px rgba(16, 36, 52, .6);
+    box-shadow: 0 22px 34px -30px rgba(26, 26, 62, .6);
   }
   .laptop-base::before {
     content: ""; position: absolute; top: 0; left: 50%; width: 148px; height: 5px;
@@ -199,7 +199,7 @@
   }
   .laptop-base::after {
     content: ""; position: absolute; top: 0; left: 0; right: 0; height: 4px;
-    background: linear-gradient(rgba(16, 36, 52, .22), rgba(16, 36, 52, 0));
+    background: linear-gradient(rgba(26, 26, 62, .22), rgba(26, 26, 62, 0));
   }
 
   /* ---------- sections ---------- */
@@ -217,8 +217,8 @@
   /* ---------- media ---------- */
   .media {
     margin: 36px 0 0; border: 1px solid var(--line); border-radius: var(--r); overflow: hidden;
-    background: #eef6f7;
-    box-shadow: 0 30px 70px -48px rgba(16, 36, 52, .55), 0 1px 0 rgba(16, 36, 52, .02);
+    background: #f7faf8;
+    box-shadow: 0 30px 70px -48px rgba(26, 26, 62, .55), 0 1px 0 rgba(26, 26, 62, .02);
   }
   .media img, .media video { width: 100%; height: auto; }
   .media.portrait { max-width: 460px; }
@@ -243,7 +243,7 @@
   .carousel-track::-webkit-scrollbar { display: none; }
   .slide {
     flex: 0 0 82%; margin: 0; scroll-snap-align: start;
-    border: 1px solid var(--line); border-radius: var(--r); overflow: hidden; background: #eef6f7;
+    border: 1px solid var(--line); border-radius: var(--r); overflow: hidden; background: #f7faf8;
   }
   .slide img, .slide video { width: 100%; height: auto; display: block; }
   .carousel-bar { display: flex; align-items: center; gap: 10px; justify-content: flex-end; margin-top: 14px; }
@@ -252,21 +252,21 @@
     width: 34px; height: 34px; border: 1px solid var(--line); border-radius: 6px; background: #fff;
     color: var(--navy); cursor: pointer; display: inline-grid; place-items: center; font-size: 14px;
   }
-  .carousel-btn:hover { border-color: #cdd5cd; }
+  .carousel-btn:hover { border-color: #c8d8c8; }
 
   /* ---------- cta ---------- */
   .cta-band { background: var(--navy); color: #fff; padding: 84px 0; }
-  .cta-band .eyebrow { color: #8fc79f; }
+  .cta-band .eyebrow { color: var(--green-pale); }
   .cta-band h2 { color: #fff; max-width: 24ch; }
-  .cta-band p { color: #b6c5cf; font-size: 16.5px; line-height: 1.6; margin-top: 16px; max-width: 50ch; }
+  .cta-band p { color: rgba(255, 255, 255, 0.65); font-size: 16.5px; line-height: 1.6; margin-top: 16px; max-width: 50ch; }
   .cta-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 56px; align-items: end; }
   .cta-actions { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; }
   .cta-actions .btn + .btn { margin-top: 0; }
   .cta-note { border-top: 1px solid rgba(255,255,255,.14); margin-top: 44px; padding-top: 24px; }
-  .cta-note p { margin: 0; max-width: 70ch; color: #9fb1bd; font-size: 14px; }
+  .cta-note p { margin: 0; max-width: 70ch; color: rgba(255, 255, 255, 0.5); font-size: 14px; }
 
   /* ---------- footer ---------- */
-  footer { background: #fbfbf8; padding: 56px 0 40px; border-top: 1px solid var(--line); }
+  footer { background: #f7faf8; padding: 56px 0 40px; border-top: 1px solid var(--line); }
   .foot-brand img { height: 28px; margin-bottom: 14px; }
   .foot-brand p { font-size: 13px; color: var(--muted); line-height: 1.6; }
   .foot-brand .org { font-family: var(--mono); font-size: 10.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted-2); margin-bottom: 6px; }
@@ -284,7 +284,7 @@
       display: flex; position: absolute; top: var(--nav-h); left: 0; right: 0;
       flex-direction: column; align-items: stretch; gap: 2px; margin: 0;
       background: #fff; border-bottom: 1px solid var(--line); padding: 10px 20px 16px;
-      box-shadow: 0 20px 30px -26px rgba(16, 36, 52, .5);
+      box-shadow: 0 20px 30px -26px rgba(26, 26, 62, .5);
     }
     .nav-links.open > a { padding: 10px 0; }
     .nav-links.open .nav-cta { margin-top: 8px; text-align: center; }
@@ -333,7 +333,7 @@
 <header class="hero">
   <div class="wrap">
     <p class="eyebrow">Für Trainer und Sporternährungsberater</p>
-    <h1>Wisse, wie sich deine Athleten ernähren.</h1>
+    <h1>Was, wann und wie deine Athleten sich verpflegen.</h1>
     <p class="lede">Sieh, was Athleten essen, wie ihre Aufnahme zu ihrem Bedarf passt und ob sie genug Kohlenhydrate für ihr Training bekommen. Glycogo führt Ernährungs-, Trainings- und Wellbeing-Daten an einem Ort zusammen, sodass du die Details hinter der täglichen Energieversorgung eines Athleten beurteilen kannst.</p>
     <div class="hero-actions">
       <a class="btn" href="https://coach.glycogo.fit/">Ausprobieren</a>

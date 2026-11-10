@@ -1,6 +1,7 @@
 window.GLYCOGO_I18N = window.GLYCOGO_I18N || {};
 window.GLYCOGO_I18N.nl = {
   common: {
+    "See what your athletes eat, when they eat it and how it compares with their targets, including whether they get enough carbohydrate for their training.": "Zie wat je atleten eten, wanneer ze het eten en hoe het zich verhoudt tot hun doelen, inclusief of ze genoeg koolhydraten binnenkrijgen voor hun training.",
     "Periodised nutrition planning for athletes and active individuals. Scales carbohydrate and calorie targets with training load. Syncs with Intervals.icu.": "Periodieke voedingsplanning voor sporters: koolhydraat- en caloriedoelen schalen mee met de trainingsbelasting, gesynchroniseerd met Intervals.icu.",
     "Plan your race-day carb intake with a glucose:fructose ratio calculator built on real gut-absorption science. Compare 38 verified sports nutrition products from 23 brands (SiS, Maurten, Tailwind, Precision Fuel, Neversecond and more) plus whole foods, and see exactly how your mix stacks up against the 2:1 and 1:0.8 ratios used in endurance research.": "Glucose:fructose-calculator: plan je koolhydraten op racedag, vergelijk 38 geverifieerde sportvoedingsproducten van 23 merken en voedingsmiddelen met de verhoudingen 2:1 en 1:0,8.",
     "Free fat vs carb utilization calculator: see grams of fat and carbohydrate you burn per hour at every exercise intensity (RPE, heart rate or power), with RER and the 50/50 fuel crossover. Live, from the Glycogo substrate engine.": "Gratis rekenmachine voor vet- en koolhydraatgebruik: gram vet en koolhydraten per uur bij elke intensiteit (RPE, hartslag of vermogen), met RER en de 50/50-omslag.",
@@ -1007,9 +1008,8 @@ window.GLYCOGO_I18N.nl = {
     "Fat and carb utilization calculator": "Rekentool vet- en koolhydraatgebruik",
     "Try it out": "Probeer het",
     "For coaches and sports nutrition practitioners": "Voor coaches en sportvoedingsprofessionals",
-    "Know how your athletes are fuelling.": "Weet hoe je atleten zich voeden.",
+    "The what, when and how of your athletes' fuelling.": "Wat, wanneer en hoe je atleten zich voeden.",
     "See what athletes are eating, how their intake stacks up against their requirements and whether they're getting enough carbohydrate to support their training. Glycogo brings nutrition, training and wellness data into one place, so you can assess the detail behind an athlete's daily fuelling.": "Zie wat atleten eten, hoe hun inname zich verhoudt tot hun behoeften en of ze genoeg koolhydraten binnenkrijgen voor hun training. Glycogo brengt voedings-, trainings- en welzijnsdata op één plek samen, zodat je de details achter de dagelijkse voeding van een atleet kunt beoordelen.",
-    "Create a coach account": "Coachaccount aanmaken",
     "Athlete roster": "Atleetselectie",
     "Nutrition across your squad, at a glance.": "De voeding van je selectie, in één oogopslag.",
     "Compare daily energy and macronutrient intake with each athlete's targets. See how nutrition changes across the week alongside planned training and wellness ratings, and identify athletes whose intake may need a closer look.": "Vergelijk de dagelijkse energie- en macronutriënteninname met de doelen van elke atleet. Zie hoe de voeding over de week verandert naast geplande training en welzijnsscores, en herken atleten wier inname extra aandacht verdient.",
