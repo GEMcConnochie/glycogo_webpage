@@ -21,6 +21,7 @@ const PAGES = {
   substrate: "substrate-explorer/index.html",
   supplementTimer: "athlete_supplement_timer.html",
   forCoaches: "for-coaches/index.html",
+  compare: "compare-sports-nutrition-apps/index.html",
 };
 
 const ATTRS = ["placeholder", "alt", "title", "aria-label", "value"];

@@ -34,7 +34,7 @@
       "name": "How much does Glycogo cost?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Premium is priced at about the cost of just 1-2 gels per month, roughly €4.40 or $5 USD. There is also a free tier; a subscription unlocks premium features such as Intervals.icu sync, photo and barcode logging, a larger food database, and the AI nutrition assistant."
+        "text": "Premium is priced at about the cost of just 1-2 gels per month, roughly €4.40 or $5 USD. There is also a free tier; a subscription unlocks premium features such as photo, barcode and voice logging, extra race plans, and the AI nutrition assistant."
       }
     },
     {
@@ -733,6 +733,58 @@
   .citation strong { color: white; }
   .citation a { color: var(--orange-light); }
 
+  /* PRICING */
+  .pricing { background: var(--navy); color: white; position: relative; overflow: hidden; }
+  .pricing::before {
+    content: ''; position: absolute; inset: 0; pointer-events: none;
+    background:
+      radial-gradient(ellipse 52% 42% at 16% 6%, rgba(67,160,71,0.20) 0%, transparent 62%),
+      radial-gradient(ellipse 48% 46% at 88% 94%, rgba(230,92,0,0.18) 0%, transparent 64%);
+  }
+  .pricing-inner { max-width: 1080px; margin: 0 auto; padding: 0 2rem; position: relative; z-index: 1; }
+  .pricing-header { text-align: center; margin-bottom: 2.75rem; }
+  .pricing .section-title { color: white; }
+  .pricing .section-sub { color: rgba(255,255,255,0.7); margin: 0 auto; }
+  .pricing-header .section-sub + .section-sub { margin-top: 0.85rem; }
+
+  .plan-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.35rem; margin-top: 2.5rem; align-items: stretch; }
+  .plan-card {
+    display: flex; flex-direction: column; background: var(--white); color: var(--text);
+    border-radius: 18px; overflow: hidden; box-shadow: var(--shadow-md);
+    border: 1px solid rgba(26,26,62,0.06);
+  }
+  .plan-top { text-align: center; padding: 1.6rem 1.35rem 1.45rem; color: white; border-radius: 0 0 22px 22px; }
+  .plan-free .plan-top { background: linear-gradient(160deg, #3d3d84 0%, #1a1a3e 100%); }
+  .plan-athlete .plan-top { background: linear-gradient(160deg, #4caf50 0%, #20642a 100%); }
+  .plan-coach .plan-top { background: linear-gradient(160deg, #ff7043 0%, #b84300 100%); }
+  .plan-badge {
+    display: inline-block; margin-bottom: 0.9rem; padding: 0.3rem 0.75rem; border-radius: 999px;
+    background: rgba(255,255,255,0.18); border: 1px solid rgba(255,255,255,0.3);
+    font-size: 0.64rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+  }
+  .plan-price { font-size: 2.6rem; font-weight: 700; line-height: 1; letter-spacing: -0.03em; }
+  .plan-price small { display: block; margin-top: 0.4rem; font-size: 0.72rem; font-weight: 500; letter-spacing: 0; color: rgba(255,255,255,0.78); }
+  .plan-desc { margin-top: 0.55rem; font-size: 0.82rem; line-height: 1.5; color: rgba(255,255,255,0.82); }
+  .plan-features { list-style: none; padding: 1.35rem 1.4rem; display: flex; flex-direction: column; gap: 0.6rem; flex: 1; }
+  .plan-features li { display: flex; gap: 0.5rem; font-size: 0.85rem; line-height: 1.45; }
+  .plan-features .mark { flex: none; font-weight: 700; color: var(--green); }
+  .plan-cta {
+    display: block; margin: 0 1.4rem 1.4rem; padding: 0.75rem 1rem; border-radius: 999px;
+    text-align: center; font-size: 0.88rem; font-weight: 700; text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+  }
+  .plan-free .plan-cta { background: rgba(45,45,122,0.08); color: var(--navy); }
+  .plan-free .plan-cta:hover { background: rgba(45,45,122,0.15); }
+  .plan-athlete .plan-cta { background: var(--green); color: white; }
+  .plan-athlete .plan-cta:hover { background: var(--green-light); }
+  .plan-coach .plan-cta { background: var(--orange); color: white; }
+  .plan-coach .plan-cta:hover { background: var(--orange-light); }
+  .plan-note { margin-top: 1.75rem; text-align: center; font-size: 0.76rem; color: rgba(255,255,255,0.55); }
+  .visually-hidden {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+  }
+
   /* SUPPORT */
   .support { text-align: center; }
   .support-inner { max-width: 620px; margin: 0 auto; padding: 0 2rem; }
@@ -839,6 +891,12 @@
     .split-row.reverse .split-visual { order: 0; }
     .trust-inner { grid-template-columns: repeat(2, 1fr); }
   }
+  @media (min-width: 901px) {
+    .plan-card.featured { transform: translateY(-12px); box-shadow: var(--shadow-lg); }
+  }
+  @media (max-width: 900px) {
+    .plan-grid { grid-template-columns: 1fr; max-width: 440px; margin-left: auto; margin-right: auto; }
+  }
   @media (max-width: 800px) {
     .nav-links { display: none; }
     .chatbot-highlight { grid-template-columns: 1fr; }
@@ -858,10 +916,12 @@
     .features-grid { grid-template-columns: 1fr; }
     .trust-inner { grid-template-columns: 1fr; }
     .app-shot-duo { grid-template-columns: 1fr; }
-    .container, .nav-inner, .hero-shell, .features, .faq-inner, .how-inner, .science-inner, .support-inner, .trust-bar-header, .trust-inner { padding-left: 1.25rem; padding-right: 1.25rem; }
+    .container, .nav-inner, .hero-shell, .features, .faq-inner, .how-inner, .science-inner, .support-inner, .pricing-inner, .trust-bar-header, .trust-inner { padding-left: 1.25rem; padding-right: 1.25rem; }
+    .plan-grid { max-width: 440px; margin-left: auto; margin-right: auto; }
   }
 </style>
 <link rel="stylesheet" href="/search/search.css">
+<script src="/assets/video-speed.js" defer></script>
 <script src="/assets/i18n.js" defer></script>
 </head>
 <body>
@@ -875,6 +935,7 @@
       <a href="#showcase">Hoe het werkt</a>
       <a href="#science">Wetenschap</a>
       <a href="#faq">FAQ</a>
+      <a href="#pricing">Prijs</a>
       <a href="#support">Steun</a>
       <a href="/nl/for-coaches/">For Coaches</a>
       <div class="nav-dropdown">
@@ -1294,7 +1355,7 @@
           <summary>Wat kost Glycogo?</summary>
           <div class="faq-body">
             <p>Premium kost ongeveer evenveel als slechts <strong>1-2 gels per maand</strong>, zo'n <strong>€4.40</strong> of <strong>5 USD</strong>.</p>
-            <p>Je kunt Glycogo ook gratis gebruiken! Een abonnement ontgrendelt premiumfuncties zoals Intervals.icu-synchronisatie, vastleggen met foto en barcode, een grotere voedingsdatabase en de AI-voedingsassistent.</p>
+            <p>Je kunt Glycogo ook gratis gebruiken! Een abonnement ontgrendelt premiumfuncties zoals vastleggen met foto, barcode en spraak, extra raceplannen en de AI-voedingsassistent.</p>
           </div>
         </details>
       </div>
@@ -1634,6 +1695,81 @@
   </div>
 </section>
 
+<!-- PRICING -->
+<section id="pricing" class="pricing block">
+  <div class="pricing-inner">
+    <div class="pricing-header fade-up">
+      <h2 class="section-title">Free for athletes. $5 for premium. $30 for coaches.</h2>
+      <p class="section-sub">The free athlete app covers the essentials: daily carbohydrate and energy targets, meal logging and your within-day fuelling timeline.</p>
+      <p class="section-sub">Premium adds more ways to log food (barcode, photo and voice), data and race plan exports, and an AI assistant.</p>
+      <p class="section-sub">Coaches betalen 30 USD per maand voor een onbeperkte atleetselectie en een uitgebreid dashboard voor voedingscoaching.</p>
+    </div>
+
+    <div class="plan-grid">
+      <article class="plan-card plan-free fade-up">
+        <div class="plan-top">
+          <span class="plan-badge">Free</span>
+          <div class="plan-price">$0<small>free plan</small></div>
+          <p class="plan-desc">The planning core for one athlete.</p>
+        </div>
+        <ul class="plan-features">
+          <li><span class="mark" aria-hidden="true">✓</span>Carb and calorie targets that follow training load</li>
+          <li><span class="mark" aria-hidden="true">✓</span>Substrate utilisation estimates</li>
+          <li><span class="mark" aria-hidden="true">✓</span>Sessiesynchronisatie en -planning</li>
+          <li><span class="mark" aria-hidden="true">✓</span>Eten loggen met een uitgebreide voedingsdatabase</li>
+          <li><span class="mark" aria-hidden="true">✓</span>500+ sports products with sodium, caffeine and glucose to fructose ratio</li>
+          <li><span class="mark" aria-hidden="true">✓</span>Maaltijd- en recepttemplates</li>
+          <li><span class="mark" aria-hidden="true">✓</span>Snelle en slimme hoeveelheidsuggesties</li>
+          <li><span class="mark" aria-hidden="true">✓</span>Bijhouden van energiebeschikbaarheid gedurende de dag</li>
+          <li><span class="mark" aria-hidden="true">✓</span>Voedingstrends naast welzijnsbeoordelingen en trainingsbelasting</li>
+          <li><span class="mark" aria-hidden="true">✓</span>Planner voor racevoeding en hydratatie</li>
+        </ul>
+        <a class="plan-cta" href="https://web.glycogo.fit/">Start free</a>
+      </article>
+
+      <article class="plan-card plan-athlete featured fade-up">
+        <div class="plan-top">
+          <span class="plan-badge">Most popular</span>
+          <div class="plan-price">$5<small>USD/month</small></div>
+          <p class="plan-desc">The whole app for one athlete.</p>
+        </div>
+        <ul class="plan-features">
+          <li><span class="mark" aria-hidden="true">✓</span>Everything in Free</li>
+          <li><span class="mark" aria-hidden="true">✓</span>Barcode scanning</li>
+          <li><span class="mark" aria-hidden="true">✓</span>Photo logging</li>
+          <li><span class="mark" aria-hidden="true">✓</span>Voice logging</li>
+          <li><span class="mark" aria-hidden="true">✓</span>Extra race plans</li>
+          <li><span class="mark" aria-hidden="true">✓</span>Data export</li>
+          <li><span class="mark" aria-hidden="true">✓</span>Race plan export</li>
+          <li><span class="mark" aria-hidden="true">✓</span>AI nutrition assistant</li>
+        </ul>
+        <a class="plan-cta" href="https://web.glycogo.fit/">Get Premium</a>
+      </article>
+
+      <article class="plan-card plan-coach fade-up">
+        <div class="plan-top">
+          <span class="plan-badge">Coach</span>
+          <div class="plan-price">$30<small>USD/month</small></div>
+          <p class="plan-desc">Coaches betalen 30 USD per maand voor een onbeperkte atleetselectie en een uitgebreid dashboard voor voedingscoaching.</p>
+        </div>
+        <ul class="plan-features">
+          <li><span class="mark" aria-hidden="true">✓</span>Atleetselectie en signaleringen</li>
+          <li><span class="mark" aria-hidden="true">✓</span>Weekbord en gedetailleerde dagweergave</li>
+          <li><span class="mark" aria-hidden="true">✓</span>Session planning</li>
+          <li><span class="mark" aria-hidden="true">✓</span>Substrate utilisation estimates</li>
+          <li><span class="mark" aria-hidden="true">✓</span>Doelen en maaltijdinstellingen per atleet</li>
+          <li><span class="mark" aria-hidden="true">✓</span>Voedingstrends naast welzijnsbeoordelingen en trainingsbelasting</li>
+          <li><span class="mark" aria-hidden="true">✓</span>Planner voor racevoeding en hydratatie</li>
+          <li><span class="mark" aria-hidden="true">✓</span>Messages linked to days and sessions</li>
+        </ul>
+        <a class="plan-cta" href="/nl/for-coaches/">See coach tools</a>
+      </article>
+    </div>
+
+    <p class="plan-note">Prices in US dollars, billed monthly. Cancel any time.</p>
+  </div>
+</section>
+
 <!-- SUPPORT -->
 <section id="support" class="support block">
   <div class="support-inner fade-up">
@@ -1656,8 +1792,8 @@
     <span style="font-size:0.74rem;">G.E.McConnochie PhD &nbsp;·&nbsp; <a href="mailto:contactgemperformance@gmail.com">contactgemperformance@gmail.com</a></span>
   </div>
   <div style="display:flex;gap:1rem;align-items:center;flex-wrap:wrap;">
-    <a href="/terms" style="color:rgba(255,255,255,0.6);font-size:0.82rem;text-decoration:underline;">Servicevoorwaarden</a>
-    <a href="/privacy" style="color:rgba(255,255,255,0.6);font-size:0.82rem;text-decoration:underline;">Privacybeleid</a>
+    <a href="/nl/terms/" style="color:rgba(255,255,255,0.6);font-size:0.82rem;text-decoration:underline;">Servicevoorwaarden</a>
+    <a href="/nl/privacy/" style="color:rgba(255,255,255,0.6);font-size:0.82rem;text-decoration:underline;">Privacybeleid</a>
     <a href="#faq" style="color:rgba(255,255,255,0.6);font-size:0.82rem;text-decoration:underline;">FAQ</a>
     <a href="https://web.glycogo.fit/" style="background:var(--green);color:white;padding:0.5rem 1.2rem;border-radius:6px;font-weight:600;font-size:0.85rem;text-decoration:none;">Gratis proberen</a>
   </div>

@@ -33,13 +33,16 @@ const PAGES = [
   { route: "/terms/", file: "terms/index.html", block: "terms", priority: "0.3", changefreq: "yearly" },
   { route: "/delete-account/", file: "delete-account/index.html", block: "deleteAccount", priority: "0.3", changefreq: "yearly" },
   { route: "/for-coaches/", file: "for-coaches/index.html", block: "forCoaches", priority: "0.8", changefreq: "monthly" },
+  { route: "/compare-sports-nutrition-apps/", file: "compare-sports-nutrition-apps/index.html", block: "compare", priority: "0.7", changefreq: "monthly" },
 ];
 
 /* English-only pages: indexed and listed in the sitemap, but not translated
    and not part of the language picker, so they get no hreflang alternates. */
-const EXTRA_URLS = [
-  { route: "/compare-sports-nutrition-apps/", priority: "0.7", changefreq: "monthly" },
-];
+const EXTRA_URLS = [];
+
+/* Built and reachable, but kept out of the sitemap: utility pages that carry no
+   search intent of their own and only add "crawled, not indexed" noise. */
+const NOT_IN_SITEMAP = new Set(["/beta/", "/delete-account/"]);
 
 const ROUTES = new Set(PAGES.map((p) => p.route));
 const ATTRS = ["placeholder", "alt", "title", "aria-label"];
@@ -343,6 +346,7 @@ sitemapLines.push(
   '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">'
 );
 for (const page of PAGES) {
+  if (NOT_IN_SITEMAP.has(page.route)) continue;
   for (const lang of LANGS) {
     sitemapLines.push("  <url>");
     sitemapLines.push("    <loc>" + urlFor(lang, page.route) + "</loc>");

@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://glycogo.fit/</loc>
-    <lastmod>2026-11-07</lastmod>
+    <lastmod>2026-11-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://glycogo.fit/"/>
@@ -15,7 +15,7 @@
   </url>
   <url>
     <loc>https://glycogo.fit/de/</loc>
-    <lastmod>2026-11-07</lastmod>
+    <lastmod>2026-11-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://glycogo.fit/"/>
@@ -28,7 +28,7 @@
   </url>
   <url>
     <loc>https://glycogo.fit/es/</loc>
-    <lastmod>2026-11-07</lastmod>
+    <lastmod>2026-11-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://glycogo.fit/"/>
@@ -41,7 +41,7 @@
   </url>
   <url>
     <loc>https://glycogo.fit/fr/</loc>
-    <lastmod>2026-11-07</lastmod>
+    <lastmod>2026-11-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://glycogo.fit/"/>
@@ -54,7 +54,7 @@
   </url>
   <url>
     <loc>https://glycogo.fit/it/</loc>
-    <lastmod>2026-11-07</lastmod>
+    <lastmod>2026-11-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://glycogo.fit/"/>
@@ -67,7 +67,7 @@
   </url>
   <url>
     <loc>https://glycogo.fit/nl/</loc>
-    <lastmod>2026-11-07</lastmod>
+    <lastmod>2026-11-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://glycogo.fit/"/>
@@ -314,7 +314,7 @@
   </url>
   <url>
     <loc>https://glycogo.fit/instructions/</loc>
-    <lastmod>2026-11-07</lastmod>
+    <lastmod>2026-11-12</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://glycogo.fit/instructions/"/>
@@ -327,7 +327,7 @@
   </url>
   <url>
     <loc>https://glycogo.fit/de/instructions/</loc>
-    <lastmod>2026-11-07</lastmod>
+    <lastmod>2026-11-12</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://glycogo.fit/instructions/"/>
@@ -340,7 +340,7 @@
   </url>
   <url>
     <loc>https://glycogo.fit/es/instructions/</loc>
-    <lastmod>2026-11-07</lastmod>
+    <lastmod>2026-11-12</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://glycogo.fit/instructions/"/>
@@ -353,7 +353,7 @@
   </url>
   <url>
     <loc>https://glycogo.fit/fr/instructions/</loc>
-    <lastmod>2026-11-07</lastmod>
+    <lastmod>2026-11-12</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://glycogo.fit/instructions/"/>
@@ -366,7 +366,7 @@
   </url>
   <url>
     <loc>https://glycogo.fit/it/instructions/</loc>
-    <lastmod>2026-11-07</lastmod>
+    <lastmod>2026-11-12</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://glycogo.fit/instructions/"/>
@@ -379,7 +379,7 @@
   </url>
   <url>
     <loc>https://glycogo.fit/nl/instructions/</loc>
-    <lastmod>2026-11-07</lastmod>
+    <lastmod>2026-11-12</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://glycogo.fit/instructions/"/>
@@ -391,86 +391,8 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://glycogo.fit/instructions/"/>
   </url>
   <url>
-    <loc>https://glycogo.fit/beta/</loc>
-    <lastmod>2026-11-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://glycogo.fit/beta/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://glycogo.fit/de/beta/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://glycogo.fit/es/beta/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://glycogo.fit/fr/beta/"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://glycogo.fit/it/beta/"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://glycogo.fit/nl/beta/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://glycogo.fit/beta/"/>
-  </url>
-  <url>
-    <loc>https://glycogo.fit/de/beta/</loc>
-    <lastmod>2026-11-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://glycogo.fit/beta/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://glycogo.fit/de/beta/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://glycogo.fit/es/beta/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://glycogo.fit/fr/beta/"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://glycogo.fit/it/beta/"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://glycogo.fit/nl/beta/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://glycogo.fit/beta/"/>
-  </url>
-  <url>
-    <loc>https://glycogo.fit/es/beta/</loc>
-    <lastmod>2026-11-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://glycogo.fit/beta/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://glycogo.fit/de/beta/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://glycogo.fit/es/beta/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://glycogo.fit/fr/beta/"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://glycogo.fit/it/beta/"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://glycogo.fit/nl/beta/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://glycogo.fit/beta/"/>
-  </url>
-  <url>
-    <loc>https://glycogo.fit/fr/beta/</loc>
-    <lastmod>2026-11-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://glycogo.fit/beta/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://glycogo.fit/de/beta/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://glycogo.fit/es/beta/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://glycogo.fit/fr/beta/"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://glycogo.fit/it/beta/"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://glycogo.fit/nl/beta/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://glycogo.fit/beta/"/>
-  </url>
-  <url>
-    <loc>https://glycogo.fit/it/beta/</loc>
-    <lastmod>2026-11-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://glycogo.fit/beta/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://glycogo.fit/de/beta/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://glycogo.fit/es/beta/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://glycogo.fit/fr/beta/"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://glycogo.fit/it/beta/"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://glycogo.fit/nl/beta/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://glycogo.fit/beta/"/>
-  </url>
-  <url>
-    <loc>https://glycogo.fit/nl/beta/</loc>
-    <lastmod>2026-11-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://glycogo.fit/beta/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://glycogo.fit/de/beta/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://glycogo.fit/es/beta/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://glycogo.fit/fr/beta/"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://glycogo.fit/it/beta/"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://glycogo.fit/nl/beta/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://glycogo.fit/beta/"/>
-  </url>
-  <url>
     <loc>https://glycogo.fit/privacy/</loc>
-    <lastmod>2026-11-07</lastmod>
+    <lastmod>2026-11-12</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://glycogo.fit/privacy/"/>
@@ -483,7 +405,7 @@
   </url>
   <url>
     <loc>https://glycogo.fit/de/privacy/</loc>
-    <lastmod>2026-11-07</lastmod>
+    <lastmod>2026-11-12</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://glycogo.fit/privacy/"/>
@@ -496,7 +418,7 @@
   </url>
   <url>
     <loc>https://glycogo.fit/es/privacy/</loc>
-    <lastmod>2026-11-07</lastmod>
+    <lastmod>2026-11-12</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://glycogo.fit/privacy/"/>
@@ -509,7 +431,7 @@
   </url>
   <url>
     <loc>https://glycogo.fit/fr/privacy/</loc>
-    <lastmod>2026-11-07</lastmod>
+    <lastmod>2026-11-12</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://glycogo.fit/privacy/"/>
@@ -522,7 +444,7 @@
   </url>
   <url>
     <loc>https://glycogo.fit/it/privacy/</loc>
-    <lastmod>2026-11-07</lastmod>
+    <lastmod>2026-11-12</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://glycogo.fit/privacy/"/>
@@ -535,7 +457,7 @@
   </url>
   <url>
     <loc>https://glycogo.fit/nl/privacy/</loc>
-    <lastmod>2026-11-07</lastmod>
+    <lastmod>2026-11-12</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://glycogo.fit/privacy/"/>
@@ -625,86 +547,8 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://glycogo.fit/terms/"/>
   </url>
   <url>
-    <loc>https://glycogo.fit/delete-account/</loc>
-    <lastmod>2026-10-20</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://glycogo.fit/delete-account/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://glycogo.fit/de/delete-account/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://glycogo.fit/es/delete-account/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://glycogo.fit/fr/delete-account/"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://glycogo.fit/it/delete-account/"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://glycogo.fit/nl/delete-account/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://glycogo.fit/delete-account/"/>
-  </url>
-  <url>
-    <loc>https://glycogo.fit/de/delete-account/</loc>
-    <lastmod>2026-10-20</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://glycogo.fit/delete-account/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://glycogo.fit/de/delete-account/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://glycogo.fit/es/delete-account/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://glycogo.fit/fr/delete-account/"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://glycogo.fit/it/delete-account/"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://glycogo.fit/nl/delete-account/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://glycogo.fit/delete-account/"/>
-  </url>
-  <url>
-    <loc>https://glycogo.fit/es/delete-account/</loc>
-    <lastmod>2026-10-20</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://glycogo.fit/delete-account/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://glycogo.fit/de/delete-account/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://glycogo.fit/es/delete-account/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://glycogo.fit/fr/delete-account/"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://glycogo.fit/it/delete-account/"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://glycogo.fit/nl/delete-account/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://glycogo.fit/delete-account/"/>
-  </url>
-  <url>
-    <loc>https://glycogo.fit/fr/delete-account/</loc>
-    <lastmod>2026-10-20</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://glycogo.fit/delete-account/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://glycogo.fit/de/delete-account/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://glycogo.fit/es/delete-account/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://glycogo.fit/fr/delete-account/"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://glycogo.fit/it/delete-account/"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://glycogo.fit/nl/delete-account/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://glycogo.fit/delete-account/"/>
-  </url>
-  <url>
-    <loc>https://glycogo.fit/it/delete-account/</loc>
-    <lastmod>2026-10-20</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://glycogo.fit/delete-account/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://glycogo.fit/de/delete-account/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://glycogo.fit/es/delete-account/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://glycogo.fit/fr/delete-account/"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://glycogo.fit/it/delete-account/"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://glycogo.fit/nl/delete-account/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://glycogo.fit/delete-account/"/>
-  </url>
-  <url>
-    <loc>https://glycogo.fit/nl/delete-account/</loc>
-    <lastmod>2026-10-20</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://glycogo.fit/delete-account/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://glycogo.fit/de/delete-account/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://glycogo.fit/es/delete-account/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://glycogo.fit/fr/delete-account/"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://glycogo.fit/it/delete-account/"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://glycogo.fit/nl/delete-account/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://glycogo.fit/delete-account/"/>
-  </url>
-  <url>
     <loc>https://glycogo.fit/for-coaches/</loc>
-    <lastmod>2026-11-10</lastmod>
+    <lastmod>2026-11-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://glycogo.fit/for-coaches/"/>
@@ -717,7 +561,7 @@
   </url>
   <url>
     <loc>https://glycogo.fit/de/for-coaches/</loc>
-    <lastmod>2026-11-10</lastmod>
+    <lastmod>2026-11-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://glycogo.fit/for-coaches/"/>
@@ -730,7 +574,7 @@
   </url>
   <url>
     <loc>https://glycogo.fit/es/for-coaches/</loc>
-    <lastmod>2026-11-10</lastmod>
+    <lastmod>2026-11-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://glycogo.fit/for-coaches/"/>
@@ -743,7 +587,7 @@
   </url>
   <url>
     <loc>https://glycogo.fit/fr/for-coaches/</loc>
-    <lastmod>2026-11-10</lastmod>
+    <lastmod>2026-11-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://glycogo.fit/for-coaches/"/>
@@ -756,7 +600,7 @@
   </url>
   <url>
     <loc>https://glycogo.fit/it/for-coaches/</loc>
-    <lastmod>2026-11-10</lastmod>
+    <lastmod>2026-11-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://glycogo.fit/for-coaches/"/>
@@ -769,7 +613,7 @@
   </url>
   <url>
     <loc>https://glycogo.fit/nl/for-coaches/</loc>
-    <lastmod>2026-11-10</lastmod>
+    <lastmod>2026-11-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://glycogo.fit/for-coaches/"/>
@@ -782,8 +626,80 @@
   </url>
   <url>
     <loc>https://glycogo.fit/compare-sports-nutrition-apps/</loc>
-    <lastmod>2026-11-07</lastmod>
+    <lastmod>2026-11-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://glycogo.fit/compare-sports-nutrition-apps/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://glycogo.fit/de/compare-sports-nutrition-apps/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://glycogo.fit/es/compare-sports-nutrition-apps/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://glycogo.fit/fr/compare-sports-nutrition-apps/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://glycogo.fit/it/compare-sports-nutrition-apps/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://glycogo.fit/nl/compare-sports-nutrition-apps/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://glycogo.fit/compare-sports-nutrition-apps/"/>
+  </url>
+  <url>
+    <loc>https://glycogo.fit/de/compare-sports-nutrition-apps/</loc>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://glycogo.fit/compare-sports-nutrition-apps/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://glycogo.fit/de/compare-sports-nutrition-apps/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://glycogo.fit/es/compare-sports-nutrition-apps/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://glycogo.fit/fr/compare-sports-nutrition-apps/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://glycogo.fit/it/compare-sports-nutrition-apps/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://glycogo.fit/nl/compare-sports-nutrition-apps/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://glycogo.fit/compare-sports-nutrition-apps/"/>
+  </url>
+  <url>
+    <loc>https://glycogo.fit/es/compare-sports-nutrition-apps/</loc>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://glycogo.fit/compare-sports-nutrition-apps/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://glycogo.fit/de/compare-sports-nutrition-apps/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://glycogo.fit/es/compare-sports-nutrition-apps/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://glycogo.fit/fr/compare-sports-nutrition-apps/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://glycogo.fit/it/compare-sports-nutrition-apps/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://glycogo.fit/nl/compare-sports-nutrition-apps/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://glycogo.fit/compare-sports-nutrition-apps/"/>
+  </url>
+  <url>
+    <loc>https://glycogo.fit/fr/compare-sports-nutrition-apps/</loc>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://glycogo.fit/compare-sports-nutrition-apps/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://glycogo.fit/de/compare-sports-nutrition-apps/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://glycogo.fit/es/compare-sports-nutrition-apps/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://glycogo.fit/fr/compare-sports-nutrition-apps/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://glycogo.fit/it/compare-sports-nutrition-apps/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://glycogo.fit/nl/compare-sports-nutrition-apps/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://glycogo.fit/compare-sports-nutrition-apps/"/>
+  </url>
+  <url>
+    <loc>https://glycogo.fit/it/compare-sports-nutrition-apps/</loc>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://glycogo.fit/compare-sports-nutrition-apps/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://glycogo.fit/de/compare-sports-nutrition-apps/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://glycogo.fit/es/compare-sports-nutrition-apps/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://glycogo.fit/fr/compare-sports-nutrition-apps/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://glycogo.fit/it/compare-sports-nutrition-apps/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://glycogo.fit/nl/compare-sports-nutrition-apps/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://glycogo.fit/compare-sports-nutrition-apps/"/>
+  </url>
+  <url>
+    <loc>https://glycogo.fit/nl/compare-sports-nutrition-apps/</loc>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://glycogo.fit/compare-sports-nutrition-apps/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://glycogo.fit/de/compare-sports-nutrition-apps/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://glycogo.fit/es/compare-sports-nutrition-apps/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://glycogo.fit/fr/compare-sports-nutrition-apps/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://glycogo.fit/it/compare-sports-nutrition-apps/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://glycogo.fit/nl/compare-sports-nutrition-apps/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://glycogo.fit/compare-sports-nutrition-apps/"/>
   </url>
 </urlset>

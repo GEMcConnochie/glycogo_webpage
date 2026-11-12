@@ -70,12 +70,16 @@
     --sans: 'Space Grotesk', system-ui, -apple-system, sans-serif;
     --r: 10px;
     --nav-h: 64px;
+    /* Room either side of the screen, which is also how far the deck of the
+       laptop can splay before it would meet the edge of the navy band. */
+    --deck-pad: clamp(16px, 3.2vw, 56px);
   }
   *, *::before, *::after { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   body {
     margin: 0; padding-top: var(--nav-h);
-    font-family: var(--sans); background: #ffffff; color: var(--navy);
+    font-family: var(--sans); color: var(--navy);
+    background: linear-gradient(180deg, #ecf5ef 0%, #f7faf8 320px, #f7faf8 100%);
     -webkit-font-smoothing: antialiased;
   }
   img, video { max-width: 100%; display: block; }
@@ -152,24 +156,49 @@
   .btn.light:hover { background: var(--green-soft); border-color: var(--green-soft); }
 
   /* ---------- hero ---------- */
-  .hero { padding: 84px 0 72px; background: #fff; border-bottom: 1px solid var(--line); }
+  .hero {
+    padding: 84px 0 72px; border-bottom: 1px solid var(--line);
+    background:
+      radial-gradient(1100px 460px at 88% -8%, rgba(46, 125, 50, .13), rgba(46, 125, 50, 0) 68%),
+      radial-gradient(820px 420px at 6% 0%, rgba(45, 45, 122, .08), rgba(45, 45, 122, 0) 70%),
+      linear-gradient(180deg, #eef7f1 0%, #f7faf8 100%);
+  }
   .hero-actions { display: flex; gap: 12px; margin-top: 30px; flex-wrap: wrap; }
 
   /* A lid, a hinge and a deck: the bezel is the dark edge the picture sits in,
      the camera is what says it is a screen rather than a framed image, and the
      deck is the part that is wider than the lid when a laptop is open. */
-  .laptop { max-width: 1060px; margin: 56px auto 0; }
+  /* The stage the laptop sits on: a navy panel so the screen reads as a device
+     on a surface rather than a picture floating on the page. */
+  .laptop-stage {
+    margin: 56px 0 0; padding: 64px var(--deck-pad) 48px;
+    border-top: 1px solid rgba(26, 26, 62, .35);
+    background:
+      radial-gradient(680px 320px at 50% 46%, rgba(255, 255, 255, .12), rgba(255, 255, 255, 0) 70%),
+      radial-gradient(900px 380px at 50% -6%, rgba(67, 160, 71, .22), rgba(67, 160, 71, 0) 72%),
+      linear-gradient(160deg, #31316b 0%, #28285a 56%, #1b1b46 100%);
+    overflow: hidden;
+  }
+  .laptop { max-width: 1060px; margin: 0 auto; position: relative; }
+  /* Contact shadow: the device sits on the stage rather than floating above it. */
+  .laptop::after {
+    content: ""; position: absolute; left: 2%; right: 2%; bottom: -18px; height: 26px;
+    background: radial-gradient(58% 100% at 50% 0%, rgba(3, 5, 20, .42), rgba(3, 5, 20, 0) 72%);
+    filter: blur(7px); pointer-events: none;
+  }
   .laptop-screen {
     position: relative;
-    border: 11px solid var(--navy);
-    border-top-width: 13px;
-    border-bottom-width: 15px;
-    border-radius: 18px 18px 5px 5px;
-    background: var(--navy);
+    border: 9px solid var(--navy);
+    border-top-width: 12px;
+    border-bottom-width: 13px;
+    border-radius: 13px 13px 2px 2px;
+    background: linear-gradient(180deg, #0f0f29 0%, #1b1b40 58%, #121230 100%);
     box-shadow:
-      inset 0 1px 0 rgba(255, 255, 255, .14),
-      0 1px 2px rgba(26, 26, 62, .18),
-      0 46px 90px -58px rgba(26, 26, 62, .7);
+      inset 0 1px 0 rgba(255, 255, 255, .22),
+      inset 0 -1px 0 rgba(255, 255, 255, .12),
+      0 0 0 1px rgba(255, 255, 255, .17),
+      0 1px 2px rgba(8, 10, 30, .3),
+      0 34px 70px -30px rgba(4, 6, 24, .92);
   }
   /* The camera, centred in the top bezel. */
   .laptop-screen::before {
@@ -186,24 +215,31 @@
   /* The deck: wider than the lid, its front edge rounded, and a shadow where the
      screen meets it so the two read as a hinge rather than a stripe. */
   .laptop-base {
-    position: relative; height: 15px; margin: 0 -54px;
-    background: linear-gradient(#eef3f3, #d3ddde);
-    border: 1px solid #c2ced0; border-top: 0;
-    border-radius: 0 0 15px 15px;
-    box-shadow: 0 22px 34px -30px rgba(26, 26, 62, .6);
+    /* The deck is wider than the lid, then clipped back to the lid's width at the
+       hinge, so it meets the screen flush and only the front edge splays out.
+       The inset is whatever room the band has, less a small margin. */
+    --deck-inset: calc(var(--deck-pad) - 6px);
+    position: relative; height: 22px; margin: 0 calc(-1 * var(--deck-inset));
+    background: linear-gradient(180deg, #f0f5f6 0%, #dfe8ea 26%, #cdd9db 58%, #b8c7c9 84%, #a6b7b9 100%);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .6), inset 0 -1px 0 rgba(255, 255, 255, .25);
+    clip-path: polygon(var(--deck-inset) 0, calc(100% - var(--deck-inset)) 0, 100% 100%, 0 100%);
   }
   .laptop-base::before {
-    content: ""; position: absolute; top: 0; left: 50%; width: 148px; height: 5px;
-    margin-left: -74px; border-radius: 0 0 5px 5px; background: #c0ced0;
-    box-shadow: inset 0 1px 1px rgba(255, 255, 255, .5);
+    content: ""; position: absolute; top: 0; left: 50%; width: 128px; height: 5px;
+    margin-left: -64px; border-radius: 0 0 5px 5px;
+    background: linear-gradient(#c9d6d8, #eaf1f2);
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, .55);
   }
   .laptop-base::after {
-    content: ""; position: absolute; top: 0; left: 0; right: 0; height: 4px;
-    background: linear-gradient(rgba(26, 26, 62, .22), rgba(26, 26, 62, 0));
+    content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(rgba(10, 14, 34, .34), rgba(10, 14, 34, 0));
   }
 
   /* ---------- sections ---------- */
-  .section { padding: 96px 0; }
+  .section { padding: 96px 0; background: #f7faf8; }
+  /* Every other block carries a faint paper tint so the page reads in bands
+     without a hard edge anywhere. */
+  #settings, #trends, #training { background: linear-gradient(180deg, #eaf3ed 0%, #f2f8f4 100%); }
   .section + .section { border-top: 1px solid var(--line); }
   .section-head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 56px; align-items: start; }
   .section-head .prose { padding-top: 2px; }
@@ -217,7 +253,7 @@
   /* ---------- media ---------- */
   .media {
     margin: 36px 0 0; border: 1px solid var(--line); border-radius: var(--r); overflow: hidden;
-    background: #f7faf8;
+    background: #ffffff;
     box-shadow: 0 30px 70px -48px rgba(26, 26, 62, .55), 0 1px 0 rgba(26, 26, 62, .02);
   }
   .media img, .media video { width: 100%; height: auto; }
@@ -243,7 +279,7 @@
   .carousel-track::-webkit-scrollbar { display: none; }
   .slide {
     flex: 0 0 82%; margin: 0; scroll-snap-align: start;
-    border: 1px solid var(--line); border-radius: var(--r); overflow: hidden; background: #f7faf8;
+    border: 1px solid var(--line); border-radius: var(--r); overflow: hidden; background: #ffffff;
   }
   .slide img, .slide video { width: 100%; height: auto; display: block; }
   .carousel-bar { display: flex; align-items: center; gap: 10px; justify-content: flex-end; margin-top: 14px; }
@@ -255,7 +291,13 @@
   .carousel-btn:hover { border-color: #c8d8c8; }
 
   /* ---------- cta ---------- */
-  .cta-band { background: var(--navy); color: #fff; padding: 84px 0; }
+  .cta-band {
+    color: #fff; padding: 84px 0;
+    background:
+      radial-gradient(760px 420px at 92% 6%, rgba(46, 125, 50, .32), rgba(46, 125, 50, 0) 70%),
+      radial-gradient(620px 380px at 2% 100%, rgba(45, 45, 122, .55), rgba(45, 45, 122, 0) 72%),
+      linear-gradient(135deg, #1a1a3e 0%, #1d2647 58%, #16321f 100%);
+  }
   .cta-band .eyebrow { color: var(--green-pale); }
   .cta-band h2 { color: #fff; max-width: 24ch; }
   .cta-band p { color: rgba(255, 255, 255, 0.65); font-size: 16.5px; line-height: 1.6; margin-top: 16px; max-width: 50ch; }
@@ -266,7 +308,7 @@
   .cta-note p { margin: 0; max-width: 70ch; color: rgba(255, 255, 255, 0.5); font-size: 14px; }
 
   /* ---------- footer ---------- */
-  footer { background: #f7faf8; padding: 56px 0 40px; border-top: 1px solid var(--line); }
+  footer { background: linear-gradient(180deg, #eaf2ec 0%, #e3efe7 100%); padding: 56px 0 40px; border-top: 1px solid var(--line); }
   .foot-brand img { height: 28px; margin-bottom: 14px; }
   .foot-brand p { font-size: 13px; color: var(--muted); line-height: 1.6; }
   .foot-brand .org { font-family: var(--mono); font-size: 10.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted-2); margin-bottom: 6px; }
@@ -295,7 +337,7 @@
     .section { padding: 68px 0; }
     .section-head, .subhead { grid-template-columns: 1fr; gap: 18px; }
     .hero { padding: 56px 0 44px; }
-    .laptop-base { margin: 0 -10px; }
+    .laptop-stage { padding: 26px var(--deck-pad) 24px; }
     .lane { }
     .duo, .pair { grid-template-columns: 1fr; }
     .slide { flex-basis: 92%; }
@@ -334,11 +376,14 @@
   <div class="wrap">
     <p class="eyebrow">Voor coaches en sportvoedingsprofessionals</p>
     <h1>Wat, wanneer en hoe je atleten zich voeden.</h1>
-    <p class="lede">Zie wat atleten eten, hoe hun inname zich verhoudt tot hun behoeften en of ze genoeg koolhydraten binnenkrijgen voor hun training. Glycogo brengt voedings-, trainings- en welzijnsdata op één plek samen, zodat je de details achter de dagelijkse voeding van een atleet kunt beoordelen.</p>
+    <p class="lede">Zie wat atleten eten, hoe hun inname zich verhoudt tot hun behoeften en of ze voor, tijdens en na de training genoeg koolhydraten binnenkrijgen. Glycogo brengt voedings-, trainings- en welzijnsdata samen, met synchronisatie met het trainingsplatform en ingebouwde communicatie met atleten.</p>
     <div class="hero-actions">
       <a class="btn" href="https://coach.glycogo.fit/">Probeer het</a>
     </div>
-    <div class="laptop">
+  </div>
+
+  <div class="laptop-stage">
+      <div class="laptop">
       <div class="laptop-screen">
         <video muted loop playsinline poster="/assets/coaches/hero-tour-poster.jpg?v=45"
                aria-label="De selectie die over de week van een atleet beweegt: de energie- en macrobalken van elke dag, de geplande sessie en de welzijnsstippen, dan een dag die opengaat naar de scores en maaltijden en de lunchkaart die opengaat naar de voedingsmiddelen.">
@@ -346,8 +391,8 @@
         </video>
       </div>
       <div class="laptop-base"></div>
+      </div>
     </div>
-  </div>
 </header>
 
 <section class="section" id="roster">
@@ -619,7 +664,7 @@
     </div>
     <div class="foot-legal">
       <span>contactgemperformance@gmail.com</span>
-      <span><a href="/terms">Voorwaarden</a> · <a href="/privacy">Privacy</a> · <a href="https://web.glycogo.fit/">Atleten-app</a></span>
+      <span><a href="/nl/terms/">Voorwaarden</a> · <a href="/nl/privacy/">Privacy</a> · <a href="https://web.glycogo.fit/">Atleten-app</a></span>
     </div>
   </div>
 </footer>
@@ -709,6 +754,7 @@
   }
 })();
 </script>
+<script src="/assets/video-speed.js" defer></script>
 <script src="/assets/i18n.js" defer></script>
 </body>
 </html>
