@@ -72,7 +72,7 @@
     --nav-h: 64px;
     /* Room either side of the screen, which is also how far the deck of the
        laptop can splay before it would meet the edge of the navy band. */
-    --deck-pad: clamp(16px, 3.2vw, 56px);
+    --deck-pad: clamp(20px, 4.5vw, 64px);
   }
   *, *::before, *::after { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
@@ -179,20 +179,24 @@
       linear-gradient(160deg, #31316b 0%, #28285a 56%, #1b1b46 100%);
     overflow: hidden;
   }
-  .laptop { max-width: 1060px; margin: 0 auto; position: relative; }
+  .laptop {
+    max-width: 1060px; margin: 0 auto; position: relative;
+    --deck-inset: clamp(14px, 2vw, 30px);
+  }
+
   /* Contact shadow: the device sits on the stage rather than floating above it. */
   .laptop::after {
-    content: ""; position: absolute; left: 2%; right: 2%; bottom: -18px; height: 26px;
-    background: radial-gradient(58% 100% at 50% 0%, rgba(3, 5, 20, .42), rgba(3, 5, 20, 0) 72%);
-    filter: blur(7px); pointer-events: none;
+    content: ""; position: absolute; left: 2%; right: 2%; bottom: -6px; height: 24px;
+    background: radial-gradient(58% 100% at 50% 0%, rgba(3, 5, 20, .38), rgba(3, 5, 20, 0) 72%);
+    filter: blur(6px); pointer-events: none;
   }
   .laptop-screen {
     position: relative;
-    border: 9px solid var(--navy);
-    border-top-width: 12px;
-    border-bottom-width: 13px;
-    border-radius: 13px 13px 2px 2px;
-    background: linear-gradient(180deg, #0f0f29 0%, #1b1b40 58%, #121230 100%);
+    border: 15px solid #0b0d14;
+    border-top-width: 17px;
+    border-bottom-width: 22px;
+    border-radius: 16px 16px 4px 4px;
+    background: linear-gradient(180deg, #05060a 0%, #15171f 58%, #0a0b11 100%);
     box-shadow:
       inset 0 1px 0 rgba(255, 255, 255, .22),
       inset 0 -1px 0 rgba(255, 255, 255, .12),
@@ -203,7 +207,7 @@
   /* The camera, centred in the top bezel. */
   .laptop-screen::before {
     content: ""; position: absolute; top: -8px; left: 50%; width: 5px; height: 5px;
-    margin-left: -2.5px; border-radius: 50%; background: #40525c;
+    margin-left: -2.5px; border-radius: 50%; background: #2b2f36;
     box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .12);
   }
   /* A glass sheen, barely there: enough that the screen reads as a surface. */
@@ -215,24 +219,44 @@
   /* The deck: wider than the lid, its front edge rounded, and a shadow where the
      screen meets it so the two read as a hinge rather than a stripe. */
   .laptop-base {
-    /* The deck is wider than the lid, then clipped back to the lid's width at the
-       hinge, so it meets the screen flush and only the front edge splays out.
-       The inset is whatever room the band has, less a small margin. */
-    --deck-inset: calc(var(--deck-pad) - 6px);
-    position: relative; height: 22px; margin: 0 calc(-1 * var(--deck-inset));
-    background: linear-gradient(180deg, #f0f5f6 0%, #dfe8ea 26%, #cdd9db 58%, #b8c7c9 84%, #a6b7b9 100%);
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .6), inset 0 -1px 0 rgba(255, 255, 255, .25);
-    clip-path: polygon(var(--deck-inset) 0, calc(100% - var(--deck-inset)) 0, 100% 100%, 0 100%);
+    /* Deck and its vertical face are one shape, so the corner is a single curve
+       with the dark base colour filling it right up to the light top face. A
+       separate side element left a wedge of background in that corner.
+       The deck is wider than the lid, then clipped back to the lid's width at
+       the hinge, so it meets the screen flush and only the front edge splays. */
+    --deck-inset: clamp(14px, 2vw, 30px);
+    --deck-r: 10px;
+    --deck-face: 31px;
+    position: relative; height: 57px; margin: 0 calc(-1 * var(--deck-inset));
+    /* The dark edge of the base. Its sides stop splaying short of the front, so
+       the corner runs vertically, the way a lid's edge does near the wrist. */
+    background: linear-gradient(180deg, #4b5459 0%, #333a3e 52%, #22272a 100%);
+    clip-path: polygon(
+      var(--deck-inset) 0,
+      calc(100% - var(--deck-inset)) 0,
+      100% 18px,
+      100% calc(100% - var(--deck-r)),
+      calc(100% - 2.93px) calc(100% - 2.93px),
+      calc(100% - var(--deck-r)) 100%,
+      var(--deck-r) 100%,
+      2.93px calc(100% - 2.93px),
+      0 calc(100% - var(--deck-r)),
+      0 18px
+    );
+  }
+  /* The light top face sits on the dark edge and carries the corner curve, so
+     the curve reads light against dark instead of vanishing into it. */
+  .laptop-base::after {
+    content: ""; position: absolute; z-index: 0; top: 0; left: 0; right: 0;
+    height: var(--deck-face); border-radius: 0 0 var(--deck-r) var(--deck-r);
+    background: linear-gradient(180deg, #eaf1f2 0%, #d7e2e4 100%);
+    box-shadow: inset 0 4px 0 rgba(10, 14, 34, .26);
   }
   .laptop-base::before {
-    content: ""; position: absolute; top: 0; left: 50%; width: 128px; height: 5px;
-    margin-left: -64px; border-radius: 0 0 5px 5px;
+    content: ""; position: absolute; z-index: 1; top: 0; left: 50%; width: 128px; height: 4px;
+    margin-left: -64px; border-radius: 0 0 4px 4px;
     background: linear-gradient(#c9d6d8, #eaf1f2);
     box-shadow: inset 0 1px 1px rgba(255, 255, 255, .55);
-  }
-  .laptop-base::after {
-    content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px;
-    background: linear-gradient(rgba(10, 14, 34, .34), rgba(10, 14, 34, 0));
   }
 
   /* ---------- sections ---------- */
@@ -344,6 +368,7 @@
     .cta-grid { grid-template-columns: 1fr; gap: 28px; }
     .foot-legal { flex-direction: column; gap: 8px; }
   }
+
 </style>
 </head>
 <body>
