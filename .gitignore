@@ -1,2 +1,5 @@
 # Chat attachments the editor saves locally. Not site content.
 .cloud-attachments/
+
+# Cloudflare API key for one-off admin calls. Local only, never commit.
+.cf-key

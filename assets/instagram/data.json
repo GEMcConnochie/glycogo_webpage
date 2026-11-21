@@ -1,0 +1,902 @@
+{
+ "mixes": [
+  {
+   "name": "Carbs Fuel Original Sports Drink Mix",
+   "sodium": 500,
+   "gf": "2:1",
+   "carbs": 74.9,
+   "caf": null
+  },
+  {
+   "name": "Flow Formulas Blueberry Agave Endurance Drink Mix",
+   "sodium": 390,
+   "gf": "1:0.8",
+   "carbs": 59.9,
+   "caf": null
+  },
+  {
+   "name": "High 5 Orange Energy Drink",
+   "sodium": 240,
+   "gf": "2:1",
+   "carbs": 43.7,
+   "caf": null
+  },
+  {
+   "name": "Maurten Drink Mix 160 Energy Powder",
+   "sodium": 210,
+   "gf": "1:0.5",
+   "carbs": 39.1,
+   "caf": 0
+  },
+  {
+   "name": "Maurten Drink Mix 320 CAF 100 Hydration Mix Energy Powder",
+   "sodium": 245,
+   "gf": "1:0.7",
+   "carbs": 78.8,
+   "caf": 100
+  },
+  {
+   "name": "Maurten Drink Mix 320 Energy Powder",
+   "sodium": 500,
+   "gf": "1:0.7",
+   "carbs": 79.2,
+   "caf": 0
+  },
+  {
+   "name": "Naak Boost 60 Neutral Energy Powder",
+   "sodium": 250,
+   "gf": "2:1",
+   "carbs": 60.2,
+   "caf": null
+  },
+  {
+   "name": "Skratch Labs Super High Carb Energy Powder",
+   "sodium": 400,
+   "gf": "1:0",
+   "carbs": 50.0,
+   "caf": 0
+  },
+  {
+   "name": "Tailwind High Carb Ginger and Lime Energy Powder",
+   "sodium": 620,
+   "gf": "2:1",
+   "carbs": 90.0,
+   "caf": 0
+  },
+  {
+   "name": "Torq Cola Caffeine Energy Powder",
+   "sodium": 279,
+   "gf": "2:1",
+   "carbs": 29.7,
+   "caf": 100
+  },
+  {
+   "name": "Torq Energy Drink Powder",
+   "sodium": 279,
+   "gf": "2:1",
+   "carbs": 31.0,
+   "caf": 0
+  },
+  {
+   "name": "Never Second C30 Fuel Drink",
+   "sodium": 200,
+   "gf": "2:1",
+   "carbs": 30.1,
+   "caf": 0
+  },
+  {
+   "name": "Never Second C90 High-Carb Drink Mix",
+   "sodium": 200,
+   "gf": "2:1",
+   "carbs": 90.0,
+   "caf": 0
+  },
+  {
+   "name": "Science in Sport Beta Fuel Energy Drink Mix",
+   "sodium": 10,
+   "gf": "1:0.8",
+   "carbs": 80.0,
+   "caf": 0
+  },
+  {
+   "name": "Hammer Nutrition HEED Sports Drink",
+   "sodium": 140,
+   "gf": "1:0",
+   "carbs": 25.0,
+   "caf": 25
+  },
+  {
+   "name": "Hammer Nutrition Perpetuem Energy Powder",
+   "sodium": 210,
+   "gf": "1:0",
+   "carbs": 54.0,
+   "caf": 0
+  },
+  {
+   "name": "Hammer Nutrition Perpetuem - Endurance Drink for long-lasting energy",
+   "sodium": 210,
+   "gf": "1:0",
+   "carbs": 54.0,
+   "caf": 30
+  },
+  {
+   "name": "High5 Isotonic Hydration Electrolyte Powder",
+   "sodium": 240,
+   "gf": "1:0",
+   "carbs": 28.0,
+   "caf": 0
+  },
+  {
+   "name": "Mountain Fuel Morning Fuel Energy Powder",
+   "sodium": 49.1,
+   "gf": "1:0",
+   "carbs": 29.8,
+   "caf": 0
+  },
+  {
+   "name": "Mountain Fuel Xtreme Energy Fuel Energy Powder",
+   "sodium": 102.5,
+   "gf": "1:0",
+   "carbs": 39.8,
+   "caf": 0
+  },
+  {
+   "name": "Mountain Fuel Xtreme Energy Fuel - Raw Energy Powder",
+   "sodium": 102.5,
+   "gf": "1:0",
+   "carbs": 39.8,
+   "caf": 0
+  },
+  {
+   "name": "Named Sport ISONAM ENERGY Electrolyte Powder",
+   "sodium": 248,
+   "gf": "1:0",
+   "carbs": 23.0,
+   "caf": 0
+  },
+  {
+   "name": "Named Sport ISONAM ENERGY Orange Electrolyte Powder",
+   "sodium": 248,
+   "gf": "1:0",
+   "carbs": 22.0,
+   "caf": null
+  },
+  {
+   "name": "Overstim.s Boisson electrolytes Electrolyte Powder",
+   "sodium": 311,
+   "gf": "1:0",
+   "carbs": 2.2,
+   "caf": 0
+  },
+  {
+   "name": "ProAction Mineral Plus Electrolyte Powder",
+   "sodium": 250,
+   "gf": "1:0",
+   "carbs": 27.0,
+   "caf": 0
+  }
+ ],
+ "caffeinated": [
+  {
+   "name": "Bix Big 40 Energy Gel + Caffeine",
+   "caf": 75,
+   "carbs": 40.0,
+   "type": "gel",
+   "sodium": 200
+  },
+  {
+   "name": "GU Original Chocolate Energy Gel",
+   "caf": 20,
+   "carbs": 21.0,
+   "type": "gel",
+   "sodium": 60
+  },
+  {
+   "name": "GU Original Salted Caramel Energy Gel",
+   "caf": 20,
+   "carbs": 22.0,
+   "type": "gel",
+   "sodium": 125
+  },
+  {
+   "name": "GU Original Caffeinated Energy Gel",
+   "caf": 40,
+   "carbs": 22.0,
+   "type": "gel",
+   "sodium": 60
+  },
+  {
+   "name": "Gu Roctane Energy Gel",
+   "caf": 35,
+   "carbs": 21.0,
+   "type": "gel",
+   "sodium": 125
+  },
+  {
+   "name": "Kendal Mint Co NRG Gel+ Plus Citrus and Mint Caffeine Energy Gel",
+   "caf": 100,
+   "carbs": 27.0,
+   "type": "gel",
+   "sodium": 49
+  },
+  {
+   "name": "Maurten 100 CAF Energy Gel",
+   "caf": 100,
+   "carbs": 25.0,
+   "type": "gel",
+   "sodium": 55
+  },
+  {
+   "name": "Maurten Drink Mix 320 CAF 100 Hydration Mix Energy Powder",
+   "caf": 100,
+   "carbs": 78.8,
+   "type": "drink",
+   "sodium": 245
+  },
+  {
+   "name": "Mountain Fuel Hydrogel Cola Energy Gel",
+   "caf": 30,
+   "carbs": 20.3,
+   "type": "gel",
+   "sodium": null
+  },
+  {
+   "name": "Mountain Fuel Sports Jelly + Plus Electrolytes & Caffeine Energy Gel",
+   "caf": 50,
+   "carbs": 29.7,
+   "type": "drink",
+   "sodium": 46
+  },
+  {
+   "name": "Naak Caramel Macchiato Ultra Energy Bar",
+   "caf": 65,
+   "carbs": 25.0,
+   "type": "bar",
+   "sodium": 170
+  },
+  {
+   "name": "Naak Chocolate Ultra Energy Gel",
+   "caf": 35,
+   "carbs": 27.0,
+   "type": "gel",
+   "sodium": 190
+  },
+  {
+   "name": "Precision Fuel and Hydration PF 30 Caffeine Energy Gel",
+   "caf": 100,
+   "carbs": 30.1,
+   "type": "drink",
+   "sodium": 0
+  },
+  {
+   "name": "Science in Sport Beta Fuel with Nootropics Apple Energy Gel",
+   "caf": 200,
+   "carbs": 39.6,
+   "type": "gel",
+   "sodium": 12
+  },
+  {
+   "name": "Tailwind Nutrition Endurance Fuel Caffeinated Energy Powder",
+   "caf": 70,
+   "carbs": 25.1,
+   "type": "drink",
+   "sodium": 620
+  },
+  {
+   "name": "Torq Guarana Caffeine Energy Gel",
+   "caf": 89,
+   "carbs": 28.8,
+   "type": "gel",
+   "sodium": 56
+  },
+  {
+   "name": "Torq Cola Caffeine Energy Powder",
+   "caf": 100,
+   "carbs": 29.7,
+   "type": "drink",
+   "sodium": 279
+  },
+  {
+   "name": "Veloforte Doppio Maple Coffee Guarana Energy Gel",
+   "caf": 75,
+   "carbs": 21.7,
+   "type": "gel",
+   "sodium": 110
+  },
+  {
+   "name": "Voom Pocket Rocket Caffeine Kick Energy Bar",
+   "caf": 175,
+   "carbs": 45.1,
+   "type": "bar",
+   "sodium": null
+  },
+  {
+   "name": "PURE Performance + Race Energy Gel + Caffeine",
+   "caf": 80,
+   "carbs": 38.0,
+   "type": "gel",
+   "sodium": 200
+  },
+  {
+   "name": "Never Second C30+ Berry + Caffeine Energy Gel",
+   "caf": 75,
+   "carbs": 30.0,
+   "type": "gel",
+   "sodium": 200
+  },
+  {
+   "name": "MNSTRY Caffeine Gel 40 Matcha Energy Gel",
+   "caf": 100,
+   "carbs": 40.0,
+   "type": "gel",
+   "sodium": 52
+  },
+  {
+   "name": "PowerBar PowerGel Original Espresso Energy Gel",
+   "caf": 53,
+   "carbs": 26.0,
+   "type": "bar",
+   "sodium": 200
+  },
+  {
+   "name": "PowerBar PowerGel Hydro Caffeine Energy Gel",
+   "caf": 100,
+   "carbs": 25.0,
+   "type": "bar",
+   "sodium": 203
+  },
+  {
+   "name": "PowerBar Fuel Gel 30 Black Line Caffeine Energy Gel",
+   "caf": 100,
+   "carbs": 30.0,
+   "type": "bar",
+   "sodium": 205
+  },
+  {
+   "name": "TA Energy Gel Energetique Caffeine Energy Gel",
+   "caf": 50,
+   "carbs": 33.0,
+   "type": "gel",
+   "sodium": 50
+  },
+  {
+   "name": "TA Energy Jelly Gel Caffeine Energy Gel",
+   "caf": 80,
+   "carbs": 35.0,
+   "type": "chew",
+   "sodium": 200
+  },
+  {
+   "name": "MelTonic Tonic'Gel Coup de Boost Bio Energy Gel",
+   "caf": 21.8,
+   "carbs": 15.2,
+   "type": "gel",
+   "sodium": 0.3
+  },
+  {
+   "name": "MelTonic Tonic'Gel XL 200 Caffeine Energy Gel",
+   "caf": 200,
+   "carbs": 29.0,
+   "type": "gel",
+   "sodium": 0
+  },
+  {
+   "name": "Apurna Gel Passage Difficile Guarana Cola Energy Gel",
+   "caf": 21,
+   "carbs": 20.0,
+   "type": "gel",
+   "sodium": 50.1
+  },
+  {
+   "name": "Atlet Gel Energetique Bio Citron Guarana Energy Gel",
+   "caf": 2.8,
+   "carbs": 18.0,
+   "type": "gel",
+   "sodium": 83
+  },
+  {
+   "name": "Andros Sport Gel Boost Agrumes Yuzu Guarana Energy Gel",
+   "caf": 45,
+   "carbs": 25.0,
+   "type": "gel",
+   "sodium": 50
+  },
+  {
+   "name": "Andros Sport Gel Boost Fraise Cranberry Goyave Guarana Energy Gel",
+   "caf": 45,
+   "carbs": 26.0,
+   "type": "gel",
+   "sodium": 50
+  },
+  {
+   "name": "MelliGel Organic Honey Sport Gel Caffeine Energy Gel",
+   "caf": 25,
+   "carbs": 28.0,
+   "type": "gel",
+   "sodium": 12
+  },
+  {
+   "name": "Neapharma Energy Gel Cola Caffeine Energy Gel",
+   "caf": 70,
+   "carbs": 33.0,
+   "type": "gel",
+   "sodium": 140
+  },
+  {
+   "name": "226ers High Fructose Gel 80g Caffeine Cola Energy Gel",
+   "caf": 100,
+   "carbs": 55.1,
+   "type": "gel",
+   "sodium": 250
+  },
+  {
+   "name": "226ers High Fructose Gel 80g Caffeine Cherry Energy Gel",
+   "caf": 160,
+   "carbs": 55.1,
+   "type": "gel",
+   "sodium": 250
+  },
+  {
+   "name": "226ers High Fructose XS Caffeine Energy Gel",
+   "caf": 55,
+   "carbs": 30.4,
+   "type": "gel",
+   "sodium": 140
+  },
+  {
+   "name": "226ers Isotonic Gel 68g Caffeine Energy Gel",
+   "caf": 100,
+   "carbs": 22.0,
+   "type": "gel",
+   "sodium": 12
+  },
+  {
+   "name": "226ers High Energy Gel Espresso Coffee Energy Gel",
+   "caf": 80,
+   "carbs": 50.0,
+   "type": "gel",
+   "sodium": 250
+  },
+  {
+   "name": "226ers High Energy Gel Cherry Caffeine Energy Gel",
+   "caf": 160,
+   "carbs": 50.0,
+   "type": "gel",
+   "sodium": 250
+  },
+  {
+   "name": "High 5 Energy Gel Caffeine Energy Gel",
+   "caf": 30,
+   "carbs": 23.0,
+   "type": "gel",
+   "sodium": 20
+  },
+  {
+   "name": "High 5 Energy Gel Aqua Caffeine Energy Gel",
+   "caf": 30,
+   "carbs": 23.0,
+   "type": "gel",
+   "sodium": 26
+  },
+  {
+   "name": "Decathlon Energy Gel+ Cafeine 3h Energy Gel",
+   "caf": 80,
+   "carbs": 30.0,
+   "type": "gel",
+   "sodium": 70
+  },
+  {
+   "name": "Decathlon Hydrogel Cafeine Energy Gel",
+   "caf": 80,
+   "carbs": 24.0,
+   "type": "gel",
+   "sodium": 92
+  },
+  {
+   "name": "Amacx Drink Gel Caffeine Energy Gel",
+   "caf": 75,
+   "carbs": 30.0,
+   "type": "drink",
+   "sodium": 200
+  },
+  {
+   "name": "Amacx Turbo Gel Caffeine Energy Gel",
+   "caf": 100,
+   "carbs": 40.0,
+   "type": "gel",
+   "sodium": 200
+  },
+  {
+   "name": "Naak Boost 30 Peach Tea Caffeine Energy Gel",
+   "caf": 100,
+   "carbs": 30.0,
+   "type": "gel",
+   "sodium": 125
+  },
+  {
+   "name": "Applied Nutrition Velocity-Fuel Sprint Isotonic Caffeine Energy Gel",
+   "caf": 75,
+   "carbs": 23.0,
+   "type": "gel",
+   "sodium": 78.7
+  },
+  {
+   "name": "GU Liquid Energy Gel Caffeine Energy Gel",
+   "caf": 20,
+   "carbs": 23.0,
+   "type": "gel",
+   "sodium": 190
+  },
+  {
+   "name": "Science in Sport GO Energy + Caffeine Energy Gel",
+   "caf": 150,
+   "carbs": 22.0,
+   "type": "gel",
+   "sodium": 16
+  },
+  {
+   "name": "+Watt Star Gel+ Caffeine",
+   "caf": 60,
+   "carbs": 26.1,
+   "type": "gel",
+   "sodium": 0
+  },
+  {
+   "name": "101 Other Level Fructose Gel",
+   "caf": 41,
+   "carbs": 21.3,
+   "type": "gel",
+   "sodium": 94.3
+  },
+  {
+   "name": "101 Other Level FRUCTOSE GEL LEVEL con Cafeina",
+   "caf": 101,
+   "carbs": 55.6,
+   "type": "gel",
+   "sodium": 248
+  },
+  {
+   "name": "4Gold Caffeine Gels",
+   "caf": 80,
+   "carbs": 30.0,
+   "type": "gel",
+   "sodium": 0
+  },
+  {
+   "name": "Cetilar Race Carb Caf Gel",
+   "caf": 150,
+   "carbs": 39.0,
+   "type": "gel",
+   "sodium": 7.9
+  },
+  {
+   "name": "Cetilar Ultrarace Carb Gel",
+   "caf": 150,
+   "carbs": 39.0,
+   "type": "gel",
+   "sodium": 118
+  },
+  {
+   "name": "Crown Sport Nutrition Energy Gel",
+   "caf": 32,
+   "carbs": 23.0,
+   "type": "gel",
+   "sodium": 110
+  },
+  {
+   "name": "Crown Sport Nutrition Energy Gum Bar",
+   "caf": 64.4,
+   "carbs": 23.0,
+   "type": "chew",
+   "sodium": 112
+  },
+  {
+   "name": "Crown Sport Nutrition HyperBar 45",
+   "caf": 80,
+   "carbs": 45.6,
+   "type": "bar",
+   "sodium": 165
+  },
+  {
+   "name": "Crown Sport Nutrition HyperBar 45 (1:0,8), Barrita de gominola alta en carbohidratos",
+   "caf": 80,
+   "carbs": 45.6,
+   "type": "bar",
+   "sodium": 165
+  },
+  {
+   "name": "Crown Sport Nutrition HyperGel 30 (1:0,8) Hydro Caffeine Energy Gel",
+   "caf": 75,
+   "carbs": 30.0,
+   "type": "gel",
+   "sodium": 110
+  },
+  {
+   "name": "Crown Sport Nutrition HyperGel 45 Caffeine Energy Gel",
+   "caf": 80,
+   "carbs": 45.0,
+   "type": "gel",
+   "sodium": 165
+  },
+  {
+   "name": "Crown Sport Nutrition HyperGel 45 (1:0,8)",
+   "caf": 80,
+   "carbs": 45.0,
+   "type": "gel",
+   "sodium": 165
+  },
+  {
+   "name": "Enervit Carbo Gel C2:1PRO Caffeine Energy Gel",
+   "caf": 100,
+   "carbs": 40.0,
+   "type": "gel",
+   "sodium": 28
+  },
+  {
+   "name": "Enervit Gel Citrus Caffeine",
+   "caf": 20,
+   "carbs": 20.0,
+   "type": "gel",
+   "sodium": 9.8
+  },
+  {
+   "name": "Enervit Liquid Gel Caffeine",
+   "caf": 25,
+   "carbs": 50.0,
+   "type": "gel",
+   "sodium": 51.1
+  },
+  {
+   "name": "Etixx Energy Gel + Caffeine",
+   "caf": 80,
+   "carbs": 30.0,
+   "type": "gel",
+   "sodium": 0
+  },
+  {
+   "name": "Etixx Energy Gel Ginseng & Guarana",
+   "caf": 53,
+   "carbs": 30.0,
+   "type": "gel",
+   "sodium": 0
+  },
+  {
+   "name": "Etixx PRO LINE Energy Gel",
+   "caf": 80,
+   "carbs": 50.0,
+   "type": "gel",
+   "sodium": 200
+  },
+  {
+   "name": "Etixx PRO LINE Energy Gel + Caffeine",
+   "caf": 80,
+   "carbs": 50.0,
+   "type": "gel",
+   "sodium": 197
+  },
+  {
+   "name": "Hammer Nutrition HEED Sports Drink",
+   "caf": 25,
+   "carbs": 25.0,
+   "type": "drink",
+   "sodium": 140
+  },
+  {
+   "name": "Hammer Nutrition Perpetuem Caffeine Energy Powder",
+   "caf": 30,
+   "carbs": 54.0,
+   "type": "drink",
+   "sodium": 210
+  },
+  {
+   "name": "Hammer Nutrition Perpetuem - Endurance Drink for long-lasting energy",
+   "caf": 30,
+   "carbs": 54.0,
+   "type": "drink",
+   "sodium": 210
+  },
+  {
+   "name": "Hammer Nutrition Hammer Energy Gel Caffeine Energy Gel",
+   "caf": 25,
+   "carbs": 22.0,
+   "type": "gel",
+   "sodium": 200
+  },
+  {
+   "name": "High5 Energy Drink Caffeine",
+   "caf": 28,
+   "carbs": 36.0,
+   "type": "drink",
+   "sodium": 460
+  },
+  {
+   "name": "High5 Energy Gel",
+   "caf": 30,
+   "carbs": 23.0,
+   "type": "gel",
+   "sodium": 314
+  },
+  {
+   "name": "Naak BOOSTTM Gel 30 Caffeine Energy Gel",
+   "caf": 100,
+   "carbs": 30.0,
+   "type": "gel",
+   "sodium": 50
+  },
+  {
+   "name": "Named Sport ISOTONIC POWER GEL Caffeine Energy Gel",
+   "caf": 50,
+   "carbs": 22.0,
+   "type": "gel",
+   "sodium": 0
+  },
+  {
+   "name": "Named Sport RACE FUEL BAR Caffeine Energy Bar",
+   "caf": 80,
+   "carbs": 45.0,
+   "type": "bar",
+   "sodium": 130
+  },
+  {
+   "name": "Named Sport SPORT GEL",
+   "caf": 50,
+   "carbs": 14.0,
+   "type": "gel",
+   "sodium": null
+  },
+  {
+   "name": "Named Sport RACE FUEL BAR Cola-Lime",
+   "caf": 80,
+   "carbs": 45.0,
+   "type": "bar",
+   "sodium": 130
+  },
+  {
+   "name": "Named Sport TOTAL ENERGY STRONG GEL",
+   "caf": 50,
+   "carbs": 30.0,
+   "type": "gel",
+   "sodium": 552
+  },
+  {
+   "name": "OTE Energy Gel",
+   "caf": 100,
+   "carbs": 20.0,
+   "type": "gel",
+   "sodium": 11.2
+  },
+  {
+   "name": "PowerBar Isomax - Isotonic Sports Drink",
+   "caf": 75,
+   "carbs": 45.0,
+   "type": "drink",
+   "sodium": 357
+  },
+  {
+   "name": "PowerBar PowerGel Fruit - High Carb Energy Gel",
+   "caf": 50,
+   "carbs": 26.0,
+   "type": "bar",
+   "sodium": 206
+  },
+  {
+   "name": "PowerBar PowerGel Fruit High Carb Energy Gel",
+   "caf": 50,
+   "carbs": 26.0,
+   "type": "bar",
+   "sodium": 206
+  },
+  {
+   "name": "ProAction Carbo Sprint Extreme Energy Gel",
+   "caf": 37.8,
+   "carbs": 18.0,
+   "type": "gel",
+   "sodium": 0
+  },
+  {
+   "name": "ProAction Carbo Sprint Volata Energy Gel",
+   "caf": 80,
+   "carbs": 25.0,
+   "type": "gel",
+   "sodium": 0
+  },
+  {
+   "name": "ProAction Hydro Gel Caffeine Energy Gel",
+   "caf": 80,
+   "carbs": 40.0,
+   "type": "gel",
+   "sodium": 300
+  },
+  {
+   "name": "Rawvelo Blueberry and Hibiscus Energy Gel with 50mg Natural Caffeine",
+   "caf": 50,
+   "carbs": 20.0,
+   "type": "gel",
+   "sodium": 39.3
+  },
+  {
+   "name": "Santa Madre Energy Gel 30CHO 100 CAF",
+   "caf": 100,
+   "carbs": 30.0,
+   "type": "gel",
+   "sodium": 100
+  },
+  {
+   "name": "Santa Madre Energy Gel 30CHO 100 CAF (RATIO 1-0,5)",
+   "caf": 100,
+   "carbs": 30.0,
+   "type": "gel",
+   "sodium": 100
+  },
+  {
+   "name": "Santa Madre 30CHO 100 CAF (RATIO 1:0,5) Energy Gel",
+   "caf": 100,
+   "carbs": 30.0,
+   "type": "gel",
+   "sodium": 100
+  },
+  {
+   "name": "Santa Madre Energy Gel 30CHO 100 CAF (RATIO 1:0,5)",
+   "caf": 100,
+   "carbs": 30.0,
+   "type": "gel",
+   "sodium": 100
+  },
+  {
+   "name": "Santa Madre Energy Gel \u00b7 30CHO 100 CAF (RATIO 1-0,5)",
+   "caf": 100,
+   "carbs": 30.0,
+   "type": "gel",
+   "sodium": 100
+  },
+  {
+   "name": "SiS Beta Fuel + Nootropics Gels",
+   "caf": 200,
+   "carbs": 40.0,
+   "type": "gel",
+   "sodium": 360
+  },
+  {
+   "name": "TORQ Cola Caffeine Energy Gel (with Guarana)",
+   "caf": 35,
+   "carbs": 30.0,
+   "type": "gel",
+   "sodium": 500
+  },
+  {
+   "name": "TORQ Cola Caffeine Energy Gel",
+   "caf": 35,
+   "carbs": 30.0,
+   "type": "gel",
+   "sodium": 500
+  },
+  {
+   "name": "Trinutrition Taur Gel",
+   "caf": 131,
+   "carbs": 40.0,
+   "type": "gel",
+   "sodium": 90
+  },
+  {
+   "name": "Veloforte Desto - Natural Energy Gel with Caffeine",
+   "caf": 75,
+   "carbs": 22.0,
+   "type": "gel",
+   "sodium": 110
+  },
+  {
+   "name": "Veloforte Doppio - Natural Energy Gel with Caffeine",
+   "caf": 75,
+   "carbs": 22.0,
+   "type": "gel",
+   "sodium": 110
+  },
+  {
+   "name": "GU Energy Chews",
+   "caf": 20,
+   "carbs": 22.0,
+   "type": "chew",
+   "sodium": 40
+  }
+ ]
+}

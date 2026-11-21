@@ -69,12 +69,46 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {"@type": "Question", "name": "What is RER and what does RER 0.85 mean?", "acceptedAnswer": {"@type": "Answer", "text": "RER (respiratory exchange ratio) is the volume of CO2 exhaled divided by O2 consumed, the core measurement of indirect calorimetry. On the non-protein scale, RER 0.70 corresponds to almost entirely fat oxidation, RER 1.00 to almost entirely carbohydrate, and RER 0.85 marks an even 50/50 energy split."}},
-    {"@type": "Question", "name": "At what intensity does fuel use become 50/50?", "acceptedAnswer": {"@type": "Answer", "text": "It is athlete-specific. For the default reference athlete on this page (70 kg, male, 34 years, moderate-carbohydrate diet), the 50/50 crossover sits near RPE 33 on the CR-100 scale. Higher carbohydrate availability shifts it toward lower intensities; low-carbohydrate availability shifts it higher."}},
-    {"@type": "Question", "name": "What is fatmax, and why does the fat curve only fall?", "acceptedAnswer": {"@type": "Answer", "text": "Fatmax is the intensity where absolute fat oxidation peaks, typically 45-65% of VO2max in trained athletes. The page holds energy expenditure fixed at 600 kcal/h, so absolute fat use falls steadily as carbohydrate takes over; in a real session expenditure rises with intensity, producing the fatmax peak before the fall."}},
-    {"@type": "Question", "name": "Why does carbohydrate intake shift the curve toward carbohydrate?", "acceptedAnswer": {"@type": "Answer", "text": "Oxidation follows availability: pre-exercise and during-exercise carbohydrate raise plasma glucose delivery and reduce relative fat reliance at the same absolute intensity, while habitual low-carbohydrate intake does the opposite. The diet sliders reproduce these acute and chronic effects."}},
-    {"@type": "Question", "name": "Are the g/h numbers intake targets?", "acceptedAnswer": {"@type": "Answer", "text": "No. They estimate endogenous oxidation - what the body burns from muscle glycogen, blood glucose, and plasma fatty acids. Exogenous fueling targets such as 60-90 g/h of multiple-transportable carbohydrate are a separate prescription that only partially overlaps oxidation."}},
-    {"@type": "Question", "name": "How accurate are the estimates?", "acceptedAnswer": {"@type": "Answer", "text": "They apply group-level relationships from indirect-calorimetry research to the chosen inputs; individual values vary with fitness, training status, diet history, and environment. Use the tool to compare scenarios and plan fueling structure, not as metabolic testing."}}
+    {
+      "@type": "Question",
+      "name": "What is RER and what does RER 0.85 mean?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "RER (respiratory exchange ratio) is the volume of CO₂ exhaled divided by O₂ consumed, the core measurement of indirect calorimetry. RER 0.70 ≈ 100 % of energy from fat, RER 1.00 ≈ 100 % from carbohydrate, and RER ≈ 0.85 marks an even 50/50 energy split. The chart’s RER readout is the model’s implied RER at that point."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "At what intensity does fuel use become 50/50?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It is athlete-specific. For the default reference athlete here (70 kg, male, 34 years, moderate-carbohydrate diet) the crossover sits near RPE 33 on the CR-100 scale (moderate). Higher carbohydrate availability shifts it toward lower intensities; low-carbohydrate availability or fat-adapted training shifts it higher."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does carbohydrate intake shift the curve toward carbohydrate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Substrate availability influences oxidation. Pre-exercise and during-exercise carbohydrate raise plasma glucose delivery and reduce the relative reliance on fat at the same absolute intensity; habitual low-carbohydrate intake does the opposite. These are the acute and chronic effects the diet sliders reproduce."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are the g/h numbers intake targets?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. They estimate endogenous oxidation, what your body burns from muscle glycogen, blood glucose, and plasma fatty acids. Exogenous fueling targets (for example, 60–90 g/h of multiple-transportable carbohydrate during long sessions) are a separate prescription that only partially overlaps oxidation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How accurate are the estimates?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "They apply group-level relationships from indirect-calorimetry research to the inputs you choose, so individual values vary with fitness, training status, diet history, and environment. Use the tool to compare scenarios and plan fueling structure; for individualised session fueling, the Glycogo app incorporates measured power, heart rate, and energy expenditure."
+      }
+    }
   ]
 }
 </script>
