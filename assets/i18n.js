@@ -287,13 +287,13 @@
     var style = document.createElement("style");
     style.id = "glycogo-i18n-style";
     style.textContent = [
-      ".lang-picker{display:inline-flex;align-items:center;gap:.35rem;flex:0 0 auto;margin-left:.75rem;position:relative}",
+      ".lang-picker{display:inline-flex;align-items:center;gap:.3rem;flex:0 0 auto;margin-left:.75rem;position:relative;color:#1a1a3e;background:#fff;border:1px solid rgba(26,26,62,.16);border-radius:6px;padding:0 .1rem 0 .45rem}",
       "html.i18n .nav-links{gap:1.15rem}",
       "html.i18n .nav-links>a,html.i18n .nav-cta{white-space:nowrap}",
       "@media (max-width:1100px){.lang-picker svg{display:none}html.i18n .nav-links{gap:.65rem}html.i18n .lang-select{max-width:6.4rem;font-size:.7rem;padding-right:1.15rem}}",
       ".lang-picker svg{width:15px;height:15px;flex:0 0 auto;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;opacity:.65}",
-      ".lang-select{appearance:none;-webkit-appearance:none;background-color:rgba(127,127,127,.07);border:1px solid rgba(127,127,127,.45);border-radius:6px;color:inherit;font-family:inherit;font-size:.78rem;font-weight:600;letter-spacing:.01em;padding:.34rem 1.45rem .34rem .5rem;cursor:pointer;line-height:1.2;max-width:8.5rem;background-image:url(\"data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='%23888' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E\");background-repeat:no-repeat;background-position:right .42rem center;background-size:9px 6px}",
-      ".lang-select:hover{border-color:rgba(128,128,128,.7)}",
+      ".lang-select{appearance:none;-webkit-appearance:none;border:0;border-radius:6px;color:#1a1a3e;background-color:transparent;font-family:inherit;font-size:.78rem;font-weight:600;letter-spacing:.01em;padding:.34rem 1.45rem .34rem .5rem;cursor:pointer;line-height:1.2;max-width:8.5rem;background-image:url(\"data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='%23888' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E\");background-repeat:no-repeat;background-position:right .42rem center;background-size:9px 6px}",
+      ".lang-picker:hover{border-color:rgba(26,26,62,.32)}",
       ".lang-select:focus-visible{outline:2px solid #2e7d32;outline-offset:2px}",
       ".lang-select option{color:#1a1a3e;background:#fff}",
       "@media (max-width:720px){.lang-picker{margin-left:.5rem}.lang-select{font-size:.72rem;padding:.28rem 1.3rem .28rem .42rem}}"
@@ -312,13 +312,6 @@
     var wrap = document.createElement("div");
     wrap.className = "lang-picker";
 
-    // Adopt the nav link colour so the control stays legible on dark and
-    // light headers without a per-page stylesheet rule.
-    var reference = host.querySelector(".nav-links > a") || host.querySelector("a");
-    if (reference) {
-      var colour = getComputedStyle(reference).color;
-      if (colour) wrap.style.color = colour;
-    }
     wrap.innerHTML =
       '<svg viewBox="0 0 24 24" aria-hidden="true">' +
       '<circle cx="12" cy="12" r="9"></circle>' +
