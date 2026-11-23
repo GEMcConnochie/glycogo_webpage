@@ -119,6 +119,14 @@
     },
     {
       "@type": "Question",
+      "name": "Can I use my data with my own chatbot?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Glycogo has an MCP connector, so Claude, ChatGPT, or your own AI agent can read your training, nutrition, and race data and work with it in a conversation. Setup instructions are at https://glycogo.fit/de/mcp-instructions/."
+      }
+    },
+    {
+      "@type": "Question",
       "name": "How does Glycogo handle multiple workouts on the same day?",
       "acceptedAnswer": {
         "@type": "Answer",
@@ -553,6 +561,9 @@
   }
 
   /* SPLIT ROWS (app + copy) */
+  /* Copy over the demo, not beside it: side by side left the demo 474px, half
+     the size it gets on the coach page, where the carousel is a full-width
+     block under its copy. The media is capped at the coach slide's own width. */
   .split-row {
     display: block;
     padding: 4.5rem 0;
@@ -1252,7 +1263,7 @@
         <div class="feature-title">KI-Ernährungsassistent</div>
         <p class="feature-desc">Fotografiere deinen Teller und die App schätzt Kalorien und Makros aus dem Bild. Frage nach Ideen für Mahlzeiten, Rezeptvorschlägen oder Lebensmitteltausch – auf Basis deiner Einheiten, der verbleibenden Tagesziele und dessen, was du bereits erfasst hast. Vorgeschlagene Mahlzeiten lassen sich direkt aus dem Chat ins Protokoll übernehmen.</p>
         <br>
-        <p class="feature-desc" style="color:rgba(255,255,255,0.45);font-size:0.82rem;">Liest deine Einheiten, Kalorien- und Kohlenhydratziele sowie dein aktuelles Protokoll und gibt praktische, persönliche Vorschläge.</p>
+        <p class="feature-desc" style="color:rgba(255,255,255,0.45);font-size:0.82rem;">Du kannst auch deinen eigenen KI-Agenten über einen <a href="/de/mcp-instructions/" style="color:#a5d6a7;font-weight:600;text-decoration:underline;">MCP-Konnektor</a>.</p>
       </div>
       <figure class="ai-demo">
         <video muted loop playsinline preload="metadata" data-autoplay poster="/assets/app-demos/chat.jpg?v=2" aria-label="KI-Ernährungsassistent">
@@ -1778,6 +1789,14 @@
           <div class="faq-body">
             <p>Kalorien auszublenden richtet den Fokus auf <strong>Kohlenhydrate, Protein und Fett</strong> statt auf Kaloriensummen. Viele Sportler finden das hilfreich, wenn sie sich für Training und Regeneration ernähren wollen, ohne Kalorienzählen als Hauptmaßstab.</p>
             <p>Wenn aktiviert, werden kcal-Werte in der Tagesansicht, den Mahlzeitenkarten, der Lebensmittelsuche und zugehörigen Diagrammen ausgeblendet, während Kohlenhydrat-, Protein- und Fettziele sowie die Erfassung wie gewohnt funktionieren. Du kannst sie jederzeit über das Augensymbol auf dem Startbildschirm wieder einblenden.</p>
+          </div>
+        </details>
+
+        <details class="faq-item" id="faq-own-chatbot">
+          <summary>Kann ich meine Daten mit meinem eigenen Chatbot nutzen?</summary>
+          <div class="faq-body">
+            <p><strong>Ja.</strong> Glycogo hat einen MCP-Konnektor, sodass Claude, ChatGPT oder dein eigener KI-Agent deine Trainings-, Ernährungs- und Wettkampfdaten lesen und im Gespräch damit arbeiten kann.</p>
+            <p>Die Einrichtung dauert wenige Minuten: siehe <a class="faq-link" href="/de/mcp-instructions/">die MCP-Einrichtungsanleitung</a>.</p>
           </div>
         </details>
 

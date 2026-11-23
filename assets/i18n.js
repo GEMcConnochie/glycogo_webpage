@@ -47,7 +47,8 @@
     "/terms/",
     "/delete-account/",
     "/for-coaches/",
-    "/compare-sports-nutrition-apps/"
+    "/compare-sports-nutrition-apps/",
+    "/mcp-instructions/"
   ];
 
   var ATTRS = ["placeholder", "alt", "title", "aria-label"];

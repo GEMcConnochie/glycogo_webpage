@@ -119,6 +119,14 @@
     },
     {
       "@type": "Question",
+      "name": "Can I use my data with my own chatbot?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Glycogo has an MCP connector, so Claude, ChatGPT, or your own AI agent can read your training, nutrition, and race data and work with it in a conversation. Setup instructions are at https://glycogo.fit/nl/mcp-instructions/."
+      }
+    },
+    {
+      "@type": "Question",
       "name": "How does Glycogo handle multiple workouts on the same day?",
       "acceptedAnswer": {
         "@type": "Answer",
@@ -553,6 +561,9 @@
   }
 
   /* SPLIT ROWS (app + copy) */
+  /* Copy over the demo, not beside it: side by side left the demo 474px, half
+     the size it gets on the coach page, where the carousel is a full-width
+     block under its copy. The media is capped at the coach slide's own width. */
   .split-row {
     display: block;
     padding: 4.5rem 0;
@@ -1252,7 +1263,7 @@
         <div class="feature-title">AI-voedingsassistent</div>
         <p class="feature-desc">Fotografeer je bord en de app schat calorieën en macro's uit de afbeelding. Vraag om maaltijdideeën, receptsuggesties of vervangingen, op basis van je sessies, de resterende doelen van de dag en wat je al hebt gelogd. Voorgestelde maaltijden kun je direct vanuit de chat aan je logboek toevoegen.</p>
         <br>
-        <p class="feature-desc" style="color:rgba(255,255,255,0.45);font-size:0.82rem;">Leest je sessies, calorie- en koolhydraatdoelen en je huidige logboek, en geeft praktische, persoonlijke suggesties.</p>
+        <p class="feature-desc" style="color:rgba(255,255,255,0.45);font-size:0.82rem;">Je kunt ook je eigen AI-agent gebruiken via een <a href="/nl/mcp-instructions/" style="color:#a5d6a7;font-weight:600;text-decoration:underline;">MCP-connector</a>.</p>
       </div>
       <figure class="ai-demo">
         <video muted loop playsinline preload="metadata" data-autoplay poster="/assets/app-demos/chat.jpg?v=2" aria-label="AI-voedingsassistent">
@@ -1778,6 +1789,14 @@
           <div class="faq-body">
             <p>Calorieën verbergen houdt de focus op <strong>koolhydraten, eiwit en vet</strong> in plaats van op calorietotalen. Veel atleten vinden dat nuttig wanneer ze willen eten voor training en herstel zonder dat calorieën tellen het belangrijkste scorebord is.</p>
             <p>Wanneer ingeschakeld worden kcal-waarden verborgen in de dagweergave, maaltijdkaarten, voedingszoekopdracht en bijbehorende grafieken, terwijl koolhydraat-, eiwit- en vetdoelen en het vastleggen gewoon blijven werken. Je kunt ze altijd weer aanzetten via het oogsymbool op het startscherm.</p>
+          </div>
+        </details>
+
+        <details class="faq-item" id="faq-own-chatbot">
+          <summary>Kan ik mijn gegevens met mijn eigen chatbot gebruiken?</summary>
+          <div class="faq-body">
+            <p><strong>Ja.</strong> Glycogo heeft een MCP-connector, dus Claude, ChatGPT of je eigen AI-agent kan je trainings-, voedings- en wedstrijdgegevens lezen en ermee werken in een gesprek.</p>
+            <p>Instellen duurt een paar minuten: zie <a class="faq-link" href="/nl/mcp-instructions/">de MCP-instructies</a>.</p>
           </div>
         </details>
 

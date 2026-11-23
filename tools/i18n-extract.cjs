@@ -22,6 +22,7 @@ const PAGES = {
   supplementTimer: "athlete_supplement_timer.html",
   forCoaches: "for-coaches/index.html",
   compare: "compare-sports-nutrition-apps/index.html",
+  mcpInstructions: "mcp-instructions/index.html",
 };
 
 const ATTRS = ["placeholder", "alt", "title", "aria-label", "value"];

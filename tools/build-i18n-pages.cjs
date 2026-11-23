@@ -34,6 +34,7 @@ const PAGES = [
   { route: "/delete-account/", file: "delete-account/index.html", block: "deleteAccount", priority: "0.3", changefreq: "yearly" },
   { route: "/for-coaches/", file: "for-coaches/index.html", block: "forCoaches", priority: "0.8", changefreq: "monthly" },
   { route: "/compare-sports-nutrition-apps/", file: "compare-sports-nutrition-apps/index.html", block: "compare", priority: "0.7", changefreq: "monthly" },
+  { route: "/mcp-instructions/", file: "mcp-instructions/index.html", block: "mcpInstructions", priority: "0.5", changefreq: "yearly" },
 ];
 
 /* English-only pages: indexed and listed in the sitemap, but not translated

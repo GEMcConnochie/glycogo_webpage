@@ -119,6 +119,14 @@
     },
     {
       "@type": "Question",
+      "name": "Can I use my data with my own chatbot?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Glycogo has an MCP connector, so Claude, ChatGPT, or your own AI agent can read your training, nutrition, and race data and work with it in a conversation. Setup instructions are at https://glycogo.fit/mcp-instructions/."
+      }
+    },
+    {
+      "@type": "Question",
       "name": "How does Glycogo handle multiple workouts on the same day?",
       "acceptedAnswer": {
         "@type": "Answer",
@@ -1255,7 +1263,7 @@
         <div class="feature-title">AI Nutrition Assistant</div>
         <p class="feature-desc">Photograph your plate and the app will estimate calories and macros from the image. Ask for meal ideas, recipe suggestions, or food swaps, informed by your training sessions, remaining targets for the day, and what you have already logged. Suggested meals can be added to your log directly from the chat.</p>
         <br>
-        <p class="feature-desc" style="color:rgba(255,255,255,0.45);font-size:0.82rem;">Reads your sessions, calorie and carbohydrate targets, and current log, then gives practical, personalised suggestions.</p>
+        <p class="feature-desc" style="color:rgba(255,255,255,0.45);font-size:0.82rem;">You can also use your own AI agent via a <a href="/mcp-instructions/" style="color:#a5d6a7;font-weight:600;text-decoration:underline;">MCP connector</a>.</p>
       </div>
       <figure class="ai-demo">
         <video muted loop playsinline preload="metadata" data-autoplay poster="/assets/app-demos/chat.jpg?v=2" aria-label="AI Nutrition Assistant">
@@ -1781,6 +1789,14 @@
           <div class="faq-body">
             <p>Hiding calories keeps the focus on <strong>carbohydrates, protein, and fat</strong> instead of calorie totals. Many athletes find that useful when they want to fuel for training and recovery without calorie counting as the main scoreboard.</p>
             <p>When enabled, kcal numbers are hidden across the home day view, meal cards, food search, and related charts, while carb/protein/fat targets and logging still work as usual. You can turn it back on any time from the home screen eye symbol control.</p>
+          </div>
+        </details>
+
+        <details class="faq-item" id="faq-own-chatbot">
+          <summary>Can I use my data with my own chatbot?</summary>
+          <div class="faq-body">
+            <p><strong>Yes.</strong> Glycogo has an MCP connector, so Claude, ChatGPT, or your own AI agent can read your training, nutrition, and race data and work with it in a conversation.</p>
+            <p>Setup takes a couple of minutes: see <a class="faq-link" href="/mcp-instructions/">the MCP setup guide</a>.</p>
           </div>
         </details>
 

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<link rel="icon" type="image/png" href="/logosmall.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Claude e ChatGPT | Glycogo</title>
+<meta name="description" content="How to add Glycogo to Claude or ChatGPT.">
+<link rel="canonical" href="https://glycogo.fit/it/mcp-instructions/">
+<!-- i18n:alternates -->
+<link rel="alternate" hreflang="en" href="https://glycogo.fit/mcp-instructions/">
+<link rel="alternate" hreflang="de" href="https://glycogo.fit/de/mcp-instructions/">
+<link rel="alternate" hreflang="es" href="https://glycogo.fit/es/mcp-instructions/">
+<link rel="alternate" hreflang="fr" href="https://glycogo.fit/fr/mcp-instructions/">
+<link rel="alternate" hreflang="it" href="https://glycogo.fit/it/mcp-instructions/">
+<link rel="alternate" hreflang="nl" href="https://glycogo.fit/nl/mcp-instructions/">
+<link rel="alternate" hreflang="x-default" href="https://glycogo.fit/mcp-instructions/">
+<!-- /i18n:alternates -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="/3dglycogo.svg">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --nav-height: 76px;
+  --nav-height-scrolled: 64px;
+  --green: #2e7d32; --green-light: #43a047; --green-pale: #e8f5e9;
+  --orange: #e65c00; --orange-light: #ff7043;
+  --navy: #1a1a3e; --navy-mid: #2d2d7a;
+  --bg: #ffffff; --bg-soft: #f7faf8; --white: #ffffff; --text: #1a1a3e;
+  --muted: #5c6670; --border: #e8ece9;
+  --surface: #ffffff;
+  --shadow-sm: 0 2px 8px rgba(26,26,62,0.06);
+  --radius: 16px;
+  --max: 1100px;
+}
+html { scroll-behavior: smooth; }
+body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; padding-top: var(--nav-height); -webkit-font-smoothing: antialiased; }
+
+/* NAV */
+#main-nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 9999;
+  height: var(--nav-height);
+  background: rgba(255,255,255,0.88);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid transparent;
+  transition: height 0.25s ease, background 0.25s ease, box-shadow 0.25s ease, border-color 0.25s;
+}
+#main-nav.shrink {
+  height: var(--nav-height-scrolled);
+  background: rgba(255,255,255,0.96);
+  border-bottom-color: var(--border);
+  box-shadow: 0 4px 20px rgba(26,26,62,0.06);
+}
+.nav-inner {
+  max-width: var(--max); margin: 0 auto; height: 100%;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 2rem;
+}
+.nav-inner > a { display: flex; align-items: center; text-decoration: none; }
+.nav-inner img { height: 52px; transition: height 0.25s ease; }
+#main-nav.shrink .nav-inner img { height: 44px; }
+.nav-links { display: flex; gap: 1.5rem; align-items: center; }
+.nav-links a { text-decoration: none; color: var(--muted); font-size: 0.88rem; font-weight: 500; transition: color 0.2s; }
+.nav-links a:hover { color: var(--green); }
+.nav-cta {
+  background: var(--green) !important;
+  color: white !important; padding: 0.55rem 1.25rem !important;
+  border-radius: 999px !important; font-weight: 700 !important;
+}
+
+/* PAGE HERO */
+.page-hero {
+  padding: 3.5rem 2rem 3rem;
+  background: var(--bg-soft); text-align: center;
+  border-bottom: 1px solid var(--border);
+}
+.page-hero-content { max-width: 640px; margin: 0 auto; }
+.page-hero-badge {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  background: white; border: 1px solid var(--border);
+  border-radius: 999px; padding: 0.35rem 1rem;
+  font-size: 0.76rem; font-weight: 700; color: var(--green); margin-bottom: 1rem;
+}
+.page-hero h1 { font-size: clamp(2rem, 4.5vw, 3rem); font-weight: 800; line-height: 1.08; letter-spacing: -0.03em; color: var(--navy); margin-bottom: 0.75rem; }
+.page-hero h1 em { font-style: normal; color: var(--green); }
+.page-hero p { font-size: 1.02rem; color: var(--muted); line-height: 1.7; max-width: 480px; margin: 0 auto; }
+
+/* CONTENT */
+.docs-content { max-width: 760px; margin: 0 auto; padding: 2.5rem 2rem 3.5rem; }
+.doc-section { border-top: 1px solid var(--border); padding-top: 2rem; margin-top: 2rem; }
+.doc-section:first-child { border-top: none; padding-top: 0; margin-top: 0; }
+.doc-section h2 { font-size: 1.05rem; font-weight: 700; color: var(--navy); margin-bottom: 0.9rem; }
+.doc-section p { font-size: 0.92rem; color: var(--muted); line-height: 1.75; margin-bottom: 1rem; }
+.doc-section p:last-child { margin-bottom: 0; }
+.doc-section strong { color: var(--navy); font-weight: 600; }
+.doc-section a { color: var(--green); font-weight: 600; }
+.doc-section ol, .doc-section ul { margin: 0.4rem 0 1rem 1.3rem; font-size: 0.92rem; color: var(--muted); line-height: 1.7; }
+.doc-section ol li, .doc-section ul li { margin-bottom: 0.4rem; }
+.doc-section ol li:last-child, .doc-section ul li:last-child { margin-bottom: 0; }
+.doc-section ul.compact { margin: 0.4rem 0 0.75rem 1.1rem; line-height: 1.55; }
+
+
+.doc-table { width: 100%; border-collapse: collapse; margin: 0.85rem 0 1.1rem; font-size: 0.86rem; }
+.doc-table th { text-align: left; padding: 0.5rem 0.75rem; border-bottom: 1px solid var(--navy); font-weight: 700; font-size: 0.72rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--navy); }
+.doc-table td { padding: 0.6rem 0.75rem; border-bottom: 1px solid var(--border); vertical-align: top; color: var(--muted); line-height: 1.6; }
+.doc-table td:first-child { color: var(--navy); font-weight: 600; white-space: nowrap; }
+.doc-table td.addr { font-family: 'Space Mono', monospace; font-size: 0.76rem; word-break: break-all; }
+.doc-table tr:last-child td { border-bottom: none; }
+
+.doc-section pre.addr, .doc-section p.addr { font-family: 'Space Mono', monospace; font-size: 0.74rem; line-height: 1.65; background: var(--bg-soft); border: 1px solid var(--border); border-radius: 10px; padding: 0.7rem 0.85rem; margin: 0.5rem 0 0.9rem; color: var(--navy); overflow-x: auto; white-space: pre-wrap; word-break: break-word; }
+.doc-section li pre.addr { margin-bottom: 0.4rem; }
+
+footer { background: var(--navy); color: rgba(255,255,255,0.5); padding: 2.5rem 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; font-size: 0.82rem; border-top: 1px solid rgba(255,255,255,0.06); }
+footer strong { color: white; }
+footer a { color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s; }
+footer a:hover { color: var(--orange-light); }
+
+@media (max-width: 900px) {
+  .nav-links { display: none; }
+  .docs-content { padding: 2rem 1.25rem 2.5rem; }
+  footer { flex-direction: column; text-align: center; }
+}
+@media (max-width: 540px) {
+  .page-hero { padding: 3.5rem 1.25rem 2.75rem; }
+}
+</style>
+</head>
+<body>
+<!-- NAV -->
+<nav id="main-nav">
+  <div class="nav-inner">
+    <a href="/it/"><img src="/3dglycogo.svg" alt="Glycogo"></a>
+    <div class="nav-links">
+      <a href="/it/#features">Funzioni</a>
+      <a href="/it/#how">Come funziona</a>
+      <a href="/it/#science">Scienza</a>
+      <a href="/it/#faq">FAQ</a>
+      <a href="/it/#support">Sostegno</a>
+      <a href="https://web.glycogo.fit/" class="nav-cta">Provala gratis</a>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-content">
+    <div class="page-hero-badge">Documentazione</div>
+    <h1>Usa i tuoi dati in <em>Claude o ChatGPT</em></h1>
+    <p>Configurazione del connettore Glycogo su web.glycogo.fit</p>
+  </div>
+</div>
+
+<!-- CONTENT -->
+<main class="docs-content">
+
+  <section class="doc-section" id="address">
+    <h2>Indirizzo</h2>
+    <table class="doc-table">
+      <thead><tr><th>Ruolo</th><th>Indirizzo</th></tr></thead>
+      <tbody>
+        <tr><td>Atleta</td><td class="addr">https://glycogo.fit/mcp/athlete</td></tr>
+        <tr><td>Allenatore</td><td class="addr">https://glycogo.fit/mcp/coach</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="doc-section" id="claude">
+    <h2>Claude</h2>
+    <ol>
+      <li><strong>Personalizza → Connettori</strong>, poi <strong>Aggiungi connettore personalizzato</strong>.</li>
+      <li>Incolla il tuo indirizzo e scegli <strong>Accedi ora</strong>. Lascia invariato il campo client OAuth.</li>
+      <li>Approva la pagina di consenso.</li>
+      <li>In una conversazione, apri <strong>+ → Connettori</strong> e attivalo.</li>
+    </ol>
+    <p>Team ed Enterprise: un proprietario aggiunge il connettore per tutti, e ogni membro accede con il proprio account.</p>
+  </section>
+
+  <section class="doc-section" id="chatgpt">
+    <h2>ChatGPT</h2>
+    <ol>
+      <li><strong>Plugin</strong> su <a href="https://chatgpt.com/plugins">chatgpt.com/plugins</a>, poi <strong>+</strong> e poi <strong>Aggiungi server MCP personalizzato</strong>.</li>
+      <li>Incolla il tuo indirizzo, scegli <strong>OAuth</strong> e approva la pagina di consenso.</li>
+      <li>Installalo, poi digita <strong>@</strong>  in una chat e scegli Glycogo.</li>
+    </ol>
+    <p>Se il pulsante manca, aggiungi lo stesso indirizzo nell'app desktop di ChatGPT sotto <strong>Impostazioni → Server MCP → Aggiungi server</strong>.</p>
+  </section>
+
+  <section class="doc-section" id="claude-code">
+    <h2>Claude Code</h2>
+    <p class="addr">claude mcp add --transport http glycogo https://glycogo.fit/mcp/athlete</p>
+    <p>Poi esegui <strong>/mcp</strong> e accedi.</p>
+  </section>
+
+  <section class="doc-section" id="cursor">
+    <h2>Cursor</h2>
+    <ol>
+      <li>Aggiungi questo in <strong>~/.cursor/mcp.json</strong>, oppure in <strong>.cursor/mcp.json</strong> per un singolo progetto:
+        <pre class="addr">{"mcpServers":{"glycogo":{"url":"https://glycogo.fit/mcp/athlete"}}}</pre></li>
+      <li>Attivalo in <strong>Personalizza → MCP</strong>, poi accedi quando si apre il browser.</li>
+    </ol>
+  </section>
+
+  <section class="doc-section" id="vscode">
+    <h2>VS Code</h2>
+    <ol>
+      <li>Esegui <strong>MCP: Add Server</strong> dalla tavolozza dei comandi, scegli <strong>HTTP</strong>, incolla il tuo indirizzo e poi scegli <strong>Global → Copilot Global</strong>.</li>
+      <li>Accedi quando si apre il browser.</li>
+    </ol>
+    <p>Per un solo repository, metti questo in <strong>.mcp.json</strong> alla sua radice:</p>
+    <pre class="addr">{"mcpServers":{"glycogo":{"type":"http","url":"https://glycogo.fit/mcp/athlete"}}}</pre>
+  </section>
+
+  <section class="doc-section" id="disconnect">
+    <h2>Disconnetti</h2>
+    <ul class="compact">
+      <li>Rimuovi il connettore in Claude o ChatGPT. Questo revoca il suo token.</li>
+      <li><strong>Impostazioni → Esci da tutte le sessioni</strong> in Glycogo chiude tutti i connettori dell'account, e anche la sessione dell'app.</li>
+    </ul>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    2026 <strong>GEM Performance</strong> · <strong>G</strong>oal-Driven, <strong>E</strong>vidence-Based, <strong>M</strong>onitoring tools for athletes<br>
+    <span style="font-size:0.74rem;">G.E.McConnochie PhD &nbsp;·&nbsp; <a href="mailto:contactgemperformance@gmail.com">contactgemperformance@gmail.com</a></span>
+  </div>
+  <div style="display:flex;gap:1rem;align-items:center;flex-wrap:wrap;">
+    <a href="/it/terms/" style="color:rgba(255,255,255,0.6);font-size:0.82rem;text-decoration:underline;">Termini di servizio</a>
+    <a href="/it/privacy/" style="color:rgba(255,255,255,0.6);font-size:0.82rem;text-decoration:underline;">Informativa sulla privacy</a>
+    <a href="/it/instructions/" style="color:rgba(255,255,255,0.6);font-size:0.82rem;text-decoration:underline;">Guida utente</a>
+    <a href="/it/delete-account/" style="color:rgba(255,255,255,0.6);font-size:0.82rem;text-decoration:underline;">Elimina account</a>
+    <a href="https://web.glycogo.fit/" style="background:var(--green);color:white;padding:0.5rem 1.2rem;border-radius:6px;font-weight:600;font-size:0.85rem;text-decoration:none;">Provala gratis</a>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('main-nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('shrink', window.scrollY > 40);
+  }, { passive: true });
+
+</script>
+<script src="/assets/i18n.js?v=3" defer></script>
+</body>
+</html>

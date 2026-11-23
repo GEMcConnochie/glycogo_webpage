@@ -119,6 +119,14 @@
     },
     {
       "@type": "Question",
+      "name": "Can I use my data with my own chatbot?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Glycogo has an MCP connector, so Claude, ChatGPT, or your own AI agent can read your training, nutrition, and race data and work with it in a conversation. Setup instructions are at https://glycogo.fit/es/mcp-instructions/."
+      }
+    },
+    {
+      "@type": "Question",
       "name": "How does Glycogo handle multiple workouts on the same day?",
       "acceptedAnswer": {
         "@type": "Answer",
@@ -553,6 +561,9 @@
   }
 
   /* SPLIT ROWS (app + copy) */
+  /* Copy over the demo, not beside it: side by side left the demo 474px, half
+     the size it gets on the coach page, where the carousel is a full-width
+     block under its copy. The media is capped at the coach slide's own width. */
   .split-row {
     display: block;
     padding: 4.5rem 0;
@@ -1252,7 +1263,7 @@
         <div class="feature-title">Asistente nutricional con IA</div>
         <p class="feature-desc">Fotografía tu plato y la app estimará las calorías y los macros a partir de la imagen. Pide ideas de comidas, sugerencias de recetas o cambios de alimentos, con información de tus sesiones de entrenamiento, los objetivos que te quedan para el día y lo que ya has registrado. Las comidas sugeridas se pueden añadir a tu registro directamente desde el chat.</p>
         <br>
-        <p class="feature-desc" style="color:rgba(255,255,255,0.45);font-size:0.82rem;">Lee tus sesiones, tus objetivos de calorías y carbohidratos y tu registro actual, y te da sugerencias prácticas y personalizadas.</p>
+        <p class="feature-desc" style="color:rgba(255,255,255,0.45);font-size:0.82rem;">También puedes usar tu propio agente de IA mediante un <a href="/es/mcp-instructions/" style="color:#a5d6a7;font-weight:600;text-decoration:underline;">conector MCP</a>.</p>
       </div>
       <figure class="ai-demo">
         <video muted loop playsinline preload="metadata" data-autoplay poster="/assets/app-demos/chat.jpg?v=2" aria-label="Asistente nutricional con IA">
@@ -1778,6 +1789,14 @@
           <div class="faq-body">
             <p>Ocultar las calorías mantiene el foco en <strong>los carbohidratos, la proteína y la grasa</strong> en lugar del total de calorías. Muchos deportistas lo encuentran útil cuando quieren nutrirse para el entrenamiento y la recuperación sin que contar calorías sea el marcador principal.</p>
             <p>Cuando está activado, las cifras de kcal se ocultan en la vista diaria de inicio, las tarjetas de comidas, la búsqueda de alimentos y los gráficos relacionados, mientras que los objetivos de carbohidratos, proteína y grasa y el registro siguen funcionando como siempre. Puedes volver a mostrarlas en cualquier momento desde el control del símbolo del ojo en la pantalla de inicio.</p>
+          </div>
+        </details>
+
+        <details class="faq-item" id="faq-own-chatbot">
+          <summary>¿Puedo usar mis datos con mi propio chatbot?</summary>
+          <div class="faq-body">
+            <p><strong>Sí.</strong> Glycogo tiene un conector MCP, así que Claude, ChatGPT o tu propio agente de IA pueden leer tus datos de entrenamiento, nutrición y carrera y trabajar con ellos en una conversación.</p>
+            <p>La configuración lleva unos minutos: consulta <a class="faq-link" href="/es/mcp-instructions/">la guía de configuración MCP</a>.</p>
           </div>
         </details>
 
