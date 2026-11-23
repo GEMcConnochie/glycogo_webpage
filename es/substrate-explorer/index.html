@@ -312,6 +312,19 @@ section > .panel{display:grid;grid-template-columns:250px minmax(0,1fr);gap:0 40
 }
 .field input:focus, .field select:focus{border-color:var(--text);}
 .field.hidden{display:none;}
+.axis-fixed{
+  font-family:'Space Grotesk', sans-serif;font-size:13px;font-weight:600;color:var(--text);
+  font-variant-numeric:tabular-nums;
+}
+.field-slider label{display:flex;justify-content:space-between;align-items:baseline;gap:10px;}
+.field-slider label .val{
+  color:var(--text);font-size:13px;font-weight:600;font-family:'Space Grotesk', sans-serif;
+  letter-spacing:0;text-transform:none;font-variant-numeric:tabular-nums;
+}
+.field-slider input[type="range"]{
+  width:100%;height:2px;background:#dfe5e1;border:0;padding:0;margin-top:9px;
+  -webkit-appearance:none;appearance:none;
+}
 @media(max-width:560px){ .row2{grid-template-columns:1fr;gap:0;} }
 
 /* axis segmented control */
@@ -480,22 +493,17 @@ footer a:hover{text-decoration:underline;}
   <section>
     <div class="section-head">
       <div>
-        <h2 class="section-title">Elige un eje de intensidad y un perfil de deportista</h2>
+        <h2 class="section-title">Intensity axis &amp; athlete profile</h2>
       </div>
     </div>
     <div class="panel">
       <div class="control">
         <label>Eje X</label>
-        <div class="seg" id="axisseg">
-          <button data-axis="rpe" class="on">RPE</button>
-          <button data-axis="hr">FC</button>
-          <button data-axis="power">Potencia</button>
-        </div>
-        <div class="hint" id="effhint">Escala Borg CR100 (1–100) convertida con la tabla de equivalencia de zonas de carga de Glycogo.</div>
+        <div class="axis-fixed">RPE (Borg CR100)</div>
+        <div class="hint">Escala Borg CR100 (1–100) convertida con la tabla de equivalencia de zonas de carga de Glycogo.</div>
       </div>
       <div class="row2">
-        <div class="field" id="field-ftp"><label>FTP (W)</label><input type="number" id="ftp" value="270" min="50" step="5"></div>
-        <div class="field" id="field-lthr"><label>LTHR (ppm)</label><input type="number" id="lthr" value="168" min="80" step="1"></div>
+        <div class="field field-slider"><label>VO₂max <span class="val" id="v_vo2">57 ml/kg/min</span></label><input type="range" id="vo2" min="30" max="80" step="1" value="57"></div>
         <div class="field"><label>Peso (kg)</label><input type="number" id="weight" value="70" min="30" step="1"></div>
         <div class="field"><label>Edad</label><input type="number" id="age" value="34" min="15" max="80" step="1"></div>
         <div class="field">
@@ -552,7 +560,7 @@ footer a:hover{text-decoration:underline;}
         </div>
         <div class="control">
           <button type="button" id="calcBtn" class="calc-btn">Calcular</button>
-          <div class="hint" id="calcStatus">Pulsa Calcular (o cambia un eje o un ajuste del deportista) para actualizar las curvas.</div>
+          <div class="hint" id="calcStatus">Press Calculate (or change an athlete setting) to update the curves.</div>
         </div>
       </div>
     </div>
@@ -575,22 +583,7 @@ footer a:hover{text-decoration:underline;}
     <p><strong>Base de medición.</strong> El uso de sustratos durante el ejercicio se cuantifica mediante calorimetría indirecta: como la oxidación de grasas y carbohidratos produce volúmenes distintos de CO₂ por litro de O₂ consumido, el cociente respiratorio no proteico (RER = VCO₂ / VO₂) identifica la mezcla de combustible. Un RER de 0,70 corresponde a una oxidación casi exclusiva de grasas, 1,00 a carbohidratos casi exclusivos y ≈ 0,85 a un reparto energético equilibrado (Peronnet y Massicotte, 1991). Cada punto del gráfico se muestra como un RER implícito con las tasas de oxidación de carbohidratos y grasas correspondientes en gramos por hora, convertidas con equivalentes energéticos no proteicos (carbohidratos ≈ 4 kcal/g, grasa ≈ 9 kcal/g).</p>
     <p><strong>El punto de cruce.</strong> Al aumentar la intensidad relativa, el impulso catecolaminérgico, el reclutamiento de unidades motoras tipo II y la energía demandada por unidad de músculo desplazan el suministro hacia el glucógeno muscular y la glucosa sanguínea, y la contribución relativa de las grasas cae: es el clásico «cruce» (Brooks y Mercier, 1994; Romijn et al., 1993). En deportistas entrenados, la oxidación absoluta de grasas suele alcanzar su máximo en torno al 45–65 % del VO₂max (la zona «fatmax»), aunque con una variación individual considerable (Achten y Jeukendrup, 2003). </p>
     <p><strong>Qué desplaza la curva.</strong> La disponibilidad de sustratos influye en la oxidación. Los carbohidratos antes y durante el ejercicio elevan la oxidación de carbohidratos a una intensidad dada; la ingesta habitual de carbohidratos y el estado de forma remodelan las reservas de glucógeno y la capacidad oxidativa; una baja disponibilidad de carbohidratos aumenta la contribución relativa de las grasas (Romijn et al., 1993; Burke et al., 2011). El modelo ajusta además por duración de la sesión, sexo, edad y masa corporal, reflejando los efectos a nivel de grupo cuantificados en análisis de modelización del ejercicio submáximo (Rothschild et al., 2022).</p>
-    <!-- Static SEO values: computed from the production model for the page's
-         default athlete (70 kg male, 34 y, 4.0 g/kg CHO, 1.5 g/kg fat,
-         60 min). Regenerate if the page defaults change.
-         RER column intentionally omitted: the model's implied RER deviates
-         slightly from the linear non-protein table (see note below table). -->
-    <p><strong>Ejemplo práctico (deportista de referencia).</strong> 70 kg, hombre, 34 años, dieta moderada en carbohidratos (4,0 g/kg de CHO y 1,5 g/kg de grasa al día), sesión de 60 minutos a ~600 kcal/h. El modelo de producción devuelve:</p>
-    <table>
-      <tr><th>Intensidad (RPE, CR-100)</th><th>Carbohidratos, % de la energía</th><th>Carbohidratos (g/h)</th><th>Grasa (g/h)</th></tr>
-      <tr><td>30</td><td>47</td><td>71</td><td>35</td></tr>
-      <tr><td>45</td><td>65</td><td>98</td><td>23</td></tr>
-      <tr><td>60</td><td>81</td><td>120</td><td>12</td></tr>
-      <tr><td>75</td><td>93</td><td>136</td><td>5</td></tr>
-      <tr><td>90</td><td>99</td><td>143</td><td>1</td></tr>
-    </table>
-    <p>For this athlete the 50/50 crossover (RER ≈ 0.85) falls near RPE 33 on the CR-100 scale; lower carbohydrate availability would move it toward higher intensities.</p>
-    <p>The interactive readout also reports the model’s implied RER at each point. Because the model maps fuel split to RER through a smooth physiological response curve rather than the strictly linear non-protein approximation, its implied RER can sit up to a couple of hundredths off the linear non-protein table (a little below near 90 % carbohydrate, a little above at the top of the range); the static table therefore lists only the internally consistent energy split and oxidation rates.</p>
+    <p>The interactive readout also reports the model’s implied RER at each point. Because the model maps fuel split to RER through a smooth physiological response curve rather than the strictly linear non-protein approximation, its implied RER can sit up to a couple of hundredths off the linear non-protein table (a little below near 90 % carbohydrate, a little above at the top of the range).</p>
     <p><strong>Limitaciones.</strong> Los resultados son predicciones a nivel de grupo del reparto de sustratos para los datos que introduces, no mediciones de tu metabolismo. La variabilidad diaria, el estado de forma, el historial dietético, el calor y la tolerancia intestinal modifican los valores reales. Usa el explorador para comparar escenarios y estructurar la ingesta, no como prueba metabólica.</p>
     <p><strong>Herramientas relacionadas.</strong> ¿Quieres cuantificar la parte de carbohidratos de tu nutrición del día de carrera? Crea un plan de ingesta glucosa:fructosa con la <a href="/es/fuel-ratio-calculator/">calculadora de ratio de combustible</a>, o usa <a href="/es/">Glycogo</a> para obtener objetivos periodizados de carbohidratos y calorías que se ajustan a tu carga de entrenamiento.</p>
     <p class="refs">Key references:
@@ -641,10 +634,6 @@ const API_BASE = new URLSearchParams(location.search).get("api")
   || window.SUBSTRATE_API_BASE
   || "https://glycogo-api-429634465447.us-west1.run.app";
 
-// Axis display bounds (fractions of the threshold metrics).
-const SMOOTH_HR_LOW = 0.60, SMOOTH_HR_HIGH = 1.05;      // HR axis: 60-105% LTHR
-const SMOOTH_POWER_IF_LOW = 0.40, SMOOTH_POWER_IF_HIGH = 1.20; // Power: 40-120% FTP
-
 const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
 
 async function fetchCurve(axis, cfg) {
@@ -660,8 +649,7 @@ async function fetchCurve(axis, cfg) {
       age: cfg.age || null,
       sex: cfg.sex,
       weight_kg: cfg.weight,
-      ftp: cfg.ftp || null,
-      lthr: cfg.lthr || null,
+      vo2max: cfg.vo2 || null,
     },
   };
   const res = await fetch(API_BASE + "/api/substrate/estimate", {
@@ -731,13 +719,9 @@ const ZONE_IF_BOUNDS  = [0, 0.55, 0.75, 0.88, 0.95, 1.05, 1.20, 1.50];
 // 105% LTHR, the VO2max and anaerobic bands fall off its right edge.
 const ZONE_LTHR_BOUNDS = [0, 0.69, 0.84, 0.9015, 0.95, 1.05, 1.20, 1.50];
 
-function zoneBands(ax) {
-  // Band boundaries in the current axis unit: RPE natively, %LTHR or %FTP for
-  // the heart-rate and power axes, so the shading always matches the intensity
-  // mapping the curve itself uses.
-  const at = i => ax === "rpe" ? ZONE_RPE_BOUNDS[i]
-    : ax === "hr" ? ZONE_LTHR_BOUNDS[i] * num("lthr")
-    : ZONE_IF_BOUNDS[i] * num("ftp");
+function zoneBands() {
+  // Band boundaries sit on RPE, the chart's only axis.
+  const at = i => ZONE_RPE_BOUNDS[i];
   return ZONES.map((z, i) => ({ name: z.name, short: z.short, fill: z.fill, a: at(i), b: at(i + 1) }));
 }
 
@@ -745,7 +729,7 @@ function num(id) { const v = parseFloat($(id).value); return isFinite(v) ? v : 0
 
 function currentCfg() {
   return {
-    lthr: num("lthr"), ftp: num("ftp"), weight: num("weight"),
+    vo2: num("vo2"), weight: num("weight"),
     age: num("age"), sex: $("sex").value,
     duration: num("duration"),
     dailyCho: num("daily_cho"), dailyFat: num("daily_fat"),
@@ -753,20 +737,11 @@ function currentCfg() {
   };
 }
 
-function axisBounds() {
-  if (axis === "rpe") return { min: 1, max: 100 };
-  if (axis === "hr") return num("lthr") > 0 ? { min: num("lthr") * SMOOTH_HR_LOW, max: num("lthr") * SMOOTH_HR_HIGH } : null;
-  return num("ftp") > 0 ? { min: num("ftp") * SMOOTH_POWER_IF_LOW, max: num("ftp") * SMOOTH_POWER_IF_HIGH } : null;
-}
+function axisBounds() { return { min: 1, max: 100 }; }
 
-function axisLabel() { return axis === "rpe" ? "RPE" : axis === "hr" ? "HR (bpm)" : "Power (W)"; }
+function axisLabel() { return "RPE"; }
 
-function updateAxisFields() {
-  $("field-ftp").classList.toggle("hidden", axis !== "power");
-  $("field-lthr").classList.toggle("hidden", axis !== "hr");
- 
-
-}let refreshSeq = 0;   // bumps on every Calculate press: stale responses are dropped
+let refreshSeq = 0;   // bumps on every Calculate press: stale responses are dropped
 let cooldownUntil = 0; // rate-limit cooldown: suppress new requests until the server window clears
 																								   
 
@@ -847,10 +822,6 @@ function draw() {
       ctx.fillText("Opening the file directly (file://) blocks the API call.", 40, H / 2 - 12);
       ctx.fillText("Serve it:  py scripts/_demo_stub_server.py 8600", 40, H / 2 + 10);
       ctx.fillText("then open  http://127.0.0.1:8600/substrate_explorer_demo.html", 40, H / 2 + 32);
-    } else if (axis === "hr" && !(num("lthr") > 0)) {
-      ctx.fillText("Set LTHR to draw the HR axis", 40, H / 2);
-    } else if (axis === "power" && !(num("ftp") > 0)) {
-      ctx.fillText("Set FTP to draw the power axis", 40, H / 2);
     } else {
       ctx.fillText("No curve yet. Press Calculate (see status below the chart).", 40, H / 2);
     }
@@ -864,7 +835,7 @@ function draw() {
 
   // zone shading behind everything: translucent load-zone bands + labels
   ctx.font = "9.5px 'Space Grotesk', sans-serif";
-  const bands = zoneBands(axis);
+  const bands = zoneBands();
   for (let i = 0; i < bands.length; i++) {
     const b = bands[i];
     const a = Math.max(b.a, x0);
@@ -977,19 +948,6 @@ canvas.addEventListener("mouseleave", () => {
 });
 
 // controls
-document.querySelectorAll("#axisseg button").forEach(b => b.addEventListener("click", () => {
-  document.querySelectorAll("#axisseg button").forEach(x => x.classList.remove("on"));
-  b.classList.add("on");
-  axis = b.dataset.axis;
-  updateAxisFields();
-  $("effhint").textContent = axis === "rpe"
-    ? "Borg CR100 scale (1–100), the shared reference the model maps every intensity source onto."
-    : axis === "hr"
-      ? "X = steady heart rate (bpm); intensity = HR ÷ LTHR."
-      : "X = steady power (W); intensity = power ÷ FTP.";
-  requestCurve();
-}));
-
 // Sliders only relabel themselves and re-render the cached curve; no fetch.
 // The new value reaches the server on the next Calculate press.
 function bindSlider(id, valId, fmt) {
@@ -1003,6 +961,7 @@ bindSlider("daily_cho", "v_daily_cho", v => (+v).toFixed(1) + " g/kg");
 bindSlider("daily_fat", "v_daily_fat", v => (+v).toFixed(2) + " g/kg");
 bindSlider("pre_cho", "v_pre_cho", v => v + " g");
 bindSlider("during_cho", "v_during_cho", v => v + " g/h");
+bindSlider("vo2", "v_vo2", v => v + " ml/kg/min");
 
 
 // Athlete settings change the axis bounds/semantics too, so refetch. But
@@ -1013,7 +972,7 @@ function requestCurveDebounced() {
   clearTimeout(settingsTimer);
   settingsTimer = setTimeout(requestCurve, 450);
 }
-for (const id of ["ftp", "lthr", "weight", "age"]) $(id).addEventListener("input", requestCurveDebounced);
+for (const id of ["vo2", "weight", "age"]) $(id).addEventListener("input", requestCurveDebounced);
 $("sex").addEventListener("change", () => requestCurve());
 window.addEventListener("resize", draw);
 
@@ -1042,7 +1001,6 @@ document.addEventListener('click', () => {
 // debug hook (kept for the repo's parity test; exports the API surface)
 window.__glycogoModel = { fetchCurve, API_BASE };
 
-updateAxisFields();
 requestCurve();   // first curve loads automatically; everything after is user-driven
 </script>
 <script src="/search/search-index.js"></script>
