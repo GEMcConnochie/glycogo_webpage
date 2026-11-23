@@ -206,7 +206,7 @@ window.GLYCOGO_I18N.fr = {
     "Pre-session meal carbs": "Glucides du repas avant la séance",
     "During-session carbs": "Glucides pendant la séance",
     "Calculate": "Calculer",
-    "Press Calculate (or change an axis/athlete setting) to update the curves.": "Appuyez sur Calculer (ou modifiez un axe ou un réglage de l'athlète) pour actualiser les courbes.",
+    "Press Calculate to draw the curves.": "Appuyez sur Calculer pour tracer les courbes.",
     "Point on curve": "Point sur la courbe",
     "hover the chart": "survolez le graphique",
     "Fat": "Lipides",

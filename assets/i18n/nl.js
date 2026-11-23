@@ -206,7 +206,7 @@ window.GLYCOGO_I18N.nl = {
     "Pre-session meal carbs": "Koolhydraten in de maaltijd vooraf",
     "During-session carbs": "Koolhydraten tijdens de sessie",
     "Calculate": "Berekenen",
-    "Press Calculate (or change an axis/athlete setting) to update the curves.": "Druk op Berekenen (of wijzig een as of sporterinstelling) om de curves bij te werken.",
+    "Press Calculate to draw the curves.": "Druk op Berekenen om de curves te tekenen.",
     "Point on curve": "Punt op de curve",
     "hover the chart": "beweeg over de grafiek",
     "Fat": "Vet",

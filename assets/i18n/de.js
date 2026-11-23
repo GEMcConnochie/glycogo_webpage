@@ -206,7 +206,7 @@ window.GLYCOGO_I18N.de = {
     "Pre-session meal carbs": "Kohlenhydrate in der Mahlzeit davor",
     "During-session carbs": "Kohlenhydrate während der Einheit",
     "Calculate": "Berechnen",
-    "Press Calculate (or change an axis/athlete setting) to update the curves.": "Drücke Berechnen (oder ändere eine Achse bzw. eine Sportlereinstellung), um die Kurven zu aktualisieren.",
+    "Press Calculate to draw the curves.": "Drücke Berechnen, um die Kurven zu zeichnen.",
     "Point on curve": "Punkt auf der Kurve",
     "hover the chart": "mit der Maus über das Diagramm fahren",
     "Fat": "Fett",

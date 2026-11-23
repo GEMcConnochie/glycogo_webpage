@@ -560,7 +560,7 @@ footer a:hover{text-decoration:underline;}
         </div>
         <div class="control">
           <button type="button" id="calcBtn" class="calc-btn">Calculate</button>
-          <div class="hint" id="calcStatus">Press Calculate (or change an athlete setting) to update the curves.</div>
+          <div class="hint" id="calcStatus">Press Calculate to draw the curves.</div>
         </div>
       </div>
     </div>
@@ -745,17 +745,9 @@ let refreshSeq = 0;   // bumps on every Calculate press: stale responses are dro
 let cooldownUntil = 0; // rate-limit cooldown: suppress new requests until the server window clears
 																								   
 
-// Update the point readouts only; the curve is refetched solely on demand
-// (Calculate button / axis or athlete changes), one request per deliberate
-// action instead of one per slider tick.
+// The curve is fetched only when Calculate is pressed.
 function refresh() {
-  const b = axisBounds();
-  if (!b) {
-    data = { points: [] };
-    draw();
-    return;
-  }
-  if (!data.points.length) requestCurve();
+  draw();
 }
 
 async function requestCurve() {
@@ -963,17 +955,6 @@ bindSlider("pre_cho", "v_pre_cho", v => v + " g");
 bindSlider("during_cho", "v_during_cho", v => v + " g/h");
 bindSlider("vo2", "v_vo2", v => v + " ml/kg/min");
 
-
-// Athlete settings change the axis bounds/semantics too, so refetch. But
-// debounced: dragging a number input fires dozens of `input` events, and each
-// curve request is ~161 model evaluations against a 10/min-per-IP budget.
-let settingsTimer = null;
-function requestCurveDebounced() {
-  clearTimeout(settingsTimer);
-  settingsTimer = setTimeout(requestCurve, 450);
-}
-for (const id of ["vo2", "weight", "age"]) $(id).addEventListener("input", requestCurveDebounced);
-$("sex").addEventListener("change", () => requestCurve());
 window.addEventListener("resize", draw);
 
 // nav dropdown (same behavior as the site)
@@ -1001,7 +982,7 @@ document.addEventListener('click', () => {
 // debug hook (kept for the repo's parity test; exports the API surface)
 window.__glycogoModel = { fetchCurve, API_BASE };
 
-requestCurve();   // first curve loads automatically; everything after is user-driven
+draw();   // nothing is calculated until the button is pressed
 </script>
 <script src="/search/search-index.js"></script>
 <script src="/search/search-rrf.js"></script>
